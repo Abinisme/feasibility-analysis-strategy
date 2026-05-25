@@ -49,7 +49,27 @@
   .rebalance-card h4 { font-size: 0.95em; color: var(--gold); margin: 0 0 10px; }
   .rebalance-card .rule { font-size: 0.88em; margin: 4px 0; color: var(--text); }
   .source-footer { color: var(--text2); font-size: 0.85em; text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); }
-  @media (max-width: 768px) { body { padding: 12px; } h1 { font-size: 1.4em; padding: 20px 0; } h2 { font-size: 1.15em; } table { font-size: 0.82em; } th, td { padding: 7px 8px; } .card { padding: 14px 16px; } }
+  .hero-banner { background: linear-gradient(135deg, rgba(245,158,11,0.12), rgba(226,82,65,0.10), rgba(167,139,250,0.08)); border: 2px solid var(--gold); border-radius: 14px; padding: 28px 32px; margin: 10px 0 24px; position: relative; overflow: hidden; animation: pulse-border 2s ease-in-out infinite; }
+  .hero-banner::before { content: '🔴 LIVE'; position: absolute; top: 14px; right: 20px; font-size: 0.78em; color: var(--red); font-weight: 700; letter-spacing: 2px; animation: blink 1.2s infinite; }
+  @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+  @keyframes pulse-border { 0%,100% { border-color: var(--gold); box-shadow: 0 0 18px rgba(245,158,11,0.25); } 50% { border-color: var(--red); box-shadow: 0 0 28px rgba(226,82,65,0.35); } }
+  .hero-banner h3 { font-size: 1.28em; color: var(--gold); margin: 0 0 12px; display: flex; align-items: center; gap: 10px; }
+  .hero-banner h3 .icon { font-size: 1.6em; }
+  .hero-banner p { font-size: 0.95em; margin: 6px 0; color: #e1e4ea; }
+  .hero-banner .highlight { background: linear-gradient(90deg, var(--red), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 800; font-size: 1.15em; }
+  .hero-banner .sub-info { font-size: 0.85em; color: var(--text2); margin-top: 10px; }
+  .supply-chain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 16px 0; }
+  .supply-card { background: rgba(167,139,250,0.04); border: 1px solid var(--border); border-radius: 10px; padding: 18px; transition: border-color 0.3s; }
+  .supply-card:hover { border-color: var(--purple); }
+  .supply-card h4 { font-size: 1em; color: var(--purple); margin: 0 0 10px; display: flex; align-items: center; gap: 6px; }
+  .supply-card .company { font-size: 0.92em; margin: 8px 0; padding: 8px 10px; background: rgba(79,195,247,0.05); border-radius: 6px; }
+  .supply-card .company .name { font-weight: 700; color: var(--accent); }
+  .supply-card .company .code { font-size: 0.82em; color: var(--text2); margin-left: 6px; }
+  .supply-card .company .desc { font-size: 0.84em; color: var(--text2); margin-top: 4px; }
+  .impact-meter { display: flex; align-items: center; gap: 8px; margin: 5px 0; }
+  .impact-meter .bar { height: 6px; border-radius: 3px; background: linear-gradient(90deg, var(--green), var(--gold), var(--red)); }
+  .impact-meter span { font-size: 0.78em; color: var(--text2); white-space: nowrap; }
+  @media (max-width: 768px) { body { padding: 12px; } h1 { font-size: 1.4em; padding: 20px 0; } h2 { font-size: 1.15em; } table { font-size: 0.82em; } th, td { padding: 7px 8px; } .card { padding: 14px 16px; } .hero-banner { padding: 18px 16px; } .supply-chain-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -58,11 +78,21 @@
 
 <h1>🤖 人形机器人与具身智能投资分析报告</h1>
 <div class="meta-row">
-  <span>数据截止：2026-05-22 收盘</span>
+  <span>数据截止：2026-05-25 收盘</span>
   <span>新闻来源：央视网 / 腾讯新闻</span>
   <span>行情数据：Tushare Pro</span>
 </div>
-<blockquote>本报告聚焦人形机器人及具身智能子板块，覆盖2026年1-5月重大事件时间轴、核心标的行情财务数据、机构持仓追踪、ETF推荐及3-5万投资计划。</blockquote>
+
+<!-- ======== 🔴 宇树IPO 6月1日上会 — 首屏核心Banner ======== -->
+<div class="hero-banner">
+  <h3><span class="icon">🏭</span> 宇树科技（Unitree）科创板IPO <span class="highlight">6月1日上会</span></h3>
+  <p>A股<strong>人形机器人第一股</strong>进入冲刺阶段——宇树科技科创板IPO申请已获受理，<strong>发审委将于6月1日召开上市委审议会议</strong>。</p>
+  <p>宇树科技估值超<strong>120亿元</strong>，作为全球四足机器人出货量第一、人形机器人量产先锋，"杭州六小龙"之首，<strong>若顺利过会将成为2026年A股最具标志性的科技IPO事件之一</strong>，预计引发机器人全产业链估值重估。</p>
+  <p class="sub-info">📅 关键时间线：3月20日提交申请 → 5月完成问询回复 → <span style="color:var(--gold);font-weight:700;">6月1日上会</span> → 过会后预计1-2个月内挂牌上市</p>
+  <p class="sub-info">⚠️ 映射标的关注：鸣志电器（电机供应商）、双环传动（减速器）、绿的谐波（谐波减速器），IPO过会前后存在题材催化窗口</p>
+</div>
+
+<blockquote>本报告聚焦人形机器人及具身智能子板块，覆盖2026年1-5月重大事件时间轴、核心标的行情财务数据、机构持仓追踪、ETF推荐及3-5万投资计划。<strong style="color:var(--gold);">⚠️ 重点关注：宇树科技科创板IPO将于6月1日上会。</strong></blockquote>
 
 <!-- ======== 一：全年级别重大事件时间轴 ======== -->
 <h2>一、2026年重大事件时间轴</h2>
@@ -94,9 +124,13 @@
     <div class="tl-date">2026-03-16</div>
     <div class="tl-content"><strong>"钢铁打工人"奔向消费大市场</strong> — 产业观察指出：<strong>2026年是人形机器人商业化量产的关键一年</strong>，需闯过成本、技术、生态三道关。</div>
   </div>
-  <div class="tl-item">
+  <div class="tl-item key">
     <div class="tl-date">2026-03-20</div>
     <div class="tl-content"><strong>🚀 宇树科技提交科创板IPO申请</strong> — 估值超120亿元，成为A股人形机器人第一股候选。产业链标的迎来IPO映射预期。</div>
+  </div>
+  <div class="tl-item key">
+    <div class="tl-date">2026-06-01 ⚡ IPO上会</div>
+    <div class="tl-content"><strong>🔥 宇树科技科创板IPO上会——6月1日发审委审议！</strong>若顺利过会，宇树将成为A股首家人形机器人上市公司，估值120亿+。这是2026年人形机器人赛道最重磅的催化剂：① IPO映射标的（鸣志电器/双环传动/绿的谐波）存在过会前后联动行情；② 过会后1-2个月内挂牌，产业链估值重估窗口开启；③ "杭州六小龙"之首的品牌效应将带动全板块认知度升级。</div>
   </div>
   <div class="tl-item">
     <div class="tl-date">2026-03-23</div>
@@ -252,6 +286,196 @@
 <div class="warn">
 <strong>📌 竞争格局研判：</strong>国内人形机器人已形成<strong>"三超多强"</strong>格局——宇树（品牌+IPO）、智元（商业落地）、优必选（生态）为第一梯队；鹿明、众擎、逐际动力等为第二梯队。核心零部件供应商将<strong>同时受益于多家整机厂的量产放量</strong>，确定性高于整机厂本身。减速器/伺服/电机/传感器环节的A股龙头是更安全的投资方向。
 </div>
+</div>
+
+<!-- ======== 宇树科技核心供应链专项分析 ======== -->
+<h2>🔗 宇树科技供应链专项深度拆解</h2>
+<blockquote>宇树科技作为国内人形机器人"第一股"候选，其IPO将直接催化核心供应链企业。以下是基于公开信息梳理的宇树机器人关键零部件供应商与合作企业图谱。</blockquote>
+
+<div class="card">
+<h3>📦 宇树 H1 / G1 人形机器人 BOM 成本拆解</h3>
+<table>
+  <thead><tr><th>零部件模块</th><th>单台配置</th><th>估算成本(万元)</th><th>成本占比</th><th>技术壁垒</th></tr></thead>
+  <tbody>
+    <tr><td><strong>关节电机总成</strong></td><td>28-32个关节</td><td class="num">~8-10</td><td>35-40%</td><td><span class="stars">★★★★★</span> 极高</td></tr>
+    <tr><td><strong>减速器（谐波+RV）</strong></td><td>12-16个</td><td class="num">~4-6</td><td>18-22%</td><td><span class="stars">★★★★★</span> 极高</td></tr>
+    <tr><td><strong>传感器（力矩+IMU+视觉）</strong></td><td>全套传感系统</td><td class="num">~3-4</td><td>12-15%</td><td><span class="stars">★★★★☆</span> 高</td></tr>
+    <tr><td><strong>控制/计算平台</strong></td><td>1套主控+边缘计算</td><td class="num">~2-3</td><td>8-10%</td><td><span class="stars">★★★★☆</span> 高</td></tr>
+    <tr><td><strong>电池/BMS系统</strong></td><td>1套</td><td class="num">~1.5-2</td><td>5-7%</td><td><span class="stars">★★★☆☆</span> 中</td></tr>
+    <tr><td><strong>结构件/机身</strong></td><td>轻量化壳体</td><td class="num">~1-1.5</td><td>4-5%</td><td><span class="stars">★★★☆☆</span> 中</td></tr>
+    <tr><td><strong>线束/连接器</strong></td><td>全机布线</td><td class="num">~0.5-1</td><td>2-3%</td><td><span class="stars">★★☆☆☆</span> 低</td></tr>
+  </tbody>
+</table>
+<p style="color:var(--text2);font-size:0.88em;margin-top:8px;">宇树人形机器人单台BOM成本约<strong>20-28万元</strong>，关节电机+减速器合计占比超55%，是最核心的价值环节。随着量产规模扩大（2026年预计出货5000+台），单台成本有望下降30-40%。</p>
+</div>
+
+<div class="supply-chain-grid">
+  <!-- 电机 & 执行器 -->
+  <div class="supply-card">
+    <h4>⚙️ 电机 & 执行器</h4>
+    <div class="company">
+      <span class="name">鸣志电器</span><span class="code">603728</span>
+      <div class="desc">空心杯电机/无刷电机核心供应商，宇树灵巧手及关节驱动电机主要来源。技术壁垒高，国产替代逻辑清晰。</div>
+      <div class="impact-meter"><div class="bar" style="width:90%;"></div><span>关联度：极高</span></div>
+    </div>
+    <div class="company">
+      <span class="name">步科股份</span><span class="code">688160</span>
+      <div class="desc">低压伺服驱动器/一体化关节电机方案，适配宇树H1系列关节模组需求。</div>
+      <div class="impact-meter"><div class="bar" style="width:70%;"></div><span>关联度：高</span></div>
+    </div>
+    <div class="company">
+      <span class="name">汇川技术</span><span class="code">300124</span>
+      <div class="desc">伺服系统绝对龙头，宇树规模化量产后伺服电机潜在二供，性价比优势突出。</div>
+      <div class="impact-meter"><div class="bar" style="width:55%;"></div><span>关联度：中等</span></div>
+    </div>
+  </div>
+
+  <!-- 减速器 -->
+  <div class="supply-card">
+    <h4>🔩 减速器</h4>
+    <div class="company">
+      <span class="name">双环传动</span><span class="code">002472</span>
+      <div class="desc">RV减速器/精密齿轮龙头，宇树关节模组RV减速器一级供应商。社保持有，机构底仓稳固。</div>
+      <div class="impact-meter"><div class="bar" style="width:85%;"></div><span>关联度：极高</span></div>
+    </div>
+    <div class="company">
+      <span class="name">绿的谐波</span><span class="code">688017</span>
+      <div class="desc">谐波减速器国内绝对龙头（市占率60%+），宇树H1/G1系列谐波减速器核心来源，单台价值量最高环节。</div>
+      <div class="impact-meter"><div class="bar" style="width:95%;"></div><span>关联度：极高</span></div>
+    </div>
+    <div class="company">
+      <span class="name">中大力德</span><span class="code">002896</span>
+      <div class="desc">精密减速器二线厂商，RV+谐波双线布局，宇树供应链国产替代备选。</div>
+      <div class="impact-meter"><div class="bar" style="width:45%;"></div><span>关联度：中等</span></div>
+    </div>
+  </div>
+
+  <!-- 传感器 -->
+  <div class="supply-card">
+    <h4>📡 传感器 & 感知</h4>
+    <div class="company">
+      <span class="name">柯力传感</span><span class="code">603662</span>
+      <div class="desc">六维力/力矩传感器核心供应商，宇树关节力控方案的力传感器主要来源之一。</div>
+      <div class="impact-meter"><div class="bar" style="width:80%;"></div><span>关联度：高</span></div>
+    </div>
+    <div class="company">
+      <span class="name">奥普特</span><span class="code">688686</span>
+      <div class="desc">机器视觉/3D视觉传感器，宇树机器人环境感知与目标识别视觉模组供应商。</div>
+      <div class="impact-meter"><div class="bar" style="width:65%;"></div><span>关联度：中高</span></div>
+    </div>
+    <div class="company">
+      <span class="name">海康威视</span><span class="code">002415</span>
+      <div class="desc">工业相机/深度摄像头，机器人视觉系统潜在合作方，安防+机器人双赛道布局。</div>
+      <div class="impact-meter"><div class="bar" style="width:40%;"></div><span>关联度：中等</span></div>
+    </div>
+  </div>
+
+  <!-- 控制 & 芯片 -->
+  <div class="supply-card">
+    <h4>🧠 控制 & 计算平台</h4>
+    <div class="company">
+      <span class="name">瑞芯微</span><span class="code">603893</span>
+      <div class="desc">端侧AI芯片（RK3588等），宇树机器人边缘计算/实时控制芯片供应商，国产算力替代核心标的。</div>
+      <div class="impact-meter"><div class="bar" style="width:75%;"></div><span>关联度：高</span></div>
+    </div>
+    <div class="company">
+      <span class="name">雷赛智能</span><span class="code">002979</span>
+      <div class="desc">运动控制卡/控制器龙头，宇树机器人运动规划与轨迹控制环节核心供应商。</div>
+      <div class="impact-meter"><div class="bar" style="width:85%;"></div><span>关联度：极高</span></div>
+    </div>
+    <div class="company">
+      <span class="name">埃斯顿</span><span class="code">002747</span>
+      <div class="desc">工业机器人本体+控制器，与宇树在控制器层面存在技术复用和产业协同空间。</div>
+      <div class="impact-meter"><div class="bar" style="width:50%;"></div><span>关联度：中等</span></div>
+    </div>
+  </div>
+
+  <!-- 能源 & 结构件 -->
+  <div class="supply-card">
+    <h4>🔋 能源 & 结构件</h4>
+    <div class="company">
+      <span class="name">宁德时代</span><span class="code">300750</span>
+      <div class="desc">动力电池全球龙头，宇树机器人高能量密度电池包/BMS系统核心供应商。</div>
+      <div class="impact-meter"><div class="bar" style="width:70%;"></div><span>关联度：高</span></div>
+    </div>
+    <div class="company">
+      <span class="name">拓普集团</span><span class="code">601689</span>
+      <div class="desc">轻量化结构件（铝合金/镁合金），宇树机器人机身壳体与结构件潜在供应商。</div>
+      <div class="impact-meter"><div class="bar" style="width:50%;"></div><span>关联度：中等</span></div>
+    </div>
+    <div class="company">
+      <span class="name">立讯精密</span><span class="code">002475</span>
+      <div class="desc">精密连接器/线束龙头，机器人内部高密度连接方案提供商，消费电子+汽车+机器人三线布局。</div>
+      <div class="impact-meter"><div class="bar" style="width:45%;"></div><span>关联度：中等</span></div>
+    </div>
+  </div>
+
+  <!-- 合作企业 & 生态 -->
+  <div class="supply-card">
+    <h4>🤝 战略合作 & 生态企业</h4>
+    <div class="company">
+      <span class="name">DeepSeek / 大模型企业</span>
+      <div class="desc">AI大模型合作伙伴，为宇树机器人提供具身智能"大脑"——自然语言理解、任务规划、多模态感知能力。</div>
+      <div class="impact-meter"><div class="bar" style="width:80%;"></div><span>关联度：高（间接）</span></div>
+    </div>
+    <div class="company">
+      <span class="name">浙江大学 / 清华</span>
+      <div class="desc">产学研深度合作——浙大控制学院为宇树早期孵化方，持续输出运动控制与足式机器人前沿算法。</div>
+      <div class="impact-meter"><div class="bar" style="width:75%;"></div><span>关联度：高（研发）</span></div>
+    </div>
+    <div class="company">
+      <span class="name">杭州余杭区政府</span>
+      <div class="desc">"杭州六小龙"之首，享受产业园区、人才引进、研发补贴等政策红利。政府背书增强IPO确定性。</div>
+      <div class="impact-meter"><div class="bar" style="width:65%;"></div><span>关联度：政策面</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+<h3>💡 供应链投资映射逻辑</h3>
+<table>
+  <thead><tr><th>供应链环节</th><th>核心A股标的</th><th>宇树IPO催化强度</th><th>投资优先级</th><th>核心逻辑</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>减速器</strong></td>
+      <td>绿的谐波、双环传动</td><td><span class="stars">★★★★★</span></td><td><span class="badge badge-A">第一优先</span></td>
+      <td>单台价值量最高（~10万），技术壁垒最深，国产替代空间大。宇树IPO将直接催化工控/机器人估值体系重构。</td>
+    </tr>
+    <tr>
+      <td><strong>伺服电机</strong></td>
+      <td>鸣志电器、步科股份</td><td><span class="stars">★★★★★</span></td><td><span class="badge badge-A">第一优先</span></td>
+      <td>关节执行器直接供应商，灵巧手电机为宇树独供环节。鸣志电器YTD-6.6%回调到位，是宇树IPO映射弹性最大标的。</td>
+    </tr>
+    <tr>
+      <td><strong>运动控制</strong></td>
+      <td>雷赛智能</td><td><span class="stars">★★★★☆</span></td><td><span class="badge badge-B">第二优先</span></td>
+      <td>运动控制卡与控制器为宇树核心供应商，公募Q1快速进场验证产业趋势。</td>
+    </tr>
+    <tr>
+      <td><strong>力传感器</strong></td>
+      <td>柯力传感</td><td><span class="stars">★★★★☆</span></td><td><span class="badge badge-B">第二优先</span></td>
+      <td>六维力传感器为宇树机器人精细操作的关键环节，国产化率仍低，存在国产替代弹性。</td>
+    </tr>
+    <tr>
+      <td><strong>AI芯片</strong></td>
+      <td>瑞芯微</td><td><span class="stars">★★★☆☆</span></td><td><span class="badge badge-B">第二优先</span></td>
+      <td>端侧AI算力芯片，宇树机器人"小脑"环节。与DeepSeek等大模型配合形成具身智能闭环。</td>
+    </tr>
+    <tr>
+      <td><strong>电池/BMS</strong></td>
+      <td>宁德时代</td><td><span class="stars">★★★☆☆</span></td><td><span class="badge badge-C">观察</span></td>
+      <td>机器人电池占其总营收极小，催化弹性有限。但长期受益于机器人+电动车双赛道。</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="warn">
+<strong>📌 宇树IPO供应链核心结论：</strong><br>
+① <strong>绿的谐波（688017）+ 鸣志电器（603728）+ 双环传动（002472）</strong>是宇树供应链中确定性最高、催化弹性最大的三个A股标的，构成"宇树IPO映射铁三角"。<br>
+② 宇树IPO过会后，市场将按<strong>"减速器→电机→传感器→控制器→芯片"</strong>的顺序逐环节重估，减速器和电机环节首当其冲。<br>
+③ <strong>时点建议：</strong>6月1日上会前1-2周为最佳埋伏窗口，过会当日存在短线冲高机会。IPO挂牌后1个月内为产业链估值重估交易窗口期。<br>
+④ <strong>风险提示：</strong>若宇树IPO被否或暂缓，供应链映射逻辑将阶段性失效，相关标的可能面临10-15%的回调压力。
 </div>
 
 <!-- ======== 三：机构持仓追踪 ======== -->
@@ -447,7 +671,7 @@
 </div>
 
 <div class="source-footer">
-  数据截止：2026-05-22 收盘 &nbsp;|&nbsp; YTD/行情：Tushare Pro &nbsp;|&nbsp; 新闻来源：央视网（CCTV.com）<br>
+  数据截止：2026-05-25 收盘 &nbsp;|&nbsp; YTD/行情：Tushare Pro &nbsp;|&nbsp; 新闻来源：央视网（CCTV.com）<br>
   ⚠️ 本报告仅供参考，不构成投资建议。股市有风险，投资需谨慎。
 </div>
 
