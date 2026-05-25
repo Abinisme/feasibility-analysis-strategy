@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>超200亿主动权益基金研究索引 | 2026年4月</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d28;
+    --border: #2a2d3a;
+    --text: #e1e4ea;
+    --text2: #8b8fa3;
+    --red: #e15241;
+    --green: #22c55e;
+    --accent: #4fc3f7;
+    --gold: #f59e0b;
+    --purple: #a78bfa;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif;
+    line-height: 1.8;
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 1.8em;
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 30px;
+  }
+  h2 {
+    font-size: 1.35em;
+    color: var(--accent);
+    margin: 35px 0 18px;
+    padding-left: 12px;
+    border-left: 3px solid var(--accent);
+  }
+  h3 {
+    font-size: 1.12em;
+    color: var(--gold);
+    margin: 22px 0 12px;
+  }
+  h4 {
+    font-size: 1.02em;
+    color: var(--purple);
+    margin: 18px 0 10px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 18px 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 0.92em;
+  }
+  th {
+    background: #252836;
+    color: var(--accent);
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border);
+    white-space: nowrap;
+  }
+  td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:hover td { background: rgba(79,195,247,0.04); }
+  blockquote {
+    background: rgba(79,195,247,0.06);
+    border-left: 3px solid var(--accent);
+    padding: 10px 16px;
+    margin: 12px 0;
+    color: var(--text2);
+    font-size: 0.92em;
+    border-radius: 0 6px 6px 0;
+  }
+  blockquote strong { color: #ccd6e0; }
+  ul, ol {
+    padding-left: 24px;
+    margin: 10px 0;
+  }
+  li { margin: 5px 0; }
+  li strong { color: #f0f6fc; }
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 18px 0;
+  }
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  a:hover { color: #81d4fa; text-decoration: underline; }
+  .subtitle {
+    text-align: center;
+    color: var(--text2);
+    margin-bottom: 8px;
+    font-size: 0.9em;
+  }
+  .meta-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .meta-row span {
+    color: var(--text2);
+    font-size: 0.88em;
+    padding: 4px 12px;
+    background: rgba(79,195,247,0.06);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+  }
+  .warn {
+    background: rgba(245,158,11,0.08);
+    border-left: 4px solid var(--gold);
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    margin: 12px 0;
+    font-size: 0.92em;
+  }
+  .num {
+    font-variant-numeric: tabular-nums;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  .bullet-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  .bullet-list li {
+    padding: 6px 0 6px 20px;
+    position: relative;
+  }
+  .bullet-list li::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 13px;
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  .checkbox-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 7px 0;
+  }
+  .checkbox-item .cb {
+    width: 16px; height: 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--text2);
+    font-size: 0.88em;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--accent); }
+  .green-text { color: var(--green); }
+
+  @media (max-width: 768px) {
+    body { padding: 12px; }
+    h1 { font-size: 1.4em; padding: 20px 0; }
+    h2 { font-size: 1.15em; }
+    table { font-size: 0.82em; }
+    th, td { padding: 7px 8px; }
+    .card { padding: 14px 16px; }
+    .meta-row { gap: 8px; }
+    .meta-row span { font-size: 0.78em; padding: 3px 8px; }
+  }
+</style>
+</head>
+<body>
+
+<a href="./index.html" class="back-link">← 返回首页</a>
+
+<h1>超200亿主动权益基金研究索引</h1>
+
+<div class="meta-row">
+  <span>建立时间：2026-04-01</span>
+  <span>数据来源：东方财富Choice、天天基金、新浪财经、Wind</span>
+</div>
+
+<blockquote>本文件汇总规模超200亿的主动权益基金，重点跟踪年报/季报重仓变化，并记录行业规模演变脉络</blockquote>
+
+<!-- 一、背景数据 -->
+<h2>一、背景数据</h2>
+<ul class="bullet-list">
+  <li><strong>截至2025年末</strong>：公募基金总规模 <strong class="num">374,872亿元</strong>（约37.5万亿），同比+14.86%</li>
+  <li><strong>截至2026年2月</strong>：总规模 <strong class="num">38.61万亿</strong>，连续11个月创历史新高</li>
+  <li><strong>主动权益基金总规模</strong>：约 <strong class="num">3.91万亿元</strong>（占整体约10%）</li>
+</ul>
+
+<!-- 二、规模超200亿名单 -->
+<h2>二、规模超200亿主动权益基金名单</h2>
+<blockquote>数据截至2025年一季度末（2025-03-31），来源：新浪财经 / 东方财富Choice</blockquote>
+
+<h3>管理规模超200亿基金经理（共18位，按规模排序）</h3>
+<table>
+  <thead>
+    <tr><th>基金经理</th><th>代表基金</th><th>代码</th><th>规模（亿）</th><th>所在公司</th><th>方向</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>张坤</strong></td><td>易方达蓝筹精选混合</td><td>005827</td><td>~480（峰值达898亿）</td><td>易方达</td><td>消费 / 价值</td></tr>
+    <tr><td><strong>葛兰</strong></td><td>中欧医疗健康混合A</td><td>003095</td><td>~374</td><td>中欧</td><td>医药</td></tr>
+    <tr><td><strong>谢治宇</strong></td><td>兴全合润混合</td><td>163406</td><td>~237</td><td>兴证全球</td><td>均衡</td></tr>
+    <tr><td><strong>刘彦春</strong></td><td>景顺长城新兴成长</td><td>260108</td><td>~255（峰值达582亿）</td><td>景顺长城</td><td>消费白马</td></tr>
+    <tr><td><strong>朱少醒</strong></td><td>富国天惠混合A</td><td>161005</td><td>~293</td><td>富国</td><td>价值成长</td></tr>
+    <tr><td>其他13位</td><td>—</td><td>—</td><td>200~300亿区间</td><td>—</td><td>—</td></tr>
+  </tbody>
+</table>
+<blockquote>唯一规模超500亿的是<strong>张坤</strong>（易方达蓝筹精选），但也已从峰值898亿缩水至约480亿。</blockquote>
+
+<!-- 三、2025年报重仓数据 -->
+<h2>三、2025年年报重仓数据（全市场公募视角）</h2>
+<blockquote>数据来源：东方财富Choice，2026年4月披露</blockquote>
+
+<h3>公募基金持仓市值 TOP10（2025年末年报）</h3>
+<table>
+  <thead><tr><th>排名</th><th>股票</th><th>持仓基金数</th><th>持股市值（亿元）</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><strong>宁德时代</strong></td><td>2935只</td><td class="num">1906.30</td></tr>
+    <tr><td>2</td><td>中际旭创</td><td>—</td><td class="num">1689.10</td></tr>
+    <tr><td>3</td><td>腾讯控股（港股）</td><td>—</td><td class="num">1338.73</td></tr>
+    <tr><td>4</td><td>新易盛</td><td>—</td><td class="num">1326.09</td></tr>
+    <tr><td>5</td><td>贵州茅台</td><td>—</td><td class="num">1235.48</td></tr>
+    <tr><td>6</td><td>立讯精密</td><td>—</td><td>—</td></tr>
+    <tr><td>7</td><td>紫金矿业</td><td>—</td><td>—</td></tr>
+    <tr><td>8</td><td>寒武纪</td><td>—</td><td>—</td></tr>
+    <tr><td>9</td><td>美的集团</td><td>—</td><td>—</td></tr>
+    <tr><td>10</td><td>阳光电源</td><td>—</td><td>—</td></tr>
+  </tbody>
+</table>
+<div class="warn">🔍 与我的持仓关联：<strong>宁德时代</strong>是全市场第一大公募重仓股（1906亿），<strong>立讯精密</strong>也进入TOP榜单。</div>
+
+<h3>行业配置结构（主动权益基金 2025年Q4）</h3>
+<table>
+  <thead><tr><th>行业</th><th>占比</th></tr></thead>
+  <tbody>
+    <tr><td>电子</td><td class="num">23.76%（第一）</td></tr>
+    <tr><td>医药生物</td><td class="num">11.51%</td></tr>
+    <tr><td>电力设备</td><td class="num">11.14%</td></tr>
+    <tr><td>金融</td><td>~10%</td></tr>
+  </tbody>
+</table>
+
+<!-- 四、重点基金跟踪卡片 -->
+<h2>四、重点基金跟踪卡片</h2>
+<blockquote>以下为分别建档的基金，详见同目录子文件</blockquote>
+<div class="card">
+  <div class="checkbox-item"><span class="cb"></span><span>易方达蓝筹精选混合（张坤）— 2025年报持仓待整理</span></div>
+  <div class="checkbox-item"><span class="cb"></span><span>中欧医疗健康混合（葛兰）— 2025年报持仓待整理</span></div>
+  <div class="checkbox-item"><span class="cb"></span><span>富国天惠混合（朱少醒）— 长跑型价值基金</span></div>
+  <div class="checkbox-item"><span class="cb"></span><span>景顺长城新兴成长（刘彦春）— 消费白马</span></div>
+  <div class="checkbox-item"><span class="cb"></span><span>诺安成长混合A（320007）— <strong>我的持仓</strong>，半导体方向，2025年报待查</span></div>
+</div>
+
+<!-- 五、一季报披露时间表 -->
+<h2>五、一季报披露时间表（2026年）</h2>
+<table>
+  <thead><tr><th>季报类型</th><th>法定截止日</th><th>说明</th></tr></thead>
+  <tbody>
+    <tr><td>2025年年报</td><td>2026年3月31日</td><td><strong>已到期</strong>，大部分基金已披露或正在披露</td></tr>
+    <tr><td>2026年一季报</td><td>2026年4月30日</td><td>4月份陆续出炉，4月15日之后集中披露</td></tr>
+  </tbody>
+</table>
+<blockquote>✅ 操作建议：4月15日~4月30日，重点关注持仓重仓股变化（尤其是北方华创、宁德时代、立讯精密方向的加减仓情况）</blockquote>
+
+<!-- 六、规模演变深度分析 -->
+<h2>六、大型主动权益基金规模演变深度分析（2020—2026）</h2>
+<blockquote>整理自：澎湃新闻（2023-02）、21世纪经济报道（2024-06）、北京商报/天天基金（2024-07）、中国基金报（2026-02）等</blockquote>
+
+<h3>6.1 完整周期回顾</h3>
+
+<h4>第一阶段：造星盛宴（2019—2021年初）</h4>
+<p>2019年A股结构性牛市开启，消费、医药、新能源三条赛道集体爆发。基金公司抓住"赚钱效应"窗口，大力营销明星基金经理，形成"饭圈文化"。</p>
+<p style="margin-top:12px;"><strong>核心数据：</strong></p>
+<ul>
+  <li>2020年发行28只百亿爆款主动权益新基，2021年再发11只，合计39只</li>
+  <li>最大单只新发：南方成长先锋混合 <strong class="num">321.15亿元</strong>（2020年）</li>
+  <li>百亿主动权益基金峰值（2021年二季度末）：<strong>74只</strong>，合计规模 <strong class="num">13,572亿元</strong></li>
+  <li>代表人物：张坤（易方达蓝筹，峰值<strong>898亿</strong>）、刘彦春（景顺长城新兴成长，峰值<strong>582亿</strong>）、葛兰（中欧医疗健康）</li>
+</ul>
+<blockquote>彼时，"坤坤勇敢飞，ikun永相随"刷屏社交网络，买基金如追星，百亿爆款成为行业常态。</blockquote>
+<hr>
+
+<h4>第二阶段：赛道坍塌（2021年下半年—2022年）</h4>
+<p>2021年2月市场见顶，"茅指数"、"宁组合"相继崩塌。2022年俄乌冲突叠加国内疫情，权益市场全年大跌，公募主动权益基金集体重创。</p>
+<p style="margin-top:12px;"><strong>核心数据：</strong></p>
+<ul>
+  <li>36只百亿爆款基金2022年平均跌幅 <strong class="green-text">-22.34%</strong></li>
+  <li>高点买入者需要上涨 <strong>约70%</strong> 才能回本</li>
+  <li>基金公司内部员工也大量赎回持有的明星产品</li>
+</ul>
+<p style="margin-top:12px;"><strong>三大机制失效：</strong></p>
+<ol>
+  <li><strong>规模—策略错配</strong>：百亿级别的资金只能重仓大市值股票，调仓空间极小，无法获取小市值超额收益</li>
+  <li><strong>明星效应反噬</strong>：成名过早→规模过大→策略容量不足→业绩下滑→赎回潮→净值进一步下跌，形成负反馈闭环</li>
+  <li><strong>委托代理矛盾</strong>：基金公司依靠管理费驱动，倾向于扩张规模而非控制规模；基民长期回报与公司短期收益严重错位</li>
+</ol>
+<hr>
+
+<h4>第三阶段：明星陨落（2023—2024年）</h4>
+<p>A股弱势震荡延续，主动权益基金连续两年亏损。百亿基金从辉煌跌入谷底：</p>
+<p style="margin-top:12px;"><strong>核心数据（截至2024年一季度末）：</strong></p>
+<ul>
+  <li>百亿主动权益基金数量：从74只→<strong>19只</strong>，减少74%</li>
+  <li>总规模：从13,572亿→<strong>6,243亿</strong>，缩水 <strong>54%</strong></li>
+  <li>74只原百亿基金近3年平均收益率：<strong class="green-text">-43.06%</strong>，跑输偏股混合型基金指数8.59个百分点</li>
+  <li>百亿新发基金：<strong>自2021年9月至今，零只</strong></li>
+</ul>
+<p style="margin-top:12px;">典型案例：</p>
+<ul>
+  <li><strong>张坤（易方达蓝筹）</strong>：规模 898亿 → 411亿（-54%）</li>
+  <li><strong>刘彦春（景顺长城新兴成长）</strong>：规模 582亿 → 272亿（-53%）</li>
+  <li><strong>葛兰（中欧医疗健康）</strong>：近3年收益率 <strong class="green-text">-63.52%</strong>（74只中最差）</li>
+</ul>
+<blockquote>百亿明星基金在这三年经历了数量、规模、业绩的<strong>三重折戟</strong>。中小公募（信达澳亚、中庚等）凭借灵活策略跑出，昔日顶流沦为"业绩腰部"。</blockquote>
+<hr>
+
+<h4>第四阶段：分化重启（2025—2026年）</h4>
+<p>2024年9月政策转向，A股迎来一轮阶段性反弹，AI科技行情在2025年接力演绎。主动权益规模整体回升，但结构出现本质性变化。</p>
+<p style="margin-top:12px;"><strong>核心数据（2025年末）：</strong></p>
+<ul>
+  <li>百亿主动权益基金经理：从77位增至 <strong>93位</strong>（2025年末），2025年三季度末更高达 <strong>109位</strong></li>
+  <li>超200亿主动权益基金经理：<strong>18位</strong>（2025Q1）→ <strong>29位</strong>（2025年末）</li>
+  <li>超500亿：<strong>仅张坤一人</strong>（约484亿，但较2024年末已缩水超100亿）</li>
+</ul>
+<p style="margin-top:12px;"><strong>新旧交替的核心变化：</strong></p>
+<table>
+  <thead><tr><th>维度</th><th>老一代顶流</th><th>新一代基金经理</th></tr></thead>
+  <tbody>
+    <tr><td>代表人物</td><td>张坤、刘彦春、葛兰</td><td>任桀（永赢科技）、高楠等</td></tr>
+    <tr><td>投资方向</td><td>消费 / 医药 / 新能源</td><td>AI / 科技 / 机器人</td></tr>
+    <tr><td>崛起方式</td><td>赛道长牛 + 规模扩张</td><td>2024-2025行情中快速吸金</td></tr>
+    <tr><td>规模稳定性</td><td>高位大幅缩水</td><td>快速吸金 + 频繁调仓（换手率10倍以上）</td></tr>
+    <tr><td>风险</td><td>规模过大 + 策略容量不足</td><td>换手过高 + 规模快速膨胀</td></tr>
+  </tbody>
+</table>
+<hr>
+
+<h3>6.2 参考文章</h3>
+<table>
+  <thead><tr><th>标题</th><th>来源</th><th>时间</th><th>核心观点</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="https://www.thepaper.cn/newsDetail_forward_21814891" target="_blank">爆款之殇！36只百亿基金大跌超20%</a></td>
+      <td>澎湃新闻·券商中国</td>
+      <td>2023-02</td>
+      <td>2019-2022完整周期复盘；规模-策略错配三大机制失效</td>
+    </tr>
+    <tr>
+      <td><a href="https://finance.sina.com.cn/roll/2024-06-26/doc-incaaphy9876894.shtml" target="_blank">百亿明星基金折戟：过去三年平均跌幅超40%</a></td>
+      <td>21世纪经济报道</td>
+      <td>2024-06</td>
+      <td>百亿基金从74只→19只；总规模缩水54%；张坤/刘彦春/葛兰案例数据</td>
+    </tr>
+    <tr>
+      <td><a href="https://fund.eastmoney.com/a/202407243138596685.html" target="_blank">消失的公募百亿爆款</a></td>
+      <td>北京商报/天天基金</td>
+      <td>2024-07</td>
+      <td>自2021年9月至今零只百亿新发；新发基金主体转向固收类（占比81%）</td>
+    </tr>
+    <tr>
+      <td><a href="https://finance.sina.com.cn/money/fund/jjyj/2026-02-01/doc-inhkiphx4824866.shtml" target="_blank">百亿基金经理大洗牌：顶流缩水新势力崛起</a></td>
+      <td>中国基金报</td>
+      <td>2026-02</td>
+      <td>2025年百亿俱乐部大换血；AI科技派新锐崛起；行业迈入精细化发展</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.chnfund.com/article/AR22627e25-1460-899b-7d9c-3a1f4d3809b9" target="_blank">29位200亿元级基金经理：11人实现1/3/5年均正超额</a></td>
+      <td>中国基金报</td>
+      <td>2026-02</td>
+      <td>200亿+经理阵容扩至29位；部分基金经理穿越牛熊的能力验证</td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+
+<h3>6.3 核心结论</h3>
+<ol>
+  <li><strong>2020—2021年是不可复制的异常高峰</strong>：39只百亿新发爆款集中在两年内完成，本质是牛市末期的动量营销，绝大多数买入者被套至今</li>
+  <li><strong>规模是主动权益基金最大的敌人</strong>：超过200亿的规模会显著压制超额收益获取能力，超过500亿后几乎退化为市场β工具</li>
+  <li><strong>行业资金已系统性流向指数ETF</strong>：2024年以来新发百亿基金全部是债券/指数型，主动权益新发已彻底边缘化；ETF规模持续扩张正在"虹吸"主动管理的费率空间</li>
+  <li><strong>新一轮洗牌仍在进行中</strong>：2025年科技行情催生的新百亿经理，是否会重蹈2021年覆辙？其快速吸金+频繁调仓的模式，具有更高的短期不稳定性</li>
+  <li><strong>对我的持仓的启示</strong>：诺安成长混合A（320007）是半导体方向，规模中等、策略集中，在半导体周期向上时弹性显著，但集中度风险与行业周期风险同步存在</li>
+</ol>
+
+<!-- 七、更新记录 -->
+<h2>七、更新记录</h2>
+<table>
+  <thead><tr><th>日期</th><th>内容</th></tr></thead>
+  <tbody>
+    <tr><td>2026-04-01</td><td>初始建立，录入市场总体数据和重仓TOP10</td></tr>
+    <tr><td>2026-04-01</td><td>标准从超500亿改为超200亿；追加「规模演变深度分析」章节（第六章），覆盖2020—2026年完整周期</td></tr>
+  </tbody>
+</table>
+</body>
+</html>
