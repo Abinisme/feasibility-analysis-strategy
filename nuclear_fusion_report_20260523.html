@@ -48,6 +48,33 @@
   .subtitle { text-align: center; color: var(--text2); margin-bottom: 10px; font-size: 0.9em; }
   .back-link { display: inline-block; margin-bottom: 20px; color: var(--text2); font-size: 0.88em; text-decoration: none; transition: color 0.2s; }
   .back-link:hover { color: var(--accent); }
+  /* 优化附录样式 */
+  .appendix { background: linear-gradient(135deg, rgba(167,139,250,0.06), rgba(79,195,247,0.06)); border: 1px solid rgba(167,139,250,0.25); border-radius: 12px; padding: 24px 28px; margin: 30px 0; }
+  .appendix h2 { color: var(--purple); border-left-color: var(--purple); }
+  .appendix h3 { color: var(--accent); }
+  .timeline { position: relative; padding: 0 0 0 28px; margin: 16px 0; }
+  .timeline::before { content: ''; position: absolute; left: 8px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(to bottom, var(--accent), var(--purple)); }
+  .tl-item { position: relative; margin-bottom: 18px; padding-left: 14px; }
+  .tl-item::before { content: ''; position: absolute; left: -24px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); }
+  .tl-item.past::before { background: var(--green); }
+  .tl-item.soon::before { background: var(--gold); box-shadow: 0 0 6px rgba(245,158,11,0.5); }
+  .tl-item .tl-date { font-size: 0.82em; color: var(--purple); font-weight: 600; }
+  .tl-item .tl-content { font-size: 0.92em; margin-top: 2px; }
+  .checklist { list-style: none; padding: 0; margin: 12px 0; }
+  .checklist li { padding: 10px 14px; margin: 6px 0; background: rgba(79,195,247,0.04); border-radius: 8px; border: 1px solid transparent; transition: all 0.2s; }
+  .checklist li:hover { border-color: rgba(79,195,247,0.2); }
+  .checklist li .chk-box { display: inline-block; width: 18px; height: 18px; border: 1.5px solid var(--border); border-radius: 4px; margin-right: 10px; vertical-align: middle; text-align: center; line-height: 18px; font-size: 12px; color: var(--green); }
+  .rebalance-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin: 14px 0; }
+  .rebalance-card { background: rgba(79,195,247,0.04); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+  .rebalance-card h4 { font-size: 0.95em; color: var(--gold); margin: 0 0 10px; }
+  .rebalance-card .rule { font-size: 0.88em; margin: 4px 0; color: var(--text); }
+  .update-log { margin: 14px 0; }
+  .update-log th { background: #252836; color: var(--purple); }
+  .update-log td { font-size: 0.88em; }
+  .status-verified { color: var(--green); }
+  .status-pending { color: var(--gold); }
+  .status-failed { color: var(--red); }
+  @media (max-width: 768px) { .appendix { padding: 16px 18px; } .timeline { padding-left: 20px; } .tl-item::before { left: -18px; width: 8px; height: 8px; } }
 </style>
 </head>
 <body>
@@ -665,6 +692,151 @@
 <strong><a href="https://fund.eastmoney.com/512580.html" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px dotted var(--accent);">512580</a>：</strong>直接核聚变占比仅2.5%，但电池储能约21.7%仓位扎实。核聚变概念需要额外建仓，不能单靠ETF。<br><br>
 <strong>仓位建议：</strong>3-5万作为卫星仓位，占总投资组合约10-15%。<br><br>
 <span style="color:var(--text2);font-size:0.88em;">免责声明：以上为基于公开数据和真实研报的分析参考，不构成投资建议。股市有风险，投资需谨慎。</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- 报告优化附录 -->
+<!-- ============================================================ -->
+<div class="appendix">
+<h2>📎 报告优化附录</h2>
+
+<!-- 模块1：投资决策检查清单 -->
+<h3>📋 一、投资决策检查清单</h3>
+<p style="color:var(--text2);font-size:0.88em;margin-bottom:14px;">建仓/加仓核聚变赛道前，逐条勾选确认。全部通过后再执行。</p>
+<ul class="checklist">
+  <li>
+    <span class="chk-box">☐</span>
+    <strong>【基本面确认】</strong>标的PE是否在合理区间？（中国核电 ≤25x / 久立特材 ≤20x / 联创光电 ≤45x）若超过，只减不增。
+  </li>
+  <li>
+    <span class="chk-box">☐</span>
+    <strong>【资金面确认】</strong>近5日主力资金是否净流入？北向资金持仓比例是否稳定或增加？若有单日超3%流出，暂缓建仓。
+  </li>
+  <li>
+    <span class="chk-box">☐</span>
+    <strong>【仓位天花板】</strong>核聚变总仓位是否控制在股票总资产10-15%以内？若已触顶，仅做调仓不新增。
+  </li>
+  <li>
+    <span class="chk-box">☐</span>
+    <strong>【催化剂确认】</strong>未来1-2个月是否有明确催化剂？（政策发布/IPO过会/设备中标/年报季报窗口）若无，等待催化剂再入场。
+  </li>
+  <li>
+    <span class="chk-box">☐</span>
+    <strong>【止损设置】</strong>是否已设好止损线？（方案A -15% / 方案B -20% / 方案C -10%）严格执行，不扛单。
+  </li>
+  <li>
+    <span class="chk-box">☐</span>
+    <strong>【相关性检查】</strong>核聚变标的与你已有重仓（宁德时代/北方华创/立讯精密）是否同向共振？若总计科技+新能源仓位超过50%，需降低核聚变配比。
+  </li>
+</ul>
+
+<!-- 模块2：关键催化剂时间线 -->
+<h3>⏱️ 二、关键催化剂时间线</h3>
+<div class="timeline">
+  <div class="tl-item past">
+    <div class="tl-date">2026-03 — 两会政策信号 ✅ 已发生</div>
+    <div class="tl-content">政府工作报告首次写入"未来能源"；"十五五"规划将核聚变列入"未来产业"核心清单。核聚变概念板块启动。</div>
+  </div>
+  <div class="tl-item past">
+    <div class="tl-date">2026-04 — 季报窗口 ✅ 已发生</div>
+    <div class="tl-content">2025年报 + 2026Q1季报集中披露。安泰科技公募暴增78%、久立特材社保+养老+北向三线布局等信号确认。</div>
+  </div>
+  <div class="tl-item soon">
+    <div class="tl-date">2026-05~06 — 上海超导科创板IPO上会 ⏳ 待发生</div>
+    <div class="tl-content"><strong>板块最强催化剂。</strong>预计5-6月上会，过会后最快6-7月挂牌。精达股份（第一大股东）将直接受益于IPO映射行情。建议上会前1-2周增加精达股份仓位。</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-date">2026-06~07 — 设备采购招标密集期 ⏳ 待发生</div>
+    <div class="tl-content">BEST/CFEDR装置进入密集采购阶段，中标公告持续释放。关注合锻智能、联创光电等设备标的的中标动态。</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-date">2026-07~08 — 2026年中期报告窗口 ⏳ 待发生</div>
+    <div class="tl-content">公募/社保持仓变动更新，验证机构Q2是否持续加仓核聚变标的。重点观察安泰科技公募持仓是否延续暴增趋势。</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-date">2026-10 — 三季报窗口 ⏳ 待发生</div>
+    <div class="tl-content">验证2026年全年设备采购落地情况。若中标数据显著增长，将巩固行业基本面逻辑。</div>
+  </div>
+</div>
+
+<!-- 模块3：仓位再平衡提醒 -->
+<h3>⚠️ 三、仓位再平衡触发规则</h3>
+<div class="rebalance-grid">
+  <div class="rebalance-card">
+    <h4>方案A — 稳健型（5万）</h4>
+    <p class="rule">🔴 <strong>止盈规则：</strong>整体浮盈达25%时，卖出50%联创光电+25%安泰科技，锁定弹性品种利润。核心仓位（中国核电+久立特材+ETF）不动。</p>
+    <p class="rule">🔴 <strong>止损规则：</strong>整体回撤达-15%时，清仓安泰科技，联创光电减半。核心仓位维持。</p>
+    <p class="rule">🟡 <strong>上海超导IPO催化后：</strong>若精达股份因IPO映射大涨，联创光电仓位可向精达股份倾斜（但精达总仓位不超过方案的20%）。</p>
+  </div>
+  <div class="rebalance-card">
+    <h4>方案B — 进取型（3万）</h4>
+    <p class="rule">🟡 <strong>止盈规则：</strong>整体浮盈达40%时，联创光电减仓50%。精达股份在上海超导IPO挂牌后一周内，视涨幅决定是否止盈（涨幅>50%则全部止盈）。</p>
+    <p class="rule">🔴 <strong>止损规则：</strong>整体回撤达-20%时，联创光电全部清仓，精达股份减仓50%。久立特材和安泰科技视基本面情况决定。</p>
+    <p class="rule">🟡 <strong>上海超导IPO挂牌当日：</strong>若精达股份开盘涨幅>10%，先卖出30-50%仓位；若单日涨幅>30%且未涨停，全部清仓。</p>
+  </div>
+  <div class="rebalance-card">
+    <h4>方案C — 保守型（3万）</h4>
+    <p class="rule">🟢 <strong>止盈规则：</strong>整体浮盈达15%时，ETF部分减仓20%。个股部分（中国核电+久立特材）在PE达到历史70分位以上时再考虑减持。</p>
+    <p class="rule">🔴 <strong>止损规则：</strong>整体回撤达-10%时，检查个股基本面是否恶化。若业绩/估值双杀，减仓50%观望。</p>
+    <p class="rule">🟢 <strong>定投纪律：</strong>每月每只各投入1000元，不因行情波动中断。若单月涨幅>10%，跳过该月定投等待回调。</p>
+  </div>
+</div>
+
+<!-- 模块4：后续更新记录模板 -->
+<h3>📝 四、后续更新记录</h3>
+<p style="color:var(--text2);font-size:0.88em;margin-bottom:14px;">记录每次重新审视报告后的事件演变与判断回验。数据来源：Tushare（个股行情/财务）、NeoData（ETF净值/基金数据）。</p>
+<table class="update-log">
+  <thead>
+    <tr><th>更新日期</th><th>事件/触发</th><th>判断回验</th><th>操作记录</th><th>数据来源</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2026-05-22</td>
+      <td>报告初始发布</td>
+      <td><span class="status-pending">初始判断</span></td>
+      <td>—</td>
+      <td>券商研报 / NeoData</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="margin-top:16px;padding:12px 16px;background:rgba(167,139,250,0.06);border-radius:8px;font-size:0.85em;color:var(--text2);">
+  <strong>📊 数据源配置说明：</strong><br>
+  · <strong>个股行情/财务/资金流</strong>：Tushare Pro API（Token: 09b3...9543），按需分次请求，支持日线/分钟线/财报/资金流等接口<br>
+  · <strong>ETF净值/持仓</strong>：NeoData 或已配置基金数据源（东方财富基金频道）<br>
+  · <strong>公募持仓变动</strong>：天天基金/东方财富Choice 季报披露<br>
+  · <strong>研报/行业观点</strong>：券商研报（东方财富Choice / Wind）<br>
+  · <strong>更新频率</strong>：每周一次行情刷新 + 每月一次持仓变动检查 + 催化剂事件触发即时更新<br>
+  <span style="display:block;margin-top:6px;">⚠️ 填写更新记录时，判断回验列使用标签：<span class="status-verified">✅ 验证通过</span> / <span class="status-failed">❌ 判断失误</span> / <span class="status-pending">⏳ 待验证</span></span>
+</div>
 </div>
 
 </body>
