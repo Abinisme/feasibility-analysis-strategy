@@ -5,43 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>半导体扩产阳谋：产业链重估与操作框架 | 虎嗅深度分析</title>
 <style>
-  :root{--bg:#0f1117;--card:#1a1d28;--border:#2a2d3a;--text:#e1e4ea;--t2:#8b8fa3;--red:#e15241;--green:#22c55e;--accent:#4fc3f7;--gold:#f59e0b;--purple:#a78bfa;}
+  :root{--bg:#0f1117;--c:#1a1d28;--b:#2a2d3a;--t:#e1e4ea;--t2:#8b8fa3;--r:#e15241;--g:#22c55e;--a:#4fc3f7;--o:#f59e0b;--p:#a78bfa;}
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{background:var(--bg);color:var(--text);font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;line-height:1.85;padding:20px;max-width:1100px;margin:0 auto;}
-  h1{font-size:1.7em;text-align:center;padding:28px 0 24px;border-bottom:2px solid var(--accent);margin-bottom:20px;}
-  h2{font-size:1.3em;color:var(--accent);margin:35px 0 16px;padding-left:12px;border-left:3px solid var(--accent);}
-  h3{font-size:1.1em;color:var(--gold);margin:20px 0 12px;}
-  h4{font-size:1em;color:var(--purple);margin:14px 0 8px;}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin:16px 0;}
+  body{background:var(--bg);color:var(--t);font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;line-height:1.85;padding:20px;max-width:1100px;margin:0 auto;}
+  h1{font-size:1.7em;text-align:center;padding:28px 0 24px;border-bottom:2px solid var(--a);margin-bottom:20px;}
+  h2{font-size:1.3em;color:var(--a);margin:35px 0 16px;padding-left:12px;border-left:3px solid var(--a);}
+  h3{font-size:1.1em;color:var(--o);margin:20px 0 12px;}
+  h4{font-size:1em;color:var(--p);margin:14px 0 8px;}
+  .card{background:var(--c);border:1px solid var(--b);border-radius:10px;padding:20px 24px;margin:16px 0;}
   table{width:100%;border-collapse:collapse;margin:12px 0;font-size:0.9em;}
-  th{background:#252836;color:var(--accent);padding:9px 12px;text-align:left;font-weight:600;border-bottom:2px solid var(--border);}
-  td{padding:8px 12px;border-bottom:1px solid var(--border);}
+  th{background:#252836;color:var(--a);padding:9px 12px;text-align:left;font-weight:600;border-bottom:2px solid var(--b);}
+  td{padding:8px 12px;border-bottom:1px solid var(--b);}
   tr:hover td{background:rgba(79,195,247,0.04);}
-  blockquote{background:rgba(79,195,247,0.06);border-left:3px solid var(--accent);padding:10px 16px;margin:12px 0;color:var(--t2);font-size:0.93em;border-radius:0 6px 6px 0;line-height:1.75;}
+  blockquote{background:rgba(79,195,247,0.06);border-left:3px solid var(--a);padding:10px 16px;margin:12px 0;color:var(--t2);font-size:0.93em;border-radius:0 6px 6px 0;line-height:1.75;}
   blockquote strong{color:#ccd6e0;}
-  .q-orange{border-left-color:var(--gold);background:rgba(245,158,11,0.06);}
-  .q-purple{border-left-color:var(--purple);background:rgba(167,139,250,0.06);}
-  ul,ol{padding-left:24px;margin:8px 0;}
-  li{margin:6px 0;}li strong{color:#f0f6fc;}
-  hr{border:none;border-top:1px solid var(--border);margin:18px 0;}
-  a{color:var(--accent);text-decoration:none;}.stk{color:inherit;text-decoration:none;border-bottom:1px dotted var(--accent);}
-  .stk:hover{color:var(--accent);}
-  .back{display:inline-block;margin-bottom:20px;color:var(--t2);font-size:0.88em;text-decoration:none;}.back:hover{color:var(--accent);}
+  .qo{border-left-color:var(--o);background:rgba(245,158,11,0.06);}
+  .qp{border-left-color:var(--p);background:rgba(167,139,250,0.06);}
+  ul,ol{padding-left:24px;margin:8px 0;}li{margin:6px 0;}li strong{color:#f0f6fc;}
+  hr{border:none;border-top:1px solid var(--b);margin:18px 0;}
+  a{color:var(--a);text-decoration:none;}.sk{color:inherit;text-decoration:none;border-bottom:1px dotted var(--a);}.sk:hover{color:var(--a);}
+  .back{display:inline-block;margin-bottom:20px;color:var(--t2);font-size:0.88em;text-decoration:none;}.back:hover{color:var(--a);}
   .meta{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:22px;}
-  .meta span{color:var(--t2);font-size:0.83em;padding:3px 10px;background:rgba(79,195,247,0.05);border-radius:12px;border:1px solid var(--border);}
+  .meta span{color:var(--t2);font-size:0.83em;padding:3px 10px;background:rgba(79,195,247,0.05);border-radius:12px;border:1px solid var(--b);}
   .num{font-variant-numeric:tabular-nums;font-family:'SF Mono','Consolas',monospace;}
-  .up{color:var(--red);font-weight:600;}.down{color:var(--green);font-weight:600;}
-  .warn{background:rgba(245,158,11,0.08);border-left:4px solid var(--gold);padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0;font-size:0.91em;}
-  .danger{background:rgba(226,82,65,0.08);border-left:4px solid var(--red);padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0;font-size:0.91em;}
-  .verdict{background:linear-gradient(135deg,rgba(167,139,250,0.08),rgba(79,195,247,0.08));border-left:4px solid var(--purple);padding:18px 22px;border-radius:0 10px 10px 0;margin:16px 0;}
-  .flex{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0;}
-  .fc{flex:1;min-width:250px;background:rgba(79,195,247,0.03);border:1px solid var(--border);border-radius:10px;padding:16px;}
-  .fc h4{margin-top:0;color:var(--gold);}
-  .kline{background:#0c1017;border:1px solid var(--border);border-radius:8px;padding:16px 20px;margin:14px 0;font-family:'SF Mono','Consolas',monospace;font-size:0.84em;overflow-x:auto;line-height:2;}
-  .kline .l{color:var(--t2);}.kline .r{color:var(--red);}.kline .g{color:var(--green);}.kline .s{color:var(--gold);}.kline .p{color:var(--purple);}.kline .b{color:var(--accent);}
-  .tag{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.8em;margin:2px 4px;}.t-red{background:rgba(226,82,65,0.15);color:var(--red);}
-  .t-gold{background:rgba(245,158,11,0.15);color:var(--gold);}.t-green{background:rgba(34,197,94,0.15);color:var(--green);}
-  .footer{color:var(--t2);font-size:0.84em;text-align:center;margin-top:28px;padding-top:18px;border-top:1px solid var(--border);}
+  .up{color:var(--r);font-weight:600;}.dn{color:var(--g);font-weight:600;}
+  .warn{background:rgba(245,158,11,0.08);border-left:4px solid var(--o);padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0;font-size:0.91em;}
+  .danger{background:rgba(226,82,65,0.08);border-left:4px solid var(--r);padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0;font-size:0.91em;}
+  .verdict{background:linear-gradient(135deg,rgba(167,139,250,0.08),rgba(79,195,247,0.08));border-left:4px solid var(--p);padding:18px 22px;border-radius:0 10px 10px 0;margin:16px 0;}
+  .flx{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0;}
+  .fc{flex:1;min-width:250px;background:rgba(79,195,247,0.03);border:1px solid var(--b);border-radius:10px;padding:16px;}.fc h4{margin-top:0;color:var(--o);}
+  .kv{background:#0c1017;border:1px solid var(--b);border-radius:8px;padding:16px 20px;margin:14px 0;font-family:'SF Mono','Consolas',monospace;font-size:0.84em;overflow-x:auto;line-height:2;}
+  .kv .l{color:var(--t2);}.kv .R{color:var(--r);}.kv .G{color:var(--g);}.kv .S{color:var(--o);}.kv .P{color:var(--p);}.kv .B{color:var(--a);}
+  .tag{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.8em;margin:2px 4px;}
+  .tr{background:rgba(226,82,65,0.15);color:var(--r);}.tg{background:rgba(245,158,11,0.15);color:var(--o);}.tgr{background:rgba(34,197,94,0.15);color:var(--g);}
+  .footer{color:var(--t2);font-size:0.84em;text-align:center;margin-top:28px;padding-top:18px;border-top:1px solid var(--b);}
   @media(max-width:768px){body{padding:12px}h1{font-size:1.3em}h2{font-size:1.1em}table{font-size:0.78em}th,td{padding:6px 7px}.card{padding:14px}.fc{min-width:100%}}
 </style>
 </head>
@@ -51,19 +48,19 @@
 
 <h1>🔬 半导体扩产阳谋：产业链重估与操作框架</h1>
 <div class="meta">
-  <span>数据截止：2026-05-27 收盘</span>
+  <span>数据截止：2026-05-28（均线基于5/27收盘）</span>
   <span>虎嗅APP · 妙投研究</span>
-  <span>行情：Tushare Pro</span>
+  <span>Tushare Pro + NeoData</span>
 </div>
 
-<blockquote class="q-orange">
+<blockquote class="qo">
   <strong>文章来源：</strong><br>
-  ① <a href="https://mp.weixin.qq.com/s/0RzSIQt_KBPZRQvFDu67vQ" target="_blank">《半导体扩产潮来了》</a> — 张博（虎嗅APP）<br>
-  ② <a href="https://mp.weixin.qq.com/s/Ek_Pumo7hb7P_j2afjn2mg" target="_blank">《中国半导体的阳谋》</a> — 董必政（虎嗅APP）<br>
+  ① <a href="https://mp.weixin.qq.com/s/0RzSIQt_KBPZRQvFDu67vQ" target="_blank">《半导体扩产潮来了》</a> — 张博 &nbsp;|&nbsp;
+  ② <a href="https://mp.weixin.qq.com/s/Ek_Pumo7hb7P_j2afjn2mg" target="_blank">《中国半导体的阳谋》</a> — 董必政<br>
   中国半导体最重要的故事，已经不只是某一台设备有没有突破，而是一批晶圆厂正在<strong>同步扩建、融资、导入设备、重构供应链</strong>。真正值得问的问题已经不是"半导体行不行"，而是这一轮扩产，<strong>投资机会到底会沿着什么链条释放？</strong>
 </blockquote>
 
-<!-- ===== 一：扩产全景 ===== -->
+<!-- ===== 一 ===== -->
 <h2>一、扩产全景：从"追单点"到"建体系"</h2>
 
 <div class="card">
@@ -73,8 +70,8 @@
     <tbody>
       <tr><td><strong>长鑫科技</strong> (DRAM)</td><td>营收<span class="up">508亿(+719%)</span>，净利<span class="up">247.6亿</span></td><td>IPO募295亿；H1预计净利500-570亿</td><td>目标产能60-70万片/月，未来需投<span class="num">3000亿+</span></td></tr>
       <tr><td><strong>长江存储</strong> (NAND)</td><td>年产177万片→2026E近200万片</td><td>Xtacking4.0 294层量产，良率>90%</td><td>Q2启动设备招标</td></tr>
-      <tr><td><a href="https://quote.eastmoney.com/sh688981.html" target="_blank" class="stk"><strong>中芯国际 688981</strong></a></td><td>月产108万片(8")，利用率93.1%</td><td>折旧占比升至44%</td><td>全年约80亿美元</td></tr>
-      <tr><td><a href="https://quote.eastmoney.com/sh688347.html" target="_blank" class="stk"><strong>华虹半导体 688347</strong></a></td><td>利用率99.7%，12"收入占62.7%</td><td>Fab9A Q3满产，Fab9B 3月开工</td><td>Fab9B 60亿美元</td></tr>
+      <tr><td><a href="https://quote.eastmoney.com/sh688981.html" target="_blank" class="sk"><strong>中芯国际 688981</strong></a></td><td>月产108万片(8")，利用率93.1%</td><td>折旧占比升至44%</td><td>全年约80亿美元</td></tr>
+      <tr><td><a href="https://quote.eastmoney.com/sh688347.html" target="_blank" class="sk"><strong>华虹半导体 688347</strong></a></td><td>利用率99.7%，12"收入占62.7%</td><td>Fab9A Q3满产，Fab9B 3月开工</td><td>Fab9B 60亿美元</td></tr>
     </tbody>
   </table>
 </div>
@@ -83,24 +80,23 @@
   因为晶圆厂不是一个单一项目，而是整个半导体产业链最强的<strong>"投资放大器"</strong>。一座晶圆厂的建设，会同时拉动洁净室工程、刻蚀和沉积设备、检测设备、硅片、光刻胶、电子特气、CMP材料、靶材、零部件——每往前走一步，上游就会有一批公司进入兑现周期。
 </blockquote>
 
-<!-- ===== 二：四层机会 ===== -->
+<!-- ===== 二 ===== -->
 <h2>二、机会分层：谁先兑现，谁弹性最大？</h2>
 
-<blockquote class="q-orange">
+<blockquote class="qo">
   机会从来不是平均分配的，而是<strong>分层兑现、节奏不同、风险不同</strong>。如果看不清这条兑现链，就很容易在最热闹的时候买到最差的标的。
 </blockquote>
 
-<div class="kline"><span class="l">──────── 扩产红利释放顺序 ────────</span>
-<span class="l">第一层</span> <span class="b">🏗️ 洁净室/工程</span> <span class="l">→</span> <span class="t-green">最早兑现</span> <span class="l">项目落地快、收入确认早；天花板有限</span>
-<span class="l">第二层</span> <span class="b">⚙️ 半导体设备</span> <span class="l">→</span> <span class="t-red">弹性最大</span> <span class="l">Capex占比最高，订单释放最集中</span>
-<span class="l">第三层</span> <span class="b">🧪 半导体材料</span> <span class="l">→</span> <span class="t-gold">穿越周期</span> <span class="l">复购属性强+客户黏性高</span>
-<span class="l">第四层</span> <span class="b">🔧 EDA/零部件</span> <span class="l">→</span> <span class="p">中长期布局</span> <span class="l">依赖生态成熟</span>
-</div>
+<div class="kv"><span class="l">──────── 扩产红利释放顺序 ────────</span>
+<span class="l">第一层</span> <span class="B">🏗️ 洁净室/工程</span> <span class="l">→</span> <span class="tgr">最早兑现</span> <span class="l">项目落地快、收入确认早；天花板有限</span>
+<span class="l">第二层</span> <span class="B">⚙️ 半导体设备</span> <span class="l">→</span> <span class="tr">弹性最大</span> <span class="l">Capex占比最高，订单释放最集中</span>
+<span class="l">第三层</span> <span class="B">🧪 半导体材料</span> <span class="l">→</span> <span class="tg">穿越周期</span> <span class="l">复购属性强+客户黏性高</span>
+<span class="l">第四层</span> <span class="B">🔧 EDA/零部件</span> <span class="l">→</span> <span class="P">中长期布局</span> <span class="l">依赖生态成熟</span></div>
 
 <div class="card">
   <h3>① 洁净室/工程 — 最早兑现</h3>
   <blockquote>最先受益的，通常不是技术壁垒最高的公司，而是最先进入项目的公司。土建、洁净室、机电工程、高纯介质系统——项目一旦落地，订单确认快。</blockquote>
-  <p>代表：<a href="https://quote.eastmoney.com/sh601133.html" target="_blank" class="stk"><strong>柏诚股份 601133</strong></a>（Q1营收+72%）、亚翔集成。</p>
+  <p>代表：<a href="https://quote.eastmoney.com/sh601133.html" target="_blank" class="sk"><strong>柏诚股份 601133</strong></a>（Q1营收+72%）、亚翔集成。</p>
 </div>
 
 <div class="card">
@@ -109,14 +105,12 @@
   <table>
     <thead><tr><th>公司</th><th>Q1营收</th><th>Q1净利</th><th>核心看点</th><th>5/27收盘</th></tr></thead>
     <tbody>
-      <tr><td><a href="https://quote.eastmoney.com/sz002371.html" target="_blank" class="stk"><strong>北方华创 002371</strong></a></td><td>103亿(+26%)</td><td>16亿</td><td>平台型龙头，刻蚀+薄膜均超100亿</td><td class="num down">655(-2.3%)</td></tr>
-      <tr><td><a href="https://quote.eastmoney.com/sh688012.html" target="_blank" class="stk"><strong>中微公司 688012</strong></a></td><td>29亿(+34%)</td><td class="up">9.3亿(+197%)</td><td>刻蚀设备净利增速最强</td><td class="num down">455(-1.8%)</td></tr>
-      <tr><td><a href="https://quote.eastmoney.com/sh688072.html" target="_blank" class="stk"><strong>拓荆科技 688072</strong></a></td><td class="up">11亿(+57%)</td><td>扭亏为盈</td><td>薄膜沉积突破，验证→量产</td><td class="num down"><strong>667(-11.1%)</strong></td></tr>
+      <tr><td><a href="https://quote.eastmoney.com/sz002371.html" target="_blank" class="sk"><strong>北方华创 002371</strong></a></td><td>103亿(+26%)</td><td>16亿</td><td>平台型龙头，刻蚀+薄膜均超100亿</td><td class="num dn">655(-2.3%)</td></tr>
+      <tr><td><a href="https://quote.eastmoney.com/sh688012.html" target="_blank" class="sk"><strong>中微公司 688012</strong></a></td><td>29亿(+34%)</td><td class="up">9.3亿(+197%)</td><td>刻蚀设备净利增速最强</td><td class="num dn">455(-1.8%)</td></tr>
+      <tr><td><a href="https://quote.eastmoney.com/sh688072.html" target="_blank" class="sk"><strong>拓荆科技 688072</strong></a></td><td class="up">11亿(+57%)</td><td>扭亏为盈</td><td>薄膜沉积突破，验证→量产</td><td class="num dn"><strong>667(-11.1%)</strong></td></tr>
     </tbody>
   </table>
-  <blockquote class="q-orange">
-    <strong>看设备机会的关键三问：</strong>①有没有进入主流晶圆厂体系？②有没有从验证走向批量采购？③订单增长能不能转化为利润增长？如果三点不能成立，高弹性也可能变成高波动。
-  </blockquote>
+  <blockquote class="qo"><strong>看设备机会的关键三问：</strong>①有没有进入主流晶圆厂体系？②有没有从验证走向批量采购？③订单增长能不能转化为利润增长？如果三点不能成立，高弹性也可能变成高波动。</blockquote>
 </div>
 
 <div class="card">
@@ -124,70 +118,109 @@
   <table>
     <thead><tr><th>公司</th><th>业绩</th><th>逻辑</th><th>5/27</th></tr></thead>
     <tbody>
-      <tr><td><a href="https://quote.eastmoney.com/sh688126.html" target="_blank" class="stk"><strong>沪硅产业 688126</strong></a></td><td>Q1营收10.8亿(+35%)，亏损4.8亿</td><td>300mm硅片放量，产能爬坡中</td><td class="up">28.1(+4.3%)</td></tr>
-      <tr><td><a href="https://quote.eastmoney.com/sh688019.html" target="_blank" class="stk"><strong>安集科技 688019</strong></a></td><td>2025营收25亿(+36%)，净利+47%</td><td>CMP抛光液+湿电子化学品，已证明可持续盈利</td><td class="down">313(-7.8%)</td></tr>
+      <tr><td><a href="https://quote.eastmoney.com/sh688126.html" target="_blank" class="sk"><strong>沪硅产业 688126</strong></a></td><td>Q1营收10.8亿(+35%)，亏损4.8亿</td><td>300mm硅片放量，产能爬坡中</td><td class="up">28.1(+4.3%)</td></tr>
+      <tr><td><a href="https://quote.eastmoney.com/sh688019.html" target="_blank" class="sk"><strong>安集科技 688019</strong></a></td><td>2025营收25亿(+36%)，净利+47%</td><td>CMP抛光液+湿电子化学品，已证明可持续盈利</td><td class="dn">313(-7.8%)</td></tr>
     </tbody>
   </table>
   <blockquote>材料不适合"爆发感"投资，但具备<strong>复购属性+客户黏性</strong>——最可能穿越周期。安集科技的样本证明：材料企业一旦完成导入进入量产，业绩增长具备更强的连续性。</blockquote>
 </div>
 
-<!-- ===== 三：阳谋逻辑 ===== -->
+<!-- ===== 三 ===== -->
 <h2>三、链主重塑生态：半导体阳谋的底层逻辑</h2>
 
-<blockquote class="q-purple">
+<blockquote class="qp">
   <strong>长鑫科技，更像当年的"中国移动"。</strong>作为链主，给国产供应商下大额订单，倒逼国产设备、材料快速成熟。半导体设备从来不是"造出来就能用"——必须与存储原厂的工艺参数深度匹配，在真实机台上跑Wafer，才能发现漏电、刻蚀不均、膜厚不均。这些数据，在实验室里永远跑不出来。相较技术，<strong>国产设备厂商更缺的是量产验证的机会。</strong>
 </blockquote>
 
-<div class="flex">
-  <div class="fc"><h4>🏭 长鑫科技引擎</h4>
-    <ul><li>IPO募295亿：75亿技改+130亿DRAM+90亿HBM</li><li>每年设备采购<span class="up">数百亿元</span></li><li>目标70万片/月，未来投入3000亿+</li><li>H1净利预计500-570亿</li></ul></div>
-  <div class="fc"><h4>🔗 战略路径</h4>
-    <ul><li><strong>先存储，后逻辑</strong>——存储验证完→反向赋能中芯/华虹</li><li>进入"两长"供应链=拿到国产替代金字招牌</li><li>设备厂+材料厂+存储厂<strong>三位一体</strong></li><li>先单点突破→全面复制→走出去</li></ul></div>
-  <div class="fc"><h4>📊 近期催化</h4>
-    <ul><li>长江存储Q2设备招标已启动</li><li>长鑫IPO过会（预计Q3）</li><li>华为"韬(τ)定律"绕开光刻机</li><li>长江存储启动A股IPO辅导</li></ul></div>
+<div class="flx">
+  <div class="fc"><h4>🏭 长鑫科技引擎</h4><ul><li>IPO募295亿：75亿技改+130亿DRAM+90亿HBM</li><li>每年设备采购<span class="up">数百亿元</span></li><li>目标70万片/月，未来投入3000亿+</li><li>H1净利预计500-570亿</li></ul></div>
+  <div class="fc"><h4>🔗 战略路径</h4><ul><li><strong>先存储，后逻辑</strong>——存储验证完→反向赋能中芯/华虹</li><li>进入"两长"供应链=拿到国产替代金字招牌</li><li>设备厂+材料厂+存储厂<strong>三位一体</strong></li><li>先单点突破→全面复制→走出去</li></ul></div>
+  <div class="fc"><h4>📊 近期催化</h4><ul><li>长江存储Q2设备招标已启动</li><li>长鑫IPO过会（预计Q3）</li><li>华为"韬(τ)定律"绕开光刻机</li><li>长江存储启动A股IPO辅导</li></ul></div>
 </div>
 
-<blockquote class="q-orange">
+<blockquote class="qo">
   在A股历史上，这是首次出现<strong>两家超级IDM原厂</strong>，手握千亿级别的现金流，去集中采购国产设备。资本开支、订单将成为国产设备、材料厂商<strong>价值重估</strong>的核心驱动力。过去"缺乏验证→拿不到订单→技术无法迭代"的死循环已被打破。
 </blockquote>
 
-<!-- ===== 四：估值警示 ===== -->
+<!-- ===== 四 ===== -->
 <h2>四、估值审视：叙事开始兑现，到了用业绩说话的时候</h2>
 
-<div class="danger">
-  <strong>⚠️ 关键警示：</strong>过去资本市场为"国产替代宏大叙事"买单，给予了极高溢价。但现在叙事已经开始兑现，需要业绩来验证。部分设备厂商短期涨幅过大——拓荆科技5/27单日暴跌<span class="down">-11.1%</span>就是高估值脆性的体现。
-</div>
+<div class="danger"><strong>⚠️ 关键警示：</strong>过去资本市场为"国产替代宏大叙事"买单，给予了极高溢价。但现在叙事已经开始兑现，需要业绩来验证。部分设备厂商短期涨幅过大——拓荆科技5/27单日暴跌<span class="dn">-11.1%</span>就是高估值脆性的体现。</div>
 
 <div class="card">
-  <h3>北方华创 估值推演（机构一致预期）</h3>
+  <h3>北方华创 估值推演</h3>
   <table>
     <tr><th>年份</th><th>预测净利</th><th>PE(5000亿)</th><th>评估</th></tr>
-    <tr><td>2026E</td><td class="num">69亿</td><td>~72x</td><td><span class="t-gold">偏高</span></td></tr>
+    <tr><td>2026E</td><td class="num">69亿</td><td>~72x</td><td><span class="tg">偏高</span></td></tr>
     <tr><td>2027E</td><td class="num">90.5亿</td><td>~55x</td><td>合理偏高</td></tr>
     <tr><td>2028E</td><td class="num">120.1亿</td><td>~41x</td><td>合理</td></tr>
   </table>
-  <blockquote>近期的股价上涨已提前透支未来几年业绩预期。估值要进一步拔高，必须拿出<strong>远超预期的订单和业绩</strong>来支撑。但拉长看，只要链主在、生态在、意志不灭，头部企业有能力用超预期业绩消化高估值。</blockquote>
+  <blockquote>近期的股价上涨已提前透支未来几年业绩预期。但拉长看，只要链主在、生态在、意志不灭，头部企业有能力用超预期业绩消化高估值。</blockquote>
 </div>
 
-<!-- ===== 五：操作框架 ===== -->
+<!-- ===== 四续：均线分析 ===== -->
+<h2>四.续 📐 全板块 5/10/20 日均线深度分析</h2>
+<blockquote>Tushare Pro 拉取近60日K线，逐日计算 MA5/MA10/MA20 均线走势。</blockquote>
+
+<div class="card">
+  <h3>📊 六标均线矩阵（5/27收盘）</h3>
+  <table>
+    <thead><tr><th>标的</th><th>收盘</th><th>5日涨跌</th><th>MA5</th><th>MA10</th><th>MA20</th><th>排列</th><th>价 vs MA5/20</th><th>量比</th></tr></thead>
+    <tbody>
+      <tr><td><strong>北方华创</strong></td><td class="num">655</td><td class="dn">-0.2%</td><td class="num">671</td><td class="num">639</td><td class="num">592</td><td><span class="tgr">多头↑</span></td><td class="dn"><MA5 / >MA20</td><td>0.75</td></tr>
+      <tr><td><strong>中微公司</strong></td><td class="num">455</td><td class="dn">-7.2%</td><td class="num">470</td><td class="num">458</td><td class="num">417</td><td><span class="tgr">多头↑</span></td><td class="dn"><MA5 / >MA20</td><td>0.76</td></tr>
+      <tr><td><strong>拓荆科技</strong></td><td class="num">667</td><td class="up">+5.1%</td><td class="num">672</td><td class="num">610</td><td class="num">537</td><td><span class="tgr">多头↑</span></td><td class="dn"><MA5 / >MA20</td><td>0.97</td></tr>
+      <tr><td><strong>安集科技</strong></td><td class="num">313</td><td class="dn">-3.4%</td><td class="num">319</td><td class="num">306</td><td class="num">284</td><td><span class="tgr">多头↑</span></td><td class="dn"><MA5 / >MA20</td><td>0.94</td></tr>
+      <tr><td><strong>沪硅产业</strong></td><td class="num">28.1</td><td class="dn">-4.2%</td><td class="num">28</td><td class="num">27</td><td class="num">25</td><td><span class="tgr">多头↑</span></td><td class="up">>MA5 / >MA20</td><td>0.94</td></tr>
+      <tr><td><strong>柏诚股份</strong></td><td class="num">29.2</td><td class="dn">-12.3%</td><td class="num">32</td><td class="num">31</td><td class="num">28</td><td><span class="tgr">多头↑</span></td><td class="dn"><MA5 / >MA20</td><td>0.68</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="flx">
+  <div class="fc">
+    <h4>📈 均线形态解读</h4>
+    <p><strong>全板块 MA5 > MA10 > MA20</strong>，中期多头排列格局完好：</p>
+    <ul>
+      <li><strong>5/6 标的收盘价跌破 MA5</strong>（仅沪硅站在MA5之上）— 短线回调中</li>
+      <li><strong>6/6 量比 < 1.0</strong>（0.68~0.97）— 缩量回调，出货意愿不强</li>
+      <li><strong>沪硅逆势站上MA5</strong>：5/27 +4.3% 唯一收涨，材料股独立行情</li>
+      <li><strong>柏诚 5日-12.3%</strong>：前期最热的洁净室概念回撤最深</li>
+    </ul>
+  </div>
+  <div class="fc">
+    <h4>⚡ 均线操作信号</h4>
+    <table style="margin:0;">
+      <tr><td>多头排列</td><td class="tgr"><strong>6/6 全板块</strong></td></tr>
+      <tr><td>价破MA5</td><td class="tg">5/6（北华/中微/拓荆/安集/柏诚）</td></tr>
+      <tr><td>价破MA20</td><td class="tgr">0/6（中期趋势未破）</td></tr>
+      <tr><td>缩量信号</td><td class="tg">6/6 量比<1（回调整固）</td></tr>
+      <tr><td><strong>判断</strong></td><td>短线回踩等MA20附近企稳</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="warn"><strong>📌 均线结论：</strong>全板块中期多头趋势保持完好，MA20全线上行。当前是<strong>上升途中的缩量回踩</strong>——5/6标的跌落MA5但MA20未破，属于短线调整而非趋势反转。操作策略：<strong>等MA20附近（北华~592、中微~417、拓荆~537）缩量企稳后加仓</strong>。</div>
+
+<!-- ===== 五 ===== -->
 <h2>五、全板块资金流监控与操作框架</h2>
 
 <div class="card">
-  <h3>📡 三级数据拉取机制（Tushare Pro）</h3>
+  <h3>📡 三级数据拉取机制</h3>
   <table>
     <tr><th>频率</th><th>数据内容</th><th>接口</th></tr>
-    <tr><td><span class="t-red">日度</span></td><td>涨跌幅/成交量/主力资金净流入/北向/龙虎榜</td><td><code>daily</code> + <code>moneyflow</code></td></tr>
-    <tr><td><span class="t-gold">周度</span></td><td>周K线形态+均线位置+板块相对强弱+产业招标公告</td><td><code>weekly</code> + <code>sw_daily</code></td></tr>
-    <tr><td><span class="t-green">月/季度</span></td><td>财报趋势/公募社保北向持仓变动/合同负债/产能利用率</td><td><code>income</code> + <code>fina_indicator</code></td></tr>
+    <tr><td><span class="tr">日度</span></td><td>涨跌幅/成交量/主力资金净流入/北向</td><td><code>daily</code> + <code>moneyflow</code></td></tr>
+    <tr><td><span class="tg">周度</span></td><td>周K线+均线+板块强弱+招标公告</td><td><code>weekly</code> + <code>sw_daily</code></td></tr>
+    <tr><td><span class="tgr">月/季</span></td><td>财报/公募社保北向持仓/合同负债/产能</td><td><code>income</code> + <code>fina_indicator</code></td></tr>
   </table>
 </div>
 
 <div class="card">
   <h3>🚦 三级信号体系</h3>
-  <div class="flex">
-    <div class="fc"><h4>一级 — 立即执行</h4><ul><li>长鑫/长存公告大额设备采购中标</li><li>板块ETF单周跌幅>7%→检查是否误杀</li><li>北向连续3日净流出→警惕</li></ul></div>
-    <div class="fc"><h4>二级 — 周度评估</h4><ul><li>半导体设备ETF周涨幅>5%</li><li>财报营收增速>40%且净利同步</li><li>公募Q2持仓变动确认</li></ul></div>
-    <div class="fc"><h4>三级 — 月度调整</h4><ul><li>长鑫IPO挂牌→估值重估</li><li>沪硅亏损缩窄→材料拐点</li><li>中美关税→国产替代加速</li></ul></div>
+  <div class="flx">
+    <div class="fc"><h4>一级 — 立即执行</h4><ul><li>长鑫/长存公告设备采购中标</li><li>板块ETF单周跌幅>7%→检查是否误杀</li><li>北向连续3日净流出→警惕</li></ul></div>
+    <div class="fc"><h4>二级 — 周度评估</h4><ul><li>设备ETF周涨幅>5%</li><li>财报营收>40%且净利同步</li><li>公募Q2持仓变动确认</li></ul></div>
+    <div class="fc"><h4>三级 — 月度调整</h4><ul><li>长鑫IPO挂牌→估值重估</li><li>沪硅亏损缩窄→材料拐点</li><li>中美关税→替代加速</li></ul></div>
   </div>
 </div>
 
@@ -195,59 +228,53 @@
   <h3>⛔ 止盈/止损纪律</h3>
   <table>
     <tr><th>触发条件</th><th>操作</th><th>适用范围</th></tr>
-    <tr><td>个股PE超机构预期120%</td><td>减仓50%</td><td>北华/中微</td></tr>
-    <tr><td>单日跌>7%且放量 > 2倍</td><td>减仓30%</td><td>全部标的</td></tr>
-    <tr><td>跌破MA60且连续3日未收复</td><td>清仓</td><td>全部标的</td></tr>
-    <tr><td>整体浮盈>30%</td><td>止盈20%</td><td>全部标的</td></tr>
-    <tr><td>季度营收增速<15%</td><td>减仓30%</td><td>该标的</td></tr>
+    <tr><td>PE超机构预期120%</td><td>减仓50%</td><td>北华/中微</td></tr>
+    <tr><td>单日跌>7%且放量>2倍</td><td>减仓30%</td><td>全部</td></tr>
+    <tr><td>跌破MA60连续3日</td><td>清仓</td><td>全部</td></tr>
+    <tr><td>整体浮盈>30%</td><td>止盈20%</td><td>全部</td></tr>
+    <tr><td>季度营收<15%</td><td>减仓30%</td><td>该标的</td></tr>
     <tr><td>长鑫/长存重大利空</td><td>减仓50%</td><td>拓荆/柏诚</td></tr>
   </table>
 </div>
 
-<!-- ===== 六：北华技术面 ===== -->
-<h2>六、北方华创 002371 技术面验证（5/27更新）</h2>
-<blockquote>4月低点424 → 5/21高点722(+70%) → 连续回调至5/27收655</blockquote>
+<!-- ===== 六 ===== -->
+<h2>六、北方华创 002371 技术面验证</h2>
+<blockquote>4月低点424 → 5/21高点722(+70%) → 连续3日回调至5/27收655</blockquote>
 
-<div class="kline">
+<div class="kv">
 <span class="l">北方华创 002371  日K线关键价位</span>
 <span class="l">──────────────────────────────────────</span>
-<span class="r">▲ 720 ── 强阻力（5/21高722假突破│5/25高719再败│双顶确认）</span>
+<span class="R">▲ 720 ── 强阻力（5/21高722假突破│5/25高719再败│双顶确认）</span>
 <span class="l">│</span>
-<span class="l">│  5/20→660(+5.9%) 放量突破 │ 5/21→663(高722)长上影</span>
-<span class="l">│  5/25→698(+4.4%) 再冲 │ 5/26→670(-4.0%) 回调</span>
-<span class="l">│  5/27→655(-2.3%) 继续下探 ↓</span>
+<span class="l">│  5/20→656(+5.9%) 放量 │ 5/21→663(高722)长上影 假突破</span>
+<span class="l">│  5/25→698(+4.4%) 再冲 │ 5/26→670(-4.0%) 5/27→655(-2.3%) ↓</span>
 <span class="l">│</span>
-<span class="p">├─ 665 ── Fib 38.2% 回撤位（已破，变为压力）</span>
+<span class="P">├─ 665 ── Fib 38.2% 回撤位（已破，变为压力）</span>
 <span class="l">│</span>
-<span class="s">▼ 655 ── 5/27收盘 ⚡</span>
+<span class="S">▼ 655 ── 5/27 收盘 ⚡</span>
 <span class="l">│</span>
-<span class="g">├─ 620 ── Fib 50% 下一支撑位</span>
+<span class="G">├─ 620 ── Fib 50% 下一支撑位</span>
+<span class="G">├─ 592 ── MA20 趋势支撑（当前MA20=592）</span>
+<span class="G">├─ 560 ── MA60 中期生命线</span>
 <span class="l">│</span>
-<span class="g">├─ 583 ── MA20 趋势支撑</span>
-<span class="l">│</span>
-<span class="g">├─ 560 ── MA60 中期生命线</span>
-<span class="l">│</span>
-<span class="g">▲ 424 ── 4月低点（反弹起点 +55%）</span>
+<span class="G">▲ 424 ── 4月低点（反弹起点 +55%）</span>
 <span class="l">──────────────────────────────────────</span>
-<span class="l">结论：720双顶确认。670→655连续破位。等620或560附近企稳再考虑。</span>
+<span class="S">结论：720双顶确认。从670→655连破，MA5(671)已失守。</span>
+<span class="S">操作：等620(Fib50%)或592(MA20)附近缩量企稳。突破720站稳才是右侧加仓点。</span>
 </div>
 
-<div class="warn">
-  <strong>📌 北华操作修正：</strong>从720假突破后连续3日下探（670→655），已跌破Fib 38.2%位。短线不宜抄底，等待<span class="support">620（Fib 50%）</span>或<span class="support">583（MA20）</span>附近缩量企稳信号。突破720站稳才是右侧加仓点。
-</div>
-
-<!-- ===== 七：选股速查 ===== -->
+<!-- ===== 七 ===== -->
 <h2>七、选股速查与综合结论</h2>
 
-<div class="flex">
+<div class="flx">
   <div class="fc"><h4>🟢 当前性价比优选</h4>
-    <table style="margin:0;"><tr><td><a href="https://quote.eastmoney.com/sh688012.html" target="_blank" class="stk"><strong>中微公司 688012</strong></a></td><td>Q1净利+197%，弹性第一</td></tr>
-    <tr><td><a href="https://quote.eastmoney.com/sh688019.html" target="_blank" class="stk"><strong>安集科技 688019</strong></a></td><td>材料底仓，5/27回调可关注</td></tr>
-    <tr><td><a href="https://quote.eastmoney.com/sh601133.html" target="_blank" class="stk"><strong>柏诚股份 601133</strong></a></td><td>洁净室最早兑现</td></tr></table></div>
+    <table style="margin:0;"><tr><td><a href="https://quote.eastmoney.com/sh688012.html" target="_blank" class="sk"><strong>中微公司 688012</strong></a></td><td>Q1净利+197%，弹性第一</td></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sh688019.html" target="_blank" class="sk"><strong>安集科技 688019</strong></a></td><td>材料底仓，回调可关注</td></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sh601133.html" target="_blank" class="sk"><strong>柏诚股份 601133</strong></a></td><td>洁净室最早兑现，超跌反弹</td></tr></table></div>
   <div class="fc"><h4>🟡 等待回调</h4>
-    <table style="margin:0;"><tr><td><a href="https://quote.eastmoney.com/sz002371.html" target="_blank" class="stk"><strong>北方华创 002371</strong></a></td><td>720双顶压力，等620/583</td></tr>
-    <tr><td><a href="https://quote.eastmoney.com/sh688072.html" target="_blank" class="stk"><strong>拓荆科技 688072</strong></a></td><td>-11.1%恐慌抛售，等企稳</td></tr>
-    <tr><td><a href="https://quote.eastmoney.com/sh688126.html" target="_blank" class="stk"><strong>沪硅产业 688126</strong></a></td><td>等产能爬坡扭亏信号</td></tr></table></div>
+    <table style="margin:0;"><tr><td><a href="https://quote.eastmoney.com/sz002371.html" target="_blank" class="sk"><strong>北方华创 002371</strong></a></td><td>720双顶，等MA20(592)</td></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sh688072.html" target="_blank" class="sk"><strong>拓荆科技 688072</strong></a></td><td>-11.1%恐慌抛售，等企稳</td></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sh688126.html" target="_blank" class="sk"><strong>沪硅产业 688126</strong></a></td><td>等产能爬坡扭亏信号</td></tr></table></div>
   <div class="fc"><h4>📋 操作纪律</h4>
     <table style="margin:0;"><tr><td>止盈</td><td>浮盈>30%减20%</td></tr><tr><td>个股止损</td><td>跌破MA60清仓</td></tr><tr><td>事件止损</td><td>长鑫/长存利空-50%</td></tr><tr><td>追高禁区</td><td>舆情最热时不追</td></tr></table></div>
 </div>
@@ -255,15 +282,16 @@
 <hr>
 
 <div class="verdict">
-  <strong>📊 一句话总结</strong><br><br>
+  <strong>📊 总结</strong><br><br>
   投资从来不是押一个宏大叙事，而是<strong>找到那个最先、最稳、最能兑现的环节</strong>。<br><br>
   最早兑现的是工程洁净室，弹性最大的是设备龙头，最可能穿越周期的是材料公司。而真正值得长期跟踪的，是那些<strong>已经从验证走向量产、从量产走向利润释放</strong>的企业。<br><br>
-  当前节点：<strong>全板块5/27普跌（拓荆-11.1%、安集-7.8%），短线不宜接飞刀</strong>。等待企稳信号后再按分层逻辑配置。北方华创720双顶确认有效，操作上等待620或583附近缩量企稳。
+  <strong>均线信号：</strong>全板块 MA5>MA10>MA20 多头排列完好，当前是上升途中的缩量回踩。等 MA20 附近企稳后按分层逻辑配置。<br><br>
+  <strong>北方华创：</strong>720双顶确认有效，操作上等待620（Fib50%）或592（MA20）附近缩量企稳。
 </div>
 
 <div class="footer">
   核心信源：虎嗅APP — <a href="https://mp.weixin.qq.com/s/0RzSIQt_KBPZRQvFDu67vQ">半导体扩产潮来了</a> & <a href="https://mp.weixin.qq.com/s/Ek_Pumo7hb7P_j2afjn2mg">中国半导体的阳谋</a><br>
-  行情数据：Tushare Pro（2026-05-27 收盘）&nbsp;|&nbsp; 个股链接指向：东方财富网<br>
+  行情/均线数据：Tushare Pro（2026-05-27收盘，5/28数据待入库）&nbsp;|&nbsp; 个股链接：东方财富网<br>
   ⚠️ 仅供参考，不构成投资建议。股市有风险，投资需谨慎。
 </div>
 
