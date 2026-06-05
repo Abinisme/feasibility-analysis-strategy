@@ -3,675 +3,252 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>人形机器人与具身智能投资分析报告 | 2026年5月</title>
+<title>人形机器人与具身智能投资分析报告 | 2026年6月</title>
 <style>
-  :root { --bg: #0f1117; --card: #1a1d28; --border: #2a2d3a; --text: #e1e4ea; --text2: #8b8fa3; --red: #e15241; --green: #22c55e; --accent: #4fc3f7; --gold: #f59e0b; --purple: #a78bfa; }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: var(--bg); color: var(--text); font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif; line-height: 1.8; padding: 20px; max-width: 1100px; margin: 0 auto; }
-  h1 { font-size: 1.8em; text-align: center; padding: 30px 0; border-bottom: 2px solid var(--accent); margin-bottom: 30px; }
-  h2 { font-size: 1.35em; color: var(--accent); margin: 35px 0 18px; padding-left: 12px; border-left: 3px solid var(--accent); }
-  h3 { font-size: 1.12em; color: var(--gold); margin: 22px 0 12px; }
-  h4 { font-size: 1.02em; color: var(--purple); margin: 18px 0 10px; }
-  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin: 18px 0; }
-  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.92em; }
-  th { background: #252836; color: var(--accent); padding: 10px 12px; text-align: left; font-weight: 600; border-bottom: 2px solid var(--border); white-space: nowrap; }
-  td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
-  tr:hover td { background: rgba(79,195,247,0.04); }
-  blockquote { background: rgba(79,195,247,0.06); border-left: 3px solid var(--accent); padding: 10px 16px; margin: 12px 0; color: var(--text2); font-size: 0.92em; border-radius: 0 6px 6px 0; }
-  ul, ol { padding-left: 24px; margin: 10px 0; }
-  li { margin: 6px 0; }  li strong { color: #f0f6fc; }
-  hr { border: none; border-top: 1px solid var(--border); margin: 18px 0; }
-  a { color: var(--accent); text-decoration: none; }  a:hover { color: #81d4fa; }
-  .back-link { display: inline-block; margin-bottom: 20px; color: var(--text2); font-size: 0.88em; text-decoration: none; }  .back-link:hover { color: var(--accent); }
-  .meta-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; }
-  .meta-row span { color: var(--text2); font-size: 0.88em; padding: 4px 12px; background: rgba(79,195,247,0.06); border-radius: 14px; border: 1px solid var(--border); }
-  .warn { background: rgba(245,158,11,0.08); border-left: 4px solid var(--gold); padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 12px 0; font-size: 0.92em; }
-  .danger { background: rgba(226,82,65,0.08); border-left: 4px solid var(--red); padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 12px 0; font-size: 0.92em; }
-  .num { font-variant-numeric: tabular-nums; font-family: 'SF Mono', 'Consolas', monospace; }
-  .up { color: var(--red); font-weight: 600; }  .down { color: var(--green); font-weight: 600; }
-  .stars { color: var(--gold); }
-  .tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.82em; margin: 2px 4px; }
-  .tag-strong { background: rgba(226,82,65,0.15); color: var(--red); } .tag-mid { background: rgba(245,158,11,0.15); color: var(--gold); }
-  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.78em; font-weight: 700; margin-left: 6px; }
-  .badge-A { background: var(--red); color: #fff; } .badge-B { background: var(--gold); color: #000; } .badge-C { background: var(--green); color: #fff; }
-  .timeline { position: relative; padding: 0 0 0 28px; margin: 16px 0; }
-  .timeline::before { content: ''; position: absolute; left: 8px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(to bottom, var(--accent), var(--purple)); }
-  .tl-item { position: relative; margin-bottom: 16px; padding-left: 14px; }
-  .tl-item::before { content: ''; position: absolute; left: -24px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); }
-  .tl-item.key::before { background: var(--gold); box-shadow: 0 0 8px rgba(245,158,11,0.5); }
-  .tl-item .tl-date { font-size: 0.82em; color: var(--purple); font-weight: 600; }
-  .tl-item .tl-content { font-size: 0.92em; margin-top: 2px; }
-  .verdict { background: linear-gradient(135deg, rgba(167,139,250,0.08), rgba(79,195,247,0.08)); border-left: 4px solid var(--purple); padding: 20px 24px; border-radius: 0 10px 10px 0; margin: 18px 0; }
-  .flex-row { display: flex; gap: 16px; flex-wrap: wrap; }
-  .flex-col { flex: 1; min-width: 280px; }
-  .rebalance-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin: 14px 0; }
-  .rebalance-card { background: rgba(79,195,247,0.04); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
-  .rebalance-card h4 { font-size: 0.95em; color: var(--gold); margin: 0 0 10px; }
-  .rebalance-card .rule { font-size: 0.88em; margin: 4px 0; color: var(--text); }
-  .source-footer { color: var(--text2); font-size: 0.85em; text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); }
-  .hero-banner { background: linear-gradient(135deg, rgba(245,158,11,0.12), rgba(226,82,65,0.10), rgba(167,139,250,0.08)); border: 2px solid var(--gold); border-radius: 14px; padding: 28px 32px; margin: 10px 0 24px; position: relative; overflow: hidden; animation: pulse-border 2s ease-in-out infinite; }
-  .hero-banner::before { content: '🔴 LIVE'; position: absolute; top: 14px; right: 20px; font-size: 0.78em; color: var(--red); font-weight: 700; letter-spacing: 2px; animation: blink 1.2s infinite; }
-  @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
-  @keyframes pulse-border { 0%,100% { border-color: var(--gold); box-shadow: 0 0 18px rgba(245,158,11,0.25); } 50% { border-color: var(--red); box-shadow: 0 0 28px rgba(226,82,65,0.35); } }
-  .hero-banner h3 { font-size: 1.28em; color: var(--gold); margin: 0 0 12px; display: flex; align-items: center; gap: 10px; }
-  .hero-banner h3 .icon { font-size: 1.6em; }
-  .hero-banner p { font-size: 0.95em; margin: 6px 0; color: #e1e4ea; }
-  .hero-banner .highlight { background: linear-gradient(90deg, var(--red), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 800; font-size: 1.15em; }
-  .hero-banner .sub-info { font-size: 0.85em; color: var(--text2); margin-top: 10px; }
-  .supply-chain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 16px 0; }
-  .supply-card { background: rgba(167,139,250,0.04); border: 1px solid var(--border); border-radius: 10px; padding: 18px; transition: border-color 0.3s; }
-  .supply-card:hover { border-color: var(--purple); }
-  .supply-card h4 { font-size: 1em; color: var(--purple); margin: 0 0 10px; display: flex; align-items: center; gap: 6px; }
-  .supply-card .company { font-size: 0.92em; margin: 8px 0; padding: 8px 10px; background: rgba(79,195,247,0.05); border-radius: 6px; }
-  .supply-card .company .name { font-weight: 700; color: var(--accent); }
-  .supply-card .company .code { font-size: 0.82em; color: var(--text2); margin-left: 6px; }
-  .supply-card .company .desc { font-size: 0.84em; color: var(--text2); margin-top: 4px; }
-  .impact-meter { display: flex; align-items: center; gap: 8px; margin: 5px 0; }
-  .impact-meter .bar { height: 6px; border-radius: 3px; background: linear-gradient(90deg, var(--green), var(--gold), var(--red)); }
-  .impact-meter span { font-size: 0.78em; color: var(--text2); white-space: nowrap; }
-  @media (max-width: 768px) { body { padding: 12px; } h1 { font-size: 1.4em; padding: 20px 0; } h2 { font-size: 1.15em; } table { font-size: 0.82em; } th, td { padding: 7px 8px; } .card { padding: 14px 16px; } .hero-banner { padding: 18px 16px; } .supply-chain-grid { grid-template-columns: 1fr; } }
+  :root{--bg:#0f1117;--c:#1a1d28;--b:#2a2d3a;--t:#e1e4ea;--t2:#8b8fa3;--r:#e15241;--g:#22c55e;--a:#4fc3f7;--o:#f59e0b;--p:#a78bfa;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--t);font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;line-height:1.85;padding:20px;max-width:1100px;margin:0 auto;}
+  h1{font-size:1.7em;text-align:center;padding:28px 0 24px;border-bottom:2px solid var(--a);margin-bottom:20px;}
+  h2{font-size:1.3em;color:var(--a);margin:35px 0 16px;padding-left:12px;border-left:3px solid var(--a);}
+  h3{font-size:1.1em;color:var(--o);margin:20px 0 12px;}
+  h4{font-size:1em;color:var(--p);margin:14px 0 8px;}
+  .card{background:var(--c);border:1px solid var(--b);border-radius:10px;padding:20px 24px;margin:16px 0;}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:0.9em;}
+  th{background:#252836;color:var(--a);padding:9px 12px;text-align:left;font-weight:600;border-bottom:2px solid var(--b);}
+  td{padding:8px 12px;border-bottom:1px solid var(--b);}
+  tr:hover td{background:rgba(79,195,247,0.04);}
+  blockquote{background:rgba(79,195,247,0.06);border-left:3px solid var(--a);padding:10px 16px;margin:12px 0;color:var(--t2);font-size:0.93em;border-radius:0 6px 6px 0;line-height:1.75;}
+  blockquote strong{color:#ccd6e0;}
+  ul,ol{padding-left:24px;margin:8px 0;}li{margin:6px 0;}li strong{color:#f0f6fc;}
+  hr{border:none;border-top:1px solid var(--b);margin:18px 0;}
+  a{color:var(--a);text-decoration:none;}
+  .stk{color:inherit;text-decoration:none;border-bottom:1px dotted var(--a);}.stk:hover{color:var(--a);}
+  .back{display:inline-block;margin-bottom:20px;color:var(--t2);font-size:0.88em;text-decoration:none;}.back:hover{color:var(--a);}
+  .meta{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:22px;}
+  .meta span{color:var(--t2);font-size:0.83em;padding:3px 10px;background:rgba(79,195,247,0.05);border-radius:12px;border:1px solid var(--b);}
+  .num{font-variant-numeric:tabular-nums;font-family:'SF Mono','Consolas',monospace;}
+  .up{color:var(--r);font-weight:600;}.dn{color:var(--g);font-weight:600;}
+  .warn{background:rgba(245,158,11,0.08);border-left:4px solid var(--o);padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0;font-size:0.91em;}
+  .danger{background:rgba(226,82,65,0.08);border-left:4px solid var(--r);padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0;font-size:0.91em;}
+  .verdict{background:linear-gradient(135deg,rgba(167,139,250,0.08),rgba(79,195,247,0.08));border-left:4px solid var(--p);padding:18px 22px;border-radius:0 10px 10px 0;margin:16px 0;}
+  .flx{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0;}
+  .fc{flex:1;min-width:250px;background:rgba(79,195,247,0.03);border:1px solid var(--b);border-radius:10px;padding:16px;}.fc h4{margin-top:0;color:var(--o);}
+  .stars{color:var(--o);}
+  .tag{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.8em;margin:2px 4px;}
+  .tr{background:rgba(226,82,65,0.15);color:var(--r);}.tg{background:rgba(245,158,11,0.15);color:var(--o);}.tgr{background:rgba(34,197,94,0.15);color:var(--g);}
+  .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:0.78em;font-weight:700;margin-left:6px;}
+  .bA{background:var(--r);color:#fff;}.bB{background:var(--o);color:#000;}.bC{background:var(--g);color:#fff;}
+  .timeline{position:relative;padding:0 0 0 28px;margin:16px 0;}
+  .timeline::before{content:'';position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--a),var(--p));}
+  .tl-item{position:relative;margin-bottom:14px;padding-left:14px;}
+  .tl-item::before{content:'';position:absolute;left:-24px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--a);border:2px solid var(--bg);}
+  .tl-item.key::before{background:var(--o);box-shadow:0 0 8px rgba(245,158,11,0.5);}
+  .tl-item .tld{font-size:0.82em;color:var(--p);font-weight:600;}.tl-item .tlc{font-size:0.92em;margin-top:2px;}
+  .rebal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin:14px 0;}
+  .rebal-card{background:rgba(79,195,247,0.04);border:1px solid var(--b);border-radius:10px;padding:16px;}
+  .rebal-card h4{font-size:0.95em;color:var(--o);margin:0 0 10px;}
+  .rebal-card .rule{font-size:0.88em;margin:4px 0;}
+  .footer{color:var(--t2);font-size:0.84em;text-align:center;margin-top:28px;padding-top:18px;border-top:1px solid var(--b);}
+  .correction{background:rgba(226,82,65,0.06);border:1px dashed var(--r);border-radius:8px;padding:12px 16px;margin:10px 0;font-size:0.86em;color:var(--r);}
+  @media(max-width:768px){body{padding:12px}h1{font-size:1.3em}h2{font-size:1.1em}table{font-size:0.78em}th,td{padding:6px 7px}.card{padding:14px}.fc{min-width:100%}}
 </style>
 </head>
 <body>
 
-<a href="./index.html" class="back-link">← 返回首页</a>
+<a href="./index.html" class="back">← 返回首页</a>
 
 <h1>🤖 人形机器人与具身智能投资分析报告</h1>
-<div class="meta-row">
-  <span>数据截止：2026-05-25 收盘</span>
-  <span>新闻来源：央视网 / 腾讯新闻</span>
-  <span>行情数据：Tushare Pro</span>
+<div class="meta">
+  <span>数据截止：2026-06-05 收盘</span>
+  <span>新闻来源：央视网</span>
+  <span>行情：Tushare Pro + 天天基金</span>
 </div>
 
-<!-- ======== 🔴 宇树IPO 6月1日上会 — 首屏核心Banner ======== -->
-<div class="hero-banner">
-  <h3><span class="icon">🏭</span> 宇树科技（Unitree）科创板IPO <span class="highlight">6月1日上会</span></h3>
-  <p>A股<strong>人形机器人第一股</strong>进入冲刺阶段——宇树科技科创板IPO申请已获受理，<strong>发审委将于6月1日召开上市委审议会议</strong>。</p>
-  <p>宇树科技估值超<strong>120亿元</strong>，作为全球四足机器人出货量第一、人形机器人量产先锋，"杭州六小龙"之首，<strong>若顺利过会将成为2026年A股最具标志性的科技IPO事件之一</strong>，预计引发机器人全产业链估值重估。</p>
-  <p class="sub-info">📅 关键时间线：3月20日提交申请 → 5月完成问询回复 → <span style="color:var(--gold);font-weight:700;">6月1日上会</span> → 过会后预计1-2个月内挂牌上市</p>
-  <p class="sub-info">⚠️ 映射标的关注：鸣志电器（电机供应商）、双环传动（减速器）、绿的谐波（谐波减速器），IPO过会前后存在题材催化窗口</p>
-</div>
+<blockquote>本报告聚焦人形机器人及具身智能子板块，覆盖产业重大事件时间轴、核心标的行情与估值、产业链纵深拆解、机构持仓追踪、ETF推荐（<strong>已修正代号错误</strong>）及3-5万投资计划。<br><strong>6月5日全板块大涨：绿的谐波单日+20%领涨，步科股份+11.4%，丰立智能+10.6%。</strong></blockquote>
 
-<blockquote>本报告聚焦人形机器人及具身智能子板块，覆盖2026年1-5月重大事件时间轴、核心标的行情财务数据、机构持仓追踪、ETF推荐及3-5万投资计划。<strong style="color:var(--gold);">⚠️ 重点关注：宇树科技科创板IPO将于6月1日上会。</strong></blockquote>
-
-<!-- ======== 一：全年级别重大事件时间轴 ======== -->
+<!-- ===== 一：时间轴 ===== -->
 <h2>一、2026年重大事件时间轴</h2>
-<blockquote>新闻来源：央视网搜索；重点标注4月9日板块低点前后的催化转折</blockquote>
 
 <div class="card">
 <div class="timeline">
-  <div class="tl-item">
-    <div class="tl-date">2025-12-11</div>
-    <div class="tl-content"><strong>基金经理展望2026年主线</strong> — 多家机构明确把人形机器人列为2026年核心主题方向之一，与AI爆款应用、创新药并列。</div>
-  </div>
-  <div class="tl-item">
-    <div class="tl-date">2026-01</div>
-    <div class="tl-content"><strong>特斯拉Optimus量产指引更新</strong> — 2025年目标1万台，2026年计划10000台/月。全球人形机器人量产预期正式建立。</div>
-  </div>
-  <div class="tl-item">
-    <div class="tl-date">2026-02</div>
-    <div class="tl-content"><strong>DeepSeek等国产AI大模型突破</strong> — 具身智能"大脑"环节取得关键进展。机器人接入AI智能体成为可能，打通技术路线。</div>
-  </div>
-  <div class="tl-item">
-    <div class="tl-date">2026-03-03</div>
-    <div class="tl-content"><strong>工信部：从"功夫"到"打工"</strong> — 工信部人形机器人与具身智能标准化技术委员会表态，要分场景制定应用标准，助力从实验室走向商业化落地。</div>
-  </div>
-  <div class="tl-item">
-    <div class="tl-date">2026-03-09</div>
-    <div class="tl-content"><strong>全国首个具身智能开发者社区入驻</strong> — 人形机器人半程马拉松"巴图鲁"挑战赛集训营在北京经开区开营。</div>
-  </div>
-  <div class="tl-item">
-    <div class="tl-date">2026-03-16</div>
-    <div class="tl-content"><strong>"钢铁打工人"奔向消费大市场</strong> — 产业观察指出：<strong>2026年是人形机器人商业化量产的关键一年</strong>，需闯过成本、技术、生态三道关。</div>
-  </div>
-  <div class="tl-item key">
-    <div class="tl-date">2026-03-20</div>
-    <div class="tl-content"><strong>🚀 宇树科技提交科创板IPO申请</strong> — 估值超120亿元，成为A股人形机器人第一股候选。产业链标的迎来IPO映射预期。</div>
-  </div>
-  <div class="tl-item key">
-    <div class="tl-date">2026-06-01 ⚡ IPO上会</div>
-    <div class="tl-content"><strong>🔥 宇树科技科创板IPO上会——6月1日发审委审议！</strong>若顺利过会，宇树将成为A股首家人形机器人上市公司，估值120亿+。这是2026年人形机器人赛道最重磅的催化剂：① IPO映射标的（鸣志电器/双环传动/绿的谐波）存在过会前后联动行情；② 过会后1-2个月内挂牌，产业链估值重估窗口开启；③ "杭州六小龙"之首的品牌效应将带动全板块认知度升级。</div>
-  </div>
-  <div class="tl-item">
-    <div class="tl-date">2026-03-23</div>
-    <div class="tl-content"><strong>人形机器人半程马拉松发布</strong> — 北京亦庄，4月19日开跑，300余台机器人参赛。赛事规则全面升级，以规则创新引导技术突破。</div>
-  </div>
-  <div class="tl-item key">
-    <div class="tl-date">2026-04-09 前后 ⚡ 板块低点</div>
-    <div class="tl-content"><strong>关税冲击→政策对冲→市场反转。</strong>4月初中美关税升级引发恐慌性抛售，机器人板块随大盘急跌。4月9日后政策对冲信号（特别国债/产业支持）密集释放，板块从阶段性低点大幅反弹。<strong>机器人板块自4月9日低点至今累计涨幅超30%，其中绿的谐波从~180元飙升至342元（+90%）。</strong></div>
-  </div>
-  <div class="tl-item">
-    <div class="tl-date">2026-04-19</div>
-    <div class="tl-content"><strong>人形机器人半程马拉松开跑</strong> — "闪电"机器人以50分26秒夺冠。全球首次大规模人形机器人公开路跑，引发全民关注和媒体刷屏。</div>
-  </div>
-  <div class="tl-item">
-    <div class="tl-date">2026-05-11</div>
-    <div class="tl-content"><strong>具身智能战略转折点研究发布</strong> — 预判人形机器人量产临界点，主张将安全治理前置至设计研发环节。</div>
-  </div>
-  <div class="tl-item">
-    <div class="tl-date">2026-05-18~20</div>
-    <div class="tl-content"><strong>从机甲量产到AI适配，商业化提速</strong> — 载人变形机甲量产落地，人形机器人接入AI智能体。出货量数据：2025年1.8万台→2026年预计6.25万台。</div>
-  </div>
-  <div class="tl-item">
-    <div class="tl-date">2026-05-21</div>
-    <div class="tl-content"><strong>产学研协同攻关核心芯片</strong> — 人形机器人关节+原子级制造前沿领域产学研战略合作全面启动。</div>
-  </div>
-  <div class="tl-item">
-    <div class="tl-date">2026-05-22~25</div>
-    <div class="tl-content"><strong>全国首个管理平台上线 + 量产提速</strong> — 每台机器人拥有"数字身份证"，全程可追溯。产业进入规范化管理快车道。</div>
-  </div>
+  <div class="tl-item"><div class="tld">2025-12</div><div class="tlc"><strong>基金经理明确看好2026年人形机器人主线</strong></div></div>
+  <div class="tl-item"><div class="tld">2026-01</div><div class="tlc"><strong>特斯拉Optimus量产指引：2026年10000台/月</strong></div></div>
+  <div class="tl-item"><div class="tld">2026-02</div><div class="tlc">DeepSeek等国产AI突破，具身智能"大脑"打通</div></div>
+  <div class="tl-item"><div class="tld">2026-03-03</div><div class="tlc">工信部：从"功夫"到"打工"，分场景制定应用标准</div></div>
+  <div class="tl-item"><div class="tld">2026-03-16</div><div class="tlc"><strong>"钢铁打工人"奔向市场——2026年商业化量产关键年</strong></div></div>
+  <div class="tl-item"><div class="tld">2026-03-20</div><div class="tlc"><strong>🚀 宇树科技提交科创板IPO（估值120亿+）</strong></div></div>
+  <div class="tl-item"><div class="tld">2026-03-23</div><div class="tlc">人形机器人半程马拉松4月开跑，300余台参赛</div></div>
+  <div class="tl-item key"><div class="tld">2026-04-09 ⚡</div><div class="tlc"><strong>板块低点：关税冲击→政策对冲→反转。绿的谐波从~180飙升至393</strong></div></div>
+  <div class="tl-item"><div class="tld">2026-04-19</div><div class="tlc">人形机器人半程马拉松全球首次公开路跑，全民刷屏</div></div>
+  <div class="tl-item"><div class="tld">2026-05-11~20</div><div class="tlc">具身智能战略转折点研究 + 机甲量产落地+AI适配</div></div>
+  <div class="tl-item"><div class="tld">2026-05-22</div><div class="tlc">全国首个人形机器人管理平台上线，"数字身份证"</div></div>
+  <div class="tl-item key"><div class="tld">2026-06-05 ⚡</div><div class="tlc"><strong>全板块大反弹：绿的谐波+20%涨停、步科+11.4%、丰立+10.6%</strong></div></div>
 </div>
 </div>
 
-<div class="warn">
-<strong>📌 时间轴核心洞察：</strong>① 1-3月为"预期构建期"（宇树IPO+马拉松预热）；② 4月9日为"恐慌低点→政策转向"的黄金买点；③ 4月19日马拉松为全民认知引爆点；④ 5月为"商业化验证期"（管理平台+量产提速+芯片攻关）。<strong>自4月9日低点起，人形机器人板块进入新一轮主升浪</strong>，当前仍处于中期趋势中。
-</div>
+<div class="warn"><strong>📌 核心洞察：</strong>4月9日低点至今，绿的谐波从~180飙升至393（+118%），全板块经历"恐慌底→政策反转→全民认知→商业化验证→二次主升"五阶段。6/5暴力反弹预示新一轮行情启动。</div>
 
-<!-- ======== 二：核心标的深度分析 ======== -->
+<!-- ===== 二：核心标的 ===== -->
 <h2>二、核心标的市场数据与估值</h2>
-<blockquote>数据来源：Tushare Pro，2026-05-22收盘。YTD为年初至今涨幅</blockquote>
+<blockquote>数据来源：Tushare Pro，2026-06-05收盘。所有标的已添加东方财富超链接。</blockquote>
 
-<h3>🏆 第一梯队：核心零部件+高确定性</h3>
+<h3>🏆 第一梯队：核心零部件 + 业绩确定性</h3>
 <table>
-  <thead><tr><th>标的</th><th>代码</th><th>现价</th><th>YTD</th><th>今日</th><th>产业链定位</th><th>评级</th></tr></thead>
+  <thead><tr><th>标的</th><th>现价</th><th>今日</th><th>产业链定位</th><th>评级</th></tr></thead>
   <tbody>
-    <tr>
-      <td><strong>绿的谐波</strong></td><td>688017</td><td class="num">342.00</td><td class="up"><strong>+66.8%</strong></td><td class="up">+2.09%</td>
-      <td>谐波减速器龙头，机器人关节成本占比最高环节。Q1订单饱满，产能利用率维持高位</td><td><span class="badge badge-A">A级</span></td>
-    </tr>
-    <tr>
-      <td><strong>雷赛智能</strong></td><td>002979</td><td class="num">61.03</td><td class="up"><strong>+36.3%</strong></td><td class="down">-2.83%</td>
-      <td>运动控制卡/步进系统，工控+机器人双赛道</td><td><span class="badge badge-A">A级</span></td>
-    </tr>
-    <tr>
-      <td><strong>埃斯顿</strong></td><td>002747</td><td class="num">29.07</td><td class="up"><strong>+15.9%</strong></td><td class="up">+1.29%</td>
-      <td>工业机器人本体+核心部件，国产替代逻辑扎实</td><td><span class="badge badge-A">A级</span></td>
-    </tr>
-    <tr>
-      <td><strong>汇川技术</strong></td><td>300124</td><td class="num">78.99</td><td class="up">+0.8%</td><td class="up">+1.57%</td>
-      <td>伺服系统/控制器龙头，市值~2100亿，大盘蓝筹属性</td><td><span class="badge badge-B">B级</span></td>
-    </tr>
+    <tr><td><a href="https://quote.eastmoney.com/sh688017.html" target="_blank" class="stk"><strong>绿的谐波 688017</strong></a></td><td class="num">393.00</td><td class="up"><strong>+20.0%</strong></td><td>谐波减速器龙头，机器人关节成本占比最高。4月低点至今+118%</td><td><span class="badge bA">A级</span></td></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sz002979.html" target="_blank" class="stk"><strong>雷赛智能 002979</strong></a></td><td class="num">55.69</td><td class="up">+4.8%</td><td>运动控制卡/步进系统，工控+机器人双赛道</td><td><span class="badge bA">A级</span></td></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sz002747.html" target="_blank" class="stk"><strong>埃斯顿 002747</strong></a></td><td class="num">31.02</td><td class="up">+5.2%</td><td>工业机器人本体+核心部件，国产替代逻辑扎实</td><td><span class="badge bA">A级</span></td></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sz300124.html" target="_blank" class="stk"><strong>汇川技术 300124</strong></a></td><td class="num">75.08</td><td class="up">+1.3%</td><td>伺服系统/控制器龙头，市值~2000亿大盘蓝筹</td><td><span class="badge bB">B级</span></td></tr>
   </tbody>
 </table>
 
-<h3>⚡ 第二梯队：高弹性+题材驱动</h3>
+<h3>⚡ 第二梯队：高弹性 + 题材驱动</h3>
 <table>
-  <thead><tr><th>标的</th><th>代码</th><th>现价</th><th>YTD</th><th>今日</th><th>产业链定位</th><th>评级</th></tr></thead>
+  <thead><tr><th>标的</th><th>现价</th><th>今日</th><th>产业链定位</th><th>评级</th></tr></thead>
   <tbody>
-    <tr>
-      <td><strong>鸣志电器</strong></td><td>603728</td><td class="num">68.19</td><td class="down">-6.6%</td><td class="up">+1.17%</td>
-      <td>空心杯电机，灵巧手核心。年初回调充分，存在补涨空间</td><td><span class="badge badge-B">B级</span></td>
-    </tr>
-    <tr>
-      <td><strong>双环传动</strong></td><td>002472</td><td class="num">44.40</td><td class="down">-2.7%</td><td class="down">-0.14%</td>
-      <td>RV减速器/精密齿轮龙头，工业+人形双驱动</td><td><span class="badge badge-B">B级</span></td>
-    </tr>
-    <tr>
-      <td><strong>埃夫特</strong></td><td>688165</td><td class="num">22.10</td><td class="down">-5.6%</td><td class="up"><strong>+8.87%</strong></td>
-      <td>工业机器人+具身智能映射，今日异动明显</td><td><span class="badge badge-C">C级</span></td>
-    </tr>
-    <tr>
-      <td><strong>步科股份</strong></td><td>688160</td><td class="num">142.00</td><td class="down">-12.6%</td><td class="up">+2.39%</td>
-      <td>低压伺服/运动控制，机器人关节驱动</td><td><span class="badge badge-B">B级</span></td>
-    </tr>
+    <tr><td><a href="https://quote.eastmoney.com/sh603728.html" target="_blank" class="stk"><strong>鸣志电器 603728</strong></a></td><td class="num">65.82</td><td class="up">+3.6%</td><td>空心杯电机，灵巧手核心。宇树科技IPO映射</td><td><span class="badge bB">B级</span></td></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sz002472.html" target="_blank" class="stk"><strong>双环传动 002472</strong></a></td><td class="num">42.86</td><td class="up">+3.6%</td><td>RV减速器/精密齿轮龙头，工业+人形双驱动</td><td><span class="badge bB">B级</span></td></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sh688160.html" target="_blank" class="stk"><strong>步科股份 688160</strong></a></td><td class="num">122.00</td><td class="up"><strong>+11.4%</strong></td><td>低压伺服/运动控制，机器人关节驱动</td><td><span class="badge bB">B级</span></td></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sh688165.html" target="_blank" class="stk"><strong>埃夫特 688165</strong></a></td><td class="num">20.42</td><td class="up">+7.3%</td><td>工业机器人+具身智能映射，弹性大</td><td><span class="badge bC">C级</span></td></tr>
   </tbody>
 </table>
 
-<h3>🔬 第三梯队：题材+观察仓</h3>
+<h3>🔬 第三梯队：题材 + 观察仓</h3>
 <table>
-  <thead><tr><th>标的</th><th>代码</th><th>现价</th><th>YTD</th><th>今日</th><th>风险提示</th></tr></thead>
+  <thead><tr><th>标的</th><th>现价</th><th>今日</th><th>风险提示</th></tr></thead>
   <tbody>
-    <tr><td><strong>机器人</strong></td><td>300024</td><td class="num">16.27</td><td class="down">-12.5%</td><td class="down">-0.79%</td><td>名字含"机器人"但实为自动化集成，人形机器人占比低</td></tr>
-    <tr><td><strong>亿嘉和</strong></td><td>603666</td><td class="num">31.21</td><td class="down">-4.1%</td><td class="up">+1.60%</td><td>特种巡检机器人，业绩波动大，人形关联度待确认</td></tr>
-    <tr><td><strong>丰立智能</strong></td><td>301368</td><td class="num">55.04</td><td class="down">-21.3%</td><td>—</td><td>精密齿轮，年内深度回调，基本面待观察</td></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sz300024.html" target="_blank" class="stk"><strong>机器人 300024</strong></a></td><td class="num">15.57</td><td class="up">+3.4%</td><td>名字含"机器人"但实为自动化集成，人形占比低</td></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sh603666.html" target="_blank" class="stk"><strong>亿嘉和 603666</strong></a></td><td class="num">28.82</td><td class="up">+2.7%</td><td>特种巡检机器人，业绩波动大</td></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sz301368.html" target="_blank" class="stk"><strong>丰立智能 301368</strong></a></td><td class="num">48.63</td><td class="up">+10.6%</td><td>精密齿轮，高波动题材</td></tr>
   </tbody>
 </table>
 
-<div class="warn">
-<strong>📌 关键发现：</strong>① <strong>绿的谐波 YTD +66.8%</strong> 是板块绝对龙头，验证"减速器是最确定环节"的逻辑；② <strong>4月9日低点以来绿的谐波涨幅约+90%</strong>，联动科技（688218）+87%紧随其后；③ 鸣志电器/双环传动/步科股份年初至今为负，存在补涨空间；④ 埃夫特今日+8.87%异动，警惕游资炒作。
-</div>
+<div class="warn"><strong>📌 6/5 盘面特征：</strong>绿的谐波单日+20%涨停是绝对龙头信号。步科（+11.4%）和丰立（+10.6%）紧随其后。全板块无一收跌，放量普涨形态，市场对机器人赛道信心全面回归。</div>
 
-<!-- ======== 二续：产业链纵深拆解与马斯克矩阵 ======== -->
-<h2>二.续 🧩 产业链纵深拆解与全球竞争格局</h2>
+<!-- ===== 三：产业链纵深 ===== -->
+<h2>三、产业链纵深拆解与估值逻辑</h2>
 
 <div class="card">
-<h3>📡 特斯拉 Optimus 量产：万亿级产业链重构</h3>
-<p>特斯拉Optimus机器人于<strong>2026年开始正式量产</strong>，内部目标2026年产能达<strong>10000台/月</strong>（年化12万台），2027年计划10万台/月。这一量级意味着：</p>
-
-<h4>对上游零部件的拉动效应</h4>
-<table>
-  <thead><tr><th>零部件</th><th>单台价值量(万元)</th><th>12万台/年市场空间</th><th>A股受益标的</th></tr></thead>
-  <tbody>
-    <tr><td><strong>谐波减速器</strong></td><td>~5</td><td>~60亿</td><td>绿的谐波（688017）</td></tr>
-    <tr><td><strong>RV减速器</strong></td><td>~3</td><td>~36亿</td><td>双环传动（002472）</td></tr>
-    <tr><td><strong>伺服电机</strong></td><td>~4</td><td>~48亿</td><td>汇川技术（300124）、步科股份（688160）</td></tr>
-    <tr><td><strong>空心杯电机(灵巧手)</strong></td><td>~2</td><td>~24亿</td><td>鸣志电器（603728）</td></tr>
-    <tr><td><strong>力矩传感器</strong></td><td>~2</td><td>~24亿</td><td>柯力传感、奥普特</td></tr>
-    <tr><td><strong>电池/BMS</strong></td><td>~3</td><td>~36亿</td><td>宁德时代（300750）</td></tr>
+  <h3>📡 产业链价值分布</h3>
+  <table>
+    <thead><tr><th>产业链环节</th><th>成本占比</th><th>国产化率</th><th>A股核心标的</th><th>确定性</th></tr></thead>
+    <tbody>
+      <tr><td><strong>减速器</strong>（谐波/RV）</td><td>~35%</td><td>~60%</td><td>绿的谐波、双环传动</td><td><span class="stars">⭐⭐⭐⭐⭐</span></td></tr>
+      <tr><td><strong>伺服系统</strong></td><td>~20%</td><td>~50%</td><td>汇川技术、步科股份</td><td><span class="stars">⭐⭐⭐⭐⭐</span></td></tr>
+      <tr><td><strong>控制器</strong></td><td>~12%</td><td>~40%</td><td>埃斯顿、雷赛智能</td><td><span class="stars">⭐⭐⭐⭐</span></td></tr>
+      <tr><td><strong>传感器</strong></td><td>~10%</td><td>~30%</td><td>奥普特、柯力传感</td><td><span class="stars">⭐⭐⭐⭐</span></td></tr>
+      <tr><td><strong>灵巧手/末端</strong></td><td>~8%</td><td>~35%</td><td>鸣志电器</td><td><span class="stars">⭐⭐⭐</span></td></tr>
+      <tr><td><strong>AI算法</strong></td><td>~15%</td><td>待突破</td><td>（非A股核心）</td><td><span class="stars">⭐⭐⭐</span></td></tr>
   </tbody>
-</table>
-<p style="color:var(--text2);font-size:0.88em;margin-top:8px;">仅Optimus一条产业链，2026年零部件市场空间即达<strong>约228亿元</strong>。若算上国内宇树、智元、优必选等厂商同步扩产，全行业零部件需求将突破<strong>500亿+</strong>。</p>
+  </table>
+  <p style="margin-top:8px;font-size:0.88em;color:var(--t2);"><strong>结论：减速器+伺服合计占机器人成本55%</strong>，且绿的谐波6/5单日涨停确认龙头地位。这是产业链最确定、最安全的投资环节。</p>
 </div>
 
 <div class="card">
-<h3>🚀 SpaceX 上市 × Tesla 机器人：马斯克生态的深层协同</h3>
-<p>市场广泛预期SpaceX将于<strong>2026年下半年至2027年</strong>进行IPO，估值预计2500-3500亿美元。这一事件不仅是航天板块催化剂，更将通过马斯克商业生态矩阵，对人形机器人产业链产生三重联动：</p>
+  <h3>🔬 估值逻辑重构</h3>
+  <p>绿的谐波从4月低点~180→6/5收393（+118%），已实现翻倍。市场在重新定价两个逻辑：</p>
+  <ol>
+    <li><strong>量升</strong>：2025年国内出货1.8万台→2026年预计6.25万台（+247%），减速器作为刚需环节，需求弹性最大</li>
+    <li><strong>质变</strong>：宇树科技IPO映射+特斯拉Optimus量产，全球机器人从"概念"进入"订单验证"阶段</li>
+  </ol>
+  <p style="margin-top:8px;">当前393元对应约150x PE（基于2026E），估值已不便宜。但产业趋势确定性极高，短期情绪驱动+长期逻辑支撑下，趋势延续概率大于反转。操作上<strong>不建议追高，但持股不动优于做空</strong>。</p>
+</div>
 
-<h4>协同维度一：材料科学共享</h4>
-<p>SpaceX在火箭发动机高温合金、轻量化复合材料（碳纤维/钛合金）、3D打印精密制造领域的技术储备，可直接赋能Tesla Optimus的轻量化机身与关节结构件。星舰的精密焊接工艺 → 机器人关节一体化成型，材料复用降低Optimus单台成本约15-20%。</p>
-<h4>协同维度二：AI算法与自动驾驶技术迁移</h4>
-<p>SpaceX星舰的自动对接/着陆导航算法，与Tesla FSD自动驾驶视觉系统同源，均基于<strong>端到端神经网络+强化学习</strong>。这套算法体系正被直接迁移至Optimus的运动规划与环境感知模块。SpaceX上市带来的资本金注入，将加速xAI的Grok大模型训练，而Grok正是Optimus的"大脑"。</p>
-<h4>协同维度三：供应链复用与规模效应</h4>
-<p>星链（Starlink）卫星的大规模精密制造经验 → Optimus关节执行器量产工艺。SpaceX上市后，马斯克旗下企业将形成<strong>SpaceX（火箭/卫星）+ Tesla（电动车/机器人）+ xAI（AI大模型）+ Neuralink（脑机接口）</strong>四维矩阵。供应链交叉复用可将Optimus核心零部件采购成本降低25-30%。</p>
+<!-- ===== 四：ETF ===== -->
+<h2>四、机器人ETF推荐（已修正代码错误）</h2>
 
-<div class="warn">
-<strong>📌 投资启示：</strong>SpaceX IPO将成为2026年下半年最大的科技催化剂之一。历史经验表明，马斯克旗下企业上市/事件披露，往往带动A股相关产业链标的产生<strong>"映射行情"</strong>（参考2020年特斯拉上海超级工厂投产后宁德时代产业链爆发模式）。重点关注：绿的谐波（Optimus减速器核心供应商）、鸣志电器（灵巧手电机）、宁德时代（电池）。</div>
+<div class="correction">
+  <strong>⚠️ 重要修正：</strong>原报告中 <strong>512800（银行ETF华宝）</strong> 被错误列为机器人ETF。正确代码为 <strong>562500（机器人ETF华夏）</strong>，规模209.52亿。同时修正513050→正确ETF代码。
 </div>
 
 <div class="card">
-<h3>🇨🇳 国内领军阵营：宇树 × 智元 × 优必选三分天下</h3>
-
-<h4>宇树科技（Unitree）— 最快冲刺科创板</h4>
-<p>估值超<strong>120亿元</strong>，2026年3月20日提交科创板IPO申请。先发优势和品牌认知度在国内整机厂中最强。2026年CES展台引发全球关注，"杭州六小龙"之首。IPO映射标的：<strong>鸣志电器（电机供应商）、双环传动（减速器）</strong>。</p>
-
-<h4>智元机器人（Zhiyuan）— 商用落地最激进</h4>
-<p>2025年<strong>全球出货量前五强</strong>，已中标中国移动子公司<strong>1.24亿元</strong>人形机器人采购订单。商用场景（通信机房巡检/数据中心运维）落地速度最快。同样在推进IPO/资本化进程。映射标的：<strong>埃斯顿（工业机器人龙头+产业协同）、雷赛智能（运动控制）</strong>。</p>
-
-<h4>优必选（UBTECH）— 港股已上市，生态最完整</h4>
-<p>已在港股上市，2026年香港国际创科展重点参展企业。人形机器人Walker系列在服务场景持续迭代。"深圳八大金刚"之首，生态布局涵盖教育/服务/工业。</p>
-
-<h4>新势力崛起：鹿明机器人（Lumos）</h4>
-<p>宇树、智元后的"新势力"，全运会闭幕式唯一人形机器人舞蹈表演企业。深耕具身全栈技术，估值正在快速攀升。</p>
-
-<div class="warn">
-<strong>📌 竞争格局研判：</strong>国内人形机器人已形成<strong>"三超多强"</strong>格局——宇树（品牌+IPO）、智元（商业落地）、优必选（生态）为第一梯队；鹿明、众擎、逐际动力等为第二梯队。核心零部件供应商将<strong>同时受益于多家整机厂的量产放量</strong>，确定性高于整机厂本身。减速器/伺服/电机/传感器环节的A股龙头是更安全的投资方向。
-</div>
+  <h3>🏦 已核验ETF列表</h3>
+  <table>
+    <thead><tr><th>ETF名称</th><th>代码</th><th>规模(亿)</th><th>6/4净值</th><th>6/5估值</th><th>纯度</th><th>推荐</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://fund.eastmoney.com/562500.html" target="_blank" class="stk"><strong>机器人ETF华夏</strong></a></td><td><strong>562500</strong></td><td>209.52</td><td>1.129</td><td class="up">+2.77%</td><td><span class="stars">★★★★★</span></td><td><span class="badge bA">首选</span></td></tr>
+      <tr><td><a href="https://fund.eastmoney.com/159770.html" target="_blank" class="stk"><strong>机器人ETF天弘</strong></a></td><td><strong>159770</strong></td><td>~20</td><td>1.169</td><td class="up">+2.77%</td><td><span class="stars">★★★★★</span></td><td><span class="badge bB">备选</span></td></tr>
+      <tr><td><a href="https://fund.eastmoney.com/588080.html" target="_blank" class="stk"><strong>科创50ETF易方达</strong></a></td><td>588080</td><td>~300</td><td>1.776</td><td class="dn">-4.01%</td><td><span class="stars">★★☆☆☆</span></td><td>科创底仓</td></tr>
+    </tbody>
+  </table>
 </div>
 
-<!-- ======== 宇树科技核心供应链专项分析 ======== -->
-<h2>🔗 宇树科技供应链专项深度拆解</h2>
-<blockquote>宇树科技作为国内人形机器人"第一股"候选，其IPO将直接催化核心供应链企业。以下是基于公开信息梳理的宇树机器人关键零部件供应商与合作企业图谱。</blockquote>
+<!-- ===== 五：投资计划 ===== -->
+<h2>五、人形机器人 3-5万 投资计划</h2>
+
+<div class="card"><h3>💡 策略定位</h3><p>人形机器人属<strong>成长赛道/产业趋势</strong>，高成长预期+高波动+强题材驱动。2026核心催化剂密集（宇树IPO+特斯拉量产+政策加码），作为科技仓位中的<strong>进攻型配置</strong>，仓位占比不超科技资产的25%。</p></div>
 
 <div class="card">
-<h3>📦 宇树 H1 / G1 人形机器人 BOM 成本拆解</h3>
-<table>
-  <thead><tr><th>零部件模块</th><th>单台配置</th><th>估算成本(万元)</th><th>成本占比</th><th>技术壁垒</th></tr></thead>
-  <tbody>
-    <tr><td><strong>关节电机总成</strong></td><td>28-32个关节</td><td class="num">~8-10</td><td>35-40%</td><td><span class="stars">★★★★★</span> 极高</td></tr>
-    <tr><td><strong>减速器（谐波+RV）</strong></td><td>12-16个</td><td class="num">~4-6</td><td>18-22%</td><td><span class="stars">★★★★★</span> 极高</td></tr>
-    <tr><td><strong>传感器（力矩+IMU+视觉）</strong></td><td>全套传感系统</td><td class="num">~3-4</td><td>12-15%</td><td><span class="stars">★★★★☆</span> 高</td></tr>
-    <tr><td><strong>控制/计算平台</strong></td><td>1套主控+边缘计算</td><td class="num">~2-3</td><td>8-10%</td><td><span class="stars">★★★★☆</span> 高</td></tr>
-    <tr><td><strong>电池/BMS系统</strong></td><td>1套</td><td class="num">~1.5-2</td><td>5-7%</td><td><span class="stars">★★★☆☆</span> 中</td></tr>
-    <tr><td><strong>结构件/机身</strong></td><td>轻量化壳体</td><td class="num">~1-1.5</td><td>4-5%</td><td><span class="stars">★★★☆☆</span> 中</td></tr>
-    <tr><td><strong>线束/连接器</strong></td><td>全机布线</td><td class="num">~0.5-1</td><td>2-3%</td><td><span class="stars">★★☆☆☆</span> 低</td></tr>
-  </tbody>
-</table>
-<p style="color:var(--text2);font-size:0.88em;margin-top:8px;">宇树人形机器人单台BOM成本约<strong>20-28万元</strong>，关节电机+减速器合计占比超55%，是最核心的价值环节。随着量产规模扩大（2026年预计出货5000+台），单台成本有望下降30-40%。</p>
-</div>
-
-<div class="supply-chain-grid">
-  <!-- 电机 & 执行器 -->
-  <div class="supply-card">
-    <h4>⚙️ 电机 & 执行器</h4>
-    <div class="company">
-      <span class="name">鸣志电器</span><span class="code">603728</span>
-      <div class="desc">空心杯电机/无刷电机核心供应商，宇树灵巧手及关节驱动电机主要来源。技术壁垒高，国产替代逻辑清晰。</div>
-      <div class="impact-meter"><div class="bar" style="width:90%;"></div><span>关联度：极高</span></div>
-    </div>
-    <div class="company">
-      <span class="name">步科股份</span><span class="code">688160</span>
-      <div class="desc">低压伺服驱动器/一体化关节电机方案，适配宇树H1系列关节模组需求。</div>
-      <div class="impact-meter"><div class="bar" style="width:70%;"></div><span>关联度：高</span></div>
-    </div>
-    <div class="company">
-      <span class="name">汇川技术</span><span class="code">300124</span>
-      <div class="desc">伺服系统绝对龙头，宇树规模化量产后伺服电机潜在二供，性价比优势突出。</div>
-      <div class="impact-meter"><div class="bar" style="width:55%;"></div><span>关联度：中等</span></div>
-    </div>
-  </div>
-
-  <!-- 减速器 -->
-  <div class="supply-card">
-    <h4>🔩 减速器</h4>
-    <div class="company">
-      <span class="name">双环传动</span><span class="code">002472</span>
-      <div class="desc">RV减速器/精密齿轮龙头，宇树关节模组RV减速器一级供应商。社保持有，机构底仓稳固。</div>
-      <div class="impact-meter"><div class="bar" style="width:85%;"></div><span>关联度：极高</span></div>
-    </div>
-    <div class="company">
-      <span class="name">绿的谐波</span><span class="code">688017</span>
-      <div class="desc">谐波减速器国内绝对龙头（市占率60%+），宇树H1/G1系列谐波减速器核心来源，单台价值量最高环节。</div>
-      <div class="impact-meter"><div class="bar" style="width:95%;"></div><span>关联度：极高</span></div>
-    </div>
-    <div class="company">
-      <span class="name">中大力德</span><span class="code">002896</span>
-      <div class="desc">精密减速器二线厂商，RV+谐波双线布局，宇树供应链国产替代备选。</div>
-      <div class="impact-meter"><div class="bar" style="width:45%;"></div><span>关联度：中等</span></div>
-    </div>
-  </div>
-
-  <!-- 传感器 -->
-  <div class="supply-card">
-    <h4>📡 传感器 & 感知</h4>
-    <div class="company">
-      <span class="name">柯力传感</span><span class="code">603662</span>
-      <div class="desc">六维力/力矩传感器核心供应商，宇树关节力控方案的力传感器主要来源之一。</div>
-      <div class="impact-meter"><div class="bar" style="width:80%;"></div><span>关联度：高</span></div>
-    </div>
-    <div class="company">
-      <span class="name">奥普特</span><span class="code">688686</span>
-      <div class="desc">机器视觉/3D视觉传感器，宇树机器人环境感知与目标识别视觉模组供应商。</div>
-      <div class="impact-meter"><div class="bar" style="width:65%;"></div><span>关联度：中高</span></div>
-    </div>
-    <div class="company">
-      <span class="name">海康威视</span><span class="code">002415</span>
-      <div class="desc">工业相机/深度摄像头，机器人视觉系统潜在合作方，安防+机器人双赛道布局。</div>
-      <div class="impact-meter"><div class="bar" style="width:40%;"></div><span>关联度：中等</span></div>
-    </div>
-  </div>
-
-  <!-- 控制 & 芯片 -->
-  <div class="supply-card">
-    <h4>🧠 控制 & 计算平台</h4>
-    <div class="company">
-      <span class="name">瑞芯微</span><span class="code">603893</span>
-      <div class="desc">端侧AI芯片（RK3588等），宇树机器人边缘计算/实时控制芯片供应商，国产算力替代核心标的。</div>
-      <div class="impact-meter"><div class="bar" style="width:75%;"></div><span>关联度：高</span></div>
-    </div>
-    <div class="company">
-      <span class="name">雷赛智能</span><span class="code">002979</span>
-      <div class="desc">运动控制卡/控制器龙头，宇树机器人运动规划与轨迹控制环节核心供应商。</div>
-      <div class="impact-meter"><div class="bar" style="width:85%;"></div><span>关联度：极高</span></div>
-    </div>
-    <div class="company">
-      <span class="name">埃斯顿</span><span class="code">002747</span>
-      <div class="desc">工业机器人本体+控制器，与宇树在控制器层面存在技术复用和产业协同空间。</div>
-      <div class="impact-meter"><div class="bar" style="width:50%;"></div><span>关联度：中等</span></div>
-    </div>
-  </div>
-
-  <!-- 能源 & 结构件 -->
-  <div class="supply-card">
-    <h4>🔋 能源 & 结构件</h4>
-    <div class="company">
-      <span class="name">宁德时代</span><span class="code">300750</span>
-      <div class="desc">动力电池全球龙头，宇树机器人高能量密度电池包/BMS系统核心供应商。</div>
-      <div class="impact-meter"><div class="bar" style="width:70%;"></div><span>关联度：高</span></div>
-    </div>
-    <div class="company">
-      <span class="name">拓普集团</span><span class="code">601689</span>
-      <div class="desc">轻量化结构件（铝合金/镁合金），宇树机器人机身壳体与结构件潜在供应商。</div>
-      <div class="impact-meter"><div class="bar" style="width:50%;"></div><span>关联度：中等</span></div>
-    </div>
-    <div class="company">
-      <span class="name">立讯精密</span><span class="code">002475</span>
-      <div class="desc">精密连接器/线束龙头，机器人内部高密度连接方案提供商，消费电子+汽车+机器人三线布局。</div>
-      <div class="impact-meter"><div class="bar" style="width:45%;"></div><span>关联度：中等</span></div>
-    </div>
-  </div>
-
-  <!-- 合作企业 & 生态 -->
-  <div class="supply-card">
-    <h4>🤝 战略合作 & 生态企业</h4>
-    <div class="company">
-      <span class="name">DeepSeek / 大模型企业</span>
-      <div class="desc">AI大模型合作伙伴，为宇树机器人提供具身智能"大脑"——自然语言理解、任务规划、多模态感知能力。</div>
-      <div class="impact-meter"><div class="bar" style="width:80%;"></div><span>关联度：高（间接）</span></div>
-    </div>
-    <div class="company">
-      <span class="name">浙江大学 / 清华</span>
-      <div class="desc">产学研深度合作——浙大控制学院为宇树早期孵化方，持续输出运动控制与足式机器人前沿算法。</div>
-      <div class="impact-meter"><div class="bar" style="width:75%;"></div><span>关联度：高（研发）</span></div>
-    </div>
-    <div class="company">
-      <span class="name">杭州余杭区政府</span>
-      <div class="desc">"杭州六小龙"之首，享受产业园区、人才引进、研发补贴等政策红利。政府背书增强IPO确定性。</div>
-      <div class="impact-meter"><div class="bar" style="width:65%;"></div><span>关联度：政策面</span></div>
-    </div>
-  </div>
+  <h3>📋 方案A：稳健型（5万）— 核心零部件+ETF</h3>
+  <table>
+    <tr><th>标的</th><th>金额</th><th>占比</th><th>逻辑</th></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sh688017.html" target="_blank" class="stk"><strong>绿的谐波 688017</strong></a></td><td class="num">¥15,000</td><td>30%</td><td>减速器龙头，6/5涨停验证绝对龙头地位</td></tr>
+    <tr><td><a href="https://fund.eastmoney.com/562500.html" target="_blank" class="stk"><strong>机器人ETF华夏 562500</strong></a></td><td class="num">¥12,000</td><td>24%</td><td>规模209亿，一篮子龙头。分散风险</td></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sh603728.html" target="_blank" class="stk"><strong>鸣志电器 603728</strong></a></td><td class="num">¥10,000</td><td>20%</td><td>灵巧手核心，宇树IPO映射</td></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sz002979.html" target="_blank" class="stk"><strong>雷赛智能 002979</strong></a></td><td class="num">¥8,000</td><td>16%</td><td>运动控制+机器人双赛道</td></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sz002472.html" target="_blank" class="stk"><strong>双环传动 002472</strong></a></td><td class="num">¥5,000</td><td>10%</td><td>RV减速器，社保持有攻守兼备</td></tr>
+  </table>
+  <p style="margin-top:8px;color:var(--t2);font-size:0.85em;"><strong>预期：</strong>6-12个月，目标收益25-45%。止损：整体-15%。</p>
 </div>
 
 <div class="card">
-<h3>💡 供应链投资映射逻辑</h3>
-<table>
-  <thead><tr><th>供应链环节</th><th>核心A股标的</th><th>宇树IPO催化强度</th><th>投资优先级</th><th>核心逻辑</th></tr></thead>
-  <tbody>
-    <tr>
-      <td><strong>减速器</strong></td>
-      <td>绿的谐波、双环传动</td><td><span class="stars">★★★★★</span></td><td><span class="badge badge-A">第一优先</span></td>
-      <td>单台价值量最高（~10万），技术壁垒最深，国产替代空间大。宇树IPO将直接催化工控/机器人估值体系重构。</td>
-    </tr>
-    <tr>
-      <td><strong>伺服电机</strong></td>
-      <td>鸣志电器、步科股份</td><td><span class="stars">★★★★★</span></td><td><span class="badge badge-A">第一优先</span></td>
-      <td>关节执行器直接供应商，灵巧手电机为宇树独供环节。鸣志电器YTD-6.6%回调到位，是宇树IPO映射弹性最大标的。</td>
-    </tr>
-    <tr>
-      <td><strong>运动控制</strong></td>
-      <td>雷赛智能</td><td><span class="stars">★★★★☆</span></td><td><span class="badge badge-B">第二优先</span></td>
-      <td>运动控制卡与控制器为宇树核心供应商，公募Q1快速进场验证产业趋势。</td>
-    </tr>
-    <tr>
-      <td><strong>力传感器</strong></td>
-      <td>柯力传感</td><td><span class="stars">★★★★☆</span></td><td><span class="badge badge-B">第二优先</span></td>
-      <td>六维力传感器为宇树机器人精细操作的关键环节，国产化率仍低，存在国产替代弹性。</td>
-    </tr>
-    <tr>
-      <td><strong>AI芯片</strong></td>
-      <td>瑞芯微</td><td><span class="stars">★★★☆☆</span></td><td><span class="badge badge-B">第二优先</span></td>
-      <td>端侧AI算力芯片，宇树机器人"小脑"环节。与DeepSeek等大模型配合形成具身智能闭环。</td>
-    </tr>
-    <tr>
-      <td><strong>电池/BMS</strong></td>
-      <td>宁德时代</td><td><span class="stars">★★★☆☆</span></td><td><span class="badge badge-C">观察</span></td>
-      <td>机器人电池占其总营收极小，催化弹性有限。但长期受益于机器人+电动车双赛道。</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="warn">
-<strong>📌 宇树IPO供应链核心结论：</strong><br>
-① <strong>绿的谐波（688017）+ 鸣志电器（603728）+ 双环传动（002472）</strong>是宇树供应链中确定性最高、催化弹性最大的三个A股标的，构成"宇树IPO映射铁三角"。<br>
-② 宇树IPO过会后，市场将按<strong>"减速器→电机→传感器→控制器→芯片"</strong>的顺序逐环节重估，减速器和电机环节首当其冲。<br>
-③ <strong>时点建议：</strong>6月1日上会前1-2周为最佳埋伏窗口，过会当日存在短线冲高机会。IPO挂牌后1个月内为产业链估值重估交易窗口期。<br>
-④ <strong>风险提示：</strong>若宇树IPO被否或暂缓，供应链映射逻辑将阶段性失效，相关标的可能面临10-15%的回调压力。
-</div>
-
-<!-- ======== 三：机构持仓追踪 ======== -->
-<h2>三、Q1机构持仓追踪</h2>
-<blockquote>数据基于公开季报披露和新闻报道整合，公募持仓来自天天基金/东方财富Q1数据</blockquote>
-
-<table>
-  <thead><tr><th>标的</th><th>公募持仓</th><th>Q1变动</th><th>社保/养老金</th><th>北向(陆股通)</th><th>信号</th></tr></thead>
-  <tbody>
-    <tr>
-      <td><strong>绿的谐波 688017</strong></td><td>~8%</td><td class="up">+显著</td><td>社保组合新进</td><td>持续增持</td><td><span class="tag tag-strong">公募+社保双增</span></td>
-    </tr>
-    <tr>
-      <td><strong>汇川技术 300124</strong></td><td>~12%</td><td class="up">+稳定</td><td>社保+养老长期持有</td><td>重仓（~10%）</td><td><span class="tag tag-strong">机构重仓底仓</span></td>
-    </tr>
-    <tr>
-      <td><strong>埃斯顿 002747</strong></td><td>~5%</td><td class="up">+小幅</td><td>—</td><td>温和增持</td><td><span class="tag tag-mid">公募小幅加仓</span></td>
-    </tr>
-    <tr>
-      <td><strong>鸣志电器 603728</strong></td><td>~4%</td><td>持平</td><td>—</td><td>小幅减持</td><td><span class="tag tag-mid">待观察</span></td>
-    </tr>
-    <tr>
-      <td><strong>双环传动 002472</strong></td><td>~6%</td><td>持平</td><td>社保持有</td><td>稳定</td><td><span class="tag tag-mid">机构底仓</span></td>
-    </tr>
-    <tr>
-      <td><strong>雷赛智能 002979</strong></td><td>~3%</td><td class="up">+明显</td><td>—</td><td>—</td><td><span class="tag tag-strong">公募快速进场</span></td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="warn">
-<strong>📌 机构共识方向：</strong>绿的谐波（公募+社保双线加仓）和雷赛智能（公募Q1快速进场）是Q1机构增持最明显的两个方向。汇川技术作为大盘蓝筹，机构底仓超22%（公募+社保+北向），稳健性突出。
-</div>
-
-<!-- ======== 四：ETF推荐 ======== -->
-<h2>四、机器人/智能制造相关ETF推荐</h2>
-
-<div class="card">
-<h3>🏦 A股可交易ETF</h3>
-<table>
-  <thead><tr><th>ETF名称</th><th>代码</th><th>规模(亿)</th><th>核心持仓</th><th>机器人纯度</th><th>推荐</th></tr></thead>
-  <tbody>
-    <tr>
-      <td><strong>机器人ETF华夏</strong></td><td>512800</td><td>~50</td><td>汇川技术、埃斯顿、绿的谐波、机器人</td><td><span class="stars">★★★★★</span></td><td><span class="badge badge-A">首选</span></td>
-    </tr>
-    <tr>
-      <td><strong>机械ETF广发</strong></td><td>516050</td><td>~15</td><td>三一重工、汇川技术、恒立液压</td><td><span class="stars">★★★☆☆</span></td><td><span class="badge badge-B">次选</span></td>
-    </tr>
-    <tr>
-      <td><strong>高端装备ETF富国</strong></td><td>516860</td><td>~15</td><td>汇川技术、先导智能、埃斯顿</td><td><span class="stars">★★★☆☆</span></td><td><span class="badge badge-B">备选</span></td>
-    </tr>
-    <tr>
-      <td><strong>科创50ETF易方达</strong></td><td>588080</td><td>~300</td><td>绿的谐波、中微公司、寒武纪（间接）</td><td><span class="stars">★★☆☆☆</span></td><td>科创底仓</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="warn">
-<strong>📌 ETF策略：</strong>机器人ETF华夏（512800）是A股最纯的机器人主题ETF，绿的谐波/汇川技术/埃斯顿权重集中。适合作为"机器人底仓+个股增强"组合中的ETF部分，占比30-40%。
-</div>
-
-<!-- ======== 五：投资计划 ======== -->
-<h2>五、人形机器人 3-5万 投资计划（参考）</h2>
-
-<div class="card">
-<h3>💡 策略定位</h3>
-<p>人形机器人属于<strong>成长赛道/产业趋势</strong>，特点是高成长预期+高波动+强题材驱动。2026年核心催化剂密集（宇树科技IPO+量产提速+政策加码），适合作为科技仓位中的<strong>进攻型配置</strong>。与核聚变赛道相比，机器人商业化确定性更高（已有真实产品落地），建议仓位占比适当高于核聚变。</p>
+  <h3>📋 方案B：进取型（3万）— 高弹性+IPO映射</h3>
+  <table>
+    <tr><th>标的</th><th>金额</th><th>占比</th><th>逻辑</th></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sh688017.html" target="_blank" class="stk"><strong>绿的谐波 688017</strong></a></td><td class="num">¥10,000</td><td>33%</td><td>减速器龙头，趋势最强</td></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sh603728.html" target="_blank" class="stk"><strong>鸣志电器 603728</strong></a></td><td class="num">¥8,000</td><td>27%</td><td>宇树IPO最大映射标的</td></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sz002979.html" target="_blank" class="stk"><strong>雷赛智能 002979</strong></a></td><td class="num">¥6,000</td><td>20%</td><td>运动控制弹性标的</td></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sz002747.html" target="_blank" class="stk"><strong>埃斯顿 002747</strong></a></td><td class="num">¥6,000</td><td>20%</td><td>本体龙头，宇树带动估值重估</td></tr>
+  </table>
+  <p style="margin-top:8px;color:var(--t2);font-size:0.85em;"><strong>预期：</strong>3-6个月，目标30-60%。止损：整体-20%。<strong>催化剂：宇树IPO Q3上会。</strong></p>
 </div>
 
 <div class="card">
-<h3>📋 方案A：稳健型（5万）— 核心零部件+ETF</h3>
-<table>
-  <tr><th>标的</th><th>金额</th><th>占比</th><th>逻辑</th></tr>
-  <tr>
-    <td><strong>绿的谐波 688017</strong></td><td class="num">¥15,000</td><td>30%</td>
-    <td>谐波减速器绝对龙头，YTD+66.8%领涨板块。公募+社保Q1双线加仓，确定性最高</td>
-  </tr>
-  <tr>
-    <td><strong>机器人ETF华夏 512800</strong></td><td class="num">¥12,000</td><td>24%</td>
-    <td>一键覆盖汇川技术+埃斯顿+绿的谐波。分散风险，适合做组合稳定器</td>
-  </tr>
-  <tr>
-    <td><strong>鸣志电器 603728</strong></td><td class="num">¥10,000</td><td>20%</td>
-    <td>灵巧手核心供应商，YTD-6.6%回调充分。宇树科技IPO映射+灵巧手技术壁垒高</td>
-  </tr>
-  <tr>
-    <td><strong>雷赛智能 002979</strong></td><td class="num">¥8,000</td><td>16%</td>
-    <td>YTD+36.3%，公募Q1快速进场。运动控制+机器人双赛道，弹性与确定性兼备</td>
-  </tr>
-  <tr>
-    <td><strong>双环传动 002472</strong></td><td class="num">¥5,000</td><td>10%</td>
-    <td>RV减速器龙头，YTD-2.7%存在补涨空间。社保长期持有，攻守兼备</td>
-  </tr>
-</table>
-<p style="margin-top:12px;color:var(--text2);font-size:0.88em;"><strong>预期：</strong>6-12个月持有，宇树科技IPO+政策催化+量产提速三重驱动。目标收益25-45%。止损线：整体回撤-15%。</p>
+  <h3>📋 方案C：保守型（3万）— ETF为主+龙头</h3>
+  <table>
+    <tr><th>标的</th><th>金额</th><th>占比</th><th>逻辑</th></tr>
+    <tr><td><a href="https://fund.eastmoney.com/562500.html" target="_blank" class="stk"><strong>机器人ETF华夏 562500</strong></a></td><td class="num">¥15,000</td><td>50%</td><td>一篮子机器人龙头，适合定投</td></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sh688017.html" target="_blank" class="stk"><strong>绿的谐波 688017</strong></a></td><td class="num">¥10,000</td><td>33%</td><td>减速器确定性最高</td></tr>
+    <tr><td><a href="https://quote.eastmoney.com/sz300124.html" target="_blank" class="stk"><strong>汇川技术 300124</strong></a></td><td class="num">¥5,000</td><td>17%</td><td>伺服龙头+大盘蓝筹稳定性</td></tr>
+  </table>
+  <p style="margin-top:8px;color:var(--t2);font-size:0.85em;">目标收益15-25%，ETF定投每月3000元不中断。</p>
 </div>
 
-<div class="card">
-<h3>📋 方案B：进取型（3万）— 高弹性+IPO映射</h3>
-<table>
-  <tr><th>标的</th><th>金额</th><th>占比</th><th>逻辑</th></tr>
-  <tr>
-    <td><strong>绿的谐波 688017</strong></td><td class="num">¥10,000</td><td>33%</td>
-    <td>机器人第一股，YTD+66.8%趋势最强。减速器壁垒最高，短期无法替代</td>
-  </tr>
-  <tr>
-    <td><strong>鸣志电器 603728</strong></td><td class="num">¥8,000</td><td>27%</td>
-    <td>灵巧手核心，宇树科技IPO最大映射标的之一。YTD-6.6%回调提供入场时机</td>
-  </tr>
-  <tr>
-    <td><strong>雷赛智能 002979</strong></td><td class="num">¥6,000</td><td>20%</td>
-    <td>运动控制+公募快速进场，弹性标的。关注宇树IPO过会前后的联动行情</td>
-  </tr>
-  <tr>
-    <td><strong>埃斯顿 002747</strong></td><td class="num">¥6,000</td><td>20%</td>
-    <td>工业机器人本体龙头，YTD+15.9%温和上涨。宇树IPO带动产业链估值重估</td>
-  </tr>
-</table>
-<p style="margin-top:12px;color:var(--text2);font-size:0.88em;"><strong>预期：</strong>3-6个月持有，博弈宇树科技IPO过会+政策催化密集期，目标收益30-60%。止损线：整体回撤-20%。<strong>核心催化剂：</strong>宇树科技科创板IPO（已受理，预计Q3上会）。</p>
-</div>
-
-<div class="card">
-<h3>📋 方案C：保守型（3万）— ETF为主+龙头个股</h3>
-<table>
-  <tr><th>标的</th><th>金额</th><th>占比</th><th>逻辑</th></tr>
-  <tr>
-    <td><strong>机器人ETF华夏 512800</strong></td><td class="num">¥15,000</td><td>50%</td>
-    <td>一篮子机器人龙头，降低个股择时压力。适合定投，每月3000元</td>
-  </tr>
-  <tr>
-    <td><strong>绿的谐波 688017</strong></td><td class="num">¥10,000</td><td>33%</td>
-    <td>减速器龙头，确定性最高。即使ETF涵盖，个股仓位增强机器人纯度</td>
-  </tr>
-  <tr>
-    <td><strong>汇川技术 300124</strong></td><td class="num">¥5,000</td><td>17%</td>
-    <td>伺服系统龙头，PE合理+机构重仓。大盘蓝筹属性提供组合稳定性</td>
-  </tr>
-</table>
-<p style="margin-top:12px;color:var(--text2);font-size:0.88em;"><strong>特点：</strong>不追高弹性概念，以ETF+龙头为核心。ETF定投降低波动，绿的谐波提供弹性。目标收益15-25%。</p>
-</div>
-
-<!-- ======== 仓位再平衡规则 ======== -->
+<!-- ===== 仓位再平衡 ===== -->
 <h3>⚠️ 仓位再平衡触发规则</h3>
-<div class="rebalance-grid">
-  <div class="rebalance-card">
-    <h4>方案A — 稳健型</h4>
-    <p class="rule">🔴 <strong>止盈：</strong>整体浮盈+30%时，绿的谐波减仓30%，鸣志电器减仓30%。ETF+雷赛智能+双环传动仓位不动。</p>
-    <p class="rule">🔴 <strong>止损：</strong>整体回撤-15%时，全部清仓鸣志电器，绿的谐波减仓50%。ETF维持。</p>
-    <p class="rule">🟡 <strong>宇树IPO挂牌后：</strong>若鸣志电器/雷赛智能因IPO映射大涨（+40%以上），适当减持锁定利润。</p>
-  </div>
-  <div class="rebalance-card">
-    <h4>方案B — 进取型</h4>
-    <p class="rule">🟡 <strong>止盈：</strong>整体浮盈+50%时，绿的谐波减仓50%。鸣志电器在宇树IPO挂牌后一周内视涨幅决定去留。</p>
-    <p class="rule">🔴 <strong>止损：</strong>整体回撤-20%时，全部清仓埃斯顿，鸣志电器减仓50%，绿的谐波减仓30%。</p>
-    <p class="rule">🟡 <strong>宇树IPO当日：</strong>若鸣志电器开盘涨幅>10%，先卖出30-50%仓位锁定利润。</p>
-  </div>
-  <div class="rebalance-card">
-    <h4>方案C — 保守型</h4>
-    <p class="rule">🟢 <strong>止盈：</strong>整体浮盈+20%时，绿的谐波减仓30%。ETF部分继续定投不中断。</p>
-    <p class="rule">🔴 <strong>止损：</strong>整体回撤-10%时，评估绿的谐波基本面。若营收增速放缓或机构减持，减仓50%。</p>
-    <p class="rule">🟢 <strong>定投纪律：</strong>ETF每月定投3000元不中断。若当月ETF单月涨幅>8%，跳过当月定投等待回调。</p>
-  </div>
+<div class="rebal-grid">
+  <div class="rebal-card"><h4>方案A</h4><p class="rule">🔴 止盈：浮盈+30%时绿的谐波减30%、鸣志减30%</p><p class="rule">🔴 止损：整体-15%时清仓鸣志、绿的减50%</p><p class="rule">🟡 宇树IPO挂牌后：鸣志/雷赛大涨>40%适当减持</p></div>
+  <div class="rebal-card"><h4>方案B</h4><p class="rule">🟡 止盈：浮盈+50%时绿的减50%、鸣志视IPO涨幅定</p><p class="rule">🔴 止损：整体-20%清仓埃斯顿、鸣志减50%、绿的减30%</p><p class="rule">🟡 宇树IPO当日：鸣志开盘>10%卖出30-50%</p></div>
+  <div class="rebal-card"><h4>方案C</h4><p class="rule">🟢 止盈：浮盈+20%时绿的减30%，ETF定投不中断</p><p class="rule">🔴 止损：整体-10%评估绿的谐波基本面，营收放缓则减50%</p><p class="rule">🟢 定投纪律：ETF月投3000不中断，单月涨>8%跳过</p></div>
 </div>
 
-<!-- ======== 六：风险提示 ======== -->
+<!-- ===== 六：风险 ===== -->
 <h2>六、风险提示</h2>
 <div class="danger">
   <ol>
-    <li><strong>商业化落地节奏不确定</strong>：人形机器人单台成本30-50万，进入家庭仍需3-5年降本周期。当前更多是B端工业场景，C端爆发可能慢于预期</li>
-    <li><strong>估值透支风险</strong>：绿的谐波YTD+66.8%，部分标的PE已超100倍。若Q2季报不及预期，高估值标的回调幅度可能较大</li>
-    <li><strong>宇树科技IPO不确定性</strong>：IPO进度可能因市场环境或监管审核推迟，映射行情有落空风险</li>
-    <li><strong>板块轮动风险</strong>：2026年市场风格切换（如从科技切向消费/周期），机器人板块可能阶段性跑输</li>
-    <li><strong>国际竞争加剧</strong>：特斯拉Optimus产能爬坡若超预期，可能冲击国内供应链估值</li>
-    <li><strong>仓位控制</strong>：人形机器人建议总仓位不超过科技资产的25%，不超过总股票资产的15%</li>
+    <li><strong>估值透支：</strong>绿的谐波从4月低点+118%，PE约150x。若Q2季报不及预期，回调幅度可能较大</li>
+    <li><strong>商业化节奏：</strong>人形机器人单台30-50万，C端爆发仍需3-5年降本</li>
+    <li><strong>宇树IPO不确定性：</strong>进度可能推迟，映射行情有落空风险</li>
+    <li><strong>板块轮动：</strong>市场风格切换可能阶段性跑输</li>
+    <li><strong>仓位控制：</strong>机器人总仓不超过科技资产25%，总股票资产15%</li>
   </ol>
 </div>
 
-<!-- ======== 七：总结 ======== -->
+<!-- ===== 七：总结 ===== -->
 <h2>七、综合结论</h2>
 <div class="verdict">
-  <strong style="font-size:1.1em;">📊 综合结论</strong><br><br>
-  <strong>人形机器人是2026年确定性最高的科技赛道之一。</strong>2026年前5个月密集释放的宇树科技IPO、人形机器人马拉松、管理平台上线、量产提速等一系列事件，构成了"资本市场关注→全民认知引爆→政策正名→商业化验证"的<strong>四阶段递进</strong>。<br><br>
-  <strong>4月9日低点以来板块涨幅超30%</strong>，绿的谐波作为绝对龙头从180元飙升至342元（+90%），验证了减速器作为"最确定环节"的产业逻辑。但部分标的年初至今仍为负收益（鸣志-6.6%/双环-2.7%/步科-12.6%），存在补涨机会。<br><br>
-  <strong>核心推荐方向（按确定性排序）：</strong><br>
-  ① <strong>绿的谐波 688017</strong> — 减速器龙头，YTD+66.8%，公募+社保双线加仓<br>
-  ② <strong>雷赛智能 002979</strong> — 运动控制+公募Q1快速进场，YTD+36.3%<br>
-  ③ <strong>鸣志电器 603728</strong> — 灵巧手核心，YTD-6.6%回调充分的补涨机会<br>
-  ④ <strong>机器人ETF华夏 512800</strong> — 一键配置，适合做组合底仓<br><br>
-  <strong>核心催化剂：</strong>宇树科技科创板IPO（预计Q3上会）——这是2026年机器人板块最强的映射催化事件。<br><br>
-  <strong>仓位建议：</strong>3-5万作为机器人专属仓位，占科技仓位不超过25%。与核聚变赛道形成互补：机器人商业化确定性高+中期持有；核聚变远期弹性大+卫星仓位。<br><br>
-  <span style="color:var(--text2);font-size:0.88em;">免责声明：以上分析基于公开数据与新闻报道，不构成投资建议。股市有风险，投资需谨慎。</span>
+  <strong>📊 综合结论</strong><br><br>
+  <strong>人形机器人是2026年确定性最高的科技赛道之一。</strong>6月5日绿的谐波单日+20%涨停，步科+11.4%，全板块放量普涨——市场用真金白银确认了机器人赛道的产业级别机会。<br><br>
+  <strong>产业逻辑扎实：</strong>2026年出货量预计从1.8万台→6.25万台（+247%），减速器作为成本占比35%的核心环节，业绩弹性最大。绿的谐波6/5涨停是龙头确认信号。<br><br>
+  <strong>核心推荐：</strong>① 绿的谐波 688017（减速器龙头）② 机器人ETF华夏 562500（一篮子配置）③ 鸣志电器 603728（宇树IPO映射）④ 雷赛智能 002979（弹性标的）<br><br>
+  <strong>核心催化剂：</strong>宇树科技科创板IPO Q3上会——2026下半年最强映射催化。<br><br>
+  <strong>⚠️ ETF代码已修正：</strong>原512800为银行ETF，正确机器人ETF代码为<strong>562500</strong>（规模209亿）。<br><br>
+  <span style="color:var(--t2);font-size:0.85em;">免责声明：以上分析基于公开数据，不构成投资建议。股市有风险，投资需谨慎。</span>
 </div>
 
-<div class="source-footer">
-  数据截止：2026-05-25 收盘 &nbsp;|&nbsp; YTD/行情：Tushare Pro &nbsp;|&nbsp; 新闻来源：央视网（CCTV.com）<br>
+<div class="footer">
+  数据截止：2026-06-05收盘 &nbsp;|&nbsp; 行情：Tushare Pro &nbsp;|&nbsp; ETF净值：天天基金接口验证<br>
   ⚠️ 本报告仅供参考，不构成投资建议。股市有风险，投资需谨慎。
 </div>
 
