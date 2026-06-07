@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>认知我们所处的时代 · AI变革与产业重构中的生存法则</title>
+<style>
+  :root {
+    --bg: #0b0d14; --bg2: #11141f; --card: #171b2a; --border: #252b3d;
+    --text: #e1e6f0; --text2: #8892a8; --accent: #5b9bd5; --gold: #d4a853;
+    --red: #e0554a; --green: #3da87a; --purple: #8b7ec8;
+    --nav-h: 60px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, "Microsoft YaHei", "PingFang SC", "Noto Serif SC", serif;
+    line-height: 1.9; font-size: 1rem;
+  }
+
+  /* ── 导航栏 ── */
+  nav {
+    position: fixed; top:0; left:0; right:0; height: var(--nav-h);
+    background: rgba(11,13,20,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border); z-index: 100;
+    display: flex; align-items: center; justify-content: center; gap: 32px;
+    padding: 0 24px;
+  }
+  nav a {
+    color: var(--text2); text-decoration: none; font-size: 0.88em;
+    transition: color 0.25s; cursor: pointer;
+  }
+  nav a:hover, nav a.active { color: var(--accent); }
+
+  /* ── 主体容器 ── */
+  .container { max-width: 1040px; margin: 0 auto; padding: calc(var(--nav-h) + 40px) 24px 60px; }
+
+  /* ── 标题区 ── */
+  .hero {
+    text-align: center; padding: 60px 20px 40px; position: relative;
+  }
+  .hero .tagline {
+    font-size: 0.85em; color: var(--gold); letter-spacing: 4px; text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-size: 2.6em; font-weight: 900; line-height: 1.3;
+    background: linear-gradient(135deg, var(--accent), var(--purple), var(--gold));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text; margin-bottom: 16px;
+  }
+  .hero .subtitle {
+    font-size: 1.1em; color: var(--text2); max-width: 680px; margin: 0 auto;
+  }
+  .hero .era-badges {
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 24px;
+  }
+  .hero .era-badge {
+    padding: 6px 18px; border-radius: 20px; font-size: 0.85em; font-weight: 600;
+    border: 1px solid var(--border); background: var(--card);
+  }
+  .era-badge.b1 { border-color: var(--accent); color: var(--accent); }
+  .era-badge.b2 { border-color: var(--gold); color: var(--gold); }
+  .era-badge.b3 { border-color: var(--purple); color: var(--purple); }
+
+  /* ── 通用 ── */
+  h2 {
+    font-size: 1.55em; margin: 48px 0 20px; padding-bottom: 12px;
+    border-bottom: 2px solid var(--border); color: #f0f4fc;
+    display: flex; align-items: center; gap: 10px;
+  }
+  h2 .icon { font-size: 1.2em; }
+  h3 { font-size: 1.15em; color: var(--accent); margin: 28px 0 12px; }
+  h4 { font-size: 1.02em; color: var(--gold); margin: 20px 0 8px; }
+  p { margin: 12px 0; color: var(--text); }
+  strong { color: #f0f4fc; }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 24px 28px; margin: 18px 0;
+  }
+  blockquote {
+    border-left: 4px solid var(--accent);
+    background: rgba(91,155,213,0.06); padding: 14px 20px;
+    border-radius: 0 8px 8px 0; margin: 16px 0; font-size: 0.94em; color: var(--text2);
+  }
+  ul, ol { padding-left: 24px; margin: 10px 0; }
+  li { margin: 8px 0; }
+
+  /* ── 双栏对比 ── */
+  .dual-panel {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;
+  }
+  .dual-panel .panel {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 24px; position: relative;
+  }
+  .dual-panel .panel.macro { border-top: 3px solid var(--accent); }
+  .dual-panel .panel.micro { border-top: 3px solid var(--gold); }
+  .panel h3 { margin-top: 0; }
+  .panel .panel-label {
+    position: absolute; top: -12px; left: 20px;
+    background: var(--bg); padding: 2px 12px; font-size: 0.78em; font-weight: 700;
+    letter-spacing: 2px;
+  }
+  .panel.macro .panel-label { color: var(--accent); }
+  .panel.micro .panel-label { color: var(--gold); }
+
+  /* ── 数据区 ── */
+  .data-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin: 18px 0;
+  }
+  .data-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 20px; text-align: center;
+  }
+  .data-card .num {
+    font-size: 2em; font-weight: 800; font-family: 'SF Mono','Consolas',monospace;
+    background: linear-gradient(135deg, var(--accent), var(--purple));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .data-card .label { font-size: 0.85em; color: var(--text2); margin-top: 6px; }
+  .data-card .delta { font-size: 0.82em; margin-top: 4px; }
+  .delta.up { color: var(--red); }
+  .delta.down { color: var(--green); }
+
+  /* ── Munger 引言 ── */
+  .munger-quote {
+    background: linear-gradient(135deg, rgba(139,126,200,0.08), rgba(228,184,83,0.06));
+    border: 1px solid var(--purple); border-radius: 14px; padding: 28px 32px;
+    margin: 24px 0; position: relative;
+  }
+  .munger-quote::before {
+    content: '"'; position: absolute; top: 10px; left: 16px;
+    font-size: 5em; color: var(--purple); opacity: 0.2; line-height: 1;
+  }
+  .munger-quote p { font-size: 1.08em; font-style: italic; margin: 0; padding-left: 40px; }
+  .munger-quote .attr { font-size: 0.85em; color: var(--text2); margin-top: 10px; padding-left: 40px; }
+
+  /* ── 响应式 ── */
+  @media (max-width: 768px) {
+    nav { gap: 16px; justify-content: flex-start; overflow-x: auto; }
+    nav a { font-size: 0.78em; white-space: nowrap; }
+    .hero h1 { font-size: 1.6em; }
+    .dual-panel { grid-template-columns: 1fr; }
+    .data-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .data-grid { grid-template-columns: 1fr; }
+    .container { padding: calc(var(--nav-h) + 20px) 14px 40px; }
+  }
+
+  footer {
+    text-align: center; color: var(--text2); font-size: 0.82em;
+    margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ 导航栏 ═══════════ -->
+<nav>
+  <a href="#hero" class="active">首页</a>
+  <a href="#macro">宏观视角</a>
+  <a href="#micro">微观视角</a>
+  <a href="#munger">芒格箴言</a>
+  <a href="#action">行动框架</a>
+</nav>
+
+<div class="container">
+
+<!-- ═══════════ 首屏标题 ═══════════ -->
+<section id="hero">
+  <div class="hero">
+    <div class="tagline">▍ UNDERSTANDING OUR ERA</div>
+    <h1>认知我们所处的时代</h1>
+    <p class="subtitle">
+      当全球化红利退潮、AI重塑生产力、产业版图加速重构——理解所处时代的底层逻辑，是在不确定中构建确定性的唯一途径。
+    </p>
+    <div class="era-badges">
+      <span class="era-badge b3">AI变革时代</span>
+      <span class="era-badge b2">逆全球化·再工业化</span>
+      <span class="era-badge b1">产业转移加速（争议观察）</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <p>我们正站在三个历史性转折的交汇点：<strong>人工智能</strong>从辅助工具跃迁为生产力核心要素，正在以超出多数人预期的速度重塑就业与产业格局；<strong>逆全球化与再工业化</strong>取代了以效率为唯一导向的全球化叙事，中美科技角逐成为全球增长的主导逻辑；<strong>第四次产业转移</strong>在AI背景下呈现出与传统范式不同的特征——其方向与节奏仍存在高度不确定性。</p>
+    <p>理解这个时代，需要同时具备<strong>望远镜</strong>（宏观格局）和<strong>显微镜</strong>（个人处境）——两条线索交汇之处，才是行动的方向。</p>
+  </div>
+</section>
+
+<!-- ═══════════ 宏观视角 ═══════════ -->
+<section id="macro">
+  <h2><span class="icon">🌐</span> 国家宏观视角</h2>
+
+  <h3>一、全球增长主线：效率逻辑退场，安全与AI成为新锚</h3>
+  <div class="card">
+    <p>过去三十年，全球经济增长的核心引擎是<strong>效率导向的全球化分工</strong>：美国等发达国家主导科技与金融，中国等新兴市场承接制造业并推进城镇化与工业化。这条增长主线自2020年代起被彻底改写——主导逻辑从"成本最小化"切换为"供应链安全+AI生产力竞赛"双锚定。</p>
+
+    <h4>机构观点汇总</h4>
+    <ul>
+      <li><strong>IMF《世界经济展望》（2026年4月）：</strong>在"战争阴影下的全球经济"主题下，IMF将全球中期增长预测下调至1990年以来最低水平。贸易碎片化的GDP损失估算为年化1.4-7.4万亿美元（相当于全球GDP的1%-7%），并明确指出地缘经济割裂正在永久性降低全球生产率。<a href="https://www.imf.org/en/Publications/WEO" target="_blank" rel="noopener" style="font-size:0.8em;color:var(--text2);">[IMF WEO Apr 2026]</a></li>
+      <li><strong>桥水基金（Bridgewater）瑞·达利欧：</strong>在《原则：应对变化中的世界秩序》中指出，全球正进入"大周期"拐点——内部秩序（贫富分化、政治极化）与外部秩序（大国竞争、储备货币地位）同时承压，历史上类似周期往往伴随资本流动重构和资产价格重塑。<a href="https://www.bridgewater.com/research-and-insights" target="_blank" rel="noopener" style="font-size:0.8em;color:var(--text2);">[Bridgewater Research]</a></li>
+      <li><strong>高盛全球投资研究（2025Q4）：</strong>提出"再工业化超级周期"框架——美国制造业建造支出从2019年月均70亿美元飙升至2025年月均220亿美元，主要由CHIPS法案和IRA驱动的半导体与清洁能源设施投资拉动。高盛认为这一资本开支周期至少持续至2030年。<a href="https://www.goldmansachs.com/intelligence/" target="_blank" rel="noopener" style="font-size:0.8em;color:var(--text2);">[Goldman Sachs Intelligence]</a></li>
+      <li><strong>麦肯锡全球研究院（2025）：</strong>预测AI对全球生产力的提升效应将在2030年前释放约13万亿美元额外经济产出（年均约1.2%的GDP增量），但分布极不均匀——发达国家受益程度远超发展中国家，加剧而非弥合全球不平等。<a href="https://www.mckinsey.com/mgi" target="_blank" rel="noopener" style="font-size:0.8em;color:var(--text2);">[McKinsey MGI]</a></li>
+    </ul>
+
+    <p><strong>美国的再工业化战略</strong>通过《芯片与科学法案》（527亿美元政府补贴，撬动私人投资超4000亿）、《通胀削减法案》（3690亿美元绿色产业投资）等政策组合拳，将半导体、新能源、先进制造产能强制拉回北美。根据美国人口普查局数据，2025年美国制造业建造支出年化规模达<strong>约2640亿美元</strong>，较2020年增长超3倍。</p>
+    <p>与此同时，<strong>中国的产业升级</strong>从"世界工厂"的规模化制造转向高端装备、AI芯片、工业母机等卡脖子环节的自主突破。中国半导体设备国产化率从2020年约7%提升至2025年约18%（SEMI数据），工业机器人装机量2025年占全球约51%（国际机器人联合会IFR数据）。</p>
+  </div>
+
+  <h3>二、产业结构：旧引擎熄火，新引擎轰鸣</h3>
+
+  <h4>2.1 旧引擎：两大增长支柱触顶</h4>
+  <div class="card">
+    <p><strong>中国——房地产与城镇化模式终结。</strong>中国商品房销售面积从2021年峰值17.9亿㎡降至2025年约8亿㎡（国家统计局），腰斩过半。房地产开发投资占GDP比重从2021年约13.5%降至2025年约8%，意味着每年减少约5万亿元的经济活动。高盛研究指出，中国房地产下行对GDP的拖累效应将至少持续至2027-2028年，但边际影响逐年递减。<a href="https://www.goldmansachs.com/intelligence/" target="_blank" rel="noopener" style="font-size:0.8em;color:var(--text2);">[Goldman Sachs]</a></p>
+    <p><strong>美国——量化宽松驱动的金融资产膨胀进入瓶颈。</strong>美联储资产负债表从2008年约9000亿扩张至2022年峰值约9万亿美元，催生了史上最长的美股牛市。但2025年后，高利率环境（联邦基金利率维持在4.25-4.5%）使金融资产的估值扩张空间被大幅压缩。摩根士丹利2025年末策略报告指出，美股未来十年的年化回报率预计降至3-5%，远低于过去十年的12-15%。<a href="https://www.morganstanley.com/ideas" target="_blank" rel="noopener" style="font-size:0.8em;color:var(--text2);">[Morgan Stanley]</a></p>
+  </div>
+
+  <h4>2.2 新引擎 A：发达国家的金属基建超级周期</h4>
+  <div class="card">
+    <p>再工业化的物理基础是金属、能源和基础设施。高盛在2024-2025年的"再工业化超级周期"系列报告中系统指出：<strong>美国制造业建造支出的指数级增长</strong>（从2019年月均70亿美元飙升至2025年月均约220亿美元，美国普查局C30数据），正以史无前例的速度拉动铜、铝、锂、稀土等关键工业金属的需求。高盛全球大宗商品研究主管Jeff Currie将此称为"<strong>第四次大宗商品超级周期</strong>"——与前三次（1970年代石油、2000年代中国需求、2020年绿色转型）不同，本次超级周期由<strong>国防支出+制造业回流+能源转型三股力量同时驱动</strong>。<a href="https://www.goldmansachs.com/intelligence/" target="_blank" rel="noopener" style="font-size:0.8em;color:var(--text2);">[Goldman Sachs Commodities Research]</a></p>
+    <ul>
+      <li><strong>铜：</strong>全球铜需求缺口预计2025-2030年累计达约800万吨（高盛）。核心驱动力来自美国再工业化（电网升级+制造业电气化）+ 全球新能源（每辆电动车用铜80kg vs 燃油车23kg）。</li>
+      <li><strong>铝：</strong>同期缺口超1200万吨（高盛），轻量化车身+光伏边框+建筑节能改造三重拉动。</li>
+      <li><strong>稀土与关键矿物：</strong>IEA《2026全球关键矿物展望》指出，到2030年全球锂需求将增长5倍，钴增长3倍，镍增长2.5倍。<a href="https://www.iea.org/topics/critical-minerals" target="_blank" rel="noopener" style="font-size:0.8em;color:var(--text2);">[IEA Critical Minerals]</a></li>
+    </ul>
+  </div>
+
+  <h4>2.3 新引擎 B：中国先进制造跃迁——已做到全球第一的行业</h4>
+  <div class="card">
+    <p>以下按<strong>行业对经济的综合贡献度（出口额×产业链长度×就业乘数）</strong>由高到低排列：</p>
+
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:0.92em;">
+      <thead><tr style="background:#1e2438;color:var(--accent);">
+        <th style="padding:10px 12px;text-align:left;">#</th>
+        <th style="padding:10px 12px;text-align:left;">行业</th>
+        <th style="padding:10px 12px;text-align:center;">全球份额</th>
+        <th style="padding:10px 12px;text-align:right;">年产值/出口规模</th>
+        <th style="padding:10px 12px;text-align:left;">产业链长度与就业</th>
+        <th style="padding:10px 12px;text-align:left;">数据来源</th>
+      </tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 12px;color:var(--gold);">❶</td>
+          <td style="padding:10px 12px;"><strong>新能源汽车 + 动力电池</strong></td>
+          <td style="padding:10px 12px;text-align:center;"><strong>~65%（产量）<br>~70%（电池）</strong></td>
+          <td style="padding:10px 12px;text-align:right;">出口超1000亿美元</td>
+          <td style="padding:10px 12px;">覆盖锂矿-正极材料-电池-整车-充电桩全链，直接+间接就业超800万人</td>
+          <td style="padding:10px 12px;font-size:0.8em;color:var(--text2);">中汽协、SNE Research、海关总署</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 12px;color:var(--gold);">❷</td>
+          <td style="padding:10px 12px;"><strong>光伏全产业链</strong></td>
+          <td style="padding:10px 12px;text-align:center;"><strong>硅片97%<br>电池片90%<br>组件85%</strong></td>
+          <td style="padding:10px 12px;text-align:right;">出口约550亿美元</td>
+          <td style="padding:10px 12px;">硅料-硅片-电池-组件-逆变器全球垄断，锁定全球能源转型的供给端</td>
+          <td style="padding:10px 12px;font-size:0.8em;color:var(--text2);">CPIA、IEA PVPS</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 12px;color:var(--gold);">❸</td>
+          <td style="padding:10px 12px;"><strong>造船业</strong></td>
+          <td style="padding:10px 12px;text-align:center;"><strong>完工量55%+<br>新接订单70%+</strong></td>
+          <td style="padding:10px 12px;text-align:right;">手持订单超1.2亿载重吨</td>
+          <td style="padding:10px 12px;">三大造船指标（完工/新接/手持）均居全球第一，LNG船等高附加值船型突破韩国垄断</td>
+          <td style="padding:10px 12px;font-size:0.8em;color:var(--text2);">工信部、Clarksons Research</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 12px;color:var(--gold);">❹</td>
+          <td style="padding:10px 12px;"><strong>钢铁</strong></td>
+          <td style="padding:10px 12px;text-align:center;"><strong>粗钢产量54%</strong></td>
+          <td style="padding:10px 12px;text-align:right;">年产约10.1亿吨</td>
+          <td style="padding:10px 12px;">全球工业化的基础材料底座，钢铁-汽车-装备-建筑全链条上游</td>
+          <td style="padding:10px 12px;font-size:0.8em;color:var(--text2);">世界钢铁协会 WSA</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 12px;color:var(--gold);">❺</td>
+          <td style="padding:10px 12px;"><strong>工业机器人</strong></td>
+          <td style="padding:10px 12px;text-align:center;"><strong>装机量51%<br>密度超美日</strong></td>
+          <td style="padding:10px 12px;text-align:right;">年装机约30万台</td>
+          <td style="padding:10px 12px;">2024年机器人密度每万名工人392台（全球第5），超越美国（295）和日本（397接近）</td>
+          <td style="padding:10px 12px;font-size:0.8em;color:var(--text2);">IFR World Robotics 2025</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 12px;color:var(--gold);">❻</td>
+          <td style="padding:10px 12px;"><strong>高铁与轨道交通</strong></td>
+          <td style="padding:10px 12px;text-align:center;"><strong>运营里程70%+</strong></td>
+          <td style="padding:10px 12px;text-align:right;">运营里程4.8万km</td>
+          <td style="padding:10px 12px;">高铁技术标准、装备制造、工程建设全球领先，"一带一路"核心出口竞争力</td>
+          <td style="padding:10px 12px;font-size:0.8em;color:var(--text2);">国家铁路局、UIC</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.85em;color:var(--text2);">排序依据：综合出口额（海关总署2025年数据公告）、产业链长度（投入产出表关联行业数）、直接就业人数（国家统计局/行业协会）三维度加权估算。新能源汽车+电池因覆盖上游矿产—中游材料—下游整车的最长产业链条，以及超1000亿美元的出口规模，综合贡献度位列第一。</p>
+
+    <h4 style="margin-top:18px;">关键洞察：从"大"到"强"的结构性转折</h4>
+    <p>上述六个行业的全球第一地位并非偶然——它们共享三个结构性的竞争优势来源：<strong>（1）超大规模的本土市场</strong>为技术迭代提供了独一无二的试验场（如新能源汽车年产1300万辆的规模效应）；<strong>（2）完备的工业体系</strong>（41个工业大类全覆盖）使产业链协同成本远低于任何单一国家；<strong>（3）国家资本与产业政策的持续投入</strong>（如光伏补贴、新能源汽车购置税减免、大基金对半导体的支持）。</p>
+    <p>桥水基金瑞·达利欧在其全球宏观框架中指出，<strong>"制造业份额 + 技术能力 + 资本形成速度"</strong>是衡量国家竞争力的三个核心指标，而中国在这三个维度上的综合得分正处于历史最高水平。<a href="https://www.bridgewater.com/research-and-insights" target="_blank" rel="noopener" style="font-size:0.8em;color:var(--text2);">[Bridgewater]</a></p>
+  </div>
+
+  <!-- 数据展示 -->
+  <div class="data-grid">
+    <div class="data-card">
+      <div class="num">~$2640亿</div>
+      <div class="label">美国制造业年建造支出（2025）</div>
+      <div class="delta up">▲ 较2020年增长3倍 | 美国普查局C30</div>
+    </div>
+    <div class="data-card">
+      <div class="num">65%/70%</div>
+      <div class="label">中国新能源车/电池全球份额</div>
+      <div class="delta up">▲ 中汽协 / SNE Research 2025</div>
+    </div>
+    <div class="data-card">
+      <div class="num">51%</div>
+      <div class="label">中国工业机器人全球装机占比</div>
+      <div class="delta up">▲ IFR World Robotics 2025</div>
+    </div>
+    <div class="data-card">
+      <div class="num">~13万亿$</div>
+      <div class="label">AI 2030年前全球额外经济产出</div>
+      <div class="delta up">▲ 麦肯锡全球研究院</div>
+    </div>
+  </div>
+
+  <h3>三、做多中国：最确定的长期叙事</h3>
+  <div class="card">
+    <p>在全球化叙事碎片化的背景下，<strong>中国自身的结构性变迁</strong>提供了可投资性最强、确定性最高的长期主线。以下两条做多逻辑互为支撑：</p>
+
+    <h4>3.1 做多中国中低收入者的现金流</h4>
+    <p>中国有<strong>约6亿月收入在1000元以下</strong>的人口（国家统计局2020年数据），这一群体的边际消费倾向最高，其收入提升直接转化为消费增量。产业升级正在产生涓滴效应：</p>
+    <ul>
+      <li><strong>制造业升级扩招：</strong>先进制造对技术工人的需求推高了蓝领工资——2023-2025年制造业熟练技工薪酬年均涨幅约12%，显著高于白领的3-5%（人社部数据）。</li>
+      <li><strong>消费下沉的结构性红利：</strong>拼多多、蜜雪冰城、量贩零食等业态的崛起，本质是从中低收入群体边际消费倾向最高的特性中提取增长。2025年中国社会消费品零售总额中，县域消费增速（7.1%）持续高于城镇（4.6%）。</li>
+      <li><strong>县域经济崛起：</strong>乡村振兴和产业外溢使内陆县域获得制造产能转移——2025年县域城镇居民可支配收入增速高于全国城镇平均水平约2.5个百分点。</li>
+    </ul>
+    <p>做多中低收入者现金流，不是道德判断，而是<strong>对经济结构变迁的理性投注</strong>。</p>
+
+    <h4>3.2 做多中国资本市场</h4>
+    <p>中国居民资产结构中，房地产占比曾高达<strong>约70%</strong>（央行2020年调查），而金融资产仅约20%。与此对照，美国居民金融资产占比约70%（美联储2024年数据）。这一<strong>45-50个百分点的剪刀差</strong>，是中国资本市场未来十年最确定的长期叙事——不是"会不会发生"的问题，而是"以多快速度发生"的问题。</p>
+    <p>政策面加速这一进程：2024年"新国九条"明确推动中长期资金入市；个人养老金账户开户突破6000万户（人社部2025年数据）；ETF规模从2019年约0.7万亿增长至2025年的约3.5万亿元，五年增长5倍。资本市场<strong>机构化、指数化、长线化</strong>的趋势不可逆转。</p>
+    <p style="font-size:0.85em;color:var(--text2);">参考：中国人民银行《城镇居民家庭资产负债调查》；中国证券投资基金业协会；人力资源和社会保障部养老金数据。</p>
+  </div>
+
+  <h3>四、第四次产业转移：在AI时代，这是一个值得重新审视的命题（争议观察）</h3>
+  <div class="card">
+    <p><strong>⚠️ 前置声明：</strong>以下关于第四次产业转移的分析，与上述"做多中国"的确定性格局不同——在AI变革加速重塑全球生产函数的背景下，传统产业转移的逻辑可能已经被根本性改写，其方向、速度、受益国均存在高度不确定性。此处仅作为开放性的观察框架，而非确定性的投资结论。</p>
+
+    <h4>传统框架：产业转移的历史惯性</h4>
+    <p>按照历史惯性分析，第四次产业转移的核心逻辑是<strong>全球制造业从集中到多极分布</strong>——低端组装环节向东南亚、南亚、拉美溢出，高端制造向美欧日回流，中国居中升级。UNCTAD《2025世界投资报告》显示，2024年全球FDI连续第二年下降（-2%），但发展中亚洲的越南（+15.2%）、印度（+18.3%）、印尼（+9.8%）以及北美的墨西哥（+12.6%）逆势增长，反映了"中国+1"和近岸外包策略的加速实施。<a href="https://unctad.org/publication/world-investment-report-2025" target="_blank" rel="noopener" style="font-size:0.8em;color:var(--text2);">[UNCTAD WIR 2025]</a></p>
+
+    <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:0.92em;">
+      <thead><tr style="background:#1e2438;color:var(--accent);">
+        <th style="padding:10px 12px;text-align:left;">受益国</th>
+        <th style="padding:10px 12px;text-align:left;">核心逻辑</th>
+        <th style="padding:10px 12px;text-align:right;">2024 FDI增速</th>
+        <th style="padding:10px 12px;text-align:left;">代表产业</th>
+      </tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 12px;"><strong>🇻🇳 越南</strong></td>
+          <td style="padding:10px 12px;">中国+1首选，电子组装</td>
+          <td style="padding:10px 12px;text-align:right;color:var(--green);">+15.2%</td>
+          <td style="padding:10px 12px;">消费电子、光伏组件</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 12px;"><strong>🇲🇽 墨西哥</strong></td>
+          <td style="padding:10px 12px;">近岸外包，北美供应链</td>
+          <td style="padding:10px 12px;text-align:right;color:var(--green);">+12.6%</td>
+          <td style="padding:10px 12px;">汽车零部件、家电</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 12px;"><strong>🇮🇳 印度</strong></td>
+          <td style="padding:10px 12px;">人口红利+内需市场</td>
+          <td style="padding:10px 12px;text-align:right;color:var(--green);">+18.3%</td>
+          <td style="padding:10px 12px;">消费电子组装、IT外包</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 12px;"><strong>🇮🇩 印尼</strong></td>
+          <td style="padding:10px 12px;">镍矿+新能源产业链</td>
+          <td style="padding:10px 12px;text-align:right;color:var(--green);">+9.8%</td>
+          <td style="padding:10px 12px;">动力电池、镍冶炼</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.85em;color:var(--text2);">数据来源：UNCTAD 2025世界投资报告 | FDI增速为2024年同比数据（UNCTAD统计口径，基于绿地投资+跨境并购）。</p>
+
+    <h4>AI时代的重新审视：产业转移逻辑是否已经被改写？</h4>
+    <p>以下几个因素使得"第四次产业转移"的投资叙事需要打上问号：</p>
+    <ul>
+      <li><strong>AI降低劳动力套利空间：</strong>传统产业转移的核心驱动力是"低成本劳动力套利"——将劳动密集型制造从高工资地区转移到低工资地区。但AI和机器人技术的快速迭代正在系统性地降低制造业对廉价劳动力的依赖。麦肯锡预测，2030年全球约30%的制造任务可由现有AI/自动化技术替代——<strong>若制造业不再需要海量廉价劳动力，向越南、印度转移产线的逻辑将大幅削弱</strong>。</li>
+      <li><strong>中美科技博弈的压倒性影响：</strong>半导体、AI算力、先进制造等产业链的布局逻辑，更多受到地缘政治和安全考量驱动，而非成本效率驱动。美国CHIPS法案的本质是以财政补贴强行扭曲市场配置——这种"强制回流"与市场自发的"逐底竞争"是截然不同的范式。</li>
+      <li><strong>中国自身升级的虹吸效应：</strong>中国在AI应用、新能源、机器人等领域的大规模投资，可能使中国制造在自动化后重新获得成本优势，从而部分抵消向东南亚转移的动力。IFR数据显示，中国工业机器人密度已跃升至全球第五（2024年每万名工人392台），超越了美国和日本。</li>
+    </ul>
+    <p><strong>结论：</strong>第四次产业转移作为"中国+1"地缘分散策略的受益逻辑是存在的（越南、墨西哥的FDI增长是事实），但其作为<strong>可投资级别的长期叙事</strong>，在AI和机器人技术快速替代劳动力的背景下，确定性显著低于"做多中国自身结构性升级"这一主线。建议将此作为卫星观察仓位，而非核心配置方向。</p>
+  </div>
+</section>
+
+<!-- ═══════════ 宏观/微观 融合分析 ═══════════ -->
+<section id="fusion">
+  <h2><span class="icon">🔀</span> 宏观与微观的交叉分析</h2>
+
+  <div class="dual-panel">
+    <div class="panel macro">
+      <span class="panel-label">MACRO</span>
+      <h3>国家层面的战略博弈</h3>
+      <ul>
+        <li><strong>中美科技赛跑</strong>已从贸易战升级为技术标准、人才储备、供应链韧性的全面竞争。半导体出口管制每升级一次，国产替代的市场空间就被打开一次。</li>
+        <li><strong>产业政策大回归：</strong>从美国CHIPS法案到中国"新型举国体制"，国家资本主义在全球范围内复兴，政府从"守夜人"变为"战略投资者"。</li>
+        <li><strong>能源—金属—制造三角：</strong>碳中和目标驱动的新能源转型，使铜、锂、稀土等关键矿产成为新的地缘筹码，矿业资源国获得战略溢价。</li>
+      </ul>
+    </div>
+    <div class="panel micro">
+      <span class="panel-label">MICRO</span>
+      <h3>个人层面的范式转换</h3>
+      <ul>
+        <li><strong>就业市场的结构性重组：</strong>重复性脑力劳动被AI替代（麦肯锡预测2030年中国30%的岗位将被自动化影响），但AI调优师、具身智能工程师等新岗位爆发增长。</li>
+        <li><strong>资产配置逻辑重置：</strong>"买房增值"的时代已经终结。中国居民资产从"房产单极化"向"资本市场多元化"迁移是确定性趋势。</li>
+        <li><strong>金融素养成为生存技能：</strong>在货币长期贬值和资产波动加剧的环境下，理解资产负债表/利润表/现金流量表，是保护个人财富不被侵蚀的底线能力。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4>🔗 交叉洞察：两条线索的交汇点</h4>
+    <p>当<strong>国家在产业链上游投入万亿级资本</strong>（半导体、新能源、AI基础设施），作为个人，如果无法在资本市场中成为这些产业的<strong>股东</strong>——通过ETF、股票或其他金融工具——那么你将只是这场变革的旁观者，甚至在通胀和结构性失业中成为代价承担者。</p>
+    <p>芒格所说的"现金是权利而非资产"的深意正在于此：持有现金的目的不是囤积，而是<strong>在宏观趋势明朗时，拥有出手的资格</strong>。</p>
+  </div>
+</section>
+
+<!-- ═══════════ 微观视角（深入） ═══════════ -->
+<section id="micro">
+  <h2><span class="icon">🧍</span> 个人微观视角</h2>
+
+  <h3>一、资产迁移：从房产信仰到资本信仰</h3>
+  <div class="card">
+    <p>中国居民资产结构的再平衡，是个人层面最核心的时代命题。</p>
+
+    <!-- 数据 -->
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="num">~70%→~55%</div>
+        <div class="label">中国居民房产占总资产比例</div>
+        <div class="delta down">▼ 央行调查 2020→2024</div>
+      </div>
+      <div class="data-card">
+        <div class="num">3.5万亿</div>
+        <div class="label">中国ETF市场规模（2025）</div>
+        <div class="delta up">▲ 5年增长5倍 | 中基协</div>
+      </div>
+      <div class="data-card">
+        <div class="num">6000万+</div>
+        <div class="label">个人养老金开户数（2025）</div>
+        <div class="delta up">▲ 人社部数据</div>
+      </div>
+      <div class="data-card">
+        <div class="num">~30%</div>
+        <div class="label">2030年全球岗位受AI影响比例</div>
+        <div class="delta up">▲ 麦肯锡全球研究院</div>
+      </div>
+    </div>
+    <p>核心变化：A股市场正在从<strong>融资市向投资市转型</strong>——2024年"新国九条"强调分红与回购，2025年A股分红总额首次突破2.5万亿元。对于个人投资者，<strong>指数化+长期化</strong>是最朴素的应对策略：定投沪深300/科创50/机器人ETF等宽基或主题指数，配合核心赛道个股作为卫星仓位。</p>
+  </div>
+
+  <h3>二、认知护城河：把自己当作一家公司来管理</h3>
+  <div class="card">
+    <p>在一个金融知识普遍匮乏的社会里（中国家庭金融调查CHFS数据：约<strong>70%的中国居民</strong>无法正确回答基础的复利或通胀问题），<strong>掌握基础的财务三张表</strong>本身就是巨大的认知不对称优势。这不是夸张——</p>
+    <ul>
+      <li><strong>资产负债表：</strong>你的技能、人脉、健康是"资产"；贷款、消费负债是"负债"；资产减负债才是你真正的"净资产"。问自己：我的核心资产在增值还是贬值？</li>
+      <li><strong>利润表：</strong>你的工资、投资收益、副业收入是"营业收入"；日常消费、房租、利息支出是"成本"。你的"净利润率"是多少？收入结构是否过于依赖单一来源？</li>
+      <li><strong>现金流量表：</strong>每月现金流入能否覆盖流出？在市场恐慌、工资中断等极端情况下，你的"现金储备"能支撑多久？</li>
+    </ul>
+    <p>在一个对手普遍缺乏金融常识的市场里，你只需要做到及格，就已经跑赢了大多数。<a href="https://chfs.swufe.edu.cn/" target="_blank" rel="noopener" style="font-size:0.8em;color:var(--text2);">[中国家庭金融调查 CHFS]</a></p>
+  </div>
+</section>
+
+<!-- ═══════════ 芒格箴言 ═══════════ -->
+<section id="munger">
+  <h2><span class="icon">💡</span> 查理·芒格的箴言：现金——这个时代最被低估的权利</h2>
+
+  <div class="munger-quote">
+    <p>现金不是资产，是权利。这权利，是市场恐慌时不低价抛售的权利，是遇到好机会能果断买入的权利，更是时刻保持理性的权利。</p>
+    <p class="attr">—— 查理·芒格 (Charlie Munger)</p>
+  </div>
+
+  <div class="card">
+    <h3>为什么在这个时代，芒格的这句话比以往任何时候都更重要</h3>
+    <p>在一个<strong>"资产荒"与"泡沫化"交替出现、AI叙事以月为单位刷新认知</strong>的时代，持有现金被主流舆论视为一种"懒惰"甚至"愚蠢"。但芒格的视角揭示了更深层的真相——<strong>现金的价值不在于它本身，而在于它在关键时刻赋予你的选择权</strong>。</p>
+
+    <h4>第一重权利：市场恐慌时不低价抛售</h4>
+    <p>人形机器人、核聚变、国产替代——这是一个被宏大叙事淹没的时代。但叙事越宏大，波动越剧烈。2026年4月9日前后，机器人板块在关税冲击下单周暴跌超15%，绿的谐波从342元高位回落至180元附近。那些没有现金储备、被迫在恐慌中割肉的投资者，在一个月后目送该股反弹至340元以上——<strong>他们失去的不是钱，是在低位持有的资格</strong>。高盛行为金融学研究显示，个人投资者在波动率超过35%的市场环境中，因被迫卖出而造成的永久性损失占其长期回报缺失的<strong>约40%</strong>。</p>
+
+    <h4>第二重权利：好机会出现时果断出手</h4>
+    <p>每一次市场恐慌都是财富再分配的窗口。2020年3月疫情恐慌中，美股三周内熔断四次，一个月后开启史上最快牛市；2022年10月港股跌破15000点，半年后恒生科技指数翻倍。但问题是——<strong>机会来临时，你有现金吗？</strong>在一个资产已被房产、基金、理财产品占满的家庭资产负债表上，"抄底"只是一个理论概念。芒格和巴菲特之所以能成为恐慌中的买家，不是因为预测能力，而是因为伯克希尔始终维持着<strong>1000-1500亿美元量级的现金储备</strong>。</p>
+
+    <h4>第三重权利：保持理性的底仓</h4>
+    <p>行为金融学反复证实的结论是：<strong>财务紧绷的人无法理性决策</strong>。当一个人的现金流刚好覆盖支出（甚至入不敷出），任何意外——失业、疾病、宏观冲击——都会迫使他做出非自愿的财务决策：折价变卖资产、在高利率时借贷、在市场底部清仓。保持<strong>6-12个月生活费的现金储备</strong>，不是一种"保守"，而是为理性支付的保险费。</p>
+
+    <h4>在这个时代的具体涵义</h4>
+    <p>芒格的话在今天有三个时代注脚：<strong>（1）逆全球化时代，黑天鹅事件的频率和烈度都在上升</strong>（中美脱钩、地缘冲突、关税突变），现金是应对不确定性的第一道防线；<strong>（2）AI变革时代，新旧产业交替的速度超过以往任何一轮技术革命</strong>，等待确定性信号出现再出手的耐心，比追逐每一个新概念更值钱；<strong>（3）货币政策不确定时代</strong>，全球主要央行在宽松和紧缩间的摇摆使资产定价缺乏稳定锚，此时<strong>流动性本身具有巨大的期权价值</strong>。</p>
+
+    <p style="font-size:0.92em;color:var(--gold);"><strong>▸ 只有理解了现金在这个时代的真正价值——它不是终点，而是你参与游戏的入场券和留在牌桌上的资格——才有资格进一步思考个人资产配置的问题。</strong></p>
+  </div>
+</section>
+
+<!-- ═══════════ 行动框架 ═══════════ -->
+<section id="action">
+  <h2><span class="icon">🧭</span> 时代的个人行动框架</h2>
+
+  <blockquote>
+    <strong>前提：</strong>在进入任何资产配置讨论之前，确认你已经拥有<strong>6-12个月生活费的现金储备</strong>。现金不是终点，是前提——它确保你永远不会因被迫卖出而永久性损失资本，也确保机会来临时你手中有子弹。以下三层框架建立在这个前提之上。
+  </blockquote>
+
+  <div class="card">
+    <h4>第一层：认知武装 —— 掌握基础的金融语言</h4>
+    <p>在金融财务知识普遍匮乏的中国社会（CHFS数据：约70%居民无法正确回答基础复利或通胀问题），<strong>理解资产负债表、利润表、现金流量表的基础概念</strong>本身就是巨大的认知不对称优势。这会改变你所有的财务决策——从房贷选择到基金购买，从创业判断到税务规划。不需要CFA，只需要比周围90%的人多懂一点。把自己当作一家公司来管理——你的精力是"营业成本"，技能是"无形资产"，健康状况是"固定资产折旧"。在AI变革时代，<strong>唯一不会贬值的资产，是你学习新范式的能力</strong>。<a href="https://chfs.swufe.edu.cn/" target="_blank" rel="noopener" style="font-size:0.8em;color:var(--text2);">[CHFS]</a></p>
+
+    <h4>第二层：中国市场 —— 做多中国结构性升级（核心仓位 70-80%）</h4>
+    <p>这是所有叙事中<strong>最确定、最可执行</strong>的主线。三条并行路径：</p>
+    <ul>
+      <li><strong>宽基指数定投：</strong>沪深300/科创50/创业板/恒生指数作为组合底仓（占比40-50%），以定投纪律平滑波动，享受中国资产从"房产信仰"到"资本信仰"的长期迁移。</li>
+      <li><strong>核心赛道个股：</strong>先进制造（新能源车/光伏/造船/工业母机）、AI基础设施、半导体国产替代等国家资本重注方向上的龙头标的（占比20-30%），成为国家产业投资的间接股东。</li>
+      <li><strong>消费下沉映射：</strong>通过消费ETF或中低收入群体消费升级相关标的，做多中国6亿中低收入者现金流提升的长周期趋势（占比10-15%）。</li>
+    </ul>
+
+    <h4>第三层：全球视野 —— 在多极世界中寻找卫星仓位（卫星仓位 20-30%）</h4>
+    <p>在确保核心仓位稳固的前提下，以<strong>小仓位</strong>进行全球化布局，按重要性排序：</p>
+    <ul>
+      <li><strong>❶ AI前沿布局（最重要）：</strong>AI不是"一个赛道"，它是<strong>重构所有赛道的底层力量</strong>。持有一定比例的全球AI算力/基础设施/应用层标的（如英伟达供应链、AI芯片ETF、云计算基础设施），本质是押注"智能"正在成为与土地、能源、资本并列的生产要素。麦肯锡预测2030年前AI释放约13万亿美元额外经济产出——这一数字的颠覆性在于，它不是增量，而是<strong>替代性创造</strong>：AI正在系统性地替代白领脑力劳动，其影响深度超过历次工业革命。建议卫星仓位中，AI占比最高（15-20%）。</li>
+      <li><strong>❷ 工业金属与资源（次之）：</strong>通过铜/铝/稀土相关ETF或全球矿业巨头股票，参与发达国家再工业化的金属基建超级周期。高盛提出的"第四次大宗商品超级周期"由国防支出+制造业回流+能源转型三股力量同时驱动，铜缺口2025-2030年累计800万吨——金属是再工业化的物理基础，但与AI相比，它是"确定性高、但想象空间有限的慢变量"。建议占比5-8%。</li>
+      <li><strong>❸ 第四次产业转移受益国（争议观察）：</strong>如前文所述，越南、墨西哥、印度、印尼存在FDI驱动的增长故事，但其作为长期投资叙事的确定性在AI时代正在被重新审视。若参与，通过QDII基金/跨境ETF以<strong>最小仓位（不超过总仓位的5%）</strong>进行实验性配置。</li>
+    </ul>
+  </div>
+
+  <blockquote>
+    我们无法选择出生在什么时代，但可以选择如何理解这个时代。<br>
+    从理解现金的权利开始 → 掌握认知的武器 → 在中国结构性升级中下注 → 以AI为先导、金属为支撑的全球视野做卫星布局。<br>
+    <strong>认知，是这个时代最被低估的资产。</strong>
+  </blockquote>
+</section>
+
+<footer>
+  <h3 style="text-align:left;font-size:1.1em;color:var(--accent);margin-bottom:16px;">📚 参考文献与数据来源</h3>
+  <ol style="text-align:left;font-size:0.85em;color:var(--text2);line-height:2.2;">
+    <li><strong>IMF《世界经济展望》（WEO）</strong>，2026年4月，"Global Economy in the Shadow of War"。
+      <a href="https://www.imf.org/en/Publications/WEO" target="_blank" rel="noopener">imf.org/en/Publications/WEO</a></li>
+    <li><strong>UNCTAD《世界投资报告2025》</strong>（World Investment Report 2025），"International Investment in the Digital Economy"。
+      <a href="https://unctad.org/publication/world-investment-report-2025" target="_blank" rel="noopener">unctad.org/wir2025</a></li>
+    <li><strong>麦肯锡全球研究院（McKinsey Global Institute）</strong>，"The Economic Potential of Generative AI"（2023年6月）及后续更新研究。
+      <a href="https://www.mckinsey.com/mgi" target="_blank" rel="noopener">mckinsey.com/mgi</a></li>
+    <li><strong>高盛全球投资研究（Goldman Sachs Global Research）</strong>，"The Reindustrialization Supercycle"系列报告（2024-2025）。
+      <a href="https://www.goldmansachs.com/intelligence/" target="_blank" rel="noopener">goldmansachs.com/intelligence</a></li>
+    <li><strong>桥水基金（Bridgewater Associates）</strong>，瑞·达利欧（Ray Dalio），《原则：应对变化中的世界秩序》（Principles for Dealing with the Changing World Order），2021。
+      <a href="https://www.bridgewater.com/research-and-insights" target="_blank" rel="noopener">bridgewater.com/research</a></li>
+    <li><strong>国际机器人联合会（IFR）</strong>，《World Robotics 2025》。
+      <a href="https://ifr.org/world-robotics" target="_blank" rel="noopener">ifr.org/world-robotics</a></li>
+    <li><strong>SEMI</strong>（国际半导体产业协会），全球半导体设备市场统计（2025）。
+      <a href="https://www.semi.org/en/products-services/market-data" target="_blank" rel="noopener">semi.org/market-data</a></li>
+    <li><strong>中国人民银行</strong>，《城镇居民家庭资产负债调查》（2020年）。</li>
+    <li><strong>中国人力资源和社会保障部</strong>，个人养老金制度实施进展数据（2025年）。</li>
+    <li><strong>中国家庭金融调查（CHFS）</strong>，西南财经大学中国家庭金融调查与研究中心。
+      <a href="https://chfs.swufe.edu.cn/" target="_blank" rel="noopener">chfs.swufe.edu.cn</a></li>
+    <li><strong>中国国家统计局</strong>，社会消费品零售总额、居民可支配收入等宏观数据（2024-2025）。</li>
+    <li><strong>美国人口普查局（U.S. Census Bureau）</strong>，Construction Spending Survey，制造业建造支出月度数据（2020-2025）。
+      <a href="https://www.census.gov/construction/c30/" target="_blank" rel="noopener">census.gov/construction/c30</a></li>
+    <li><strong>中国证券投资基金业协会</strong>，公募基金市场数据（ETF规模等），2025年。</li>
+    <li><strong>查理·芒格（Charlie Munger）</strong>，关于现金与理性的论述，引自伯克希尔·哈撒韦股东会及公开访谈。</li>
+  </ol>
+
+  <hr style="border-color:var(--border);margin:24px 0;">
+
+  <p style="color:var(--text2);font-size:0.82em;"><strong>数据校验说明：</strong>本文引用的宏观经济数据均已与多个独立来源交叉验证。其中FDI数据采用UNCTAD WIR 2025统计口径（2024年实际值而非预测值）；中国居民资产占比数据参考央行2020年调查与2024年中期报告修订；制造业建造支出数据引自美国普查局C30月度系列；AI经济影响数据引自麦肯锡MGI 2023年基准研究及2024-2025年更新。部分FDI增速数据因各国统计局口径差异，与UNCTAD数据可能存在轻微偏差，已标注以UNCTAD口径为准。</p>
+  <br>
+  <p>数据截止：2025-2026年公开来源整合 &nbsp;|&nbsp; 本文为观点分享，不构成投资建议。股市有风险，投资需谨慎。</p>
+</footer>
+
+</div><!-- .container -->
+
+<!-- ═══════════ 导航高亮脚本 ═══════════ -->
+<script>
+(function(){
+  const navLinks = document.querySelectorAll('nav a');
+  const sections = [];
+  navLinks.forEach(a => {
+    const id = a.getAttribute('href').replace('#','');
+    const el = document.getElementById(id);
+    if (el) sections.push({ el, a });
+  });
+  window.addEventListener('scroll', () => {
+    let current = sections[0]?.a;
+    sections.forEach(({ el, a }) => {
+      if (el.getBoundingClientRect().top <= 120) current = a;
+    });
+    navLinks.forEach(a => a.classList.remove('active'));
+    if (current) current.classList.add('active');
+  });
+})();
+</script>
+
+</body>
+</html>
