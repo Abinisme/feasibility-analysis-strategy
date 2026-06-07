@@ -139,17 +139,45 @@
   .munger-quote p { font-size: 1.08em; font-style: italic; margin: 0; padding-left: 40px; }
   .munger-quote .attr { font-size: 0.85em; color: var(--text2); margin-top: 10px; padding-left: 40px; }
 
+  /* ── 返回链接 ── */
+  .back-link { display: inline-block; margin-bottom: 4px; color: var(--text2); font-size: 0.88em; text-decoration: none; }
+  .back-link:hover { color: var(--accent); }
+
   /* ── 响应式 ── */
   @media (max-width: 768px) {
-    nav { gap: 16px; justify-content: flex-start; overflow-x: auto; }
-    nav a { font-size: 0.78em; white-space: nowrap; }
+    nav { gap: 14px; justify-content: flex-start; overflow-x: auto; padding: 0 12px; }
+    nav a { font-size: 0.76em; white-space: nowrap; }
+    .hero { padding: 40px 10px 30px; }
     .hero h1 { font-size: 1.6em; }
+    .hero-banner { padding: 18px 16px; margin: 10px 0 18px; }
+    .hero-banner::before { top: 8px; right: 12px; font-size: 0.7em; }
+    .hero-banner h3 { font-size: 1.1em; }
     .dual-panel { grid-template-columns: 1fr; }
+    .supply-chain-grid { grid-template-columns: 1fr; }
     .data-grid { grid-template-columns: 1fr 1fr; }
+    .card { padding: 16px 18px; }
+    table { font-size: 0.8em; }
+    th, td { padding: 7px 8px; }
+    h2 { font-size: 1.3em; }
+    .container { padding: calc(var(--nav-h) + 24px) 16px 40px; }
+    .munger-quote { padding: 20px 18px; }
+    .munger-quote p { padding-left: 28px; font-size: 0.95em; }
+    .munger-quote::before { font-size: 3.5em; top: 8px; left: 8px; }
+    footer ol { padding-left: 18px; font-size: 0.8em; }
   }
   @media (max-width: 480px) {
     .data-grid { grid-template-columns: 1fr; }
-    .container { padding: calc(var(--nav-h) + 20px) 14px 40px; }
+    .container { padding: calc(var(--nav-h) + 16px) 12px 32px; }
+    .hero h1 { font-size: 1.35em; }
+    .hero .subtitle { font-size: 0.92em; }
+    .hero .era-badges { gap: 6px; }
+    .hero .era-badge { padding: 4px 12px; font-size: 0.78em; }
+    .card { padding: 14px; }
+    nav { gap: 10px; }
+    nav a { font-size: 0.7em; }
+    .back-link { font-size: 0.82em; }
+    .dual-panel .panel { padding: 16px; }
+    .panel .panel-label { font-size: 0.7em; top: -10px; left: 14px; }
   }
 
   footer {
@@ -170,6 +198,8 @@
 </nav>
 
 <div class="container">
+
+<a href="./index.html" class="back-link">← 返回首页</a>
 
 <!-- ═══════════ 首屏标题 ═══════════ -->
 <section id="hero">
