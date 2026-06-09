@@ -34,50 +34,17 @@
   .end-quote { font-size: 1.05em; line-height: 1.9; background: rgba(79,195,247,0.05); border-radius: 10px; padding: 24px; margin: 20px 0; text-align: center; color: #ccd6e0; }
   .end-quote strong { color: var(--accent); }
   .disclaimer { color: var(--text2); font-size: 0.85em; text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); }
-  /* 番外侧边栏系统 */
-  body { padding-right: 60px; }
-  .sidebar-toggle { position: fixed; right: 12px; top: 50%; transform: translateY(-50%); z-index: 999; }
-  .sidebar-btn { width: 42px; height: 42px; background: var(--card); border: 1px solid var(--border); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 18px; transition: all 0.3s; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
-  .sidebar-btn:hover { border-color: var(--accent); box-shadow: 0 2px 20px rgba(79,195,247,0.3); }
-  .sidebar-btn.open { background: var(--purple); color: #fff; border-color: var(--purple); }
-  /* 侧边面板 */
-  .side-panel { position: fixed; right: -460px; top: 0; width: 440px; height: 100vh; background: #131720; border-left: 1px solid var(--border); z-index: 998; transition: right 0.35s cubic-bezier(0.4,0,0.2,1); overflow-y: auto; padding: 20px 24px 40px; }
-  .side-panel.open { right: 0; box-shadow: -4px 0 30px rgba(0,0,0,0.5); }
-  .side-panel h3 { font-size: 1.05em; color: var(--purple); margin: 0 0 14px; padding-bottom: 12px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: #131720; z-index: 2; padding-top: 8px; }
-  /* 导航跳转按钮 */
-  .nav-jumps { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
-  .nav-jump { background: rgba(79,195,247,0.06); border: 1px solid var(--border); border-radius: 20px; padding: 5px 14px; cursor: pointer; font-size: 0.82em; color: var(--text2); transition: all 0.2s; white-space: nowrap; }
-  .nav-jump:hover, .nav-jump.active { background: rgba(79,195,247,0.15); color: var(--accent); border-color: var(--accent); }
-  /* 手风琴 */
-  .acc-item { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; overflow: hidden; transition: all 0.25s; }
-  .acc-item.open { border-color: rgba(167,139,250,0.3); }
-  .acc-header { padding: 11px 14px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 0.9em; color: var(--text); transition: all 0.2s; user-select: none; }
-  .acc-header:hover { background: rgba(79,195,247,0.04); }
-  .acc-header .acc-num { display: inline-block; background: var(--purple); color: #fff; width: 22px; height: 22px; text-align: center; line-height: 22px; border-radius: 50%; font-size: 0.8em; margin-right: 10px; flex-shrink: 0; }
-  .acc-header .acc-arrow { font-size: 0.7em; transition: transform 0.25s; color: var(--text2); }
-  .acc-item.open .acc-arrow { transform: rotate(180deg); color: var(--accent); }
-  .acc-body { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1); background: rgba(79,195,247,0.02); }
-  .acc-item.open .acc-body { max-height: 1200px; }
-  .acc-content { padding: 0 14px 14px; font-size: 0.86em; line-height: 1.7; color: var(--text2); }
-  .acc-content strong { color: #ccd6e0; }
-  .acc-content .mini-rule { padding: 8px 12px; margin: 6px 0; border-radius: 6px; font-size: 0.94em; }
-  .acc-content .mini-rule.r { border-left: 2px solid var(--red); background: rgba(226,82,65,0.05); }
-  .acc-content .mini-rule.g { border-left: 2px solid var(--green); background: rgba(34,197,94,0.05); }
-  .acc-content .mini-rule.y { border-left: 2px solid var(--gold); background: rgba(245,158,11,0.05); }
-  .acc-content .mini-rule.b { border-left: 2px solid var(--accent); background: rgba(79,195,247,0.05); }
-  .side-panel .s-banner { background: rgba(245,158,11,0.08); border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; font-size: 0.84em; color: var(--gold); border: 1px solid rgba(245,158,11,0.15); }
-  /* 遮罩 */
-  .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 997; opacity: 0; pointer-events: none; transition: opacity 0.35s; }
-  .overlay.show { opacity: 1; pointer-events: auto; }
-  /* 主内容区 */
-  .main-content { transition: margin-right 0.35s cubic-bezier(0.4,0,0.2,1); }
-  .side-panel.open ~ .main-content { margin-right: 440px; }
-  @media (max-width: 900px) {
-    body { padding-right: 20px; }
-    .side-panel { width: 100vw; right: -100vw; }
-    .side-panel.open ~ .main-content { margin-right: 0; }
-    .sidebar-toggle { right: 8px; }
-  }
+  /* 番外主内容区样式 */
+  .fanwai-section { margin-bottom: 30px; }
+  .fanwai-banner { background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.25); border-radius: 10px; padding: 16px 24px; margin: 20px 0; color: var(--gold); font-size: 0.95em; text-align: center; }
+  .fanwai-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin: 16px 0; }
+  .fanwai-card h4 { color: var(--purple); margin: 0 0 12px; font-size: 1.05em; }
+  .fanwai-card h4 .num-badge { display: inline-block; background: var(--purple); color: #fff; width: 24px; height: 24px; text-align: center; line-height: 24px; border-radius: 50%; font-size: 0.82em; font-weight: 700; margin-right: 10px; vertical-align: middle; }
+  .mini-rule { padding: 10px 14px; margin: 8px 0; border-radius: 6px; font-size: 0.94em; }
+  .mini-rule.r { border-left: 3px solid var(--red); background: rgba(226,82,65,0.06); }
+  .mini-rule.g { border-left: 3px solid var(--green); background: rgba(34,197,94,0.06); }
+  .mini-rule.y { border-left: 3px solid var(--gold); background: rgba(245,158,11,0.06); }
+  .mini-rule.b { border-left: 3px solid var(--accent); background: rgba(79,195,247,0.06); }
   @media (max-width: 768px) { body { padding: 12px; } h1 { font-size: 1.4em; padding: 20px 0; } h2 { font-size: 1.15em; } table { font-size: 0.82em; } th, td { padding: 7px 8px; } .card { padding: 14px 16px; } .rules-grid { grid-template-columns: 1fr; }
   .rules-box { background: linear-gradient(135deg, rgba(167,139,250,0.04), rgba(79,195,247,0.04)); border: 1px solid rgba(167,139,250,0.2); border-radius: 12px; padding: 22px 26px; margin: 20px 0; }
   .rules-box h3 { color: var(--purple); margin-top: 0; }
@@ -96,85 +63,10 @@
 <body>
 <a href="./index.html" class="back-link">← 返回首页</a>
 
-<!-- ======== 侧边栏按钮 ======== -->
-<div class="sidebar-toggle"><button class="sidebar-btn" id="sidebarBtn" title="核心观点">⚡</button></div>
-<div class="overlay" id="overlay"></div>
-
-<!-- ======== 侧边面板 ======== -->
-<aside class="side-panel" id="sidePanel">
-  <h3>📌 番外 · AI主线坚守框架</h3>
-
-  <div class="s-banner">⚡ 产业趋势没坏 <strong>+</strong> 交易结构堪忧 = <strong>"逻辑没坏、价格先坏"</strong></div>
-
-  <div class="nav-jumps" id="navJumps">
-    <span class="nav-jump active" data-id="acc1">① 仓位结构</span>
-    <span class="nav-jump" data-id="acc2">② 换车误判</span>
-    <span class="nav-jump" data-id="acc3">③ 题材误认</span>
-    <span class="nav-jump" data-id="acc4">④ 情绪接管</span>
-    <span class="nav-jump" data-id="acc5">⑤ 退潮追问</span>
-    <span class="nav-jump" data-id="acc6">⑥ 信号犹豫</span>
-  </div>
-
-  <div class="acc-item open" id="acc1">
-    <div class="acc-header" onclick="toggleAcc('acc1')"><div><span class="acc-num">1</span><strong>仓位结构扛不住波动</strong></div><span class="acc-arrow">▼</span></div>
-    <div class="acc-body"><div class="acc-content">
-      <p>光模块/算力硬件周度回撤 8%-10% 属常态，极端单月 25%。核心应对：不是"跌多少卖"，而是"什么结构能在极端调整中不被迫决策"。</p>
-      <div class="mini-rule r"><strong>6%-8%</strong> 预警线：不动仓位，冷静观察</div>
-      <div class="mini-rule y"><strong>10%-12%</strong> 结构调整线：向真盈利环节集中</div>
-      <div class="mini-rule g"><strong>15%</strong> 仓位红线：降低总仓位，全面再评估</div>
-      <p style="margin-top:8px;font-size:0.9em;color:var(--gold);">规则必须事前签就，非盘中情绪推导。</p>
-    </div></div>
-  </div>
-
-  <div class="acc-item" id="acc2">
-    <div class="acc-header" onclick="toggleAcc('acc2')"><div><span class="acc-num">2</span><strong>把"换车"当成风控</strong></div><span class="acc-arrow">▼</span></div>
-    <div class="acc-body"><div class="acc-content">
-      <div class="mini-rule r"><strong>⚠️ 最该避免：</strong>卖出真盈利龙头，换入回撤小的二三线标的。打着"风控"旗号用核心仓逻辑持有纯叙事资产——表面降风险，实则用优质资产置换劣质资产。</div>
-      <p style="margin-top:8px;">二三线弹性品种可做交易仓，但必须短周期、明确止损、单列仓位。<strong>模糊交易仓与核心仓边界是被动的开始。</strong></p>
-    </div></div>
-  </div>
-
-  <div class="acc-item" id="acc3">
-    <div class="acc-header" onclick="toggleAcc('acc3')"><div><span class="acc-num">3</span><strong>题材股当核心龙头持有</strong></div><span class="acc-arrow">▼</span></div>
-    <div class="acc-body"><div class="acc-content">
-      <p><strong>四条铁律确认核心仓：</strong></p>
-      <div class="mini-rule b">① 订单可见度：增长体现预收账款/合同负债/利润表中的利润</div>
-      <div class="mini-rule b">② 毛利率方向：稳定或提升，非收入暴涨但毛利下滑</div>
-      <div class="mini-rule b">③ 现金流匹配度：经营现金流≈净利润，应收占比持续抬升=盈利含水</div>
-      <div class="mini-rule b">④ 产能扩张动因：由真实订单倒逼，非仅"看好前景"</div>
-      <p style="margin-top:8px;color:var(--gold);">坚守的不是"AI"标签，而是<strong>真正创造自由现金流的环节</strong>。</p>
-    </div></div>
-  </div>
-
-  <div class="acc-item" id="acc4">
-    <div class="acc-header" onclick="toggleAcc('acc4')"><div><span class="acc-num">4</span><strong>情绪接管决策系统</strong></div><span class="acc-arrow">▼</span></div>
-    <div class="acc-body"><div class="acc-content">
-      <p><strong>行为金融四大效应：</strong>禀赋效应 → 叙事依恋 → 社会认同压力 → 沉锚效应</p>
-      <div class="mini-rule g"><strong>对抗之道：尾随止损</strong>——事前签下的契约。冷静时设定回撤阈值（15%），触发即离场，不留主观介入空间。</div>
-      <p style="margin-top:6px;">放弃"证明自己看对"，建立<strong>"允许自己看错"的机制</strong>。</p>
-    </div></div>
-  </div>
-
-  <div class="acc-item" id="acc5">
-    <div class="acc-header" onclick="toggleAcc('acc5')"><div><span class="acc-num">5</span><strong>每天追问"是不是退潮了"</strong></div><span class="acc-arrow">▼</span></div>
-    <div class="acc-body"><div class="acc-content">
-      <p>每日盯盘问退潮=把决策节奏让渡给盘面心跳。</p>
-      <div class="mini-rule b"><strong>🎯 终极锚点：7月中旬中报窗口。</strong>届时重新校验订单、利润、现金流与估值匹配度。在此之前，所有波动属预期博弈，不值得每日改主意。</div>
-    </div></div>
-  </div>
-
-  <div class="acc-item" id="acc6">
-    <div class="acc-header" onclick="toggleAcc('acc6')"><div><span class="acc-num">6</span><strong>信号到了还在犹豫</strong></div><span class="acc-arrow">▼</span></div>
-    <div class="acc-body"><div class="acc-content">
-      <div class="mini-rule g"><strong>✅ 严格执行：</strong>设好计划，达到即执行。不为执行后涨跌纠结——为遵守了纪律而欢呼。</div>
-    </div></div>
-  </div>
-</aside>
-
 <!-- ======== 主内容区 ======== -->
 <div class="main-content">
 <h1>AI革命带来的科技牛市：一场五年一遇的结构性机会</h1>
-<p class="subtitle">长文分析 · 个人观点整理 &nbsp;|&nbsp; 点击右下角 ⚡ 查看番外框架</p>
+<p class="subtitle">长文分析 · 个人观点整理 &nbsp;|&nbsp; <a href="#fanwai" style="color:var(--purple);">番外：AI主线坚守框架 ↓</a></p>
 
 <h2>一、这场牛市从何而来</h2>
 
@@ -200,7 +92,7 @@
 
 <div class="highlight-box">
   <p>从ChatGPT到DeepSeek，AI技术的突破将不亚于当年互联网和智能手机对人类社会的改变。AI需要海量算力，算力需要GPU和CPU，GPU/CPU需要光模块、PCB、散热、存储，一层层传导上去，整条产业链被激活。</p>
-  <p style="margin-top:12px;">这条传导链的最先验证者，是光模块龙头。2025年至2026年，A股市场诞生了一个现象级组合——<strong>"易中天"</strong>（中际旭创、新易盛、天孚通信），这三家光模块公司在一年多的时间里涨幅均超过10倍。中际旭创2026年一季报净利润同比+262%，单季57亿元，超过2025年全年一半，提前到4月17日披露——这就像优秀考生提前交卷，用行动宣告业绩超预期。</p>
+  <p style="margin-top:12px;">这条传导链的最先验证者，是光模块龙头。2025年至2026年，A股市场诞生了一个现象级组合——<strong>"易中天"</strong>（<a href="https://quote.eastmoney.com/sz300308.html" target="_blank">中际旭创</a>、<a href="https://quote.eastmoney.com/sz300502.html" target="_blank">新易盛</a>、<a href="https://quote.eastmoney.com/sz300394.html" target="_blank">天孚通信</a>），这三家光模块公司在一年多的时间里涨幅均超过10倍。<a href="https://quote.eastmoney.com/sz300308.html" target="_blank">中际旭创</a>2026年一季报净利润同比+262%，单季57亿元，超过2025年全年一半，提前到4月17日披露——这就像优秀考生提前交卷，用行动宣告业绩超预期。</p>
 </div>
 
 <blockquote><strong>一家公司单季利润57亿，同比+262%——这不是在炒预期，这是用真实的业绩为整场科技革命背书。</strong></blockquote>
@@ -210,25 +102,25 @@
 
 <h3>上游：设备和材料——被"卡脖子"最严重的环节</h3>
 <p>芯片制造分为设计、制造、封装测试三大环节，其中制造环节对上游设备和材料的要求极高，而这个环节恰恰是中国被"卡脖子"最严重的领域。</p>
-<p style="margin-top:12px;"><strong>设备端</strong>，全球光刻机市场被ASML垄断。国内能提供的主要是28nm及以上成熟制程设备。北方华创和中微公司是A股设备端两大龙头，但和国际巨头差距依然巨大。正因如此，国产替代的空间也最大——每一次外部管制升级，都带动设备股的脉冲式上涨。</p>
-<p style="margin-top:12px;"><strong>材料端</strong>，硅片、特种气体、光刻胶、抛光液等，大陆厂商在部分品类有所突破，但高端材料仍高度依赖进口。彤程新材和华特气体是材料端的代表。</p>
-<p style="margin-top:12px;"><strong>EDA软件</strong>，芯片设计必需的设计软件，被新思科技、铿腾电子、西门子EDA三家垄断，国产替代刚起步。华大九天是A股中唯一成规模的EDA厂商。</p>
+<p style="margin-top:12px;"><strong>设备端</strong>，全球光刻机市场被ASML垄断。国内能提供的主要是28nm及以上成熟制程设备。<a href="https://quote.eastmoney.com/sz002371.html" target="_blank">北方华创</a>和<a href="https://quote.eastmoney.com/sh688012.html" target="_blank">中微公司</a>是A股设备端两大龙头，但和国际巨头差距依然巨大。正因如此，国产替代的空间也最大——每一次外部管制升级，都带动设备股的脉冲式上涨。</p>
+<p style="margin-top:12px;"><strong>材料端</strong>，硅片、特种气体、光刻胶、抛光液等，大陆厂商在部分品类有所突破，但高端材料仍高度依赖进口。<a href="https://quote.eastmoney.com/sh603650.html" target="_blank">彤程新材</a>和<a href="https://quote.eastmoney.com/sh688268.html" target="_blank">华特气体</a>是材料端的代表。</p>
+<p style="margin-top:12px;"><strong>EDA软件</strong>，芯片设计必需的设计软件，被新思科技、铿腾电子、西门子EDA三家垄断，国产替代刚起步。<a href="https://quote.eastmoney.com/sz301269.html" target="_blank">华大九天</a>是A股中唯一成规模的EDA厂商。</p>
 
 <h3>中游：制造——重资产投入，周期波动大</h3>
-<p>芯片制造是典型的重资产、高资本开支赛道。一条先进制程生产线投资额以百亿美元计，台积电一家拿走全球超过60%的代工份额。A股制造端代表是中芯国际，它是大陆唯一能提供14nm制程的晶圆厂。芯片制造的商业模式核心是"利用率"——当行业景气上行，产能被抢空，利润率爆表；当景气下行，产能空置，亏损严重。这个板块适合在行业周期底部布局，不适合追高。</p>
+<p>芯片制造是典型的重资产、高资本开支赛道。一条先进制程生产线投资额以百亿美元计，台积电一家拿走全球超过60%的代工份额。A股制造端代表是<a href="https://quote.eastmoney.com/sh688981.html" target="_blank">中芯国际</a>，它是大陆唯一能提供14nm制程的晶圆厂。芯片制造的商业模式核心是"利用率"——当行业景气上行，产能被抢空，利润率爆表；当景气下行，产能空置，亏损严重。这个板块适合在行业周期底部布局，不适合追高。</p>
 
 <h3>下游：封测和设计——弹性最大的环节</h3>
-<p><strong>封测</strong>是芯片产业链中技术壁垒相对最低、中国企业相对最具竞争力的环节。长电科技是全球第三大封测厂。</p>
+<p><strong>封测</strong>是芯片产业链中技术壁垒相对最低、中国企业相对最具竞争力的环节。<a href="https://quote.eastmoney.com/sh600584.html" target="_blank">长电科技</a>是全球第三大封测厂。</p>
 <p style="margin-top:12px;"><strong>芯片设计</strong>，这是整个板块中公司数量最多、个股分化最大的领域。</p>
 
 <table>
   <thead><tr><th>细分方向</th><th>代表龙头</th><th>核心逻辑</th></tr></thead>
   <tbody>
-    <tr><td><strong>AI芯片/GPU</strong></td><td>寒武纪、海光信息</td><td>国产AI算力核心，政策加持</td></tr>
-    <tr><td><strong>CPU</strong></td><td>龙芯中科、飞腾</td><td>信创需求，国产替代</td></tr>
-    <tr><td><strong>存储芯片</strong></td><td>兆易创新、北京君正</td><td>AI服务器带动HBM/DDR5需求</td></tr>
-    <tr><td><strong>射频芯片</strong></td><td>卓胜微、唯捷创芯</td><td>5G手机和基站需求</td></tr>
-    <tr><td><strong>功率半导体</strong></td><td>斯达半导、时代电气</td><td>新能源车，光伏，风电需求</td></tr>
+    <tr><td><strong>AI芯片/GPU</strong></td><td><a href="https://quote.eastmoney.com/sh688256.html" target="_blank">寒武纪</a>、<a href="https://quote.eastmoney.com/sh688041.html" target="_blank">海光信息</a></td><td>国产AI算力核心，政策加持</td></tr>
+    <tr><td><strong>CPU</strong></td><td><a href="https://quote.eastmoney.com/sh688047.html" target="_blank">龙芯中科</a>、飞腾</td><td>信创需求，国产替代</td></tr>
+    <tr><td><strong>存储芯片</strong></td><td><a href="https://quote.eastmoney.com/sh603986.html" target="_blank">兆易创新</a>、<a href="https://quote.eastmoney.com/sz300223.html" target="_blank">北京君正</a></td><td>AI服务器带动HBM/DDR5需求</td></tr>
+    <tr><td><strong>射频芯片</strong></td><td><a href="https://quote.eastmoney.com/sz300782.html" target="_blank">卓胜微</a>、<a href="https://quote.eastmoney.com/sh688153.html" target="_blank">唯捷创芯</a></td><td>5G手机和基站需求</td></tr>
+    <tr><td><strong>功率半导体</strong></td><td><a href="https://quote.eastmoney.com/sh603290.html" target="_blank">斯达半导</a>、<a href="https://quote.eastmoney.com/sh688187.html" target="_blank">时代电气</a></td><td>新能源车，光伏，风电需求</td></tr>
   </tbody>
 </table>
 
@@ -244,6 +136,7 @@
 带动芯片设计（寒武纪、海光）和晶圆制造（中芯国际）需求
     ↓
 带动上游设备（北方华创、中微）和材料（彤程新材）景气
+    ↓
     ↓
 算力运行需要高速数据传输
     ↓
@@ -311,51 +204,90 @@
   <p style="margin-top:16px;font-size:1.15em;"><strong>现在，你站在光里了吗？</strong></p>
 </div>
 
+<!-- ======== 番外·谈坚守：文末 ======== -->
+<div class="fanwai-section" id="fanwai">
+<hr class="divider-accent">
+<h2 style="color: var(--purple); border-left-color: var(--purple);">番外一·谈坚守：看好AI主线，如何真正拿得住</h2>
+
+<p>看好AI主线，相信已经是大时代里很多同学的共识了，但是共识不意味着好坚持，不意味着能拿的住。而且坚守更加需要可执行的战术动作——<strong>执行纪律 ≠ 死拿不动</strong>，而是按预设规则动态调整仓位、结构与止损，把"决定权"从盘中情绪交还给事前冷静的自己。</p>
+
+<div class="fanwai-banner">⚡ 首先，问题需要拆解：<strong>产业趋势坏没坏，交易形态坏没坏？</strong></div>
+
+<div class="highlight-box">
+<p><strong>产业趋势没坏：</strong>AI算力、光模块、端侧AI、半导体国产化等方向，一季报业绩兑现扎实，订单可见度高、毛利率稳升、现金流匹配、产能扩张有订单支撑，仍处于真实产业周期内，逻辑未被证伪。</p>
+<p style="margin-top:12px;"><strong>交易结构堪忧：</strong>前期涨幅集中、成交集中、弹性集中、融资盘满、浮盈盘重，导致资金天然存在止盈换仓、控制波动的需求——无需基本面利空，单靠获利了结与流动性再平衡，就足以触发显著回撤。</p>
+<p style="margin-top:12px;">二者叠加造成<strong>"逻辑没坏、价格先坏"</strong>的别扭状态，此时反复追问"是否退潮"毫无意义，只会陷入被K线牵着走的情绪陷阱。</p>
+</div>
+
+<p style="margin-top:16px;">如果你认同这两个基本结论，请往下看，努力避免以下几个问题：</p>
+
+<div class="fanwai-card">
+<h4><span class="num-badge">1</span>仓位结构扛不住波动</h4>
+<p><strong>历史现实：</strong>光模块/算力硬件板块周度回撤8%-10%属常态，极端窗口单月25%-30%回撤曾出现；若AI链持仓占比达60%，组合承受10%-15%回撤是大概率事件。</p>
+<p style="margin-top:10px;"><strong>应对核心：</strong>不是"跌多少卖"，而是"什么结构能让我在终极调整中不被迫决策"。杠杆过重或高弹性品种占比过高，会导致回撤12%-15%即触发被动减仓——这不是判断错误，是结构本身没预留缓冲空间。</p>
+
+<p style="margin-top:14px;">如何避免这个问题，可以考虑出现以下跌幅的应对方式：</p>
+<div class="mini-rule y"><strong>6%-8% 预警线：</strong>重新检视持仓，但不动仓位</div>
+<div class="mini-rule r"><strong>10%-12% 结构调整线：</strong>降低单纯讲故事的（如纯叙事、订单未落地）仓位，向已验证真盈利环节（如光模块龙头、服务器代工）集中</div>
+<div class="mini-rule r" style="border-left-color: #ff4444; background: rgba(255,68,68,0.08);"><strong>15% 仓位红线：</strong>降低总仓位，启动全面再评估</div>
+<p style="margin-top:10px;color:var(--gold);">重点不在数字本身，而在于这套规则必须事前写就、冷静签署，而非盘中情绪推导。这套应对方式，应该结合你自身的风险承受能力，也不是简单的看10日、20日K线。</p>
+</div>
+
+<div class="fanwai-card">
+<h4><span class="num-badge">2</span>把"换车"当成风控</h4>
+<p>回撤5%-8%时，市场解释骤增，最易犯错不是割肉，而是"换车"——卖出真盈利龙头，换入同板块回撤小的二三线标的。</p>
+
+<div class="mini-rule r" style="margin-top:12px;"><strong>⚠️ 最应该避免的：</strong>很多同学是没核心仓的，也搞不清楚核心仓该怎么配置。二三线弹性品种本身可做交易仓，但必须短周期操作、明确止损、单列仓位、赚节奏钱；问题出在打着"风控"旗号，用核心舱逻辑持有纯叙事资产，模糊交易舱与核心舱边界。</div>
+
+<p style="margin-top:12px;"><strong>后果：</strong>表面降风险，实则用优质资产置换劣质资产，同时稀释核心仓质量。被动往往始于边界的坍塌。</p>
+</div>
+
+<div class="fanwai-card">
+<h4><span class="num-badge">3</span>把题材股当核心龙头持有</h4>
+<p>AI产业链极长，从上游算力硬件→中游CPU/存储/服务器→下游IDC/电力配套，每个环节在真空期都有独立叙事，常被研报包装成"下一个光模块"。</p>
+
+<div class="mini-rule y" style="margin-top:12px;"><strong>本质差距：</strong>真盈利环节（订单落地、毛利率稳升、现金流健康、产能受订单倒逼）仅估值收缩；蓄势/题材环节面临估值+业绩双杀，三个月维度差距可达一倍以上。</div>
+
+<p style="margin-top:14px;"><strong>核心要怎么确认呢，看以下几点：</strong></p>
+<div class="mini-rule b"><strong>① 订单可见度：</strong>增长体现在预收账款/合同负债，体现在利润表里面的实打实的利润，而非仅纪要中的"在手订单"，而非小作文中的大厂合作</div>
+<div class="mini-rule b"><strong>② 毛利率方向：</strong>卡位环节溢价能力体现为毛利率稳定或提升，非收入暴涨但毛利下滑</div>
+<div class="mini-rule b"><strong>③ 现金流匹配度：</strong>经营性现金流应接近净利润，应收占比持续抬升=盈利含水</div>
+<div class="mini-rule b"><strong>④ 产能扩张动因：</strong>由真实订单倒逼，而非仅一句"看好行业前景"</div>
+<p style="margin-top:12px;color:var(--gold);">坚守的从来不是"AI"标签，而是标签下真正创造自由现金流的环节——这才是核心舱不可轻易置换的根基。</p>
+</div>
+
+<div class="fanwai-card">
+<h4><span class="num-badge">4</span>情绪接管决策系统</h4>
+<p>行为金融有几个效应在股市尤为明显：</p>
+<div class="mini-rule r" style="margin-top:10px;"><strong>禀赋效应：</strong>持有越久、赚得越多，越高估持仓，越难卖出</div>
+<div class="mini-rule r"><strong>叙事依恋：</strong>研究越深，越难在价格层面冷酷判断，习惯用基本面解释价格异动</div>
+<div class="mini-rule r"><strong>社会认同压力：</strong>当全市场加仓、研报齐喊"远未到顶"，主动减仓需独自承担踏空的社会成本</div>
+<div class="mini-rule r"><strong>沉锚效应：</strong>买入价、心理目标价悄然成为判断贵贱的唯一标尺</div>
+
+<p style="margin-top:14px;"><strong>对抗之道：</strong>放弃"证明自己看对"，转而建立"允许自己看错"的机制——尾随止损即为此而生：它不预测拐点，但确保拐点发生时不装作没看见。</p>
+<p style="margin-top:10px;">尾随止损本质是事前签下的契约：冷静时设定回撤阈值（如15%），触发即离场，中间不留主观介入空间；等账户波动后再想"再等等"，契约已失效。</p>
+</div>
+
+<div class="fanwai-card">
+<h4><span class="num-badge">5</span>每天追问"是不是退潮了"</h4>
+<p>每日盯盘问退潮，本质是把决策节奏让渡给盘面心跳——一根大阴线解释为洗盘，再来一根说调整是上车机会，然后红一天又说别追涨……最终做主的不是你，是K线。</p>
+
+<div class="mini-rule b" style="margin-top:12px;"><strong>🎯 破解方案：用纪律化观察窗口替代即时解读</strong></div>
+<p style="margin-top:10px;"><strong>终极锚点：7月中旬中报窗口</strong>——届时市场将重新校验订单、利润、现金流指引与估值的匹配度。中报不是答案，但提供一次硬核再评估的时点；在此之前，所有波动都归类为预期与资金结构博弈，不值得每日改主意。</p>
+</div>
+
+<div class="fanwai-card">
+<h4><span class="num-badge">6</span>信号到了却还在犹豫</h4>
+<p>规则触发瞬间的临场犹豫，是纪律失效的最后一环。常见借口包括查基本面有无变化、等假突破确认、再看一根K线……结果规则形同虚设。</p>
+
+<div class="mini-rule g" style="margin-top:12px;"><strong>✅ 解决方式：</strong>按照以上几点，根据自己的情况设好计划，达到了就严格执行，不要在意执行后的股票的涨跌，要为自己严格执行了而欢呼。长此以往，一定能收获美妙的结果。</div>
+</div>
+
+</div><!-- /.fanwai-section -->
+
 <div class="disclaimer">本文为个人观点整理，仅供记录参考，不构成任何投资建议。股市有风险，投资需谨慎。</div>
 
 </div><!-- /.main-content -->
 
-<script>
-(function(){
-  var btn=document.getElementById('sidebarBtn'), panel=document.getElementById('sidePanel'),
-      overlay=document.getElementById('overlay'), open=false;
-  function setState(v){
-    open=v; panel.classList.toggle('open',v); overlay.classList.toggle('show',v);
-    btn.classList.toggle('open',v); btn.textContent=v?'✕':'⚡'; btn.title=v?'关闭':'核心观点';
-  }
-  btn.onclick=function(){setState(!open);};
-  overlay.onclick=function(){setState(false);};
-  // Esc 关闭
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&open)setState(false);});
-  // 导航跳转
-  document.getElementById('navJumps').addEventListener('click',function(e){
-    var t=e.target.closest('.nav-jump'); if(!t)return;
-    var id=t.dataset.id, item=document.getElementById(id);
-    if(item){
-      // 展开目标
-      item.classList.add('open');
-      // 滚动到视野
-      item.scrollIntoView({behavior:'smooth',block:'center'});
-      // 高亮
-      document.querySelectorAll('.nav-jump').forEach(function(j){j.classList.remove('active');});
-      t.classList.add('active');
-    }
-  });
-  // 手风琴
-  window.toggleAcc=function(id){
-    var item=document.getElementById(id);
-    if(item){item.classList.toggle('open');}
-  };
-  // 点击手风琴标题时同步更新导航
-  document.querySelectorAll('.acc-header').forEach(function(h){
-    h.addEventListener('click',function(){
-      var item=h.parentElement, id=item.id;
-      document.querySelectorAll('.nav-jump').forEach(function(j){j.classList.remove('active');});
-      var nav=document.querySelector('.nav-jump[data-id='+id+']');
-      if(nav)nav.classList.add('active');
-    });
-  });
-})();
-</script>
 </body>
 </html>
