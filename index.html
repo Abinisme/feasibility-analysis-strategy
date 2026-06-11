@@ -14,7 +14,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 60px 20px;
+            padding: 70px 20px 60px;
         }
         .container { max-width: 720px; width: 100%; }
         h1 {
@@ -65,14 +65,81 @@
             font-size: 0.75rem;
             margin-top: 12px;
         }
+        /* ── 搜索栏 ── */
+        .search-bar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(13,17,23,0.92); backdrop-filter: blur(12px);
+            border-bottom: 1px solid #30363d; padding: 10px 20px;
+            display: flex; justify-content: flex-end; align-items: center;
+        }
+        .search-wrap {
+            position: relative; width: 100%; max-width: 420px;
+        }
+        .search-wrap input {
+            width: 100%; padding: 8px 14px 8px 36px;
+            background: #161b22; border: 1px solid #30363d; border-radius: 8px;
+            color: #c9d1d9; font-size: 0.9rem; outline: none;
+            transition: border-color 0.2s;
+        }
+        .search-wrap input:focus { border-color: #58a6ff; }
+        .search-wrap input::placeholder { color: #484f58; }
+        .search-wrap .search-icon {
+            position: absolute; left: 11px; top: 50%; transform: translateY(-50%);
+            color: #484f58; font-size: 0.85em; pointer-events: none;
+        }
+        .search-results {
+            position: absolute; top: calc(100% + 6px); left: 0; right: 0;
+            background: #161b22; border: 1px solid #30363d; border-radius: 8px;
+            max-height: 420px; overflow-y: auto; display: none;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+        .search-results.active { display: block; }
+        .search-result-item {
+            display: block; padding: 12px 16px;
+            border-bottom: 1px solid #21262d; text-decoration: none; color: inherit;
+            transition: background 0.15s; cursor: pointer;
+        }
+        .search-result-item:last-child { border-bottom: none; }
+        .search-result-item:hover { background: #1c2129; }
+        .search-result-item .sr-title {
+            font-size: 0.9rem; font-weight: 600; color: #58a6ff; margin-bottom: 4px;
+        }
+        .search-result-item .sr-snippet {
+            font-size: 0.8rem; color: #8b949e; line-height: 1.5;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+        }
+        .search-result-item .sr-snippet mark {
+            background: #d29922aa; color: #f0f6fc; border-radius: 2px; padding: 0 2px;
+        }
+        .search-result-item .sr-page {
+            font-size: 0.72rem; color: #484f58; margin-top: 3px;
+        }
+        .search-status {
+            padding: 16px; text-align: center; color: #484f58; font-size: 0.85em;
+        }
+
         footer {
             margin-top: 60px;
             color: #484f58;
             font-size: 0.8rem;
         }
+        @media (max-width: 480px) {
+            h1 { font-size: 1.5rem; }
+            .search-wrap { max-width: 100%; }
+            .search-bar { padding: 8px 12px; }
+        }
     </style>
 </head>
 <body>
+    <!-- 搜索栏 -->
+    <div class="search-bar">
+        <div class="search-wrap">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" placeholder="搜索全部报告..." autocomplete="off" />
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
     <div class="container">
         <h1>实操可行性分析策略</h1>
         <p class="subtitle">投资分析与研究报告集</p>
@@ -130,5 +197,141 @@
         </div>
         <footer>Powered by GitHub Pages</footer>
     </div>
+
+<script>
+(function() {
+    const input = document.getElementById('searchInput');
+    const resultsBox = document.getElementById('searchResults');
+    const pageCache = new Map(); // url -> { title, text }
+    let loading = false;
+
+    // 从 index.html 的 report-card 链接自动发现所有页面
+    function getReportLinks() {
+        return Array.from(document.querySelectorAll('a.report-card[href]'))
+            .map(a => ({ url: a.getAttribute('href'), card: a }));
+    }
+
+    // 获取报告标题（从卡片 h2 提取）
+    function getCardTitle(card) {
+        const h2 = card.querySelector('h2');
+        return h2 ? h2.textContent.trim() : '';
+    }
+
+    // fetch 单个页面并提取纯文本
+    async function fetchPage(url) {
+        if (pageCache.has(url)) return pageCache.get(url);
+        try {
+            const resp = await fetch(url);
+            const html = await resp.text();
+            const doc = new DOMParser().parseFromString(html, 'text/html');
+            // 移除 script/style/nav，提取正文
+            doc.querySelectorAll('script,style,nav').forEach(el => el.remove());
+            const title = doc.querySelector('title')?.textContent?.trim() || url;
+            const text = doc.body?.innerText?.trim() || '';
+            const entry = { title, text };
+            pageCache.set(url, entry);
+            return entry;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    // 并行 fetch 所有页面
+    async function ensureAllLoaded() {
+        if (loading) return;
+        const links = getReportLinks();
+        // 跳过已缓存的
+        const toFetch = links.filter(l => !pageCache.has(l.url));
+        if (toFetch.length === 0) return;
+        loading = true;
+        await Promise.all(toFetch.map(l => fetchPage(l.url)));
+        loading = false;
+    }
+
+    // 搜索匹配：返回 [{ url, title, snippet }]
+    function search(query) {
+        const q = query.toLowerCase();
+        const links = getReportLinks();
+        const results = [];
+        for (const { url, card } of links) {
+            const entry = pageCache.get(url);
+            if (!entry) continue;
+            const cardTitle = getCardTitle(card);
+            const searchText = (cardTitle + ' ' + entry.text).toLowerCase();
+            const idx = searchText.indexOf(q);
+            if (idx === -1) continue;
+            // 截取匹配片段
+            const start = Math.max(0, idx - 40);
+            const end = Math.min(searchText.length, idx + q.length + 80);
+            let snippet = entry.text.substring(start, end);
+            if (start > 0) snippet = '...' + snippet;
+            if (end < entry.text.length) snippet += '...';
+            results.push({ url, title: cardTitle || entry.title, snippet, matchIdx: idx });
+        }
+        return results;
+    }
+
+    // 高亮关键词
+    function highlight(text, query) {
+        const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        return text.replace(new RegExp('(' + escaped + ')', 'gi'), '<mark>$1</mark>');
+    }
+
+    // 渲染结果
+    function renderResults(results, query) {
+        if (results.length === 0) {
+            resultsBox.innerHTML = '<div class="search-status">未找到匹配结果</div>';
+            resultsBox.classList.add('active');
+            return;
+        }
+        resultsBox.innerHTML = results.slice(0, 8).map(r => `
+            <a class="search-result-item" href="${r.url}">
+                <div class="sr-title">${highlight(r.title, query)}</div>
+                <div class="sr-snippet">${highlight(r.snippet, query)}</div>
+                <div class="sr-page">${r.url}</div>
+            </a>
+        `).join('');
+        resultsBox.classList.add('active');
+    }
+
+    // 输入事件
+    let debounceTimer;
+    input.addEventListener('input', function() {
+        clearTimeout(debounceTimer);
+        const query = input.value.trim();
+        if (query.length < 2) {
+            resultsBox.classList.remove('active');
+            resultsBox.innerHTML = '';
+            return;
+        }
+        debounceTimer = setTimeout(async () => {
+            resultsBox.innerHTML = '<div class="search-status">搜索中...</div>';
+            resultsBox.classList.add('active');
+            await ensureAllLoaded();
+            const results = search(query);
+            renderResults(results, query);
+        }, 200);
+    });
+
+    // 点击外部关闭
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.search-wrap')) {
+            resultsBox.classList.remove('active');
+        }
+    });
+
+    // 键盘快捷键：Escape 关闭，/ 聚焦搜索
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            resultsBox.classList.remove('active');
+            input.blur();
+        }
+        if (e.key === '/' && document.activeElement !== input) {
+            e.preventDefault();
+            input.focus();
+        }
+    });
+})();
+</script>
 </body>
 </html>
