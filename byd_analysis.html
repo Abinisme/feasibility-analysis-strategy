@@ -40,7 +40,31 @@
   .tr{background:rgba(224,85,74,.15);color:var(--r);}.tg{background:rgba(245,158,11,.15);color:var(--o);}.tgr{background:rgba(34,197,94,.15);color:var(--g);}
   .footer{color:var(--t2);font-size:.82em;text-align:center;margin-top:36px;padding-top:20px;border-top:1px solid var(--b);}
   details summary{cursor:pointer;padding:6px 0;font-weight:600;}
-  @media(max-width:768px){body{padding:14px}h1{font-size:1.35em}h2{font-size:1.15em}table{font-size:.78em}th,td{padding:6px 7px}.card{padding:14px}.fc{min-width:100%}.flx{flex-direction:column}}
+  @media(max-width:768px){
+    body{padding:14px}
+    h1{font-size:1.35em}
+    h2{font-size:1.15em;margin:28px 0 12px}
+    h3{font-size:1em}
+    table{font-size:.78em}
+    th,td{padding:6px 7px}
+    .card{padding:14px;margin:12px 0}
+    .fc{min-width:100%}
+    .flx{flex-direction:column;gap:10px}
+    .kv{font-size:.76em;padding:12px;line-height:1.8}
+    blockquote{padding:10px 14px;font-size:.88em}
+    .meta{gap:6px}.meta span{font-size:.75em;padding:3px 8px}
+    .verdict,.warn,.danger{padding:14px;font-size:.88em}
+    details summary{font-size:.92em}
+  }
+  @media(max-width:480px){
+    body{padding:10px}
+    h1{font-size:1.2em;padding:20px 0 14px}
+    h2{font-size:1.05em}
+    table{font-size:.72em}
+    th,td{padding:4px 5px}
+    .card{padding:12px}
+    .kv{font-size:.7em;padding:10px}
+  }
 </style>
 </head>
 <body>
@@ -184,6 +208,57 @@
   </div>
 </div>
 
+<!-- ====== 品牌矩阵 ====== -->
+<h2>四、品牌矩阵：从"一个比亚迪"到"五个战场"</h2>
+
+<div class="card">
+  <h3>🏷️ 旗下品牌全景</h3>
+  <table>
+    <thead><tr><th>品牌</th><th>定位</th><th>价位段</th><th>核心车型</th><th>战略角色</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>比亚迪（王朝/海洋）</strong></td>
+        <td>大众市场基盘</td>
+        <td>7-30万</td>
+        <td>秦/汉/宋/海鸥/海豚</td>
+        <td>销量压舱石，市占率核心</td>
+      </tr>
+      <tr>
+        <td><strong>🔥 方程豹</strong></td>
+        <td>个性化越野+性能</td>
+        <td>18-50万</td>
+        <td>豹5/豹8/钛3</td>
+        <td><span class="tr">最大亮点</span>，硬派越野新能源化开拓者</td>
+      </tr>
+      <tr>
+        <td><strong>腾势</strong></td>
+        <td>豪华商务</td>
+        <td>25-70万</td>
+        <td>D9/N7/N8/Z9</td>
+        <td>品牌向上突破，MPV细分市场标杆</td>
+      </tr>
+      <tr>
+        <td><strong>仰望</strong></td>
+        <td>超豪华/技术旗舰</td>
+        <td>80-150万</td>
+        <td>U8/U9</td>
+        <td>技术天花板展示，品牌势能拉升</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h3>🔥 方程豹：比亚迪品牌矩阵的最大惊喜</h3>
+  <p>方程豹是比亚迪近两年最成功的品牌运作，原因有三：</p>
+  <ul>
+    <li><strong>精准切入蓝海：</strong>硬派越野+新能源化是一个几乎没有竞争对手的细分市场。坦克系列偏传统燃油，理想/问界偏城市SUV——方程豹在"能越野的新能源车"这个品类里几乎独占。</li>
+    <li><strong>品牌溢价能力强：</strong>豹5均价25万+，豹8均价40万+，远高于比亚迪主品牌的均价（~15万）。方程豹证明了比亚迪<strong>不只是能做性价比，也能做品牌溢价</strong>。</li>
+    <li><strong>钛3下探放量：</strong>钛3将价位下探至18万，覆盖更广人群，有望成为方程豹的"走量王"。2026年方程豹品牌年销量目标<strong>20万辆+</strong>。</li>
+  </ul>
+  <blockquote class="qo"><strong>方程豹的战略意义：</strong>它证明了比亚迪的品牌天花板远高于市场预期。如果比亚迪能持续孵化出"方程豹级别"的新品牌（每个品牌贡献20-50万辆/年），其增长曲线将远超"只有一个品牌"的传统车企。</blockquote>
+</div>
+
 <!-- ====== 研发与技术路线 ====== -->
 <h2>四、技术护城河：研发投入与前瞻布局</h2>
 
@@ -214,7 +289,7 @@
       </tr>
     </tbody>
   </table>
-  <blockquote>比亚迪2025年研发投入预计超过<strong>500亿元</strong>，全球车企第一。研发费用率约6-7%，高于丰田（~4%）和大众（~5%）。<strong>这不是一家"卖车的公司"，这是一家伪装成车企的科技公司。</strong></blockquote>
+  <blockquote>比亚迪2025年研发投入预计超过<strong>500亿元</strong>，全球车企第一。研发费用率约6-7%，高于丰田（~4%）和大众（~5%）。</blockquote>
 </div>
 
 <!-- ====== 未来业务 ====== -->
@@ -258,10 +333,22 @@
   <p>当前PE约30x（基于2025E净利~273亿），对于一家制造业公司来说并不便宜。如果增速放缓（2026年净利增速降至15-20%），PE可能压缩至20-25x，对应股价下行压力。</p>
 </div>
 
+<div class="card">
+  <h3>🔻 困境五：市值管理薄弱，散户抛压沉重</h3>
+  <p>比亚迪在资本市场的"硬伤"——不是基本面问题，而是<strong>治理和股东回报问题</strong>：</p>
+  <ul>
+    <li><strong>市值管理几乎为零：</strong>与特斯拉（马斯克频繁回购+喊单）和苹果（年年大额回购+分红）不同，比亚迪几乎没有主动的市值管理行为。回购金额相对于万亿市值杯水车薪，分红率长期偏低。管理层对股价漠不关心——这在A股散户为主的市场中，是非常大的减分项。</li>
+    <li><strong>散户人数过多：</strong>比亚迪A股股东户数超过<strong>80万户</strong>（2025年数据），是A股散户最多的公司之一。散户占比高意味着：①股价波动大（追涨杀跌） ②上涨时抛压沉重（每人卖一点就是巨量） ③缺乏机构"压舱石"效应。</li>
+    <li><strong>上分抛压：</strong>每次股价上涨到阶段性高点，散户集中获利了结形成巨大抛压。这解释了为什么比亚迪"涨不过大盘、跌起来更猛"——2025年3月高点119→6月低点90（-24%），远超同期沪深300跌幅。</li>
+    <li><strong>对股东回报不重视：</strong>比亚迪长期将利润再投资于研发和扩产，这本身没错——但缺乏回购+分红的"底线回报"，导致长期持有者缺乏安全垫。对比苹果过去10年回购超6000亿美元，比亚迪的股东回报意识差距明显。</li>
+  </ul>
+  <blockquote class="danger"><strong>这是"好公司、差股票"的典型案例：</strong>基本面持续向好，但股价表现长期跑不赢业绩增速。根源在于：管理层不重视市值管理 + 散户过多导致抛压结构性存在。这一困境短期内难以改变，投资者需要<strong>在估值上留足安全边际</strong>来对冲。</blockquote>
+</div>
+
 <div class="verdict">
   <strong>📊 第一板块小结</strong><br><br>
-  <strong>看多逻辑：</strong>比亚迪不是"更好的丰田"，而是"带轮子的科技平台"。分部估值中枢约11,700-13,200亿，较当前8173亿有43-62%空间。闪充+智驾+机器人+海外四条增长曲线同时展开。<br><br>
-  <strong>看空逻辑：</strong>国补退坡需求前置、产能过剩价格战、海外贸易壁垒、PE偏高增速放缓。<br><br>
+  <strong>看多逻辑：</strong>比亚迪不是"更好的丰田"，而是"带轮子的科技平台"。分部估值中枢约11,700-13,200亿，较当前8173亿有43-62%空间。闪充+智驾+机器人+海外四条增长曲线同时展开。方程豹品牌证明了品牌天花板远高于预期。<br><br>
+  <strong>看空逻辑：</strong>国补退坡需求前置、产能过剩价格战、海外贸易壁垒、PE偏高增速放缓、市值管理薄弱+散户过多导致"好公司差股票"。<br><br>
   <strong>核心变量：</strong>市场什么时候从"用丰田给比亚迪定价"切换到"用科技平台给比亚迪定价"？这个认知切换一旦发生，就是估值体系的重构。<strong>而这，正是2007年苹果经历过的事情。</strong>
 </div>
 
@@ -336,60 +423,127 @@
 <h2>八、估值与股价分析：月线走势与估值关联</h2>
 
 <div class="card">
-  <h3>📈 月线走势图（前复权，2021-2026）</h3>
-  <p style="font-size:.85em;color:var(--t2);">2025年7月10转21除权，已做前复权处理。纵轴为对数刻度。</p>
-  <div style="overflow-x:auto;margin:16px 0;">
-    <div style="display:flex;align-items:flex-end;height:220px;gap:2px;padding-bottom:24px;position:relative;">
-      <!-- 月线柱状图：每根柱子=一个月，高度按收盘价缩放 -->
-      <!-- 最低价约50，最高约130，范围80，高度200px -->
-      <!-- 数据（前复权）: 2021/01=78, 2021/06=80, 2021/12=85, 2022/06=106, 2022/12=81, 2023/06=82, 2023/12=63, 2024/06=79, 2024/09=97, 2024/12=90, 2025/02=115, 2025/06=105, 2025/08=114, 2025/12=98, 2026/03=105, 2026/05=96 -->
-      <svg width="100%" height="240" viewBox="0 0 900 240" style="min-width:700px;">
-        <!-- 背景网格 -->
-        <line x1="0" y1="40" x2="900" y2="40" stroke="#252b3d" stroke-width="0.5"/>
-        <line x1="0" y1="80" x2="900" y2="80" stroke="#252b3d" stroke-width="0.5"/>
-        <line x1="0" y1="120" x2="900" y2="120" stroke="#252b3d" stroke-width="0.5"/>
-        <line x1="0" y1="160" x2="900" y2="160" stroke="#252b3d" stroke-width="0.5"/>
-        <line x1="0" y1="200" x2="900" y2="200" stroke="#252b3d" stroke-width="0.5"/>
-        <!-- 价格标签 -->
-        <text x="2" y="38" fill="#8892a8" font-size="10">130</text>
-        <text x="2" y="78" fill="#8892a8" font-size="10">115</text>
-        <text x="2" y="118" fill="#8892a8" font-size="10">100</text>
-        <text x="2" y="158" fill="#8892a8" font-size="10">85</text>
-        <text x="2" y="198" fill="#8892a8" font-size="10">70</text>
-        <!-- 月线蜡烛（简化为收盘价折线+区间柱） -->
-        <!-- 价格→Y映射: y = 200 - (price-70)/(130-70)*170 -->
-        <!-- 2021: 78→33, 63→-19(clip), 50→-57(clip), 57→-21(clip), 80→44, 84→55, 88→68, 79→40, 99→104, 97→98, 85→59 -->
-        <polyline fill="none" stroke="#5b9bd5" stroke-width="2" points="
-          25,33  37,4   50,-19  62,-16  75,-37  88,44  100,55  112,68  125,40  137,104  150,98  162,59
-          175,-9  187,40  200,15  212,30  225,88  237,57  250,28  262,27  275,44  287,105  300,100  312,53
-          325,86  337,64  350,55  362,55  375,47  388,61  400,74  412,38  425,18  437,22  450,-30  462,-28
-          475,-70  487,-11  500,6   512,20  525,32  538,71  550,66  562,70  575,98  587,83  600,72  612,80
-          625,70  637,148  650,168  662,145  675,143  688,125  700,105  712,98  725,111  737,91  750,97
-          762,83  775,80  788,148  800,142  812,102  825,112  837,104  850,89
-        "/>
-        <!-- 关键价位标注 -->
-        <line x1="15" y1="104" x2="885" y2="104" stroke="#d4a853" stroke-width="0.8" stroke-dasharray="4,4"/>
-        <text x="860" y="100" fill="#d4a853" font-size="10">100关口</text>
-        <line x1="15" y1="168" x2="885" y2="168" stroke="#e0554a" stroke-width="0.8" stroke-dasharray="4,4"/>
-        <text x="860" y="164" fill="#e0554a" font-size="10">历史高点</text>
-        <!-- 高点标注 -->
-        <circle cx="650" cy="168" r="4" fill="#e0554a"/>
-        <text x="635" y="182" fill="#e0554a" font-size="9">25/03 高点</text>
-        <!-- 低点标注 -->
-        <circle cx="475" cy="-70" r="4" fill="#22c55e"/>
-        <text x="460" y="-56" fill="#22c55e" font-size="9">24/01 低点</text>
-        <!-- 当前价 -->
-        <circle cx="850" cy="89" r="5" fill="#5b9bd5"/>
-        <text x="820" y="85" fill="#5b9bd5" font-size="10" font-weight="bold">当前 89.64</text>
-        <!-- X轴年份标签 -->
-        <text x="25" y="225" fill="#8892a8" font-size="10">2021</text>
-        <text x="175" y="225" fill="#8892a8" font-size="10">2022</text>
-        <text x="325" y="225" fill="#8892a8" font-size="10">2023</text>
-        <text x="475" y="225" fill="#8892a8" font-size="10">2024</text>
-        <text x="625" y="225" fill="#8892a8" font-size="10">2025</text>
-        <text x="775" y="225" fill="#8892a8" font-size="10">2026</text>
-      </svg>
+  <h3>📈 月线走势与箱体分析（前复权，2021-2026）</h3>
+  <p style="font-size:.85em;color:var(--t2);">2025年7月10转21除权，已做前复权处理。</p>
+
+  <!-- CSS柱状图：每月一根柱子，高度=收盘价 -->
+  <div style="overflow-x:auto;margin:16px 0;padding:10px 0;">
+    <div style="display:flex;align-items:flex-end;height:200px;gap:3px;min-width:680px;position:relative;padding-left:35px;">
+      <!-- Y轴标签 -->
+      <div style="position:absolute;left:0;top:0;height:100%;display:flex;flex-direction:column;justify-content:space-between;font-size:.7em;color:var(--t2);">
+        <span>120</span><span>105</span><span>90</span><span>75</span><span>60</span><span>45</span>
+      </div>
+      <!-- 柱子：价格区间45-125，高度200px，每px=0.4 -->
+      <!-- 每根柱子=该月收盘价，底部对齐 -->
+      <!-- 2021 -->
+      <div style="width:8px;background:#4fc3f7;height:66px;" title="21/01:78"></div>
+      <div style="width:8px;background:#4fc3f7;height:70px;" title="21/02:65"></div>
+      <div style="width:8px;background:#4fc3f7;height:29px;" title="21/03:52"></div>
+      <div style="width:8px;background:#4fc3f7;height:21px;" title="21/04:50"></div>
+      <div style="width:8px;background:#4fc3f7;height=47px;" title="21/05:57"></div>
+      <div style="width:8px;background:#4fc3f7;height=69px;" title="21/06:80"></div>
+      <div style="width:8px;background:#4fc3f7;height:77px;" title="21/07:84"></div>
+      <div style="width:8px;background:#4fc3f7;height=85px;" title="21/08:88"></div>
+      <div style="width:8px;background:#4fc3f7;height=69px;" title="21/09:79"></div>
+      <div style="width:8px;background:#4fc3f7;height:107px;" title="21/10:99"></div>
+      <div style="width:8px;background:#4fc3f7;height=103px;" title="21/11:97"></div>
+      <div style="width:8px;background:#4fc3f7;height=80px;" title="21/12:85"></div>
+      <!-- 2022 -->
+      <div style="width:8px;background:#4fc3f7;height:54px;" title="22/01:72"></div>
+      <div style="width:8px;background:#4fc3f7;height=69px;" title="22/02:79"></div>
+      <div style="width:8px;background:#4fc3f7;height=56px;" title="22/03:73"></div>
+      <div style="width:8px;background:#4fc3f7;height=64px;" title="22/04:77"></div>
+      <div style="width:8px;background:#4fc3f7;height=97px;" title="22/05:94"></div>
+      <div style="width:8px;background:#e0554a;height:122px;" title="22/06:106 ★高点"></div>
+      <div style="width:8px;background:#4fc3f7;height=113px;" title="22/07:102"></div>
+      <div style="width:8px;background:#4fc3f7;height=93px;" title="22/08:91"></div>
+      <div style="width:8px;background:#4fc3f7;height:70px;" title="22/09:80"></div>
+      <div style="width:8px;background:#4fc3f7;height=66px;" title="22/10:78"></div>
+      <div style="width:8px;background:#4fc3f7;height=74px;" title="22/11:82"></div>
+      <div style="width:8px;background:#4fc3f7;height=73px;" title="22/12:81"></div>
+      <!-- 2023 -->
+      <div style="width:8px;background:#4fc3f7;height=91px;" title="23/01:91"></div>
+      <div style="width:8px;background:#4fc3f7;height=75px;" title="23/02:83"></div>
+      <div style="width:8px;background:#4fc3f7;height=72px;" title="23/03:81"></div>
+      <div style="width:8px;background:#4fc3f7;height=72px;" title="23/04:81"></div>
+      <div style="width:8px;background:#4fc3f7;height=71px;" title="23/05:80"></div>
+      <div style="width:8px;background:#4fc3f7;height=74px;" title="23/06:82"></div>
+      <div style="width:8px;background:#4fc3f7;height=82px;" title="23/07:86"></div>
+      <div style="width:8px;background:#4fc3f7;height=68px;" title="23/08:79"></div>
+      <div style="width:8px;background:#4fc3f7;height=60px;" title="23/09:75"></div>
+      <div style="width:8px;background:#4fc3f7;height=61px;" title="23/10:76"></div>
+      <div style="width:8px;background:#4fc3f7;height=36px;" title="23/11:63"></div>
+      <div style="width:8px;background:#4fc3f7;height=35px;" title="23/12:63"></div>
+      <!-- 2024 -->
+      <div style="width:8px;background:#22c55e;height:18px;" title="24/01:54 ★低点"></div>
+      <div style="width:8px;background:#4fc3f7;height=31px;" title="24/02:61"></div>
+      <div style="width:8px;background:#4fc3f7;height=39px;" title="24/03:64"></div>
+      <div style="width:8px;background:#4fc3f7;height=48px;" title="24/04:69"></div>
+      <div style="width:8px;background:#4fc3f7;height=55px;" title="24/05:73"></div>
+      <div style="width:8px;background:#4fc3f7;height=69px;" title="24/06:79"></div>
+      <div style="width:8px;background:#4fc3f7;height=67px;" title="24/07:78"></div>
+      <div style="width:8px;background:#4fc3f7;height=69px;" title="24/08:79"></div>
+      <div style="width:8px;background:#d4a853;height=105px;" title="24/09:97 ★反弹高点"></div>
+      <div style="width:8px;background:#4fc3f7;height=98px;" title="24/10:93"></div>
+      <div style="width:8px;background:#4fc3f7;height=84px;" title="24/11:87"></div>
+      <div style="width:8px;background:#4fc3f7;height=90px;" title="24/12:90"></div>
+      <!-- 2025 -->
+      <div style="width:8px;background:#4fc3f7;height:84px;" title="25/01:87"></div>
+      <div style="width:8px;background:#4fc3f7;height=139px;" title="25/02:115"></div>
+      <div style="width:8px;background:#e0554a;height:148px;" title="25/03:119 ★历史最高"></div>
+      <div style="width:8px;background:#4fc3f7;height=134px;" title="25/04:112"></div>
+      <div style="width:8px;background:#4fc3f7;height=133px;" title="25/05:112"></div>
+      <div style="width:8px;background:#4fc3f7;height=120px;" title="25/06:105"></div>
+      <div style="width:8px;background:#4fc3f7;height:120px;" title="25/07:105(除权)"></div>
+      <div style="width:8px;background:#4fc3f7;height=137px;" title="25/08:114"></div>
+      <div style="width:8px;background:#4fc3f7;height=128px;" title="25/09:109"></div>
+      <div style="width:8px;background:#4fc3f7;height=111px;" title="25/10:101"></div>
+      <div style="width:8px;background:#4fc3f7;height=100px;" title="25/11:95"></div>
+      <div style="width:8px;background:#4fc3f7;height=106px;" title="25/12:98"></div>
+      <!-- 2026 -->
+      <div style="width:8px;background:#4fc3f7;height=92px;" title="26/01:91"></div>
+      <div style="width:8px;background:#4fc3f7;height=89px;" title="26/02:89"></div>
+      <div style="width:8px;background:#4fc3f7;height=120px;" title="26/03:105"></div>
+      <div style="width:8px;background:#4fc3f7;height=116px;" title="26/04:103"></div>
+      <div style="width:8px;background:#4fc3f7;height=102px;" title="26/05:96"></div>
+      <div style="width:8px;background:#5b9bd5;height:90px;border:2px solid #fff;" title="26/06:90 当前"></div>
     </div>
+    <!-- X轴 -->
+    <div style="display:flex;justify-content:space-between;padding-left:35px;min-width:680px;font-size:.7em;color:var(--t2);margin-top:4px;">
+      <span>2021</span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span>
+    </div>
+  </div>
+
+  <!-- 箱体分析 -->
+  <div class="kv" style="margin-top:16px;">
+<span class="l">────── 比亚迪月线箱体分析（前复权）──────</span>
+<span class="l">│</span>
+<span class="R">│  📦 箱体四（历史最高区）</span>
+<span class="R">│  上沿 128 ── 2025/03 高点（119→128，量能最大区间）</span>
+<span class="R">│  下沿 105 ── 2025/06-07 除权后支撑</span>
+<span class="l">│  → 该箱体为<strong>顶部派发区</strong>，放量滞涨后向下突破</span>
+<span class="l">│</span>
+<span class="S">│  📦 箱体三（高位震荡区）</span>
+<span class="S">│  上沿 105 ── 2022/06 + 2025/06-07 多次测试</span>
+<span class="S">│  下沿  85 ── 2021/12 + 2022/12 + 2023/07 支撑</span>
+<span class="l">│  → 当前<strong>正在测试该箱体下沿</strong>（89.6 vs 下沿85）</span>
+<span class="l">│</span>
+<span class="G">│  📦 箱体二（核心震荡区）</span>
+<span class="G">│  上沿  85 ── 箱体三下沿 = 重叠支撑</span>
+<span class="G">│  下沿  63 ── 2023/11-12 + 2024/02 支撑</span>
+<span class="l">│  → 2024/01 低点54跌破该箱体下沿后迅速收回</span>
+<span class="l">│</span>
+<span class="P">│  📦 箱体一（历史底部区）</span>
+<span class="P">│  上沿  63 ── 箱体二下沿</span>
+<span class="P">│  下沿  45 ── 2020年低点区域</span>
+<span class="l">│  → 2024/01 的54是最后一次触及该区域</span>
+<span class="l">│</span>
+<span class="B">────── 当前位置判断 ──────</span>
+<span class="B">当前价 89.6 处于「箱体三」下沿附近（85-105）</span>
+<span class="B">距箱体三下沿85仅有5%空间，距上沿105有17%空间</span>
+<span class="S">风险收益比 ≈ 1:3（向下5% vs 向上17%）</span>
+<span class="G">操作：85-90区间为箱体三下沿支撑带，可分批建仓</span>
+<span class="R">止损：若有效跌破85（连续3日），则进入箱体二（63-85）</span>
   </div>
 </div>
 
