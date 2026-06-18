@@ -65,7 +65,11 @@
     .card{padding:12px}
     .kv{font-size:.7em;padding:10px}
   }
+  .chart-box{width:100%;height:380px;margin:16px 0;}
+  @media(max-width:768px){.chart-box{height:300px}}
+  @media(max-width:480px){.chart-box{height:260px}}
 </style>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 </head>
 <body>
 
@@ -423,99 +427,14 @@
 <h2>八、估值与股价分析：月线走势与估值关联</h2>
 
 <div class="card">
-  <h3>📈 月线走势与箱体分析（前复权，2021-2026）</h3>
-  <p style="font-size:.85em;color:var(--t2);">2025年7月10转21除权，已做前复权处理。</p>
+  <h3>📈 月线K线图 + 箱体分析（前复权，2021-2026）</h3>
+  <p style="font-size:.85em;color:var(--t2);">2025年7月10转21除权，已做前复权处理。悬停查看OHLC数据。</p>
+  <div id="klineChart" class="chart-box"></div>
+</div>
 
-  <!-- CSS柱状图：每月一根柱子，高度=收盘价 -->
-  <div style="overflow-x:auto;margin:16px 0;padding:10px 0;">
-    <div style="display:flex;align-items:flex-end;height:200px;gap:3px;min-width:680px;position:relative;padding-left:35px;">
-      <!-- Y轴标签 -->
-      <div style="position:absolute;left:0;top:0;height:100%;display:flex;flex-direction:column;justify-content:space-between;font-size:.7em;color:var(--t2);">
-        <span>120</span><span>105</span><span>90</span><span>75</span><span>60</span><span>45</span>
-      </div>
-      <!-- 柱子：价格区间45-125，高度200px，每px=0.4 -->
-      <!-- 每根柱子=该月收盘价，底部对齐 -->
-      <!-- 2021 -->
-      <div style="width:8px;background:#4fc3f7;height:66px;" title="21/01:78"></div>
-      <div style="width:8px;background:#4fc3f7;height:70px;" title="21/02:65"></div>
-      <div style="width:8px;background:#4fc3f7;height:29px;" title="21/03:52"></div>
-      <div style="width:8px;background:#4fc3f7;height:21px;" title="21/04:50"></div>
-      <div style="width:8px;background:#4fc3f7;height=47px;" title="21/05:57"></div>
-      <div style="width:8px;background:#4fc3f7;height=69px;" title="21/06:80"></div>
-      <div style="width:8px;background:#4fc3f7;height:77px;" title="21/07:84"></div>
-      <div style="width:8px;background:#4fc3f7;height=85px;" title="21/08:88"></div>
-      <div style="width:8px;background:#4fc3f7;height=69px;" title="21/09:79"></div>
-      <div style="width:8px;background:#4fc3f7;height:107px;" title="21/10:99"></div>
-      <div style="width:8px;background:#4fc3f7;height=103px;" title="21/11:97"></div>
-      <div style="width:8px;background:#4fc3f7;height=80px;" title="21/12:85"></div>
-      <!-- 2022 -->
-      <div style="width:8px;background:#4fc3f7;height:54px;" title="22/01:72"></div>
-      <div style="width:8px;background:#4fc3f7;height=69px;" title="22/02:79"></div>
-      <div style="width:8px;background:#4fc3f7;height=56px;" title="22/03:73"></div>
-      <div style="width:8px;background:#4fc3f7;height=64px;" title="22/04:77"></div>
-      <div style="width:8px;background:#4fc3f7;height=97px;" title="22/05:94"></div>
-      <div style="width:8px;background:#e0554a;height:122px;" title="22/06:106 ★高点"></div>
-      <div style="width:8px;background:#4fc3f7;height=113px;" title="22/07:102"></div>
-      <div style="width:8px;background:#4fc3f7;height=93px;" title="22/08:91"></div>
-      <div style="width:8px;background:#4fc3f7;height:70px;" title="22/09:80"></div>
-      <div style="width:8px;background:#4fc3f7;height=66px;" title="22/10:78"></div>
-      <div style="width:8px;background:#4fc3f7;height=74px;" title="22/11:82"></div>
-      <div style="width:8px;background:#4fc3f7;height=73px;" title="22/12:81"></div>
-      <!-- 2023 -->
-      <div style="width:8px;background:#4fc3f7;height=91px;" title="23/01:91"></div>
-      <div style="width:8px;background:#4fc3f7;height=75px;" title="23/02:83"></div>
-      <div style="width:8px;background:#4fc3f7;height=72px;" title="23/03:81"></div>
-      <div style="width:8px;background:#4fc3f7;height=72px;" title="23/04:81"></div>
-      <div style="width:8px;background:#4fc3f7;height=71px;" title="23/05:80"></div>
-      <div style="width:8px;background:#4fc3f7;height=74px;" title="23/06:82"></div>
-      <div style="width:8px;background:#4fc3f7;height=82px;" title="23/07:86"></div>
-      <div style="width:8px;background:#4fc3f7;height=68px;" title="23/08:79"></div>
-      <div style="width:8px;background:#4fc3f7;height=60px;" title="23/09:75"></div>
-      <div style="width:8px;background:#4fc3f7;height=61px;" title="23/10:76"></div>
-      <div style="width:8px;background:#4fc3f7;height=36px;" title="23/11:63"></div>
-      <div style="width:8px;background:#4fc3f7;height=35px;" title="23/12:63"></div>
-      <!-- 2024 -->
-      <div style="width:8px;background:#22c55e;height:18px;" title="24/01:54 ★低点"></div>
-      <div style="width:8px;background:#4fc3f7;height=31px;" title="24/02:61"></div>
-      <div style="width:8px;background:#4fc3f7;height=39px;" title="24/03:64"></div>
-      <div style="width:8px;background:#4fc3f7;height=48px;" title="24/04:69"></div>
-      <div style="width:8px;background:#4fc3f7;height=55px;" title="24/05:73"></div>
-      <div style="width:8px;background:#4fc3f7;height=69px;" title="24/06:79"></div>
-      <div style="width:8px;background:#4fc3f7;height=67px;" title="24/07:78"></div>
-      <div style="width:8px;background:#4fc3f7;height=69px;" title="24/08:79"></div>
-      <div style="width:8px;background:#d4a853;height=105px;" title="24/09:97 ★反弹高点"></div>
-      <div style="width:8px;background:#4fc3f7;height=98px;" title="24/10:93"></div>
-      <div style="width:8px;background:#4fc3f7;height=84px;" title="24/11:87"></div>
-      <div style="width:8px;background:#4fc3f7;height=90px;" title="24/12:90"></div>
-      <!-- 2025 -->
-      <div style="width:8px;background:#4fc3f7;height:84px;" title="25/01:87"></div>
-      <div style="width:8px;background:#4fc3f7;height=139px;" title="25/02:115"></div>
-      <div style="width:8px;background:#e0554a;height:148px;" title="25/03:119 ★历史最高"></div>
-      <div style="width:8px;background:#4fc3f7;height=134px;" title="25/04:112"></div>
-      <div style="width:8px;background:#4fc3f7;height=133px;" title="25/05:112"></div>
-      <div style="width:8px;background:#4fc3f7;height=120px;" title="25/06:105"></div>
-      <div style="width:8px;background:#4fc3f7;height:120px;" title="25/07:105(除权)"></div>
-      <div style="width:8px;background:#4fc3f7;height=137px;" title="25/08:114"></div>
-      <div style="width:8px;background:#4fc3f7;height=128px;" title="25/09:109"></div>
-      <div style="width:8px;background:#4fc3f7;height=111px;" title="25/10:101"></div>
-      <div style="width:8px;background:#4fc3f7;height=100px;" title="25/11:95"></div>
-      <div style="width:8px;background:#4fc3f7;height=106px;" title="25/12:98"></div>
-      <!-- 2026 -->
-      <div style="width:8px;background:#4fc3f7;height=92px;" title="26/01:91"></div>
-      <div style="width:8px;background:#4fc3f7;height=89px;" title="26/02:89"></div>
-      <div style="width:8px;background:#4fc3f7;height=120px;" title="26/03:105"></div>
-      <div style="width:8px;background:#4fc3f7;height=116px;" title="26/04:103"></div>
-      <div style="width:8px;background:#4fc3f7;height=102px;" title="26/05:96"></div>
-      <div style="width:8px;background:#5b9bd5;height:90px;border:2px solid #fff;" title="26/06:90 当前"></div>
-    </div>
-    <!-- X轴 -->
-    <div style="display:flex;justify-content:space-between;padding-left:35px;min-width:680px;font-size:.7em;color:var(--t2);margin-top:4px;">
-      <span>2021</span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span>
-    </div>
-  </div>
-
-  <!-- 箱体分析 -->
-  <div class="kv" style="margin-top:16px;">
+<div class="card">
+  <h3>📦 箱体分析</h3>
+  <div class="kv">
 <span class="l">────── 比亚迪月线箱体分析（前复权）──────</span>
 <span class="l">│</span>
 <span class="R">│  📦 箱体四（历史最高区）</span>
@@ -616,6 +535,106 @@
   行情数据截止：2026-06-16 | 财务数据：2023-2025年报 + 2025PE-TTM倒推估算<br>
   ⚠️ 仅供参考，不构成投资建议。股市有风险，投资需谨慎。
 </div>
+
+<script>
+(function(){
+  var chart = echarts.init(document.getElementById('klineChart'), 'dark');
+  // 月线数据（前复权）: [日期, 开盘, 收盘, 最低, 最高]
+  var rawData = [
+    ['2021/01',78.3,78.3,59.3,83.4],['2021/02',65.4,62.6,61.5,86.7],['2021/03',59.9,52.2,49.3,68.4],
+    ['2021/04',59.9,50.3,49.7,56.8],['2021/05',57.4,56.7,44.7,58.7],['2021/06',71.8,79.6,56.7,82.3],
+    ['2021/07',85.4,83.9,67.9,86.5],['2021/08',85.0,87.8,84.5,100.6],['2021/09',116.2,79.1,74.5,89.1],
+    ['2021/10',159.8,98.7,78.6,105.7],['2021/11',172.2,96.6,91.3,104.6],['2021/12',194.3,85.0,83.4,99.6],
+    ['2022/01',247.0,71.9,69.7,88.6],['2022/02',197.3,79.1,71.3,80.1],['2022/03',164.5,72.9,66.4,81.4],
+    ['2022/04',158.6,77.1,69.4,79.6],['2022/05',178.7,93.8,70.5,95.4],['2022/06',251.0,105.7,92.9,113.8],
+    ['2022/07',264.7,101.6,94.1,111.6],['2022/08',277.0,91.3,90.1,106.2],['2022/09',249.5,79.9,78.9,93.4],
+    ['2022/10',311.3,78.2,74.8,88.5],['2022/11',304.7,82.3,75.2,89.7],['2022/12',268.1,81.5,79.4,88.2],
+    ['2023/01',226.8,90.6,79.3,91.6],['2023/02',249.6,82.7,81.7,97.1],['2023/03',229.8,81.2,73.9,85.0],
+    ['2023/04',243.0,81.1,75.4,83.4],['2023/05',295.9,80.4,76.7,85.6],['2023/06',333.5,81.9,79.8,87.5],
+    ['2023/07',320.4,86.2,81.6,87.7],['2023/08',288.0,79.1,72.9,86.5],['2023/09',252.0,75.1,74.9,80.7],
+    ['2023/10',246.7,75.6,72.8,79.6],['2023/11',259.5,63.2,62.9,77.5],['2023/12',257.0,62.8,58.0,63.8],
+    ['2024/01',170.7,54.1,54.0,63.3],['2024/02',191.2,60.6,51.6,62.3],['2024/03',203.1,64.4,58.8,70.0],
+    ['2024/04',218.5,69.3,64.4,71.5],['2024/05',229.0,72.6,65.5,73.6],['2024/06',250.3,79.4,71.7,82.4],
+    ['2024/07',247.1,78.3,75.7,85.6],['2024/08',249.4,79.1,70.9,79.8],['2024/09',307.3,97.4,76.2,97.7],
+    ['2024/10',293.2,93.0,91.0,107.2],['2024/11',274.8,87.1,86.3,98.3],['2024/12',282.7,89.6,86.8,93.2],
+    ['2025/01',274.5,87.0,83.1,91.1],['2025/02',361.8,114.7,89.3,123.2],['2025/03',374.9,118.9,107.2,127.9],
+    ['2025/04',353.1,112.0,99.5,119.9],['2025/05',352.3,111.7,111.4,132.2],['2025/06',331.9,105.2,104.2,116.0],
+    ['2025/07',105.2,105.2,105.0,346.5],['2025/08',114.1,114.1,102.6,116.6],['2025/09',109.2,109.2,103.1,112.8],
+    ['2025/10',100.8,100.8,100.0,112.5],['2025/11',95.2,95.2,91.7,101.0],['2025/12',97.7,97.7,93.5,101.5],
+    ['2026/01',90.9,90.9,90.0,100.5],['2026/02',89.3,89.3,85.9,93.0],['2026/03',105.3,105.3,87.7,111.8],
+    ['2026/04',103.0,103.0,97.5,106.5],['2026/05',96.2,96.2,92.6,101.9],['2026/06',89.6,89.6,89.6,89.6]
+  ];
+
+  var dates = rawData.map(function(d){return d[0]});
+  var values = rawData.map(function(d){return [d[1],d[2],d[3],d[4]]}); // [open, close, low, high]
+
+  var option = {
+    backgroundColor: 'transparent',
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {type: 'cross'},
+      formatter: function(p){
+        var d = p[0]; var v = d.data;
+        var idx = d.dataIndex;
+        var raw = rawData[idx];
+        return '<b>'+raw[0]+'</b><br/>'+
+          '开盘: '+raw[1].toFixed(1)+'<br/>'+
+          '收盘: '+raw[2].toFixed(1)+'<br/>'+
+          '最低: '+raw[3].toFixed(1)+'<br/>'+
+          '最高: '+raw[4].toFixed(1);
+      }
+    },
+    grid: {left:'8%',right:'4%',top:'12%',bottom:'15%'},
+    xAxis: {
+      type: 'category', data: dates,
+      axisLabel:{fontSize:10,color:'#8892a8',rotate:45,
+        formatter:function(v){return v.replace('20','')}},
+      axisLine:{lineStyle:{color:'#252b3d'}}
+    },
+    yAxis: {
+      type: 'value', scale: true,
+      axisLabel:{fontSize:10,color:'#8892a8'},
+      splitLine:{lineStyle:{color:'#1e2438'}},
+      axisLine:{lineStyle:{color:'#252b3d'}}
+    },
+    series: [{
+      type: 'candlestick',
+      data: values,
+      itemStyle: {
+        color: '#e0554a',       // 涨（阳线填充）
+        color0: '#22c55e',      // 跌（阴线填充）
+        borderColor: '#e0554a', // 涨边框
+        borderColor0: '#22c55e' // 跌边框
+      },
+      markLine: {
+        silent: true,
+        symbol: 'none',
+        lineStyle:{type:'dashed'},
+        data: [
+          {yAxis:128, lineStyle:{color:'#e0554a',width:1.5}, label:{formatter:'箱体四上沿 128',color:'#e0554a',fontSize:10}},
+          {yAxis:105, lineStyle:{color:'#f59e0b',width:1.5}, label:{formatter:'箱体三/四 分界 105',color:'#f59e0b',fontSize:10}},
+          {yAxis:85, lineStyle:{color:'#5b9bd5',width:1.5}, label:{formatter:'箱体二/三 分界 85',color:'#5b9bd5',fontSize:10}},
+          {yAxis:63, lineStyle:{color:'#8b7ec8',width:1.5}, label:{formatter:'箱体一/二 分界 63',color:'#8b7ec8',fontSize:10}},
+          {yAxis:89.6, lineStyle:{color:'#fff',width:2,type:'solid'}, label:{formatter:'当前 89.6',color:'#fff',fontSize:11,fontWeight:'bold'}}
+        ]
+      },
+      markPoint: {
+        data: [
+          {name:'历史最高', coord:['2025/03',127.9], itemStyle:{color:'#e0554a'},
+           label:{formatter:'★ 127.9',color:'#fff',fontSize:10}},
+          {name:'历史低点', coord:['2024/01',54.0], itemStyle:{color:'#22c55e'},
+           label:{formatter:'★ 54.0',color:'#fff',fontSize:10}},
+          {name:'24/09反弹', coord:['2024/09',97.7], itemStyle:{color:'#d4a853'},
+           label:{formatter:'97.7',color:'#fff',fontSize:9}}
+        ],
+        symbolSize: 40
+      }
+    }]
+  };
+  chart.setOption(option);
+  window.addEventListener('resize', function(){chart.resize()});
+})();
+</script>
 
 </body>
 </html>
