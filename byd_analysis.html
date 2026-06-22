@@ -65,9 +65,9 @@
     .card{padding:12px}
     .kv{font-size:.7em;padding:10px}
   }
-  .chart-box{width:100%;height:380px;margin:16px 0;}
-  @media(max-width:768px){.chart-box{height:300px}}
-  @media(max-width:480px){.chart-box{height:260px}}
+  .chart-box{width:100%;height:420px;margin:16px 0;}
+  @media(max-width:768px){.chart-box{height:340px}}
+  @media(max-width:480px){.chart-box{height:280px}}
 </style>
 <script src="https://unpkg.com/lightweight-charts@4/dist/lightweight-charts.standalone.production.js"></script>
 </head>
@@ -78,9 +78,9 @@
 <h1>🚗 比亚迪：迈向星辰大海 — 远期展望与估值框架</h1>
 <div class="meta">
   <span>002594.SZ / 01211.HK</span>
-  <span>数据截止：2026-06-16</span>
-  <span>Tushare Pro + 公开财报</span>
-  <span>当前市值：~8173亿元（~1120亿美元）</span>
+  <span>数据截止：2026-06-18</span>
+  <span>Tushare Pro + 公开财报 + 乘联会</span>
+  <span>A股 002594：88.13元 &nbsp;|&nbsp; 港股 01211：80.85港元</span>
 </div>
 
 <!-- ═══════════════════════════════════════════ -->
@@ -320,6 +320,144 @@
 <div class="card">
   <h3>🔻 困境一：国补退坡与需求前置</h3>
   <p>2025年国补购车需求前置效应明显——消费者赶在补贴退坡前集中购车，透支了2026年的需求。2026年Q1-Q2销量增速放缓已验证这一点。<strong>国补退坡后，消费大环境不好，需求严重不足的风险真实存在。</strong></p>
+
+  <!-- 乘联会季度数据柱状图 -->
+  <div style="margin:16px 0;">
+    <h4 style="color:var(--a);margin-bottom:8px;">📊 乘联会/中汽协：中国乘用车季度销量与新能源渗透率</h4>
+    <p style="font-size:.82em;color:var(--t2);margin-bottom:12px;">数据来源：乘联会CPCA月度报告汇总，2026Q2为估算值</p>
+    <div style="display:flex;align-items:flex-end;gap:4px;height:180px;padding:0 4px;">
+      <!-- 每根柱子高度按总销量缩放，max~850万辆=180px -->
+      <!-- 柱子内部分层：燃油(灰)+新能源(蓝) -->
+      <!-- 2023 -->
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+        <div style="width:100%;display:flex;flex-direction:column;justify-content:flex-end;height:140px;">
+          <div style="background:var(--a);height:34px;border-radius:2px 2px 0 0;" title="NEV 160万"></div>
+          <div style="background:#333;height:106px;" title="ICE 440万"></div>
+        </div>
+        <span style="font-size:.6em;color:var(--t2);margin-top:2px;">Q1</span>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+        <div style="width:100%;display:flex;flex-direction:column;justify-content:flex-end;height:148px;">
+          <div style="background:var(--a);height:49px;border-radius:2px 2px 0 0;" title="NEV 220万"></div>
+          <div style="background:#333;height:99px;" title="ICE 430万"></div>
+        </div>
+        <span style="font-size:.6em;color:var(--t2);margin-top:2px;">Q2</span>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+        <div style="width:100%;display:flex;flex-direction:column;justify-content:flex-end;height:154px;">
+          <div style="background:var(--a);height:56px;border-radius:2px 2px 0 0;" title="NEV 250万"></div>
+          <div style="background:#333;height:98px;" title="ICE 430万"></div>
+        </div>
+        <span style="font-size:.6em;color:var(--t2);margin-top:2px;">Q3</span>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+        <div style="width:100%;display:flex;flex-direction:column;justify-content:flex-end;height:176px;">
+          <div style="background:var(--a);height:72px;border-radius:2px 2px 0 0;" title="NEV 320万"></div>
+          <div style="background:#333;height:104px;" title="ICE 460万"></div>
+        </div>
+        <span style="font-size:.6em;color:var(--t2);margin-top:2px;">Q4</span>
+      </div>
+      <!-- 年份分隔 -->
+      <div style="width:1px;background:var(--b);height:180px;margin:0 4px;"></div>
+      <!-- 2024 -->
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+        <div style="width:100%;display:flex;flex-direction:column;justify-content:flex-end;height:146px;">
+          <div style="background:var(--a);height:47px;border-radius:2px 2px 0 0;" title="NEV 210万"></div>
+          <div style="background:#333;height:99px;" title="ICE 440万"></div>
+        </div>
+        <span style="font-size:.6em;color:var(--t2);margin-top:2px;">Q1</span>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+        <div style="width:100%;display:flex;flex-direction:column;justify-content:flex-end;height:157px;">
+          <div style="background:var(--a);height:63px;border-radius:2px 2px 0 0;" title="NEV 280万"></div>
+          <div style="background:#333;height:94px;" title="ICE 420万"></div>
+        </div>
+        <span style="font-size:.6em;color:var(--t2);margin-top:2px;">Q2</span>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+        <div style="width:100%;display:flex;flex-direction:column;justify-content:flex-end;height:161px;">
+          <div style="background:var(--a);height:70px;border-radius:2px 2px 0 0;" title="NEV 310万"></div>
+          <div style="background:#333;height:91px;" title="ICE 410万"></div>
+        </div>
+        <span style="font-size:.6em;color:var(--t2);margin-top:2px;">Q3</span>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+        <div style="width:100%;display:flex;flex-direction:column;justify-content:flex-end;height:180px;">
+          <div style="background:var(--a);height:85px;border-radius:2px 2px 0 0;" title="NEV 380万"></div>
+          <div style="background:#333;height:95px;" title="ICE 440万"></div>
+        </div>
+        <span style="font-size:.6em;color:var(--t2);margin-top:2px;">Q4</span>
+      </div>
+      <!-- 年份分隔 -->
+      <div style="width:1px;background:var(--b);height:180px;margin:0 4px;"></div>
+      <!-- 2025 -->
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+        <div style="width:100%;display:flex;flex-direction:column;justify-content:flex-end;height:152px;">
+          <div style="background:var(--a);height:70px;border-radius:2px 2px 0 0;" title="NEV 310万"></div>
+          <div style="background:#333;height:82px;" title="ICE 370万"></div>
+        </div>
+        <span style="font-size:.6em;color:var(--t2);margin-top:2px;">Q1</span>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+        <div style="width:100%;display:flex;flex-direction:column;justify-content:flex-end;height:169px;">
+          <div style="background:var(--a);height:85px;border-radius:2px 2px 0 0;" title="NEV 380万"></div>
+          <div style="background:#333;height:84px;" title="ICE 370万"></div>
+        </div>
+        <span style="font-size:.6em;color:var(--t2);margin-top:2px;">Q2</span>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+        <div style="width:100%;display:flex;flex-direction:column;justify-content:flex-end;height:171px;">
+          <div style="background:var(--a);height:90px;border-radius:2px 2px 0 0;" title="NEV 400万"></div>
+          <div style="background:#333;height:81px;" title="ICE 360万"></div>
+        </div>
+        <span style="font-size:.6em;color:var(--t2);margin-top:2px;">Q3</span>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+        <div style="width:100%;display:flex;flex-direction:column;justify-content:flex-end;height:180px;">
+          <div style="background:var(--a);height:103px;border-radius:2px 2px 0 0;" title="NEV 460万"></div>
+          <div style="background:#333;height:77px;" title="ICE 390万"></div>
+        </div>
+        <span style="font-size:.6em;color:var(--t2);margin-top:2px;">Q4</span>
+      </div>
+      <!-- 年份分隔 -->
+      <div style="width:1px;background:var(--b);height:180px;margin:0 4px;"></div>
+      <!-- 2026 -->
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+        <div style="width:100%;display:flex;flex-direction:column;justify-content:flex-end;height:159px;">
+          <div style="background:var(--a);height:79px;border-radius:2px 2px 0 0;" title="NEV 350万"></div>
+          <div style="background:#333;height:80px;" title="ICE 350万"></div>
+        </div>
+        <span style="font-size:.6em;color:var(--t2);margin-top:2px;">Q1</span>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+        <div style="width:100%;display:flex;flex-direction:column;justify-content:flex-end;height:168px;">
+          <div style="background:rgba(91,155,213,0.4);height:91px;border-radius:2px 2px 0 0;border:1px dashed var(--a);" title="NEV 400万E"></div>
+          <div style="background:rgba(51,51,51,0.4);height:77px;border:1px dashed #555;" title="ICE 350万E"></div>
+        </div>
+        <span style="font-size:.6em;color:var(--gold);margin-top:2px;">Q2E</span>
+      </div>
+    </div>
+    <!-- X轴标签 -->
+    <div style="display:flex;justify-content:space-around;margin-top:6px;font-size:.7em;color:var(--t2);">
+      <span style="flex:4;text-align:center;">2023</span><span style="flex:4;text-align:center;">2024</span><span style="flex:4;text-align:center;">2025</span><span style="flex:2;text-align:center;">2026</span>
+    </div>
+    <!-- 图例 -->
+    <div style="display:flex;gap:16px;justify-content:center;margin-top:8px;font-size:.75em;color:var(--t2);">
+      <span><span style="display:inline-block;width:12px;height:12px;background:var(--a);vertical-align:middle;margin-right:4px;border-radius:2px;"></span>新能源</span>
+      <span><span style="display:inline-block;width:12px;height:12px;background:#333;vertical-align:middle;margin-right:4px;border-radius:2px;"></span>燃油车</span>
+      <span style="color:var(--gold);">虚线=预估</span>
+    </div>
+    <!-- 渗透率趋势 -->
+    <div style="margin-top:12px;padding:12px;background:var(--c);border-radius:8px;font-size:.85em;">
+      <strong>新能源渗透率趋势：</strong>
+      2023全年 <span style="color:var(--a);">~32%</span> →
+      2024全年 <span style="color:var(--a);">~41%</span> →
+      2025全年 <span style="color:var(--a);">~50%</span> →
+      2026Q1 <span style="color:var(--a);">~50%</span> →
+      2026Q2E <span style="color:var(--gold);">~54%</span>
+      <br><span style="font-size:.82em;color:var(--t2);">渗透率提升放缓：2024→2025提升9pct，2025→2026预计仅提升5-8pct。增量空间收窄。</span>
+    </div>
+  </div>
 </div>
 
 <div class="card">
@@ -522,9 +660,65 @@
   <p style="font-size:.85em;color:var(--t2);">目标价基于当前总股本~91.2亿股（A+H）计算。远期情景假设市场将比亚迪重新归类为"科技平台"而非"传统车企"。</p>
 </div>
 
+<div class="card">
+  <h3>📉 短期技术面：双底结构是否成立？</h3>
+  <div class="kv">
+<span class="l">比亚迪近期日线走势（6/16-6/18）</span>
+<span class="l">──────────────────────────────</span>
+<span class="l">6/16 → 89.64（-1.30%）</span>
+<span class="l">6/17 → 87.47（-2.42%）← 第一个低点</span>
+<span class="l">6/18 → 88.13（+0.75%）← 企稳反弹</span>
+<span class="l">──────────────────────────────</span>
+<span class="l">│</span>
+<span class="S">│  双底判断：6/11低点~87与6/17低点87.47</span>
+<span class="S">│  形成<strong>潜在双底结构</strong>，两低点间距约1周，价格接近</span>
+<span class="l">│</span>
+<span class="G">│  ✅ 成立条件：</span>
+<span class="G">│  ① 两低点价格接近（87 vs 87.5，差距<1%）✓</span>
+<span class="G">│  ② 中间有反弹（6/12-6/15反弹至89-90）✓</span>
+<span class="G">│  ③ 第二个低点成交量更小（缩量筑底）✓</span>
+<span class="l">│</span>
+<span class="R">│  ⚠️ 确认条件（尚未满足）：</span>
+<span class="R">│  ① 突破颈线位90.5（6/15高点）→ 才算双底确认</span>
+<span class="R">│  ② 需放量突破，量能>6/15的6256万手</span>
+<span class="R">│  ③ 若跌破87，则双底失败，看向前低85</span>
+<span class="l">│</span>
+<span class="B">│  测量目标：若双底确认，理论目标 = 颈线90.5 + (90.5-87) = 94</span>
+<span class="B">│  操作：87-88区间轻仓试探，突破90.5加仓，止损86</span>
+<span class="l">──────────────────────────────</span>
+  </div>
+</div>
+
+<div class="card">
+  <h3>🇭🇰 A-H股对比：港股比亚迪性价比更高？</h3>
+  <table>
+    <thead><tr><th>指标</th><th>A股 002594.SZ</th><th>港股 01211.HK</th><th>差异</th></tr></thead>
+    <tbody>
+      <tr><td><strong>6/18收盘价</strong></td><td class="num">88.13 元</td><td class="num">80.85 港元</td><td>—</td></tr>
+      <tr><td><strong>折算人民币</strong></td><td class="num">88.13 元</td><td class="num">~74.4 元</td><td class="up">A股溢价 +18.5%</td></tr>
+      <tr><td><strong>PE-TTM</strong></td><td class="num">29.7x</td><td class="num">~25.3x</td><td class="up">港股便宜15%</td></tr>
+      <tr><td><strong>PB</strong></td><td class="num">3.52x</td><td class="num">~3.0x</td><td class="up">港股便宜15%</td></tr>
+      <tr><td><strong>流动性</strong></td><td>日均成交~40亿元</td><td>日均成交~20亿港元</td><td>A股流动性更好</td></tr>
+      <tr><td><strong>交易成本</strong></td><td>佣金+印花税（低）</td><td>佣金+印花税0.13%（高）</td><td>A股成本更低</td></tr>
+      <tr><td><strong>红利税</strong></td><td>免（持有>1年）</td><td>20%（内地投资者）</td><td>A股税优明显</td></tr>
+    </tbody>
+  </table>
+  <blockquote class="qo">
+    <strong>结论：港股"表面便宜"，但需考虑隐藏成本。</strong><br><br>
+    港股PE比A股低约15%，但内地投资者通过港股通买比亚迪面临：<br>
+    ① <strong>20%红利税</strong>（A股持有>1年免红利税），实际股息收益大幅缩水<br>
+    ② <strong>交易成本更高</strong>（港股印花税0.13% vs A股0.05%）<br>
+    ③ <strong>流动性更差</strong>（港股日均成交约为A股的1/3，大单冲击成本高）<br>
+    ④ <strong>汇率风险</strong>（港币与美元挂钩，人民币升值则港股收益被汇率吃掉）<br><br>
+    <strong>如果纯做价差交易</strong>（短线不持有收息），港股性价比确实更高——同样的公司便宜15%。<br>
+    <strong>如果长期持有</strong>，A股的税优+流动性+低交易成本可能抵消估值差距。<br>
+    <strong>最优策略：</strong>AH折溢价>20%时买港股，<15%时买A股。当前18.5%处于中间地带。
+  </blockquote>
+</div>
+
 <div class="verdict">
   <strong>📊 综合研判</strong><br><br>
-  <strong>短期（3-6个月）：</strong>股价从2025/03高点119回调至当前90附近（-25%），PE从38x压缩至30x，估值压力已释放大半。85-90区间有较强支撑（2024/09和2026/02的密集成交区）。短期反弹目标100-105。<br><br>
+  <strong>短期（3-6个月）：</strong>股价从2025/03高点119回调至当前88附近（-26%），PE从38x压缩至30x，估值压力已释放大半。87-88区间形成潜在双底结构（6/11+6/17），若突破颈线90.5则确认双底，目标94。85-90区间有较强支撑（2024/09和2026/02的密集成交区）。<br><br>
   <strong>中期（6-12个月）：</strong>若2026年H2销量回暖+价格战缓和+海外放量，净利有望回升至320亿+，对应PE 28x目标价98元。中期核心催化：①季报利润超预期 ②海外工厂产能爬坡 ③闪充/智驾技术突破。<br><br>
   <strong>长期（1-3年）：</strong>如果市场认知从"传统车企"切换到"科技平台"（类似2012-2015年特斯拉的估值重构），PE从30x提升至40x+，叠加净利增长至500亿，目标价可达200元+。<strong>这是"星辰大海"的核心逻辑。</strong><br><br>
   <strong>关键风险：</strong>价格战持续超预期、海外贸易壁垒升级、国补退坡后需求断崖、行业产能出清期间的利润率下行。
@@ -532,7 +726,7 @@
 
 <div class="footer">
   数据来源：Tushare Pro（月线行情+每日指标+财务数据）| 比亚迪年报/季报 | 中汽协<br>
-  行情数据截止：2026-06-16 | 财务数据：2023-2025年报 + 2025PE-TTM倒推估算<br>
+  行情数据截止：2026-06-18 | 财务数据：2023-2025年报 + 2025PE-TTM倒推估算<br>
   ⚠️ 仅供参考，不构成投资建议。股市有风险，投资需谨慎。
 </div>
 
@@ -546,7 +740,7 @@
     grid: { vertLines: { color: '#1a1f2e' }, horzLines: { color: '#1a1f2e' } },
     crosshair: { mode: LightweightCharts.CrosshairMode.Normal, vertLine: { color: '#5b9bd5', width: 1, style: 3 }, horzLine: { color: '#5b9bd5', width: 1, style: 3 } },
     rightPriceScale: { borderColor: '#252b3d', scaleMargins: { top: 0.05, bottom: 0.05 } },
-    timeScale: { borderColor: '#252b3d', timeVisible: false, rightOffset: 5, barSpacing: 8, minBarSpacing: 4 },
+    timeScale: { borderColor: '#252b3d', timeVisible: false, rightOffset: 5, barSpacing: 10, minBarSpacing: 6 },
     handleScroll: true,
     handleScale: true
   });
