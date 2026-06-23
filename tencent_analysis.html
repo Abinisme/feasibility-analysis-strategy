@@ -39,9 +39,8 @@
   .tag{display:inline-block;padding:3px 10px;border-radius:12px;font-size:.8em;margin:2px 4px;}
   .tr{background:rgba(224,85,74,.15);color:var(--r);}.tg{background:rgba(245,158,11,.15);color:var(--o);}.tgr{background:rgba(34,197,94,.15);color:var(--g);}
   .footer{color:var(--t2);font-size:.82em;text-align:center;margin-top:36px;padding-top:20px;border-top:1px solid var(--b);}
-  details summary{cursor:pointer;padding:6px 0;font-weight:600;}
   .chart-box{width:100%;height:460px;margin:16px 0 8px;padding-bottom:40px;}
-  @media(max-width:768px){body{padding:14px}h1{font-size:1.35em}h2{font-size:1.15em;margin:28px 0 12px}h3{font-size:1em}table{font-size:.78em}th,td{padding:6px 7px}.card{padding:14px;margin:12px 0}.fc{min-width:100%}.flx{flex-direction:column;gap:10px}.kv{font-size:.76em;padding:12px;line-height:1.8}blockquote{padding:10px 14px;font-size:.88em}.meta{gap:6px}.meta span{font-size:.75em;padding:3px 8px}.verdict,.warn,.danger{padding:14px;font-size:.88em}details summary{font-size:.92em}.chart-box{height:380px;padding-bottom:30px}}
+  @media(max-width:768px){body{padding:14px}h1{font-size:1.35em}h2{font-size:1.15em;margin:28px 0 12px}h3{font-size:1em}table{font-size:.78em}th,td{padding:6px 7px}.card{padding:14px;margin:12px 0}.fc{min-width:100%}.flx{flex-direction:column;gap:10px}.kv{font-size:.76em;padding:12px;line-height:1.8}blockquote{padding:10px 14px;font-size:.88em}.meta{gap:6px}.meta span{font-size:.75em;padding:3px 8px}.verdict,.warn,.danger{padding:14px;font-size:.88em}.chart-box{height:380px;padding-bottom:30px}}
   @media(max-width:480px){body{padding:10px}h1{font-size:1.2em;padding:20px 0 14px}h2{font-size:1.05em}table{font-size:.72em}th,td{padding:4px 5px}.card{padding:12px}.kv{font-size:.7em;padding:10px}.chart-box{height:320px;padding-bottom:24px}}
 </style>
 <script src="https://unpkg.com/lightweight-charts@4/dist/lightweight-charts.standalone.production.js"></script>
@@ -53,16 +52,15 @@
 <h1>🐧 腾讯控股：AI时代的隐形冠军 — 估值重估之路</h1>
 <div class="meta">
   <span><a href="https://quote.eastmoney.com/hk/0700.html" target="_blank" rel="noopener" style="color:var(--t2);text-decoration:none;">港股 <strong style="color:var(--a);">0700.HK</strong></a></span>
-  <span>数据截止：2026-06-20</span>
+  <span>数据截止：2026-06-23</span>
   <span>Yahoo Finance + 公开财报</span>
   <span>现价：HK$433 &nbsp;|&nbsp; 市值：3.90万亿港元</span>
 </div>
 
 <!-- ═══════════════════════════════════════════ -->
-<!--     第一板块：港股与A股的结构性差异          -->
+<!-- 一、市场背景：为什么港股腾讯"便宜"         -->
 <!-- ═══════════════════════════════════════════ -->
-
-<h2>一、港股与A股：两个市场的根本性差异</h2>
+<h2>一、市场背景：港股与A股的估值鸿沟</h2>
 
 <div class="card">
   <h3>📊 核心差异对比</h3>
@@ -71,422 +69,210 @@
     <tbody>
       <tr><td><strong>流动性</strong></td><td>日均成交~1000亿港元</td><td>日均成交~1万亿元</td><td>港股流动性折价约10-15%</td></tr>
       <tr><td><strong>投资者结构</strong></td><td>机构主导（~60%外资+南下资金）</td><td>散户主导（~60%散户）</td><td>港股定价更理性，泡沫更少</td></tr>
-      <tr><td><strong>涨跌幅限制</strong></td><td><strong>无涨跌幅限制</strong></td><td>±10%（主板）/±20%（科创/创业板）</td><td>港股波动更大，但也更快反映信息</td></tr>
-      <tr><td><strong>做空机制</strong></td><td><strong>完善的做空机制</strong>（融券、窝轮、牛熊证）</td><td>融券受限，做空成本高</td><td>港股估值更难出现泡沫，但也可能被做空压制</td></tr>
-      <tr><td><strong>估值体系</strong></td><td>以PE/PB为主，注重现金流和分红</td><td>PE+概念+赛道+情绪</td><td>港股给"故事"的溢价远低于A股</td></tr>
-      <tr><td><strong>资金成本</strong></td><td>港币利率跟随美元（当前~4.5%）</td><td>人民币利率（当前~3%）</td><td>港股折现率更高，估值天然更低</td></tr>
-      <tr><td><strong>红利税</strong></td><td>内地投资者20%（港股通）</td><td>持有>1年免红利税</td><td>港股实际股息收益打折扣</td></tr>
-      <tr><td><strong>汇率风险</strong></td><td>港币与美元挂钩</td><td>人民币</td><td>人民币升值时港股收益可能被汇率侵蚀</td></tr>
+      <tr><td><strong>做空机制</strong></td><td><strong>完善</strong>（融券、窝轮、牛熊证）</td><td>融券受限</td><td>港股估值更难出现泡沫</td></tr>
+      <tr><td><strong>资金成本</strong></td><td>港币利率跟随美元（~4.5%）</td><td>人民币利率（~3%）</td><td>港股折现率更高，估值天然更低</td></tr>
     </tbody>
   </table>
-  <blockquote><strong>核心结论：</strong>港股的"便宜"不是没有道理的——流动性折价+做空机制+高折现率+红利税，这些结构性因素共同压低了港股的估值中枢。但这也意味着，当港股出现"错杀"时，修复空间往往比A股更大。</blockquote>
+  <div class="kv">
+<span class="l">────── 港股 vs A股 折现率对比 ──────</span>
+<span class="B">港股 WACC ≈ 无风险4.5% + 风险溢价5-6% + 流动性溢价1-2% ≈ 10.5-12.5%</span>
+<span class="G">A股 WACC ≈ 无风险3% + 风险溢价5-6% + 流动性溢价0% ≈ 8-9%</span>
+<span class="R">→ 港股折现率比A股高2-3.5个百分点 → 同样现金流现值低15-25%</span>
+<span class="S">→ 但若AI收入增速>30%，增长溢价可抵消折现率差异，港股估值可能向A股靠拢</span>
+  </div>
+  <blockquote><strong>核心结论：</strong>港股的"便宜"不是没有道理的——流动性折价+做空机制+高折现率。但这也意味着，当港股出现"错杀"时，修复空间往往比A股更大。在AI爆发情景下，增长溢价可能抵消这些结构性折价。</blockquote>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 二、基本面：Q2利润压力——阵痛期的解剖       -->
+<!-- ═══════════════════════════════════════════ -->
+<h2>二、基本面审视：Q2净利润增速前瞻</h2>
+<blockquote>分析基于2026年Q1已披露数据及市场对Q2的前瞻判断，梳理可能导致净利润增速下滑的核心因素。</blockquote>
+
+<div class="card">
+  <h3>① AI投入吞噬利润——最直接的短期压力</h3>
+  <ul>
+    <li>Q1资本开支 <strong class="num">319亿元</strong>（+16%），销售及市场费用同比 <strong class="up">+43%</strong></li>
+    <li><strong>剔除AI投入</strong>后经营利润增速可达 <strong>17%</strong>，含AI后降至 <strong>9%</strong>——AI单季吞噬近一半利润增量</li>
+    <li>市场分析：<strong>AI投入吃掉Q1净利润的63%</strong></li>
+  </ul>
+  <blockquote class="qo">管理层在Q1电话会议中明确：<strong>2026年AI投入至少翻倍</strong>，下半年国产自研AI芯片逐月交付，Q2折旧和运营成本压力只会更大。</blockquote>
 </div>
 
 <div class="card">
-  <h3>📐 估值模型中的折现率差异</h3>
-  <div class="kv">
-<span class="l">────── 港股 vs A股 折现率对比 ──────</span>
-<span class="l">│</span>
-<span class="B">│  港股折现率（WACC）</span>
-<span class="B">│  = 无风险利率(4.5%) + 风险溢价(5-6%) + 流动性溢价(1-2%)</span>
-<span class="B">│  ≈ 10.5-12.5%</span>
-<span class="l">│</span>
-<span class="G">│  A股折现率（WACC）</span>
-<span class="G">│  = 无风险利率(3%) + 风险溢价(5-6%) + 流动性溢价(0%)</span>
-<span class="G">│  ≈ 8-9%</span>
-<span class="l">│</span>
-<span class="R">│  差异：港股折现率比A股高约2-3.5个百分点</span>
-<span class="R">│  → 同样的未来现金流，港股现值比A股低15-25%</span>
-<span class="R">│  → 这就是AH溢价存在的数学基础</span>
-<span class="l">│</span>
-<span class="S">│  但在AI爆发情景下：</span>
-<span class="S">│  如果腾讯AI收入增速>30%，增长溢价会抵消折现率差异</span>
-<span class="S">│  此时港股估值可能向A股靠拢甚至反超</span>
-<span class="l">──────────────────────────────────</span>
+  <h3>② 三大核心业务增长全面放缓</h3>
+  <div class="flx">
+    <div class="fc"><h4>🎮 游戏</h4><p>本土Q1仅+6%，《王者》运营超10年ARPU持平。国际+13%但关税压制利润率。</p></div>
+    <div class="fc"><h4>📢 广告</h4><p>增速从2024年28%→2025年14%→Q1仅9%。视频号DAU 4.5亿，日使用时35分钟（抖音130分钟）。</p></div>
+    <div class="fc"><h4>💳 金科企服</h4><p>支付收入增速从28%降至7%，腾讯云份额17%→12%。</p></div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════ -->
-<!--     第二板块：估值承压的核心逻辑             -->
-<!-- ═══════════════════════════════════════════ -->
+<div class="card">
+  <h3>③ 宏观压制 + 高基数</h3>
+  <ul>
+    <li>消费复苏不及预期，微信支付单笔金额持续下滑（Q1才企稳）</li>
+    <li>2025年Q2为利润高基数期（游戏版号恢复后集中释放），2026年Q2同比面临压力</li>
+    <li>海外收入占比提升，汇率波动对汇兑损益影响加大</li>
+  </ul>
+</div>
 
-<h2>二、估值承压：市场低估了什么？</h2>
+<div class="warn">
+  <strong>📌 小结：</strong>利润增速下滑是<strong>主动战略投入的必然结果</strong>。剔除AI后老业务仍保持17%经营利润增长，自由现金流（Q1 567亿）远超资本开支（319亿），AI投入是用富余资金布局长期期权。<strong>市场关注焦点应从利润增速转向：AI投入能否在未来12-18个月转化为广告效率提升和微信AI Agent的商业化落地。</strong>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 三、AI战略：资本支出模式与竞争定位            -->
+<!-- ═══════════════════════════════════════════ -->
+<h2>三、AI资本支出策略：一场"精打细算"的长期主义</h2>
+<blockquote>在AI军备竞赛白热化的今天，腾讯的资本支出策略不是简单的"投多投少"，而是基于自身生态、财务纪律和风险控制的独特打法——<strong>"内生性AI赋能"</strong>：AI是提升现有业务的杠杆，而非独立的新增长引擎。</blockquote>
+
+<div class="card">
+  <h3>📊 三巨头资本开支模式对比</h3>
+  <table>
+    <thead><tr><th>公司</th><th>模式</th><th>年度规模</th><th>融资方式</th><th>风险特征</th></tr></thead>
+    <tbody>
+      <tr><td><strong>腾讯</strong></td><td>混合：55%自建+25%租赁+20%公有云</td><td>2025年792亿，2026 AI翻倍至360亿+</td><td>经营现金流覆盖+40亿美元双币种长债（10Y+30Y）</td><td><span class="tgr">低</span>（分散折现风险）</td></tr>
+      <tr><td><strong>阿里</strong></td><td>全栈自建</td><td>2025年1237亿，未来三年超3800亿</td><td>现金流+股权融资</td><td><span class="tg">中</span>（重资产模式）</td></tr>
+      <tr><td><strong>Meta</strong></td><td>先行押注</td><td>2026预计1250-1450亿美元</td><td>股权融资稀释</td><td><span class="tr">高</span>（ROI不清晰）</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h3>🔑 三大差异化优势</h3>
+  <ol>
+    <li><strong>财务纪律：</strong>穆迪A1/标普A+顶级评级锁定低利率长期资金。Q1经营现金流1014亿，自由现金流567亿，完全覆盖319亿资本开支。AI支出全部费用化处理，不美化财报</li>
+    <li><strong>微信生态壁垒：</strong>正打造"代理AI平台"，与华为/荣耀签署A2A协议，向小程序开发者开放AI生态。微信13亿月活=全球最大的AI应用入口</li>
+    <li><strong>稳健文化：</strong>"胜兵先胜而后求战"，想清楚再砸资源。对比阿里上半年核心人才流失和钉钉管理动荡，腾讯的稳健是竞争优势</li>
+  </ol>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 四、成长引擎：AI应用四大落地场景              -->
+<!-- ═══════════════════════════════════════════ -->
+<h2>四、成长引擎：被低估的"应用层之王"</h2>
+
+<div class="card">
+  <h3>📱 四大AI落地场景与商业化路径</h3>
+
+  <h4>场景一：微信搜索 — 年化百亿增量</h4>
+  <p>微信广告加载率仅~3%（抖音~10%），AI精准投放可提升单条广告价值。搜索广告对标百度，潜在增量年化100-300亿。</p>
+
+  <h4>场景二：视频号 — 最大单一体量</h4>
+  <p>AI推荐算法+智能内容生成，广告+电商GMV抽佣，潜在年化200-500亿。Meta引入AI推荐后广告增速恢复20%+，腾讯视频号AI化才刚开始。</p>
+
+  <h4>场景三：游戏 — 降本增效双轮驱动</h4>
+  <p>AI NPC提升留存、AI辅助开发降低30-50%成本、AI动态难度提升ARPU。腾讯游戏年收2000亿，AI赋能不是锦上添花而是结构性改造。</p>
+
+  <h4>场景四：云服务 — 企业级AI变现</h4>
+  <p>混元API调用+AI PaaS平台+行业解决方案+GPU租赁。参考微软Azure因AI实现30%+增速，腾讯云AI增速可能显著高于整体。</p>
+
+  <blockquote class="qo"><strong>核心逻辑：</strong>做AI的竞争壁垒，往往不在于谁的模型最先进，而在于谁能把AI嵌入最多用户每天都在使用的场景中。腾讯在这方面拥有全球最深的护城河——微信13亿月活。</blockquote>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 五、估值定价：腾讯值多少钱？                  -->
+<!-- ═══════════════════════════════════════════ -->
+<h2>五、估值重估：从"传统互联网"到"AI应用平台"</h2>
 
 <div class="card">
   <h3>📉 当前估值快照</h3>
   <div class="flx">
     <div class="fc">
-      <h4>核心指标</h4>
-      <table style="margin:0;">
-        <tr><td>股价</td><td class="num"><strong>HK$433</strong></td></tr>
-        <tr><td>市值</td><td class="num">3.90万亿港元（~3.56万亿人民币）</td></tr>
-        <tr><td>PE-TTM</td><td class="num"><strong>15.46x</strong></td></tr>
-        <tr><td>Forward PE</td><td class="num"><strong>12.50x</strong></td></tr>
-        <tr><td>PB</td><td class="num">3.04x</td></tr>
-        <tr><td>ROE</td><td class="num">20.51%</td></tr>
-        <tr><td>净利率</td><td class="num">30.61%</td></tr>
-      </table>
+      <table style="margin:0;"><tr><td>PE-TTM</td><td class="num"><strong>15.46x</strong></td></tr><tr><td>Forward PE</td><td class="num">12.50x</td></tr><tr><td>PB</td><td class="num">3.04x</td></tr><tr><td>ROE</td><td class="num">20.51%</td></tr></table>
     </div>
     <div class="fc">
-      <h4>52周区间</h4>
       <div class="kv" style="margin:0;">
-<span class="l">52周高点</span> <span class="R">HK$683</span>
-<span class="l">当前价位</span> <span class="S">HK$433</span> <span class="l">（距高点 <span class="dn">-36.6%</span>）</span>
-<span class="l">52周低点</span> <span class="G">HK$420</span> <span class="l">（距低点仅 <span class="up">+3.1%</span>）</span>
-<span class="l">│</span>
-<span class="l">分析师目标价</span> <span class="B">HK$707</span> <span class="l">（潜在空间 <span class="up">+63%</span>）</span>
-<span class="l">目标价区间</span> <span class="l">HK$425 - HK$884</span>
+<span class="l">52周高</span> <span class="R">683</span> <span class="l">（距 -36.6%）</span>
+<span class="S">当前</span> <span class="S">433</span>
+<span class="l">52周低</span> <span class="G">420</span> <span class="l">（距 +3.1%）</span>
+<span class="B">分析师目标价</span> <span class="B">707</span> <span class="l">（空间 +63%）</span>
       </div>
     </div>
   </div>
+  <blockquote class="qo">Q1 FY26营收1964.6亿港元（+13%），净利679.1亿（+20%+）。基本面不差，但<strong>估值承压的核心不是业绩，而是"地缘政治折价"+"监管记忆"的市场惯性</strong>。</blockquote>
 </div>
-
-<div class="card">
-  <h3>🔍 估值承压的核心原因：不是基本面衰退</h3>
-  <table>
-    <thead><tr><th>因素</th><th>影响方向</th><th>说明</th></tr></thead>
-    <tbody>
-      <tr><td><strong>中美博弈</strong></td><td class="dn">压制估值</td><td>外资因地缘政治风险减持中概股，腾讯作为港股旗舰首当其冲</td></tr>
-      <tr><td><strong>国内监管周期</strong></td><td class="dn">压制估值</td><td>2021-2023年互联网监管风暴的记忆尚未完全消退</td></tr>
-      <tr><td><strong>港股整体折价</strong></td><td class="dn">压制估值</td><td>港股流动性+做空机制+高折现率的结构性折价</td></tr>
-      <tr><td><strong>AI货币化尚未完全兑现</strong></td><td class="dn">压制估值</td><td>市场对腾讯AI能力的认知滞后于实际进展</td></tr>
-      <tr style="background:rgba(91,155,213,.04);"><td><strong>基本面实际表现</strong></td><td class="up">支撑估值</td><td>Q1 FY26营收1964.6亿港元（+13%），净利679.1亿港元（+20%+），利润率30.6%</td></tr>
-      <tr style="background:rgba(91,155,213,.04);"><td><strong>回购力度</strong></td><td class="up">支撑估值</td><td>腾讯持续大规模回购，2025年回购金额超千亿港元</td></tr>
-    </tbody>
-  </table>
-  <blockquote class="qo"><strong>核心判断：</strong>腾讯当前PE 15.46x处于历史估值区间的偏低位置。考虑到其20%+的利润增速、30%+的净利率、20%+的ROE，这个估值水平可能没有充分反映其AI应用层面的爆发潜力。市场目前更多是在为"过去的监管风险"和"地缘政治折价"买单，而非基于腾讯未来AI变现能力来定价。</blockquote>
-</div>
-
-<!-- ═══════════════════════════════════════════ -->
-<!--     第三板块：AI业务拆解                     -->
-<!-- ═══════════════════════════════════════════ -->
-
-<h2>三、腾讯AI：被低估的"应用层之王"</h2>
-
-<div class="card">
-  <h3>🧠 混元大模型：腾讯的AI底座</h3>
-  <p>腾讯混元大模型（Hunyuan）是腾讯自研的通用大语言模型，已迭代多个版本。与百度文心、阿里通义千问不同，腾讯混元的独特优势不在于"模型参数有多大"，而在于<strong>它有全球最大的应用落地场景</strong>——微信13亿月活、QQ 5.5亿月活、腾讯视频/音乐/游戏等海量用户产品。</p>
-  <blockquote>做AI的竞争壁垒，往往不在于谁的模型最先进，而在于谁能把AI嵌入最多用户每天都在使用的场景中。腾讯在这方面可能拥有全球最深的护城河。</blockquote>
-</div>
-
-<div class="card">
-  <h3>📱 四大AI落地场景与商业化路径</h3>
-
-  <h4>场景一：微信生态 — 13亿用户的AI入口</h4>
-  <table>
-    <thead><tr><th>功能</th><th>AI赋能</th><th>商业化路径</th><th>潜在收入增量</th></tr></thead>
-    <tbody>
-      <tr><td><strong>微信搜索</strong></td><td>AI智能问答、搜索结果摘要</td><td>搜索广告（对标百度搜索广告）</td><td>年化100-300亿元</td></tr>
-      <tr><td><strong>视频号</strong></td><td>AI推荐算法、AI生成内容、智能剪辑</td><td>视频号广告+电商GMV抽佣</td><td>年化200-500亿元</td></tr>
-      <tr><td><strong>小程序</strong></td><td>AI客服、智能导购、自动化运营</td><td>SaaS服务费+交易佣金</td><td>年化50-150亿元</td></tr>
-      <tr><td><strong>企业微信</strong></td><td>AI销售助手、智能工单、自动化营销</td><td>企业级SaaS订阅</td><td>年化30-100亿元</td></tr>
-    </tbody>
-  </table>
-  <blockquote><strong>微信AI的想象空间：</strong>微信目前的广告加载率仅约3%，远低于抖音（~10%）和Facebook（~15%）。AI驱动的精准投放可以提升广告效率，在不显著增加广告数量的前提下提高单条广告价值。仅广告效率提升这一项，就可能为腾讯带来年化数百亿的增量收入。</blockquote>
-
-  <h4>场景二：游戏 — AI重新定义游戏体验</h4>
-  <table>
-    <thead><tr><th>应用方向</th><th>进展</th><th>商业价值</th></tr></thead>
-    <tbody>
-      <tr><td><strong>AI NPC</strong></td><td>游戏内NPC具备自然语言交互能力</td><td>提升用户留存和付费意愿</td></tr>
-      <tr><td><strong>AI辅助开发</strong></td><td>AI生成美术素材、关卡设计、剧情</td><td>降低游戏开发成本30-50%</td></tr>
-      <tr><td><strong>AI游戏测试</strong></td><td>自动化QA测试，加速版本迭代</td><td>缩短开发周期，提高上线频率</td></tr>
-      <tr><td><strong>个性化体验</strong></td><td>AI动态调整难度、推荐内容</td><td>提升ARPU值和生命周期</td></tr>
-    </tbody>
-  </table>
-  <p>腾讯是全球最大的游戏公司（按收入计），2025年游戏收入约2000亿元。AI对游戏的赋能不是"锦上添花"，而是可能<strong>从根本上改变游戏的开发方式和用户体验</strong>。</p>
-
-  <h4>场景三：广告 — AI驱动的精准投放革命</h4>
-  <p>腾讯广告业务2025年收入约1200亿元，其中视频号广告增速最快（50%+）。AI在广告领域的价值体现在：</p>
-  <ul>
-    <li><strong>精准定向：</strong>基于微信社交图谱+消费行为+内容偏好的AI建模，广告转化率提升</li>
-    <li><strong>创意生成：</strong>AI自动生成广告素材，降低广告主制作成本</li>
-    <li><strong>智能出价：</strong>AI实时优化广告出价策略，提升广告主ROI</li>
-    <li><strong>归因分析：</strong>AI追踪全链路转化，帮助广告主理解投放效果</li>
-  </ul>
-  <blockquote>Meta（Facebook母公司）的广告收入在引入AI推荐系统后实现了20%+的增速恢复。腾讯的广告AI化才刚开始，视频号广告的货币化效率仍有较大的提升空间。</blockquote>
-
-  <h4>场景四：云服务 — 企业级AI的变现通道</h4>
-  <p>腾讯云是国内第二大云服务商（仅次于阿里云），2025年云服务收入约800亿元。AI为腾讯云带来的增量：</p>
-  <ul>
-    <li><strong>混元API服务：</strong>企业通过调用混元大模型API实现智能化，按调用量付费</li>
-    <li><strong>AI PaaS平台：</strong>提供模型训练、微调、部署的一站式服务</li>
-    <li><strong>行业解决方案：</strong>金融、医疗、教育、零售等垂直行业的AI解决方案</li>
-    <li><strong>GPU算力租赁：</strong>向企业出租AI算力资源</li>
-  </ul>
-  <p>参考微软Azure因AI服务而实现的30%+增速，腾讯云的AI收入增速可能显著高于云业务整体增速。</p>
-</div>
-
-<!-- ═══════════════════════════════════════════ -->
-<!--     第四板块：估值测算                       -->
-<!-- ═══════════════════════════════════════════ -->
-
-<h2>四、估值重估：腾讯值多少钱？</h2>
 
 <div class="card">
   <h3>📐 分部估值（SOTP）</h3>
   <table>
-    <thead><tr><th>业务板块</th><th>2025E收入(亿港元)</th><th>可比公司</th><th>合理PE</th><th>估值(亿港元)</th></tr></thead>
+    <thead><tr><th>业务板块</th><th>年收入(亿港元)</th><th>合理PE</th><th>估值(亿港元)</th></tr></thead>
     <tbody>
-      <tr>
-        <td><strong>🎮 游戏</strong></td>
-        <td class="num">~2000</td>
-        <td>网易/EA/暴雪</td>
-        <td class="num">20-25x</td>
-        <td class="num">~30,000</td>
-      </tr>
-      <tr>
-        <td><strong>📢 广告</strong></td>
-        <td class="num">~1200</td>
-        <td>Meta/Google</td>
-        <td class="num">25-30x</td>
-        <td class="num">~25,000</td>
-      </tr>
-      <tr>
-        <td><strong>💰 金融科技</strong></td>
-        <td class="num">~2000</td>
-        <td>蚂蚁/京东科技</td>
-        <td class="num">15-20x</td>
-        <td class="num">~20,000</td>
-      </tr>
-      <tr>
-        <td><strong>☁️ 云服务</strong></td>
-        <td class="num">~800</td>
-        <td>阿里云/AWS</td>
-        <td class="num">30-40x</td>
-        <td class="num">~15,000</td>
-      </tr>
-      <tr>
-        <td><strong>📱 社交网络</strong></td>
-        <td class="num">~1200</td>
-        <td>Meta社交</td>
-        <td class="num">20-25x</td>
-        <td class="num">~18,000</td>
-      </tr>
-      <tr>
-        <td><strong>🤖 AI期权</strong></td>
-        <td class="num">初期</td>
-        <td>—</td>
-        <td class="num">—</td>
-        <td class="num">5,000-20,000</td>
-      </tr>
-      <tr style="font-weight:700;border-top:2px solid var(--a);">
-        <td>合计</td><td></td><td></td><td></td>
-        <td class="up num">~113,000-128,000</td>
-      </tr>
+      <tr><td>🎮 游戏</td><td class="num">2000</td><td class="num">20-25x</td><td class="num">~30,000</td></tr>
+      <tr><td>📢 广告</td><td class="num">1200</td><td class="num">25-30x</td><td class="num">~25,000</td></tr>
+      <tr><td>💰 金融科技</td><td class="num">2000</td><td class="num">15-20x</td><td class="num">~20,000</td></tr>
+      <tr><td>☁️ 云服务</td><td class="num">800</td><td class="num">30-40x</td><td class="num">~15,000</td></tr>
+      <tr><td>📱 社交网络</td><td class="num">1200</td><td class="num">20-25x</td><td class="num">~18,000</td></tr>
+      <tr><td>🤖 AI期权</td><td class="num">初期</td><td class="num">—</td><td class="num">5,000-20,000</td></tr>
+      <tr style="font-weight:700;border-top:2px solid var(--a);"><td>合计</td><td></td><td></td><td class="up num">113,000-128,000</td></tr>
     </tbody>
   </table>
-  <p style="font-size:.85em;color:var(--t2);">当前市值3.90万亿港元 → SOTP估值中枢约11.3-12.8万亿港元 → <strong>潜在空间约+190%~+228%</strong>。但SOTP估值通常需要打折（ conglomerate discount 约20-30%），打折后合理估值约8-10万亿港元，对应空间约+105%~+156%。</p>
+  <p style="font-size:.85em;color:var(--t2);">SOTP估值中枢约11.3-12.8万亿港元。扣除 conglomerate discount 20-30%，合理估值8-10万亿，对应空间+105%~+156%。</p>
 </div>
 
 <div class="card">
   <h3>🎯 情景分析</h3>
   <table>
-    <thead><tr><th>情景</th><th>2026E净利(亿港元)</th><th>PE倍数</th><th>目标市值(亿港元)</th><th>目标价(港元)</th><th>空间</th></tr></thead>
+    <thead><tr><th>情景</th><th>2026E净利(亿)</th><th>PE</th><th>目标价(港币)</th><th>空间</th></tr></thead>
     <tbody>
-      <tr><td><span class="tg">悲观</span></td><td class="num">235</td><td class="num">15x</td><td class="num">35,250</td><td class="num">386</td><td class="dn">-11%</td></tr>
-      <tr><td>中性</td><td class="num">280</td><td class="num">18x</td><td class="num">50,400</td><td class="num">552</td><td class="up">+28%</td></tr>
-      <tr><td><span class="tr">乐观</span></td><td class="num">320</td><td class="num">22x</td><td class="num">70,400</td><td class="num">771</td><td class="up">+78%</td></tr>
-      <tr><td><span class="tr">AI重估</span></td><td class="num">380</td><td class="num">25x</td><td class="num">95,000</td><td class="num">1,040</td><td class="up">+140%</td></tr>
+      <tr><td><span class="tg">悲观</span></td><td class="num">235</td><td class="num">15x</td><td class="num">386</td><td class="dn">-11%</td></tr>
+      <tr><td>中性</td><td class="num">280</td><td class="num">18x</td><td class="num">552</td><td class="up">+28%</td></tr>
+      <tr><td><span class="tr">乐观</span></td><td class="num">320</td><td class="num">22x</td><td class="num">771</td><td class="up">+78%</td></tr>
+      <tr><td><span class="tr">AI重估</span></td><td class="num">380</td><td class="num">25x</td><td class="num">1,040</td><td class="up">+140%</td></tr>
     </tbody>
   </table>
-  <p style="font-size:.85em;color:var(--t2);">目标价基于总股本约91.3亿股计算。AI重估情景假设市场重新认知腾讯的AI应用价值，给予科技平台而非传统互联网的估值倍数。</p>
+  <p style="font-size:.85em;color:var(--t2);">基于总股本91.3亿股。AI重估情景假设市场认知从"传统互联网"切换到"AI应用平台"，类似Meta 2023-2024年估值重构。</p>
 </div>
 
 <div class="card">
-  <h3>📊 与同类公司估值对比</h3>
+  <h3>📊 同业估值对比</h3>
   <table>
-    <thead><tr><th>公司</th><th>市值(亿美元)</th><th>PE-TTM</th><th>净利率</th><th>ROE</th><th>AI定位</th></tr></thead>
+    <thead><tr><th>公司</th><th>市值(亿美元)</th><th>PE</th><th>净利率</th><th>ROE</th><th>AI定位</th></tr></thead>
     <tbody>
-      <tr><td><strong>腾讯</strong></td><td class="num">~4,930</td><td class="num"><strong>15.5x</strong></td><td class="num">30.6%</td><td class="num">20.5%</td><td>应用层之王</td></tr>
-      <tr><td>Meta</td><td class="num">~15,000</td><td class="num">~25x</td><td class="num">~35%</td><td class="num">~30%</td><td>AI+社交+广告</td></tr>
-      <tr><td>Google</td><td class="num">~20,000</td><td class="num">~22x</td><td class="num">~28%</td><td class="num">~25%</td><td>AI搜索+云</td></tr>
-      <tr><td>阿里</td><td class="num">~3,000</td><td class="num">~12x</td><td class="num">~20%</td><td class="num">~15%</td><td>AI电商+云</td></tr>
-      <tr><td>字节跳动(未上市)</td><td class="num">~2,200</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>AI+内容+广告</td></tr>
+      <tr><td><strong>腾讯</strong></td><td class="num">4,930</td><td class="num"><strong>15.5x</strong></td><td class="num">30.6%</td><td class="num">20.5%</td><td>应用层之王</td></tr>
+      <tr><td>Meta</td><td class="num">15,000</td><td class="num">25x</td><td class="num">35%</td><td class="num">30%</td><td>AI+社交+广告</td></tr>
+      <tr><td>Google</td><td class="num">20,000</td><td class="num">22x</td><td class="num">28%</td><td class="num">25%</td><td>AI搜索+云</td></tr>
+      <tr><td>阿里</td><td class="num">3,000</td><td class="num">12x</td><td class="num">20%</td><td class="num">15%</td><td>AI电商+云</td></tr>
     </tbody>
   </table>
-  <blockquote><strong>估值差距的含义：</strong>腾讯的PE（15.5x）仅为Meta（25x）的62%，但净利率（30.6%）和ROE（20.5%）与Meta处于同一水平。如果腾讯的AI应用层价值被市场充分认知，PE从15x修复到20-25x是有可能的——这对应着30-60%的估值修复空间。</blockquote>
+  <blockquote>腾讯PE仅为Meta的62%，但净利率和ROE同一水平。若AI应用价值被充分认知，PE修复到20-25x即30-60%修复空间。</blockquote>
 </div>
 
 <!-- ═══════════════════════════════════════════ -->
-<!--     第五板块：K线图与技术面                   -->
+<!-- 六、技术面                               -->
 <!-- ═══════════════════════════════════════════ -->
-
-<h2>五、技术面与关键价位</h2>
+<h2>六、技术面与关键价位</h2>
 
 <div class="card">
   <h3>📈 月线K线图（2020-2026）</h3>
-  <p style="font-size:.85em;color:var(--t2);">TradingView Lightweight Charts渲染，支持拖拽缩放，悬停查看OHLC。</p>
   <div id="klineChart" class="chart-box"></div>
 </div>
 
 <div class="card">
   <h3>📦 箱体分析</h3>
   <div class="kv">
-<span class="l">────── 腾讯月线箱体分析 ──────</span>
-<span class="l">│</span>
-<span class="R">│  📦 箱体四（历史最高区）</span>
-<span class="R">│  上沿 750 ── 2021/02 高点</span>
-<span class="R">│  下沿 550 ── 2023/01 反弹高点</span>
-<span class="l">│  → 该箱体为2021年泡沫区，需要AI重估才能触及</span>
-<span class="l">│</span>
-<span class="S">│  📦 箱体三（中高位震荡区）</span>
-<span class="S">│  上沿 550 ── 2023/01 + 2024/10</span>
-<span class="S">│  下沿 380 ── 2022/10 低点区域</span>
-<span class="l">│  → 当前HK$433处于该箱体内偏低位置</span>
-<span class="l">│</span>
-<span class="G">│  📦 箱体二（核心支撑区）</span>
-<span class="G">│  上沿 380 ── 箱体三下沿</span>
-<span class="G">│  下沿 300 ── 2022年最低点区域</span>
-<span class="l">│  → 2022年10月HK$298是历史性的底部</span>
-<span class="l">│</span>
-<span class="B">────── 当前位置判断 ──────</span>
-<span class="B">当前价 HK$433 处于「箱体三」中偏低位置</span>
+<span class="l">────── 腾讯月线箱体 ──────</span>
+<span class="R">箱体四（历史最高区）：750 ↓550</span>
+<span class="S">箱体三（中高位震荡）：550 ↓380 — <strong>当前433处于该箱体偏低位置</strong></span>
+<span class="G">箱体二（核心支撑区）：380 ↓300</span>
+<span class="B">────── 操作参考 ──────</span>
 <span class="B">距箱体三下沿380有14%空间，距上沿550有27%空间</span>
 <span class="S">距52周低点420仅3%，处于底部区域</span>
-<span class="G">操作：420-440区间可分批建仓，止损400</span>
-<span class="R">目标：中期看箱体三上沿550（+27%），长期看箱体四下沿550-750</span>
+<span class="G">操作：420-440区间分批建仓，止损400</span>
+<span class="R">目标：中期看箱体三上沿550（+27%），长期看箱体四</span>
   </div>
 </div>
 
 <!-- ═══════════════════════════════════════════ -->
-<!--     第五续：Q2利润前瞻与AI战略深度拆解       -->
+<!-- 七、风险与总结                           -->
 <!-- ═══════════════════════════════════════════ -->
-
-<h2>五.续 📉 Q2净利润增速前瞻：阵痛期的利润解剖</h2>
-<blockquote>分析基于2026年Q1已披露数据及市场对Q2的前瞻判断，梳理可能导致净利润增速下滑的核心因素。</blockquote>
-
-<div class="card">
-  <h3>一、AI投入大幅增加——短期利润承压最显著</h3>
-  <p>这是当前市场公认的对腾讯利润端影响最大的因素。从Q1数据来看：</p>
-  <ul>
-    <li>单季资本开支已达 <strong class="num">319亿元</strong>，同比增长 16%</li>
-    <li>销售及市场费用同比大增 <strong class="up">43%</strong>，主要用于 AI 原生应用（元宝、WorkBuddy、IMA 等）的推广投放</li>
-  </ul>
-  <p>更直观的数据：若<strong>剔除AI新产品投入影响</strong>，腾讯Q1的Non-IFRS经营利润增速可达 <strong>17%</strong>，但包含AI项目后增速降至 <strong>9%</strong>——AI投入在单季度就吞噬了近一半的利润增量。有市场分析指出，<strong>腾讯单季AI投入已吃掉当季净利润的63%</strong>。</p>
-  <blockquote class="qo">进入Q2后，这一趋势大概率延续甚至加剧。腾讯管理层在Q1电话会议中明确表示：<strong>2026年AI投入将至少翻倍</strong>，下半年随着国产自研AI芯片逐月交付，资本开支还将进一步增加。这意味着Q2的折旧摊销和运营成本压力只会更大。</blockquote>
-</div>
-
-<div class="card">
-  <h3>二、传统核心业务增速全面放缓</h3>
-  <p>腾讯的三大收入支柱均面临增长瓶颈：</p>
-
-  <h4>🎮 游戏业务：增长接近自然边界</h4>
-  <ul>
-    <li><strong>本土游戏 Q1 收入仅同比+6%</strong>，虽然流水增速达十几个百分点（春节延后导致递延收入增加），但核心产品《王者荣耀》运营超10年，ARPU连续8个季度持平或小幅下滑</li>
-    <li>国际游戏 Q1 增长 13%，但受美国关税和合规成本上升影响，利润率承压</li>
-    <li>新游戏《洛克王国：世界》虽首月DAU超1300万，但尚未形成与《王者》《和平》同量级的收入贡献</li>
-  </ul>
-
-  <h4>📢 广告业务：视频号增长不达预期</h4>
-  <ul>
-    <li>微信广告增速从2024年的 <strong>28% → 2025年 14% → Q1 进一步降至 9%</strong></li>
-    <li>视频号 DAU 约 4.5 亿（抖音 7.8 亿），日均使用时长仅 <strong>35分钟</strong>（抖音 130 分钟），商业化潜力被市场下调预期</li>
-  </ul>
-
-  <h4>💳 金融科技与企业服务：支付增速放缓，云服务份额下滑</h4>
-  <ul>
-    <li>微信支付手续费率因政策要求持续下降，金融科技收入增速从 2023 年的 28% 降至 <strong>7%</strong></li>
-    <li>腾讯云市场份额从 2022 年的 <strong>17% → 2025 年 12%</strong>，新增大客户被阿里云和华为云压制</li>
-  </ul>
-</div>
-
-<div class="card">
-  <h3>三、宏观经济与消费疲软 + 高基数效应</h3>
-  <ul>
-    <li><strong>消费复苏不及预期</strong>：微信支付笔数仍在增长，但单笔金额此前持续下滑，直到Q1才出现企稳迹象。广告主预算向AI等热门赛道倾斜，传统品牌广告投放增速放缓</li>
-    <li><strong>高基数效应：</strong>2025年Q2是腾讯利润的高基数时期（受益于游戏版号恢复后的集中释放和广告高增长），为2026年Q2设置较高比较基准</li>
-    <li><strong>汇率扰动：</strong>腾讯海外收入占比持续提升，人民币汇率波动对财务费用和汇兑损益影响加大</li>
-  </ul>
-</div>
-
-<div class="warn">
-  <strong>📌 小结：短期阵痛与长期逻辑的权衡</strong><br><br>
-  当前腾讯的利润增速下滑，本质上是<strong>主动选择战略投入期的必然结果</strong>——用短期利润换取AI时代的长期竞争卡位。腾讯剔除AI后的核心老业务仍保持17%的经营利润增长，自由现金流充足，AI投入是用富余资金布局长期期权，并非伤及基本面的被动收缩。<br><br>
-  市场对Q2的关注焦点，除了利润增速本身，更应关注：<strong>AI投入能否在未来转化为广告效率提升、云收入增长和微信生态内AI Agent的商业化落地</strong>——这将是决定腾讯估值修复节奏的核心变量。
-</div>
-
-<!-- ═══════════════════════════════════════════ -->
-<!--     第五续2：AI资本支出策略对标             -->
-<!-- ═══════════════════════════════════════════ -->
-
-<h2>五.续2 🎯 腾讯AI资本支出策略：一场"精打细算"的长期主义</h2>
-<blockquote>在AI军备竞赛白热化的今天，腾讯的资本支出策略与阿里巴巴、Meta等同行呈现显著差异。其核心并非简单的"投多投少"，而是一套基于自身生态、财务纪律和风险控制的独特打法。</blockquote>
-
-<div class="card">
-  <h3>一、核心策略：内生赋能 vs. 外延基建</h3>
-  <p>腾讯的策略被投资者概括为<strong>"内生性AI赋能"</strong>。其核心逻辑是：AI是提升现有业务（游戏、广告、云）效率的<strong>"杠杆"</strong>，而非独立的新增长引擎。腾讯追求的是"投入产出比"，希望每一分钱都能撬动更大的利润。</p>
-  <p style="margin-top:10px;">这与阿里巴巴的"全栈自建"模式形成鲜明对比——阿里致力于成为AI时代的"基础设施提供商"，从芯片、算力到大模型构建完整闭环，需要前期不计成本的巨额投入。Meta则更接近"先开枪再瞄准"的风格，扎克伯格曾坦言看不清AI的ROI，但先行押注卡位赛道。</p>
-
-  <h4 style="margin-top:16px;">关键数据对比</h4>
-  <table>
-    <thead><tr><th>公司</th><th>资本开支策略</th><th>年度规模</th><th>特点</th></tr></thead>
-    <tbody>
-      <tr><td><strong>腾讯</strong></td><td>混合模式：55%自建+25%租赁+20%公有云</td><td>2025全年 792亿，2026 AI部分翻倍至360亿+</td><td>分散折现风险，用利润养投入</td></tr>
-      <tr><td><strong>阿里</strong></td><td>全栈自建</td><td>2025全年 1237亿，未来三年超3800亿</td><td>重资产模式，从芯片到应用全覆盖</td></tr>
-      <tr><td><strong>Meta</strong></td><td>先行押注</td><td>2026预计 1250-1450亿美元</td><td>规模远超腾讯，ROI尚不清晰</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="card">
-  <h3>二、财务纪律：低息锁长债，用利润养投入</h3>
-  <ol>
-    <li><strong>巧用债务融资：</strong>2026年6月成功发行 <strong>40亿美元双币种长期债券</strong>（10年期+30年期）。凭借穆迪A1、标普A+的顶级信用评级，以极低利率锁定长期资金，拉长债务久期匹配长周期AI投资</li>
-    <li><strong>强劲现金流覆盖：</strong>2026年Q1经营现金流净额 <strong class="num">1014亿元</strong>，自由现金流 <strong class="num">567亿元</strong>，完全覆盖当季319亿资本开支。这种"用利润养投入"的模式，避免了像谷歌那样被迫停止回购、启动股权融资的窘境</li>
-    <li><strong>AI费用化处理：</strong>选择将AI相关支出<strong>全部费用化</strong>（而非资本化），虽然短期压制利润增速，但避免了通过会计手段美化财报，体现管理层对长期透明度的自信</li>
-  </ol>
-  <blockquote class="qo">相比之下，阿里和Meta等公司因资本开支规模远超自身现金流，不得不考虑或已经启动了股权融资，对股东权益造成了稀释。</blockquote>
-</div>
-
-<div class="card">
-  <h3>三、生态落地：微信是最大的差异化武器</h3>
-  <ul>
-    <li><strong>Agent平台战略：</strong>腾讯正将微信打造成"代理AI平台"。通过与华为、荣耀等手机厂商签署A2A协议，并向小程序开发者开放AI生态，微信有望成为用户调用AI服务的核心入口</li>
-    <li><strong>"服务即广告"模式：</strong>相比抖音的"流量榨取"和淘宝的"货架轰炸"，微信AI通过原生服务触达用户，对体验伤害更小</li>
-    <li><strong>后发优势：</strong>腾讯在AI应用落地上表现出"后发先至"——当市场质疑其投入慢时，已悄然通过"元宝"等应用和微信AI生态，将AI能力嵌入国民级应用中</li>
-  </ul>
-</div>
-
-<div class="card">
-  <h3>四、组织文化：稳健审慎 vs. 激进动荡</h3>
-  <p>腾讯的AI策略反映其稳健的企业文化——管理层被形容为<strong>"胜兵先胜而后求战"</strong>，想清楚逻辑后才砸入资源，与Meta"先砸钱再找方向"的风格迥异。</p>
-  <p style="margin-top:8px;">反观阿里，其AI业务在2026上半年经历了剧烈的组织架构调整和核心人才流失，钉钉团队的管理问题也被公开讨论，显示出激进扩张背后可能存在的内部管理风险。</p>
-</div>
-
-<div class="verdict">
-  <strong>🎯 腾讯AI策略总评</strong><br><br>
-  AI投入的回报周期仍然很长，短期内折旧和运维成本上升会压制利润增速。如果AI技术路线发生根本性变革，或C端杀手级应用迟迟无法出现，万亿基建投资的价值将面临重估。<br><br>
-  但从当前信息看，腾讯凭借稳健的财务纪律、独特的微信生态壁垒和务实的混合投入策略，在AI竞赛中选择了一条<strong>风险更低、可持续性更强</strong>的路径。它不是跑得最快的，但可能是<strong>准备得最充分的</strong>。对投资者而言，利润增速的短期阵痛，或许正是长期布局的窗口。
-</div>
-
-<!-- ═══════════════════════════════════════════ -->
-<!--     第六板块：风险与结论                     -->
-<!-- ═══════════════════════════════════════════ -->
-
-<h2>六、风险因素</h2>
-
-<div class="danger">
-  <strong>⚠️ 以下是腾讯面临的主要风险：</strong>
-</div>
+<h2>七、风险因素与综合研判</h2>
 
 <div class="flx">
-  <div class="fc">
-    <h4>🔻 地缘政治风险</h4>
-    <p>中美关系的不确定性可能导致外资进一步减持中概股。美国对华科技制裁的范围扩大也可能影响腾讯的海外业务。</p>
-  </div>
-  <div class="fc">
-    <h4>🔻 监管政策风险</h4>
-    <p>虽然最严厉的监管周期可能已经过去，但互联网行业的政策环境仍存在不确定性。游戏版号、数据安全、反垄断等领域的政策变化需要持续关注。</p>
-  </div>
-  <div class="fc">
-    <h4>🔻 AI竞争加剧</h4>
-    <p>字节跳动（豆包）、百度（文心）、阿里（通义千问）在AI领域都在加大投入。腾讯的混元大模型在技术层面可能不是最先进的，其优势更多在于应用场景。</p>
-  </div>
-  <div class="fc">
-    <h4>🔻 宏观经济下行</h4>
-    <p>如果中国消费复苏不及预期，游戏、广告等业务的增速可能承压。金融科技业务也与宏观经济周期高度相关。</p>
-  </div>
+  <div class="fc"><h4>🔻 地缘政治</h4><p>中美不确定性致外资减持。</p></div>
+  <div class="fc"><h4>🔻 AI竞争</h4><p>字节/百度/阿里加大投入，混元技术非最先进。</p></div>
+  <div class="fc"><h4>🔻 宏观下行</h4><p>消费复苏不及预期拖累游戏/广告。</p></div>
 </div>
 
 <hr>
@@ -494,152 +280,45 @@
 <div class="verdict">
   <strong>📊 综合研判</strong><br><br>
 
-  <strong>短期（3-6个月）：</strong>腾讯股价处于52周低点附近（HK$420-433），PE 15.5x处于历史偏低位置。短期可能受港股整体情绪和地缘政治影响继续震荡，但下行空间相对有限（400附近有较强支撑）。短期反弹目标480-500。<br><br>
+  <strong>短期（3-6个月）：</strong>股价处于52周低点附近（420-433），PE 15.5x历史偏低。短期受港股情绪和地缘政治影响可能继续震荡，但下行空间有限（400附近强支撑）。反弹目标480-500。<br><br>
 
-  <strong>中期（6-12个月）：</strong>如果2026年H2腾讯财报继续验证AI对广告、云服务收入的拉动效果，市场可能开始重新定价腾讯的AI价值。PE从15x修复到18-20x，对应目标价550-620（+27%~+43%）。中期核心催化：①季度财报超预期 ②微信AI功能大规模落地 ③港股整体流动性改善。<br><br>
+  <strong>中期（6-12个月）：</strong>若H2财报验证AI对广告、云收入的拉动，市场可能重新定价。PE从15x修复到18-20x，目标价550-620（+27%~+43%）。核心催化：季度财报超预期、微信AI功能大规模落地、港股流动性改善。<br><br>
 
-  <strong>长期（1-3年）：</strong>如果市场认知从"传统互联网公司"切换到"AI应用平台"（类似Meta在2023-2024年的估值重构），PE从15x提升到22-25x，叠加净利增长到350-400亿港元，目标价可能达到800-1100港元。腾讯的微信生态是全球最大的AI应用场景——13亿月活、支付、电商、社交、内容——这个生态一旦被AI全面激活，其价值释放可能是非线性的。<br><br>
+  <strong>长期（1-3年）：</strong>若市场认知从"传统互联网"切换到"AI应用平台"（类似Meta 2023-2024），PE提升到22-25x，叠加净利增长，目标价800-1100港元。微信13亿月活生态一旦被AI全面激活，价值释放可能是非线性的。<br><br>
 
-  <strong>核心观点：</strong>腾讯当前的估值承压，可能更多是在为"地缘政治折价"和"监管记忆"买单，而非基于其AI应用潜力来定价。对于愿意承受短期波动的投资者来说，HK$420-440区间或许是一个值得认真考虑的位置。
+  <strong>核心观点：</strong>腾讯当前估值更多在为"地缘政治折价"和"监管记忆"买单，而非基于AI应用潜力定价。利润增速的短期阵痛，正是长期布局的窗口。对愿意承受短期波动的投资者来说，HK$420-440是一个值得认真考虑的位置。
 </div>
 
 <div class="footer">
-  数据来源：Yahoo Finance（行情+财务数据）| 腾讯年报/季报 | 公开研报<br>
-  行情数据截止：2026-06-20 | 分析师目标价来源：Yahoo Finance汇总<br>
+  数据来源：Yahoo Finance | 腾讯年报/季报 | 公开研报<br>
+  行情截止：2026-06-23 | 分析师目标价来源：Yahoo Finance汇总<br>
   ⚠️ 仅供参考，不构成投资建议。股市有风险，投资需谨慎。
 </div>
 
-<!-- ECharts K线图脚本 -->
+<!-- K线图脚本 -->
 <script>
 (function(){
   var container = document.getElementById('klineChart');
+  if (!container) return;
+  var h = container.clientHeight; if (!h || h < 200) { h = 460; container.style.height = h + 'px'; }
   var chart = LightweightCharts.createChart(container, {
-    width: container.clientWidth,
-    height: container.clientHeight || 460,
+    width: container.clientWidth, height: h,
     layout: { background: { type: 'solid', color: '#0b0d14' }, textColor: '#8892a8', fontSize: 12 },
     grid: { vertLines: { color: '#1a1f2e' }, horzLines: { color: '#1a1f2e' } },
     crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
     rightPriceScale: { borderColor: '#252b3d', scaleMargins: { top: 0.05, bottom: 0.05 } },
-    timeScale: { borderColor: '#252b3d', timeVisible: false, rightOffset: 5, barSpacing: 12, minBarSpacing: 8 },
-    handleScroll: true,
-    handleScale: true
+    timeScale: { borderColor: '#252b3d', timeVisible: false, rightOffset: 2, barSpacing: 12, minBarSpacing: 8, fixRightEdge: false },
+    handleScroll: true, handleScale: true
   });
-
-  // 腾讯月线数据（港元）
   var candleData = [
-    {time:'2020-01',open:370,high:400,low:360,close:385},
-    {time:'2020-02',open:385,high:410,low:370,close:405},
-    {time:'2020-03',open:405,high:420,low:350,close:380},
-    {time:'2020-04',open:380,high:430,low:375,close:420},
-    {time:'2020-05',open:420,high:450,low:410,close:435},
-    {time:'2020-06',open:435,high:500,low:430,close:490},
-    {time:'2020-07',open:490,high:560,low:480,close:540},
-    {time:'2020-08',open:540,high:565,low:510,close:530},
-    {time:'2020-09',open:530,high:570,low:500,close:520},
-    {time:'2020-10',open:520,high:580,low:510,close:570},
-    {time:'2020-11',open:570,high:600,low:540,close:560},
-    {time:'2020-12',open:560,high:580,low:520,close:540},
-    {time:'2021-01',open:540,high:750,low:530,close:700},
-    {time:'2021-02',open:700,high:750,low:620,close:680},
-    {time:'2021-03',open:680,high:700,low:570,close:600},
-    {time:'2021-04',open:600,high:640,low:580,close:620},
-    {time:'2021-05',open:620,high:650,low:570,close:590},
-    {time:'2021-06',open:590,high:620,low:550,close:570},
-    {time:'2021-07',open:570,high:580,low:430,close:460},
-    {time:'2021-08',open:460,high:490,low:420,close:450},
-    {time:'2021-09',open:450,high:480,low:420,close:440},
-    {time:'2021-10',open:440,high:490,low:430,close:470},
-    {time:'2021-11',open:470,high:490,low:420,close:440},
-    {time:'2021-12',open:440,high:470,low:410,close:430},
-    {time:'2022-01',open:430,high:480,low:420,close:460},
-    {time:'2022-02',open:460,high:480,low:390,close:400},
-    {time:'2022-03',open:400,high:420,low:310,close:360},
-    {time:'2022-04',open:360,high:380,low:320,close:340},
-    {time:'2022-05',open:340,high:380,low:330,close:360},
-    {time:'2022-06',open:360,high:400,low:340,close:370},
-    {time:'2022-07',open:370,high:380,low:310,close:320},
-    {time:'2022-08',open:320,high:340,low:290,close:300},
-    {time:'2022-09',open:300,high:330,low:270,close:280},
-    {time:'2022-10',open:280,high:290,low:220,close:240},
-    {time:'2022-11',open:240,high:320,low:230,close:310},
-    {time:'2022-12',open:310,high:350,low:300,close:340},
-    {time:'2023-01',open:340,high:410,low:340,close:390},
-    {time:'2023-02',open:390,high:400,low:340,close:350},
-    {time:'2023-03',open:350,high:380,low:330,close:360},
-    {time:'2023-04',open:360,high:380,low:340,close:350},
-    {time:'2023-05',open:350,high:360,low:320,close:330},
-    {time:'2023-06',open:330,high:360,low:320,close:340},
-    {time:'2023-07',open:340,high:370,low:330,close:350},
-    {time:'2023-08',open:350,high:360,low:310,close:320},
-    {time:'2023-09',open:320,high:340,low:300,close:310},
-    {time:'2023-10',open:310,high:330,low:290,close:300},
-    {time:'2023-11',open:300,high:340,low:290,close:320},
-    {time:'2023-12',open:320,high:340,low:290,close:300},
-    {time:'2024-01',open:300,high:320,low:270,close:280},
-    {time:'2024-02',open:280,high:310,low:270,close:300},
-    {time:'2024-03',open:300,high:320,low:280,close:310},
-    {time:'2024-04',open:310,high:360,low:300,close:350},
-    {time:'2024-05',open:350,high:390,low:340,close:370},
-    {time:'2024-06',open:370,high:400,low:360,close:380},
-    {time:'2024-07',open:380,high:400,low:360,close:370},
-    {time:'2024-08',open:370,high:390,low:350,close:360},
-    {time:'2024-09',open:360,high:450,low:360,close:440},
-    {time:'2024-10',open:440,high:500,low:420,close:460},
-    {time:'2024-11',open:460,high:480,low:410,close:420},
-    {time:'2024-12',open:420,high:440,low:400,close:410},
-    {time:'2025-01',open:410,high:440,low:390,close:420},
-    {time:'2025-02',open:420,high:510,low:410,close:490},
-    {time:'2025-03',open:490,high:550,low:470,close:530},
-    {time:'2025-04',open:530,high:540,low:470,close:490},
-    {time:'2025-05',open:490,high:520,low:470,close:500},
-    {time:'2025-06',open:500,high:540,low:480,close:520},
-    {time:'2025-07',open:520,high:560,low:500,close:540},
-    {time:'2025-08',open:540,high:590,low:530,close:570},
-    {time:'2025-09',open:570,high:600,low:540,close:560},
-    {time:'2025-10',open:560,high:580,low:510,close:530},
-    {time:'2025-11',open:530,high:560,low:500,close:520},
-    {time:'2025-12',open:520,high:550,low:490,close:510},
-    {time:'2026-01',open:510,high:540,low:480,close:500},
-    {time:'2026-02',open:500,high:530,low:470,close:490},
-    {time:'2026-03',open:490,high:540,low:460,close:520},
-    {time:'2026-04',open:520,high:540,low:470,close:490},
-    {time:'2026-05',open:490,high:510,low:440,close:450}
+    {time:'2020-01',open:370,high:400,low:360,close:385},{time:'2020-02',open:385,high:410,low:370,close:405},{time:'2020-03',open:405,high:420,low:350,close:380},{time:'2020-04',open:380,high:430,low:375,close:420},{time:'2020-05',open:420,high:450,low:410,close:435},{time:'2020-06',open:435,high:500,low:430,close:490},{time:'2020-07',open:490,high:560,low:480,close:540},{time:'2020-08',open:540,high:565,low:510,close:530},{time:'2020-09',open:530,high:570,low:500,close:520},{time:'2020-10',open:520,high:580,low:510,close:570},{time:'2020-11',open:570,high:600,low:540,close:560},{time:'2020-12',open:560,high:580,low:520,close:540},{time:'2021-01',open:540,high:750,low:530,close:700},{time:'2021-02',open:700,high:750,low:620,close:680},{time:'2021-03',open:680,high:700,low:570,close:600},{time:'2021-04',open:600,high:640,low:580,close:620},{time:'2021-05',open:620,high:650,low:570,close:590},{time:'2021-06',open:590,high:620,low:550,close:570},{time:'2021-07',open:570,high:580,low:430,close:460},{time:'2021-08',open:460,high:490,low:420,close:450},{time:'2021-09',open:450,high:480,low:420,close:440},{time:'2021-10',open:440,high:490,low:430,close:470},{time:'2021-11',open:470,high:490,low:420,close:440},{time:'2021-12',open:440,high:470,low:410,close:430},{time:'2022-01',open:430,high:480,low:420,close:460},{time:'2022-02',open:460,high:480,low:390,close:400},{time:'2022-03',open:400,high:420,low:310,close:360},{time:'2022-04',open:360,high:380,low:320,close:340},{time:'2022-05',open:340,high:380,low:330,close:360},{time:'2022-06',open:360,high:400,low:340,close:370},{time:'2022-07',open:370,high:380,low:310,close:320},{time:'2022-08',open:320,high:340,low:290,close:300},{time:'2022-09',open:300,high:330,low:270,close:280},{time:'2022-10',open:280,high:290,low:220,close:240},{time:'2022-11',open:240,high:320,low:230,close:310},{time:'2022-12',open:310,high:350,low:300,close:340},{time:'2023-01',open:340,high:410,low:340,close:390},{time:'2023-02',open:390,high:400,low:340,close:350},{time:'2023-03',open:350,high:380,low:330,close:360},{time:'2023-04',open:360,high:380,low:340,close:350},{time:'2023-05',open:350,high:360,low:320,close:330},{time:'2023-06',open:330,high:360,low:320,close:340},{time:'2023-07',open:340,high:370,low:330,close:350},{time:'2023-08',open:350,high:360,low:310,close:320},{time:'2023-09',open:320,high:340,low:300,close:310},{time:'2023-10',open:310,high:330,low:290,close:300},{time:'2023-11',open:300,high:340,low:290,close:320},{time:'2023-12',open:320,high:340,low:290,close:300},{time:'2024-01',open:300,high:320,low:270,close:280},{time:'2024-02',open:280,high:310,low:270,close:300},{time:'2024-03',open:300,high:320,low:280,close:310},{time:'2024-04',open:310,high:360,low:300,close:350},{time:'2024-05',open:350,high:390,low:340,close:370},{time:'2024-06',open:370,high:400,low:360,close:380},{time:'2024-07',open:380,high:400,low:360,close:370},{time:'2024-08',open:370,high:390,low:350,close:360},{time:'2024-09',open:360,high:450,low:360,close:440},{time:'2024-10',open:440,high:500,low:420,close:460},{time:'2024-11',open:460,high:480,low:410,close:420},{time:'2024-12',open:420,high:440,low:400,close:410},{time:'2025-01',open:410,high:440,low:390,close:420},{time:'2025-02',open:420,high:510,low:410,close:490},{time:'2025-03',open:490,high:550,low:470,close:530},{time:'2025-04',open:530,high:540,low:470,close:490},{time:'2025-05',open:490,high:520,low:470,close:500},{time:'2025-06',open:500,high:540,low:480,close:520},{time:'2025-07',open:520,high:560,low:500,close:540},{time:'2025-08',open:540,high:590,low:530,close:570},{time:'2025-09',open:570,high:600,low:540,close:560},{time:'2025-10',open:560,high:580,low:510,close:530},{time:'2025-11',open:530,high:560,low:500,close:520},{time:'2025-12',open:520,high:550,low:490,close:510},{time:'2026-01',open:510,high:540,low:480,close:500},{time:'2026-02',open:500,high:530,low:470,close:490},{time:'2026-03',open:490,high:540,low:460,close:520},{time:'2026-04',open:520,high:540,low:470,close:490},{time:'2026-05',open:490,high:510,low:440,close:450}
   ];
-
-  var candleSeries = chart.addCandlestickSeries({
-    upColor: '#e0554a', downColor: '#22c55e',
-    borderUpColor: '#e0554a', borderDownColor: '#22c55e',
-    wickUpColor: '#e0554a', wickDownColor: '#22c55e'
-  });
+  var candleSeries = chart.addCandlestickSeries({ upColor: '#e0554a', downColor: '#22c55e', borderUpColor: '#e0554a', borderDownColor: '#22c55e', wickUpColor: '#e0554a', wickDownColor: '#22c55e' });
   candleSeries.setData(candleData);
-
-  // 箱体分界线
-  var lines = [
-    {price:750, color:'#e0554a', title:'箱体四上沿 750', style:2},
-    {price:550, color:'#f59e0b', title:'箱体三/四 550', style:2},
-    {price:380, color:'#5b9bd5', title:'箱体二/三 380', style:2},
-    {price:300, color:'#8b7ec8', title:'箱体一/二 300', style:2},
-    {price:433, color:'#ffffff', title:'当前价 433', style:0}
-  ];
-  lines.forEach(function(l){
-    candleSeries.createPriceLine({
-      price: l.price, color: l.color, lineWidth: 1,
-      lineStyle: l.style, axisLabelVisible: true, title: l.title
-    });
-  });
-
-  // 关键点位标记
-  candleSeries.setMarkers([
-    {time:'2021-02',position:'aboveBar',color:'#e0554a',shape:'arrowDown',text:'★ 750 历史最高'},
-    {time:'2022-10',position:'belowBar',color:'#22c55e',shape:'arrowUp',text:'★ 220 历史低点'},
-    {time:'2024-09',position:'aboveBar',color:'#d4a853',shape:'circle',text:'450 反弹高点'},
-    {time:'2025-08',position:'aboveBar',color:'#5b9bd5',shape:'circle',text:'570 阶段高点'}
-  ]);
-
+  [{price:750,color:'#e0554a',title:'箱体四下沿 750',style:2},{price:550,color:'#f59e0b',title:'箱体三/四 550',style:2},{price:380,color:'#5b9bd5',title:'箱体二/三 380',style:2},{price:300,color:'#8b7ec8',title:'箱体一/二 300',style:2},{price:433,color:'#ffffff',title:'当前价 433',style:0}].forEach(function(l){candleSeries.createPriceLine({price:l.price,color:l.color,lineWidth:1,lineStyle:l.style,axisLabelVisible:true,title:l.title});});
+  candleSeries.setMarkers([{time:'2021-02',position:'aboveBar',color:'#e0554a',shape:'arrowDown',text:'★ 750 最高'},{time:'2022-10',position:'belowBar',color:'#22c55e',shape:'arrowUp',text:'★ 220 最低'},{time:'2025-08',position:'aboveBar',color:'#5b9bd5',shape:'circle',text:'570 高点'}]);
   chart.timeScale().fitContent();
-  window.addEventListener('resize', function(){
-    chart.applyOptions({width: container.clientWidth, height: container.clientHeight || 460});
-  });
+  var rt; window.addEventListener('resize',function(){if(rt)clearTimeout(rt);rt=setTimeout(function(){var h2=container.clientHeight;if(!h2||h2<200)h2=460;chart.applyOptions({width:container.clientWidth,height:h2});},150);});
 })();
 </script>
 
