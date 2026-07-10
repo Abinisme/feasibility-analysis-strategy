@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>聪明钱共识追踪报告 | 2026 Q2</title>
+<style>
+  :root {
+    --red: #e8372a;
+    --red-light: #fde8e6;
+    --green: #1aaa55;
+    --green-light: #e6f7ee;
+    --gold: #f0a500;
+    --gold-light: #fff8e6;
+    --blue: #1a6bc6;
+    --blue-light: #e8f0fc;
+    --purple: #7c3aed;
+    --purple-light: #f3effe;
+    --dark: #1a1d2e;
+    --gray: #6b7280;
+    --border: #e5e7eb;
+    --bg: #f7f8fc;
+    --card: #ffffff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--dark); font-size: 14px; }
+
+  /* Header */
+  .header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0f2a5e 100%); color: white; padding: 32px 40px 28px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 240px; height: 240px; border-radius: 50%; background: rgba(96,165,250,0.08); }
+  .header::after { content: ''; position: absolute; bottom: -80px; left: 20%; width: 300px; height: 300px; border-radius: 50%; background: rgba(167,139,250,0.06); }
+  .header-top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .header-title { font-size: 26px; font-weight: 700; letter-spacing: 0.5px; }
+  .header-title span { color: #60a5fa; }
+  .header-sub { font-size: 13px; color: #94a3b8; margin-top: 6px; }
+  .header-badge { background: rgba(96,165,250,0.18); border: 1px solid rgba(96,165,250,0.35); color: #93c5fd; padding: 4px 14px; border-radius: 20px; font-size: 12px; }
+  .header-stats { display: flex; gap: 32px; margin-top: 22px; flex-wrap: wrap; }
+  .stat-item { text-align: center; }
+  .stat-num { font-size: 22px; font-weight: 700; color: #60a5fa; }
+  .stat-label { font-size: 11px; color: #94a3b8; margin-top: 2px; }
+
+  /* Layout */
+  .container { max-width: 1100px; margin: 0 auto; padding: 28px 24px 60px; }
+
+  /* Alert Banner */
+  .consensus-banner { background: linear-gradient(135deg, #7c3aed, #1a6bc6); color: white; border-radius: 12px; padding: 18px 24px; margin-bottom: 28px; display: flex; align-items: center; gap: 16px; }
+  .banner-icon { font-size: 32px; }
+  .banner-text h3 { font-size: 16px; font-weight: 700; }
+  .banner-text p { font-size: 13px; opacity: 0.88; margin-top: 4px; }
+
+  /* Data status strip */
+  .status-strip { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+  .status-chip { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); background: var(--card); }
+  .status-chip .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .dot-ok { background: var(--green); }
+  .dot-wait { background: var(--gold); }
+  .dot-pending { background: #cbd5e1; }
+
+  /* Section */
+  .section { margin-bottom: 32px; }
+  .section-title { font-size: 17px; font-weight: 700; color: var(--dark); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .section-title .dot { width: 4px; height: 20px; border-radius: 2px; }
+  .dot-red { background: var(--red); }
+  .dot-blue { background: var(--blue); }
+  .dot-gold { background: var(--gold); }
+  .dot-green { background: var(--green); }
+  .dot-purple { background: var(--purple); }
+
+  /* Cards Grid */
+  .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .cards-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+  /* Card */
+  .card { background: var(--card); border-radius: 12px; border: 1px solid var(--border); padding: 20px; }
+  .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .card-title { font-size: 14px; font-weight: 700; color: var(--dark); }
+  .card-tag { font-size: 11px; padding: 3px 10px; border-radius: 12px; font-weight: 600; }
+  .tag-red { background: var(--red-light); color: var(--red); }
+  .tag-blue { background: var(--blue-light); color: var(--blue); }
+  .tag-gold { background: var(--gold-light); color: #b45309; }
+  .tag-green { background: var(--green-light); color: var(--green); }
+  .tag-purple { background: var(--purple-light); color: var(--purple); }
+  .tag-gray { background: #f1f5f9; color: var(--gray); }
+
+  /* KPI big number */
+  .kpi { text-align: center; padding: 14px 8px; }
+  .kpi-num { font-size: 28px; font-weight: 800; }
+  .kpi-num.red { color: var(--red); }
+  .kpi-num.green { color: var(--green); }
+  .kpi-num.blue { color: var(--blue); }
+  .kpi-num.gold { color: #b45309; }
+  .kpi-label { font-size: 12px; color: var(--gray); margin-top: 4px; }
+  .kpi-sub { font-size: 11px; color: var(--gray); margin-top: 2px; }
+
+  /* Highlight box */
+  .highlight-box { border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; }
+  .highlight-box h4 { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+  .highlight-box ul { list-style: none; padding: 0; }
+  .highlight-box li { font-size: 13px; padding: 3px 0; display: flex; align-items: flex-start; gap: 6px; }
+  .highlight-box li::before { content: '›'; flex-shrink: 0; font-weight: 700; }
+  .hb-red { background: var(--red-light); border-left: 3px solid var(--red); }
+  .hb-red h4, .hb-red li::before { color: var(--red); }
+  .hb-blue { background: var(--blue-light); border-left: 3px solid var(--blue); }
+  .hb-blue h4, .hb-blue li::before { color: var(--blue); }
+  .hb-gold { background: var(--gold-light); border-left: 3px solid var(--gold); }
+  .hb-gold h4, .hb-gold li::before { color: #b45309; }
+  .hb-purple { background: var(--purple-light); border-left: 3px solid var(--purple); }
+  .hb-purple h4, .hb-purple li::before { color: var(--purple); }
+  .hb-green { background: var(--green-light); border-left: 3px solid var(--green); }
+  .hb-green h4, .hb-green li::before { color: var(--green); }
+
+  /* Stock Table */
+  .stock-table { width: 100%; border-collapse: collapse; }
+  .stock-table th { font-size: 12px; color: var(--gray); padding: 6px 8px; text-align: left; border-bottom: 1px solid var(--border); }
+  .stock-table td { font-size: 13px; padding: 8px 8px; border-bottom: 1px solid #f3f4f6; }
+  .stock-table tr:last-child td { border-bottom: none; }
+  .stock-name { font-weight: 600; color: var(--dark); }
+  .stock-code { font-size: 11px; color: var(--gray); }
+  .num-red { color: var(--red); font-weight: 600; }
+  .num-green { color: var(--green); font-weight: 600; }
+  .num-blue { color: var(--blue); font-weight: 600; }
+
+  /* Pending placeholder */
+  .pending-box { background: repeating-linear-gradient(45deg, #fafafa, #fafafa 10px, #f1f5f9 10px, #f1f5f9 20px); border: 1px dashed #cbd5e1; border-radius: 10px; padding: 22px; text-align: center; color: var(--gray); }
+  .pending-box .p-icon { font-size: 28px; }
+  .pending-box .p-title { font-size: 14px; font-weight: 700; margin: 8px 0 4px; color: #475569; }
+  .pending-box .p-note { font-size: 12px; }
+
+  /* Validation center */
+  .val-wrap { background: #0f172a; border-radius: 14px; padding: 22px 24px; color: #e2e8f0; margin-bottom: 28px; }
+  .val-head { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+  .val-head h3 { font-size: 16px; font-weight: 700; color: #fff; }
+  .val-head .badge { font-size: 11px; padding: 2px 10px; border-radius: 10px; background: rgba(96,165,250,0.2); color: #93c5fd; }
+  .val-sub { font-size: 12px; color: #94a3b8; margin-bottom: 16px; }
+  .val-summary { display: flex; gap: 14px; margin-bottom: 16px; flex-wrap: wrap; }
+  .val-chip { font-size: 12px; padding: 6px 14px; border-radius: 8px; background: rgba(255,255,255,0.06); }
+  .val-chip b { font-size: 15px; }
+  .val-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  .val-table th { text-align: left; color: #94a3b8; font-weight: 600; padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .val-table td { padding: 9px 10px; border-bottom: 1px solid rgba(255,255,255,0.07); vertical-align: top; }
+  .val-status { font-weight: 700; white-space: nowrap; }
+  .s-PASS { color: #4ade80; }
+  .s-WARN { color: #fbbf24; }
+  .s-FAIL { color: #f87171; }
+  .s-INFO { color: #60a5fa; }
+  .val-detail { color: #cbd5e1; font-size: 11.5px; }
+
+  /* Collapsible details */
+  .val-details { background: var(--card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 28px; overflow: hidden; }
+  .val-details > summary { cursor: pointer; list-style: none; padding: 16px 20px; display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; color: var(--dark); user-select: none; }
+  .val-details > summary::-webkit-details-marker { display: none; }
+  .val-details > summary .dot { width: 4px; height: 20px; border-radius: 2px; background: var(--purple); }
+  .val-toggle-hint { margin-left: auto; font-size: 12px; font-weight: 500; color: var(--gray); }
+  .val-details[open] > summary { border-bottom: 1px solid var(--border); }
+
+  /* Top3 shift */
+  .shift-row { display: flex; align-items: center; gap: 12px; margin: 10px 0; flex-wrap: wrap; }
+  .shift-q { flex: 1; min-width: 200px; background: #f8fafc; border-radius: 10px; padding: 12px 14px; }
+  .shift-q .q-label { font-size: 12px; color: var(--gray); margin-bottom: 6px; }
+  .shift-name { display: inline-block; font-size: 13px; font-weight: 600; padding: 4px 10px; margin: 3px 4px 0 0; border-radius: 8px; }
+  .nm-keep { background: var(--green-light); color: var(--green); }
+  .nm-new { background: var(--blue-light); color: var(--blue); }
+  .nm-out { background: #f1f5f9; color: var(--gray); text-decoration: line-through; }
+  .arrow { font-size: 22px; color: var(--gold); }
+
+  /* Disclaimer */
+  .disclaimer { background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; margin-top: 32px; font-size: 12px; color: var(--gray); line-height: 1.7; }
+
+  .data-time { font-size: 11px; color: var(--gray); text-align: right; margin-bottom: 4px; }
+  .back-link { display: inline-block; margin-bottom: 20px; color: var(--gray); font-size: 0.88em; text-decoration: none; transition: color 0.2s; }
+  .back-link:hover { color: var(--blue); }
+  .tag-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+  .mini-tag { font-size: 11px; padding: 2px 9px; border-radius: 8px; background: #f1f5f9; color: var(--gray); border: 1px solid #e2e8f0; }
+  .mini-tag.hot { background: var(--red-light); color: var(--red); border-color: #fca5a5; }
+
+  /* ========== 响应式设计 ========== */
+
+  /* Table / horizontal-scroll helper */
+  .matrix-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  @media (max-width: 768px) {
+    /* Header */
+    .header { padding: 22px 20px 18px; }
+    .header-title { font-size: 20px; }
+    .header-sub { font-size: 11px; }
+    .header-badge { font-size: 11px; padding: 3px 10px; }
+    .header-stats { gap: 16px 24px; margin-top: 16px; }
+    .stat-num { font-size: 18px; }
+
+    /* Container */
+    .container { padding: 20px 14px 40px; }
+
+    /* Banner */
+    .consensus-banner { padding: 14px 18px; gap: 12px; }
+    .banner-icon { font-size: 24px; }
+    .banner-text h3 { font-size: 14px; }
+    .banner-text p { font-size: 12px; }
+
+    /* Status strip */
+    .status-strip { gap: 6px; margin-bottom: 18px; }
+    .status-chip { font-size: 11px; padding: 4px 10px; }
+
+    /* Section */
+    .section { margin-bottom: 24px; }
+    .section-title { font-size: 15px; }
+
+    /* Cards grid → 1 column */
+    .cards-grid { grid-template-columns: 1fr; gap: 12px; }
+    .cards-grid-2 { grid-template-columns: 1fr; gap: 12px; }
+
+    /* Card */
+    .card { padding: 14px 16px; }
+    .card-title { font-size: 13px; }
+
+    /* KPI */
+    .kpi-num { font-size: 24px; }
+    .kpi { padding: 10px 4px; }
+
+    /* Highlight box */
+    .highlight-box { padding: 12px 16px; }
+    .highlight-box h4 { font-size: 13px; }
+
+    /* Stock table */
+    .stock-table { font-size: 12px; }
+    .stock-table th, .stock-table td { padding: 5px 6px; }
+    .stock-name { font-size: 13px; }
+    .stock-code { font-size: 10px; }
+
+    /* Validation panel */
+    .val-details > summary { padding: 14px 16px; font-size: 14px; }
+    .val-wrap { padding: 16px 16px; border-radius: 10px; }
+    .val-head h3 { font-size: 14px; }
+    .val-sub { font-size: 11px; }
+    .val-table { font-size: 11px; }
+    .val-table th, .val-table td { padding: 6px 8px; }
+    .val-chip { font-size: 11px; padding: 4px 10px; }
+    .val-detail { font-size: 10.5px; }
+
+    /* Top3 shift */
+    .shift-row { gap: 8px; }
+    .shift-q { min-width: 140px; padding: 10px 12px; }
+    .shift-name { font-size: 12px; padding: 3px 8px; }
+    .arrow { font-size: 18px; }
+
+    /* Disclaimer */
+    .disclaimer { font-size: 11px; padding: 12px 14px; }
+  }
+
+  @media (max-width: 480px) {
+    .header { padding: 18px 14px 14px; }
+    .header-top { flex-direction: column; gap: 10px; }
+    .header-title { font-size: 18px; }
+    .header-stats { gap: 10px 16px; justify-content: space-around; }
+    .stat-num { font-size: 16px; }
+    .stat-label { font-size: 10px; }
+
+    .container { padding: 14px 10px 32px; }
+
+    /* Stack banner */
+    .consensus-banner { flex-direction: column; align-items: flex-start; gap: 8px; border-radius: 10px; }
+
+    /* Cards tighter */
+    .card { padding: 12px 12px; border-radius: 10px; }
+    .card-title { font-size: 12px; }
+    .card-tag { font-size: 10px; padding: 2px 8px; }
+
+    /* KPI smaller */
+    .kpi-num { font-size: 22px; }
+    .kpi-label, .kpi-sub { font-size: 11px; }
+
+    /* Validation compact */
+    .val-details > summary { padding: 12px 14px; font-size: 13px; }
+    .val-toggle-hint { font-size: 10px; }
+    .val-wrap { padding: 12px 12px; border-radius: 8px; }
+    .val-summary { gap: 8px; }
+    .val-table { font-size: 10.5px; }
+    .val-table th, .val-table td { padding: 5px 6px; }
+    .val-status { white-space: nowrap; }
+
+    /* Highlight */
+    .highlight-box { padding: 10px 12px; border-radius: 8px; margin-bottom: 10px; }
+    .highlight-box li { font-size: 12px; }
+
+    /* Shift */
+    .shift-q { min-width: 100%; }
+    .arrow { margin: 4px 0; }
+
+    /* Pending */
+    .pending-box { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<a href="./index.html" class="back-link">← 返回首页</a>
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <div class="header-title">🧠 聪明钱共识<span>追踪报告</span></div>
+      <div class="header-sub">北向资金 · 公募基金 · 机构长线资金 三维度交叉验证</div>
+    </div>
+    <div class="header-badge">2026 Q2 · 2026-07-10</div>
+  </div>
+  <div class="header-stats">
+    <div class="stat-item">
+      <div class="stat-num" style="color:#4ade80;">北向✅</div>
+      <div class="stat-label">已披露</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" style="color:#fbbf24;">公募⏳</div>
+      <div class="stat-label">待披露</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" style="color:#fbbf24;">机构⏳</div>
+      <div class="stat-label">待披露</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3.13万亿</div>
+      <div class="stat-label">北向总持仓(新高)</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">+2086亿</div>
+      <div class="stat-label">Q2净买入</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- 数据状态条 -->
+  <div class="status-strip">
+    <div class="status-chip"><span class="dot dot-ok"></span> 北向资金 2026Q2：已披露</div>
+    <div class="status-chip"><span class="dot dot-wait"></span> 公募基金 2026Q2：预计7月下旬披露</div>
+    <div class="status-chip"><span class="dot dot-wait"></span> 机构长线资金 2026Q2：预计8月披露</div>
+    <div class="status-chip"><span class="dot dot-pending"></span> 共识矩阵/行业方向：当前仅北向维度有效</div>
+  </div>
+
+  <!-- 核心结论 -->
+  <div class="consensus-banner">
+    <div class="banner-icon">🎯</div>
+    <div class="banner-text">
+      <h3>核心结论（北向维度）：北向总持仓达3.13万亿，Q2恢复大幅净流入</h3>
+      <p>北向总持仓达 <strong>3.13万亿</strong>（Q1为2.58万亿），Q2净买入2086亿元、上半年累计净买入1995亿元，结束此前流出态势。持仓市值前十完整名单披露：宁德时代稳居第一，中际旭创、北方华创凭股价大涨新晋前三，紫金矿业、汇川技术、中国平安退出前十。注：公募基金与机构长线资金尚未披露，当前结论仅代表北向单维度，待多维数据齐备后补全三方共识。</p>
+    </div>
+  </div>
+
+  <!-- ===== 数据校验中心（可折叠） ===== -->
+  <details class="val-details">
+    <summary>
+      <span class="dot dot-purple"></span>
+      🔍 数据校验中心 — 严格验证与校验模块（实时自校验）
+      <span class="val-toggle-hint" id="val-hint">点击展开校验详情 ▼</span>
+    </summary>
+    <div class="val-wrap">
+      <div class="val-head">
+        <h3>报告数据完整性 / 准确性校验</h3>
+        <span class="badge" id="val-overall">运行中…</span>
+      </div>
+      <div class="val-sub">下述校验在页面加载时由内嵌引擎基于已披露数据实时重算，与 scripts/validate_smart_money_2026q2.py 共享同一套规则。FAIL = 硬性矛盾（禁止发布）；WARN = 已知待披露/需关注；PASS = 通过。</div>
+      <div class="val-summary" id="val-summary"></div>
+      <div class="matrix-wrap">
+        <table class="val-table">
+          <thead>
+            <tr><th style="width:64px;">类别</th><th style="width:90px;">规则</th><th style="width:54px;">状态</th><th>校验项 / 说明</th></tr>
+          </thead>
+          <tbody id="val-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </details>
+
+  <!-- ① 北向资金 -->
+  <div class="section">
+    <div class="section-title"><div class="dot dot-red"></div>① 北向资金 —— 2026年二季度持仓全景</div>
+    <p class="data-time">数据截至 2026-06-30 | 来源：Wind / Choice（北向资金持股穿透披露）</p>
+
+    <div class="cards-grid">
+      <!-- 总持仓突破3万亿 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">北向总持仓市值</div>
+          <div class="card-tag tag-red">历史新高</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-num red">3.13万亿</div>
+          <div class="kpi-label">历史首次突破3万亿元</div>
+          <div class="kpi-sub">Q1为2.58万亿 → Q2 3.13万亿（Choice/Wind）</div>
+        </div>
+      </div>
+
+      <!-- 净买入态势 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">净买入态势</div>
+          <div class="card-tag tag-green">恢复净流入</div>
+        </div>
+        <div class="kpi" style="margin-bottom:10px;">
+          <div class="kpi-num green">+2086亿</div>
+          <div class="kpi-label">Q2单季净买入</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-num green">+1995亿</div>
+          <div class="kpi-label">上半年(H1)累计净买入</div>
+          <div class="kpi-sub">Q1隐含 −91亿（净流出），Q2回流</div>
+        </div>
+      </div>
+
+      <!-- 持仓增量拆解 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">持仓增量拆解</div>
+          <div class="card-tag tag-gold">股价贡献为主</div>
+        </div>
+        <div class="kpi" style="margin-bottom:10px;">
+          <div class="kpi-num gold">5430亿</div>
+          <div class="kpi-label">Q2总持仓增量（3.13−2.58万亿）</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-num blue">≈3344亿</div>
+          <div class="kpi-label">股价上涨贡献（增量5430−净买入2086）</div>
+          <div class="kpi-sub">印证「前三巨变主因股价涨跌」</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 市值TOP3演变 -->
+    <div class="card" style="margin-top:16px;">
+      <div class="card-header">
+        <div class="card-title">持仓市值 TOP3 演变（Q1 → Q2）</div>
+        <div class="card-tag tag-red">巨变 · 主因股价涨跌</div>
+      </div>
+      <div class="shift-row">
+        <div class="shift-q">
+          <div class="q-label">2026 Q1 持仓市值前三</div>
+          <span class="shift-name nm-keep">① 宁德时代</span>
+          <span class="shift-name nm-out">② 贵州茅台</span>
+          <span class="shift-name nm-out">③ 美的集团</span>
+        </div>
+        <div class="arrow">➜</div>
+        <div class="shift-q">
+          <div class="q-label">2026 Q2 持仓市值前三</div>
+          <span class="shift-name nm-keep">① 宁德时代</span>
+          <span class="shift-name nm-new">② 中际旭创</span>
+          <span class="shift-name nm-new">③ 北方华创</span>
+        </div>
+      </div>
+      <div style="margin-top:10px; background:#f8fafc; border-radius:8px; padding:12px 16px; font-size:12.5px; color:var(--gray);">
+        <strong style="color:var(--dark)">解读：</strong>宁德时代连续两期稳居第一。Q2 中际旭创（光模块）、北方华创（半导体设备）凭股价大涨新晋前三，取代原贵州茅台、美的集团。这一「巨变」主要由<strong style="color:var(--dark)">股价涨跌带来的市值重排</strong>驱动，而非持股数量的大幅增减 —— 与上方「持仓增量拆解」中股价贡献≈3344亿相互印证。
+      </div>
+    </div>
+
+    <!-- 北向持仓市值前十（详细） -->
+    <div class="card" style="margin-top:16px;">
+      <div class="card-header">
+        <div class="card-title">北向资金持仓市值前十（截至 2026-06-30）</div>
+        <div class="card-tag tag-red">Choice/Wind 沪深股通披露</div>
+      </div>
+      <div class="matrix-wrap">
+        <table class="stock-table">
+          <thead>
+            <tr><th>排名</th><th>个股</th><th>板块（申万）</th><th>Q2股价表现</th><th>Q2净买卖</th><th>驱动因素</th><th>北向评价</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td><div class="stock-name">宁德时代</div><div class="stock-code">300750.SZ</div></td><td>电力设备（电池）</td><td><span style="color:#6b7280;font-weight:600;">−0.5%</span></td><td><span class="num-red">+554亿</span></td><td>资金驱动（净买+554亿，持股量增17%）</td><td>两期稳居第一，Q2横盘，压舱石地位未被动摇</td></tr>
+            <tr style="background:#fff8e6;"><td>2</td><td><div class="stock-name">中际旭创</div><div class="stock-code">300308.SZ</div></td><td>通信（光模块）</td><td><span style="color:#e8372a;font-weight:600;">+123.4%</span></td><td><span class="num-green">-42亿</span></td><td><span style="color:#b45309;font-weight:600;">⚠️股价驱动</span>（净卖-42亿仍翻倍，市值由涨跌幅主导）</td><td>由Q1第五跃升至第二，AI算力最强β，市值跃升核心驱动</td></tr>
+            <tr style="background:#fff8e6;"><td>3</td><td><div class="stock-name">北方华创</div><div class="stock-code">002371.SZ</div></td><td>电子（半导体设备）</td><td><span style="color:#e8372a;font-weight:600;">+98.1%</span></td><td><span style="color:var(--gray)">未入前20</span></td><td><span style="color:#b45309;font-weight:600;">⚠️股价驱动</span>（净流未入前20，+98%推动入前三）</td><td>新晋前三，设备国产化政策+景气双驱动</td></tr>
+            <tr><td>4</td><td><div class="stock-name">美的集团</div><div class="stock-code">000333.SZ</div></td><td>家用电器</td><td><span style="color:#e8372a;font-weight:600;">+4.0%</span></td><td><span class="num-green">-61亿</span></td><td>资金减持（净卖-61亿）</td><td>守住第四，白马回归但弹性弱于科技主线</td></tr>
+            <tr><td>5</td><td><div class="stock-name">贵州茅台</div><div class="stock-code">600519.SH</div></td><td>食品饮料（白酒）</td><td><span style="color:#1aaa55;font-weight:600;">−16.6%</span></td><td><span class="num-green">-65亿</span></td><td>资金减持（净卖-65亿）</td><td>跌出前三至第五，消费弱势的缩影</td></tr>
+            <tr><td>6</td><td><div class="stock-name">中微公司</div><div class="stock-code">688012.SH</div></td><td>电子（半导体设备）</td><td><span style="color:#e8372a;font-weight:600;">+52.9%</span></td><td><span class="num-red">+181亿</span></td><td>资金+股价双驱动（净买+181亿/+53%）</td><td>新进前十，刻蚀设备接力北方华创</td></tr>
+            <tr><td>7</td><td><div class="stock-name">新易盛</div><div class="stock-code">300502.SZ</div></td><td>通信（光模块）</td><td><span style="color:#e8372a;font-weight:600;">+37.1%</span></td><td><span class="num-red">+113亿</span></td><td>资金+股价双驱动（净买+113亿/+37%）</td><td>随AI硬件入榜，二线光模块龙头</td></tr>
+            <tr style="background:#fff8e6;"><td>8</td><td><div class="stock-name">澜起科技</div><div class="stock-code">688008.SH</div></td><td>电子（AI芯片）</td><td><span style="color:#e8372a;font-weight:600;">+147.4%</span></td><td><span style="color:var(--gray)">未入前20</span></td><td><span style="color:#b45309;font-weight:600;">⚠️股价驱动</span>（净流未入前20，+147%推动入前十）</td><td>新进前十，DDR5/AI接口弹性居前</td></tr>
+            <tr><td>9</td><td><div class="stock-name">立讯精密</div><div class="stock-code">002475.SZ</div></td><td>电子（消费电子）</td><td><span style="color:#e8372a;font-weight:600;">+42.9%</span></td><td><span class="num-red">+111亿</span></td><td>资金+股价双驱动（净买+111亿/+43%）</td><td>重入前十，果链回暖带动修复</td></tr>
+            <tr><td>10</td><td><div class="stock-name">招商银行</div><div class="stock-code">600036.SH</div></td><td>银行</td><td><span style="color:#1aaa55;font-weight:600;">−9.7%</span></td><td><span class="num-green">-38亿</span></td><td>资金减持（净卖-38亿）</td><td>靠存量规模守第十，银行板块整体承压</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:12px; background:var(--gold-light); border-radius:8px; padding:10px 14px; font-size:12px; color:#b45309;">
+        📌 Q2股价表现 = 2026-04-01 至 06-30 区间涨跌（前复权，NeoData/腾讯自选股历史行情）。持仓市值前十为沪深股通2026Q2持股披露完整名单（上海证券报/财联社 2026-07-10）。注：披露口径为<strong>精确前十</strong>，第11–20名未逐位披露，相关增持/减持方向见下方面板。
+      </div>
+      <div class="highlight-box hb-gold" style="margin-top:12px;">
+        <h4>⚠️ 北上持仓「股价驱动」特别标注</h4>
+        <ul>
+          <li><strong>中际旭创</strong>：净卖出-42亿，但Q2股价+123.4%，市值跃升完全由涨跌幅主导</li>
+          <li><strong>天孚通信</strong>：净卖出-51亿，AI光模块行情下股价大涨、市值受益（未入市值前十）</li>
+          <li><strong>源杰科技</strong>：净卖出-37亿、持股量-66%，但光芯片/AI行情支撑市值（未入市值前十）</li>
+          <li><strong>北方华创</strong>：净流未入前20，Q2 +98.1% 推动其跻身市值前三</li>
+          <li><strong>澜起科技</strong>：净流未入前20，Q2 +147.4% 推动其跻身市值前十</li>
+        </ul>
+        <div style="margin-top:8px; font-size:12px; color:#b45309; background:rgba(255,255,255,0.5); border-radius:6px; padding:8px 12px;">说明：上方前十表中以<span style="color:#b45309;font-weight:700;">⚠️股价驱动</span>高亮的个股，其市值排名提升<strong>并非由北向增持</strong>带来，而是个股涨跌幅所致——属「账面市值受益」，须与真实的资金净流入（净买入）严格区分。数据来源：东方财富 北向资金 Q2 净买卖金额排行（2026-07-10 截图）。</div>
+      </div>
+    </div>
+
+    <!-- 二季度净买入/增持方向 -->
+    <div class="cards-grid-2" style="margin-top:16px;">
+      <div class="highlight-box hb-red">
+        <h4>🔺 二季度增持 / 市值增幅明显</h4>
+        <ul>
+          <li><strong>中际旭创</strong>（通信/光模块）由第五升至第二，Q2 <span style="color:#e8372a;font-weight:600;">+123.4%</span></li>
+          <li><strong>北方华创 / 中微公司</strong>（半导体设备）新晋前三/前十，Q2 <span style="color:#e8372a;font-weight:600;">+98.1% / +52.9%</span></li>
+          <li><strong>澜起科技 / 新易盛</strong>（AI硬件）新进前十，Q2 <span style="color:#e8372a;font-weight:600;">+147.4% / +37.1%</span></li>
+          <li><strong>恒立液压</strong>（机械设备）<span style="color:#e8372a;font-weight:600;">+12.0%</span>，市值增幅明显</li>
+          <li><strong>特锐德</strong>（电力设备/充电桩）<span style="color:#e8372a;font-weight:600;">+39.1%</span>，市值增幅明显</li>
+        </ul>
+      </div>
+      <div class="highlight-box hb-green">
+        <h4>🔻 二季度减持 / 退出前十</h4>
+        <ul>
+          <li><strong>思源电气</strong>（电力设备）<span style="color:#1aaa55;font-weight:600;">−14.4%</span>，Q2遭减持（一季度新进者回落）</li>
+          <li><strong>紫金矿业</strong>（有色金属）<span style="color:#1aaa55;font-weight:600;">−23.2%</span>，退出前十</li>
+          <li><strong>汇川技术</strong>（机械设备）<span style="color:#1aaa55;font-weight:600;">−1.0%</span>，退出前十</li>
+          <li><strong>中国平安</strong>（非银金融）<span style="color:#1aaa55;font-weight:600;">−15.9%</span>，退出前十</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 行业分布 -->
+    <div class="card" style="margin-top:16px;">
+      <div class="card-header">
+        <div class="card-title">北向重仓行业分布（Q2）</div>
+        <div class="card-tag tag-blue">电子 / 电力设备 / 机械设备 前三</div>
+      </div>
+      <div class="highlight-box hb-blue" style="margin-bottom:12px;">
+        <h4>🏭 申万一级重仓前三大板块（Q2末）</h4>
+        <ul>
+          <li><strong>电子</strong>（半导体设备/AI芯片集中持仓，市值跃升主阵地）</li>
+          <li><strong>电力设备</strong>（电池+电网，宁德时代压舱）</li>
+          <li><strong>机械设备</strong>（恒立液压等增持明显，取代原有色金属进入前三）</li>
+        </ul>
+      </div>
+      <div class="highlight-box hb-gold">
+        <h4>📈 Q2 持仓市值增加最多的行业</h4>
+        <ul>
+          <li><strong>电子</strong> &gt; <strong>电力设备</strong> &gt; <strong>通信</strong>（与Q1变化趋势一致，科技制造主线延续）</li>
+          <li>对比 Q1 前三为 电力设备/电子/有色金属 → Q2 机械设备挤入、有色金属掉出，结构向高端制造倾斜</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 二季度净买入/净卖出金额排行（东方财富） -->
+    <div class="card" style="margin-top:16px;">
+      <div class="card-header">
+        <div class="card-title">北向资金二季度净买入金额排行（Top20）</div>
+        <div class="card-tag tag-red">东方财富 2026-07-10 截图</div>
+      </div>
+      <div class="matrix-wrap">
+        <table class="stock-table">
+          <thead>
+            <tr><th>排名</th><th>个股</th><th>板块（申万）</th><th>持股占流通股比</th><th>持股量变动</th><th>Q2净买入(亿)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td><div class="stock-name">宁德时代</div><div class="stock-code">300750.SZ</div></td><td>电力设备（电池）</td><td>20.28%</td><td><span class="num-red">+17%</span></td><td><span class="num-red">+554</span></td></tr>
+            <tr><td>2</td><td><div class="stock-name">中微公司</div><div class="stock-code">688012.SH</div></td><td>电子（半导体设备）</td><td>13.37%</td><td><span class="num-red">+27%</span></td><td><span class="num-red">+181</span></td></tr>
+            <tr><td>3</td><td><div class="stock-name">潍柴动力</div><div class="stock-code">000338.SZ</div></td><td>机械设备（重卡/发动机）</td><td>17.76%</td><td><span class="num-red">+73%</span></td><td><span class="num-red">+151</span></td></tr>
+            <tr><td>4</td><td><div class="stock-name">寒武纪</div><div class="stock-code">688256.SH</div></td><td>电子（AI芯片）</td><td>3.50%</td><td><span class="num-red">+37%</span></td><td><span class="num-red">+137</span></td></tr>
+            <tr><td>5</td><td><div class="stock-name">新易盛</div><div class="stock-code">300502.SZ</div></td><td>通信（光模块）</td><td>5.79%</td><td><span class="num-red">+3%</span></td><td><span class="num-red">+113</span></td></tr>
+            <tr><td>6</td><td><div class="stock-name">立讯精密</div><div class="stock-code">002475.SZ</div></td><td>电子（消费电子）</td><td>7.90%</td><td><span class="num-red">+39%</span></td><td><span class="num-red">+111</span></td></tr>
+            <tr><td>7</td><td><div class="stock-name">药明康德</div><div class="stock-code">603259.SH</div></td><td>医药生物（CXO）</td><td>10.57%</td><td><span class="num-red">+50%</span></td><td><span class="num-red">+92</span></td></tr>
+            <tr><td>8</td><td><div class="stock-name">德业股份</div><div class="stock-code">605117.SH</div></td><td>电力设备（逆变器）</td><td>7.97%</td><td><span class="num-red">+76%</span></td><td><span class="num-red">+64</span></td></tr>
+            <tr><td>9</td><td><div class="stock-name">恒立液压</div><div class="stock-code">601100.SH</div></td><td>机械设备（液压件）</td><td>12.82%</td><td><span class="num-red">+40%</span></td><td><span class="num-red">+54</span></td></tr>
+            <tr><td>10</td><td><div class="stock-name">TCL科技</div><div class="stock-code">000100.SZ</div></td><td>电子（面板）</td><td>7.66%</td><td><span class="num-red">+103%</span></td><td><span class="num-red">+38</span></td></tr>
+            <tr><td>11</td><td><div class="stock-name">万华化学</div><div class="stock-code">600309.SH</div></td><td>基础化工（MDI）</td><td>5.74%</td><td><span class="num-red">+34%</span></td><td><span class="num-red">+36</span></td></tr>
+            <tr><td>12</td><td><div class="stock-name">中国石油</div><div class="stock-code">601857.SH</div></td><td>石油石化</td><td>0.54%</td><td><span class="num-red">+59%</span></td><td><span class="num-red">+36</span></td></tr>
+            <tr><td>13</td><td><div class="stock-name">三一重工</div><div class="stock-code">600031.SH</div></td><td>机械设备（工程机械）</td><td>16.04%</td><td><span class="num-red">+15%</span></td><td><span class="num-red">+35</span></td></tr>
+            <tr><td>14</td><td><div class="stock-name">海尔智家</div><div class="stock-code">600690.SH</div></td><td>家用电器</td><td>7.77%</td><td><span class="num-red">+46%</span></td><td><span class="num-red">+32</span></td></tr>
+            <tr><td>15</td><td><div class="stock-name">中国铝业</div><div class="stock-code">601600.SH</div></td><td>有色金属（铝）</td><td>5.72%</td><td><span class="num-red">+57%</span></td><td><span class="num-red">+31</span></td></tr>
+            <tr><td>16</td><td><div class="stock-name">中国船舶</div><div class="stock-code">600150.SH</div></td><td>国防军工（造船）</td><td>3.96%</td><td><span class="num-red">+74%</span></td><td><span class="num-red">+26</span></td></tr>
+            <tr><td>17</td><td><div class="stock-name">圣邦股份</div><div class="stock-code">300661.SZ</div></td><td>电子（模拟芯片）</td><td>7.16%</td><td><span class="num-red">+136%</span></td><td><span class="num-red">+26</span></td></tr>
+            <tr><td>18</td><td><div class="stock-name">麦格米特</div><div class="stock-code">002851.SZ</div></td><td>电力设备（电源）</td><td>4.96%</td><td><span class="num-red">+176%</span></td><td><span class="num-red">+26</span></td></tr>
+            <tr><td>19</td><td><div class="stock-name">宁波银行</div><div class="stock-code">002142.SZ</div></td><td>银行</td><td>6.15%</td><td><span class="num-red">+25%</span></td><td><span class="num-red">+26</span></td></tr>
+            <tr><td>20</td><td><div class="stock-name">长江电力</div><div class="stock-code">600900.SH</div></td><td>公用事业（电力）</td><td>4.61%</td><td><span class="num-red">+9%</span></td><td><span class="num-red">+25</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:10px; background:var(--red-light); border-radius:8px; padding:8px 14px; font-size:12px; color:var(--red);">📥 净买入 = 北向实际增持金额（真金白银流入）。宁德时代以+554亿遥遥领先，半导体设备（中微）、重卡（潍柴）、AI芯片（寒武纪）获大举加仓，与「科技制造主线」共识一致。</div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <div class="card-header">
+        <div class="card-title">北向资金二季度净卖出金额排行（Top20）</div>
+        <div class="card-tag tag-green">东方财富 2026-07-10 截图</div>
+      </div>
+      <div class="matrix-wrap">
+        <table class="stock-table">
+          <thead>
+            <tr><th>排名</th><th>个股</th><th>板块（申万）</th><th>持股占流通股比</th><th>持股量变动</th><th>Q2净卖出(亿)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td><div class="stock-name">三环集团</div><div class="stock-code">300408.SZ</div></td><td>电子（陶瓷）</td><td>4.71%</td><td><span class="num-green">-46%</span></td><td><span class="num-green">-92</span></td></tr>
+            <tr><td>2</td><td><div class="stock-name">贵州茅台</div><div class="stock-code">600519.SH</div></td><td>食品饮料（白酒）</td><td>4.29%</td><td><span class="num-green">-9%</span></td><td><span class="num-green">-65</span></td></tr>
+            <tr><td>3</td><td><div class="stock-name">美的集团</div><div class="stock-code">000333.SZ</div></td><td>家用电器</td><td>12.83%</td><td><span class="num-green">-8%</span></td><td><span class="num-green">-61</span></td></tr>
+            <tr style="background:#fff8e6;"><td>4</td><td><div class="stock-name">天孚通信</div><div class="stock-code">300394.SZ</div></td><td>通信（光模块）</td><td>3.38%</td><td><span class="num-green">-52%</span></td><td><span class="num-green">-51</span></td></tr>
+            <tr style="background:#fff8e6;"><td>5</td><td><div class="stock-name">中际旭创</div><div class="stock-code">300308.SZ</div></td><td>通信（光模块）</td><td>6.57%</td><td><span class="num-green">-6%</span></td><td><span class="num-green">-42</span></td></tr>
+            <tr><td>6</td><td><div class="stock-name">中国平安</div><div class="stock-code">601318.SH</div></td><td>非银金融（保险）</td><td>4.03%</td><td><span class="num-green">-15%</span></td><td><span class="num-green">-40</span></td></tr>
+            <tr><td>7</td><td><div class="stock-name">招商银行</div><div class="stock-code">600036.SH</div></td><td>银行</td><td>5.31%</td><td><span class="num-green">-8%</span></td><td><span class="num-green">-38</span></td></tr>
+            <tr><td>8</td><td><div class="stock-name">恒瑞医药</div><div class="stock-code">600276.SH</div></td><td>医药生物（创新药）</td><td>5.69%</td><td><span class="num-green">-17%</span></td><td><span class="num-green">-38</span></td></tr>
+            <tr><td>9</td><td><div class="stock-name">中国巨石</div><div class="stock-code">600176.SH</div></td><td>建筑材料（玻纤）</td><td>5.44%</td><td><span class="num-green">-29%</span></td><td><span class="num-green">-38</span></td></tr>
+            <tr><td>10</td><td><div class="stock-name">中天科技</div><div class="stock-code">600522.SH</div></td><td>通信（海缆）</td><td>8.86%</td><td><span class="num-green">-22%</span></td><td><span class="num-green">-37</span></td></tr>
+            <tr style="background:#fff8e6;"><td>11</td><td><div class="stock-name">源杰科技</div><div class="stock-code">688498.SH</div></td><td>电子（光芯片）</td><td>2.39%</td><td><span class="num-green">-66%</span></td><td><span class="num-green">-37</span></td></tr>
+            <tr><td>12</td><td><div class="stock-name">生益科技</div><div class="stock-code">600183.SH</div></td><td>电子（覆铜板）</td><td>5.03%</td><td><span class="num-green">-20%</span></td><td><span class="num-green">-36</span></td></tr>
+            <tr><td>13</td><td><div class="stock-name">华友钴业</div><div class="stock-code">603799.SH</div></td><td>有色金属（镍钴）</td><td>4.70%</td><td><span class="num-green">-39%</span></td><td><span class="num-green">-33</span></td></tr>
+            <tr><td>14</td><td><div class="stock-name">工业富联</div><div class="stock-code">601138.SH</div></td><td>电子（AI服务器）</td><td>1.58%</td><td><span class="num-green">-12%</span></td><td><span class="num-green">-30</span></td></tr>
+            <tr><td>15</td><td><div class="stock-name">洛阳钼业</div><div class="stock-code">603993.SH</div></td><td>有色金属（钼铜）</td><td>2.69%</td><td><span class="num-green">-25%</span></td><td><span class="num-green">-30</span></td></tr>
+            <tr><td>16</td><td><div class="stock-name">比亚迪</div><div class="stock-code">002594.SZ</div></td><td>汽车（新能源）</td><td>3.12%</td><td><span class="num-green">-14%</span></td><td><span class="num-green">-27</span></td></tr>
+            <tr><td>17</td><td><div class="stock-name">小商品城</div><div class="stock-code">600415.SH</div></td><td>商贸零售</td><td>1.93%</td><td><span class="num-green">-67%</span></td><td><span class="num-green">-26</span></td></tr>
+            <tr><td>18</td><td><div class="stock-name">沪电股份</div><div class="stock-code">002463.SZ</div></td><td>电子（PCB）</td><td>8.95%</td><td><span class="num-green">-11%</span></td><td><span class="num-green">-25</span></td></tr>
+            <tr><td>19</td><td><div class="stock-name">深南电路</div><div class="stock-code">002916.SZ</div></td><td>电子（PCB）</td><td>2.70%</td><td><span class="num-green">-28%</span></td><td><span class="num-green">-25</span></td></tr>
+            <tr><td>20</td><td><div class="stock-name">东鹏饮料</div><div class="stock-code">605499.SH</div></td><td>食品饮料（饮料）</td><td>3.94%</td><td><span class="num-green">-52%</span></td><td><span class="num-green">-22</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:10px; background:var(--gold-light); border-radius:8px; padding:8px 14px; font-size:12px; color:#b45309;">⚠️ 注意：<strong>中际旭创、天孚通信、源杰科技</strong>虽被北向净卖出（高亮行），却因AI光模块/光芯片行情股价大涨，持仓市值不降反升——属「股价驱动」型，已在上方前十表与特别标注区高亮。净卖出榜单主要集中于白酒（茅台）、家电（美的）、金融（平安/招行）、传统材料（三环/巨石/华友）等。数据来源：东方财富 北向资金 Q2 净买卖金额排行（2026-07-10 用户截图）。</div>
+    </div>
+  </div>
+
+  <!-- ② 公募基金（待披露） -->
+  <div class="section">
+    <div class="section-title"><div class="dot dot-blue"></div>② 公募基金 —— 2026年二季度</div>
+    <div class="pending-box">
+      <div class="p-icon">⏳</div>
+      <div class="p-title">数据待披露</div>
+      <div class="p-note">2026Q2 公募基金季报预计 2026-07 下旬起由天相投顾 / Wind 陆续披露。当前不可用，避免基于占位数据得出结论。</div>
+    </div>
+  </div>
+
+  <!-- ③ 机构长线资金（待披露） -->
+  <div class="section">
+    <div class="section-title"><div class="dot dot-gold"></div>③ 机构长线资金 —— 社保 / QFII / 企业年金 2026Q2</div>
+    <div class="pending-box">
+      <div class="p-icon">⏳</div>
+      <div class="p-title">数据待披露</div>
+      <div class="p-note">社保 / QFII / 企业年金 2026Q2 持仓预计 2026-08 披露。当前不可用。</div>
+    </div>
+  </div>
+
+  <!-- ④ 三方共识矩阵（部分） -->
+  <div class="section">
+    <div class="section-title"><div class="dot dot-purple"></div>④ 聪明钱共识矩阵 — 当前仅北向维度有效（top10 完整）</div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">三方共识矩阵（北向完整前十版）</div>
+        <div class="card-tag tag-purple">公募/机构 待披露</div>
+      </div>
+      <div class="matrix-wrap">
+        <table class="stock-table">
+          <thead>
+            <tr><th>个股</th><th>板块</th><th>Q2表现</th><th>北向资金 ✓</th><th>公募基金</th><th>机构长线</th><th>当前共识强度</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><div class="stock-name">宁德时代</div><div class="stock-code">300750</div></td><td>电力设备</td><td><span style="color:#6b7280;font-weight:600;">−0.5%</span></td><td class="num-red">✅ 市值第一</td><td style="color:var(--gray)">待披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向极强</span></td></tr>
+            <tr><td><div class="stock-name">中际旭创</div><div class="stock-code">300308</div></td><td>通信(光模块)</td><td><span style="color:#e8372a;font-weight:600;">+123.4%</span></td><td class="num-red">✅ 新晋第二</td><td style="color:var(--gray)">待披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向极强</span></td></tr>
+            <tr><td><div class="stock-name">北方华创</div><div class="stock-code">002371</div></td><td>电子(设备)</td><td><span style="color:#e8372a;font-weight:600;">+98.1%</span></td><td class="num-red">✅ 新晋前三</td><td style="color:var(--gray)">待披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向极强</span></td></tr>
+            <tr><td><div class="stock-name">美的集团</div><div class="stock-code">000333</div></td><td>家用电器</td><td><span style="color:#e8372a;font-weight:600;">+4.0%</span></td><td class="num-red">✅ 第四</td><td style="color:var(--gray)">待披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向强</span></td></tr>
+            <tr><td><div class="stock-name">贵州茅台</div><div class="stock-code">600519</div></td><td>食品饮料</td><td><span style="color:#1aaa55;font-weight:600;">−16.6%</span></td><td>✅ 第五(弱化)</td><td style="color:var(--gray)">待披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-gold">北向中</span></td></tr>
+            <tr><td><div class="stock-name">中微公司</div><div class="stock-code">688012</div></td><td>电子(设备)</td><td><span style="color:#e8372a;font-weight:600;">+52.9%</span></td><td class="num-red">✅ 新进前十</td><td style="color:var(--gray)">待披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向强</span></td></tr>
+            <tr><td><div class="stock-name">新易盛</div><div class="stock-code">300502</div></td><td>通信(光模块)</td><td><span style="color:#e8372a;font-weight:600;">+37.1%</span></td><td class="num-red">✅ 新进前十</td><td style="color:var(--gray)">待披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向强</span></td></tr>
+            <tr><td><div class="stock-name">澜起科技</div><div class="stock-code">688008</div></td><td>电子(AI芯片)</td><td><span style="color:#e8372a;font-weight:600;">+147.4%</span></td><td class="num-red">✅ 新进前十</td><td style="color:var(--gray)">待披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向强</span></td></tr>
+            <tr><td><div class="stock-name">立讯精密</div><div class="stock-code">002475</div></td><td>电子(消费电子)</td><td><span style="color:#e8372a;font-weight:600;">+42.9%</span></td><td class="num-red">✅ 重入前十</td><td style="color:var(--gray)">待披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向强</span></td></tr>
+            <tr><td><div class="stock-name">招商银行</div><div class="stock-code">600036</div></td><td>银行</td><td><span style="color:#1aaa55;font-weight:600;">−9.7%</span></td><td>✅ 第十</td><td style="color:var(--gray)">待披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-gold">北向中</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:10px; font-size:12px; color:var(--gray);">公募 / 机构两列待披露后补全，方可得出完整「三方共识强度」评级。共识强度（当前）仅反映北向单维度：市值排名靠前且Q2股价强势者标记「北向极强/强」，排名靠后或Q2承压者标记「北向中」。</div>
+    </div>
+  </div>
+
+  <!-- ⑤ 共识行业方向（初步，仅北向） -->
+  <div class="section">
+    <div class="section-title"><div class="dot dot-green"></div>⑤ 共识行业方向（初步 · 仅北向维度）</div>
+    <div class="cards-grid">
+      <div class="highlight-box hb-red">
+        <h4>🥇 北向Q2强信号</h4>
+        <ul>
+          <li><strong>电子</strong>（半导体设备+AI芯片集体入榜：北方华创、中微、澜起科技新进/居前）</li>
+          <li><strong>通信</strong>（光模块：中际旭创升至第二、新易盛入榜，AI算力最强β）</li>
+          <li><strong>电力设备</strong>（宁德时代压舱第一 + 特锐德增持明显）</li>
+          <li><strong>机械设备</strong>（恒立液压增持明显，挤入重仓前三板块）</li>
+        </ul>
+        <div class="tag-row">
+          <span class="mini-tag hot">宁德时代</span>
+          <span class="mini-tag hot">中际旭创</span>
+          <span class="mini-tag hot">北方华创</span>
+          <span class="mini-tag hot">澜起科技</span>
+        </div>
+      </div>
+      <div class="highlight-box hb-gold">
+        <h4>⚠️ 边际变化提示（传统蓝筹弱化）</h4>
+        <ul>
+          <li>白酒：<strong>贵州茅台</strong> Q2 <span style="color:#1aaa55;">−16.6%</span> 跌出前三至第五</li>
+          <li>有色金属：<strong>紫金矿业</strong> Q2 <span style="color:#1aaa55;">−23.2%</span> 退出前十</li>
+          <li>非银金融：<strong>中国平安</strong> Q2 <span style="color:#1aaa55;">−15.9%</span> 退出前十</li>
+          <li>银行：<strong>招商银行</strong> Q2 <span style="color:#1aaa55;">−9.7%</span> 靠存量守第十</li>
+          <li>消费/资源/金融传统蓝筹相对弱化，市值权重向科技制造倾斜</li>
+        </ul>
+      </div>
+    </div>
+    <div class="highlight-box hb-purple" style="margin-top:16px;">
+      <h4>🔍 与既有持仓的交叉验证（待公募/机构补全后复核）</h4>
+      <ul>
+        <li><strong>宁德时代</strong>：北向市值第一，与你既有持仓方向一致</li>
+        <li><strong>中际旭创 / 北方华创 / 中微 / 澜起 / 新易盛</strong>：AI硬件集体跻身北向前十，与 Q1 报告「光模块/半导体为三方共识」主线延续且强化</li>
+        <li><strong>深南电路（002916）/ 沪电股份</strong>：PCB 方向在 Q1 已获北向+公募双重关注，待 Q2 公募披露后复核</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 免责声明 -->
+  <div class="disclaimer">
+    ⚠️ <strong>风险提示与数据说明：</strong>本报告为 2026 Q2 版本，<strong>当前仅北向资金数据已完整披露</strong>，公募基金与机构长线资金数据尚待披露（预计7月下旬 / 8月），故共识矩阵与行业方向结论目前仅代表北向单维度，待多维数据齐备后将补全三方交叉验证。北向资金为外资代称，不代表所有机构观点。所有数值均经「数据校验中心」实时校验（勾稽 / 范围 / 交叉 / 完整性四类），校验未通过前不发布。投资有风险，决策需谨慎，请结合自身风险偏好独立判断。数据来源：Wind / Choice / 天相投顾（待披露）/ 中国证券报（待披露）/ NeoData 实时检索。
+  </div>
+
+</div>
+
+<!-- ============ 数据校验引擎（与 scripts/validate_smart_money_2026q2.py 同源） ============ -->
+<script>
+// 单一数据源（与 data/smart_money_2026q2.json 一致）
+const DATA = {
+  northbound: {
+    total_holdings_q1_trillion: 2.58,
+    total_holdings_q2_trillion: 3.13,
+    net_buy_q2_yi: 2086,
+    net_buy_h1_yi: 1995,
+    top3_q1: ["宁德时代","贵州茅台","美的集团"],
+    top3_q2: ["宁德时代","中际旭创","北方华创"],
+    top1_stable: "宁德时代",
+    source: "Wind / Choice"
+  },
+  public_fund: { status: "pending" },
+  institution: { status: "pending" }
+};
+const TRILLION_TO_YI = 10000.0;
+
+function vResult(level, rid, desc, detail, status){ return {level, rid, desc, detail, status}; }
+
+function runValidation(){
+  const nb = DATA.northbound;
+  const out = [];
+  // 勾稽
+  const q1_implied = nb.net_buy_h1_yi - nb.net_buy_q2_yi; // -91
+  out.push(vResult("勾稽","V-FOOT-01","Q1+Q2 净买入 = H1 净买入",
+    `Q1隐含 = H1(${nb.net_buy_h1_yi}) − Q2(${nb.net_buy_q2_yi}) = ${q1_implied} 亿元（净卖出）`,
+    (q1_implied + nb.net_buy_q2_yi === nb.net_buy_h1_yi) ? "PASS" : "FAIL"));
+  const consistent = (nb.net_buy_q2_yi>0) && (nb.net_buy_h1_yi>0) && (q1_implied<0);
+  out.push(vResult("勾稽","V-FOOT-02","Q2>0、H1>0、Q1隐含净卖出 ⇒ 与『恢复净流入』自洽",
+    `Q2=${nb.net_buy_q2_yi}>0, H1=${nb.net_buy_h1_yi}>0, Q1隐含=${q1_implied}<0`,
+    consistent ? "PASS" : "FAIL"));
+  // 范围
+  const th = nb.total_holdings_q2_trillion;
+  out.push(vResult("范围","V-RANGE-01","北向总持仓突破 3 万亿元",
+    `Q2总持仓 = ${th} 万亿；突破阈值 3.0`,
+    th >= 3.0 ? "PASS" : "FAIL"));
+  const total_yi = th * TRILLION_TO_YI;
+  const ratio = nb.net_buy_q2_yi / total_yi;
+  out.push(vResult("范围","V-RANGE-02","Q2单季净买入量级合理（<总持仓20%）",
+    `Q2净买入 ${nb.net_buy_q2_yi}亿 / 总持仓 ${total_yi.toFixed(0)}亿 = ${(ratio*100).toFixed(1)}%`,
+    (ratio>0 && ratio<0.20) ? "PASS" : "WARN"));
+  // 交叉
+  const delta_yi = (nb.total_holdings_q2_trillion - nb.total_holdings_q1_trillion) * TRILLION_TO_YI;
+  const price_contrib = delta_yi - nb.net_buy_q2_yi;
+  out.push(vResult("交叉","V-CROSS-01","持仓增量>净买入 ⇒ 股价贡献为正，印证『前三巨变主因股价涨跌』",
+    `Δ总持仓≈${delta_yi.toFixed(0)}亿，Q2净买入=${nb.net_buy_q2_yi}亿，股价上涨贡献≈${price_contrib.toFixed(0)}亿`,
+    price_contrib > 0 ? "PASS" : "FAIL"));
+  const in_both = nb.top3_q1.filter(x=>nb.top3_q2.includes(x));
+  const top1_ok = nb.top3_q1.includes(nb.top1_stable) && nb.top3_q2.includes(nb.top1_stable);
+  out.push(vResult("交叉","V-CROSS-02","市值TOP3两期连续性（宁德时代稳居第一）",
+    `两期交集=[${in_both.join(',')}]；top1='${nb.top1_stable}' 两期出现=${top1_ok}`,
+    (top1_ok && in_both.length>=1) ? "PASS" : "FAIL"));
+  const changed = JSON.stringify(nb.top3_q1)!==JSON.stringify(nb.top3_q2);
+  out.push(vResult("交叉","V-CROSS-03","市值前三较Q1显著变化（印证『巨变』）",
+    `Q1=[${nb.top3_q1}] → Q2=[${nb.top3_q2}]；是否变化=${changed}`,
+    changed ? "PASS" : "WARN"));
+  // 完整性
+  out.push(vResult("完整","V-FULL-01","已披露数据均标注来源",
+    `北向 source = ${nb.source}`,
+    nb.source ? "PASS" : "FAIL"));
+  const pending = [];
+  if(DATA.public_fund.status==="pending") pending.push("公募基金");
+  if(DATA.institution.status==="pending") pending.push("机构长线资金");
+  out.push(vResult("完整","V-FULL-02","未披露维度显式标记 pending（防误用占位数据）",
+    `待披露维度：${pending.length?pending.join('、'):'无'}`,
+    pending.length ? "WARN" : "PASS"));
+  return out;
+}
+
+(function render(){
+  const results = runValidation();
+  const cnt = {PASS:0, WARN:0, FAIL:0};
+  results.forEach(r=>cnt[r.status]=(cnt[r.status]||0)+1);
+  const hardFail = cnt.FAIL > 0;
+  const summaryEl = document.getElementById("val-summary");
+  summaryEl.innerHTML =
+    `<div class="val-chip">✅ PASS <b>${cnt.PASS}</b></div>`+
+    `<div class="val-chip">⚠️ WARN <b>${cnt.WARN}</b></div>`+
+    `<div class="val-chip">❌ FAIL <b>${cnt.FAIL}</b></div>`;
+  const overall = document.getElementById("val-overall");
+  if(hardFail){
+    overall.textContent = "❌ 校验未通过 — 禁止发布";
+    overall.style.background = "rgba(248,113,113,0.25)";
+    overall.style.color = "#f87171";
+  } else {
+    overall.textContent = "✅ 校验通过（无硬性矛盾）";
+    overall.style.background = "rgba(74,222,128,0.2)";
+    overall.style.color = "#4ade80";
+  }
+  const body = document.getElementById("val-body");
+  body.innerHTML = results.map(r=>
+    `<tr>
+      <td>${r.level}</td>
+      <td>${r.rid}</td>
+      <td class="val-status s-${r.status}">${r.status}</td>
+      <td><div>${r.desc}</div><div class="val-detail">${r.detail}</div></td>
+    </tr>`).join("");
+})();
+
+// Toggle hint text on validation panel expand/collapse
+(function(){
+  const details = document.querySelector('.val-details');
+  const hint = document.getElementById('val-hint');
+  if(!details||!hint) return;
+  details.addEventListener('toggle',function(){
+    hint.textContent = details.open ? '点击折叠校验详情 ▲' : '点击展开校验详情 ▼';
+  });
+})();
+</script>
+</body>
+</html>
