@@ -12,7 +12,7 @@
   },
   "northbound": {
     "status": "disclosed",
-    "source": "Choice / Wind（沪深股通2026Q2持股数据，2026-07-08披露）；上海证券报、财联社 2026-07-10",
+    "source": "东方财富 RPT_MUTUAL_HOLDRANK_NEW（2026-06-30季度披露）；Q2股价来自腾讯自选股 westock-data kline 前复权(qfq)；净买卖按持股数量变动×Q2日均价估算",
     "total_holdings_q1_trillion": 2.58,
     "total_holdings_q2_trillion": 3.13,
     "total_holdings_q2_breakthrough": true,
@@ -26,14 +26,35 @@
     "top3_q2": ["宁德时代", "中际旭创", "北方华创"],
     "top1_stable": "宁德时代",
     "top10_q1": ["宁德时代", "贵州茅台", "美的集团", "招商银行", "中际旭创", "北方华创", "紫金矿业", "汇川技术", "思源电气", "中国平安"],
-    "top10_q2": ["宁德时代", "中际旭创", "北方华创", "美的集团", "贵州茅台", "中微公司", "新易盛", "澜起科技", "立讯精密", "招商银行"],
-    "sectors_top3_q2": ["电子", "电力设备", "机械设备"],
+    "top10_q2": ["宁德时代", "中际旭创", "北方华创", "美的集团", "贵州茅台", "中微公司", "澜起科技", "立讯精密", "招商银行", "汇川技术"],
+    "sectors_top3_q2": ["电子", "电力设备", "通信"],
     "sectors_add_most_q2": ["电子", "电力设备", "通信"],
     "mv_over_100yi_count_q2": 48,
     "mv_over_100yi_count_q1": 37,
     "shift_reason": "股价涨跌影响（AI硬件/光模块/半导体设备权重股大涨推动市值排名跃升）",
     "resumed_net_inflow": true,
-    "image_source": "东方财富 北向资金 Q2 净买入/卖出金额排行（2026-07-10 用户截图）",
+    "top20_holdings": [
+      {"rank":1, "name":"宁德时代","code":"300750.SZ","sector":"电力设备 / 电池","mv_yi":3514.13,"q2_ret":-1.45,"net_buy_yi":550.4,"shares_change_yi":1.33},
+      {"rank":2, "name":"中际旭创","code":"300308.SZ","sector":"通信 / 通信设备","mv_yi":931.25,"q2_ret":111.36,"net_buy_yi":-42.1,"shares_change_yi":-0.04},
+      {"rank":3, "name":"北方华创","code":"002371.SZ","sector":"电子 / 半导体","mv_yi":834.50,"q2_ret":96.50,"net_buy_yi":-5.7,"shares_change_yi":-0.01},
+      {"rank":4, "name":"美的集团","code":"000333.SZ","sector":"家用电器 / 白色家电","mv_yi":674.84,"q2_ret":3.30,"net_buy_yi":-60.8,"shares_change_yi":-0.80},
+      {"rank":5, "name":"贵州茅台","code":"600519.SH","sector":"食品饮料 / 白酒Ⅱ","mv_yi":636.75,"q2_ret":-17.18,"net_buy_yi":-65.8,"shares_change_yi":-0.05},
+      {"rank":6, "name":"中微公司","code":"688012.SH","sector":"电子 / 半导体","mv_yi":590.53,"q2_ret":122.89,"net_buy_yi":168.8,"shares_change_yi":0.60},
+      {"rank":7, "name":"澜起科技","code":"688008.SH","sector":"电子 / 半导体","mv_yi":451.82,"q2_ret":138.44,"net_buy_yi":-1.3,"shares_change_yi":-0.01},
+      {"rank":8, "name":"立讯精密","code":"002475.SZ","sector":"电子 / 消费电子","mv_yi":407.18,"q2_ret":39.68,"net_buy_yi":109.7,"shares_change_yi":1.63},
+      {"rank":9, "name":"招商银行","code":"600036.SH","sector":"银行 / 银行Ⅱ","mv_yi":389.57,"q2_ret":-11.13,"net_buy_yi":-37.5,"shares_change_yi":-1.01},
+      {"rank":10,"name":"汇川技术","code":"300124.SZ","sector":"机械设备 / 自动化设备","mv_yi":351.60,"q2_ret":-2.05,"net_buy_yi":18.0,"shares_change_yi":0.26},
+      {"rank":11,"name":"寒武纪","code":"688256.SH","sector":"电子 / 半导体","mv_yi":351.31,"q2_ret":126.44,"net_buy_yi":131.2,"shares_change_yi":0.11},
+      {"rank":12,"name":"新易盛","code":"300502.SZ","sector":"通信 / 通信设备","mv_yi":350.37,"q2_ret":84.90,"net_buy_yi":112.4,"shares_change_yi":0.25},
+      {"rank":13,"name":"紫金矿业","code":"601899.SH","sector":"有色金属 / 工业金属","mv_yi":330.15,"q2_ret":-25.56,"net_buy_yi":9.3,"shares_change_yi":0.30},
+      {"rank":14,"name":"药明康德","code":"603259.SH","sector":"医药生物 / 医疗服务","mv_yi":325.67,"q2_ret":21.79,"net_buy_yi":90.5,"shares_change_yi":0.88},
+      {"rank":15,"name":"潍柴动力","code":"000338.SZ","sector":"汽车 / 汽车零部件","mv_yi":325.27,"q2_ret":7.71,"net_buy_yi":150.8,"shares_change_yi":5.00},
+      {"rank":16,"name":"兆易创新","code":"603986.SH","sector":"电子 / 半导体","mv_yi":311.02,"q2_ret":220.55,"net_buy_yi":-13.8,"shares_change_yi":-0.03},
+      {"rank":17,"name":"长江电力","code":"600900.SH","sector":"公用事业 / 电力","mv_yi":298.77,"q2_ret":-1.53,"net_buy_yi":24.6,"shares_change_yi":0.91},
+      {"rank":18,"name":"思源电气","code":"002028.SZ","sector":"电力设备 / 电网设备","mv_yi":268.88,"q2_ret":-17.28,"net_buy_yi":-4.5,"shares_change_yi":-0.02},
+      {"rank":19,"name":"阳光电源","code":"300274.SZ","sector":"电力设备 / 光伏设备","mv_yi":266.47,"q2_ret":18.88,"net_buy_yi":-6.9,"shares_change_yi":-0.05},
+      {"rank":20,"name":"沪电股份","code":"002463.SZ","sector":"电子 / 元件","mv_yi":263.32,"q2_ret":93.93,"net_buy_yi":-24.8,"shares_change_yi":-0.22}
+    ],
     "net_buy_top20": [
       {"name":"宁德时代","code":"300750.SZ","sector":"电力设备（电池）","net_buy_yi":554,"hold_ratio":20.28,"hold_shr_change_pct":17},
       {"name":"中微公司","code":"688012.SH","sector":"电子（半导体设备）","net_buy_yi":181,"hold_ratio":13.37,"hold_shr_change_pct":27},
@@ -79,11 +100,11 @@
       {"name":"东鹏饮料","code":"605499.SH","sector":"食品饮料（饮料）","net_sell_yi":-22,"hold_ratio":3.94,"hold_shr_change_pct":-52}
     ],
     "price_driven_notable": [
-      {"name":"中际旭创","code":"300308.SZ","q2_ret":123.4,"net_flow_yi":-42,"note":"净卖出但股价翻倍，持仓市值跃升由股价主导"},
-      {"name":"天孚通信","code":"300394.SZ","net_flow_yi":-51,"note":"净卖出-51亿，AI光模块行情下股价大涨，持仓市值受益"},
-      {"name":"源杰科技","code":"688498.SH","net_flow_yi":-37,"note":"净卖出-37亿，持股量变化-66%，但AI光模块/激光芯片股价上涨支撑市值"},
-      {"name":"北方华创","code":"002371.SZ","q2_ret":98.1,"note":"未入净买卖前20，Q2 +98% 由股价推动入榜前三"},
-      {"name":"澜起科技","code":"688008.SH","q2_ret":147.4,"note":"未入净买卖前20，Q2 +147% 由股价推动入榜前十"}
+      {"name":"兆易创新","code":"603986.SH","q2_ret":220.55,"net_buy_yi":-13.8,"note":"Q2暴涨+220%却遭净卖出-13.8亿，市值完全由涨跌幅推动"},
+      {"name":"中际旭创","code":"300308.SZ","q2_ret":111.36,"net_buy_yi":-42.1,"note":"Q2 +111%但净卖出-42亿，持仓市值跃升由股价主导"},
+      {"name":"沪电股份","code":"002463.SZ","q2_ret":93.93,"net_buy_yi":-24.8,"note":"Q2 +93.9%但净卖出-24.8亿，PCB涨势下外资减仓"},
+      {"name":"北方华创","code":"002371.SZ","q2_ret":96.50,"net_buy_yi":-5.7,"note":"Q2 +96.5%但小幅净卖出-5.7亿，市值跃升由涨跌幅推动"},
+      {"name":"澜起科技","code":"688008.SH","q2_ret":138.44,"net_buy_yi":-1.3,"note":"Q2 +138%基本持平无增量，DDR5/AI接口弹性来自股价"}
     ]
   },
   "public_fund": {
