@@ -44,10 +44,10 @@ a {color:var(--a);text-decoration:none;}
 .bar-chart {display:flex;align-items:flex-end;gap:10px;height:200px;padding:0 8px;}
 .bar-group {flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;}
 .bar {width:100%;max-width:55px;border-radius:4px 4px 0 0;transition:all 0.3s;min-height:4px;}
-.bar.red {background:linear-gradient(180deg,var(--r),rgba(226,82,65,0.5));}
+.bar.green {background:linear-gradient(180deg,var(--g),rgba(34,197,94,0.5));}
 .bar-label {font-size:0.68em;color:var(--t2);margin-top:6px;text-align:center;line-height:1.3;}
 .bar-value {font-size:0.73em;font-weight:700;margin-bottom:4px;text-align:center;}
-.bar-value.red {color:var(--r);}
+.bar-value.green {color:var(--g);}
 
 .summary-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin:12px 0;}
 .sg-item {background:rgba(79,195,247,0.03);border:1px solid var(--b);border-radius:8px;padding:12px 14px;text-align:center;}
@@ -70,184 +70,150 @@ a {color:var(--a);text-decoration:none;}
 
 <h1>📉 科技股深度回调思考 · 科技下半场主线</h1>
 <div class="meta">
-  <span>2026-07-20 收盘后</span>
+  <span>2026-07-20</span>
   <span>7月科技板块系统性回调复盘</span>
   <span>上下半场行情分割</span>
-  <span>国产算力 · 物理AI · 多主线均衡</span>
+  <span>多主线均衡 · 等待主力选择</span>
 </div>
 
 <blockquote class="qo">
-  <strong>核心判断：</strong>本轮全球AI、科技产业链大幅深度回调，并非产业基本面发生根本性崩塌，而是多重外部冲击、交易结构失衡、产业叙事共振形成的系统性风险释放。此前由海外算力逻辑主导的上半场主升行情已正式落幕。7/20 收盘后，大票与小票的极端分化（上证50 +3.01% vs 中证1000 -2.83%）说明市场正在经历结构性出清。下半年将形成<strong>多主线并行</strong>的均衡态势，具体方向还需要等市场主力资金做出选择。
+  <strong>核心判断：</strong>本轮全球AI、科技产业链大幅深度回调，并非产业基本面发生根本性崩塌，而是多重外部冲击、交易结构失衡、产业叙事共振形成的系统性风险释放。此前由海外算力逻辑主导的上半场主升行情已正式落幕。但下半场并不意味着科技股仍是唯一主线——市场将形成<strong>多主线并行</strong>的均衡态势，科技内部的国产算力/物理AI只是备选方向之一，锂电/钠电、创新药、非银金融、猪周期等同样有成为主线的潜力。具体方向需要等市场主力资金做出选择。
 </blockquote>
 
-<!-- ===== 一、7月回调数据全景（截至7/20收盘） ===== -->
-<h2>一、7月以来科技板块回调数据全景（截至7/20收盘）</h2>
-
-<div class="summary-grid">
-  <div class="sg-item" style="border-color:var(--r);">
-    <div class="val" style="color:var(--r);">-7.86%</div>
-    <div class="lbl">PCB板块 7/20单日跌幅</div>
-  </div>
-  <div class="sg-item" style="border-color:var(--r);">
-    <div class="val" style="color:var(--r);">-6.39%</div>
-    <div class="lbl">CPO板块 7/20单日跌幅</div>
-  </div>
-  <div class="sg-item" style="border-color:var(--r);">
-    <div class="val" style="color:var(--r);">-5.45%</div>
-    <div class="lbl">光通信板块 7/20单日跌幅</div>
-  </div>
-  <div class="sg-item" style="border-color:var(--r);">
-    <div class="val" style="color:var(--r);">-10.00%</div>
-    <div class="lbl">沪电股份(PCB龙头) 7/20跌停</div>
-  </div>
-  <div class="sg-item" style="border-color:var(--r);">
-    <div class="val" style="color:var(--r);">-9.95%</div>
-    <div class="lbl">长电科技(封测龙头) 7/20</div>
-  </div>
-  <div class="sg-item" style="border-color:var(--r);">
-    <div class="val" style="color:var(--r);">-27.57%</div>
-    <div class="lbl">北方华创 7月累计跌幅</div>
-  </div>
-  <div class="sg-item" style="border-color:var(--r);">
-    <div class="val" style="color:var(--r);">-20.68%</div>
-    <div class="lbl">沪电股份 7月累计跌幅</div>
-  </div>
-  <div class="sg-item" style="border-color:var(--o);">
-    <div class="val" style="color:var(--o);">+2.50%/+5.62%</div>
-    <div class="lbl">中际旭创/新易盛 7/20逆市反弹</div>
-  </div>
-</div>
+<!-- ===== 一、7月回调数据全景 ===== -->
+<h2>一、7月以来科技板块回调数据全景（7/1—7/20）</h2>
 
 <div class="card">
-  <h3>📊 科技各细分板块 & 龙头 7月表现对比（截至7/20收盘）</h3>
+  <h3>📊 科技板块指数 7月累计跌幅</h3>
+  <div class="summary-grid">
+    <div class="sg-item" style="border-color:var(--g);">
+      <div class="val" style="color:var(--g);">-28.34%</div>
+      <div class="lbl">半导体指数</div>
+    </div>
+    <div class="sg-item" style="border-color:var(--g);">
+      <div class="val" style="color:var(--g);">-22.30%</div>
+      <div class="lbl">科创50</div>
+    </div>
+    <div class="sg-item" style="border-color:var(--g);">
+      <div class="val" style="color:var(--g);">-21.05%</div>
+      <div class="lbl">创业板指</div>
+    </div>
+    <div class="sg-item" style="border-color:var(--g);">
+      <div class="val" style="color:var(--g);">-25%+</div>
+      <div class="lbl">CPO板块</div>
+    </div>
+    <div class="sg-item" style="border-color:var(--g);">
+      <div class="val" style="color:var(--g);">-25%+</div>
+      <div class="lbl">封测板块</div>
+    </div>
+    <div class="sg-item" style="border-color:var(--g);">
+      <div class="val" style="color:var(--g);">-20%+</div>
+      <div class="lbl">光通信板块</div>
+    </div>
+    <div class="sg-item" style="border-color:var(--g);">
+      <div class="val" style="color:var(--g);">-20%+</div>
+      <div class="lbl">PCB板块</div>
+    </div>
+    <div class="sg-item" style="border-color:var(--g);">
+      <div class="val" style="color:var(--g);">-30%+</div>
+      <div class="lbl">存储板块</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:18px;">📊 龙头个股 7月累计跌幅</h3>
+  <div class="summary-grid">
+    <div class="sg-item" style="border-color:var(--g);">
+      <div class="val" style="color:var(--g);">-27.57%</div>
+      <div class="lbl">北方华创（半导体设备）</div>
+    </div>
+    <div class="sg-item" style="border-color:var(--g);">
+      <div class="val" style="color:var(--g);">-25.38%</div>
+      <div class="lbl">寒武纪（AI芯片）</div>
+    </div>
+    <div class="sg-item" style="border-color:var(--g);">
+      <div class="val" style="color:var(--g);">-25.15%</div>
+      <div class="lbl">中微公司（半导体设备）</div>
+    </div>
+    <div class="sg-item" style="border-color:var(--g);">
+      <div class="val" style="color:var(--g);">-20.68%</div>
+      <div class="lbl">沪电股份（PCB龙头）</div>
+    </div>
+    <div class="sg-item" style="border-color:var(--g);">
+      <div class="val" style="color:var(--g);">-17.67%</div>
+      <div class="lbl">海光信息（国产CPU）</div>
+    </div>
+    <div class="sg-item" style="border-color:var(--o);">
+      <div class="val" style="color:var(--o);">+27.98%</div>
+      <div class="lbl">紫光股份（20日逆势上涨）</div>
+    </div>
+  </div>
+
   <table>
-    <thead><tr><th>板块/标的</th><th>7/20 涨跌幅</th><th>7月区间跌幅</th><th>7/20 振幅</th><th>阶段判断</th></tr></thead>
+    <thead><tr><th>板块</th><th>7月累计跌幅</th><th>龙头个股</th><th>7月累计跌幅</th></tr></thead>
     <tbody>
-      <tr style="background:rgba(226,82,65,0.06);">
-        <td><strong>PCB板块</strong></td>
-        <td><span class="hr">-7.86%</span></td>
-        <td><span class="dn">-20%+</span></td>
-        <td>11.84%</td>
-        <td>🔴 龙头补跌跌停，板块最惨烈</td>
-      </tr>
-      <tr style="background:rgba(226,82,65,0.06);">
-        <td><strong>沪电股份（PCB龙头）</strong></td>
-        <td><span class="hr">-10.00%（跌停）</span></td>
-        <td><span class="dn">-20.68%</span></td>
-        <td>14.31%</td>
-        <td>🔴 最抗跌标的补跌，往往意味着尾声</td>
-      </tr>
-      <tr style="background:rgba(226,82,65,0.04);">
-        <td><strong>封测</strong></td>
-        <td>长电-9.95% / 通富-7.84%</td>
-        <td><span class="dn">-25%+</span></td>
-        <td>13%/17%</td>
-        <td>🔴 昨日抄底资金反手砸出，极弱</td>
-      </tr>
-      <tr style="background:rgba(226,82,65,0.04);">
-        <td><strong>CPO板块</strong></td>
-        <td><span class="dn">-6.39%</span></td>
-        <td><span class="dn">-25%+</span></td>
-        <td>11.46%</td>
-        <td>🟠 板块整体仍跌，但龙头率先企稳</td>
-      </tr>
-      <tr style="background:rgba(245,158,11,0.04);">
-        <td><strong>光通信板块</strong></td>
-        <td><span class="dn">-5.45%</span></td>
-        <td><span class="dn">-20%+</span></td>
-        <td>10.43%</td>
-        <td>🟠 跌幅小于CPO/PCB，有分化迹象</td>
-      </tr>
-      <tr style="background:rgba(34,197,94,0.04);">
-        <td><strong>中际旭创（光模块龙头）</strong></td>
-        <td><span class="up">+2.50%</span></td>
-        <td>—</td>
-        <td>9.31%</td>
-        <td>🟢 龙头率先反弹，成交461亿</td>
-      </tr>
-      <tr style="background:rgba(34,197,94,0.04);">
-        <td><strong>新易盛（光模块龙头）</strong></td>
-        <td><span class="up">+5.62%</span></td>
-        <td>—</td>
-        <td>8.82%</td>
-        <td>🟢 H1预告净利70-80亿（+78~103%），基本面最强</td>
-      </tr>
-      <tr style="background:rgba(226,82,65,0.04);">
-        <td><strong>存储</strong></td>
-        <td>兆易-6.66% / 佰维-3.51%</td>
-        <td><span class="dn">-30%+</span></td>
-        <td>16%/18%</td>
-        <td>🟠 三连跌但跌幅逐日收窄</td>
-      </tr>
-      <tr style="background:rgba(245,158,11,0.04);">
-        <td><strong>半导体设备</strong></td>
-        <td>北方华创-0.01%（平盘）</td>
-        <td><span class="dn">-27.57%</span></td>
-        <td>8.73%</td>
-        <td>🟡 677元附近多空均衡，等待方向</td>
-      </tr>
-      <tr style="background:rgba(34,197,94,0.04);">
-        <td><strong>紫光股份（芯片设计）</strong></td>
-        <td><span class="up">+7.29%</span></td>
-        <td><span class="up">+27.98%（20日）</span></td>
-        <td>4.77%</td>
-        <td>🟢 独立走势，算力基础设施受益</td>
-      </tr>
+      <tr><td>半导体指数</td><td><span class="dn">-28.34%</span></td><td>北方华创 / 中微公司</td><td><span class="dn">-27.57% / -25.15%</span></td></tr>
+      <tr><td>科创50</td><td><span class="dn">-22.30%</span></td><td>寒武纪 / 海光信息</td><td><span class="dn">-25.38% / -17.67%</span></td></tr>
+      <tr><td>创业板指</td><td><span class="dn">-21.05%</span></td><td>—</td><td>—</td></tr>
+      <tr><td>CPO板块</td><td><span class="dn">-25%+</span></td><td>中际旭创 / 新易盛</td><td>龙头率先企稳反弹</td></tr>
+      <tr><td>PCB板块</td><td><span class="dn">-20%+</span></td><td>沪电股份</td><td><span class="dn">-20.68%</span>（补跌跌停）</td></tr>
+      <tr><td>封测板块</td><td><span class="dn">-25%+</span></td><td>长电科技 / 通富微电</td><td><span class="dn">7/20 跌停级暴跌</span></td></tr>
+      <tr><td>存储板块</td><td><span class="dn">-30%+</span></td><td>兆易创新 / 佰维存储</td><td><span class="dn">三连跌停级</span></td></tr>
+      <tr><td>光通信板块</td><td><span class="dn">-20%+</span></td><td>—</td><td>—</td></tr>
     </tbody>
   </table>
 
   <blockquote class="qr">
-    <strong>📌 关键发现：</strong>7/20 市场呈现极度分化——上证50暴涨+3.01%（银行/石油/白酒全面拉升），但科技板块内部冰火两重天。光模块龙头（中际旭创+2.50%、新易盛+5.62%）率先企稳反弹，而 PCB（沪电跌停-10%）、封测（长电-9.95%）仍在补跌。大票被国家队硬拉，小票持续失血（中证1000 -2.83%），这是典型的<strong>结构性出清</strong>——不是所有科技股都在跌，而是资金在板块内部做剧烈的高低切换和真假甄别。
+    <strong>📌 关键发现：</strong>7月1日至20日，科技板块全线深度回调。半导体指数跌近 30%，科创50、创业板指均跌超 20%，PCB/CPO/封测/存储等细分板块无一幸免。龙头个股层面，北方华创、寒武纪、中微公司跌幅均在 25% 以上。这不是个别板块的调整，而是<strong>整个科技赛道从高位系统性下移</strong>——上半场"沾边AI就能涨"的普涨格局彻底终结。
   </blockquote>
 </div>
 
 <div class="chart-container">
-  <h4>📊 7/20 科技各板块 & 龙头涨跌幅对比</h4>
+  <h4>📊 7月各板块指数 & 龙头个股累计跌幅对比</h4>
   <div class="bar-chart">
     <div class="bar-group">
-      <div class="bar-value red">-10.00%</div>
-      <div class="bar red" style="height:100%;"></div>
-      <div class="bar-label">沪电股份<br>(PCB龙头)</div>
+      <div class="bar-value green">-30%+</div>
+      <div class="bar green" style="height:100%;"></div>
+      <div class="bar-label">存储板块</div>
     </div>
     <div class="bar-group">
-      <div class="bar-value red">-9.95%</div>
-      <div class="bar red" style="height:99%;"></div>
-      <div class="bar-label">长电科技<br>(封测龙头)</div>
+      <div class="bar-value green">-28.34%</div>
+      <div class="bar green" style="height:94%;"></div>
+      <div class="bar-label">半导体指数</div>
     </div>
     <div class="bar-group">
-      <div class="bar-value red">-7.86%</div>
-      <div class="bar red" style="height:79%;"></div>
-      <div class="bar-label">PCB板块</div>
+      <div class="bar-value green">-27.57%</div>
+      <div class="bar green" style="height:92%;"></div>
+      <div class="bar-label">北方华创</div>
     </div>
     <div class="bar-group">
-      <div class="bar-value red">-6.39%</div>
-      <div class="bar red" style="height:64%;"></div>
-      <div class="bar-label">CPO板块</div>
+      <div class="bar-value green">-25.38%</div>
+      <div class="bar green" style="height:85%;"></div>
+      <div class="bar-label">寒武纪</div>
     </div>
     <div class="bar-group">
-      <div class="bar-value red">-5.45%</div>
-      <div class="bar red" style="height:55%;"></div>
-      <div class="bar-label">光通信板块</div>
+      <div class="bar-value green">-25%+</div>
+      <div class="bar green" style="height:83%;"></div>
+      <div class="bar-label">CPO/封测</div>
     </div>
     <div class="bar-group">
-      <div class="bar-value red">-0.01%</div>
-      <div class="bar red" style="height:5%;"></div>
-      <div class="bar-label">北方华创<br>(设备龙头)</div>
+      <div class="bar-value green">-22.30%</div>
+      <div class="bar green" style="height:74%;"></div>
+      <div class="bar-label">科创50</div>
     </div>
     <div class="bar-group">
-      <div class="bar-value" style="color:var(--g);">+2.50%</div>
-      <div class="bar" style="height:25%;background:linear-gradient(180deg,var(--g),rgba(34,197,94,0.5));"></div>
-      <div class="bar-label">中际旭创<br>(光模块)</div>
+      <div class="bar-value green">-21.05%</div>
+      <div class="bar green" style="height:70%;"></div>
+      <div class="bar-label">创业板指</div>
     </div>
     <div class="bar-group">
-      <div class="bar-value" style="color:var(--g);">+5.62%</div>
-      <div class="bar" style="height:56%;background:linear-gradient(180deg,var(--g),rgba(34,197,94,0.5));"></div>
-      <div class="bar-label">新易盛<br>(光模块)</div>
+      <div class="bar-value green">-20%+</div>
+      <div class="bar green" style="height:67%;"></div>
+      <div class="bar-label">PCB/光通信</div>
     </div>
     <div class="bar-group">
-      <div class="bar-value" style="color:var(--g);">+7.29%</div>
-      <div class="bar" style="height:73%;background:linear-gradient(180deg,var(--g),rgba(34,197,94,0.5));"></div>
-      <div class="bar-label">紫光股份<br>(算力)</div>
+      <div class="bar-value green">-17.67%</div>
+      <div class="bar green" style="height:59%;"></div>
+      <div class="bar-label">海光信息</div>
     </div>
   </div>
 </div>
@@ -339,19 +305,19 @@ a {color:var(--a);text-decoration:none;}
   </div>
 
   <div class="verdict">
-    <strong>📌 核心判断：</strong>AI算力上半场——跟随美股景气度的海外算力链主升行情——正式结束了。下半场的交易机会全面聚焦国产自主产业链，市场进入去伪存真的筛选周期。但<strong>下半场不是单一主线一枝独秀，而是多主线并行的均衡态势</strong>——国产算力、物理AI、存储周期、CPO龙头各有独立逻辑。具体哪条线率先跑出来，还需要等市场主力资金做出选择。
+    <strong>📌 核心判断：</strong>AI算力上半场——跟随美股景气度的海外算力链主升行情——正式结束了。但下半场并不意味着科技仍是唯一主线。科技内部会进入去伪存真的筛选周期，国产算力和物理AI是有竞争力的备选方向；但与此同时，市场资金风险偏好收缩后必然向其他低拥挤度方向扩散，<strong>锂电/钠电、创新药、非银金融、猪周期等非科技方向同样有成为主线的潜力</strong>。下半年大概率是多主线并行的均衡格局，具体哪条线跑出来，需要等市场主力资金做出选择。
   </div>
 </div>
 
-<!-- ===== 五、科技下半场两大核心叙事 ===== -->
-<h2>五、科技下半场两大核心叙事</h2>
+<!-- ===== 五、科技领域两大核心叙事 ===== -->
+<h2>五、科技领域两大核心叙事（备选方向之一）</h2>
 
 <blockquote class="qp">
-  未来行情围绕两条递进式产业叙事展开——短期硬件底座业绩兑现，长期实体产业价值落地。二者不是割裂的，而是承接关系。
+  以下两条递进式产业叙事是<strong>科技领域内部</strong>的核心方向，但并非下半年整个市场的唯二主线。它们需要与锂电/创新药/非银/猪周期等其他备选方向竞争市场共识。
 </blockquote>
 
 <div class="card">
-  <h3>主线一：国产算力链全面替代海外链</h3>
+  <h3>方向一：国产算力链全面替代海外链</h3>
   
   <div class="flx">
     <div class="fc" style="border-color:var(--a);">
@@ -374,7 +340,7 @@ a {color:var(--a);text-decoration:none;}
 </div>
 
 <div class="card">
-  <h3>主线二：算力的尽头是物理AI</h3>
+  <h3>方向二：算力的尽头是物理AI</h3>
 
   <blockquote class="qo">
     上半场市场炒作的AI局限在纯云端数字空间（大模型训练和图文视频内容生成），增长逻辑就是堆算力硬件。下半场的长期终局，是AI技术落地改造真实物理世界。
@@ -410,7 +376,7 @@ a {color:var(--a);text-decoration:none;}
 </div>
 
 <!-- ===== 六、存储周期双向逻辑 ===== -->
-<h2>六、存储周期的双向逻辑：串联两条主线的中间环节</h2>
+<h2>六、存储周期的双向逻辑：串联科技主线的中间环节</h2>
 
 <div class="card">
   <div class="flx">
@@ -436,66 +402,59 @@ a {color:var(--a);text-decoration:none;}
 
 <div class="card">
   <blockquote class="qo">
-    <strong>📌 关键判断：</strong>与上半场"海外算力链一枝独秀、赛道鸡犬升天"的单极格局不同，下半年将形成<strong>多主线并行</strong>的均衡态势。7/20 的盘面已经清晰展现了这种分化——光模块龙头反弹、PCB/封测补跌、设备平盘、算力基础设施独立走强。没有任何一条主线能够像上半场的海外算力链那样形成压倒性共识。
+    <strong>📌 关键判断：</strong>与上半场"海外算力链一枝独秀、赛道鸡犬升天"的单极格局不同，下半年将形成<strong>多主线并行</strong>的均衡态势。科技回调释放出的巨量资金不会全部留在科技内部，必然会向其他低拥挤度、有独立产业逻辑的方向扩散。<strong>备选主线远不止科技</strong>——锂电/钠电、创新药、非银金融、猪周期等都有潜力成为市场共识方向。没有任何一条主线目前能够像上半场的海外算力链那样形成压倒性共识，具体方向需要等市场主力资金做出选择。
   </blockquote>
 
   <table>
-    <thead><tr><th>主线方向</th><th>代表标的</th><th>7/20信号</th><th>逻辑强度</th><th>不确定性</th></tr></thead>
+    <thead><tr><th>备选主线</th><th>核心逻辑</th><th>当前信号</th><th>逻辑强度</th><th>不确定性</th></tr></thead>
     <tbody>
-      <tr style="background:rgba(34,197,94,0.04);">
-        <td><strong>国产算力基础设施</strong></td>
-        <td>紫光股份+7.29%</td>
-        <td>🟢 独立走强，20日涨幅+27.98%</td>
-        <td>⭐⭐⭐⭐⭐</td>
-        <td>估值已不低，追高风险大</td>
-      </tr>
-      <tr style="background:rgba(34,197,94,0.04);">
-        <td><strong>光模块（CPO）龙头</strong></td>
-        <td>中际+2.5%/新易盛+5.6%</td>
-        <td>🟢 率先企稳，新易盛H1业绩炸裂</td>
+      <tr style="background:rgba(79,195,247,0.04);">
+        <td><strong>国产算力链</strong>（科技）</td>
+        <td>国产替代刚性需求 + 产业周期错位 + 政策托底</td>
+        <td>紫光股份逆势走强，设备龙头平盘企稳</td>
         <td>⭐⭐⭐⭐</td>
-        <td>板块整体-6.39%，分化严重</td>
-      </tr>
-      <tr style="background:rgba(245,158,11,0.04);">
-        <td><strong>半导体设备</strong></td>
-        <td>北方华创-0.01%</td>
-        <td>🟡 677元平盘，多空均衡</td>
-        <td>⭐⭐⭐⭐</td>
-        <td>PE仍偏高，需中报验证</td>
-      </tr>
-      <tr style="background:rgba(245,158,11,0.04);">
-        <td><strong>存储（国产替代）</strong></td>
-        <td>兆易-6.66%（跌幅收窄）</td>
-        <td>🟡 三连跌但逐日收窄</td>
-        <td>⭐⭐⭐</td>
-        <td>受韩股拖累，需等待企稳</td>
-      </tr>
-      <tr style="background:rgba(226,82,65,0.04);">
-        <td><strong>PCB</strong></td>
-        <td>沪电跌停-10%</td>
-        <td>🔴 补跌进行中</td>
-        <td>⭐⭐⭐（中期）</td>
-        <td>补跌完成后反弹概率高</td>
-      </tr>
-      <tr style="background:rgba(226,82,65,0.04);">
-        <td><strong>封测</strong></td>
-        <td>长电-9.95%</td>
-        <td>🔴 逆转恶化</td>
-        <td>⭐⭐</td>
-        <td>与存储高度绑定，修复需时间</td>
+        <td>板块整体跌幅大，需中报验证；"伪国产"陷阱</td>
       </tr>
       <tr style="background:rgba(79,195,247,0.04);">
-        <td><strong>物理AI（远期）</strong></td>
-        <td>工业自动化/机器人等</td>
-        <td>🟢 产业逻辑清晰</td>
-        <td>⭐⭐⭐⭐（长期）</td>
-        <td>短期无业绩兑现，不适合重仓</td>
+        <td><strong>物理AI</strong>（科技·远期）</td>
+        <td>算力价值向实体工业场景落地，万亿级空间</td>
+        <td>产业逻辑清晰，但短期无业绩兑现</td>
+        <td>⭐⭐⭐（长期）</td>
+        <td>不适合重仓，需长周期定投心态</td>
+      </tr>
+      <tr style="background:rgba(34,197,94,0.04);">
+        <td><strong>锂电/钠电</strong></td>
+        <td>宁德时代率先企稳（7月仅-1.93%），PE仅21倍；钠电产业化加速</td>
+        <td>7/20 宁德+4.56%站上MA5，已率先反弹</td>
+        <td>⭐⭐⭐⭐</td>
+        <td>锂电池产业链整体承压，需确认需求拐点</td>
+      </tr>
+      <tr style="background:rgba(34,197,94,0.04);">
+        <td><strong>创新药</strong></td>
+        <td>出海授权大年（上半年1100亿美元），政策力挺；估值已回调至合理区间</td>
+        <td>人民日报"尺素金声"力挺，7/20医药龙头反弹</td>
+        <td>⭐⭐⭐⭐</td>
+        <td>板块波动大，临床/审批不确定性</td>
+      </tr>
+      <tr style="background:rgba(34,197,94,0.04);">
+        <td><strong>非银金融</strong></td>
+        <td>东方财富7月仅-5.92%极强防御；资本市场改革预期+活跃资本市场政策</td>
+        <td>7/20 东财+2.44%站上MA5，5日已转正</td>
+        <td>⭐⭐⭐</td>
+        <td>弹性不足，市场缩量下券商预期下调</td>
+      </tr>
+      <tr style="background:rgba(34,197,94,0.04);">
+        <td><strong>猪周期</strong></td>
+        <td>产能去化持续，猪价上行周期确认；农业板块在暴跌中逆势活跃</td>
+        <td>7/13百股跌停日农业股逆势大涨</td>
+        <td>⭐⭐⭐</td>
+        <td>周期波动大，疫情/政策干扰</td>
       </tr>
     </tbody>
   </table>
 
   <blockquote class="qp">
-    <strong>📌 等待主力选择：</strong>多主线并行的均衡态势意味着——与其押注单条主线，不如<strong>分散配置、动态调整</strong>。当前阶段，市场主力资金也在观察和选择。哪个方向率先出现"龙头放量突破 + 板块共振 + 基本面验证"三重信号，哪个方向就会成为下半年真正的领头羊。在此之前，保持灵活仓位、耐心等待信号确认，比盲目重仓单一方向更明智。
+    <strong>📌 等待主力选择：</strong>多主线并行的均衡态势意味着——与其提前押注单条主线，不如<strong>分散配置、动态调整、等待信号</strong>。哪个方向率先出现"龙头放量突破 + 板块共振 + 基本面验证"三重信号，哪个方向就会成为下半年真正的领头羊。科技内部的国产算力/物理AI只是备选之一，如果锂电/创新药/非银等方向率先走出共识，科技板块可能只是跟随而非领涨。在此之前，保持灵活仓位、耐心等待信号确认，比盲目重仓单一方向更明智。
   </blockquote>
 </div>
 
@@ -513,19 +472,28 @@ a {color:var(--a);text-decoration:none;}
       </ul>
     </div>
     <div class="fc" style="border-color:var(--a);">
-      <h4>🟢 短期-中期核心仓</h4>
+      <h4>🟢 科技方向（如有业绩验证）</h4>
       <ul style="font-size:0.9em;">
-        <li>国产算力体系里有自研能力、有真实订单落地的细分</li>
-        <li>光模块龙头（中际/新易盛）——业绩确定性最强</li>
-        <li>赚业绩增长和国产化率提升的钱，避开"伪国产"陷阱</li>
+        <li>国产算力：有自研能力、有真实订单落地的细分</li>
+        <li>光模块龙头：业绩确定性最强（新易盛H1净利70-80亿）</li>
+        <li>避开"伪国产"陷阱（组装厂/海外客户为主的光模块）</li>
+      </ul>
+    </div>
+    <div class="fc" style="border-color:var(--g);">
+      <h4>🟢 非科技备选方向</h4>
+      <ul style="font-size:0.9em;">
+        <li>锂电：宁德时代率先企稳，PE仅21倍，防御+成长兼备</li>
+        <li>创新药：出海授权大年，政策力挺，估值已回调至合理区间</li>
+        <li>非银金融：东方财富极强防御，资本市场改革预期</li>
+        <li>猪周期：产能去化+猪价上行，农业板块逆势活跃</li>
       </ul>
     </div>
     <div class="fc" style="border-color:var(--p);">
       <h4>🟣 中长期弹性仓</h4>
       <ul style="font-size:0.9em;">
-        <li>物理AI产业链里有核心卡位优势的细分</li>
-        <li>PCB/封测超跌反弹机会（补跌完成后）</li>
-        <li>等板块因系统性风险大幅回调时分批布局</li>
+        <li>物理AI产业链：等系统性回调时分批定投</li>
+        <li>PCB/封测超跌反弹：补跌完成后介入</li>
+        <li>不追涨脉冲式热点，拉长持有周期</li>
       </ul>
     </div>
   </div>
@@ -540,32 +508,32 @@ a {color:var(--a);text-decoration:none;}
     <tbody>
       <tr>
         <td><strong>短期</strong></td>
-        <td>海外科技巨头财报AI资本开支指引、费半能否企稳</td>
-        <td>偏弱→仓位往国产链倾斜；企稳→光模块/PCB可试探性加仓</td>
+        <td>海外科技巨头财报AI资本开支指引、费半能否企稳；宁德/创新药龙头能否持续反弹</td>
+        <td>观察哪个方向率先放量突破，试探性跟进</td>
       </tr>
       <tr>
         <td><strong>中期</strong></td>
-        <td>工信部智算中心国产占比、运营商AI服务器国产芯片中标份额、工业自动化设备产量增速</td>
-        <td>优先配国内订单和国产化自研业务能兑现营收的方向</td>
+        <td>工信部智算中心国产占比、运营商AI服务器国产芯片中标份额、工业自动化设备产量增速、猪价走势、创新药出海授权进度</td>
+        <td>多方向同时跟踪，优先配基本面率先兑现的方向</td>
       </tr>
       <tr>
         <td><strong>长期</strong></td>
         <td>存储原厂资本开支指引拐点、国内存储厂商产能利用率</td>
-        <td>通用存储价格松动 → 主线一向主线二的系统性仓位切换</td>
+        <td>通用存储价格松动 → 科技内部从算力硬件向物理AI切换</td>
       </tr>
     </tbody>
   </table>
 </div>
 
 <!-- ===== 九、总结 ===== -->
-<h2>九、总结：AI产业链没有终结，但进入新周期</h2>
+<h2>九、总结：AI产业链没有终结，但市场进入新周期</h2>
 
 <div class="verdict">
   <p>这轮全球科技深度回调，是AI产业行情的一个清晰分水岭。依靠海外算力景气、绑定美股波动、赛道集体狂欢的上半场行情彻底结束了。Kimi K3的发布击穿了海外单一算力叙事，华尔街对韩股的"分赃不均"式血洗加速了市场认知重构。</p>
   <p style="margin-top:12px;">上半场资金粗放炒作整条赛道，行业鸡犬升天。下半场进入去伪存真阶段，资金对产业逻辑、自研技术、业务落地的审查标准大幅提升，纯题材炒作彻底失效。</p>
-  <p style="margin-top:12px;">后市的长期交易逻辑分两条并行递进的主线。近端聚焦<strong>国产算力完整链条</strong>，靠国内自主可控的刚性订单走独立行情；远端落脚<strong>物理AI</strong>，完成算力价值从数字虚拟空间向实体工业场景的落地。</p>
-  <p style="margin-top:12px;">但与上半场的"单极行情"不同，下半年是<strong>多主线并行</strong>的均衡格局——国产算力、光模块龙头、半导体设备、存储周期、PCB超跌反弹、物理AI远期布局，每条线都有独立逻辑，但没有任何一条能像上半场的海外算力链那样形成压倒性共识。<strong>等市场主力资金选出方向，比提前押注更重要。</strong></p>
-  <p style="margin-top:12px;">叠加存储行业周期双向分化带来的轮动机会，未来市场持续性行情只会诞生在<strong>国产自主产业链条里逻辑扎实、业务能兑现的细分方向</strong>上。AI产业没有终结，它只是从海外无序堆卡、赛道普涨狂欢的时代，切换到了<strong>国产自研、实体落地、逻辑为王、多线均衡</strong>的新周期。</p>
+  <p style="margin-top:12px;">科技领域内部有两条递进式的产业叙事——近端<strong>国产算力链</strong>替代海外链，远端<strong>物理AI</strong>落地实体工业场景。叠加存储行业周期双向分化带来的轮动机会，科技方向仍具备成为主线的产业基础。</p>
+  <p style="margin-top:12px;">但必须清醒认识到：<strong>科技只是下半年备选主线之一，而非唯一方向。</strong>科技回调释放的巨量资金必然向其他低拥挤度方向扩散——锂电/钠电（宁德率先企稳）、创新药（出海大年+政策力挺）、非银金融（极强防御+改革预期）、猪周期（产能去化+猪价上行）等都有潜力成为市场共识方向。下半年大概率是<strong>多主线并行</strong>的均衡格局，没有任何一条主线目前能像上半场的海外算力链那样形成压倒性共识。</p>
+  <p style="margin-top:12px;"><strong>等市场主力资金选出方向，比提前押注更重要。</strong>在共识形成之前，分散配置、动态调整、保留现金，是比盲目重仓单一方向更明智的策略。AI产业没有终结，市场也没有终结——它只是从海外无序堆卡、赛道普涨狂欢的单极时代，切换到了<strong>逻辑为王、多线均衡、等待选择</strong>的新周期。</p>
 </div>
 
 <div class="warn">
@@ -573,7 +541,7 @@ a {color:var(--a);text-decoration:none;}
 </div>
 
 <div class="footer">
-  数据来源：NeoData金融搜索（创业板指/科创50/半导体/CPO/光通信/PCB板块及个股行情）、A股深度复盘_20260720.md | 生成时间：2026-07-20 收盘后 | 仅供参考
+  数据来源：NeoData金融搜索（创业板指/科创50/半导体/CPO/光通信/PCB板块及个股7月行情）、A股深度复盘_20260720.md | 生成时间：2026-07-20 | 仅供参考
 </div>
 
 </body>
