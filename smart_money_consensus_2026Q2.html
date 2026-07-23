@@ -228,6 +228,22 @@
 
     /* Validation panel */
     .val-details > summary { padding: 14px 16px; font-size: 14px; }
+
+    /* WeChat reading optimizations */
+    body { line-height: 1.9; }
+    h2 { font-size: 1.15em; }
+    h3 { font-size: 1.05em; }
+    .card { padding: 16px 18px; }
+    .card p, .card li { font-size: 14px; }
+    table { font-size: 0.82em; }
+    th, td { padding: 7px 8px; white-space: nowrap; }
+    .flx { flex-direction: column; gap: 10px; }
+    .fc { min-width: 100%; padding: 14px; }
+    .fc h4 { font-size: 0.95em; }
+    blockquote { padding: 10px 14px; font-size: 13px; }
+    .disclaimer { padding: 12px 16px; font-size: 12px; margin: 16px 0; }
+    .update-badge { font-size: 12px; padding: 5px 14px; }
+  }
     .val-wrap { padding: 16px 16px; border-radius: 10px; }
     .val-head h3 { font-size: 14px; }
     .val-sub { font-size: 11px; }
@@ -717,138 +733,126 @@
     </div>
   </div>
 
-  <!-- ============ 公募基金二季报（7/21披露完毕） ============ -->
+  <!-- ============ 公募基金二季报（中金公司 7/22 发布，数据截至 2026/6/30） ============ -->
   <div class="section">
-    <h2>📊 公募基金 2026 Q2 持仓全景（7/21 披露完毕）</h2>
-    <div class="update-badge">7/22 更新</div>
+    <h2>📊 公募基金 2026 Q2 持仓全景</h2>
+    <div class="update-badge">7/23 更新 · 数据截至 2026/06/30 · 来源：中金公司研究部</div>
 
     <div class="card">
-      <h3>📌 核心变化：消费股近十年首次全部退出前十，硬科技彻底主导</h3>
+      <h3>📌 核心变化：科技赛道单季主导，持股集中度历史性跳升</h3>
       <p style="font-size:13px; color:var(--gray); line-height:1.8; margin-top:8px;">
-        截至 2026 年二季度末，公募基金管理规模达 <strong>39.66 万亿元</strong>（较 Q1 增 2.14 万亿），股票持仓总市值 <strong>8.84 万亿元</strong>（较 Q1 增 7745 亿，+9.6%）。证券时报·天相投顾数据显示，<strong>消费股近十年来首次全部退出公募十大重仓股榜单</strong>，A股正式形成硬科技成长主线主导的重仓新格局。
+        截至 2026 年 6 月 30 日，全部公募基金资产总值达 <strong>41.4 万亿元</strong>（较 Q1 扩张约 2.1 万亿），股票资产 <strong>8.8 万亿元</strong>，占总值 <strong>21.4%</strong>（+0.8pp）。主动偏股型基金股票仓位 <strong>86.2%</strong>，A 股仓位由 73.9% 升至 <strong>78%</strong>。<strong>重仓前 50 家公司市值占比从 42.8% 飙升至 55.2%</strong>（+12.4pp），前 100 家从 55.4% 升至 <strong>68.2%</strong>——持股集中度为近年最高水平，公募在科技赛道形成极强抱团。
       </p>
     </div>
 
     <div class="card">
-      <h3>🏆 公募基金 Q2 前十大重仓股（截至 2026/6/30）</h3>
+      <h3>📊 板块配置：科创板仓位单季暴增 9.8pp</h3>
       <table class="data-table">
-        <thead>
-          <tr><th>排名</th><th>股票名称</th><th>持仓市值</th><th>被基金数</th><th>Q1→Q2 变化</th></tr>
-        </thead>
+        <thead><tr><th>板块</th><th>Q2 仓位</th><th>较 Q1 变化</th><th>超配状态</th></tr></thead>
         <tbody>
-          <tr style="background:var(--gold-light);">
-            <td><strong>1</strong></td><td><strong>中际旭创</strong></td><td>1,662.53 亿</td><td>1,816 只</td><td>🆕 取代宁德时代登顶（连续6期首位的宁王退居第五）</td>
-          </tr>
-          <tr>
-            <td><strong>2</strong></td><td><strong>新易盛</strong></td><td>—</td><td>1,287 只</td><td>↑ 光模块第二梯队，排名上升</td>
-          </tr>
-          <tr>
-            <td><strong>3</strong></td><td><strong>东山精密</strong></td><td>—</td><td>—</td><td>🆕 新晋前十（电子制造）</td>
-          </tr>
-          <tr>
-            <td><strong>4</strong></td><td><strong>寒武纪</strong></td><td>—</td><td>—</td><td>🆕 新晋前十（国产 AI 芯片）</td>
-          </tr>
-          <tr>
-            <td><strong>5</strong></td><td><strong>宁德时代</strong></td><td>—</td><td>1,304 只</td><td>↓ 从第1退居第5（被减仓但仍在前十）</td>
-          </tr>
-          <tr>
-            <td><strong>6</strong></td><td><strong>北方华创</strong></td><td>—</td><td>—</td><td>🆕 新晋前十（半导体设备）</td>
-          </tr>
-          <tr>
-            <td><strong>7</strong></td><td><strong>兆易创新</strong></td><td>—</td><td>—</td><td>🆕 首次跻身前十（存储）</td>
-          </tr>
-          <tr>
-            <td><strong>8</strong></td><td><strong>源杰科技</strong></td><td>—</td><td>—</td><td>🆕 新晋前十（光芯片）</td>
-          </tr>
-          <tr>
-            <td><strong>9</strong></td><td><strong>中微公司</strong></td><td>—</td><td>—</td><td>🆕 新晋前十（半导体设备）</td>
-          </tr>
-          <tr>
-            <td><strong>10</strong></td><td><strong>三环集团</strong></td><td>—</td><td>—</td><td>🆕 首次跻身前十（电子元件）</td>
-          </tr>
+          <tr><td><strong>主板</strong></td><td>43.6%</td><td class="dn" style="color:var(--green);">-14.1pp</td><td>低配约 19.1pp</td></tr>
+          <tr style="background:var(--green-light);"><td><strong>科创板</strong></td><td><strong>26.7%</strong></td><td class="up" style="color:var(--red);">+9.8pp</td><td>超配约 12.3pp</td></tr>
+          <tr style="background:var(--green-light);"><td><strong>创业板</strong></td><td><strong>29.6%</strong></td><td class="up" style="color:var(--red);">+4.4pp</td><td>超配约 7.2pp</td></tr>
+          <tr><td>北交所</td><td>—</td><td class="dn" style="color:var(--green);">-0.1pp</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>📈 行业配置：电子单季加仓 +21.3pp，历史级别的仓位迁移</h3>
+      <table class="data-table">
+        <thead><tr><th>加仓行业</th><th>仓位变化</th><th>减仓行业</th><th>仓位变化</th></tr></thead>
+        <tbody>
+          <tr style="background:var(--green-light);"><td><strong>电子</strong></td><td class="up" style="color:var(--red);"><strong>+21.3pp</strong></td><td>电力设备</td><td class="dn" style="color:var(--green);">-5.5pp</td></tr>
+          <tr style="background:var(--green-light);"><td><strong>通信</strong></td><td class="up" style="color:var(--red);"><strong>+3.9pp</strong></td><td>医药生物</td><td class="dn" style="color:var(--green);">-3.3pp</td></tr>
+          <tr style="background:var(--green-light);"><td>建筑材料（玻纤）</td><td class="up" style="color:var(--red);">+1.0pp</td><td>食品饮料</td><td class="dn" style="color:var(--green);">-3.2pp</td></tr>
+          <tr style="background:var(--green-light);"><td>机械设备</td><td class="up" style="color:var(--red);">+1.0pp</td><td>有色金属</td><td class="dn" style="color:var(--green);">-3.0pp</td></tr>
+          <tr><td></td><td></td><td>汽车</td><td class="dn" style="color:var(--green);">-2.3pp</td></tr>
+          <tr><td></td><td></td><td>基础化工</td><td class="dn" style="color:var(--green);">-1.9pp</td></tr>
+          <tr><td></td><td></td><td>家电/银行/石化/非银/煤炭</td><td class="dn" style="color:var(--green);">各 -0.3~0.9pp</td></tr>
         </tbody>
       </table>
       <div style="margin-top:10px; background:var(--gold-light); border-radius:8px; padding:8px 14px; font-size:12px; color:#b45309;">
-        ⚠️ <strong>历史性变化：</strong>前十重仓股<strong>全部为 A 股硬科技成长股</strong>，集中在前沿科技、稀缺资源、高端制造三大板块。贵州茅台、五粮液等传统白酒消费龙头、港股互联网龙头集体退出前十——这在近十年尚属首次。
+        ⚠️ <strong>历史性信号：</strong>电子 +21.3pp 的单季加仓幅度，在公募历史上极为罕见。减仓方向高度集中——电力设备/医药/食品饮料/有色四个行业合计减仓 15pp，基本等于电子的增量。这是一次<strong>"抛弃旧核心、全面拥抱硬科技"</strong>的结构性仓位大迁徙。
       </div>
     </div>
 
     <div class="card">
-      <h3>📉 Q2 减持规模 TOP10</h3>
+      <h3>🏆 公募 Q2 前十大重仓股</h3>
+      <p style="font-size:12px; color:var(--gray);">数据截至 2026/06/30 · 来源：天相投顾</p>
       <table class="data-table">
-        <thead><tr><th>排名</th><th>股票</th><th>板块</th></tr></thead>
+        <thead><tr><th>排名</th><th>股票</th><th>持仓市值</th><th>被基金数</th><th>Q1→Q2 变化</th></tr></thead>
         <tbody>
-          <tr><td>1</td><td>宁德时代</td><td>电力设备（获利了结）</td></tr>
-          <tr><td>2</td><td>贵州茅台</td><td>白酒（消费退潮）</td></tr>
-          <tr><td>3</td><td>紫金矿业</td><td>贵金属</td></tr>
-          <tr><td>4</td><td>思源电气</td><td>电力设备</td></tr>
-          <tr><td>5</td><td>信立泰</td><td>医药</td></tr>
-          <tr><td>6</td><td>五粮液</td><td>白酒</td></tr>
-          <tr><td>7</td><td>中国平安</td><td>金融</td></tr>
-          <tr><td>8</td><td>赤峰黄金</td><td>贵金属</td></tr>
-          <tr><td>9</td><td>山西汾酒</td><td>白酒</td></tr>
-          <tr><td>10</td><td>中金黄金</td><td>贵金属</td></tr>
+          <tr style="background:var(--gold-light);"><td><strong>1</strong></td><td><strong>中际旭创</strong></td><td>1,662 亿</td><td>1,816 只</td><td>🆕 取代宁德时代登顶（宁王连续6期首位终结）</td></tr>
+          <tr><td><strong>2</strong></td><td><strong>新易盛</strong></td><td>—</td><td>1,287 只</td><td>↑ 光模块第二梯队</td></tr>
+          <tr><td><strong>3</strong></td><td><strong>东山精密</strong></td><td>—</td><td>—</td><td>🆕 新晋（电子制造）</td></tr>
+          <tr><td><strong>4</strong></td><td><strong>寒武纪</strong></td><td>—</td><td>—</td><td>🆕 新晋（国产 AI 芯片）</td></tr>
+          <tr><td><strong>5</strong></td><td><strong>宁德时代</strong></td><td>—</td><td>1,304 只</td><td>↓ 退居第五</td></tr>
+          <tr><td><strong>6</strong></td><td><strong>北方华创</strong></td><td>—</td><td>—</td><td>🆕 新晋（半导体设备）</td></tr>
+          <tr><td><strong>7</strong></td><td><strong>兆易创新</strong></td><td>—</td><td>—</td><td>🆕 首次跻身前十（存储）</td></tr>
+          <tr><td><strong>8</strong></td><td><strong>源杰科技</strong></td><td>—</td><td>—</td><td>🆕 新晋（光芯片）</td></tr>
+          <tr><td><strong>9</strong></td><td><strong>中微公司</strong></td><td>—</td><td>—</td><td>🆕 新晋（半导体设备）</td></tr>
+          <tr><td><strong>10</strong></td><td><strong>三环集团</strong></td><td>—</td><td>—</td><td>🆕 首次跻身前十（电子元件）</td></tr>
         </tbody>
       </table>
-      <div style="margin-top:8px; font-size:12px; color:var(--gray);">减持板块分布：大消费（白酒）→ 电力设备 → 贵金属 → A+H 两地上市标的 → 传媒/化工/整车/军工/银行</div>
-    </div>
-
-    <div class="card">
-      <h3>📊 加仓方向与资金腾挪路径</h3>
-      <p style="font-size:13px; color:var(--gray); line-height:1.8; margin-top:6px;">
-        公募投向 AI 产业链的增量资金，主要通过三条路径腾挪：① 压降 A 股医药、消费持仓；② 减持港股资产；③ 上述资金持续涌入高景气 AI 赛道。
-      </p>
-      <table class="data-table">
-        <thead><tr><th>加仓方向</th><th>代表标的</th><th>逻辑</th></tr></thead>
-        <tbody>
-          <tr style="background:var(--green-light);"><td>AI 光模块</td><td>中际旭创、新易盛</td><td>公募+北向最大共识，Q2 第一大重仓</td></tr>
-          <tr style="background:var(--green-light);"><td>AI 芯片</td><td>寒武纪</td><td>国产算力替代，北向 Q2 加仓 137 亿</td></tr>
-          <tr style="background:var(--green-light);"><td>半导体设备</td><td>北方华创、中微公司</td><td>扩产配套，国产替代刚性需求</td></tr>
-          <tr style="background:var(--green-light);"><td>光芯片/电子</td><td>源杰科技、东山精密、三环集团</td><td>AI 产业链上游稀缺材料/元件</td></tr>
-          <tr style="background:var(--green-light);"><td>存储</td><td>兆易创新</td><td>存储涨价周期（注：长鑫 7/27 上市后或重构）</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="card">
-      <h3>🔍 三方交叉验证：北向 vs 公募 vs 社保</h3>
-      <table class="data-table">
-        <thead><tr><th>机构</th><th>加仓方向</th><th>减仓方向</th><th>核心标的</th></tr></thead>
-        <tbody>
-          <tr>
-            <td><strong>北向资金</strong></td>
-            <td>电子跃升第一大重仓行业；电力设备连续加仓</td>
-            <td>消费/家电净卖出超 40 亿</td>
-            <td>宁德时代(+554亿)、中际旭创(持仓>900亿)、寒武纪(+137亿)</td>
-          </tr>
-          <tr>
-            <td><strong>公募基金</strong></td>
-            <td>AI 硬科技全面加仓，前十全为科技</td>
-            <td>白酒/消费/贵金属/港股</td>
-            <td>中际旭创(1662亿)、新易盛、寒武纪</td>
-          </tr>
-          <tr>
-            <td><strong>社保基金</strong></td>
-            <td>医药生物（Q2 增持 7 只医药股）</td>
-            <td>—</td>
-            <td>华大智造、佰仁医疗（新进创新药/高端器械）</td>
-          </tr>
-        </tbody>
-      </table>
-      <div style="margin-top:10px; background:var(--blue-light); border-radius:8px; padding:8px 14px; font-size:12px; color:#1e40af;">
-        💡 <strong>共识矩阵更新：</strong>北向+公募在 AI 光模块（中际旭创/新易盛）、AI 芯片（寒武纪）、半导体设备（北方华创/中微）三大方向形成<strong>最强共识</strong>。社保基金则独立配置创新药，形成互补。三方共识方向与 7 月暴跌前的持仓高度一致——这也解释了为什么 7 月科技暴跌对机构杀伤力如此之大：公募前十重仓全在科技，无路可退。
+      <div style="margin-top:10px; background:var(--gold-light); border-radius:8px; padding:8px 14px; font-size:12px; color:#b45309;">
+        ⚠️ 消费股近十年首次全部退出前十，贵州茅台/五粮液/港股互联网龙头集体淡出。前十大<strong>全部为 A 股硬科技成长股</strong>。
       </div>
+    </div>
+
+    <div class="card">
+      <h3>🔥 热门赛道仓位变动</h3>
+      <table class="data-table">
+        <thead><tr><th>加仓赛道</th><th>仓位变化</th><th>减仓赛道</th><th>仓位变化</th></tr></thead>
+        <tbody>
+          <tr style="background:var(--green-light);"><td><strong>半导体</strong></td><td class="up" style="color:var(--red);">+12.4pp</td><td>新能源车产业链</td><td class="dn" style="color:var(--green);">-3.9pp</td></tr>
+          <tr style="background:var(--green-light);"><td><strong>消费电子</strong></td><td class="up" style="color:var(--red);">+8.8pp</td><td>电池</td><td class="dn" style="color:var(--green);">-3.7pp</td></tr>
+          <tr style="background:var(--green-light);"><td><strong>通信设备</strong></td><td class="up" style="color:var(--red);">+4.4pp</td><td>酒</td><td class="dn" style="color:var(--green);">-2.8pp</td></tr>
+          <tr><td></td><td></td><td>创新药</td><td class="dn" style="color:var(--green);">-1.6pp</td></tr>
+          <tr><td></td><td></td><td>光伏风电</td><td class="dn" style="color:var(--green);">-1.1pp</td></tr>
+          <tr><td></td><td></td><td>军工/机器人</td><td class="dn" style="color:var(--green);">-0.3~0.8pp</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>🇭🇰 港股与资金面</h3>
+      <div class="flx">
+        <div class="fc">
+          <h4>港股配置大幅下降</h4>
+          <p style="font-size:.85em;">可投港股主动偏股基金港股仓位降至 <strong>13.3%</strong>（-6.3pp）。Q2 恒生指数 <span style="color:var(--green);">-7.7%</span>、恒生科技 <span style="color:var(--green);">-3.8%</span>，港股表现显著落后于 A 股科技。加仓中芯国际，减仓阿里巴巴/中国海洋石油。</p>
+        </div>
+        <div class="fc">
+          <h4>净赎回扩大，但ETF接盘</h4>
+          <p style="font-size:.85em;">主动偏股基金净赎回约 <strong>2,094 亿元</strong>（较 Q1 扩张）。新发仅 857 亿份（回落）。但股票型 ETF 发行 316 亿份（+22.2%），宽基 ETF 减 0.4 万亿、主题 ETF 增 0.1 万亿——<strong>通信设备、半导体材料设备</strong>获 ETF 资金流入较多。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>📊 注：中金公司指出的仓位结构变化要点</h3>
+      <table class="data-table">
+        <thead><tr><th>维度</th><th>Q1</th><th>Q2</th><th>变化</th></tr></thead>
+        <tbody>
+          <tr><td>股票占总值比重</td><td>20.6%</td><td><strong>21.4%</strong></td><td class="up" style="color:var(--red);">+0.8pp</td></tr>
+          <tr><td>债券占比</td><td>53.7%</td><td><strong>51.6%</strong></td><td class="dn" style="color:var(--green);">-2.1pp</td></tr>
+          <tr><td>现金占比</td><td>—</td><td>继续上升</td><td class="up" style="color:var(--red);">+0.8pp（连续6季上升）</td></tr>
+          <tr><td>主动偏股A股仓位</td><td>73.9%</td><td><strong>78.0%</strong></td><td class="up" style="color:var(--red);">+4.1pp</td></tr>
+          <tr><td>重仓前50占比</td><td>42.8%</td><td><strong>55.2%</strong></td><td class="up" style="color:var(--red);">+12.4pp</td></tr>
+          <tr><td>上季度基金收益率中位数</td><td>-1.2%</td><td><strong>+11.2%</strong></td><td class="up" style="color:var(--red);">大幅改善</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
   <!-- ============ 番外：张坤二季报深度解读 ============ -->
   <div class="section">
     <h2>🌟 番外：张坤 2026 Q2 投资理念之变</h2>
-    <div class="update-badge">7/22 更新</div>
+    <div class="update-badge">7/23 更新</div>
 
     <div class="card" style="border-left:4px solid var(--purple);">
       <p style="font-size:13px; color:var(--gray); line-height:1.8;">
-        张坤——公募基金界最具影响力的消费价值投资者，管理易方达蓝筹精选等 4 只基金。他的 2026 年二季报呈现出<strong>"大幅降仓 + 风格转向"</strong>的核心特征，堪称其职业生涯中最激进的一次调仓。以下基于东方财富/澎湃新闻整理的季报数据，对比其投资理念的变化。
+        张坤——公募基金界最具影响力的消费价值投资者，管理易方达蓝筹精选等 4 只基金。他的 2026 年二季报呈现出<strong>"大幅降仓 + 风格转向"</strong>的核心特征，堪称其职业生涯中最激进的一次调仓。
       </p>
     </div>
 
@@ -1003,7 +1007,7 @@
   <!-- ============ 深度讨论：公募接盘科技最后一棒？ ============ -->
   <div class="section">
     <h2>🤔 深度讨论：公募接盘科技最后一棒？</h2>
-    <div class="update-badge">7/22 更新</div>
+    <div class="update-badge">7/23 更新</div>
 
     <div class="card" style="border-left:4px solid var(--red);">
       <p style="font-size:13px; color:var(--gray); line-height:1.9;">
@@ -1172,7 +1176,7 @@
 
   <!-- 免责声明 -->
   <div class="disclaimer">
-    ⚠️ <strong>风险提示与数据说明：</strong>本报告北向资金部分为 2026 Q2 完整数据。公募基金部分于 7/21 披露完毕，数据来源为天相投顾/证券时报/东方财富/澎湃新闻/易简财经。张坤番外及深度讨论参考了东方财富网（澎湃新闻原稿）和微信公众号文章。基金研究索引参考本站 fund_research_index_20260401.html。所有数值经「数据校验中心」校验。投资有风险，决策需谨慎，请结合自身风险偏好独立判断。数据来源：Wind / Choice / 天相投顾 / 证券时报 / 东方财富 / NeoData 实时检索。
+    ⚠️ <strong>风险提示与数据说明：</strong>本报告北向资金数据为 2026 Q2 完整数据。公募基金部分基于中金公司研究部 7/22 报告（李求索/魏冬/黄凯松）与天相投顾/证券时报，数据截至 2026/06/30。张坤番外及深度讨论参考东方财富网/澎湃新闻/易简财经。基金研究索引参考本站 fund_research_index_20260401.html。所有数值经交叉校验。投资有风险，决策需谨慎。数据来源：中金公司研究部 / 天相投顾 / Wind / Choice / 证券时报 / 东方财富 / NeoData。
   </div>
 
 </div>
