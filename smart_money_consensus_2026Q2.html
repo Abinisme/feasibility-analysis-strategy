@@ -324,8 +324,8 @@
       <div class="stat-label">已披露</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num" style="color:#fbbf24;">公募⏳</div>
-      <div class="stat-label">待披露</div>
+      <div class="stat-num" style="color:#1a6bc6;">公募✓</div>
+      <div class="stat-label">已披露</div>
     </div>
     <div class="stat-item">
       <div class="stat-num" style="color:#fbbf24;">机构⏳</div>
@@ -347,7 +347,7 @@
   <!-- 数据状态条 -->
   <div class="status-strip">
     <div class="status-chip"><span class="dot dot-ok"></span> 北向资金 2026Q2：已披露</div>
-    <div class="status-chip"><span class="dot dot-wait"></span> 公募基金 2026Q2：预计7月下旬披露</div>
+    <div class="status-chip"><span class="dot dot-ok"></span> 公募基金 2026Q2：已于7月21日披露</div>
     <div class="status-chip"><span class="dot dot-wait"></span> 机构长线资金 2026Q2：预计8月披露</div>
     <div class="status-chip"><span class="dot dot-pending"></span> 共识矩阵/行业方向：当前仅北向维度有效</div>
   </div>
@@ -642,13 +642,66 @@
     </div>
   </div>
 
-  <!-- ② 公募基金（待披露） -->
+  <!-- ② 公募基金（已于7月21日披露） -->
   <div class="section">
     <div class="section-title"><div class="dot dot-blue"></div>② 公募基金 —— 2026年二季度</div>
-    <div class="pending-box">
-      <div class="p-icon">⏳</div>
-      <div class="p-title">数据待披露</div>
-      <div class="p-note">2026Q2 公募基金季报预计 2026-07 下旬起由天相投顾 / Wind 陆续披露。当前不可用，避免基于占位数据得出结论。</div>
+    <p class="data-time">数据截至 2026-06-30 | 已于2026年7月21日披露完毕 | 来源：中金公司研究部 / 天相投顾</p>
+
+    <div class="cards-grid-2">
+      <div class="kpi">
+        <div class="kpi-num" style="color:var(--blue);">41.4<span class="kpi-unit">万亿</span></div>
+        <div class="kpi-label">公募总规模</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-num" style="color:var(--red);">86.2<span class="kpi-unit">%</span></div>
+        <div class="kpi-label">主动偏股仓位</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-num" style="color:var(--red);">+21.3<span class="kpi-unit">pp</span></div>
+        <div class="kpi-label">电子单季加仓（历史级）</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-num" style="color:var(--gold);">55.2<span class="kpi-unit">%</span></div>
+        <div class="kpi-label">重仓前50集中度</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">公募基金 TOP20 重仓股（截至 2026/06/30）</div>
+        <div class="card-tag tag-blue">持仓市值前二十</div>
+      </div>
+      <div class="matrix-wrap">
+        <table class="stock-table">
+          <thead>
+            <tr><th>排名</th><th>个股</th><th>板块</th><th>持仓市值(亿)</th><th>Q2股价(前复权)</th><th>Q1→Q2趋势</th><th>核心逻辑</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td><div class="stock-name">中际旭创</div><div class="stock-code">300308.SZ</div></td><td>通信(光模块)</td><td class="num-red">1,662</td><td><span style="color:#e8372a;">+111.36%</span></td><td class="num-red">🆕新晋登顶</td><td>AI光模块龙头，取代宁德</td></tr>
+            <tr><td>2</td><td><div class="stock-name">新易盛</div><div class="stock-code">300502.SZ</div></td><td>通信(光模块)</td><td>—</td><td><span style="color:#e8372a;">+84.90%</span></td><td class="num-red">↑上升</td><td>光模块第二梯队，H1净利70-80亿</td></tr>
+            <tr><td>3</td><td><div class="stock-name">东山精密</div><div class="stock-code">002384.SZ</div></td><td>电子(电子制造)</td><td>—</td><td>—</td><td class="num-red">🆕新晋</td><td>电子制造龙头，国产算力配套</td></tr>
+            <tr><td>4</td><td><div class="stock-name">寒武纪</div><div class="stock-code">688256.SH</div></td><td>电子(AI芯片)</td><td>—</td><td><span style="color:#e8372a;">+126.44%</span></td><td class="num-red">🆕新晋</td><td>国产AI芯片龙头</td></tr>
+            <tr><td>5</td><td><div class="stock-name">宁德时代</div><div class="stock-code">300750.SZ</div></td><td>电力设备(电池)</td><td>—</td><td><span style="color:#6b7280;">-1.45%</span></td><td class="num-green">↓退居第五</td><td>连续6期首位终结</td></tr>
+            <tr><td>6</td><td><div class="stock-name">北方华创</div><div class="stock-code">002371.SZ</div></td><td>电子(半导体设备)</td><td>—</td><td><span style="color:#e8372a;">+96.50%</span></td><td class="num-red">🆕新晋</td><td>半导体设备龙头</td></tr>
+            <tr><td>7</td><td><div class="stock-name">兆易创新</div><div class="stock-code">603986.SH</div></td><td>电子(存储)</td><td>—</td><td><span style="color:#e8372a;">+220.55%</span></td><td class="num-red">🆕新晋</td><td>存储涨价周期（长鑫7/27上市重定价）</td></tr>
+            <tr><td>8</td><td><div class="stock-name">源杰科技</div><div class="stock-code">688498.SH</div></td><td>电子(光芯片)</td><td>—</td><td>—</td><td class="num-red">🆕新晋</td><td>光芯片国产替代</td></tr>
+            <tr><td>9</td><td><div class="stock-name">中微公司</div><div class="stock-code">688012.SH</div></td><td>电子(半导体设备)</td><td>—</td><td><span style="color:#e8372a;">+122.89%</span></td><td class="num-red">🆕新晋</td><td>刻蚀设备龙头</td></tr>
+            <tr><td>10</td><td><div class="stock-name">三环集团</div><div class="stock-code">300408.SZ</div></td><td>电子(电子元件)</td><td>—</td><td>—</td><td class="num-red">🆕新晋</td><td>电子陶瓷元件龙头</td></tr>
+            <tr style="background:#f8f8f8;">
+              <td colspan="7" style="text-align:center;color:var(--gray);font-size:12px;padding:8px;">—— 以下为 Q2 减持较为明显的存量重仓 ——</td>
+            </tr>
+            <tr><td>11+</td><td><div class="stock-name">贵州茅台</div><div class="stock-code">600519.SH</div></td><td>食品饮料(白酒)</td><td>—</td><td><span style="color:#1aaa55;">-17.18%</span></td><td class="num-green">↓减持</td><td>近十年首次退出前十</td></tr>
+            <tr><td>11+</td><td><div class="stock-name">五粮液</div><div class="stock-code">000858.SZ</div></td><td>食品饮料(白酒)</td><td>—</td><td>—</td><td class="num-green">↓减持</td><td>消费龙头全面退出</td></tr>
+            <tr><td>11+</td><td><div class="stock-name">紫金矿业</div><div class="stock-code">601899.SH</div></td><td>有色金属</td><td>—</td><td><span style="color:#1aaa55;">-25.56%</span></td><td class="num-green">↓减持</td><td>贵金属遭减持</td></tr>
+            <tr><td>11+</td><td><div class="stock-name">中国平安</div><div class="stock-code">601318.SH</div></td><td>非银金融</td><td>—</td><td>—</td><td class="num-green">↓减持</td><td>金融板块减持</td></tr>
+            <tr><td>11+</td><td><div class="stock-name">阿里巴巴</div><div class="stock-code">09988.HK</div></td><td>互联网(港股)</td><td>—</td><td>—</td><td class="num-green">↓减持</td><td>港股互联网集体退出前十</td></tr>
+            <tr><td>11+</td><td><div class="stock-name">中芯国际</div><div class="stock-code">00981.HK</div></td><td>半导体(港股)</td><td>—</td><td>—</td><td class="num-red">🆕加仓</td><td>港股唯一加仓的科技龙头（张坤新进）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:10px; background:var(--gold-light); border-radius:8px; padding:8px 14px; font-size:12px; color:#b45309;">
+        ⚠️ <strong>历史性变化：</strong>消费股近十年首次全部退出前十。电子单季加仓 +21.3pp，科创板仓位暴增 +9.8pp→26.7%。持股集中度：前50大占比从42.8%飙升至55.2%。公募在科技赛道形成历史级抱团。中金公司详细分析见下方。
+      </div>
     </div>
   </div>
 
@@ -664,39 +717,39 @@
 
   <!-- ④ 三方共识矩阵（部分） -->
   <div class="section">
-    <div class="section-title"><div class="dot dot-purple"></div>④ 聪明钱共识矩阵 — 当前仅北向维度有效（前二十完整）</div>
+    <div class="section-title"><div class="dot dot-purple"></div>④ 聪明钱共识矩阵 — 北向+公募双维度（前二十完整）</div>
     <div class="card">
       <div class="card-header">
         <div class="card-title">三方共识矩阵（北向前二十版）</div>
-        <div class="card-tag tag-purple">公募/机构 待披露</div>
+        <div class="card-tag tag-blue">公募已披露 · 机构待披露</div>
       </div>
       <div class="matrix-wrap">
         <table class="stock-table">
           <thead>
-            <tr><th>个股</th><th>板块</th><th>Q2表现(前复权)</th><th>北向资金 ✓</th><th>公募基金</th><th>机构长线</th><th>当前共识强度</th></tr>
+            <tr><th>个股</th><th>板块</th><th>Q2表现(前复权)</th><th>北向资金 ✓</th><th>公募基金 ✓</th><th>机构长线</th><th>当前共识强度</th></tr>
           </thead>
           <tbody>
-            <tr><td><div class="stock-name">宁德时代</div><div class="stock-code">300750</div></td><td>电力设备</td><td><span style="color:#6b7280;font-weight:600;">-1.45%</span></td><td class="num-red">✅ 市值第一(3514亿)</td><td style="color:var(--gray)">待披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向极强</span></td></tr>
-            <tr><td><div class="stock-name">中际旭创</div><div class="stock-code">300308</div></td><td>通信(光模块)</td><td><span style="color:#e8372a;font-weight:600;">+111.36%</span></td><td class="num-red">✅ 新晋第二(931亿)</td><td style="color:var(--gray)">待披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向极强</span></td></tr>
-            <tr><td><div class="stock-name">北方华创</div><div class="stock-code">002371</div></td><td>电子(半导体)</td><td><span style="color:#e8372a;font-weight:600;">+96.50%</span></td><td class="num-red">✅ 新晋前三(835亿)</td><td style="color:var(--gray)">待披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向极强</span></td></tr>
-            <tr><td><div class="stock-name">中微公司</div><div class="stock-code">688012</div></td><td>电子(半导体)</td><td><span style="color:#e8372a;font-weight:600;">+122.89%</span></td><td class="num-red">✅ 第六(591亿)·净买+169亿</td><td style="color:var(--gray)">待披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向极强</span></td></tr>
-            <tr><td><div class="stock-name">澜起科技</div><div class="stock-code">688008</div></td><td>电子(AI芯片)</td><td><span style="color:#e8372a;font-weight:600;">+138.44%</span></td><td class="num-red">✅ 第七(452亿)·持平</td><td style="color:var(--gray)">待披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向强</span></td></tr>
-            <tr><td><div class="stock-name">立讯精密</div><div class="stock-code">002475</div></td><td>电子(消费电子)</td><td><span style="color:#1aaa55;font-weight:600;">+39.68%</span></td><td class="num-red">✅ 第八(407亿)·净买+110亿</td><td style="color:var(--gray)">待披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向强</span></td></tr>
-            <tr><td><div class="stock-name">寒武纪</div><div class="stock-code">688256</div></td><td>电子(AI芯片)</td><td><span style="color:#e8372a;font-weight:600;">+126.44%</span></td><td class="num-red">✅ 十一(351亿)·净买+131亿</td><td style="color:var(--gray)">待披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向强</span></td></tr>
-            <tr><td><div class="stock-name">新易盛</div><div class="stock-code">300502</div></td><td>通信(光模块)</td><td><span style="color:#e8372a;font-weight:600;">+84.90%</span></td><td class="num-red">✅ 十二(350亿)·净买+112亿</td><td style="color:var(--gray)">待披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向强</span></td></tr>
-            <tr><td><div class="stock-name">美的集团</div><div class="stock-code">000333</div></td><td>家用电器</td><td><span style="color:#1aaa55;font-weight:600;">+3.30%</span></td><td>✅ 第四(675亿)·净卖-61亿</td><td style="color:var(--gray)">待披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-gold">北向中</span></td></tr>
-            <tr><td><div class="stock-name">贵州茅台</div><div class="stock-code">600519</div></td><td>食品饮料</td><td><span style="color:#1aaa55;font-weight:600;">-17.18%</span></td><td>✅ 第五(637亿)·净卖-66亿</td><td style="color:var(--gray)">待披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-gold">北向中</span></td></tr>
-            <tr><td><div class="stock-name">兆易创新</div><div class="stock-code">603986</div></td><td>电子(存储)</td><td><span style="color:#e8372a;font-weight:600;">+220.55%</span></td><td>✅ 十六(311亿)·净卖-14亿</td><td style="color:var(--gray)">待披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-gold">北向中</span></td></tr>
+            <tr><td><div class="stock-name">宁德时代</div><div class="stock-code">300750</div></td><td>电力设备</td><td><span style="color:#6b7280;font-weight:600;">-1.45%</span></td><td class="num-red">✅ 市值第一(3514亿)</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向极强</span></td></tr>
+            <tr><td><div class="stock-name">中际旭创</div><div class="stock-code">300308</div></td><td>通信(光模块)</td><td><span style="color:#e8372a;font-weight:600;">+111.36%</span></td><td class="num-red">✅ 新晋第二(931亿)</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向极强</span></td></tr>
+            <tr><td><div class="stock-name">北方华创</div><div class="stock-code">002371</div></td><td>电子(半导体)</td><td><span style="color:#e8372a;font-weight:600;">+96.50%</span></td><td class="num-red">✅ 新晋前三(835亿)</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向极强</span></td></tr>
+            <tr><td><div class="stock-name">中微公司</div><div class="stock-code">688012</div></td><td>电子(半导体)</td><td><span style="color:#e8372a;font-weight:600;">+122.89%</span></td><td class="num-red">✅ 第六(591亿)·净买+169亿</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向极强</span></td></tr>
+            <tr><td><div class="stock-name">澜起科技</div><div class="stock-code">688008</div></td><td>电子(AI芯片)</td><td><span style="color:#e8372a;font-weight:600;">+138.44%</span></td><td class="num-red">✅ 第七(452亿)·持平</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向强</span></td></tr>
+            <tr><td><div class="stock-name">立讯精密</div><div class="stock-code">002475</div></td><td>电子(消费电子)</td><td><span style="color:#1aaa55;font-weight:600;">+39.68%</span></td><td class="num-red">✅ 第八(407亿)·净买+110亿</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向强</span></td></tr>
+            <tr><td><div class="stock-name">寒武纪</div><div class="stock-code">688256</div></td><td>电子(AI芯片)</td><td><span style="color:#e8372a;font-weight:600;">+126.44%</span></td><td class="num-red">✅ 十一(351亿)·净买+131亿</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向强</span></td></tr>
+            <tr><td><div class="stock-name">新易盛</div><div class="stock-code">300502</div></td><td>通信(光模块)</td><td><span style="color:#e8372a;font-weight:600;">+84.90%</span></td><td class="num-red">✅ 十二(350亿)·净买+112亿</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向强</span></td></tr>
+            <tr><td><div class="stock-name">美的集团</div><div class="stock-code">000333</div></td><td>家用电器</td><td><span style="color:#1aaa55;font-weight:600;">+3.30%</span></td><td>✅ 第四(675亿)·净卖-61亿</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-gold">北向中</span></td></tr>
+            <tr><td><div class="stock-name">贵州茅台</div><div class="stock-code">600519</div></td><td>食品饮料</td><td><span style="color:#1aaa55;font-weight:600;">-17.18%</span></td><td>✅ 第五(637亿)·净卖-66亿</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-gold">北向中</span></td></tr>
+            <tr><td><div class="stock-name">兆易创新</div><div class="stock-code">603986</div></td><td>电子(存储)</td><td><span style="color:#e8372a;font-weight:600;">+220.55%</span></td><td>✅ 十六(311亿)·净卖-14亿</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-gold">北向中</span></td></tr>
           </tbody>
         </table>
       </div>
-      <div style="margin-top:10px; font-size:12px; color:var(--gray);">公募 / 机构两列待披露后补全，方可得出完整「三方共识强度」评级。共识强度（当前）仅反映北向单维度：市值排名靠前且净买入为正者标记「北向极强/强」，净卖出或纯股价驱动者标记「北向中」。</div>
+      <div style="margin-top:10px; font-size:12px; color:var(--gray);">✓ 公募基金已于7/21披露完毕，机构长线（社保/QFII）列待披露。当前共识基于北向+公募双维度，三方完整评级将在机构长线数据披露后更新。</div>
     </div>
   </div>
 
   <!-- ⑤ 共识行业方向（初步，仅北向） -->
   <div class="section">
-    <div class="section-title"><div class="dot dot-green"></div>⑤ 共识行业方向（初步 · 仅北向维度）</div>
+    <div class="section-title"><div class="dot dot-green"></div>⑤ 共识行业方向（北向 + 公募双维度）</div>
     <div class="cards-grid">
       <div class="highlight-box hb-red">
         <h4>🥇 北向Q2强信号</h4>
@@ -733,10 +786,10 @@
     </div>
   </div>
 
-  <!-- ============ 公募基金二季报（中金公司 7/22 发布，数据截至 2026/6/30） ============ -->
+  <!-- ============ 中金公司公募Q2详细分析 ============ -->
   <div class="section">
-    <h2>📊 公募基金 2026 Q2 持仓全景</h2>
-    <div class="update-badge">7/23 更新 · 数据截至 2026/06/30 · 来源：中金公司研究部</div>
+    <h2>📊 中金公司：公募 Q2 持仓详细分析</h2>
+    <div class="update-badge">7/23 更新 · 数据截至 2026/06/30 · 来源：中金公司研究部（李求索/魏冬/黄凯松）</div>
 
     <div class="card">
       <h3>📌 核心变化：科技赛道单季主导，持股集中度历史性跳升</h3>
