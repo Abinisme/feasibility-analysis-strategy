@@ -70,6 +70,10 @@
   .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .cards-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 
+  /* Flex row helper（双栏卡片） */
+  .flx { display: flex; gap: 14px; flex-wrap: wrap; margin: 12px 0; }
+  .fc { flex: 1; min-width: 260px; }
+
   /* Card */
   .card { background: var(--card); border-radius: 12px; border: 1px solid var(--border); padding: 20px; }
   .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
@@ -91,6 +95,7 @@
   .kpi-num.gold { color: #b45309; }
   .kpi-label { font-size: 12px; color: var(--gray); margin-top: 4px; }
   .kpi-sub { font-size: 11px; color: var(--gray); margin-top: 2px; }
+  .kpi-unit { font-size: 13px; font-weight: 600; color: var(--gray); margin-left: 2px; }
 
   /* Highlight box */
   .highlight-box { border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; }
@@ -119,6 +124,18 @@
   .num-red { color: var(--red); font-weight: 600; }
   .num-green { color: var(--green); font-weight: 600; }
   .num-blue { color: var(--blue); font-weight: 600; }
+
+  /* Data table (同 stock-table 风格) */
+  .data-table { width: 100%; border-collapse: collapse; }
+  .data-table th { font-size: 12px; color: var(--gray); padding: 6px 8px; text-align: left; border-bottom: 1px solid var(--border); }
+  .data-table td { font-size: 13px; padding: 8px 8px; border-bottom: 1px solid #f3f4f6; }
+  .data-table tr:last-child td { border-bottom: none; }
+
+  /* 涨跌色（A股惯例：红涨绿跌）与中性/金色 */
+  .up { color: var(--red); font-weight: 600; }
+  .dn { color: var(--green); font-weight: 600; }
+  .tg { color: var(--dark); }
+  .num-gold { color: #b45309; font-weight: 600; }
 
   /* Pending placeholder */
   .pending-box { background: repeating-linear-gradient(45deg, #fafafa, #fafafa 10px, #f1f5f9 10px, #f1f5f9 20px); border: 1px dashed #cbd5e1; border-radius: 10px; padding: 22px; text-align: center; color: var(--gray); }
@@ -172,6 +189,9 @@
   .tag-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
   .mini-tag { font-size: 11px; padding: 2px 9px; border-radius: 8px; background: #f1f5f9; color: var(--gray); border: 1px solid #e2e8f0; }
   .mini-tag.hot { background: var(--red-light); color: var(--red); border-color: #fca5a5; }
+
+  /* 更新徽标（⑥⑦⑧节标题下方） */
+  .update-badge { display: inline-block; font-size: 12px; color: var(--gray); background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 8px; padding: 4px 12px; margin-bottom: 14px; }
 
   /* ========== 响应式设计 ========== */
 
@@ -243,7 +263,8 @@
     blockquote { padding: 10px 14px; font-size: 13px; }
     .disclaimer { padding: 12px 16px; font-size: 12px; margin: 16px 0; }
     .update-badge { font-size: 12px; padding: 5px 14px; }
-  }
+
+    /* Validation panel */
     .val-wrap { padding: 16px 16px; border-radius: 10px; }
     .val-head h3 { font-size: 14px; }
     .val-sub { font-size: 11px; }
@@ -356,7 +377,7 @@
   <details class="val-details">
     <summary>
       <span class="dot dot-purple"></span>
-      🔍 数据校验中心 — 严格验证与校验模块（实时自校验）
+      数据校验中心 — 报告数据自检（实时）
       <span class="val-toggle-hint" id="val-hint">点击展开校验详情 ▼</span>
     </summary>
     <div class="val-wrap">
@@ -364,7 +385,7 @@
         <h3>报告数据完整性 / 准确性校验</h3>
         <span class="badge" id="val-overall">运行中…</span>
       </div>
-      <div class="val-sub">下述校验在页面加载时由内嵌引擎基于已披露数据实时重算，与 scripts/validate_smart_money_2026q2.py 共享同一套规则。FAIL = 硬性矛盾（禁止发布）；WARN = 已知待披露/需关注；PASS = 通过。</div>
+      <div class="val-sub">以下校验在页面加载时基于已披露数据实时重算，与 scripts/validate_smart_money_2026q2.py 共享同一套规则。FAIL = 硬性矛盾（禁止发布）；WARN = 已知待披露/需关注；PASS = 通过。</div>
       <div class="val-summary" id="val-summary"></div>
       <div class="matrix-wrap">
         <table class="val-table">
@@ -501,7 +522,7 @@
         </table>
       </div>
       <div style="margin-top:12px; background:var(--blue-light); border-radius:8px; padding:10px 14px; font-size:12px; color:var(--blue);">
-        📌 Q2股价表现 = 2026-04-01 至 06-30 区间涨跌（<strong>腾讯自选股 westock-data kline 前复权</strong>）。持股市值与排名来自东方财富 RPT_MUTUAL_HOLDRANK_NEW（2026-06-30 季度披露）。Q2净买卖 = 持股数量变动 × Q2 日均价（估算值，方向与量级可靠，精确金额以交易所/券商终端为准）。
+        Q2股价表现 = 2026-04-01 至 06-30 区间涨跌（<strong>腾讯自选股 westock-data kline 前复权</strong>）。持股市值与排名来自东方财富 RPT_MUTUAL_HOLDRANK_NEW（2026-06-30 季度披露）。Q2净买卖 = 持股数量变动 × Q2 日均价（估算值，方向与量级可靠，精确金额以交易所/券商终端为准）。
       </div>
       <div class="highlight-box hb-gold" style="margin-top:12px;">
         <h4>⚠️ 股价与资金背离的警示（前二十中 5 只 ⚠️股价驱动）</h4>
@@ -512,28 +533,28 @@
           <li><strong>北方华创</strong>：Q2 +96.50%，小幅净卖出-5.7亿，市值跃升由涨跌幅推动</li>
           <li><strong>澜起科技</strong>：Q2 +138.44%，基本持平无增量（-1.3亿），弹性来自股价</li>
         </ul>
-        <div style="margin-top:8px; font-size:12px; color:#b45309; background:rgba(255,255,255,0.5); border-radius:6px; padding:8px 12px;">说明：以上个股的"北向重仓"光环含估值水分，市值增长<strong>并非由外资增量买入</strong>驱动。相反，<strong>宁德时代（+550亿）</strong>、<strong>中微公司（+169亿）</strong>、<strong>潍柴动力（+151亿/增5亿股）</strong>、<strong>立讯精密（+110亿）</strong>、<strong>药明康德（+91亿）</strong>等是"股价+资金"双轮驱动，信号更扎实。数据来源：东方财富 RPT_MUTUAL_HOLDRANK_NEW + 腾讯自选股 kline 前复权（2026-07-13 更新）。</div>
+        <div style="margin-top:8px; font-size:12px; color:#b45309; background:rgba(255,255,255,0.5); border-radius:6px; padding:8px 12px;">说明：以上个股的"北向重仓"光环含估值水分，市值增长<strong>并非由外资增量买入</strong>驱动。相反，<strong>宁德时代（+554亿）</strong>、<strong>中微公司（+181亿）</strong>、<strong>潍柴动力（+151亿/增5亿股）</strong>、<strong>立讯精密（+111亿）</strong>、<strong>药明康德（+92亿）</strong>等是"股价+资金"双轮驱动，信号更扎实。数据来源：东方财富 RPT_MUTUAL_HOLDRANK_NEW + 腾讯自选股 kline 前复权（2026-07-13 更新）。</div>
       </div>
     </div>
 
     <!-- 二季度净买入/增持方向 -->
     <div class="cards-grid-2" style="margin-top:16px;">
       <div class="highlight-box hb-red">
-        <h4>🔺 Q2大幅加仓 / 资金+股价双驱动（真金白银流入）</h4>
+        <h4>Q2大幅加仓 / 资金+股价双驱动（真金白银流入）</h4>
         <ul>
-          <li><strong>宁德时代</strong>（电力设备/电池）净买+550亿，持股市值3,514亿稳居第一，Q2 <span style="color:#6b7280;font-weight:600;">-1.45%</span></li>
-          <li><strong>中微公司</strong>（电子/半导体）净买+169亿，Q2 <span style="color:#e8372a;font-weight:600;">+122.89%</span>，刻蚀设备龙头</li>
+          <li><strong>宁德时代</strong>（电力设备/电池）净买+554亿，持股市值3,514亿稳居第一，Q2 <span style="color:#6b7280;font-weight:600;">-1.45%</span></li>
+          <li><strong>中微公司</strong>（电子/半导体）净买+181亿，Q2 <span style="color:#e8372a;font-weight:600;">+122.89%</span>，刻蚀设备龙头</li>
           <li><strong>潍柴动力</strong>（汽车/零部件）净买+151亿、增持5亿股为股数第一，Q2 <span style="color:#1aaa55;font-weight:600;">+7.71%</span></li>
-          <li><strong>寒武纪</strong>（电子/半导体）净买+131亿，Q2 <span style="color:#e8372a;font-weight:600;">+126.44%</span></li>
-          <li><strong>新易盛</strong>（通信/通信设备）净买+112亿，Q2 <span style="color:#e8372a;font-weight:600;">+84.90%</span></li>
-          <li><strong>立讯精密</strong>（电子/消费电子）净买+110亿、增持1.63亿股，Q2 <span style="color:#1aaa55;font-weight:600;">+39.68%</span></li>
-          <li><strong>药明康德</strong>（医药生物/CXO）净买+91亿，Q2 <span style="color:#1aaa55;font-weight:600;">+21.79%</span></li>
+          <li><strong>寒武纪</strong>（电子/半导体）净买+137亿，Q2 <span style="color:#e8372a;font-weight:600;">+126.44%</span></li>
+          <li><strong>新易盛</strong>（通信/通信设备）净买+113亿，Q2 <span style="color:#e8372a;font-weight:600;">+84.90%</span></li>
+          <li><strong>立讯精密</strong>（电子/消费电子）净买+111亿、增持1.63亿股，Q2 <span style="color:#1aaa55;font-weight:600;">+39.68%</span></li>
+          <li><strong>药明康德</strong>（医药生物/CXO）净买+92亿，Q2 <span style="color:#1aaa55;font-weight:600;">+21.79%</span></li>
         </ul>
       </div>
       <div class="highlight-box hb-green">
-        <h4>🔻 Q2明显减仓（传统核心资产被弃）</h4>
+        <h4>Q2明显减仓（传统核心资产被弃）</h4>
         <ul>
-          <li><strong>贵州茅台</strong>（食品饮料/白酒）净卖-66亿，Q2 <span style="color:#1aaa55;font-weight:600;">-17.18%</span></li>
+          <li><strong>贵州茅台</strong>（食品饮料/白酒）净卖-65亿，Q2 <span style="color:#1aaa55;font-weight:600;">-17.18%</span></li>
           <li><strong>美的集团</strong>（家电/白电）净卖-61亿、减持0.80亿股，Q2 <span style="color:#1aaa55;font-weight:600;">+3.30%</span></li>
           <li><strong>招商银行</strong>（银行）净卖-38亿、减持1.01亿股，Q2 <span style="color:#1aaa55;font-weight:600;">-11.13%</span></li>
           <li><strong>兆易创新</strong>（电子/半导体）Q2暴涨+220.55%却被净卖-14亿</li>
@@ -548,7 +569,7 @@
         <div class="card-tag tag-blue">电子8席 · 电力设备4席 · 通信2席</div>
       </div>
       <div class="highlight-box hb-blue" style="margin-bottom:12px;">
-        <h4>🏭 申万一级分布（前二十中）</h4>
+        <h4>申万一级分布（前二十中）</h4>
         <ul>
           <li><strong>电子 8席</strong>（北方华创、中微公司、澜起科技、立讯精密、寒武纪、兆易创新、沪电股份 + 中际旭创归通信）</li>
           <li><strong>电力设备 4席</strong>（宁德时代、思源电气、阳光电源）</li>
@@ -557,7 +578,7 @@
         </ul>
       </div>
       <div class="highlight-box hb-gold">
-        <h4>📈 Q2 持仓市值增加最多的行业</h4>
+        <h4>Q2 持仓市值增加最多的行业</h4>
         <ul>
           <li><strong>电子</strong> &gt; <strong>电力设备</strong> &gt; <strong>通信</strong>（半导体设备/AI芯片/光模块三重共振）</li>
           <li>对比 Q1 前三为 电力设备/电子/有色金属 → Q2 通信挤入、有色金属掉出，结构向AI+半导体倾斜</li>
@@ -567,11 +588,11 @@
 
     <!-- 二季度净买入/净卖出金额排行（东方财富 · 可折叠） -->
     <details style="margin-top:16px;">
-      <summary style="cursor:pointer; padding:10px 16px; background:var(--card); border:1px solid var(--border); border-radius:8px; font-weight:600; font-size:14px; color:var(--blue);">📊 北向资金二季度净买入/净卖出金额排行（Top20）<span style="color:var(--gray); font-weight:400; margin-left:8px;">点击展开 ▼</span></summary>
+      <summary style="cursor:pointer; padding:10px 16px; background:var(--card); border:1px solid var(--border); border-radius:8px; font-weight:600; font-size:14px; color:var(--blue);">北向资金二季度净买入/净卖出金额排行（Top20）<span style="color:var(--gray); font-weight:400; margin-left:8px;">点击展开 ▼</span></summary>
     <div class="card" style="margin-top:10px;">
       <div class="card-header">
         <div class="card-title">北向资金二季度净买入金额排行（Top20）</div>
-        <div class="card-tag tag-red">东方财富 2026-07-10 截图</div>
+        <div class="card-tag tag-red">东方财富 2026-07-10 数据</div>
       </div>
       <div class="matrix-wrap">
         <table class="stock-table">
@@ -602,13 +623,13 @@
           </tbody>
         </table>
       </div>
-      <div style="margin-top:10px; background:var(--red-light); border-radius:8px; padding:8px 14px; font-size:12px; color:var(--red);">📥 净买入 = 北向实际增持金额（真金白银流入）。宁德时代以+554亿遥遥领先，半导体设备（中微）、重卡（潍柴）、AI芯片（寒武纪）获大举加仓，与「科技制造主线」共识一致。</div>
+      <div style="margin-top:10px; background:var(--red-light); border-radius:8px; padding:8px 14px; font-size:12px; color:var(--red);">净买入 = 北向实际增持金额（真金白银流入）。宁德时代以+554亿遥遥领先，半导体设备（中微）、重卡（潍柴）、AI芯片（寒武纪）获大举加仓，与「科技制造主线」共识一致。</div>
     </div>
 
     <div class="card" style="margin-top:16px;">
       <div class="card-header">
         <div class="card-title">北向资金二季度净卖出金额排行（Top20）</div>
-        <div class="card-tag tag-green">东方财富 2026-07-10 截图</div>
+        <div class="card-tag tag-green">东方财富 2026-07-10 数据</div>
       </div>
       <div class="matrix-wrap">
         <table class="stock-table">
@@ -639,9 +660,10 @@
           </tbody>
         </table>
       </div>
-      <div style="margin-top:10px; background:var(--gold-light); border-radius:8px; padding:8px 14px; font-size:12px; color:#b45309;">⚠️ 注意：<strong>中际旭创、天孚通信、源杰科技</strong>虽被北向净卖出（高亮行），却因AI光模块/光芯片行情股价大涨，持仓市值不降反升——属「股价驱动」型，已在上方前十表与特别标注区高亮。净卖出榜单主要集中于白酒（茅台）、家电（美的）、金融（平安/招行）、传统材料（三环/巨石/华友）等。数据来源：东方财富 北向资金 Q2 净买卖金额排行（2026-07-10 用户截图）。</div>
+      <div style="margin-top:10px; background:var(--gold-light); border-radius:8px; padding:8px 14px; font-size:12px; color:#b45309;">⚠️ 注意：<strong>中际旭创、天孚通信、源杰科技</strong>虽被北向净卖出（高亮行），却因AI光模块/光芯片行情股价大涨，持仓市值不降反升——属「股价驱动」型，已在上方前十表与特别标注区高亮。净卖出榜单主要集中于白酒（茅台）、家电（美的）、金融（平安/招行）、传统材料（三环/巨石/华友）等。数据来源：东方财富 北向资金 Q2 净买卖金额排行（2026-07-10 数据）。</div>
     </div>
   </details>
+  </div>
 
   <!-- ② 公募基金（已于7月21日披露） -->
   <div class="section">
@@ -716,7 +738,7 @@
     <!-- 剔除 AI 后，公募还加仓了哪些方向 -->
     <div class="card" style="margin-top:16px;">
       <div class="card-header">
-        <div class="card-title">🧪 剔除 AI 相关股票后，公募还加仓了哪些方向？</div>
+        <div class="card-title">剔除 AI 相关股票后，公募还加仓了哪些方向？</div>
         <div class="card-tag tag-blue">剔除股价后仓位变化排序</div>
       </div>
       <p style="font-size:13px; color:var(--gray); line-height:1.8; margin-top:6px;">
@@ -959,7 +981,7 @@
       </div>
 
       <div class="highlight-box hb-purple" style="margin-top:16px;">
-        <h4>🔍 剔除 AI 后的加仓方向总结</h4>
+        <h4>剔除 AI 后的加仓方向总结</h4>
         <ul style="font-size:13px; line-height:1.9;">
           <li><strong>医药（7只）：</strong>泰格医药、凯莱英、科伦药业、众生药业、康龙化成、药明康德、百济神州——剔除 AI 后加仓最多的方向，CRO/CDMO/创新药全面回流。</li>
           <li><strong>有色金属（4只）：</strong>东方钽业、西部矿业、海亮股份、厦门钨业——工业金属+稀有金属，兼具高股息与新能源上游属性。</li>
@@ -1003,13 +1025,13 @@
             <tr><td><div class="stock-name">宁德时代</div><div class="stock-code">300750</div></td><td>电力设备</td><td><span style="color:#6b7280;font-weight:600;">-1.45%</span></td><td class="num-red">✅ 市值第一(3514亿)</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向极强</span></td></tr>
             <tr><td><div class="stock-name">中际旭创</div><div class="stock-code">300308</div></td><td>通信(光模块)</td><td><span style="color:#e8372a;font-weight:600;">+111.36%</span></td><td class="num-red">✅ 新晋第二(931亿)</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向极强</span></td></tr>
             <tr><td><div class="stock-name">北方华创</div><div class="stock-code">002371</div></td><td>电子(半导体)</td><td><span style="color:#e8372a;font-weight:600;">+96.50%</span></td><td class="num-red">✅ 新晋前三(835亿)</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向极强</span></td></tr>
-            <tr><td><div class="stock-name">中微公司</div><div class="stock-code">688012</div></td><td>电子(半导体)</td><td><span style="color:#e8372a;font-weight:600;">+122.89%</span></td><td class="num-red">✅ 第六(591亿)·净买+169亿</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向极强</span></td></tr>
+            <tr><td><div class="stock-name">中微公司</div><div class="stock-code">688012</div></td><td>电子(半导体)</td><td><span style="color:#e8372a;font-weight:600;">+122.89%</span></td><td class="num-red">✅ 第六(591亿)·净买+181亿</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向极强</span></td></tr>
             <tr><td><div class="stock-name">澜起科技</div><div class="stock-code">688008</div></td><td>电子(AI芯片)</td><td><span style="color:#e8372a;font-weight:600;">+138.44%</span></td><td class="num-red">✅ 第七(452亿)·持平</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向强</span></td></tr>
-            <tr><td><div class="stock-name">立讯精密</div><div class="stock-code">002475</div></td><td>电子(消费电子)</td><td><span style="color:#1aaa55;font-weight:600;">+39.68%</span></td><td class="num-red">✅ 第八(407亿)·净买+110亿</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向强</span></td></tr>
-            <tr><td><div class="stock-name">寒武纪</div><div class="stock-code">688256</div></td><td>电子(AI芯片)</td><td><span style="color:#e8372a;font-weight:600;">+126.44%</span></td><td class="num-red">✅ 十一(351亿)·净买+131亿</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向强</span></td></tr>
-            <tr><td><div class="stock-name">新易盛</div><div class="stock-code">300502</div></td><td>通信(光模块)</td><td><span style="color:#e8372a;font-weight:600;">+84.90%</span></td><td class="num-red">✅ 十二(350亿)·净买+112亿</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向强</span></td></tr>
+            <tr><td><div class="stock-name">立讯精密</div><div class="stock-code">002475</div></td><td>电子(消费电子)</td><td><span style="color:#1aaa55;font-weight:600;">+39.68%</span></td><td class="num-red">✅ 第八(407亿)·净买+111亿</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向强</span></td></tr>
+            <tr><td><div class="stock-name">寒武纪</div><div class="stock-code">688256</div></td><td>电子(AI芯片)</td><td><span style="color:#e8372a;font-weight:600;">+126.44%</span></td><td class="num-red">✅ 十一(351亿)·净买+137亿</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向强</span></td></tr>
+            <tr><td><div class="stock-name">新易盛</div><div class="stock-code">300502</div></td><td>通信(光模块)</td><td><span style="color:#e8372a;font-weight:600;">+84.90%</span></td><td class="num-red">✅ 十二(350亿)·净买+113亿</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-red">北向强</span></td></tr>
             <tr><td><div class="stock-name">美的集团</div><div class="stock-code">000333</div></td><td>家用电器</td><td><span style="color:#1aaa55;font-weight:600;">+3.30%</span></td><td>✅ 第四(675亿)·净卖-61亿</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-gold">北向中</span></td></tr>
-            <tr><td><div class="stock-name">贵州茅台</div><div class="stock-code">600519</div></td><td>食品饮料</td><td><span style="color:#1aaa55;font-weight:600;">-17.18%</span></td><td>✅ 第五(637亿)·净卖-66亿</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-gold">北向中</span></td></tr>
+            <tr><td><div class="stock-name">贵州茅台</div><div class="stock-code">600519</div></td><td>食品饮料</td><td><span style="color:#1aaa55;font-weight:600;">-17.18%</span></td><td>✅ 第五(637亿)·净卖-65亿</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-gold">北向中</span></td></tr>
             <tr><td><div class="stock-name">兆易创新</div><div class="stock-code">603986</div></td><td>电子(存储)</td><td><span style="color:#e8372a;font-weight:600;">+220.55%</span></td><td>✅ 十六(311亿)·净卖-14亿</td><td class="num-red">✅ 已披露</td><td style="color:var(--gray)">待披露</td><td><span class="card-tag tag-gold">北向中</span></td></tr>
           </tbody>
         </table>
@@ -1023,7 +1045,7 @@
     <div class="section-title"><div class="dot dot-green"></div>⑤ 共识行业方向（北向 + 公募双维度）</div>
     <div class="cards-grid">
       <div class="highlight-box hb-red">
-        <h4>🥇 北向Q2强信号</h4>
+        <h4>北向Q2强信号</h4>
         <ul>
           <li><strong>电子</strong>（半导体设备+AI芯片集体入榜：北方华创、中微、澜起科技新进/居前）</li>
           <li><strong>通信</strong>（光模块：中际旭创升至第二、新易盛入榜，AI算力最强β）</li>
@@ -1040,7 +1062,7 @@
       <div class="highlight-box hb-gold">
         <h4>⚠️ 边际变化提示（传统蓝筹弱化）</h4>
         <ul>
-          <li>白酒：<strong>贵州茅台</strong> Q2 <span style="color:#1aaa55;">-17.18%</span> 跌至第五，净卖-66亿</li>
+          <li>白酒：<strong>贵州茅台</strong> Q2 <span style="color:#1aaa55;">-17.18%</span> 跌至第五，净卖-65亿</li>
           <li>有色金属：<strong>紫金矿业</strong> Q2 <span style="color:#1aaa55;">-25.56%</span> 跌至十三，小幅加仓+9亿</li>
           <li>银行：<strong>招商银行</strong> Q2 <span style="color:#1aaa55;">-11.13%</span> 跌至第九，净卖-38亿</li>
           <li>消费/资源/金融传统蓝筹相对弱化，市值权重向科技制造倾斜</li>
@@ -1048,9 +1070,9 @@
       </div>
     </div>
     <div class="highlight-box hb-purple" style="margin-top:16px;">
-      <h4>🔍 与既有持仓的交叉验证（待公募/机构补全后复核）</h4>
+      <h4>共识交叉验证（待公募/机构补全后复核）</h4>
       <ul>
-        <li><strong>宁德时代</strong>：北向市值第一(3514亿)，Q2净买+550亿，与你既有持仓方向一致</li>
+        <li><strong>宁德时代</strong>：北向市值第一(3514亿)，Q2净买+554亿，确定性方向的压舱石标的</li>
         <li><strong>中际旭创 / 北方华创 / 中微公司 / 澜起科技 / 寒武纪 / 新易盛 / 兆易创新</strong>：AI+半导体集体跻身北向前二十（电子8席+通信2席），与 Q1 报告「光模块/半导体为三方共识」主线延续且强化</li>
         <li><strong>沪电股份（002463）</strong>：PCB 方向 Q2 +93.93% 入前二十(第20)，但净卖-25亿属股价驱动，待 Q2 公募披露后复核</li>
       </ul>
@@ -1059,19 +1081,20 @@
 
   <!-- ============ 中金公司公募Q2详细分析 ============ -->
   <div class="section">
-    <h2>📊 中金公司：公募 Q2 持仓详细分析</h2>
+    <div class="section-title"><div class="dot dot-blue"></div>⑥ 中金公司：公募 Q2 持仓详细分析</div>
     <div class="update-badge">7/31 更新 · 数据截至 2026/06/30 · 来源：中金公司研究部（李求索/魏冬/黄凯松）</div>
 
     <div class="card">
-      <h3>📌 核心变化：科技赛道单季主导，持股集中度历史性跳升</h3>
+      <h3>核心变化：科技赛道单季主导，持股集中度历史性跳升</h3>
       <p style="font-size:13px; color:var(--gray); line-height:1.8; margin-top:8px;">
         截至 2026 年 6 月 30 日，全部公募基金资产总值达 <strong>41.4 万亿元</strong>（较 Q1 扩张约 2.1 万亿），股票资产 <strong>8.8 万亿元</strong>，占总值 <strong>21.4%</strong>（+0.8pp）。主动偏股型基金股票仓位 <strong>86.2%</strong>，A 股仓位由 73.9% 升至 <strong>78%</strong>。<strong>重仓前 50 家公司市值占比从 42.8% 飙升至 55.2%</strong>（+12.4pp），前 100 家从 55.4% 升至 <strong>68.2%</strong>——持股集中度为近年最高水平，公募在科技赛道形成极强抱团。
       </p>
     </div>
 
     <div class="card">
-      <h3>📊 板块配置：科创板仓位单季暴增 9.8pp</h3>
-      <table class="data-table">
+      <h3>板块配置：科创板仓位单季暴增 9.8pp</h3>
+      <div class="matrix-wrap">
+        <table class="data-table">
         <thead><tr><th>板块</th><th>Q2 仓位</th><th>较 Q1 变化</th><th>超配状态</th></tr></thead>
         <tbody>
           <tr><td><strong>主板</strong></td><td>43.6%</td><td class="dn" style="color:var(--green);">-14.1pp</td><td>低配约 19.1pp</td></tr>
@@ -1080,11 +1103,13 @@
           <tr><td>北交所</td><td>—</td><td class="dn" style="color:var(--green);">-0.1pp</td><td>—</td></tr>
         </tbody>
       </table>
+      </div>
     </div>
 
     <div class="card">
-      <h3>📈 行业配置：电子单季加仓 +21.3pp，历史级别的仓位迁移</h3>
-      <table class="data-table">
+      <h3>行业配置：电子单季加仓 +21.3pp，罕见的仓位迁移</h3>
+      <div class="matrix-wrap">
+        <table class="data-table">
         <thead><tr><th>加仓行业</th><th>仓位变化</th><th>减仓行业</th><th>仓位变化</th></tr></thead>
         <tbody>
           <tr style="background:var(--green-light);"><td><strong>电子</strong></td><td class="up" style="color:var(--red);"><strong>+21.3pp</strong></td><td>电力设备</td><td class="dn" style="color:var(--green);">-5.5pp</td></tr>
@@ -1096,14 +1121,16 @@
           <tr><td></td><td></td><td>家电/银行/石化/非银/煤炭</td><td class="dn" style="color:var(--green);">各 -0.3~0.9pp</td></tr>
         </tbody>
       </table>
+      </div>
       <div style="margin-top:10px; background:var(--gold-light); border-radius:8px; padding:8px 14px; font-size:12px; color:#b45309;">
         ⚠️ <strong>历史性信号：</strong>电子 +21.3pp 的单季加仓幅度，在公募历史上极为罕见。减仓方向高度集中——电力设备/医药/食品饮料/有色四个行业合计减仓 15pp，基本等于电子的增量。这是一次<strong>"抛弃旧核心、全面拥抱硬科技"</strong>的结构性仓位大迁徙。
       </div>
     </div>
 
     <div class="card">
-      <h3>🔥 热门赛道仓位变动</h3>
-      <table class="data-table">
+      <h3>热门赛道仓位变动</h3>
+      <div class="matrix-wrap">
+        <table class="data-table">
         <thead><tr><th>加仓赛道</th><th>仓位变化</th><th>减仓赛道</th><th>仓位变化</th></tr></thead>
         <tbody>
           <tr style="background:var(--green-light);"><td><strong>半导体</strong></td><td class="up" style="color:var(--red);">+12.4pp</td><td>新能源车产业链</td><td class="dn" style="color:var(--green);">-3.9pp</td></tr>
@@ -1114,10 +1141,11 @@
           <tr><td></td><td></td><td>军工/机器人</td><td class="dn" style="color:var(--green);">-0.3~0.8pp</td></tr>
         </tbody>
       </table>
+      </div>
     </div>
 
     <div class="card">
-      <h3>🇭🇰 港股与资金面</h3>
+      <h3>港股与资金面</h3>
       <div class="flx">
         <div class="fc">
           <h4>港股配置大幅下降</h4>
@@ -1131,8 +1159,9 @@
     </div>
 
     <div class="card">
-      <h3>📊 注：中金公司指出的仓位结构变化要点</h3>
-      <table class="data-table">
+      <h3>注：中金公司指出的仓位结构变化要点</h3>
+      <div class="matrix-wrap">
+        <table class="data-table">
         <thead><tr><th>维度</th><th>Q1</th><th>Q2</th><th>变化</th></tr></thead>
         <tbody>
           <tr><td>股票占总值比重</td><td>20.6%</td><td><strong>21.4%</strong></td><td class="up" style="color:var(--red);">+0.8pp</td></tr>
@@ -1143,12 +1172,13 @@
           <tr><td>上季度基金收益率中位数</td><td>-1.2%</td><td><strong>+11.2%</strong></td><td class="up" style="color:var(--red);">大幅改善</td></tr>
         </tbody>
       </table>
+      </div>
     </div>
   </div>
 
   <!-- ============ 番外：张坤 2026 Q2 投资理念之变 ============ -->
   <div class="section">
-    <h2>🌟 番外：张坤 2026 Q2 投资理念之变</h2>
+    <div class="section-title"><div class="dot dot-purple"></div>⑦ 番外：张坤 2026 Q2 投资理念之变</div>
     <div class="update-badge">7/31 更新 · 含深度综合分析</div>
 
     <div class="card" style="border-left:4px solid var(--purple);">
@@ -1159,14 +1189,15 @@
 
     <div class="card">
       <h3>一、全面降仓：4 只基金齐降，港股仓位砍半</h3>
-      <table class="data-table">
+      <div class="matrix-wrap">
+        <table class="data-table">
         <thead><tr><th>基金</th><th>Q1 股票仓位</th><th>Q2 股票仓位</th><th>变化</th></tr></thead>
         <tbody>
           <tr style="background:var(--red-light);">
-            <td><strong>易方达蓝筹精选</strong></td><td>93.12%</td><td><strong>75.00%</strong></td><td>↓ 18.12 个百分点</td>
+            <td><strong>易方达蓝筹精选</strong></td><td>93.12%</td><td><strong>75.00%</strong></td><td>-18.12pp</td>
           </tr>
           <tr style="background:var(--red-light);">
-            <td><strong>易方达亚洲精选</strong></td><td>93.24%</td><td><strong>78.97%</strong></td><td>↓ 14.27 个百分点</td>
+            <td><strong>易方达亚洲精选</strong></td><td>93.24%</td><td><strong>78.97%</strong></td><td>-14.27pp</td>
           </tr>
           <tr>
             <td>易方达优质精选</td><td>—</td><td>大幅下调</td><td>↓</td>
@@ -1176,6 +1207,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
       <div style="margin-top:8px; font-size:12px; color:var(--gray);">
         蓝筹精选港股仓位从 <strong>46.07% → 25.11%</strong>（几近腰斩）；规模从 268 亿缩水至 <strong>204 亿</strong>（-64 亿）。
       </div>
@@ -1186,7 +1218,8 @@
 
     <div class="card">
       <h3>二、首次买入硬科技：中芯国际 + 东山精密</h3>
-      <table class="data-table">
+      <div class="matrix-wrap">
+        <table class="data-table">
         <thead><tr><th>排名</th><th>蓝筹精选 Q2 重仓股</th><th>变化</th></tr></thead>
         <tbody>
           <tr><td>1</td><td>腾讯控股</td><td>—</td></tr>
@@ -1201,6 +1234,7 @@
           <tr><td>10</td><td>阿里巴巴</td><td>—</td></tr>
         </tbody>
       </table>
+      </div>
       <div style="margin-top:8px; font-size:12px; color:var(--gray);">退出前十：京东健康、分众传媒。前十集中度降至历史最低 <strong>38.95%</strong>。</div>
       <blockquote style="margin-top:12px; padding:10px 14px; background:var(--purple-light); border-left:3px solid var(--purple); border-radius:0 6px 6px 0; font-size:13px; color:#5b21b6;">
         <strong>理念变化：</strong>张坤过去十年只买消费、互联网、医药——典型的"护城河+品牌+现金流"框架。Q2 首次买入中芯国际（半导体制造）和东山精密（电子制造），意味着他<strong>开始承认硬科技的投资价值</strong>。这不是追涨 AI 概念——中芯国际和东山精密都是有真实产能、真实订单的制造业龙头，符合他"高业务壁垒+自由现金流"的标准。他在季报中也明确提到："增加了电子、通信行业的配置比例，受益推理时代的光通信、半导体设备、上游 AI 原材料领域。"
@@ -1209,7 +1243,8 @@
 
     <div class="card">
       <h3>三、亚洲精选：大幅减持海外半导体三巨头</h3>
-      <table class="data-table">
+      <div class="matrix-wrap">
+        <table class="data-table">
         <thead><tr><th>操作</th><th>个股</th><th>减持幅度</th></tr></thead>
         <tbody>
           <tr style="background:var(--red-light);"><td>减持</td><td>台积电（TSM.N）</td><td><strong>-92.61%</strong></td></tr>
@@ -1220,6 +1255,7 @@
           <tr><td>退出前十</td><td>谷歌 C（Alphabet）</td><td>退出</td></tr>
         </tbody>
       </table>
+      </div>
       <blockquote style="margin-top:12px; padding:10px 14px; background:var(--purple-light); border-left:3px solid var(--purple); border-radius:0 6px 6px 0; font-size:13px; color:#5b21b6;">
         <strong>理念变化：</strong>台积电减持超 92% 几乎清仓——这是张坤对海外算力叙事投下的不信任票。他在季报中写道："供不应求更多反映的是<strong>过去 AI 累计的资本开支不足</strong>，而非 2026 年的资本开支不足。即使云厂商每年资本开支不增长，累计资本开支也会使存量算力继续增长若干年，<strong>供应紧张终将缓解</strong>。" 这与 Kimi K3 的"轻量化模型降低算力消耗"叙事形成了完美闭环——张坤用行动证明，他认同"粗放堆算力的时代正在结束"。
       </blockquote>
@@ -1241,7 +1277,8 @@
 
     <div class="card">
       <h3>五、团队共管转型：从"一个人的基金"到"团队基金"</h3>
-      <table class="data-table">
+      <div class="matrix-wrap">
+        <table class="data-table">
         <thead><tr><th>基金</th><th>管理方式</th><th>增聘</th></tr></thead>
         <tbody>
           <tr><td>易方达蓝筹精选</td><td>团队共管</td><td>5/23 增聘何一铖、杨思亮</td></tr>
@@ -1250,6 +1287,7 @@
           <tr style="background:var(--gold-light);"><td><strong>易方达亚洲精选</strong></td><td><strong>张坤独自管理</strong></td><td>无增聘</td></tr>
         </tbody>
       </table>
+      </div>
       <p style="font-size:13px; color:var(--gray); line-height:1.8; margin-top:10px;">
         <strong>分析：</strong>4 只基金中 3 只增聘共管基金经理，仅亚洲精选保持独立管理——这很可能意味着张坤正在<strong>逐步交棒</strong>。亚洲精选是他唯一独自管理的基金，也是 Q2 业绩最好的一只（+23.62%），说明他的海外半导体交易策略（减持台积电/海力士，增持海油）执行得非常精准。团队共管转型不一定是坏事——在风格剧变的市场中，单一基金经理的认知带宽确实不够用。
       </p>
@@ -1259,7 +1297,8 @@
       <h3>六、深度综合分析：从消费王者到科技新兵——张坤调仓的三重逻辑</h3>
 
       <h4 style="margin-top:12px; color:var(--purple);">① 全景数据：在管4只基金规模与业绩（截至2026/6/30）</h4>
-      <table class="data-table" style="margin-top:8px;">
+      <div class="matrix-wrap">
+        <table class="data-table" style="margin-top:8px;">
         <thead><tr><th>基金</th><th>规模(亿)</th><th>年内收益</th><th>Q2单季</th><th>特征</th></tr></thead>
         <tbody>
           <tr><td>易方达蓝筹精选</td><td>204.16</td><td class="dn">-18.92%</td><td>—</td><td>王牌产品，降仓最猛（93%→75%）</td></tr>
@@ -1268,10 +1307,12 @@
           <tr><td>易方达优质企业三年持有</td><td>14.90</td><td class="dn">-20.08%</td><td>—</td><td>团队共管</td></tr>
         </tbody>
       </table>
+      </div>
       <div style="margin-top:6px; font-size:12px; color:var(--gray);">合计规模 322.85 亿。对照：Q2 创业板指 +36.35%、沪深300 +11.90%——A股消费仓被重创，海外配置独挑大梁。</div>
 
       <h4 style="margin-top:18px; color:var(--purple);">② 整体口径前十大重仓股增减持明细（此前报告仅聚焦单基金）</h4>
-      <table class="data-table" style="margin-top:8px;">
+      <div class="matrix-wrap">
+        <table class="data-table" style="margin-top:8px;">
         <thead><tr><th>股票</th><th>持仓占比</th><th>环比变化</th><th>变动</th></tr></thead>
         <tbody>
           <tr><td>中国海洋石油(HK)</td><td>6.31%</td><td>-2.47pct</td><td class="dn">减持</td></tr>
@@ -1292,8 +1333,9 @@
           <tr style="background:var(--green-light);"><td>中国石油股份(HK)</td><td>0.18%</td><td>新进</td><td class="tg" style="color:var(--green);">🆕 新进</td></tr>
         </tbody>
       </table>
+      </div>
       <div style="margin-top:10px; background:var(--purple-light); border-radius:8px; padding:8px 14px; font-size:12px; color:#5b21b6;">
-        💡 <strong>关键辨析（此前报告未区分的重要细节）：</strong>「亚洲精选清仓式减持台积电-92%」与「整体组合增持台积电+0.17pct、阿斯麦+0.36pct」并不矛盾——张坤并非全面看空半导体，而是<strong>在半导体产业链内部做环节切换</strong>：卖出高贝塔的存储（海力士-56%/三星-39%）与代工制造，买入卡位环节的设备（阿斯麦/科磊/中芯/东山）。这与他一贯的"选卡位、选壁垒"框架一脉相承。
+        <strong>关键辨析（此前报告未区分的重要细节）：</strong>「亚洲精选清仓式减持台积电-92%」与「整体组合增持台积电+0.17pct、阿斯麦+0.36pct」并不矛盾——张坤并非全面看空半导体，而是<strong>在半导体产业链内部做环节切换</strong>：卖出高贝塔的存储（海力士-56%/三星-39%）与代工制造，买入卡位环节的设备（阿斯麦/科磊/中芯/东山）。这与他一贯的"选卡位、选壁垒"框架一脉相承。
       </div>
 
       <h4 style="margin-top:18px; color:var(--purple);">③ 三重逻辑：张坤为什么这么调</h4>
@@ -1321,7 +1363,8 @@
 
     <div class="card" style="border-left:4px solid var(--gold);">
       <h3 style="color:var(--gold);">七、总结：张坤的理念之变意味着什么</h3>
-      <table class="data-table">
+      <div class="matrix-wrap">
+        <table class="data-table">
         <thead><tr><th>维度</th><th>过去（经典张坤）</th><th>Q2 变化</th><th>信号</th></tr></thead>
         <tbody>
           <tr>
@@ -1362,8 +1405,9 @@
           </tr>
         </tbody>
       </table>
+      </div>
       <blockquote style="margin-top:12px; padding:12px 16px; background:var(--purple-light); border-left:3px solid var(--purple); border-radius:0 6px 6px 0; font-size:13px; color:#5b21b6; line-height:1.9;">
-        <strong>最终判断：</strong>张坤的 Q2 操作是整个公募基金行业<strong>风格剧变的缩影</strong>——从消费价值到硬科技成长，从海外算力到国产替代，从满仓到囤现金。他不是在追涨 AI，而是在<strong>用他自己的框架（高壁垒+现金流+永续价值）重新审视科技股</strong>，发现中芯国际和东山精密其实符合他的标准。同时，他对"算力永动机"叙事的看空（减持台积电 92%），与 Kimi K3 引发的叙事动摇形成了完美闭环。<br><br>
+        <strong>最终判断：</strong>张坤的 Q2 操作是整个公募基金行业<strong>风格剧变的缩影</strong>——从消费价值到硬科技成长，从海外算力到国产替代，从满仓到囤现金。他不是在追涨 AI，而是在<strong>用他自己的框架（高壁垒+现金流+永续价值）重新审视科技股</strong>，发现中芯国际和东山精密其实符合他的标准。同时，他对"算力永动机"叙事的看空（减持台积电 92%），与 Kimi K3 引发的叙事动摇相互印证。<br><br>
         对普通投资者的启示：<strong>连张坤都在降仓+分散+转向，说明当前市场的不确定性确实处于极端水平。</strong>但同时也不要忽视他买入硬科技的信号——当最保守的价值投资者都开始配置科技，说明科技的主线地位已经不可逆转。区别只在于，下半场要买的是<strong>有真实产能和订单的国产硬科技</strong>，而不是海外映射的概念股。
       </blockquote>
     </div>
@@ -1371,7 +1415,7 @@
 
   <!-- ============ 深度讨论：公募接盘科技最后一棒？（7/31收官更新） ============ -->
   <div class="section">
-    <h2>🤔 深度讨论：公募接盘科技最后一棒？</h2>
+    <div class="section-title"><div class="dot dot-red"></div>⑧ 深度讨论：公募接盘科技最后一棒？</div>
     <div class="update-badge">7/31 更新 · 7月收官 · 超跌反弹启动 · 数据截至7/31收盘</div>
 
     <div class="card" style="border-left:4px solid var(--red);">
@@ -1382,7 +1426,8 @@
 
     <div class="card">
       <h3>一、7月全景：五轮恐慌 + 超跌反弹收官，公募净值探底回升</h3>
-      <table class="stock-table" style="margin-top:10px;">
+      <div class="matrix-wrap">
+        <table class="stock-table" style="margin-top:10px;">
         <thead><tr><th>#</th><th>日期</th><th>事件</th><th>创业板</th><th>科创50</th><th>科技代表个股</th><th>GJD动作</th><th>公募处境</th></tr></thead>
         <tbody>
           <tr>
@@ -1405,6 +1450,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
       <div style="margin-top:10px; background:var(--gold-light); border-radius:8px; padding:8px 14px; font-size:12px; color:#b45309;">
         ⚠️ <strong>7月收官成绩单：</strong>科创50单月-25.6%、通信ETF-36.1%、沪电-28.45%、北方华创-26.49%；宁德时代+2.99%为全月唯一正收益。7/31超跌反弹特征显著——<strong>7/30跌最惨的方向涨最多</strong>（沪电+7.46%/通信ETF+4.43%），且7/30低点3,158未被跌破，政治局会议"活跃资本市场"定调为反弹提供政策背书。公募净值在7/30触底、7/31探底回升。
       </div>
@@ -1415,7 +1461,8 @@
       <p style="font-size:13px; color:var(--gray); line-height:1.8;">
         参考本站<a href="./fund_research_index_20260401.html" style="color:var(--blue);">《超200亿主动权益基金研究索引》</a>：2020—2021年公募抱团消费/医药，张坤峰值898亿。2021年抱团瓦解后百亿基金缩水54%，绝大多数高位买入者至今亏损。
       </p>
-      <table class="stock-table" style="margin-top:10px;">
+      <div class="matrix-wrap">
+        <table class="stock-table" style="margin-top:10px;">
         <thead><tr><th>维度</th><th>2021年抱团大蓝筹</th><th>2026年公募抱团科技</th><th>相似度</th></tr></thead>
         <tbody>
           <tr><td><strong>抱团方向</strong></td><td>消费/医药/新能源白马</td><td>AI光模块/AI芯片/半导体设备</td><td>⚠️ 高度相似</td></tr>
@@ -1428,6 +1475,7 @@
           <tr style="background:rgba(224,85,74,0.06);"><td><strong>7/31对照④</strong></td><td>2021年7-8月连续阴跌未见反弹</td><td><strong>7月五轮恐慌后7/31即现超跌反弹<br>政策底（政治局会议）+ 市场底（7/30 3,158）双双确认</strong></td><td>✅ 差异：出清快、反弹快</td></tr>
         </tbody>
       </table>
+      </div>
       <blockquote style="margin-top:12px; padding:10px 14px; background:var(--gold-light); border-left:3px solid var(--gold); border-radius:0 6px 6px 0; font-size:13px; color:#92400e; line-height:1.8;">
         <strong>张坤的泡沫警示+7/31收官验证：</strong>张坤在季报中将当前AI行情类比1999年互联网泡沫，同时指出"AI核心硬件公司已赚钱"这一关键差异——7/31中际+4.40%/新易盛+6.71%的超跌反弹正是对"业绩在兑现"的初步验证。他也提前降仓至75%+减持台积电92%，留足了现金应对波动。<strong>与2021年的本质区别已显现：</strong>2021年抱团瓦解后是慢熊阴跌；2026年7月一个月内五轮恐慌集中出清，随后政治局会议定调"活跃资本市场"形成政策底，7/31超跌反弹启动——<strong>快出清对应快反弹，公募的坚守有望获得比2021年更快的解脱。</strong>
       </blockquote>
@@ -1435,7 +1483,8 @@
 
     <div class="card">
       <h3>三、公募"接盘"还是"坚守"：7/31收官重估</h3>
-      <table class="stock-table" style="margin-top:10px;">
+      <div class="matrix-wrap">
+        <table class="stock-table" style="margin-top:10px;">
         <thead><tr><th>情景</th><th>7/23初评</th><th>7/28修正</th><th>7/31收官评估</th><th>核心依据</th></tr></thead>
         <tbody>
           <tr style="background:var(--green-light);">
@@ -1461,6 +1510,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
       <div style="margin-top:12px; font-size:13px; line-height:1.9; color:var(--gray);">
         <strong>核心变化（7/31）：</strong>情景A重新升至45%——7/31超跌反弹（创业板+3.06%、科创50+2.99%）启动，且7/30低点3,158未被跌破，政治局会议释放"活跃资本市场"+科技定调，市场底+政策底双双确认。情景B降至30%：反弹提供了流动性窗口，公募若仍不减持，说明<strong>从"跑不掉"转为"不想跑"</strong>，坚守开始获得回报。情景C回升至25%：8月中报季是最大分水岭，若AI龙头业绩不及预期，反弹可能夭折、二次探底。
       </div>
@@ -1468,7 +1518,8 @@
 
     <div class="card">
       <h3>四、外资 vs 公募：7/31收官对比</h3>
-      <table class="stock-table">
+      <div class="matrix-wrap">
+        <table class="stock-table">
         <thead><tr><th>维度</th><th>北向资金（外资）</th><th>公募基金</th></tr></thead>
         <tbody>
           <tr><td><strong>Q2→7月操作</strong></td><td>加仓电子(+620亿)，7月中旬快速撤离</td><td>前十全压科技，7月五轮恐慌被动持有</td></tr>
@@ -1478,6 +1529,7 @@
           <tr><td style="font-weight:700;">张坤的启示</td><td colspan="2">亚洲精选Q2 +23.62%（海外高位减持），蓝筹精选Q2 -13.52%（A股被套）。<strong>同一基金经理，海外操作远优于A股</strong>——但7/31超跌反弹说明，坚守A股科技的代价是<strong>用时间换空间</strong>，能否回血取决于8月中报。</td></tr>
         </tbody>
       </table>
+      </div>
       <blockquote style="margin-top:12px; padding:10px 14px; background:var(--blue-light); border-left:3px solid var(--blue); border-radius:0 6px 6px 0; font-size:13px; color:#1e40af; line-height:1.8;">
         <strong>7/31收官发现：</strong>外资在7月下跌中果断减仓回避了部分损失，但7/31超跌反弹中公募的坚守仓位开始回血——沪电+7.46%/新易盛+6.71%/中际+4.40%，全是公募重仓方向。<strong>外资赢在下跌段、公募可能赢在反弹段，7月这场"博弈"尚未分出最终胜负，8月中报季才是裁判。</strong>宁德时代全月+2.99%为唯一正收益，再次验证"业绩确定性"在恐慌市中的价值。
       </blockquote>
@@ -1492,7 +1544,7 @@
         <li><strong>公募两边不讨好是7月的真实写照，但7/31出现转机。</strong>7月科技暴跌+传统板块被GJD拉起，公募两头落空；但7/31大票让位（工行-1.96%/茅台-0.82%）、超跌科技领涨，市场风格回归公募重仓方向——<strong>风格切换的回摆对公募有利。</strong></li>
         <li><strong>8月中报季是"最后一棒"问题的最终裁判。</strong>7/31反弹若是"超跌+政策底"驱动的反弹，需要中报业绩接力。新易盛H1净利+78~103%是真实的，若光模块/存储/设备中报集体验证，反弹升级为反转；若不及预期，则二次探底、公募仍需面对压力。情景C概率因此回升至25%。</li>
         <li><strong>外资vs公募的胜负未分。</strong>外资赢下跌段（减仓避险）、公募有望赢反弹段（坚守回血）。宁德时代+2.99%为7月唯一正收益，验证了"确定性"在极端市中的价值。投资者不该单纯押注某一方，而应关注<strong>中报业绩这一共同裁判。</strong></li>
-        <li><strong>对个人投资者的启示（7/31版）：</strong>7月的教训是<strong>"确定性+流动性"双底线</strong>——宁德时代（确定性）是唯一正收益，通信ETF（流动性丧失）回撤-36%。7/31的反弹证明了market_panic框架的有效性（14交易日调整极限→反弹）。<strong>个人投资者应学公募的"业绩确定性筛选"（买有壁垒+现金流+中报兑现的硬科技），但规避其"流动性锁死"的结构性弱点——永远保留现金和机动仓位。</strong>长鑫科技D5盘中突破60元（用户47.30成本浮盈+14.1%）即是对"稀缺确定性"的奖励。</li>
+        <li><strong>对个人投资者的启示（7/31版）：</strong>7月的教训是<strong>"确定性+流动性"双底线</strong>——宁德时代（确定性）是唯一正收益，通信ETF（流动性丧失）回撤-36.1%。7/31的反弹证明了market_panic框架的有效性（14交易日调整极限→反弹）。<strong>个人投资者应学公募的"业绩确定性筛选"（买有壁垒+现金流+中报兑现的硬科技），但规避其"流动性锁死"的结构性弱点——永远保留现金和机动仓位。</strong>长鑫科技D5盘中突破60元，即是对"稀缺确定性"的奖励。</li>
       </ol>
     </div>
   </div>
@@ -1518,7 +1570,7 @@ const DATA = {
     top1_stable: "宁德时代",
     source: "Wind / Choice"
   },
-  public_fund: { status: "pending" },
+  public_fund: { status: "disclosed" },
   institution: { status: "pending" }
 };
 const TRILLION_TO_YI = 10000.0;
