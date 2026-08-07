@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复盘合集 · 实操可行性分析策略</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0d1117;
+            color: #c9d1d9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            padding: 60px 20px 60px;
+        }
+        .container { max-width: 720px; width: 100%; margin: 0 auto; }
+        h1 {
+            font-size: 1.7rem;
+            margin-bottom: 6px;
+            color: #f0f6fc;
+        }
+        .back {
+            display: inline-block;
+            margin-bottom: 24px;
+            color: #58a6ff;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .back:hover { text-decoration: underline; }
+        .subtitle {
+            color: #8b949e;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        .replay-section {
+            margin-top: 16px;
+        }
+        .replay-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 4px;
+        }
+        .replay-header h2 { font-size: 1.1rem; color: #58a6ff; }
+        .replay-count {
+            font-size: 0.75rem;
+            color: #8b949e;
+            background: #1f6feb22;
+            border: 1px solid #1f6feb44;
+            border-radius: 12px;
+            padding: 3px 10px;
+        }
+        .replay-desc {
+            color: #8b949e;
+            font-size: 0.82rem;
+            margin-top: 8px;
+            margin-bottom: 4px;
+        }
+        .replay-month {
+            margin-top: 14px;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            background: #161b22;
+        }
+        .replay-month summary {
+            cursor: pointer;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #c9d1d9;
+            list-style: none;
+            position: relative;
+            user-select: none;
+        }
+        .replay-month summary::-webkit-details-marker { display: none; }
+        .replay-month summary::before {
+            content: "▶";
+            display: inline-block;
+            margin-right: 8px;
+            color: #58a6ff;
+            font-size: 0.7rem;
+            transition: transform 0.2s;
+        }
+        .replay-month[open] summary::before { transform: rotate(90deg); }
+        .replay-month summary:hover { background: #1c2129; }
+        .replay-list {
+            list-style: none;
+            padding: 0 8px 8px;
+            max-height: 420px;
+            overflow-y: auto;
+        }
+        .replay-list li { margin: 0; }
+        .replay-list a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: inherit;
+            transition: background 0.15s;
+        }
+        .replay-list a:hover { background: #1c2129; }
+        .replay-date {
+            flex-shrink: 0;
+            font-size: 0.72rem;
+            color: #58a6ff;
+            background: #1f6feb22;
+            border-radius: 4px;
+            padding: 1px 6px;
+            min-width: 34px;
+            text-align: center;
+        }
+        .replay-title {
+            flex: 1;
+            font-size: 0.85rem;
+            color: #c9d1d9;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .replay-src { flex-shrink: 0; font-size: 0.7rem; border-radius: 10px; padding: 1px 8px; }
+        .replay-src.tag-a { background: #1f6feb22; color: #58a6ff; border: 1px solid #1f6feb44; }
+        .replay-src.tag-b { background: #2ea04322; color: #3fb950; border: 1px solid #2ea04344; }
+        footer { margin-top: 50px; color: #484f58; font-size: 0.8rem; text-align: center; }
+        @media (max-width: 480px) {
+            h1 { font-size: 1.4rem; }
+            .replay-list { max-height: 340px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="./index.html" class="back">← 返回首页</a>
+        <h1>📚 复盘合集</h1>
+        <p class="subtitle">A股每日深度复盘（本站）+ 持仓复盘（任务库）</p>
+<details class="replay-month" open>
+                    <summary>2026年08月 · 5 篇</summary>
+                    <ul class="replay-list">
+                        <li><a href="./A股深度复盘_20260807.md"><span class="replay-date">8/7</span><span class="replay-title">A股深度复盘</span><span class="replay-src tag-a">本站A股复盘</span></a></li>
+                        <li><a href="./A股深度复盘_20260806.md"><span class="replay-date">8/6</span><span class="replay-title">A股深度复盘</span><span class="replay-src tag-a">本站A股复盘</span></a></li>
+                        <li><a href="./A股深度复盘_20260805.md"><span class="replay-date">8/5</span><span class="replay-title">A股深度复盘</span><span class="replay-src tag-a">本站A股复盘</span></a></li>
+                        <li><a href="./A股深度复盘_20260804.md"><span class="replay-date">8/4</span><span class="replay-title">A股深度复盘</span><span class="replay-src tag-a">本站A股复盘</span></a></li>
+                        <li><a href="./A股深度复盘_20260803.md"><span class="replay-date">8/3</span><span class="replay-title">A股深度复盘</span><span class="replay-src tag-a">本站A股复盘</span></a></li>
+                </details>
+                <details class="replay-month">
+                    <summary>2026年07月 · 24 篇</summary>
+                    <ul class="replay-list">
+                        <li><a href="./A股深度复盘_20260731.md"><span class="replay-date">7/31</span><span class="replay-title">A股深度复盘</span><span class="replay-src tag-a">本站A股复盘</span></a></li>
+                        <li><a href="./A股深度复盘_20260730.md"><span class="replay-date">7/30</span><span class="replay-title">A股深度复盘</span><span class="replay-src tag-a">本站A股复盘</span></a></li>
+                        <li><a href="./A股深度复盘_20260729.md"><span class="replay-date">7/29</span><span class="replay-title">A股深度复盘</span><span class="replay-src tag-a">本站A股复盘</span></a></li>
+                        <li><a href="./A股深度复盘_20260728.md"><span class="replay-date">7/28</span><span class="replay-title">A股深度复盘</span><span class="replay-src tag-a">本站A股复盘</span></a></li>
+                        <li><a href="./A股深度复盘_20260727.md"><span class="replay-date">7/27</span><span class="replay-title">A股深度复盘</span><span class="replay-src tag-a">本站A股复盘</span></a></li>
+                        <li><a href="./A股深度复盘_20260724.md"><span class="replay-date">7/24</span><span class="replay-title">A股深度复盘</span><span class="replay-src tag-a">本站A股复盘</span></a></li>
+                        <li><a href="./A股深度复盘_20260723.md"><span class="replay-date">7/23</span><span class="replay-title">A股深度复盘</span><span class="replay-src tag-a">本站A股复盘</span></a></li>
+                        <li><a href="./A股深度复盘_20260722.md"><span class="replay-date">7/22</span><span class="replay-title">A股深度复盘</span><span class="replay-src tag-a">本站A股复盘</span></a></li>
+                        <li><a href="./A股深度复盘_20260721.md"><span class="replay-date">7/21</span><span class="replay-title">A股深度复盘</span><span class="replay-src tag-a">本站A股复盘</span></a></li>
+                        <li><a href="./A股深度复盘_20260720.md"><span class="replay-date">7/20</span><span class="replay-title">A股深度复盘</span><span class="replay-src tag-a">本站A股复盘</span></a></li>
+                        <li><a href="./A股深度复盘_20260717.md"><span class="replay-date">7/17</span><span class="replay-title">A股深度复盘</span><span class="replay-src tag-a">本站A股复盘</span></a></li>
+                        <li><a href="./A股深度复盘_20260716.md"><span class="replay-date">7/16</span><span class="replay-title">A股深度复盘</span><span class="replay-src tag-a">本站A股复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年7月16日.md"><span class="replay-date">7/16</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年7月15日.md"><span class="replay-date">7/15</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年7月14日.md"><span class="replay-date">7/14</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年7月13日.md"><span class="replay-date">7/13</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年7月10日.md"><span class="replay-date">7/10</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年7月9日.md"><span class="replay-date">7/9</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年7月8日.md"><span class="replay-date">7/8</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年7月7日.md"><span class="replay-date">7/7</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年7月6日.md"><span class="replay-date">7/6</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年7月3日.md"><span class="replay-date">7/3</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年7月2日.md"><span class="replay-date">7/2</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年7月1日.md"><span class="replay-date">7/1</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                </details>
+                <details class="replay-month">
+                    <summary>2026年06月 · 21 篇</summary>
+                    <ul class="replay-list">
+                        <li><a href="./复盘合集/复盘报告-2026年6月30日.md"><span class="replay-date">6/30</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年6月29日.md"><span class="replay-date">6/29</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年6月26日.md"><span class="replay-date">6/26</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年6月25日.md"><span class="replay-date">6/25</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年6月24日.md"><span class="replay-date">6/24</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年6月23日.md"><span class="replay-date">6/23</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年6月22日.md"><span class="replay-date">6/22</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年6月18日.md"><span class="replay-date">6/18</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年6月17日.md"><span class="replay-date">6/17</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年6月16日.md"><span class="replay-date">6/16</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年6月15日.md"><span class="replay-date">6/15</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年6月12日.md"><span class="replay-date">6/12</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年6月11日.md"><span class="replay-date">6/11</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年6月10日.md"><span class="replay-date">6/10</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年6月9日.md"><span class="replay-date">6/9</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年6月8日.md"><span class="replay-date">6/8</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年6月5日.md"><span class="replay-date">6/5</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年6月4日.md"><span class="replay-date">6/4</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年6月3日.md"><span class="replay-date">6/3</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年6月2日.md"><span class="replay-date">6/2</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年6月1日.md"><span class="replay-date">6/1</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                </details>
+                <details class="replay-month">
+                    <summary>2026年05月 · 23 篇</summary>
+                    <ul class="replay-list">
+                        <li><a href="./复盘合集/复盘报告-2026年5月29日-6月展望修正.md"><span class="replay-date">5/29</span><span class="replay-title">复盘报告-6月展望修正</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年5月28日-6月展望.md"><span class="replay-date">5/28</span><span class="replay-title">复盘报告-6月展望</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年5月27日.md"><span class="replay-date">5/27</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年5月26日.md"><span class="replay-date">5/26</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年5月25日-5日深度交叉分析版.md"><span class="replay-date">5/25</span><span class="replay-title">复盘报告-5日深度交叉分析版</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年5月25日-5日综合版.md"><span class="replay-date">5/25</span><span class="replay-title">复盘报告-5日综合版</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年5月25日-完整版.md"><span class="replay-date">5/25</span><span class="replay-title">复盘报告-完整版</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年5月22日-完整版.md"><span class="replay-date">5/22</span><span class="replay-title">复盘报告-完整版</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年5月22日.md"><span class="replay-date">5/22</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年5月21日-最终版.md"><span class="replay-date">5/21</span><span class="replay-title">复盘报告-最终版</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年5月20日-最终版.md"><span class="replay-date">5/20</span><span class="replay-title">复盘报告-最终版</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年5月20日.md"><span class="replay-date">5/20</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026年5月19日.md"><span class="replay-date">5/19</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026-05-18.md"><span class="replay-date">5/18</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026-05-16.md"><span class="replay-date">5/16</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026-05-15-真实数据.md"><span class="replay-date">5/15</span><span class="replay-title">复盘报告-真实数据</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026-05-15.md"><span class="replay-date">5/15</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/复盘报告-2026-05-14.md"><span class="replay-date">5/14</span><span class="replay-title">复盘报告</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/2026-05-13 持仓复盘.md"><span class="replay-date">5/13</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/2026-05-13复盘.md"><span class="replay-date">5/13</span><span class="replay-title">复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/2026-05-13持仓复盘-真实数据.md"><span class="replay-date">5/13</span><span class="replay-title">持仓复盘-真实数据</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/2026-05-08复盘.md"><span class="replay-date">5/8</span><span class="replay-title">复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/2026-05-06复盘.md"><span class="replay-date">5/6</span><span class="replay-title">复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                </details>
+                <details class="replay-month">
+                    <summary>2026年04月 · 17 篇</summary>
+                    <ul class="replay-list">
+                        <li><a href="./复盘合集/2026-04-27_持仓复盘.md"><span class="replay-date">4/27</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/2026-04-24_持仓复盘.md"><span class="replay-date">4/24</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/2026-04-23_持仓复盘.md"><span class="replay-date">4/23</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/2026-04-22_持仓复盘.md"><span class="replay-date">4/22</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/2026-04-21_持仓复盘.md"><span class="replay-date">4/21</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/2026-04-20_持仓复盘.md"><span class="replay-date">4/20</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/2026-04-17_持仓复盘.md"><span class="replay-date">4/17</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/2026-04-16_持仓复盘.md"><span class="replay-date">4/16</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/2026-04-15_持仓复盘.md"><span class="replay-date">4/15</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/2026-04-14_持仓复盘.md"><span class="replay-date">4/14</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/2026-04-13_持仓复盘.md"><span class="replay-date">4/13</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/2026-04-10_持仓复盘.md"><span class="replay-date">4/10</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/持仓复盘_20260409.md"><span class="replay-date">4/9</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/持仓复盘_20260408.md"><span class="replay-date">4/8</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/持仓复盘_20260407.md"><span class="replay-date">4/7</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/持仓回撤复盘_20260403.md"><span class="replay-date">4/3</span><span class="replay-title">持仓回撤复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/持仓复盘_20260402.md"><span class="replay-date">4/2</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                </details>
+                <details class="replay-month">
+                    <summary>2026年03月 · 6 篇</summary>
+                    <ul class="replay-list">
+                        <li><a href="./复盘合集/持仓复盘_20260331_0401.md"><span class="replay-date">3/31</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/持仓复盘_20260330.md"><span class="replay-date">3/30</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/持仓复盘_20260327.md"><span class="replay-date">3/27</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/持仓复盘_20260326.md"><span class="replay-date">3/26</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/持仓复盘_20260325.md"><span class="replay-date">3/25</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                        <li><a href="./复盘合集/持仓复盘_20260324.md"><span class="replay-date">3/24</span><span class="replay-title">持仓复盘</span><span class="replay-src tag-b">任务库持仓复盘</span></a></li>
+                </details>
+
+        <footer>Powered by GitHub Pages</footer>
+    </div>
+</body>
+</html>>
