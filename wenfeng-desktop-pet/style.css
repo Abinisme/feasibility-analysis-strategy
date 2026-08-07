@@ -1,0 +1,202 @@
+/* ============================================
+   文峰桌面宠物 - 样式表
+   基于 Codex Pet Standard 格式
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+/* 容器 - 透明可穿透 */
+.pet-container {
+  position: fixed;
+  width: 256px;
+  height: 256px;
+  z-index: 99999;
+  cursor: grab;
+  /* 允许点击穿透到下层（仅非宠物区域） */
+  pointer-events: none;
+}
+
+.pet-container.interactive {
+  pointer-events: auto;
+}
+
+/* 宠物主体 */
+.pet {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease-out;
+}
+
+/* 悬停时轻微放大反馈 */
+.pet-container:hover .pet {
+  transform: scale(1.05);
+}
+
+/* 拖拽中 */
+.pet-container.dragging {
+  cursor: grabbing;
+}
+
+.pet-container.dragging .pet {
+  transform: scale(1.08);
+  opacity: 0.9;
+}
+
+/* 宠物图片 */
+.pet-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  /* 呼吸动画 - idle 状态微动 */
+  animation: breathe 2s ease-in-out infinite;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  transition: filter 0.3s ease;
+}
+
+/* shush 状态下的特殊效果 */
+.pet-image.state-shush {
+  animation: shush-wiggle 0.4s ease-in-out infinite;
+  filter: drop-shadow(0 4px 20px rgba(30, 80, 180, 0.25));
+}
+
+/* 呼吸动画 - idle 微动 */
+@keyframes breathe {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-3px) scale(1.01); }
+}
+
+/* shush 手势晃动 */
+@keyframes shush-wiggle {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  25% { transform: rotate(-1.5deg) translateY(-2px); }
+  75% { transform: rotate(1.5deg) translateY(-1px); }
+}
+
+/* 对话气泡 */
+.speech-bubble {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  background: white;
+  border-radius: 16px;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  white-space: nowrap;
+  max-width: 200px;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid white;
+}
+
+.speech-bubble.visible {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.speech-bubble.hidden {
+  opacity: 0;
+  transform: translateX(-50%) scale(0.5);
+}
+
+/* 右键菜单 */
+.context-menu {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 12px;
+  padding: 6px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  min-width: 160px;
+  z-index: 100000;
+  display: none;
+  font-size: 13px;
+}
+
+.context-menu.visible {
+  display: block;
+  animation: menuIn 0.15s ease-out;
+}
+
+@keyframes menuIn {
+  from { opacity: 0; transform: scale(0.95) translateY(-4px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.context-menu-item {
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.context-menu-item:hover {
+  background: rgba(30, 80, 180, 0.08);
+  color: #1e50b4;
+}
+
+.context-menu-divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.06);
+  margin: 4px 8px;
+}
+
+/* 状态指示器（调试用，可隐藏） */
+.status-indicator {
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  z-index: 100001;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.status-indicator.visible {
+  opacity: 1;
+}
