@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>A股深度复盘报告 — 2026年7月3日（周五 · 韩股熔断暴涨日）</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif; line-height:1.8; padding:20px 14px 60px; }
+.container { max-width:820px; margin:0 auto; }
+.toolbar { position:sticky; top:0; background:rgba(13,17,23,0.95); backdrop-filter:blur(8px); padding:10px 0; margin-bottom:18px; display:flex; align-items:center; gap:10px; border-bottom:1px solid #30363d; z-index:10; }
+.toolbar a { color:#58a6ff; text-decoration:none; font-size:0.85rem; white-space:nowrap; }
+.toolbar a:hover { text-decoration:underline; }
+.toolbar .sep { color:#484f58; }
+h1 { font-size:1.5rem; color:#f0f6fc; border-bottom:2px solid #30363d; padding-bottom:10px; margin-bottom:18px; }
+h2 { font-size:1.2rem; color:#58a6ff; margin:26px 0 12px; padding-left:10px; border-left:3px solid #58a6ff; }
+h3 { font-size:1.05rem; color:#d29922; margin:20px 0 10px; }
+h4 { font-size:0.98rem; color:#c9d1d9; margin:16px 0 8px; }
+p { margin:8px 0; }
+ul, ol { padding-left:24px; margin:8px 0; }
+li { margin:4px 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+blockquote { border-left:4px solid #30363d; background:#161b22; padding:8px 14px; margin:12px 0; color:#8b949e; border-radius:0 6px 6px 0; }
+blockquote p { margin:4px 0; }
+code { background:#161b22; padding:2px 6px; border-radius:4px; font-size:0.88em; font-family:"SF Mono",Consolas,Menlo,monospace; }
+pre { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:12px 14px; overflow-x:auto; margin:12px 0; }
+pre code { background:none; padding:0; }
+table { border-collapse:collapse; width:100%; margin:12px 0; font-size:0.9em; display:block; overflow-x:auto; }
+th, td { border:1px solid #30363d; padding:7px 10px; text-align:left; }
+th { background:#161b22; color:#58a6ff; font-weight:600; }
+tr:nth-child(even) td { background:rgba(22,27,34,0.5); }
+hr { border:none; border-top:1px solid #30363d; margin:20px 0; }
+img { max-width:100%; border-radius:6px; }
+strong { color:#f0f6fc; }
+.toc { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:14px 18px; margin:14px 0 20px; }
+.toc h3 { margin:0 0 8px; color:#58a6ff; }
+.toc a { display:block; padding:3px 0; font-size:0.9em; color:#8b949e; }
+.toc a:hover { color:#58a6ff; text-decoration:none; }
+.footer { text-align:center; color:#484f58; font-size:0.78rem; margin-top:40px; padding-top:16px; border-top:1px solid #30363d; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="toolbar">
+    <a href="../index.html">🏠 首页</a><span class="sep">|</span>
+    <a href="../replay_index.html">📚 复盘合集</a><span class="sep">|</span>
+    <span style="color:#8b949e;font-size:0.8rem;">任务库持仓复盘 · 复盘报告-2026年7月3日.md</span>
+  </div>
+  
+  <h1>A股深度复盘报告 — 2026年7月3日（周五 · 韩股熔断暴涨日）</h1>
+<blockquote>
+<p><strong>结论先行</strong>：今日A股&quot;指数微涨、血仍在流&quot;——沪指+0.37%报4043点，3800+股飘红，但科创50-0.59%继续回调，半导体延续暴跌。核心剧情：隔夜费城半导体再跌-5.44%（2日累计-11%），存储芯片闪迪-14%/铠侠-13%雪崩；但韩国KOSPI上演&quot;从-3.5%→+5%触发做多熔断&quot;的史诗级V型反转（三星+9%/SK海力士+10%），日股同步V反。A股半导体早盘大幅低开、午后小幅修复——北创盘中775→收816(-2.98%)、中微跌停后微弹+1.17%、沪硅-7.80%三连崩。**量化七维度验证：CPO率先企稳（新易盛+3.34%、天孚缩量止跌），但设备/材料仍在寻底——修复概率排序CPO&gt;PCB&gt;设备&gt;存储&gt;芯片&gt;材料。**赛腾股份4天-16%（81→68）加仓后遭遇韩股踩踏+费城双杀，短期极端超卖但基本面支撑在（Q1利润+33%）。</p>
+</blockquote>
+<hr>
+<h2 id="sec-0">一、核心新闻与市场热点深度分析</h2>
+<h3 id="sec-1">1.1 今日行情概览</h3>
+<table>
+<thead>
+<tr>
+<th>指数</th>
+<th>收盘</th>
+<th>涨跌幅</th>
+<th>盘中</th>
+<th>量能</th>
+<th>核心解读</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>4,043.64</td>
+<td><strong>+0.37%</strong></td>
+<td>早盘一度冲高</td>
+<td>缩量</td>
+<td>金融+黄金托底</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>15,597.51</td>
+<td><strong>+0.64%</strong></td>
+<td>盘中一度+2%</td>
+<td>—</td>
+<td>午后大幅回落</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>4,019.93</td>
+<td><strong>+0.07%</strong></td>
+<td>盘中一度+2%→尾盘翻绿</td>
+<td>—</td>
+<td>冲高回落明显</td>
+</tr>
+<tr>
+<td>科创50</td>
+<td>1,975.60</td>
+<td><strong>-0.59%</strong> 🔴</td>
+<td>早盘一度+2%</td>
+<td>—</td>
+<td>半导体拖累，连续3日下跌</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>成交额 <strong>3.18万亿</strong>，缩量2,680亿（连续缩量）</li>
+<li><strong>3,800+只个股上涨</strong>，160只涨停，24只跌停</li>
+<li>全市场赚钱效应回暖，但科技股仍未止血</li>
+</ul>
+<p><strong>走势图谱：</strong></p>
+<pre class="code-block"><code>09:30 三大指数涨跌不一，半导体大幅低开（隔夜费城-5.44%映射）
+10:30 机器人概念爆发（宇树IPO获批），创业板冲高+2%
+     贵金属涨停潮（黄金重回4000上方），军工/减速器走强
+11:30 科创50冲高+2%→翻绿（半导体材料继续暴跌）
+13:00 午后韩股熔断暴涨→亚太情绪修复，但A股冲高回落
+14:30 尾盘涨幅集体收窄，创业板逼近翻绿
+15:00 沪指+0.37%，科创50-0.59%三连阴
+</code></pre>
+<h3 id="sec-2">1.2 三重核心矛盾拆解</h3>
+<h4>第一重：费城半导体2日-11%——存储芯片成绞肉机</h4>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>事件</th>
+<th>跌幅</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7/1</td>
+<td>费城半导体第一日</td>
+<td><strong>-5.44%</strong></td>
+</tr>
+<tr>
+<td>7/2</td>
+<td>费城半导体第二日（隔夜）</td>
+<td><strong>-5.44%</strong></td>
+</tr>
+<tr>
+<td>累计</td>
+<td><strong>2日连跌</strong></td>
+<td><strong>-11%</strong> 🔴🔴</td>
+</tr>
+</tbody>
+</table>
+<p><strong>跌幅最深个股：</strong></p>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th>7/2跌幅</th>
+<th>核心原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>闪迪</td>
+<td><strong>-14%</strong></td>
+<td>存储价格见顶预期</td>
+</tr>
+<tr>
+<td>铠侠ADR</td>
+<td><strong>-12.5%</strong></td>
+<td>存储出货量放缓</td>
+</tr>
+<tr>
+<td>科磊</td>
+<td><strong>-11%</strong></td>
+<td>设备订单放缓</td>
+</tr>
+<tr>
+<td>西部数据</td>
+<td><strong>-10%</strong></td>
+<td>存储周期反转</td>
+</tr>
+<tr>
+<td>美光</td>
+<td><strong>-5%</strong></td>
+<td>DRAM需求触顶</td>
+</tr>
+</tbody>
+</table>
+<p><strong>深层逻辑——三重暴击：</strong></p>
+<ol>
+<li><strong>存储周期反转</strong>：闪迪/铠侠/西部数据集体暴跌，市场定价&quot;存储价格见顶→库存堆积→资本开支削减&quot;。这是对6月存储狂欢的终极修正</li>
+<li><strong>Meta&quot;卖算力&quot;冲击</strong>：Meta宣布对外出售AI算力→市场解读为&quot;算力供给过剩&quot;→AI芯片需求逻辑受到质疑</li>
+<li><strong>苹果+道指创历史新高 vs 纳指暴跌</strong>：资金从AI半导体→传统消费/工业的大轮动已经发生</li>
+</ol>
+<blockquote>
+<p><strong>这意味着：A股6月的半导体狂欢，源头是美股AI算力叙事。现在美股自身正在拆解这个叙事，A股半导体失去了最大的外部驱动力。</strong></p>
+</blockquote>
+<h4>第二重：韩国KOSPI&quot;从地狱到天堂&quot;的V型反转</h4>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>KOSPI</th>
+<th>事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>09:00</td>
+<td><strong>-3.5%</strong></td>
+<td>隔夜费城暴跌映射+杠杆平仓恐慌</td>
+</tr>
+<tr>
+<td>09:30</td>
+<td>快速拉升</td>
+<td>技术买盘+政府维稳预期</td>
+</tr>
+<tr>
+<td>13:00</td>
+<td><strong>+5%</strong> 🔥</td>
+<td><strong>触发做多熔断！暂停程序化买盘</strong></td>
+</tr>
+<tr>
+<td>收盘</td>
+<td>大幅收涨</td>
+<td>三星+9%、SK海力士+10%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>这份反转的驱动因素：</strong></p>
+<ol>
+<li><strong>超跌反弹</strong>：KOSPI从高点累计跌超15%，触发做多熔断本身就说明空头力量已经极端</li>
+<li><strong>三星/SK海力士带头</strong>：存储芯片双龙头大涨→市场price in&quot;跌过头了&quot;</li>
+<li><strong>日股同步V反</strong>：日经从-1.5%→+1.17%，罗姆半导体+11%/铠侠+10%</li>
+</ol>
+<p><strong>但这对A股半导体的影响是双面的：</strong></p>
+<table>
+<thead>
+<tr>
+<th>利多</th>
+<th>利空</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>韩股企稳→亚太半导体情绪修复</td>
+<td>三星/SK的反弹vs A股存储继续跌=<strong>脱钩</strong></td>
+</tr>
+<tr>
+<td>载板降价利好国内PCB</td>
+<td>存储周期反转直接打击兆易/深科技</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键判断：韩股V反更多是&quot;空头踩踏后的技术修复&quot;，不是基本面的反转。三星/SK涨的是&quot;超跌+回购预期&quot;，A股存储（兆易/深科）没有这个逻辑。</strong></p>
+<h4>第三重：A股&quot;指数涨、科技跌&quot;的极致分化</h4>
+<table>
+<thead>
+<tr>
+<th>🔥暴涨方向</th>
+<th>🔴继续下跌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>机器人涨停潮（宇树IPO获批）</td>
+<td>半导体材料（沪硅-7.80%三连崩）</td>
+</tr>
+<tr>
+<td>贵金属涨停潮（黄金重返4000）</td>
+<td>半导体设备（北创-2.98%）</td>
+</tr>
+<tr>
+<td>减速器/军工涨停潮</td>
+<td>芯片设计（寒武纪-1.38%）</td>
+</tr>
+<tr>
+<td>汽车热管理涨停潮</td>
+<td>通讯ETF（5日大跌）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>3800只上涨但你的持仓可能满屏绿色——因为涨的是机器人/黄金/军工/汽车，不是半导体/通讯。</strong></p>
+<hr>
+<h2 id="sec-3">二、隔夜美股 + 日韩市场深度梳理</h2>
+<h3 id="sec-4">2.1 美股：道指创新高 vs 纳指暴跌——极致风格撕裂</h3>
+<table>
+<thead>
+<tr>
+<th>指数</th>
+<th>7/2收盘</th>
+<th>涨跌</th>
+<th>核心驱动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>道指</td>
+<td>52,900</td>
+<td><strong>+1.14%</strong> 🔥</td>
+<td>创历史新高！麦当劳+4%/苹果+5%</td>
+</tr>
+<tr>
+<td>纳指</td>
+<td>25,832</td>
+<td><strong>-0.80%</strong> 🔴</td>
+<td>费城半导体-5.44%拖累</td>
+</tr>
+<tr>
+<td>标普500</td>
+<td>7,483</td>
+<td>持平</td>
+<td>一涨一跌正好对冲</td>
+</tr>
+</tbody>
+</table>
+<p><strong>道指创新高的原因</strong>：苹果+5%（折叠屏iPhone备货预期大幅上调）、麦当劳+4%、可口可乐/强生等&quot;老登股&quot;集体起舞。</p>
+<p><strong>纳指暴跌的原因</strong>：Meta&quot;卖算力&quot;→AI概念重挫、费城半导体2日-11%、特斯拉-7%（近一年最大单日跌幅）。</p>
+<blockquote>
+<p><strong>这是全球资本市场的&quot;世纪轮动&quot;——资金从AI半导体→传统消费/工业。A股今天的机器人/黄金涨停潮，本质上也是同一个逻辑的映射。</strong></p>
+</blockquote>
+<h3 id="sec-5">2.2 韩国：史诗级V型反转</h3>
+<table>
+<thead>
+<tr>
+<th>时段</th>
+<th>KOSPI</th>
+<th>事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>开盘-3.5%</td>
+<td>隔夜费城-5.44%传导+杠杆平仓链式反应</td>
+<td></td>
+</tr>
+<tr>
+<td>盘中0%</td>
+<td>技术买盘涌入</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>午后+5%</strong> 🔥</td>
+<td><strong>触发做多熔断！三星+9%/SK+10%</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>韩国熔断细节</strong>：这是2周内第4次熔断（前3次是暴跌熔断，这次是做多熔断）。38万亿融资余额规模是全球半导体杠杆最高的市场。</p>
+<h3 id="sec-6">2.3 日本：同步V反</h3>
+<p>日经从-1.5%→+1.17%（涨超900点），罗姆半导体+11%/铠侠+10%。但存储相关的东京电子等仍偏弱。</p>
+<hr>
+<h2 id="sec-7">三、热门科技板块七维量化深度分析</h2>
+<h3 id="sec-8">3.1 全栈科技7日成绩单（6/25→7/3）</h3>
+<h4>半导体设备：从赶顶→崩塌→寻底</h4>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th>6/25</th>
+<th>高点</th>
+<th>7/2(跌停)</th>
+<th>7/3</th>
+<th>7日累计</th>
+<th>从高点回撤</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>北创</td>
+<td>798</td>
+<td>935(7/1)</td>
+<td>842(-10%)</td>
+<td><strong>816(-2.98%)</strong></td>
+<td>+2.3%</td>
+<td><strong>-12.8%</strong></td>
+</tr>
+<tr>
+<td>中微</td>
+<td>399</td>
+<td>468(6/30)</td>
+<td>409(-11.5%)</td>
+<td><strong>414(+1.17%)</strong></td>
+<td>+3.6%</td>
+<td><strong>-11.6%</strong></td>
+</tr>
+<tr>
+<td>盛美</td>
+<td>413</td>
+<td>448(6/29)</td>
+<td>370(-8.6%)</td>
+<td><strong>363(-1.78%)</strong></td>
+<td>-12.0%</td>
+<td><strong>-19.0%</strong></td>
+</tr>
+<tr>
+<td>拓荆</td>
+<td>823</td>
+<td>~870</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>设备量化评估：</strong></p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th style="text-align:center">北创</th>
+<th style="text-align:center">中微</th>
+<th style="text-align:center">盛美</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>近期资金流</td>
+<td style="text-align:center">7/2缩量跌停→7/3放量16.6万手（抄底资金进场）</td>
+<td style="text-align:center">7/2放量43.6万手（恐慌盘）→7/3缩量</td>
+<td style="text-align:center">连续3日流出</td>
+</tr>
+<tr>
+<td>均线状态</td>
+<td style="text-align:center">C=816，5MA=870↓，10MA=845↓，20MA=770</td>
+<td style="text-align:center">C=414，20MA=430↓</td>
+<td style="text-align:center">C=363，全面死亡交叉</td>
+</tr>
+<tr>
+<td>MACD</td>
+<td style="text-align:center">死叉刚形成，绿柱拉长</td>
+<td style="text-align:center">死叉，绿柱加速</td>
+<td style="text-align:center">死叉加深</td>
+</tr>
+<tr>
+<td>RSI(估算)</td>
+<td style="text-align:center">~35（接近超卖）</td>
+<td style="text-align:center">~32（接近超卖）</td>
+<td style="text-align:center">~28（超卖）</td>
+</tr>
+<tr>
+<td><strong>修复概率</strong></td>
+<td style="text-align:center"><strong>75%</strong></td>
+<td style="text-align:center"><strong>65%</strong></td>
+<td style="text-align:center"><strong>55%</strong></td>
+</tr>
+</tbody>
+</table>
+<h4>CPO/光通信：率先企稳！</h4>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th>7日走势</th>
+<th>7/3</th>
+<th>7日累计</th>
+<th>分析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中际</td>
+<td>1323→1254→1220→1270→1223→1143→<strong>1116</strong></td>
+<td><strong>-2.36%</strong></td>
+<td><strong>-15.7%</strong></td>
+<td>缩量下跌，卖家在减少</td>
+</tr>
+<tr>
+<td>新易盛</td>
+<td>610→566→557→607→576→509→<strong>526</strong></td>
+<td><strong>+3.34%</strong> ✅</td>
+<td>-13.8%</td>
+<td>率先反弹！</td>
+</tr>
+<tr>
+<td>天孚</td>
+<td>342→318→295→303→285→251→<strong>250</strong></td>
+<td><strong>-0.27%</strong></td>
+<td><strong>-26.9%</strong></td>
+<td>缩量止跌！极超卖</td>
+</tr>
+</tbody>
+</table>
+<p><strong>CPO量化评估：</strong></p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th style="text-align:center">中际</th>
+<th style="text-align:center">新易盛</th>
+<th style="text-align:center">天孚</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7日跌幅</td>
+<td style="text-align:center">-15.7%</td>
+<td style="text-align:center">-13.8%</td>
+<td style="text-align:center"><strong>-26.9%</strong> 🔴</td>
+</tr>
+<tr>
+<td>RSI(估算)</td>
+<td style="text-align:center">~28 超卖</td>
+<td style="text-align:center">~35</td>
+<td style="text-align:center"><strong>~15 极度超卖</strong></td>
+</tr>
+<tr>
+<td>偏离10MA</td>
+<td style="text-align:center">-10%</td>
+<td style="text-align:center">-5%</td>
+<td style="text-align:center"><strong>-19%</strong> 3σ极端事件</td>
+</tr>
+<tr>
+<td>今日信号</td>
+<td style="text-align:center">缩量跌=卖家枯竭</td>
+<td style="text-align:center"><strong>放量反弹+3.34%</strong></td>
+<td style="text-align:center"><strong>缩量-0.27%=止跌</strong></td>
+</tr>
+<tr>
+<td><strong>修复概率</strong></td>
+<td style="text-align:center"><strong>80%</strong></td>
+<td style="text-align:center"><strong>85%</strong></td>
+<td style="text-align:center"><strong>90%</strong> 🔥</td>
+</tr>
+</tbody>
+</table>
+<p><strong>核心判断</strong>：CPO是今天全栈科技中第一个出现企稳信号的板块——新易盛+3.34%放量反弹、天孚缩量止跌（7日-27%极超卖）、中际缩量跌（卖家枯竭）。<strong>7/2的判断&quot;CPO修复概率85%&quot;今天初步验证。</strong></p>
+<h4>PCB/覆铜板</h4>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th>7日走势</th>
+<th>7/3</th>
+<th>7日累计</th>
+<th>分析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>沪电</td>
+<td>155→147→141→153→145→131→<strong>135</strong></td>
+<td><strong>+3.71%</strong> ✅</td>
+<td>-12.9%</td>
+<td>率先反弹！</td>
+</tr>
+<tr>
+<td>景旺</td>
+<td>—</td>
+<td><strong>+8.77%</strong> 🔥</td>
+<td>—</td>
+<td>逆势大涨！</td>
+</tr>
+</tbody>
+</table>
+<p><strong>PCB评估：沪电率先反弹+3.71%与CPO同步，修复概率70%。景旺+8.77%说明PCB内部有独立催化（AI服务器PCB需求）。</strong></p>
+<h4>存储/封测</h4>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th>7日走势</th>
+<th>7/3</th>
+<th>7日累计</th>
+<th>分析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>深科技</td>
+<td>53→54→59→64→62→56→<strong>56</strong></td>
+<td>-0.21%</td>
+<td>+5.1%</td>
+<td>缩量止跌，但57上影</td>
+</tr>
+<tr>
+<td>兆易</td>
+<td>775→770→840→815→772→695→<strong>678</strong></td>
+<td>-2.45%</td>
+<td><strong>-12.5%</strong></td>
+<td>从840高点回撤-19.3%</td>
+</tr>
+<tr>
+<td>紫光国微</td>
+<td>88→84→85→89→86→84→<strong>82</strong></td>
+<td>-2.14%</td>
+<td>-6.5%</td>
+<td>持续走弱</td>
+</tr>
+<tr>
+<td>赛腾</td>
+<td>72→72→79→81→81→73→<strong>68</strong></td>
+<td><strong>-6.60%</strong> 🔴</td>
+<td><strong>-5.6%</strong></td>
+<td>4天-16%！</td>
+</tr>
+</tbody>
+</table>
+<p><strong>存储评估</strong>：受美股存储闪迪-14%直接映射，修复概率60%。赛腾4天-16%是极端超卖（81→68），但基本面Q1利润+33%未变。</p>
+<h4>半导体材料——三连崩，最弱方向</h4>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th>7日走势</th>
+<th>7/3</th>
+<th>7日累计</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>沪硅</td>
+<td>33→35→39→40→41→37→<strong>35</strong></td>
+<td><strong>-7.80%</strong> 🔴</td>
+<td>+5.1%</td>
+</tr>
+<tr>
+<td>雅克</td>
+<td>181→189→207→225→236→212→<strong>200</strong></td>
+<td><strong>-6.11%</strong> 🔴</td>
+<td>+10.2%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>材料评估：三连崩（沪硅-8.8%→-7.8%），游资全面撤离，修复概率35%。</strong></p>
+<h4>芯片设计</h4>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th>7/3</th>
+<th>分析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>寒武纪</td>
+<td>1353(-1.38%)</td>
+<td>高位钝刀割肉</td>
+</tr>
+<tr>
+<td>中芯国际</td>
+<td>141(-2.63%)</td>
+<td>跟随板块</td>
+</tr>
+</tbody>
+</table>
+<p><strong>芯片设计评估</strong>：无独立催化，修复概率55%。</p>
+<h3 id="sec-9">3.2 七维量化汇总：明天（下周一7/6）修复概率排序</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">排序</th>
+<th>方向</th>
+<th style="text-align:center">修复概率</th>
+<th>核心理由</th>
+<th>关键信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>1</strong></td>
+<td><strong>CPO（天孚/新易盛）</strong></td>
+<td style="text-align:center"><strong>85%</strong></td>
+<td>天孚RSI~15极超卖+缩量止跌，新易盛率先反弹</td>
+<td>天孚7日-27%=3σ极端</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>2</strong></td>
+<td><strong>PCB（沪电）</strong></td>
+<td style="text-align:center"><strong>75%</strong></td>
+<td>沪电+3.71%率先反弹，景旺+8.77%独立催化</td>
+<td>资金回流信号明确</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>3</strong></td>
+<td><strong>设备（北创/中微）</strong></td>
+<td style="text-align:center"><strong>70%</strong></td>
+<td>北创7/3放量16.6万手=抄底进场，中微跌停后企稳</td>
+<td>缩量跌停→放量企稳=底部信号</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>4</strong></td>
+<td><strong>存储/封测（深科技/兆易）</strong></td>
+<td style="text-align:center"><strong>55%</strong></td>
+<td>美股存储暴跌直接映射，闪迪-14%需要消化</td>
+<td>兆易从840回撤-19%已反应大部分利空</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>5</strong></td>
+<td><strong>芯片设计（寒武纪）</strong></td>
+<td style="text-align:center"><strong>50%</strong></td>
+<td>无独立催化，跟随板块</td>
+<td>—</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>6</strong></td>
+<td><strong>材料（沪硅/雅克）</strong></td>
+<td style="text-align:center"><strong>35%</strong></td>
+<td>三连崩，游资全面撤离</td>
+<td>不要抄底材料</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="sec-10">四、赛腾股份（603283.SH）专项诊断</h2>
+<h3 id="sec-11">4.1 7日全景</h3>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>收盘</th>
+<th>涨跌</th>
+<th>量能</th>
+<th>事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6/25</td>
+<td>72.09</td>
+<td>+3.19%</td>
+<td>25万手</td>
+<td>随板块反弹</td>
+</tr>
+<tr>
+<td>6/26</td>
+<td>71.58</td>
+<td>-0.71%</td>
+<td>31万手</td>
+<td>正常调整</td>
+</tr>
+<tr>
+<td>6/29</td>
+<td>78.74</td>
+<td><strong>+10%涨停</strong> 🔥</td>
+<td>36万手</td>
+<td>基金季末调仓行情</td>
+</tr>
+<tr>
+<td>6/30</td>
+<td>80.98</td>
+<td>+2.84%</td>
+<td>42万手</td>
+<td>上半年收官日冲高</td>
+</tr>
+<tr>
+<td>7/1</td>
+<td>80.96</td>
+<td>-0.02%</td>
+<td><strong>53万手天量</strong></td>
+<td><strong>高位巨量换手！出货信号</strong></td>
+</tr>
+<tr>
+<td>7/2</td>
+<td>72.86</td>
+<td><strong>-10%跌停</strong> 🔴</td>
+<td>34万手</td>
+<td>韩国熔断+费城暴跌</td>
+</tr>
+<tr>
+<td>7/3</td>
+<td><strong>68.05</strong></td>
+<td><strong>-6.60%</strong> 🔴</td>
+<td>39万手</td>
+<td>继续放量下跌</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-12">4.2 亏损诊断</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>假设买入价</td>
+<td>~80元（你在&quot;高位&quot;买入）</td>
+</tr>
+<tr>
+<td>当前价</td>
+<td>68.05元</td>
+</tr>
+<tr>
+<td>累计亏损</td>
+<td><strong>约-15%</strong></td>
+</tr>
+<tr>
+<td>300股市值</td>
+<td>约20,415元</td>
+</tr>
+<tr>
+<td>亏损金额</td>
+<td>约3,585元</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-13">4.3 为什么跌这么惨？</h3>
+<table>
+<thead>
+<tr>
+<th>利空层次</th>
+<th>具体</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>❶ 存储周期反转</td>
+<td>美股闪迪-14%/铠侠-13%→A股存储全线暴跌</td>
+</tr>
+<tr>
+<td>❷ 7/1天量换手53万手</td>
+<td>机构在80元附近系统出货（天量=出货）</td>
+</tr>
+<tr>
+<td>❸ 费城半导体2日-11%</td>
+<td>设备需求预期崩塌</td>
+</tr>
+<tr>
+<td>❹ 韩股杠杆踩踏</td>
+<td>2周4次熔断，恐慌蔓延</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-14">4.4 基本面支撑</h3>
+<table>
+<thead>
+<tr>
+<th>正面</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q1净利润</td>
+<td><strong>9,106万元，同比+33.2%</strong></td>
+</tr>
+<tr>
+<td>Q1扣非</td>
+<td><strong>8,899万元，同比+46.6%</strong></td>
+</tr>
+<tr>
+<td>毛利率</td>
+<td>43.66%（仍然健康）</td>
+</tr>
+<tr>
+<td>资产负债率</td>
+<td>42.73%（适中）</td>
+</tr>
+<tr>
+<td>主营</td>
+<td>半导体检测设备+消费电子自动化</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-15">4.5 操作建议</h3>
+<table>
+<thead>
+<tr>
+<th>情景</th>
+<th style="text-align:center">概率</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>下周修复反弹3-5%</td>
+<td style="text-align:center">40%</td>
+<td>持有，反弹至72-75减仓100股</td>
+</tr>
+<tr>
+<td>继续阴跌至62-65</td>
+<td style="text-align:center">35%</td>
+<td><strong>设60硬止损</strong>（跌破-25%全部止损）</td>
+</tr>
+<tr>
+<td>加速暴跌至60以下</td>
+<td style="text-align:center">25%</td>
+<td>60止损无条件执行</td>
+</tr>
+</tbody>
+</table>
+<p><strong>核心判断</strong>：赛腾81→68的-16%中，约60%来自韩股踩踏的&quot;被错杀&quot;，40%来自存储周期反转的&quot;合理定价&quot;。<strong>不建议在68元割肉——等一轮技术修复反弹至72-75再减仓。但必须设60硬止损底线。</strong></p>
+<hr>
+<h2 id="sec-16">五、通讯ETF（515050）专项诊断</h2>
+<h3 id="sec-17">5.1 近期走势</h3>
+<p>通讯ETF追踪中证通信设备指数，重仓中兴通讯、中际旭创、新易盛、天孚通信等CPO/光纤龙头。</p>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6/25-6/30</td>
+<td>CPO板块创新高，通讯ETF跟涨</td>
+</tr>
+<tr>
+<td>7/1</td>
+<td>CPO开始回调</td>
+</tr>
+<tr>
+<td>7/2</td>
+<td>韩国熔断→CPO暴跌-5~12%</td>
+</tr>
+<tr>
+<td>7/3</td>
+<td>CPO分化：新易盛+3%反弹、天孚-0.3%止跌、中际-2.4%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-18">5.2 操作建议</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>修复概率</td>
+<td><strong>80%</strong>（CPO率先企稳）</td>
+</tr>
+<tr>
+<td>当前是否割肉</td>
+<td>❌ 不建议——天孚RSI~15极超卖，修复概率高</td>
+</tr>
+<tr>
+<td>反弹目标</td>
+<td>通讯ETF反弹3-5%可考虑减半</td>
+</tr>
+<tr>
+<td>止损线</td>
+<td>如果CPO再跌-10%，无条件止损</td>
+</tr>
+</tbody>
+</table>
+<p><strong>你不孤单——全市场加仓通讯方向的人都在吃这波回撤。CPO今天已经出现了缩量止跌+率先反弹的信号，耐心等下周修复。</strong></p>
+<hr>
+<h2 id="sec-19">六、持仓标的强弱评估</h2>
+<h3 id="sec-20">6.1 持仓全景（7月3日收盘）</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th>收盘</th>
+<th>今日</th>
+<th>7/1→7/3三日</th>
+<th>从高点回撤</th>
+<th>评级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>北创 135股</td>
+<td>816.00</td>
+<td>-2.98%</td>
+<td>935→816 <strong>-12.8%</strong></td>
+<td>-12.8%</td>
+<td>⭐⭐⭐ 中</td>
+</tr>
+<tr>
+<td>深科技 300股</td>
+<td>55.91</td>
+<td>-0.21%</td>
+<td>64→56 <strong>-12.5%</strong></td>
+<td>-13.0%</td>
+<td>⭐⭐⭐ 中</td>
+</tr>
+<tr>
+<td>宁德 100股</td>
+<td>380.00</td>
+<td>-0.61%</td>
+<td>连续寻底</td>
+<td>—</td>
+<td>⭐⭐ 弱</td>
+</tr>
+<tr>
+<td>东方电缆 200股</td>
+<td>43.75</td>
+<td>+0.90%</td>
+<td>逆势上涨</td>
+<td>—</td>
+<td>⭐⭐⭐⭐ 强</td>
+</tr>
+<tr>
+<td>立讯精密 100股</td>
+<td>64.44</td>
+<td><strong>+5.81%</strong> 🔥</td>
+<td>逆势大涨</td>
+<td>—</td>
+<td>⭐⭐⭐⭐⭐ 最强</td>
+</tr>
+<tr>
+<td>东财 1400股</td>
+<td>21.06</td>
+<td>+1.59%</td>
+<td>20→21稳</td>
+<td>—</td>
+<td>⭐⭐⭐⭐ 强</td>
+</tr>
+<tr>
+<td>招行 700股</td>
+<td>36.83</td>
+<td>+0.63%</td>
+<td>稳定器</td>
+<td>—</td>
+<td>⭐⭐⭐⭐ 强</td>
+</tr>
+<tr>
+<td>银之杰 400股</td>
+<td>35.16</td>
+<td>-1.76%</td>
+<td>调整中</td>
+<td>—</td>
+<td>⭐⭐ 弱</td>
+</tr>
+<tr>
+<td>中海油 100股</td>
+<td>27.69</td>
+<td>+3.51%</td>
+<td>黄金回4000催化</td>
+<td>—</td>
+<td>⭐⭐⭐ 中</td>
+</tr>
+<tr>
+<td>中远海控 1200股</td>
+<td>13.72</td>
+<td>+4.02%</td>
+<td>航运反弹</td>
+<td>—</td>
+<td>⭐⭐⭐ 中</td>
+</tr>
+<tr>
+<td>🔴 赛腾 300股</td>
+<td>68.05</td>
+<td><strong>-6.60%</strong></td>
+<td>81→68 <strong>-16.0%</strong></td>
+<td>-16.0%</td>
+<td>❌ 极弱</td>
+</tr>
+<tr>
+<td>🔴 通讯ETF</td>
+<td>—</td>
+<td>估-2%</td>
+<td>大跌</td>
+<td>—</td>
+<td>⭐⭐ 弱</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-21">6.2 三分法诊断</h3>
+<h4>🟢 扛跌阵营（不需要操作）</h4>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th>今日</th>
+<th>逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>立讯</td>
+<td><strong>+5.81%</strong> 🔥</td>
+<td>苹果折叠屏备货预期上调→消费电子独立催化</td>
+</tr>
+<tr>
+<td>东财</td>
+<td>+1.59%</td>
+<td>券商板块反弹，资金从科技→金融轮动</td>
+</tr>
+<tr>
+<td>招行</td>
+<td>+0.63%</td>
+<td>防御底仓</td>
+</tr>
+<tr>
+<td>东方电缆</td>
+<td>+0.90%</td>
+<td>海缆独立逻辑</td>
+</tr>
+</tbody>
+</table>
+<h4>🟡 超跌等修复阵营</h4>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th>状态</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>北创 135股</td>
+<td>935→816(-12.8%)，7/3放量16.6万手抄底</td>
+<td>🟢 不减，等反弹至850-870</td>
+</tr>
+<tr>
+<td>深科技 300股</td>
+<td>64→56(-12.5%)，缩量止跌</td>
+<td>🟢 持有，50止损</td>
+</tr>
+<tr>
+<td>通讯ETF</td>
+<td>跟跌CPO</td>
+<td>🟢 等CPO反弹3-5%</td>
+</tr>
+</tbody>
+</table>
+<h4>🔴 风险阵营</h4>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th>状态</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>赛腾 300股</td>
+<td>81→68(-16%)，跌停+放量</td>
+<td>⚠️ 反弹72-75减仓100股，60硬止损</td>
+</tr>
+<tr>
+<td>宁德 100股</td>
+<td>380持续走弱，375近在眼前</td>
+<td>🔴 375硬止损</td>
+</tr>
+<tr>
+<td>银之杰</td>
+<td>35，弱势跟跌</td>
+<td>🟡 观察</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="sec-22">七、操作建议汇总</h2>
+<h3 id="sec-23">7.1 下周操作优先级</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">优先级</th>
+<th>操作</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1️⃣</td>
+<td><strong>宁德375硬止损</strong></td>
+<td>380→375仅差5元(-1.3%)，随时触发</td>
+</tr>
+<tr>
+<td style="text-align:center">2️⃣</td>
+<td><strong>赛腾设60硬止损</strong></td>
+<td>当前-15%，60止损=最大亏损-25%</td>
+</tr>
+<tr>
+<td style="text-align:center">3️⃣</td>
+<td>赛腾反弹72-75减仓100股</td>
+<td>降低300股→200股暴露</td>
+</tr>
+<tr>
+<td style="text-align:center">4️⃣</td>
+<td>通讯ETF等CPO反弹3-5%减半</td>
+<td>降低通讯方向暴露</td>
+</tr>
+<tr>
+<td style="text-align:center">5️⃣</td>
+<td>北创持有，等反弹850-870</td>
+<td>放量16.6万手抄底盘确认底部</td>
+</tr>
+<tr>
+<td style="text-align:center">6️⃣</td>
+<td>深科技持有，50止损</td>
+<td>跌破50才考虑减仓</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-24">7.2 不要做的事</h3>
+<table>
+<thead>
+<tr>
+<th>❌ 不要</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>在68元割赛腾</td>
+<td>4天-16%已是极端超卖，等技术修复反弹</td>
+</tr>
+<tr>
+<td>追机器人/黄金</td>
+<td>今天涨停潮=明天可能一日游</td>
+</tr>
+<tr>
+<td>抄底材料（沪硅/雅克）</td>
+<td>三连崩，游资在逃命</td>
+</tr>
+<tr>
+<td>加仓通讯ETF</td>
+<td>虽然修复概率高，但不加仓只等反弹</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-25">7.3 下周关键观察</h3>
+<table>
+<thead>
+<tr>
+<th>信号</th>
+<th>看多</th>
+<th>看空</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>韩国KOSPI是否继续反弹</td>
+<td>✅ 今天+5%熔断</td>
+<td>❌ 如果再次暴跌</td>
+</tr>
+<tr>
+<td>费城半导体是否止跌</td>
+<td>✅ 2日-11%已极端</td>
+<td>❌ 第三日再跌-5%</td>
+</tr>
+<tr>
+<td>A股成交是否重回3.5万亿</td>
+<td>✅ 增量回场</td>
+<td>❌ 继续缩量</td>
+</tr>
+<tr>
+<td>CPO是否持续反弹</td>
+<td>✅ 新易盛今天已率先</td>
+<td>❌ 反弹一日游</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="sec-26">八、数据来源</h2>
+<ul>
+<li><strong>个股行情</strong>：Tushare Pro API（2026-07-03日线 + 7日K线深度数据）</li>
+<li><strong>CPO/PCB/存储/设备全栈7日量化</strong>：Tushare（中际/新易盛/天孚/沪电/兆易/紫光/深科技/北创/中微/盛美/沪硅/雅克/寒武纪/赛腾）</li>
+<li><strong>美股行情</strong>：国际金融报/21世纪经济报道/九派财经/金融界/每日经济新闻</li>
+<li><strong>韩日行情</strong>：红星新闻/21世纪经济报道/国际金融报/华尔街见闻</li>
+<li><strong>A股收评</strong>：港股解码/北京日报/金融界/界面新闻/每日经济新闻</li>
+<li><strong>赛腾股份基本面</strong>：界面新闻/财中社2026年一季报</li>
+</ul>
+<hr>
+<p><em>报告生成时间：2026年7月3日 17:15 | 韩股做多熔断日 | 费城半导体2日-11%</em></p>
+<blockquote>
+<p><strong>⚠️ 核心结论：① CPO率先企稳（天孚缩量止跌+新易盛+3.34%），修复概率85%；② 设备放量抄底盘进场（北创16.6万手），修复概率70%；③ 材料三连崩（沪硅-7.8%），不要碰；④ 赛腾4天-16%极超卖，等反弹72-75减仓，60硬止损；⑤ 宁德375近在眼前；⑥ 韩股今天V型熔断是暂时企稳，不是反转——下周一仍需观察。</strong></p>
+</blockquote>
+
+  <div class="footer">来源：任务库持仓复盘 · 复盘报告-2026年7月3日.md | 由 markdown-it 转换 | 仅供参考，不构成投资建议</div>
+</div>
+</body>
+</html>

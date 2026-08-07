@@ -1,0 +1,24 @@
+{
+  "name": "feasibility-analysis-strategy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abinisme/feasibility-analysis-strategy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Abinisme/feasibility-analysis-strategy/issues"
+  },
+  "homepage": "https://github.com/Abinisme/feasibility-analysis-strategy#readme",
+  "dependencies": {
+    "markdown-it": "^15.0.0"
+  }
+}

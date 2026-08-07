@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>A股深度复盘报告 — 2026年6月5日</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif; line-height:1.8; padding:20px 14px 60px; }
+.container { max-width:820px; margin:0 auto; }
+.toolbar { position:sticky; top:0; background:rgba(13,17,23,0.95); backdrop-filter:blur(8px); padding:10px 0; margin-bottom:18px; display:flex; align-items:center; gap:10px; border-bottom:1px solid #30363d; z-index:10; }
+.toolbar a { color:#58a6ff; text-decoration:none; font-size:0.85rem; white-space:nowrap; }
+.toolbar a:hover { text-decoration:underline; }
+.toolbar .sep { color:#484f58; }
+h1 { font-size:1.5rem; color:#f0f6fc; border-bottom:2px solid #30363d; padding-bottom:10px; margin-bottom:18px; }
+h2 { font-size:1.2rem; color:#58a6ff; margin:26px 0 12px; padding-left:10px; border-left:3px solid #58a6ff; }
+h3 { font-size:1.05rem; color:#d29922; margin:20px 0 10px; }
+h4 { font-size:0.98rem; color:#c9d1d9; margin:16px 0 8px; }
+p { margin:8px 0; }
+ul, ol { padding-left:24px; margin:8px 0; }
+li { margin:4px 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+blockquote { border-left:4px solid #30363d; background:#161b22; padding:8px 14px; margin:12px 0; color:#8b949e; border-radius:0 6px 6px 0; }
+blockquote p { margin:4px 0; }
+code { background:#161b22; padding:2px 6px; border-radius:4px; font-size:0.88em; font-family:"SF Mono",Consolas,Menlo,monospace; }
+pre { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:12px 14px; overflow-x:auto; margin:12px 0; }
+pre code { background:none; padding:0; }
+table { border-collapse:collapse; width:100%; margin:12px 0; font-size:0.9em; display:block; overflow-x:auto; }
+th, td { border:1px solid #30363d; padding:7px 10px; text-align:left; }
+th { background:#161b22; color:#58a6ff; font-weight:600; }
+tr:nth-child(even) td { background:rgba(22,27,34,0.5); }
+hr { border:none; border-top:1px solid #30363d; margin:20px 0; }
+img { max-width:100%; border-radius:6px; }
+strong { color:#f0f6fc; }
+.toc { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:14px 18px; margin:14px 0 20px; }
+.toc h3 { margin:0 0 8px; color:#58a6ff; }
+.toc a { display:block; padding:3px 0; font-size:0.9em; color:#8b949e; }
+.toc a:hover { color:#58a6ff; text-decoration:none; }
+.footer { text-align:center; color:#484f58; font-size:0.78rem; margin-top:40px; padding-top:16px; border-top:1px solid #30363d; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="toolbar">
+    <a href="../index.html">🏠 首页</a><span class="sep">|</span>
+    <a href="../replay_index.html">📚 复盘合集</a><span class="sep">|</span>
+    <span style="color:#8b949e;font-size:0.8rem;">任务库持仓复盘 · 复盘报告-2026年6月5日.md</span>
+  </div>
+  
+  <h1>A股深度复盘报告 — 2026年6月5日</h1>
+<p><strong>生成时间</strong>：2026-06-05 17:10（修正版）<br>
+<strong>数据来源</strong>：Tushare（个股行情）+ NeoData（资金流向）+ 腾讯新闻（多路交叉验证）<br>
+<strong>今日</strong>：全球半导体暴跌映射A股，科创50跌超4%，银之杰三天-28%<br>
+<strong>特别关注</strong>：用户持仓&quot;两头挨打&quot;问题诊断</p>
+<hr>
+<h2 id="sec-0">一、大盘：全球半导体抛售潮映射，A股科技二次探底</h2>
+<h3 id="sec-1">1.1 指数全景（收盘数据修正）</h3>
+<table>
+<thead>
+<tr>
+<th>指数</th>
+<th>涨跌幅</th>
+<th>关键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td><strong>-0.74%</strong></td>
+<td>相对抗跌</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td><strong>-2.21%</strong></td>
+<td>大幅下挫</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td><strong>-3.20%</strong></td>
+<td>宁德拖累+科技全线溃败</td>
+</tr>
+<tr>
+<td>科创 50</td>
+<td><strong>跌超 4%</strong></td>
+<td>🔴 反弹彻底夭折</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>成交额 <strong>3.07 万亿</strong>（放量 3115 亿），超 3200 只个股收红。<strong>放量下跌</strong>——说明有资金在恐慌出逃，也有资金在逆势低吸。中国新闻周刊今日发文《科技股，走到了危险时刻？》，半导体 PE <strong>118.78 倍</strong>，估值百分位 <strong>97.85%</strong>。</p>
+</blockquote>
+<h3 id="sec-2">1.2 🔥 暴跌根源：昨晚美国发生了什么</h3>
+<p><strong>今天A股的暴跌，不是A股自身的问题——根子在昨晚美股半导体。</strong></p>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>详情</th>
+<th>影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔴 <strong>博通财报不及预期</strong></td>
+<td>Q1营收略低于市场预期</td>
+<td>引爆全球半导体抛售潮</td>
+</tr>
+<tr>
+<td>🔴 博通暴跌 <strong>12.6%</strong></td>
+<td>市值一夜蒸发近 <strong>2万亿元</strong></td>
+<td>对标A股：中际旭创-7.8%</td>
+</tr>
+<tr>
+<td>🔴 美光科技跌 <strong>近8%</strong></td>
+<td>失守1000美元关口</td>
+<td>对标A股：兆易创新等存储股</td>
+</tr>
+<tr>
+<td>🔴 费城半导体指数</td>
+<td>一度跌超 <strong>5%</strong>，收跌2.15%</td>
+<td>全球芯片股恐慌</td>
+</tr>
+<tr>
+<td>🟢 道指逆势</td>
+<td>+1.73% <strong>创历史新高</strong></td>
+<td>资金从科技切传统</td>
+</tr>
+<tr>
+<td>⚠️ 达利欧警告</td>
+<td>“AI市场已现<strong>典型泡沫迹象</strong>”</td>
+<td>情绪面重大利空</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>逻辑链</strong>：博通营收不及预期 → 市场担忧AI芯片需求不及想象中旺盛 → 全球半导体股遭抛售 → 费城半导体指数暴跌 → 6/5 A股半导体映射下杀 → 科创50跌超4%。</p>
+</blockquote>
+<hr>
+<h2 id="sec-3">二、资金面：半导体从+49亿到-306亿，一天逆转-355亿</h2>
+<h3 id="sec-4">2.1 半导体板块七日资金流追踪</h3>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>主力净流入</th>
+<th>事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5/29</td>
+<td>-372 亿</td>
+<td>第一次血洗</td>
+</tr>
+<tr>
+<td>6/1</td>
+<td>-91 亿</td>
+<td>出逃减缓</td>
+</tr>
+<tr>
+<td>6/2</td>
+<td><strong>-1.6 亿</strong></td>
+<td>🔑 近乎枯竭</td>
+</tr>
+<tr>
+<td>6/3</td>
+<td><strong>+48.9 亿</strong></td>
+<td>🔥 反转流入</td>
+</tr>
+<tr>
+<td>6/4</td>
+<td>材料端 +15 亿</td>
+<td>结构切换</td>
+</tr>
+<tr>
+<td><strong>6/5</strong></td>
+<td><strong>-306.3 亿</strong></td>
+<td>🔴🔴 <strong>二次探底！</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>一天之内从 +49 亿翻转为 -306 亿，净逆转 <strong>-355 亿</strong>。博通财报是导火索，但 A 股资金面的脆弱性才是根因——前期反弹中获利盘刚回本就跑。</p>
+</blockquote>
+<h3 id="sec-5">2.2 今日仅有的资金流入方向</h3>
+<table>
+<thead>
+<tr>
+<th>方向</th>
+<th>信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>卫星互联网</td>
+<td>+7.6 亿</td>
+</tr>
+<tr>
+<td>无人机</td>
+<td>+7.1 亿</td>
+</tr>
+<tr>
+<td>低空经济</td>
+<td>+7.0 亿</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>都不是主流方向。科技主线溃败后资金涌入小众题材，典型的<strong>避险轮动</strong>——持续性通常不超过 2 天。</p>
+</blockquote>
+<hr>
+<h2 id="sec-6">三、核心个股全面暴跌</h2>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th>今日</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔴 立讯精密</td>
+<td><strong>-7.8%</strong></td>
+<td>消费电子崩盘</td>
+</tr>
+<tr>
+<td>🔴 中际旭创</td>
+<td><strong>-7.8%</strong></td>
+<td>CPO龙头暴跌（博通映射）</td>
+</tr>
+<tr>
+<td>🔴 拓荆科技</td>
+<td><strong>-6.5%</strong></td>
+<td>设备反弹夭折</td>
+</tr>
+<tr>
+<td>🔴 工业富联</td>
+<td>-5.7%</td>
+<td>AI服务器回调</td>
+</tr>
+<tr>
+<td>🔴 天孚通信</td>
+<td>-4.9%</td>
+<td>CPO跟跌</td>
+</tr>
+<tr>
+<td>🔴 深科技</td>
+<td>-3.9%</td>
+<td>封测失守40</td>
+</tr>
+<tr>
+<td>🔴 北方华创</td>
+<td><strong>-3.8%</strong></td>
+<td>627→603，620得而复失</td>
+</tr>
+<tr>
+<td>🔴 东方电缆</td>
+<td>-2.3%</td>
+<td>海缆持续阴跌</td>
+</tr>
+<tr>
+<td>🔴 银之杰</td>
+<td><strong>-10.1%</strong></td>
+<td>三天-28% 💀</td>
+</tr>
+<tr>
+<td>⚪ 宁德时代</td>
+<td>-1.3%</td>
+<td>403濒临400生死线</td>
+</tr>
+<tr>
+<td>⚪ 东方财富</td>
+<td>-1.2%</td>
+<td>毫无波澜</td>
+</tr>
+<tr>
+<td>🟢 招商银行</td>
+<td><strong>+1.3%</strong></td>
+<td>全持仓唯一上涨</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="sec-7">四、&quot;两头挨打&quot;问题诊断</h2>
+<h3 id="sec-8">4.1 你的持仓结构分析</h3>
+<pre class="code-block"><code>你的持仓 = AI/半导体资产（北创/深科技）+ &quot;老登股&quot;（宁德/东财/东方电缆/招行）
+</code></pre>
+<p>这一周发生了什么：</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>AI/半导体</th>
+<th>老登股</th>
+<th>你的感受</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5/29-6/1 血洗</td>
+<td>🔴 -18%</td>
+<td>🟢 独立</td>
+<td>半导体亏了</td>
+</tr>
+<tr>
+<td>6/2-6/4 反弹</td>
+<td>🟢 +10%</td>
+<td>⚪ 不动</td>
+<td><strong>反弹吃不到</strong></td>
+</tr>
+<tr>
+<td>6/5 二次探底</td>
+<td>🔴 -5%</td>
+<td>🔴 也跌</td>
+<td><strong>两头挨打</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>核心问题</strong>：老登股既不在AI反弹时跟涨，又在科技二次探底时被拖下水。宁德434→403（-7%），东方电缆46→40（-13%）。资金只在AI赛道内部轮动，从未溢出到新能源/券商/海缆。</p>
+</blockquote>
+<h3 id="sec-9">4.2 逐标诊断</h3>
+<h4>🔴 北方华创（002371）—「620得而复失」</h4>
+<p>昨日627元突破620加仓线，今日-3.8%跌回603。<strong>加仓信号作废。</strong> 距止损589仅2.3%。</p>
+<p><strong>操作建议</strong>：⚠️ <strong>不加仓，维持现有仓位。止损589元。</strong> 破589→减仓。</p>
+<h4>🔴 宁德时代（300750）—「400生死线」</h4>
+<p>403元，距400止损仅3元。本周434→403跌-7.1%。锂电持续失血，创始股东减持压制。</p>
+<p><strong>操作建议</strong>：⚠️ <strong>不加仓，严格执行400止损。</strong> 破400→减仓至50股。</p>
+<h4>⚪ 东方财富（300059）—「没有故事就没有资金」</h4>
+<p>18.52元。券商无任何催化，当AI半导体吸走全部注意力，券商是被遗忘的角落。</p>
+<p><strong>操作建议</strong>：⚪ <strong>持有不动，不建议加仓。</strong></p>
+<h4>🔴 东方电缆（603606）—「阴跌不止」</h4>
+<p>40.21元，5/26:46→6/5:40，-13%。海缆无故事、无资金、无弹性。</p>
+<p><strong>操作建议</strong>：⚠️ <strong>减仓至100股（一手）。</strong> 释放资金，不要锁在阴跌资产里。</p>
+<h4>🔴 银之杰（300085）—「三天-28%，已失控」</h4>
+<p>29.83元。6/3:-15.5%→6/4:-5.6%→6/5:-10.1%。累计-28.2%。</p>
+<p><strong>操作建议</strong>：❌ <strong>清仓。不等了。</strong> 今年最大教训：绝不要碰无基本面支撑的纯AI概念。</p>
+<h4>🟢 招商银行（600036）—「唯一慰藉」</h4>
+<p>38.58元，+1.3%，全持仓唯一上涨。</p>
+<p><strong>操作建议</strong>：✅ <strong>持有，暂停做T。</strong></p>
+<hr>
+<h2 id="sec-10">五、操作策略</h2>
+<h3 id="sec-11">5.1 今日必须面对的现实</h3>
+<blockquote>
+<p>博通财报引发全球半导体恐慌，A股反弹夭折。这不是A股自身的问题修复，而是外围黑天鹅冲击下的<strong>被动下跌</strong>。需要重新评估修复时间表。</p>
+</blockquote>
+<h3 id="sec-12">5.2 操作汇总</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th>当前</th>
+<th>策略</th>
+<th>触发条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>北创</td>
+<td>603</td>
+<td>⚠️ 持有不加仓</td>
+<td>破589→减仓</td>
+</tr>
+<tr>
+<td>宁德</td>
+<td>403</td>
+<td>⚠️ 持有不加仓</td>
+<td>破400→减仓至50股</td>
+</tr>
+<tr>
+<td>东财</td>
+<td>18.5</td>
+<td>⚪ 持有不动</td>
+<td>—</td>
+</tr>
+<tr>
+<td>东方电缆</td>
+<td>40.2</td>
+<td>⚠️ 减仓至100股</td>
+<td>释放资金</td>
+</tr>
+<tr>
+<td>银之杰</td>
+<td>29.8</td>
+<td>❌ 清仓</td>
+<td>三天-28%</td>
+</tr>
+<tr>
+<td>深科技</td>
+<td>38.1</td>
+<td>⚪ 持有</td>
+<td>—</td>
+</tr>
+<tr>
+<td>招行</td>
+<td>38.6</td>
+<td>✅ 持有</td>
+<td>暂停做T</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-13">5.3 释放资金用途</h3>
+<p>清仓银之杰+减仓东方电缆释放的资金，<strong>暂持现金</strong>。等以下信号确认：</p>
+<ol>
+<li><strong>外围企稳</strong>：费城半导体指数止跌，博通企稳</li>
+<li>半导体板块连续两日净流入</li>
+<li>北创放量站回620</li>
+</ol>
+<hr>
+<h2 id="sec-14">六、核心结论</h2>
+<ol>
+<li>
+<p><strong>暴跌根源在美股博通</strong>：费城半导体-5%→博通-12.6%→A股映射下杀→科创50-4%+。这是外围黑天鹅，非A股自身结构问题。达利欧&quot;AI泡沫&quot;警告加剧情绪。</p>
+</li>
+<li>
+<p><strong>反弹夭折</strong>：半导体+49亿→-306亿逆转-355亿，反弹被博通财报打断。修复需要更长时间。</p>
+</li>
+<li>
+<p><strong>两头挨打是结构性困境</strong>：资金只在AI赛道内轮动，从未溢出到新能源/券商/海缆。</p>
+</li>
+<li>
+<p><strong>宁德403濒临400生死线</strong>，严格执行止损。</p>
+</li>
+<li>
+<p><strong>银之杰三天-28%</strong>：今年最大教训——不碰无基本面AI概念。清仓+减仓，持币等外围企稳。</p>
+</li>
+</ol>
+<hr>
+<p><em>报告编制：WorkBuddy AI | 数据来源：Tushare + NeoData + 腾讯新闻 | 2026-06-05 17:10</em></p>
+
+  <div class="footer">来源：任务库持仓复盘 · 复盘报告-2026年6月5日.md | 由 markdown-it 转换 | 仅供参考，不构成投资建议</div>
+</div>
+</body>
+</html>

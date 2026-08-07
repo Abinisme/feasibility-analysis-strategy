@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026-04-20 持仓复盘</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif; line-height:1.8; padding:20px 14px 60px; }
+.container { max-width:820px; margin:0 auto; }
+.toolbar { position:sticky; top:0; background:rgba(13,17,23,0.95); backdrop-filter:blur(8px); padding:10px 0; margin-bottom:18px; display:flex; align-items:center; gap:10px; border-bottom:1px solid #30363d; z-index:10; }
+.toolbar a { color:#58a6ff; text-decoration:none; font-size:0.85rem; white-space:nowrap; }
+.toolbar a:hover { text-decoration:underline; }
+.toolbar .sep { color:#484f58; }
+h1 { font-size:1.5rem; color:#f0f6fc; border-bottom:2px solid #30363d; padding-bottom:10px; margin-bottom:18px; }
+h2 { font-size:1.2rem; color:#58a6ff; margin:26px 0 12px; padding-left:10px; border-left:3px solid #58a6ff; }
+h3 { font-size:1.05rem; color:#d29922; margin:20px 0 10px; }
+h4 { font-size:0.98rem; color:#c9d1d9; margin:16px 0 8px; }
+p { margin:8px 0; }
+ul, ol { padding-left:24px; margin:8px 0; }
+li { margin:4px 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+blockquote { border-left:4px solid #30363d; background:#161b22; padding:8px 14px; margin:12px 0; color:#8b949e; border-radius:0 6px 6px 0; }
+blockquote p { margin:4px 0; }
+code { background:#161b22; padding:2px 6px; border-radius:4px; font-size:0.88em; font-family:"SF Mono",Consolas,Menlo,monospace; }
+pre { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:12px 14px; overflow-x:auto; margin:12px 0; }
+pre code { background:none; padding:0; }
+table { border-collapse:collapse; width:100%; margin:12px 0; font-size:0.9em; display:block; overflow-x:auto; }
+th, td { border:1px solid #30363d; padding:7px 10px; text-align:left; }
+th { background:#161b22; color:#58a6ff; font-weight:600; }
+tr:nth-child(even) td { background:rgba(22,27,34,0.5); }
+hr { border:none; border-top:1px solid #30363d; margin:20px 0; }
+img { max-width:100%; border-radius:6px; }
+strong { color:#f0f6fc; }
+.toc { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:14px 18px; margin:14px 0 20px; }
+.toc h3 { margin:0 0 8px; color:#58a6ff; }
+.toc a { display:block; padding:3px 0; font-size:0.9em; color:#8b949e; }
+.toc a:hover { color:#58a6ff; text-decoration:none; }
+.footer { text-align:center; color:#484f58; font-size:0.78rem; margin-top:40px; padding-top:16px; border-top:1px solid #30363d; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="toolbar">
+    <a href="../index.html">🏠 首页</a><span class="sep">|</span>
+    <a href="../replay_index.html">📚 复盘合集</a><span class="sep">|</span>
+    <span style="color:#8b949e;font-size:0.8rem;">任务库持仓复盘 · 2026-04-20_持仓复盘.md</span>
+  </div>
+  
+  <h1>2026-04-20 持仓复盘</h1>
+<blockquote>
+<p>复盘时间：2026年4月20日 收盘后
+持仓总规模：约 29.94万（股票22.48万 + ETF 7.46万）</p>
+</blockquote>
+<hr>
+<h2 id="sec-0">一、今日市场概况</h2>
+<table>
+<thead>
+<tr>
+<th>指数</th>
+<th>收盘点位</th>
+<th>涨跌幅</th>
+<th>特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>4082.13</td>
+<td>+0.76%</td>
+<td>高开高走</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>14966.75</td>
+<td>+0.55%</td>
+<td>偏强</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>3677.58</td>
+<td>-0.02%</td>
+<td>几乎平盘</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键特征：</strong></p>
+<ul>
+<li>全市场成交额约1.09万亿（较上周五大幅放量），量能急剧放大</li>
+<li>沪指强、创业板弱，市场风格明显切换至大盘权重</li>
+<li>军工板块获主力大额抢筹，科技板块内部剧烈分化</li>
+</ul>
+<hr>
+<h2 id="sec-1">二、今日热点板块 + 消息面</h2>
+<h3 id="sec-2">今日最强主线</h3>
+<table>
+<thead>
+<tr>
+<th>板块</th>
+<th>催化剂</th>
+<th>强度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>军工装备/军工电子</td>
+<td>地缘事件+主力轮动</td>
+<td>强</td>
+</tr>
+<tr>
+<td>人形机器人</td>
+<td>荣耀机器人半马包揽前六</td>
+<td>强</td>
+</tr>
+<tr>
+<td>消费电子</td>
+<td>华为今日发布Pura X Max阔折叠</td>
+<td>中</td>
+</tr>
+<tr>
+<td>AI算力/光模块</td>
+<td>持续主线，中际旭创Q1+262%催化</td>
+<td>持续</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-3">重要个股动态</h3>
+<table>
+<thead>
+<tr>
+<th>公司</th>
+<th>事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>立讯精密</td>
+<td>Q1预盈36.5-37.1亿（+20%~22%），+荣耀机器人供应链催化，涨停10.01%</td>
+</tr>
+<tr>
+<td>北方华创</td>
+<td>年报发布，Q4净利润断崖式下滑（3.92亿 vs Q3的19.22亿），低开后被拉正</td>
+</tr>
+<tr>
+<td>宁德时代</td>
+<td>第四大股东拟询价转让5800万股（套现约257亿），股价-2.63%</td>
+</tr>
+<tr>
+<td>中际旭创</td>
+<td>Q1净利57亿，同比+262%，持续催化光模块行情</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-4">资金流向</h3>
+<ul>
+<li>军工、小金属、高端制造获主力流入</li>
+<li>元件板块主力净流出33亿（立讯精密涨停系游资行为）</li>
+<li>两融余额持续攀升，市场情绪偏高但有分化</li>
+</ul>
+<hr>
+<h2 id="sec-5">三、持仓个股今日表现</h2>
+<table>
+<thead>
+<tr>
+<th>股票</th>
+<th>代码</th>
+<th>收盘价</th>
+<th>涨跌幅</th>
+<th>持仓市值</th>
+<th>今日盈亏</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>宁德时代</td>
+<td>300750</td>
+<td>432.50</td>
+<td>-2.63%（警示）</td>
+<td>4.33万</td>
+<td>-1,170</td>
+</tr>
+<tr>
+<td>立讯精密</td>
+<td>002475</td>
+<td>65.73</td>
+<td>+10.01%（涨停）</td>
+<td>0.66万</td>
+<td>+595</td>
+</tr>
+<tr>
+<td>东方财富</td>
+<td>300059</td>
+<td>20.15</td>
+<td>+0.55%</td>
+<td>2.82万</td>
+<td>+154</td>
+</tr>
+<tr>
+<td>北方华创</td>
+<td>002371</td>
+<td>471.23</td>
+<td>+0.28%</td>
+<td>6.36万</td>
+<td>+178</td>
+</tr>
+<tr>
+<td>深科技</td>
+<td>000021</td>
+<td>29.10</td>
+<td>+0.34%</td>
+<td>1.46万</td>
+<td>+49</td>
+</tr>
+<tr>
+<td>东方电缆</td>
+<td>603606</td>
+<td>61.00</td>
+<td>+1.58%</td>
+<td>1.22万</td>
+<td>+190</td>
+</tr>
+<tr>
+<td>招商银行</td>
+<td>600036</td>
+<td>39.87</td>
+<td>+0.89%</td>
+<td>1.99万</td>
+<td>+175</td>
+</tr>
+<tr>
+<td>银之杰</td>
+<td>300085</td>
+<td>38.19</td>
+<td>+0.82%</td>
+<td>1.53万</td>
+<td>+124</td>
+</tr>
+<tr>
+<td>中海油</td>
+<td>600938</td>
+<td>37.16</td>
+<td>-0.48%</td>
+<td>0.37万</td>
+<td>-18</td>
+</tr>
+<tr>
+<td>中远海控</td>
+<td>601919</td>
+<td>14.58</td>
+<td>-0.95%</td>
+<td>1.75万</td>
+<td>-167</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>持仓股票合计：约22.48万 | 今日股票合计盈利约 +110元</p>
+</blockquote>
+<hr>
+<h2 id="sec-6">四、ETF今日表现</h2>
+<table>
+<thead>
+<tr>
+<th>ETF</th>
+<th>代码</th>
+<th>收盘价</th>
+<th>涨跌幅</th>
+<th>持仓份额</th>
+<th>市值</th>
+<th>今日盈亏</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>通信ETF</td>
+<td>515050</td>
+<td>2.930</td>
+<td>+1.49%</td>
+<td>2800份</td>
+<td>0.82万</td>
+<td>+121</td>
+</tr>
+<tr>
+<td>科创50ETF</td>
+<td>588000</td>
+<td>1.527</td>
+<td>+1.87%</td>
+<td>4300份</td>
+<td>0.66万</td>
+<td>+120</td>
+</tr>
+<tr>
+<td>科创芯片ETF</td>
+<td>562500</td>
+<td>1.017</td>
+<td>+0.79%</td>
+<td>3200份</td>
+<td>0.33万</td>
+<td>+26</td>
+</tr>
+<tr>
+<td>恒生科技ETF</td>
+<td>513180</td>
+<td>0.649</td>
+<td>+0.78%</td>
+<td>55900份</td>
+<td>3.63万</td>
+<td>+280</td>
+</tr>
+<tr>
+<td>黄金ETF</td>
+<td>159920</td>
+<td>1.557</td>
+<td>+0.91%</td>
+<td>5800份</td>
+<td>0.90万</td>
+<td>+81</td>
+</tr>
+<tr>
+<td>纳指100ETF</td>
+<td>513100</td>
+<td>1.890</td>
+<td>-0.11%</td>
+<td>5900份</td>
+<td>1.12万</td>
+<td>-12</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>ETF合计：约7.46万 | 今日ETF合计盈利约 +616元
+股票+ETF合计：约 +726元（总持仓约29.94万，涨幅+0.24%）</p>
+</blockquote>
+<hr>
+<h2 id="sec-7">五、深度分析</h2>
+<h3 id="sec-8">北方华创：Q4业绩断崖 + 机构低开定价大低开后拉正</h3>
+<p><strong>业绩真相（2025年年报）：</strong></p>
+<ul>
+<li>全年营收393.53亿，同比+30.85% ✅</li>
+<li>全年归母净利润55.22亿，同比-1.77% ❌（十年来首次下滑）</li>
+<li>Q4净利润仅3.92亿，Q3为19.22亿，环比暴跌-79%</li>
+<li>扣非净利润53.36亿，同比-4.22%</li>
+</ul>
+<p><strong>三大杀手打压Q4利润：</strong></p>
+<ol>
+<li>商誉减值大额计提 — 直接触发Q4利润断崖</li>
+<li>研发费用Q4集中确认 — 全年研发费用54.35亿（+46.96%），大部分压在Q4</li>
+<li>汇兑损失 + 境外子公司分红所得税 — 汇率和海外税务双重挤压</li>
+</ol>
+<p><strong>机构为何低开后拉正？（今日走势核心）</strong></p>
+<p>这是典型的利空定价+预期博弈走势：</p>
+<ul>
+<li>4月17日（上周五）发布年报，市场周末消化后，今早直接低开-5%（到445元一线）</li>
+<li>Bernstein在4月18日发布研报，虽然指出业绩不及预期，但维持核心买入逻辑，强调营收创新高、长期设备景气仍在</li>
+<li>机构趁低开砸盘时低位吸筹，随后在445元~476元区间剧烈震荡，尾盘拉回471元附近收盘</li>
+<li>全天振幅高达6.62%，换手率2.58%，是典型的机构洗盘+吸筹形态</li>
+</ul>
+<p><strong>结论：</strong> 机构低开定价低，是给利空充分定价；随后拉正，是认为Q4是一次性冲击，2026年设备景气恢复逻辑未破。底仓可继续持有，但追高需谨慎。</p>
+<hr>
+<h3 id="sec-9">宁德时代：大股东减持的实质影响</h3>
+<p><strong>发生了什么：</strong></p>
+<ul>
+<li>4月16日宁德市值首破2万亿，成为A股首家2万亿民营制造企业</li>
+<li>4月17日晚，第四大股东宁波联合创新（实控人裴振华）公告拟询价转让5800万股，占总股本1.27%，套现约257亿元</li>
+<li>4月17日（上周五）当天股价已先行下跌-2.15%</li>
+</ul>
+<p><strong>裴振华是谁？</strong></p>
+<ul>
+<li>2015年以8900万元受让ATL/TDK持有的15%股权</li>
+<li>持股11年，今天拟减持257亿，账面回报约1400倍</li>
+<li>这是早期产业资本在行业高峰期锁定收益的经典操作</li>
+</ul>
+<p><strong>对股价的影响：</strong></p>
+<ul>
+<li>短期是明显利空，直接压制情绪</li>
+<li>询价转让方式（不是二级市场抛售）= 冲击相对可控，但信号意义强</li>
+<li>上周五业绩炸裂（Q1+262%）反跌，今天又减持，利好见光死+股东减持双重打压</li>
+<li>短期支撑关注430元，若失守可能进一步下探</li>
+</ul>
+<hr>
+<h3 id="sec-10">立讯精密涨停：荣耀机器人 + 华为Pura X Max双催化</h3>
+<p><strong>直接催化剂：</strong></p>
+<ol>
+<li>荣耀机器人包揽人形机器人半马前六（4月19日，北京亦庄）— 立讯是荣耀机器人整机代工+精密结构件核心供应商</li>
+<li>华为今日发布Pura X Max阔折叠手机（4月20日14:30）— 立讯是华为折叠机核心供应商</li>
+<li>Q1业绩预盈36.5-37.1亿，同比+20%~22%（4月14日公告）</li>
+</ol>
+<p><strong>但需注意：</strong></p>
+<ul>
+<li>华为Pura X Max是&quot;阔折叠&quot;（横向翻开式，新形态），不是传统折叠屏</li>
+<li>涨停主要由游资+散户推动，元件板块今日主力净流出33亿，说明机构在借机减仓</li>
+<li>成交额251.9亿全市场第一，换手5.41%，属短线资金博弈特征</li>
+<li>追高风险较大，建议等情绪消化后再评估</li>
+</ul>
+<hr>
+<h2 id="sec-11">六、今日操作建议总结</h2>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>操作</th>
+<th>标的</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>高</td>
+<td>关注430元支撑</td>
+<td>宁德时代</td>
+<td>减持打压+情绪弱，若破430减仓</td>
+</tr>
+<tr>
+<td>中</td>
+<td>持有，不追高</td>
+<td>北方华创</td>
+<td>机构低开吸筹，逻辑未破但短期洗盘</td>
+</tr>
+<tr>
+<td>中</td>
+<td>持有，等情绪稳定</td>
+<td>立讯精密</td>
+<td>催化真实但短线已超买，等回调</td>
+</tr>
+<tr>
+<td>低</td>
+<td>持有</td>
+<td>银之杰</td>
+<td>反弹微弱，趋势仍偏弱</td>
+</tr>
+<tr>
+<td>低</td>
+<td>持有观察</td>
+<td>中远海控</td>
+<td>运价压力，周期未到底</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="sec-12">七、4月市场复盘总结（4/17 vs 4/20）</h2>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>沪指</th>
+<th>创业板指</th>
+<th>持仓盈亏</th>
+<th>关键事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4月17日</td>
+<td>-0.10%</td>
+<td>+1.43%</td>
+<td>-1,953元</td>
+<td>宁德Q1炸裂反跌</td>
+</tr>
+<tr>
+<td>4月20日</td>
+<td>+0.76%</td>
+<td>-0.02%</td>
+<td>+726元</td>
+<td>立讯涨停对冲宁德拖累</td>
+</tr>
+</tbody>
+</table>
+<p>4月下半月以来，市场风格偏向大盘军工+科技题材轮动，持仓中宁德时代连续拖累，但立讯精密涨停、ETF整体走强形成对冲，整体仓位跑平大盘。</p>
+<hr>
+<p>本复盘仅供参考，不构成投资建议。股市有风险，入市需谨慎。</p>
+
+  <div class="footer">来源：任务库持仓复盘 · 2026-04-20_持仓复盘.md | 由 markdown-it 转换 | 仅供参考，不构成投资建议</div>
+</div>
+</body>
+</html>

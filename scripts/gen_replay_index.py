@@ -78,13 +78,13 @@ for f in sorted(os.listdir(BASE)):
     if f.startswith("A股深度复盘_") and f.endswith(".md"):
         d, _ = parse_date(f)
         if d:
-            items.append((d, f, "./" + f, "本站A股复盘"))
+            items.append((d, f, "./复盘html/" + f.replace(".md",".html"), "本站A股复盘"))
 for f in sorted(os.listdir(TASK_DIR)):
     if not f.endswith(".md"):
         continue
     d, _ = parse_date(f)
     if d:
-        items.append((d, f, "./复盘合集/" + f, "任务库持仓复盘"))
+        items.append((d, f, "./复盘html/" + f.replace(".md",".html"), "任务库持仓复盘"))
 
 # 按日期倒序
 items.sort(key=lambda x: x[0], reverse=True)

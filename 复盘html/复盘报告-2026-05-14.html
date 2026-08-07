@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>2026-05-14 持仓复盘报告</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif; line-height:1.8; padding:20px 14px 60px; }
+.container { max-width:820px; margin:0 auto; }
+.toolbar { position:sticky; top:0; background:rgba(13,17,23,0.95); backdrop-filter:blur(8px); padding:10px 0; margin-bottom:18px; display:flex; align-items:center; gap:10px; border-bottom:1px solid #30363d; z-index:10; }
+.toolbar a { color:#58a6ff; text-decoration:none; font-size:0.85rem; white-space:nowrap; }
+.toolbar a:hover { text-decoration:underline; }
+.toolbar .sep { color:#484f58; }
+h1 { font-size:1.5rem; color:#f0f6fc; border-bottom:2px solid #30363d; padding-bottom:10px; margin-bottom:18px; }
+h2 { font-size:1.2rem; color:#58a6ff; margin:26px 0 12px; padding-left:10px; border-left:3px solid #58a6ff; }
+h3 { font-size:1.05rem; color:#d29922; margin:20px 0 10px; }
+h4 { font-size:0.98rem; color:#c9d1d9; margin:16px 0 8px; }
+p { margin:8px 0; }
+ul, ol { padding-left:24px; margin:8px 0; }
+li { margin:4px 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+blockquote { border-left:4px solid #30363d; background:#161b22; padding:8px 14px; margin:12px 0; color:#8b949e; border-radius:0 6px 6px 0; }
+blockquote p { margin:4px 0; }
+code { background:#161b22; padding:2px 6px; border-radius:4px; font-size:0.88em; font-family:"SF Mono",Consolas,Menlo,monospace; }
+pre { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:12px 14px; overflow-x:auto; margin:12px 0; }
+pre code { background:none; padding:0; }
+table { border-collapse:collapse; width:100%; margin:12px 0; font-size:0.9em; display:block; overflow-x:auto; }
+th, td { border:1px solid #30363d; padding:7px 10px; text-align:left; }
+th { background:#161b22; color:#58a6ff; font-weight:600; }
+tr:nth-child(even) td { background:rgba(22,27,34,0.5); }
+hr { border:none; border-top:1px solid #30363d; margin:20px 0; }
+img { max-width:100%; border-radius:6px; }
+strong { color:#f0f6fc; }
+.toc { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:14px 18px; margin:14px 0 20px; }
+.toc h3 { margin:0 0 8px; color:#58a6ff; }
+.toc a { display:block; padding:3px 0; font-size:0.9em; color:#8b949e; }
+.toc a:hover { color:#58a6ff; text-decoration:none; }
+.footer { text-align:center; color:#484f58; font-size:0.78rem; margin-top:40px; padding-top:16px; border-top:1px solid #30363d; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="toolbar">
+    <a href="../index.html">🏠 首页</a><span class="sep">|</span>
+    <a href="../replay_index.html">📚 复盘合集</a><span class="sep">|</span>
+    <span style="color:#8b949e;font-size:0.8rem;">任务库持仓复盘 · 复盘报告-2026-05-14.md</span>
+  </div>
+  
+  <h1>2026-05-14 持仓复盘报告</h1>
+<p><strong>报告日期</strong>: 2026年5月14日<br>
+<strong>报告时间</strong>: 17:42<br>
+<strong>市场状态</strong>: 调整日 - 创业板创高后获利回吐</p>
+<hr>
+<h2 id="sec-0">一、大盘指数表现</h2>
+<table>
+<thead>
+<tr>
+<th>指数</th>
+<th>涨跌幅</th>
+<th>状态分析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数 (000001.SH)</td>
+<td><strong>-1.52%</strong></td>
+<td>失守5日线，回调压力释放</td>
+</tr>
+<tr>
+<td>创业板指 (399006.SZ)</td>
+<td><strong>-2.16%</strong></td>
+<td>前日创年内新高后获利回吐</td>
+</tr>
+<tr>
+<td>沪深300 (000300.SH)</td>
+<td><strong>-1.68%</strong></td>
+<td>权重板块全面调整</td>
+</tr>
+<tr>
+<td>科创50 (000688.SH)</td>
+<td><strong>-2.55%</strong></td>
+<td>科技股集体回调</td>
+</tr>
+</tbody>
+</table>
+<p><strong>市场特征</strong>:</p>
+<ul>
+<li>创业板在5月13日创年内新高后，资金获利了结意愿强烈</li>
+<li>全市场超4,200只个股下跌，普跌格局</li>
+<li>成交额维持在9,000亿级别，未明显缩量</li>
+</ul>
+<hr>
+<h2 id="sec-1">二、持仓个股表现</h2>
+<h3 id="sec-2">📈 上涨标的（1只）</h3>
+<table>
+<thead>
+<tr>
+<th>股票名称</th>
+<th>代码</th>
+<th>收盘价</th>
+<th>涨跌幅</th>
+<th>成交量</th>
+<th>成交额(亿)</th>
+<th>表现评级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>中远海控</strong></td>
+<td>601919.SH</td>
+<td>14.09</td>
+<td><strong>+1.49%</strong></td>
+<td>1,384,713手</td>
+<td>19.35</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+</tbody>
+</table>
+<p><strong>中远海控分析</strong>:</p>
+<ul>
+<li>收盘价14.09元，<strong>勉强站上5日均线（14.066）</strong></li>
+<li>盘中高点14.27元，低点13.91元，振幅2.52%</li>
+<li>成交额19.35亿，量能温和</li>
+<li><strong>技术信号</strong>: 5日线支撑脆弱，需观察次日是否守住</li>
+</ul>
+<hr>
+<h3 id="sec-3">📉 下跌标的（9只）</h3>
+<h4>科技/半导体板块</h4>
+<table>
+<thead>
+<tr>
+<th>股票名称</th>
+<th>代码</th>
+<th>收盘价</th>
+<th>涨跌幅</th>
+<th>分析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>立讯精密</strong></td>
+<td>002475.SZ</td>
+<td>-</td>
+<td><strong>-5.93%</strong></td>
+<td>跌幅最大，苹果产业链调整</td>
+</tr>
+<tr>
+<td><strong>深科技</strong></td>
+<td>000021.SZ</td>
+<td>-</td>
+<td>下跌</td>
+<td>半导体板块承压</td>
+</tr>
+<tr>
+<td><strong>北方华创</strong></td>
+<td>002371.SZ</td>
+<td>-</td>
+<td>下跌</td>
+<td>半导体设备龙头跟跌</td>
+</tr>
+</tbody>
+</table>
+<h4>新能源板块</h4>
+<table>
+<thead>
+<tr>
+<th>股票名称</th>
+<th>代码</th>
+<th>收盘价</th>
+<th>涨跌幅</th>
+<th>分析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>宁德时代</strong></td>
+<td>300750.SZ</td>
+<td>-</td>
+<td>下跌</td>
+<td>新能源龙头调整</td>
+</tr>
+<tr>
+<td><strong>东方电缆</strong></td>
+<td>603606.SH</td>
+<td>-</td>
+<td>下跌</td>
+<td>海缆板块走弱</td>
+</tr>
+</tbody>
+</table>
+<h4>金融板块</h4>
+<table>
+<thead>
+<tr>
+<th>股票名称</th>
+<th>代码</th>
+<th>收盘价</th>
+<th>涨跌幅</th>
+<th>分析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>东方财富</strong></td>
+<td>300059.SZ</td>
+<td>-</td>
+<td>下跌</td>
+<td>券商板块集体调整</td>
+</tr>
+<tr>
+<td><strong>招商银行</strong></td>
+<td>600036.SH</td>
+<td>-</td>
+<td>下跌</td>
+<td>银行板块防御性失效</td>
+</tr>
+<tr>
+<td><strong>银之杰</strong></td>
+<td>300085.SZ</td>
+<td>-</td>
+<td>下跌</td>
+<td>金融科技概念降温</td>
+</tr>
+</tbody>
+</table>
+<h4>周期/红利板块</h4>
+<table>
+<thead>
+<tr>
+<th>股票名称</th>
+<th>代码</th>
+<th>收盘价</th>
+<th>涨跌幅</th>
+<th>分析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>中海油</strong></td>
+<td>600938.SH</td>
+<td>-</td>
+<td>下跌</td>
+<td>油价调整带动能源股走弱</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="sec-4">三、板块轮动分析</h2>
+<h3 id="sec-5">弱势板块</h3>
+<ol>
+<li><strong>科技/半导体</strong> - 公募持仓拥挤，龙头股开始滞涨</li>
+<li><strong>新能源</strong> - 前期涨幅较大，获利盘集中出逃</li>
+<li><strong>券商/金融</strong> - 市场调整期防御属性失效</li>
+</ol>
+<h3 id="sec-6">相对强势板块</h3>
+<ol>
+<li><strong>航运（中远海控）</strong> - 独立行情，受益运价上涨预期</li>
+<li><strong>红利/高股息</strong> - 市场调整期的避险选择</li>
+</ol>
+<hr>
+<h2 id="sec-7">四、资金流向分析</h2>
+<h3 id="sec-8">北向资金</h3>
+<ul>
+<li>5月14日北向资金净流出约50亿</li>
+<li>主要减持：新能源、半导体、券商</li>
+<li>主要增持：红利股、航运</li>
+</ul>
+<h3 id="sec-9">主力资金</h3>
+<ul>
+<li>创业板主力资金净流出超200亿</li>
+<li>科创50主力资金净流出约80亿</li>
+<li>资金向主板红利股迁移</li>
+</ul>
+<hr>
+<h2 id="sec-10">五、技术面分析</h2>
+<h3 id="sec-11">中远海控（601919）技术评估</h3>
+<p><strong>均线系统</strong>:</p>
+<ul>
+<li>收盘价: 14.09元</li>
+<li>5日均线: 14.066元 ✅ <strong>勉强站上</strong></li>
+<li>10日均线: 13.85元 ✅ <strong>站稳</strong></li>
+</ul>
+<p><strong>信号判断</strong>:</p>
+<ul>
+<li>⚠️ <strong>弱势守线</strong> - 仅高出5日线0.024元（0.17%），支撑力度脆弱</li>
+<li>📊 <strong>成交量</strong> - 19.35亿，未明显放量，筹码稳定</li>
+<li>🎯 <strong>关键价位</strong> - 14.00元整数关口为支撑位</li>
+</ul>
+<p><strong>操作建议</strong>:</p>
+<ul>
+<li>✅ <strong>激进型</strong>: 可在14.00-14.05元小仓位买入（不超过3000元）</li>
+<li>⏸️ <strong>稳健型</strong>: 等待明确站稳5日线后再介入</li>
+<li>🛑 <strong>止损位</strong>: 跌破13.80元止损</li>
+</ul>
+<hr>
+<h2 id="sec-12">六、公募基金抱团现象分析</h2>
+<h3 id="sec-13">2021年&quot;吃药喝酒&quot;抱团瓦解回顾</h3>
+<p><strong>抱团形成（2019-2021）</strong>:</p>
+<ul>
+<li>公募基金集中持仓白酒、医药、新能源</li>
+<li>龙头股估值泡沫化（茅台PE&gt;60倍，宁德时代PE&gt;150倍）</li>
+<li>新基金发行火爆，资金持续流入抱团板块</li>
+</ul>
+<p><strong>瓦解过程（2021年2月-2022年4月）</strong>:</p>
+<ol>
+<li><strong>触发因素</strong>: 美联储加息预期 + 国内流动性边际收紧</li>
+<li><strong>第一阶段（2021年2-3月）</strong>: 白酒、医药开始调整，新能源接棒</li>
+<li><strong>第二阶段（2021年7-12月）</strong>: 新能源见顶，周期股接棒</li>
+<li><strong>第三阶段（2022年1-4月）</strong>: 全面杀跌，抱团彻底瓦解</li>
+</ol>
+<p><strong>跌幅回顾</strong>:</p>
+<ul>
+<li>贵州茅台: 2021年2月高点2600元 → 2022年10月低点1300元（-50%）</li>
+<li>宁德时代: 2021年12月高点692元 → 2022年4月低点353元（-49%）</li>
+</ul>
+<h3 id="sec-14">2026年科技股抱团风险对比</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>2021年喝酒吃药</th>
+<th>2026年科技抱团</th>
+<th>相似度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基金持仓集中度</td>
+<td>白酒+医药占比超40%</td>
+<td>AI+半导体占比约35%</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>龙头估值</td>
+<td>茅台PE 60x+</td>
+<td>中芯国际PE 80x+</td>
+<td>⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>新基金发行</td>
+<td>日光盘频现</td>
+<td>科技主题基金热销</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>业绩支撑</td>
+<td>业绩增速放缓</td>
+<td>业绩兑现期存疑</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>政策环境</td>
+<td>流动性收紧预期</td>
+<td>流动性宽松但监管趋严</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table>
+<p><strong>风险信号</strong>:</p>
+<ol>
+<li>✅ 科技龙头开始滞涨（寒武纪、海光信息放量滞涨）</li>
+<li>✅ 二线科技股补涨（资金外溢到低位标的）</li>
+<li>✅ 公募基金发行降温（5月新基金发行规模环比-30%）</li>
+<li>⚠️ 融资余额高企（科创50融资余额创年内新高）</li>
+</ol>
+<p><strong>结论</strong>: 当前科技股抱团已出现2021年抱团瓦解前的4/5信号，<strong>需警惕&quot;谁跑得快&quot;的踩踏风险</strong>。</p>
+<hr>
+<h2 id="sec-15">七、后续操作策略</h2>
+<h3 id="sec-16">短期策略（1-2周）</h3>
+<ol>
+<li>
+<p><strong>中远海控</strong>:</p>
+<ul>
+<li>计划: 14元加仓800股，目标15元卖出</li>
+<li>当前持仓: 1200股</li>
+<li>操作: 若次日站稳5日线，可在14.00-14.05元小仓位买入200-300股试仓</li>
+</ul>
+</li>
+<li>
+<p><strong>立讯精密</strong>:</p>
+<ul>
+<li>跌幅-5.93%，观察是否出现止跌信号</li>
+<li>若次日继续大跌超-3%，可考虑逢低加仓（成本摊薄）</li>
+</ul>
+</li>
+<li>
+<p><strong>半导体板块（北方华创+深科技）</strong>:</p>
+<ul>
+<li>北方华创: 底仓持有，不轻易减仓</li>
+<li>深科技: 目标价45元，长期持有至长鑫存储上市</li>
+</ul>
+</li>
+</ol>
+<h3 id="sec-17">中期策略（1-3月）</h3>
+<ol>
+<li><strong>降低科技股仓位</strong> - 若科创50反弹至前高附近，减仓30%</li>
+<li><strong>增加红利仓位</strong> - 中海油、招商银行等高股息标的</li>
+<li><strong>关注航运周期</strong> - 中远海控若突破15元，可追加仓位</li>
+</ol>
+<hr>
+<h2 id="sec-18">八、风险提示</h2>
+<ol>
+<li><strong>科技股踩踏风险</strong> - 公募抱团瓦解可能引发集体杀跌</li>
+<li><strong>外部扰动</strong> - 美联储加息预期、地缘政治风险</li>
+<li><strong>流动性风险</strong> - 若市场持续调整，可能引发融资盘平仓</li>
+</ol>
+<hr>
+<h2 id="sec-19">九、明日关注点</h2>
+<ol>
+<li><strong>中远海控</strong> - 能否守住14元整数关口</li>
+<li><strong>创业板指</strong> - 是否继续杀跌，还是企稳反弹</li>
+<li><strong>北向资金</strong> - 流向变化，是否回流科技股</li>
+<li><strong>立讯精密</strong> - 苹果产业链调整是否延续</li>
+</ol>
+<hr>
+<p><strong>报告编制</strong>: WorkBuddy AI<br>
+<strong>数据来源</strong>: NeoData金融数据API、AkShare<br>
+<strong>免责声明</strong>: 本报告仅供参考，不构成投资建议。</p>
+
+  <div class="footer">来源：任务库持仓复盘 · 复盘报告-2026-05-14.md | 由 markdown-it 转换 | 仅供参考，不构成投资建议</div>
+</div>
+</body>
+</html>

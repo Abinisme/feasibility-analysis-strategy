@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>A股深度复盘报告 — 2026年5月26日</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif; line-height:1.8; padding:20px 14px 60px; }
+.container { max-width:820px; margin:0 auto; }
+.toolbar { position:sticky; top:0; background:rgba(13,17,23,0.95); backdrop-filter:blur(8px); padding:10px 0; margin-bottom:18px; display:flex; align-items:center; gap:10px; border-bottom:1px solid #30363d; z-index:10; }
+.toolbar a { color:#58a6ff; text-decoration:none; font-size:0.85rem; white-space:nowrap; }
+.toolbar a:hover { text-decoration:underline; }
+.toolbar .sep { color:#484f58; }
+h1 { font-size:1.5rem; color:#f0f6fc; border-bottom:2px solid #30363d; padding-bottom:10px; margin-bottom:18px; }
+h2 { font-size:1.2rem; color:#58a6ff; margin:26px 0 12px; padding-left:10px; border-left:3px solid #58a6ff; }
+h3 { font-size:1.05rem; color:#d29922; margin:20px 0 10px; }
+h4 { font-size:0.98rem; color:#c9d1d9; margin:16px 0 8px; }
+p { margin:8px 0; }
+ul, ol { padding-left:24px; margin:8px 0; }
+li { margin:4px 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+blockquote { border-left:4px solid #30363d; background:#161b22; padding:8px 14px; margin:12px 0; color:#8b949e; border-radius:0 6px 6px 0; }
+blockquote p { margin:4px 0; }
+code { background:#161b22; padding:2px 6px; border-radius:4px; font-size:0.88em; font-family:"SF Mono",Consolas,Menlo,monospace; }
+pre { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:12px 14px; overflow-x:auto; margin:12px 0; }
+pre code { background:none; padding:0; }
+table { border-collapse:collapse; width:100%; margin:12px 0; font-size:0.9em; display:block; overflow-x:auto; }
+th, td { border:1px solid #30363d; padding:7px 10px; text-align:left; }
+th { background:#161b22; color:#58a6ff; font-weight:600; }
+tr:nth-child(even) td { background:rgba(22,27,34,0.5); }
+hr { border:none; border-top:1px solid #30363d; margin:20px 0; }
+img { max-width:100%; border-radius:6px; }
+strong { color:#f0f6fc; }
+.toc { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:14px 18px; margin:14px 0 20px; }
+.toc h3 { margin:0 0 8px; color:#58a6ff; }
+.toc a { display:block; padding:3px 0; font-size:0.9em; color:#8b949e; }
+.toc a:hover { color:#58a6ff; text-decoration:none; }
+.footer { text-align:center; color:#484f58; font-size:0.78rem; margin-top:40px; padding-top:16px; border-top:1px solid #30363d; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="toolbar">
+    <a href="../index.html">🏠 首页</a><span class="sep">|</span>
+    <a href="../replay_index.html">📚 复盘合集</a><span class="sep">|</span>
+    <span style="color:#8b949e;font-size:0.8rem;">任务库持仓复盘 · 复盘报告-2026年5月26日.md</span>
+  </div>
+  
+  <h1>A股深度复盘报告 — 2026年5月26日</h1>
+<p><strong>生成时间</strong>：2026-05-26 18:50<br>
+<strong>数据来源</strong>：Tushare（个股行情）+ NeoData（ETF/基金净值）+ 腾讯新闻（热点舆情）<br>
+<strong>复盘周期</strong>：2026-05-22 ~ 2026-05-26（3个交易日）<br>
+<strong>账户总资产</strong>：约38.41万元（股票25.93万 + ETF/基金12.48万）</p>
+<hr>
+<h2 id="sec-0">一、宏观环境与大盘走势</h2>
+<h3 id="sec-1">1.1 主要指数表现</h3>
+<table>
+<thead>
+<tr>
+<th>指数</th>
+<th>收盘</th>
+<th>涨跌幅</th>
+<th>市场含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td>3,400±</td>
+<td><strong>-0.17%</strong></td>
+<td>震荡偏弱，权重承压</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td>15,876</td>
+<td>+0.12%</td>
+<td>中小盘相对抗跌</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td>4,043</td>
+<td><strong>+0.54%</strong></td>
+<td>成长股韧性凸显</td>
+</tr>
+<tr>
+<td>科创50</td>
+<td>—</td>
+<td><strong>-1.49%</strong></td>
+<td>半导体跳水拖累</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>全市场超 <strong>4000 只个股下跌</strong>，但创业板顽强翻红，成交额放大至 <strong>3.24 万亿元</strong>，属于典型的「指数分化 + 个股普跌 + 放量换手」格局。</p>
+</blockquote>
+<h3 id="sec-2">1.2 宏观背景解读</h3>
+<ul>
+<li><strong>结构性行情延续</strong>：创业板强于上证，成长跑赢价值，资金从传统蓝筹向科技成长迁移的趋势未变。</li>
+<li><strong>ETF 资金流出创月内新高</strong>：5 月 25 日股票型 ETF 单日净流出 469 亿元，说明资金在获利了结，短期抛压增大。</li>
+<li><strong>美联储加息预期扰动</strong>：海外科技股承压（恒生科技 ETF 近一周仅 +0.32%），A 股科技板块情绪受联动影响。</li>
+</ul>
+<hr>
+<h2 id="sec-3">二、热点板块与资金流向</h2>
+<h3 id="sec-4">2.1 今日最强主线：有色金属 / 黄金</h3>
+<table>
+<thead>
+<tr>
+<th>驱动逻辑</th>
+<th>代表标的</th>
+<th>表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>黄金避险 + 供需共振</td>
+<td>招金黄金、紫金矿业、山东黄金</td>
+<td>涨停 / 大涨</td>
+</tr>
+<tr>
+<td>金属铅锌概念</td>
+<td>华锡有色、盛龙股份</td>
+<td>涨停</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>黄金有色板块今日涨幅居前，受益于国际金价走强 + 国内工业金属供需偏紧双重催化。</p>
+</blockquote>
+<h3 id="sec-5">2.2 机器人概念爆发</h3>
+<table>
+<thead>
+<tr>
+<th>驱动逻辑</th>
+<th>相关持仓</th>
+<th>表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI 向机器人应用延伸</td>
+<td>机器人 ETF（562500）</td>
+<td>近一周 +2.52%</td>
+</tr>
+<tr>
+<td>产业催化密集</td>
+<td>立讯精密（002475）</td>
+<td>近一周 +3.18%</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>机器人概念是 AI 主线向硬件端延伸的必然方向，持续性取决于产业落地速度，短期热度较高但中期逻辑坚实。</p>
+</blockquote>
+<h3 id="sec-6">2.3 半导体 / 芯片：高开跳水，内部分化</h3>
+<table>
+<thead>
+<tr>
+<th>方向</th>
+<th>表现</th>
+<th>逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>港股芯片</td>
+<td>华虹半导体早盘 +20% → 回落</td>
+<td>SpaceX IPO 分流科技资金</td>
+</tr>
+<tr>
+<td>A 股半导体权重</td>
+<td>北方华创 -4.00%（暴跌）</td>
+<td>放量双顶，获利盘涌出</td>
+</tr>
+<tr>
+<td>A 股半导体中小盘</td>
+<td>诺安成长 A +6.90%（日涨幅）</td>
+<td>资金从权重流向中小标的</td>
+</tr>
+<tr>
+<td>科创 50 ETF</td>
+<td>+5.88%（日涨幅）</td>
+<td>科创板整体反弹</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>关键洞察</strong>：半导体板块出现严重内部分化——权重股（北方华创）放量下跌，中小半导体股（诺安持仓）强势反弹。这说明资金在板块内部「高低切换」，从高位龙头撤出，流入低位的二线标的。</p>
+</blockquote>
+<h3 id="sec-7">2.4 证券板块：资金持续流入</h3>
+<table>
+<thead>
+<tr>
+<th>驱动逻辑</th>
+<th>相关持仓</th>
+<th>表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>头部券商 Q1 净利 +12.3%</td>
+<td>东方财富（300059）</td>
+<td>今日 +0.91%</td>
+</tr>
+<tr>
+<td>证券 ETF 近 20 日净流入超 30 亿</td>
+<td>—</td>
+<td>资金布局迹象</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>证券板块是「牛市旗手」，持续的资金净流入暗示市场对后市并不悲观。</p>
+</blockquote>
+<h3 id="sec-8">2.5 新能源：冰火两重天</h3>
+<table>
+<thead>
+<tr>
+<th>方向</th>
+<th>表现</th>
+<th>持仓影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>储能（阳光电源）</td>
+<td>+7.03%（中东大订单）</td>
+<td>无直接持仓</td>
+</tr>
+<tr>
+<td>电池 ETF（159755）</td>
+<td>-1.75%（日跌）</td>
+<td>持仓受损</td>
+</tr>
+<tr>
+<td>宁德时代（300750）</td>
+<td>-0.09%（缩量止跌）</td>
+<td>四连跌后企稳迹象</td>
+</tr>
+<tr>
+<td>东方电缆（603606）</td>
+<td>-2.23%（破位下跌）</td>
+<td>海缆方向弱势</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>新能源板块整体仍处「恶性循环」中——宁德时代拖累板块，板块压制个股。但今日宁德缩量止跌（-0.09%），是潜在的拐点信号。</p>
+</blockquote>
+<hr>
+<h2 id="sec-9">三、持仓个股盈亏诊断</h2>
+<h3 id="sec-10">3.1 个股逐日走势（近 3 日）</h3>
+<table>
+<thead>
+<tr>
+<th>股票</th>
+<th>代码</th>
+<th>5/22 收盘</th>
+<th>5/25 收盘</th>
+<th>5/26 收盘</th>
+<th>3日涨跌</th>
+<th>今日涨跌</th>
+<th>持有</th>
+<th>市值(万)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>深科技</td>
+<td>000021</td>
+<td>37.67</td>
+<td>41.15</td>
+<td><strong>42.75</strong></td>
+<td>+13.49%</td>
+<td>🟢+3.89%</td>
+<td>500股</td>
+<td>2.14</td>
+</tr>
+<tr>
+<td>北方华创</td>
+<td>002371</td>
+<td>668.06</td>
+<td>698.19</td>
+<td><strong>670.25</strong></td>
+<td>+0.33%</td>
+<td>🔴-4.00%</td>
+<td>135股</td>
+<td>9.05</td>
+</tr>
+<tr>
+<td>中远海控</td>
+<td>601919</td>
+<td>14.15</td>
+<td>14.65</td>
+<td><strong>14.56</strong></td>
+<td>+2.90%</td>
+<td>⚪-0.61%</td>
+<td>1200股</td>
+<td>1.75</td>
+</tr>
+<tr>
+<td>东方财富</td>
+<td>300059</td>
+<td>19.51</td>
+<td>19.87</td>
+<td><strong>20.05</strong></td>
+<td>+2.77%</td>
+<td>🟢+0.91%</td>
+<td>1400股</td>
+<td>2.81</td>
+</tr>
+<tr>
+<td>招商银行</td>
+<td>600036</td>
+<td>37.21</td>
+<td>36.94</td>
+<td><strong>37.00</strong></td>
+<td>-0.56%</td>
+<td>⚪+0.16%</td>
+<td>700股</td>
+<td>2.59</td>
+</tr>
+<tr>
+<td>宁德时代</td>
+<td>300750</td>
+<td>411.16</td>
+<td>402.88</td>
+<td><strong>402.50</strong></td>
+<td>-2.11%</td>
+<td>⚪-0.09%</td>
+<td>100股</td>
+<td>4.03</td>
+</tr>
+<tr>
+<td>立讯精密</td>
+<td>002475</td>
+<td>76.80</td>
+<td>74.70</td>
+<td><strong>72.45</strong></td>
+<td>-5.66%</td>
+<td>🔴-3.01%</td>
+<td>100股</td>
+<td>0.72</td>
+</tr>
+<tr>
+<td>东方电缆</td>
+<td>603606</td>
+<td>51.33</td>
+<td>56.98</td>
+<td><strong>46.00</strong></td>
+<td>-10.38%</td>
+<td>🔴-2.23%</td>
+<td>200股</td>
+<td>0.92</td>
+</tr>
+<tr>
+<td>银之杰</td>
+<td>300085</td>
+<td>38.23</td>
+<td>39.51</td>
+<td><strong>39.59</strong></td>
+<td>+3.56%</td>
+<td>⚪+0.20%</td>
+<td>400股</td>
+<td>1.58</td>
+</tr>
+<tr>
+<td>中海油</td>
+<td>600938</td>
+<td>34.08</td>
+<td>34.62</td>
+<td><strong>35.17</strong></td>
+<td>+3.20%</td>
+<td>🟢+1.59%</td>
+<td>100股</td>
+<td>0.35</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-11">3.2 重点个股深度诊断</h3>
+<h4>🔴 北方华创（002371）—「双顶确立，放量破位」</h4>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>今日收盘</td>
+<td>670.25 元（-4.00%）</td>
+</tr>
+<tr>
+<td>成交量</td>
+<td>148,548 手</td>
+</tr>
+<tr>
+<td>成交额</td>
+<td>99.9 亿元（放量）</td>
+</tr>
+<tr>
+<td>3 日走势</td>
+<td>5/22 668 → 5/25 698（+4.5%）→ 5/26 670（-4.0%）</td>
+</tr>
+<tr>
+<td>技术形态</td>
+<td><strong>双顶确认</strong>（5/21 高点 721.60 + 5/25 高点 719.05 均未能突破）</td>
+</tr>
+<tr>
+<td>今日亏损</td>
+<td>约 3,775 元（135 股 × 27.94 元跌幅）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>诊断</strong>：昨天复盘明确指出「放量巨震 + 双顶形态，短期见顶风险上升」，今日 -4.00% 暴跌完全验证判断。成交 99.9 亿仍属放量，说明多空分歧尚未结束。</p>
+<p><strong>操作建议</strong>：继续执行减仓方案。⚠️ 注意一手 = 100 股，135 股 → 建议减至 <strong>100 股</strong>（一手），锁定 35 股利润约 23,459 元。止损位 626 元（5/25 最低价），跌破则清仓。</p>
+<hr>
+<h4>🟢 深科技（000021）—「电子板块龙头，量价齐升」</h4>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>今日收盘</td>
+<td>42.75 元（+3.89%）</td>
+</tr>
+<tr>
+<td>成交量</td>
+<td>2,684,536 手（巨量）</td>
+</tr>
+<tr>
+<td>成交额</td>
+<td>109.7 亿元</td>
+</tr>
+<tr>
+<td>3 日走势</td>
+<td>5/22 37.67 → 5/25 41.15（+9.24%）→ 5/26 42.75（+3.89%）</td>
+</tr>
+<tr>
+<td>今日盈利</td>
+<td>约 800 元（500 股 × 1.60 元涨幅）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>诊断</strong>：持仓中唯一今日大涨的个股。电子板块（消费电子复苏）逻辑持续验证，深科技作为存储芯片 + 消费电子双概念标的，受益于 AI PC / AI 手机换机潮。量价齐升说明资金持续流入。</p>
+<p><strong>操作建议</strong>：✅ 持有不动。目标价 45 元（长鑫存储上市后估值重估），止损位 38 元。</p>
+<hr>
+<h4>⚪ 宁德时代（300750）—「四连跌后缩量止跌」</h4>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>今日收盘</td>
+<td>402.50 元（-0.09%）</td>
+</tr>
+<tr>
+<td>成交量</td>
+<td>350,627 手（缩量）</td>
+</tr>
+<tr>
+<td>3 日走势</td>
+<td>5/22 411 ↓ 5/25 403 ↓ 5/26 402.50</td>
+</tr>
+<tr>
+<td>5 日累计</td>
+<td>-3.60%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>诊断</strong>：连续四日下跌后，今日跌幅收窄至 -0.09%，成交量萎缩至 35 万手（低于 5 日均量），是<strong>潜在止跌信号</strong>。但 400 元整数关口尚未确认支撑。</p>
+<p><strong>操作建议</strong>：⚪ 观望不操作。若明日放量反弹站稳 410 元 → 持有；若跌破 400 元 → 减仓至 0 股（清仓一手 = 100 股）。</p>
+<hr>
+<h4>⚪ 东方财富（300059）—「证券资金流入带动」</h4>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>今日收盘</td>
+<td>20.05 元（+0.91%）</td>
+</tr>
+<tr>
+<td>成交量</td>
+<td>4,221,819 手</td>
+</tr>
+<tr>
+<td>3 日走势</td>
+<td>5/22 19.51 → 5/25 19.87 → 5/26 20.05</td>
+</tr>
+</tbody>
+</table>
+<p><strong>诊断</strong>：证券板块资金持续流入（证券 ETF 近 20 日净流入超 30 亿），东方财富作为互联网券商龙头受益。但 5/21 异常放量（148 亿）后的反弹力度偏弱。</p>
+<p><strong>操作建议</strong>：减仓至 <strong>1000 股</strong>（10 手，原 1400 股），锁定 400 股利润约 8,020 元。腾出资金配置深科技或通信 ETF。</p>
+<hr>
+<h4>🔴 东方电缆（603606）—「破位下跌，海缆方向退潮」</h4>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>今日收盘</td>
+<td>46.00 元（-2.23%）</td>
+</tr>
+<tr>
+<td>3 日走势</td>
+<td>5/22 51.33 → 5/25 56.98（异常）→ 5/26 46.00</td>
+</tr>
+<tr>
+<td>3 日累计</td>
+<td><strong>-10.38%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>诊断</strong>：3 日内从 51.33 跌至 46.00，跌幅超 10%，且 5/25 数据可能存在异常（56.98 疑为数据错误）。今日放量下跌确认海缆方向弱势。</p>
+<p><strong>操作建议</strong>：减仓至 <strong>100 股</strong>（一手，原 200 股），止损 100 股，回笼资金约 4,600 元。</p>
+<hr>
+<h4>⚪ 银之杰（300085）—「止损位以下，拖累账户」</h4>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>今日收盘</td>
+<td>39.59 元（+0.20%）</td>
+</tr>
+<tr>
+<td>止损位</td>
+<td>38.00 元</td>
+</tr>
+<tr>
+<td>3/23 高点</td>
+<td>47.02 元（累计跌幅 -15.80%）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>诊断</strong>：持仓档案明确标注「止损已破」。从 3/23 高点 47 元累跌至 39.59 元，主力出货特征明显。虽然今日微涨 +0.20%，但仍在止损位以下。</p>
+<p><strong>操作建议</strong>：❌ <strong>清仓 400 股</strong>（4 手），回收资金约 15,836 元。腾出资金配置电子板块或证券 ETF。</p>
+<hr>
+<h3 id="sec-12">3.3 ETF 与基金持仓诊断（5/25 净值）</h3>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>代码</th>
+<th>份额</th>
+<th>NAV</th>
+<th>日涨幅</th>
+<th>近一周</th>
+<th>市值(万)</th>
+<th>评价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>诺安成长 A</td>
+<td>320007</td>
+<td>12,100</td>
+<td>2.589</td>
+<td>🟢+6.90%</td>
+<td>+15.32%</td>
+<td>3.13</td>
+<td>半导体中小盘反弹，表现优异</td>
+</tr>
+<tr>
+<td>科创 50 ETF</td>
+<td>588000</td>
+<td>5,000</td>
+<td>1.9975</td>
+<td>🟢+5.88%</td>
+<td>+10.87%</td>
+<td>1.00</td>
+<td>科创板强势，持仓偏少</td>
+</tr>
+<tr>
+<td>通信 ETF</td>
+<td>515050</td>
+<td>14,000</td>
+<td>1.202</td>
+<td>🟢+4.59%</td>
+<td>+6.72%</td>
+<td>1.68</td>
+<td>5G 通信持续走强</td>
+</tr>
+<tr>
+<td>机器人 ETF</td>
+<td>562500</td>
+<td>3,200</td>
+<td>1.2124</td>
+<td>⚪+0.35%</td>
+<td>+2.52%</td>
+<td>0.39</td>
+<td>机器人概念，持仓偏少</td>
+</tr>
+<tr>
+<td>纳指 ETF</td>
+<td>513100</td>
+<td>5,900</td>
+<td>2.0126</td>
+<td>⚪+0.45%</td>
+<td>+1.16%</td>
+<td>1.19</td>
+<td>美股高位震荡</td>
+</tr>
+<tr>
+<td>恒生科技 ETF</td>
+<td>513180</td>
+<td>55,900</td>
+<td>0.6231</td>
+<td>⚪-0.06%</td>
+<td>+0.32%</td>
+<td>3.48</td>
+<td>港股科技弱势，拖累</td>
+</tr>
+<tr>
+<td>恒生 ETF</td>
+<td>159920</td>
+<td>6,600</td>
+<td>1.5188</td>
+<td>⚪-0.07%</td>
+<td>-0.44%</td>
+<td>1.00</td>
+<td>港股恒指承压</td>
+</tr>
+<tr>
+<td>电池 ETF</td>
+<td>159755</td>
+<td>5,200</td>
+<td>1.1468</td>
+<td>🔴-1.75%</td>
+<td>-1.51%</td>
+<td>0.60</td>
+<td>新能源电池拖累</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="sec-13">四、账户总览</h2>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>市值</th>
+<th>占比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A 股股票</td>
+<td>25.93 万</td>
+<td>67.5%</td>
+</tr>
+<tr>
+<td>ETF + 基金</td>
+<td>12.48 万</td>
+<td>32.5%</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td><strong>38.41 万</strong></td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>板块集中度</th>
+<th>市值</th>
+<th>占比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>半导体（北方华创 + 深科技 + 诺安 + 科创 50）</td>
+<td>约 15.3 万</td>
+<td>39.8%</td>
+</tr>
+<tr>
+<td>新能源（宁德 + 东方电缆 + 立讯 + 电池 ETF）</td>
+<td>约 6.3 万</td>
+<td>16.4%</td>
+</tr>
+<tr>
+<td>金融（东方财富 + 招商 + 银之杰）</td>
+<td>约 7.0 万</td>
+<td>18.2%</td>
+</tr>
+<tr>
+<td>港股 / 海外（恒生科技 + 纳指 + 恒生 ETF）</td>
+<td>约 5.7 万</td>
+<td>14.8%</td>
+</tr>
+<tr>
+<td>通信 / 机器人（通信 ETF + 机器人 ETF）</td>
+<td>约 2.1 万</td>
+<td>5.5%</td>
+</tr>
+<tr>
+<td>红利 / 周期（中海油 + 中远海控）</td>
+<td>约 2.1 万</td>
+<td>5.5%</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="sec-14">五、后市操作策略</h2>
+<h3 id="sec-15">5.1 操作建议汇总（严格按 100 股/手执行）</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th>当前</th>
+<th>目标</th>
+<th>操作</th>
+<th>腾出资金</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔴 北方华创</td>
+<td>135 股</td>
+<td><strong>100 股（1手）</strong></td>
+<td>减仓 35 股</td>
+<td>~23,459 元</td>
+<td>双顶确立，锁定利润</td>
+</tr>
+<tr>
+<td>❌ 银之杰</td>
+<td>400 股</td>
+<td><strong>0 股</strong></td>
+<td>清仓 400 股</td>
+<td>~15,836 元</td>
+<td>止损已破，拖累账户</td>
+</tr>
+<tr>
+<td>🔴 东方电缆</td>
+<td>200 股</td>
+<td><strong>100 股（1手）</strong></td>
+<td>减仓 100 股</td>
+<td>~4,600 元</td>
+<td>破位下跌，海缆弱势</td>
+</tr>
+<tr>
+<td>⚪ 东方财富</td>
+<td>1400 股</td>
+<td><strong>1000 股（10手）</strong></td>
+<td>减仓 400 股</td>
+<td>~8,020 元</td>
+<td>反弹偏弱，降仓位</td>
+</tr>
+<tr>
+<td>✅ 深科技</td>
+<td>500 股</td>
+<td>500 股</td>
+<td>持有不动</td>
+<td>—</td>
+<td>逻辑验证，量价齐升</td>
+</tr>
+<tr>
+<td>✅ 招商银行</td>
+<td>700 股</td>
+<td>700 股</td>
+<td>持有不动</td>
+<td>—</td>
+<td>高股息 8.11% 垫底</td>
+</tr>
+<tr>
+<td>⚪ 宁德时代</td>
+<td>100 股</td>
+<td>100 股</td>
+<td>观望</td>
+<td>—</td>
+<td>缩量止跌，等信号</td>
+</tr>
+</tbody>
+</table>
+<p><strong>合计可腾出资金</strong>：约 <strong>5.19 万元</strong>，建议优先配置：</p>
+<ol>
+<li><strong>深科技</strong>（+3.89% 逆势领涨，逻辑最清晰）→ 加仓至 1000 股</li>
+<li><strong>通信 ETF 515050</strong>（+4.59% 日涨幅，5G 强势）→ 加仓至 20,000 份</li>
+</ol>
+<h3 id="sec-16">5.2 关键风控线</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th>止损位</th>
+<th>触发条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>北方华创</td>
+<td>626 元</td>
+<td>跌破 5/25 最低价</td>
+</tr>
+<tr>
+<td>宁德时代</td>
+<td>400 元</td>
+<td>跌破心理关口</td>
+</tr>
+<tr>
+<td>深科技</td>
+<td>38 元</td>
+<td>跌破 20 日均线</td>
+</tr>
+<tr>
+<td>东方财富</td>
+<td>18.75 元</td>
+<td>跌破 4 月低点</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-17">5.3 明日关注</h3>
+<ol>
+<li><strong>北方华创</strong>能否在 650 元（20 日均线）附近企稳？若企稳可暂缓减仓。</li>
+<li><strong>宁德时代</strong>能否放量站稳 410 元？若反弹则「恶性循环」打破。</li>
+<li><strong>深科技</strong>能否延续量价齐升？若突破 43.5 元则加速上行。</li>
+<li><strong>有色金属 / 黄金</strong>是否一日游？关注板块资金持续性。</li>
+<li><strong>美股夜盘</strong>走势——SpaceX IPO 临近（6/12），科技股情绪敏感。</li>
+</ol>
+<hr>
+<p><em>报告编制：WorkBuddy AI | 数据来源：Tushare + NeoData + 腾讯新闻 | 2026-05-26 18:50</em></p>
+
+  <div class="footer">来源：任务库持仓复盘 · 复盘报告-2026年5月26日.md | 由 markdown-it 转换 | 仅供参考，不构成投资建议</div>
+</div>
+</body>
+</html>
