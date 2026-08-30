@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>市场又又又"原谅"北方华创 | 2026年中报深度分析</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js" defer></script>
 <style>
   :root { --bg:#0f1117; --card:#1a1d28; --border:#2a2d3a; --text:#e1e4ea; --text2:#8b8fa3; --red:#e15241; --green:#22c55e; --accent:#4fc3f7; --gold:#f59e0b; --purple:#a78bfa; --pink:#ec4899; --teal:#14b8a6; }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -292,40 +293,13 @@
 
 <p style="font-size:0.82em;color:var(--text2);">注：25Q4营收=年报393.53-三季报273.01推算；25Q4归母=年报55.22-三季报51.30推算；26Q2各项由H1减Q1推算；25Q2扣非16.11亿（和讯）、毛利率41.29%（和讯）；部分季度单值未公开披露，以"—"标注。</p>
 
-<!-- 图表：营收与归母趋势 -->
-<div class="chart-wrap">
-  <h4>六季度营收与归母净利润趋势（亿元）</h4>
-  <div class="chart-canvas-wrap tall">
-    <canvas id="chartRevProfit"></canvas>
-  </div>
-  <p class="chart-note">数据来源：北方华创各期财报，25Q4/26Q2为推算值</p>
-</div>
-
-<!-- 图表：同比增速对比 -->
+<!-- 图表：同比增速对比（保留） -->
 <div class="chart-wrap">
   <h4>营收增速 vs 归母增速（%）——"增收不增利"可视化</h4>
   <div class="chart-canvas-wrap">
     <canvas id="chartGrowth"></canvas>
   </div>
   <p class="chart-note">25Q4归母-66%为利润底，26Q1-Q2回升至个位数但仍显著低于营收增速</p>
-</div>
-
-<!-- 图表：毛利率趋势 -->
-<div class="chart-wrap">
-  <h4>毛利率趋势（%）——持续下滑但26Q2环比企稳</h4>
-  <div class="chart-canvas-wrap">
-    <canvas id="chartMargin"></canvas>
-  </div>
-  <p class="chart-note">2024年42.9% → 2025年40.1% → 2026H1 40.07%；26Q2单季39.3%环比-1.4pct</p>
-</div>
-
-<!-- 图表：合同负债与存货 -->
-<div class="chart-wrap">
-  <h4>合同负债与存货（亿元，期末）——备货超预期证据</h4>
-  <div class="chart-canvas-wrap">
-    <canvas id="chartOrder"></canvas>
-  </div>
-  <p class="chart-note">合同负债26Q1→Q2跳升+26.6%，存货持续累库至305亿</p>
 </div>
 
 <!-- ================= 三、分产品收入与费用拆分 ================= -->
@@ -351,13 +325,6 @@
   <tr><td>财务费用</td><td class="num">1.38</td><td>—</td><td class="num">0.7%</td><td class="red-text">+0.2pct</td><td>—</td></tr>
   <tr><td>期间费用合计</td><td>—</td><td>—</td><td class="num">24.5%</td><td class="red-text">+1.7pct</td><td>费用率全面上行</td></tr>
 </table>
-</div>
-
-<div class="chart-wrap">
-  <h4>分产品收入占比（2026H1）</h4>
-  <div class="chart-canvas-wrap">
-    <canvas id="chartProduct"></canvas>
-  </div>
 </div>
 
 <!-- ================= 四、"原谅"三段论 ================= -->
@@ -396,13 +363,13 @@
 <table>
   <tr><th>机构</th><th>评级</th><th>核心观点</th><th>盈利预测（归母）</th></tr>
   <tr>
-    <td><strong>东吴证券</strong><br><span style="font-size:0.8em;color:var(--text2)">周尔双/李文意</span></td>
+    <td><strong><a href="https://data.eastmoney.com/report/info/AP202608271828560401.html" target="_blank" rel="noopener">东吴证券</a></strong><br><span style="font-size:0.8em;color:var(--text2)">周尔双/李文意</span></td>
     <td class="green-text">买入</td>
     <td>营收持续高增，平台化布局加速落地。七大产品线（刻蚀/薄膜/离子注入/涂胶显影/先进封装/热处理/其他）均有进展。利润增速低于营收系研发投入+芯源微并表+毛利率下降。</td>
     <td class="num">26年68.9亿<br>27年92.1亿<br>28年120.9亿</td>
   </tr>
   <tr>
-    <td><strong>爱建证券</strong><br><span style="font-size:0.8em;color:var(--text2)">王凯</span></td>
+    <td><strong><a href="https://baijiahao.baidu.com/s?id=1874657988669445336" target="_blank" rel="noopener">爱建证券</a></strong><br><span style="font-size:0.8em;color:var(--text2)">王凯</span></td>
     <td class="green-text">买入</td>
     <td>《多品类设备持续放量，静待盈利逐步释放》。整体符合预期，多品类设备持续放量，静待盈利逐步释放。</td>
     <td>—</td>
@@ -542,7 +509,7 @@
   <div class="chart-canvas-wrap tall">
     <canvas id="chartPrice"></canvas>
   </div>
-  <p class="chart-note">4月底业绩底→6月高点810→7月回调→8月中报后697</p>
+  <p class="chart-note">横轴为实际日期（时间比例）；标注一季报(4/29)、中报(8/25)披露节点；7/1高点935.36为7月1日收盘</p>
 </div>
 
 <h3>7.2 一季报前后的定价特征</h3>
@@ -614,7 +581,7 @@
 <h3>数据来源与参考</h3>
 <ul>
   <li><strong>原始公告</strong>：北方华创2026年半年度报告（2026-08-25披露）、2026年第一季度报告（2026-04-30，巨潮资讯网/上海证券报）、2025年年度报告（2026-04-17，证券之星/东方财富网）、2025年三季度报告（2025-10-31，EET-China）、2025年半年度报告（2025-08-28，百度百家号/和讯）</li>
-  <li><strong>券商研报</strong>：东吴证券《2026年中报点评：营收持续高增，平台化布局加速落地》（周尔双/李文意，2026-08-27）、爱建证券《多品类设备持续放量，静待盈利逐步释放》（王凯，买入评级）</li>
+  <li><strong>券商研报</strong>：<a href="https://data.eastmoney.com/report/info/AP202608271828560401.html" target="_blank" rel="noopener">东吴证券《2026年中报点评：营收持续高增，平台化布局加速落地》（周尔双/李文意，2026-08-27）↗</a>、<a href="https://baijiahao.baidu.com/s?id=1874657988669445336" target="_blank" rel="noopener">爱建证券《多品类设备持续放量，静待盈利逐步释放》（王凯，买入评级）↗</a>、<a href="https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/search/rptid/841201999657/index.phtml" target="_blank" rel="noopener">新浪研报《经营质量稳中向好》（2026-08-27）↗</a></li>
   <li><strong>第三方数据</strong>：东方财富财富号《北方华创业绩解读》（2026-08-26）、和讯网25Q2点评、证券之星财报简析</li>
   <li><strong>本workspace复盘</strong>：<a href="./复盘html/A股深度复盘_20260826.html">8/26复盘</a>、<a href="./复盘html/A股深度复盘_20260827.html">8/27复盘</a>、<a href="./复盘html/A股深度复盘_20260828.html">8/28复盘</a>、<a href="./复盘合集/复盘报告-2026年6月25日.md">6/25复盘</a></li>
   <li><strong>前篇</strong>：<a href="./nahuo_market_pardon_analysis_20260430.html">《为什么市场频频"原谅"北方华创？》（2026-04-30）</a></li>
@@ -628,19 +595,25 @@
 <script>
 // 图表数据
 const quarters = ['25Q1','25Q2','25Q3','25Q4','26Q1','26Q2'];
-const revData = [82.06,79.36,111.60,120.52,103.23,98.38];
-const profitData = [15.81,16.27,19.22,3.92,16.35,17.35];
 const revGrowth = [37.90,21.84,38.31,26.29,25.80,24.0];
 const profitGrowth = [90.21,-1.47,14.60,-66.06,3.42,6.6];
-const marginData = [null,41.29,40.31,null,null,39.3];
-const marginFullData = [42.9, 40.1, 40.07]; // 2024/2025/2026H1
-const orderData = [null,null,null,42.92,42.03,53.20];
-const invData = [null,null,301.99,286.10,286.00,305.06];
+
+// 股价走势数据（x 为实际日期，符合时间间隔）
 const priceData = [
-  {x:'4/17',y:580},{x:'4/29',y:600},{x:'5/15',y:620},{x:'6/8',y:585.74},
-  {x:'6/25',y:798},{x:'7/15',y:780},{x:'8/1',y:730},{x:'8/15',y:710},
-  {x:'8/24',y:707.90},{x:'8/25',y:700.40},{x:'8/26',y:700.70},
-  {x:'8/27',y:718.00},{x:'8/28',y:697.51}
+  {x:'2026-04-17', y:580,   event:'年报披露'},
+  {x:'2026-04-29', y:600,   event:'一季报披露'},
+  {x:'2026-05-15', y:620},
+  {x:'2026-06-08', y:585.74},
+  {x:'2026-06-25', y:798,   event:'盘中810'},
+  {x:'2026-07-01', y:935.36, event:'7月高点'},
+  {x:'2026-07-15', y:780},
+  {x:'2026-08-01', y:730},
+  {x:'2026-08-15', y:710},
+  {x:'2026-08-24', y:707.90},
+  {x:'2026-08-25', y:700.40, event:'中报披露'},
+  {x:'2026-08-26', y:700.70},
+  {x:'2026-08-27', y:718.00},
+  {x:'2026-08-28', y:697.51}
 ];
 
 const baseOpts = {
@@ -653,17 +626,7 @@ const baseOpts = {
 };
 
 window.addEventListener('load', function(){
-  // 营收与归母趋势
-  new Chart(document.getElementById('chartRevProfit'),{
-    type:'bar',
-    data:{ labels:quarters, datasets:[
-      {label:'营业收入(亿)',data:revData,backgroundColor:'#4fc3f7',borderColor:'#4fc3f7',borderWidth:1},
-      {type:'line',label:'归母净利润(亿)',data:profitData,borderColor:'#f59e0b',backgroundColor:'rgba(245,158,11,0.1)',tension:0.3,pointRadius:4,pointBackgroundColor:'#f59e0b',borderWidth:2,fill:false}
-    ]},
-    options:{...baseOpts, plugins:{...baseOpts.plugins, tooltip:{mode:'index',intersect:false}}}
-  });
-
-  // 增速对比
+  // 增速对比（保留）
   new Chart(document.getElementById('chartGrowth'),{
     type:'bar',
     data:{ labels:quarters, datasets:[
@@ -673,43 +636,53 @@ window.addEventListener('load', function(){
     options:{...baseOpts, plugins:{...baseOpts.plugins, tooltip:{mode:'index',intersect:false}}}
   });
 
-  // 毛利率趋势
-  new Chart(document.getElementById('chartMargin'),{
-    type:'line',
-    data:{ labels:['2024年','2025年','2026H1'], datasets:[
-      {label:'毛利率(%)',data:marginFullData,borderColor:'#e15241',backgroundColor:'rgba(225,82,65,0.1)',tension:0.2,pointRadius:5,pointBackgroundColor:'#e15241',borderWidth:2,fill:true}
-    ]},
-    options:{...baseOpts, plugins:{...baseOpts.plugins, legend:{display:false}}}
-  });
-
-  // 合同负债与存货
-  new Chart(document.getElementById('chartOrder'),{
-    type:'bar',
-    data:{ labels:quarters, datasets:[
-      {label:'合同负债(亿)',data:orderData,backgroundColor:'rgba(34,197,94,0.7)',borderColor:'#22c55e'},
-      {type:'line',label:'存货(亿)',data:invData,borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,0.1)',tension:0.3,pointRadius:4,pointBackgroundColor:'#a78bfa',borderWidth:2,fill:false,yAxisID:'y1'}
-    ]},
-    options:{...baseOpts, scales:{
-      x:baseOpts.scales.x,
-      y:{position:'left',ticks:{color:'#8b8fa3',font:{size:10}},grid:{color:'#2a2d3a'},title:{display:true,text:'合同负债(亿)',color:'#8b8fa3'}},
-      y1:{position:'right',ticks:{color:'#8b8fa3',font:{size:10}},grid:{drawOnChartArea:false},title:{display:true,text:'存货(亿)',color:'#8b8fa3'}}
-    }}
-  });
-
-  // 分产品占比
-  new Chart(document.getElementById('chartProduct'),{
-    type:'doughnut',
-    data:{ labels:['电子工艺装备','电子元器件'], datasets:[{data:[192.05,9.15],backgroundColor:['#4fc3f7','#f59e0b'],borderWidth:0}] },
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#e1e4ea',font:{size:12}}}}}
-  });
-
-  // 股价走势
+  // 股价走势（时间轴 + 事件标注）
   new Chart(document.getElementById('chartPrice'),{
     type:'line',
-    data:{ labels:priceData.map(d=>d.x), datasets:[
-      {label:'收盘价(元)',data:priceData.map(d=>d.y),borderColor:'#4fc3f7',backgroundColor:'rgba(79,195,247,0.1)',tension:0.3,pointRadius:4,pointBackgroundColor:'#4fc3f7',borderWidth:2,fill:true}
-    ]},
-    options:{...baseOpts, plugins:{...baseOpts.plugins, legend:{display:false}, tooltip:{mode:'index',intersect:false}}}
+    data:{ datasets:[{
+      label:'收盘价(元)',
+      data:priceData.map(d=>({x:d.x,y:d.y})),
+      borderColor:'#4fc3f7',
+      backgroundColor:'rgba(79,195,247,0.08)',
+      tension:0.25,
+      pointRadius: priceData.map(d => d.event ? 6 : 3),
+      pointBackgroundColor: priceData.map(d => d.event ? '#f59e0b' : '#4fc3f7'),
+      pointBorderColor: priceData.map(d => d.event ? '#f59e0b' : '#4fc3f7'),
+      borderWidth:2,
+      fill:true
+    }]},
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      interaction:{mode:'nearest',intersect:false},
+      plugins:{
+        legend:{display:false},
+        tooltip:{
+          callbacks:{
+            title: function(ctx){ return ctx[0].raw.x; },
+            label: function(ctx){
+              const item = priceData.find(d => d.x === ctx.raw.x);
+              let lbl = '收盘：' + ctx.parsed.y + ' 元';
+              if (item && item.event) lbl += '（' + item.event + '）';
+              return lbl;
+            }
+          }
+        }
+      },
+      scales:{
+        x:{
+          type:'time',
+          time:{ unit:'month', displayFormats:{ month:'M月' }, tooltipFormat:'yyyy-MM-dd' },
+          ticks:{ color:'#8b8fa3', font:{size:10} },
+          grid:{ color:'#2a2d3a' }
+        },
+        y:{
+          min:540, max:980,
+          ticks:{ color:'#8b8fa3', font:{size:10}, callback:function(v){return v;} },
+          grid:{ color:'#2a2d3a' },
+          title:{ display:true, text:'股价(元)', color:'#8b8fa3', font:{size:11} }
+        }
+      }
+    }
   });
 });
 </script>
