@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>BAT（字节/阿里/腾讯）AI Coding，办公Agent投资分析</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif; line-height:1.85; padding:20px 14px 60px; }
+.container { max-width:860px; margin:0 auto; }
+.toolbar { position:sticky; top:0; background:rgba(13,17,23,0.95); backdrop-filter:blur(8px); padding:10px 0; margin-bottom:18px; display:flex; align-items:center; gap:10px; border-bottom:1px solid #30363d; z-index:10; flex-wrap:wrap; }
+.toolbar a { color:#58a6ff; text-decoration:none; font-size:0.85rem; white-space:nowrap; }
+.toolbar a:hover { text-decoration:underline; }
+.toolbar .sep { color:#484f58; }
+
+/* 页头 */
+.hero { background:linear-gradient(135deg,#161b22 0%,#1c2333 60%,#12233a 100%); border:1px solid #30363d; border-radius:14px; padding:28px 24px; margin-bottom:22px; }
+.hero .kicker { color:#d29922; font-size:0.8rem; letter-spacing:2px; margin-bottom:8px; }
+.hero h1 { font-size:1.55rem; color:#f0f6fc; line-height:1.5; margin-bottom:10px; }
+.hero .subtitle { color:#58a6ff; font-size:1.02rem; margin-bottom:14px; }
+.hero .meta { color:#8b949e; font-size:0.83rem; line-height:1.9; }
+.hero .meta b { color:#c9d1d9; }
+.hero .tagrow { margin-top:12px; display:flex; flex-wrap:wrap; gap:8px; }
+.tag { font-size:0.75rem; padding:3px 10px; border-radius:999px; border:1px solid #30363d; color:#8b949e; background:#0d1117; }
+.tag.hot { border-color:#8957e5; color:#d2a8ff; }
+
+/* 摘要卡片 */
+.summary-card { background:#161b22; border:1px solid #30363d; border-left:4px solid #d29922; border-radius:0 10px 10px 0; padding:16px 20px; margin:18px 0; }
+.summary-card h4 { color:#d29922; font-size:0.95rem; margin-bottom:8px; }
+.summary-card li { margin:5px 0; }
+
+/* 章节标题 */
+h2.sec { font-size:1.25rem; color:#58a6ff; margin:34px 0 14px; padding-left:12px; border-left:4px solid #58a6ff; }
+h3.sub { font-size:1.05rem; color:#d29922; margin:24px 0 10px; }
+h4.ssub { font-size:0.98rem; color:#7ee787; margin:18px 0 8px; }
+p { margin:8px 0; }
+ul, ol { padding-left:24px; margin:8px 0; }
+li { margin:5px 0; }
+strong { color:#f0f6fc; }
+em { color:#d2a8ff; font-style:normal; }
+.up { color:#7ee787; font-weight:600; }
+.down { color:#ff7b72; font-weight:600; }
+.hl { color:#d29922; font-weight:600; }
+.hl2 { color:#79c0ff; font-weight:600; }
+
+/* 引用块 */
+blockquote { border-left:4px solid #30363d; background:#161b22; padding:10px 16px; margin:14px 0; color:#8b949e; border-radius:0 6px 6px 0; }
+blockquote.key { border-left-color:#d29922; color:#c9d1d9; }
+blockquote.key b { color:#d29922; }
+
+/* 图片 */
+figure { margin:16px auto; text-align:center; max-width:560px; }
+figure img { width:100%; height:auto; border-radius:10px; border:1px solid #30363d; background:#fff; display:block; }
+figcaption { color:#8b949e; font-size:0.78rem; margin-top:7px; text-align:center; line-height:1.6; }
+
+/* 表格 */
+table { border-collapse:collapse; width:100%; margin:14px 0; font-size:0.88em; display:block; overflow-x:auto; }
+th, td { border:1px solid #30363d; padding:8px 11px; text-align:left; }
+th { background:#161b22; color:#58a6ff; white-space:nowrap; }
+td.num { text-align:center; white-space:nowrap; }
+
+/* 目录 */
+.toc { background:#161b22; border:1px solid #30363d; border-radius:10px; padding:16px 20px; margin:18px 0; }
+.toc h4 { color:#58a6ff; margin-bottom:10px; font-size:0.95rem; }
+.toc ol { margin:0; }
+.toc a { color:#58a6ff; text-decoration:none; }
+.toc a:hover { text-decoration:underline; }
+
+/* 解读者视角卡片 */
+.analyst { background:linear-gradient(180deg,#191327 0%,#161b22 100%); border:1px solid #8957e5; border-radius:12px; padding:20px 22px; margin:16px 0; }
+.analyst .badge { display:inline-block; font-size:0.72rem; color:#d2a8ff; border:1px solid #8957e5; border-radius:999px; padding:2px 12px; margin-bottom:10px; letter-spacing:1px; }
+.analyst h4 { color:#d2a8ff; margin:12px 0 6px; }
+.analyst li { margin:6px 0; }
+
+/* 逻辑链 */
+.chain { display:flex; flex-direction:column; gap:6px; margin:14px 0; }
+.chain .node { background:#161b22; border:1px solid #30363d; border-left:4px solid #58a6ff; border-radius:0 8px 8px 0; padding:9px 14px; font-size:0.92rem; }
+.chain .arrow { text-align:center; color:#484f58; font-size:0.85rem; line-height:1; }
+.chain .node b { color:#58a6ff; }
+
+hr { border:none; border-top:1px solid #30363d; margin:26px 0; }
+
+/* 三家对比卡片 */
+.grid3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; margin:14px 0; }
+.pcard { background:#161b22; border:1px solid #30363d; border-radius:10px; padding:14px 16px; }
+.pcard h5 { font-size:0.95rem; margin-bottom:8px; }
+.pcard.tencent h5 { color:#7ee787; }
+.pcard.ali h5 { color:#ff9bce; }
+.pcard.bytedance h5 { color:#79c0ff; }
+.pcard p { font-size:0.86rem; color:#8b949e; margin:4px 0; }
+.pcard b { color:#c9d1d9; }
+
+.risk { background:#1f1214; border:1px solid #6e4049; border-radius:10px; padding:14px 18px; margin:16px 0; font-size:0.85rem; color:#c9acac; }
+.risk h4 { color:#ff7b72; margin-bottom:6px; }
+
+.footer { margin-top:30px; padding-top:16px; border-top:1px solid #30363d; color:#8b949e; font-size:0.8rem; line-height:2; }
+.footer a { color:#58a6ff; text-decoration:none; }
+.footer a:hover { text-decoration:underline; }
+a.inline { color:#58a6ff; text-decoration:none; }
+a.inline:hover { text-decoration:underline; }
+
+/* 移动端优化 */
+@media (max-width:640px) {
+  body { padding:12px 10px 40px; line-height:1.75; }
+  .container { max-width:100%; }
+  .hero { padding:18px 16px; border-radius:10px; }
+  .hero h1 { font-size:1.18rem; }
+  .hero .subtitle { font-size:0.92rem; }
+  .hero .meta { font-size:0.76rem; }
+  h2.sec { font-size:1.08rem; margin:26px 0 10px; padding-left:9px; }
+  h3.sub { font-size:0.98rem; }
+  h4.ssub { font-size:0.93rem; }
+  p, li { font-size:0.93rem; }
+  figure { max-width:100%; margin:12px auto; }
+  table { font-size:0.8em; }
+  th, td { padding:6px 8px; }
+  .chain .node { font-size:0.86rem; padding:8px 10px; }
+  .analyst { padding:14px; }
+  .grid3 { grid-template-columns:1fr; gap:10px; }
+  .pcard { padding:12px 13px; }
+  .summary-card { padding:12px 14px; }
+  .toc { padding:12px 14px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="toolbar">
+  <a href="./replay_index.html">← 复盘合集</a><span class="sep">|</span>
+  <a href="./index.html">首页</a><span class="sep">|</span>
+  <a href="https://mp.weixin.qq.com/s/GwNlj7Vos-W_L8zygKgjBw" target="_blank" rel="noopener">原文（微信公众号） ↗</a>
+</div>
+
+<!-- ================= 页头 ================= -->
+<div class="hero">
+  <div class="kicker">投研深度解读 · AI 应用系列</div>
+  <h1>BAT（字节/阿里/腾讯）AI Coding，办公Agent投资分析</h1>
+  <div class="subtitle">从 Chat 走向 Work：AI Coding 之后的下一潜力市场</div>
+  <div class="meta">
+    <b>报告来源</b>：中信建投证券研究 ·《AI办公深度：从Chat走向Work，AI Coding后的下一潜力市场》<br>
+    <b>分析师</b>：杨艾莉（首席，SAC S1440519060002）/ 杨晓玮（联席首席）/ 马晓婷<br>
+    <b>发布时间</b>：2026年8月27日 &nbsp;|&nbsp; <b>本页整理</b>：2026年8月30日（含解读者视角分析）
+  </div>
+  <div class="tagrow">
+    <span class="tag hot">办公 Agent</span>
+    <span class="tag hot">WorkBuddy</span>
+    <span class="tag hot">千问办公</span>
+    <span class="tag hot">豆包工作</span>
+    <span class="tag">Claude Cowork</span>
+    <span class="tag">ChatGPT Work</span>
+    <span class="tag">平台经济</span>
+    <span class="tag">万亿市场测算</span>
+  </div>
+</div>
+
+<!-- ================= 核心观点速览 ================= -->
+<div class="summary-card">
+  <h4>⚡ 核心观点速览（原文摘要）</h4>
+  <ul>
+    <li>年初至今 <strong>Coding 快速驱动 AI 商业化增长</strong>（Anthropic 与 OpenAI 目前合计 ARR 预估超 <span class="hl">1000 亿美金</span>），但随着编程渗透率提升，市场正寻找下一个潜力场景。</li>
+    <li>AI 办公场景潜力大，有望将 AI 带入大众市场：潜在用户从<span class="hl2">千万级程序员拓展到 10 亿泛白领人群</span>。据 a16z，今年 2-6 月法律领域 Codex 周活跃企业用户增长 <span class="up">108 倍</span>。</li>
+    <li>全球大厂积极布局：Anthropic 率先推出 Claude Cowork；7 月 OpenAI 将 Codex 与 ChatGPT 整合；近期 xAI 发布 Grok Bot。</li>
+    <li>国内大厂战略重视：<strong>腾讯</strong> 3 月率先发布 WorkBuddy（先发优势，月使用次数超千万）；<strong>阿里</strong> 整合三个产品推出千问办公；<strong>字节</strong> 将飞书并入豆包，正式推出"豆包工作"品牌。</li>
+    <li><strong>投资建议</strong>：重点关注互联网大厂——办公 Agent 正走向平台化，互联网厂商是平台经济的赢家；办公 Agent 好用与否与可调用工具强关联，大厂在 IM 等领域优势突出，办公有望成为新一轮 B 端平台级产品及新流量入口。</li>
+  </ul>
+</div>
+
+<!-- ================= 目录 ================= -->
+<div class="toc">
+  <h4>📑 目录</h4>
+  <ol>
+    <li><a href="#part1">为什么办公 Agent 是继 Coding 后的下一个潜力赛道？</a>（市场空间测算 / 三因素共振 / 海内外布局）</li>
+    <li><a href="#part2">互联网公司的竞争优势在哪里？BAT 各家定位有何不同？</a>（腾讯 / 阿里 / 字节）</li>
+    <li><a href="#part3">深度分析：主旨 · 论证逻辑 · 关键论据 · 解读者点评</a></li>
+    <li><a href="#risk">风险提示</a></li>
+  </ol>
+</div>
+
+<!-- ================= 第一部分 ================= -->
+<h2 class="sec" id="part1">一、为什么办公 Agent 是继 Coding 后的下一个潜力赛道？</h2>
+
+<blockquote class="key">
+  <b>原文三大论点：</b>① 人群广——全球超 10 亿知识工作者，远高于 5000 万左右程序员，乐观情形下可创造万亿美金级市场空间；② BAT 与全球模型厂商齐聚布局；③ AI 从高端市场向大众市场拓展的必经之路——使用电脑办公的泛白领用户都是潜在用户，办公 Agent 延展性强，基础模型能力之外，更重要的是 Harness 层（产品能力）与生态协同（MCP/Skill）。
+</blockquote>
+
+<h3 class="sub">1.1 全球 10 亿+ 知识工作者，潜在市场空间千亿~万亿美金量级</h3>
+
+<p>报告采用<b>两种方法</b>测算市场空间：</p>
+
+<h4 class="ssub">方法一：白领人群数量 × 渗透率 × ARPU</h4>
+<ul>
+  <li><b>假设 1（人群）</b>：据微软 2025 年报告《The golden opportunity for American AI》，全球知识工作者约 <span class="hl">10 亿</span>。</li>
+  <li><b>假设 2（渗透率）</b>：据 JetBrains 2026 年 1 月调查，Coding 场景程序员渗透率已达 90%；办公任务可验证性、标准化程度弱于编程，渗透将低于程序员。盖洛普调研显示 50% 的人在使用 AI，故以 <span class="hl">50%</span> 为基点做敏感性分析。</li>
+  <li><b>假设 3（ARPU）</b>：C 端 WorkBuddy、千问办公月费 10-40 美元，TRAE 最高档约 100 美元，Claude/ChatGPT/Kimi 最高档接近 200 美元；B 端席位费更高（WorkBuddy 最低档约 29 美元/月/席位）。假设 ARPU 区间 <span class="hl">240-2400 美金/年</span>。</li>
+  <li><b>测算结果</b>：渗透率 50%、ARPU 240 美元/年 → <span class="hl2">1200 亿美元</span>；渗透率 50%、ARPU 2400 美元/年 → <span class="hl2">1.2 万亿美元</span>。整体区间 <span class="up">1080-15600 亿美金</span>。</li>
+</ul>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NvdXqcxPCRQ2ykK9k4aRrJtEPBhXNPWUR1qmaszhNZibjvUkbC89OtIlzNXCNo9s1Jsicg96xLE53fBO9brdOFdnJA3WBhmPUUQR7CVowdrQA/640" referrerpolicy="no-referrer" loading="lazy" alt="方法一核心假设">
+  <figcaption>方法一核心假设（来源：中信建投证券研究）</figcaption>
+</figure>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NvdXqcxPCRSv8okia0w7kOwEneG1NxnAnO6fjNvJYCP7SpLHxRpWoPdcUmiceAqUelCjabeibX1xoEH0brsOvtLBNic2YOE80AjcBb0iaAP54ric8/640" referrerpolicy="no-referrer" loading="lazy" alt="方法一敏感性分析">
+  <figcaption>方法一市场规模敏感性分析（来源：中信建投证券研究）</figcaption>
+</figure>
+
+<h4 class="ssub">方法二：劳动力价值替代法</h4>
+<ul>
+  <li><b>假设 1（白领劳动成本）</b>：据 ILO，2024 年全球劳动收入占 GDP 的 52.4%，约 57.6 万亿美元，平均薪酬约 1.6 万美元/年；据 OECD 工资溢价数据，假设白领平均薪酬为全球平均的 1.35-1.75 倍，取均值 <span class="hl">2.5 万美金/年</span>，对应每年约 <span class="hl2">25 万亿美元</span>白领劳动成本。</li>
+  <li><b>假设 2（AI 替代率）</b>：据 ILO，全球 24% 岗位对生成式 AI 有暴露度，3.3% 处最高暴露等级（数据录入、文职、记账、金融文员等白领岗位），该人群占全球白领约 12%。假设 AI 远期可承接白领工作量的 <span class="hl">9%/12%/15%/18%</span>。</li>
+  <li><b>假设 3（Agent 环节价值占比）</b>：企业仅将部分节约成本用于购买 AI 服务。参照 Palantir 客户模型——每帮客户赚 100 美金可获得 24.8 美金报酬，以 <span class="hl">25%</span> 为基点做敏感性分析。</li>
+  <li><b>测算结果</b>：整体区间约 <span class="up">3000-13500 亿美元</span>（如替代 12% × 占比 30% → 9000 亿美元）。</li>
+</ul>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/mmbiz_png/NvdXqcxPCRQP2VTJNfszCbBiagBCWy3s0bFqLFwicDA9dURtmLia2NaZMAOicufUTtfAbicxndFdnJ9a0yicDYtGOn7GzqxN64wIx3ibaQsXjXjgeU/640" referrerpolicy="no-referrer" loading="lazy" alt="方法二敏感性分析">
+  <figcaption>方法二市场规模敏感性分析（来源：中信建投证券研究）</figcaption>
+</figure>
+
+<h3 class="sub">1.2 模型能力提升 + token 成本降低 + Harness 提升，办公 Agent 有望加速泛化</h3>
+
+<p>报告认为，办公 Agent 的集中爆发是<b>三因素共振</b>的结果，且目前仅是初步爆发，后续有望进一步泛化。</p>
+
+<h4 class="ssub">因素一：前沿与第二梯队模型能力持续提升，任务复杂度上限不断抬高</h4>
+<ul>
+  <li>模型整体智能水平快速提升：据 Artificial Analysis，LLM 智能水平指数从 2022 年 11 月 GPT-3.5 Turbo 的 <b>3 分</b>升至目前 Claude Opus 5 的 <b>63 分</b>；模型持续强化理解、推理、工具调用和长链条任务执行能力，Agent 从"问答"走向"执行"。</li>
+  <li>第二梯队追赶加快：2023-2024 年初 OpenAI/Anthropic 较第二梯队领先约 9-12 个月，2024-2026 年初压缩至 3-6 个月；K3 发布后差距进一步缩至<b>3 个月左右</b>。</li>
+</ul>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/mmbiz_png/NvdXqcxPCRRaZF1YR92eLq9Kpek3LmrZt7H2ngxJkR0XyVw4Ciaics96GtlmyEjl9aRQsC2Tx41mtufqxoajKg1m5SEtckonghESIYUEj4su8/640" referrerpolicy="no-referrer" loading="lazy" alt="模型智能水平指数变化">
+  <figcaption>大模型智能水平指数持续提升、梯队差距收窄（来源：Artificial Analysis，中信建投证券研究）</figcaption>
+</figure>
+
+<h4 class="ssub">因素二：开源 + 降价，提高前沿模型可得性，AI 应用能以更低成本调用更好的模型</h4>
+<ul>
+  <li><b>开源模型能力逼近闭源</b>：以 Kimi K3（7 月 17 日发布）为分水岭，开源模型第一次以"竞争威胁"身份进入全球 AI 定价叙事，发布即登顶 Code Arena。对 AI 应用而言，开源模型私有化能力强、可微调、不依赖单一服务商，数据和推理成本更受控。</li>
+  <li><b>性价比突出</b>：K3 评分接近 GPT 5.6 Sol，但 API 定价仅为其 <span class="hl">1/2</span>；DeepSeek V4 Pro 0813、Kimi K3 均在帕累托线上。据 SiliconData，闭源模型综合 token 价格指数约为开源模型的 <span class="hl">6 倍</span>。</li>
+  <li><b>综合 token 成本下行</b>：据 SiliconData，整体 LLM Token 价格指数今年 6 月以来下降明显；闭源模型综合价格指数自 7 月起陡峭下降。</li>
+</ul>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NvdXqcxPCRR0fcdzyjSkeOicJGFZQb4AV9UrA1Z4jWf87YKPXqWp0zg4FH4z7nc04Ca8Ay5T4TQ2kCJicpCFD34x720ibYntKTYHwkPlTIH4QE/640" referrerpolicy="no-referrer" loading="lazy" alt="开源模型性价比">
+  <figcaption>开源模型性能/价格对比：K3 评分接近 GPT 5.6 Sol、定价为其 1/2（来源：中信建投证券研究）</figcaption>
+</figure>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NvdXqcxPCRT75vZtbWibTmQTWYhEeb012kPqdtSUGoqw27obwAxX8QZYxA1WIG6VZabn3Ptv5DeqfYBghQH7U48HBFyTJaIwX4DSVnlcsQvU/640" referrerpolicy="no-referrer" loading="lazy" alt="开源与闭源token价格指数">
+  <figcaption>开源/闭源模型 token 价格指数对比（来源：SiliconData，中信建投证券研究）</figcaption>
+</figure>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NvdXqcxPCRTKTHlqIrib8S6bU3onk78b72GTA8mXt7BxJ2ibFOhbekHb1O5gfwLZXrVeKibDZJ5Zwc3zxfN6Nth1OpGqNKT8B4wWlugHlvjEuk/640" referrerpolicy="no-referrer" loading="lazy" alt="LLM Token价格指数走势">
+  <figcaption>整体 LLM Token 价格指数 6 月以来明显下降（来源：SiliconData，中信建投证券研究）</figcaption>
+</figure>
+
+<h4 class="ssub">因素三：Harness 能力持续完善——办公 Agent 的三阶段演进</h4>
+
+<p>Skill、MCP 等工具被封装进办公 Agent，降低部署与使用门槛，并可稳定高质量交付。办公 Agent 产品形态的变化是 Harness 能力提升的缩影，正由内容生成工具向复杂任务执行平台演进：</p>
+
+<ol>
+  <li><b>第一阶段：Copilot 辅助办公</b>——AI 嵌入 Office 等既有软件，执行简单任务，进行内容生成。</li>
+</ol>
+
+<ol start="2">
+  <li><b>第二阶段：Agent 可自主执行任务</b>——包括拆解任务、调用工具、操作电脑等。2024 年 10 月 Anthropic 推出 Computer Use；2025 年 2 月推出 Claude Code 研究预览（5 月正式发布），率先验证"理解任务—拆解流程—调用工具—验证结果"的完整 Agent 执行框架；此后通过 Skills、Claude for Excel 及 Claude Cowork，将 Coding Agent 积累的任务执行能力扩展至通用办公场景。</li>
+</ol>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NvdXqcxPCRTqzjrdq6H0ic34yTPSyNXfH5d8uhBGbngK1dqQgvLyHC4nlXItibpnV1E2ej2tic4HojzlqjMfFaeSvpaia2kKpfY4BuhmXyPUOgs/640" referrerpolicy="no-referrer" loading="lazy" alt="第二阶段：Agent自主执行">
+  <figcaption>第二阶段：Agent 自主执行任务（来源：中信建投证券研究）</figcaption>
+</figure>
+
+<ol start="3">
+  <li><b>第三阶段：办公 Agent 平台化</b>——2026 年 3 月 OpenClaw 快速普及，用户直观认识到"大模型+Harness"可作为 7×24 小时执行任务的 AI 员工。但 OpenClaw 部署门槛高，腾讯、字节、阿里和百度一方面推出云端托管、本地部署及 IM 接入方案，降低"养虾"门槛；另一方面将 Coding Agent 积累的任务规划、工具调用和结果验证能力扩展至文档、表格、研究及企业工作流。产品形态由单一聊天助手升级为集桌面与云端执行、Skills 生态、即时通信入口及企业权限治理于一体的办公平台。<em>BAT 目前的办公 Agent 均为当时"龙虾"产品的迭代，经技能封装与持续迭代，WorkBuddy 等已实现下载安装即用，以极低门槛面向小白用户。</em></li>
+</ol>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NvdXqcxPCRSQkdibib9NAdrSviaLiaib3GUWBPEcCc5v0D9K3s32cbicrILDVPh25HMdo23wbWPNiaAIVSFia1yHvkb4hcrGO45TyIwWaLtJPysL5FI/640" referrerpolicy="no-referrer" loading="lazy" alt="第三阶段：办公Agent平台化">
+  <figcaption>第三阶段：办公 Agent 平台化（来源：中信建投证券研究）</figcaption>
+</figure>
+
+<h4 class="ssub">落地验证：法律领域 Codex 周活跃企业用户 2-6 月增长 108 倍</h4>
+
+<p>办公 Agent 已初步在 B 端企业打开，尤其是法律领域。据 a16z，自 2026 年 2 月以来，企业 Codex 周活跃用户在 <b>Legal 增长 108 倍</b>、Sales 增长 41 倍、Recruiting 增长 41 倍、Marketing 增长 26 倍、Healthcare 增长 24 倍、Engineering 增长 5 倍。</p>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NvdXqcxPCRS5y9IvE3QhI1gR2eiaafdK9vDA68GInCbgSh3pE4Gd0PEyGDV1AqaWk7I1fnRzkvj52PKibicDrqxZ2H4weXD3AQ4n39xcTP0IKY/640" referrerpolicy="no-referrer" loading="lazy" alt="Codex各行业周活增长">
+  <figcaption>Codex 周活跃企业用户分行业增长倍数（2026.2-6，来源：a16z，中信建投证券研究）</figcaption>
+</figure>
+
+<h3 class="sub">1.3 海内外大模型厂商、互联网公司纷纷布局，持续加码</h3>
+
+<p>当前办公 Agent 赛道主要玩家包括<b>模型厂商、互联网厂商与传统办公软件厂商</b>三类。海内外共振，用户规模快速增长：国内 WorkBuddy 月访问量从 3 月的 900 万增至 6 月的超 2000 万，居国产办公 Agent 榜首；海外 ChatGPT Work 在 6 月推出并与 Codex 整合，两周周活从 600 万增至 1000 万，8 月已突破 2000 万（据 CNBC）。</p>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NvdXqcxPCRTkoEk7UNJLM7hHK1qSvg5Ktx6mYwK3oJVqDSQjgib11yFI1oibZiaVsZYbeRGoBbEYcFP3WeKiaP8RSOibhaAJa8wCQwkGHiarr5ibAY/640" referrerpolicy="no-referrer" loading="lazy" alt="ChatGPT Work用户增长">
+  <figcaption>ChatGPT Work 与 Codex 整合后周活快速增长（来源：CNBC，中信建投证券研究）</figcaption>
+</figure>
+
+<h4 class="ssub">（1）模型厂商起步较早</h4>
+<p>Anthropic 布局最早，2026 年 1 月即推出 Claude Cowork，将 Claude Code 的任务执行框架扩展至非编程工作；OpenAI 于 6 月推出 ChatGPT Work 并与 Codex 合并，两周内周活从 600 万增至 1000 万，目前已超 2000 万。</p>
+
+<h4 class="ssub">（2）互联网厂商：组织架构密集调整，资源向办公 Agent 收拢</h4>
+
+<table>
+  <tr><th>公司</th><th>组织与产品动作（2026 年）</th></tr>
+  <tr>
+    <td><b>腾讯</b></td>
+    <td>5 月成立<b>云产品六部</b>，统一负责 CodeBuddy 与 WorkBuddy，团队由十余人扩张至百余人，由腾讯云 CTO 王慧星兼任产品负责人；7 月将 QClaw 相关业务并入同一体系，Miora、Ardot 等 AI 应用集中于 WorkBuddy 体系（保留独立入口）。前期赛马（WorkBuddy/Qclaw/QQ-Bot）→ 以 WorkBuddy 为核心。</td>
+  </tr>
+  <tr>
+    <td><b>阿里</b></td>
+    <td>3 月成立 <b>ATH 事业部</b>（通义实验室、MaaS、千问、悟空、AI 创新事业部纳入同一组织）；4 月 CEO 吴泳铭内部信设立集团技术委员会、升级通义大模型事业部；6 月合并通义大模型事业部与未来生活实验室成立 Token Foundry 事业部（CEO 直管）；7 月发布<b>千问办公</b>，整合 QoderWork、悟空、MuleRun。</td>
+  </tr>
+  <tr>
+    <td><b>字节</b></td>
+    <td>7 月 30 日飞书产品团队整体并入豆包（赵祺负责）；飞书 GTM 团队与火山引擎整合成立"创造力服务平台"（谭待负责）；8 月 TRAE、扣子团队并入豆包体系，8 月 25 日推出统一办公品牌<b>"豆包工作"</b>。</td>
+  </tr>
+</table>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/mmbiz_png/NvdXqcxPCRRDXOZkryicGicFslaOXzdUnQBqjCXNHIgY9PUAlib2Bp863dBAWau7iaCKvvYDhLQjEwzEQv2kdicmImNLhQmvtXf4W8H9BV8fctdc/640" referrerpolicy="no-referrer" loading="lazy" alt="千问办公整合三产品">
+  <figcaption>千问办公整合 QoderWork / 悟空 / MuleRun（来源：中信建投证券研究）</figcaption>
+</figure>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/mmbiz_png/NvdXqcxPCRR4anicmg5vRaz9f7iaib1ibTvwUchNyicblLzWB5DeOicHZm8dSH5XYVVUmiaupveI5a90IGSFMJzY52ohfCFpCmeLpdQYr5RLmiaqVpM/640" referrerpolicy="no-referrer" loading="lazy" alt="字节飞书并入豆包">
+  <figcaption>字节：飞书并入豆包，B 端 AI 战略优先级提升（来源：中信建投证券研究）</figcaption>
+</figure>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NvdXqcxPCRRdyOk35QCyq4aC5hz4DulTpHwjS4icZbCxaPskiceicR3Rv0PEW8BY6aOwcTgSClx4qTZdN0A4Eeib17Gyxp8UQzJuBF3NNQ93icH4/640" referrerpolicy="no-referrer" loading="lazy" alt="TRAE扣子并入豆包">
+  <figcaption>TRAE、扣子团队并入豆包体系（来源：中信建投证券研究）</figcaption>
+</figure>
+
+<h4 class="ssub">（3）传统办公软件厂商</h4>
+<p>依托存量办公入口、文档格式标准和企业客户基础，将 Agent 能力嵌入既有办公流程。</p>
+
+<!-- ================= 第二部分 ================= -->
+<h2 class="sec" id="part2">二、互联网公司的竞争优势在哪里？BAT 各家定位有何不同？</h2>
+
+<blockquote class="key">
+  <b>相比大模型厂商和传统 SaaS 厂商，互联网公司布局办公 Agent 的三大优势：</b>① 生态优势（独立办公 Agent 平台与原有布局协同）；② 产品力更强（打造平台型产品经验丰富）；③ 支持低门槛切换模型（模型中立性）。
+</blockquote>
+
+<h3 class="sub">2.0 三大竞争优势</h3>
+
+<h4 class="ssub">优势一：生态优势——跨产品数据流转与任务串联，短期难以复制</h4>
+<p>腾讯/阿里/字节自身生态庞大，借助企业微信、钉钉、飞书、腾讯文档、IMA 知识库等高频办公入口，形成"获取信息—执行任务—交付结果—沉淀数据"的完整工作闭环，降低用户迁移和学习成本。例如 WorkBuddy 可读取 TAPD 需求数据生成报告、存入腾讯文档、将会议纪要沉淀为知识资产、再通过企业微信推送进展，全程在统一身份、权限和审计体系下完成。</p>
+
+<h4 class="ssub">优势二：产品力更强——用户量头部应用基本集中在大厂</h4>
+<ul>
+  <li>2026 年 6 月，腾讯、阿里、抖音为去重用户量排名前三企业，均超 <span class="hl">12 亿人</span>；</li>
+  <li>近 3 年破圈的 AI 应用依然被互联网厂商占据：头部三家大厂占国内 AI 应用 App 超 <span class="hl">80%</span> 流量；截至 26 年 6 月，字节、腾讯、阿里占据 AI 原生 App 前五中的四席。</li>
+</ul>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/mmbiz_png/NvdXqcxPCRSSwjYLqZGnicuEDopSJPDed5SQQCQQT4zY0qKWPmbAw6k3td4TPrOlQe0G178z3p5hoUTYib1g2kGYxgvlDL9n9lib9ndmyTDeLg/640" referrerpolicy="no-referrer" loading="lazy" alt="去重用户量排名">
+  <figcaption>2026 年 6 月去重用户量排名：腾讯/阿里/抖音均超 12 亿（来源：中信建投证券研究）</figcaption>
+</figure>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/mmbiz_png/NvdXqcxPCRQXyyPeS0TfWsJZ7z051HfX7AlZuEG9RnjLiaI0jmkeDeg1bZWe9ko7Cd8vf23gjdv0kgwiaZzYN2ClSvsfbSbHeSs5P7O03rtBQ/640" referrerpolicy="no-referrer" loading="lazy" alt="AI应用流量格局">
+  <figcaption>头部三家大厂占国内 AI 应用 App 超 80% 流量（来源：中信建投证券研究）</figcaption>
+</figure>
+
+<h4 class="ssub">优势三：模型中立性——支持低门槛切换模型</h4>
+<p>模型厂商的 Harness 和 Agent 调度架构通常优先服务自有模型；但不同模型在视觉理解、代码、搜索、数据分析和复杂推理等任务及成本上各有优势。用量大的企业会做模型路由，而 C 端用户与非科技型 B 端企业不具备该能力。互联网大厂具备更强的模型中立性——当自有模型无法满足特定任务时，可选择能力更优或成本更低的外部模型。</p>
+
+<blockquote>
+  <b>格局初判（原文）</b>：国内办公 Agent 市场<b>腾讯初步领先</b>，阿里、字节重点发力，三家的产品定位接近、策略略有不同——腾讯靠 WorkBuddy 率先完成产品整合，叠加公众号/腾讯文档/IMA 生态，先发+生态优势明显；阿里以千问办公补齐入口分散、能力割裂的短板，但对千问模型有明显倾斜，模型切换门槛高于腾讯和字节；字节最初双产品并行（豆包面向泛 C 端、Trae Work 面向 B 端和重度用户），8 月 25 日推出统一品牌"豆包工作"，同样对自身模型有明显倾斜。
+</blockquote>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NvdXqcxPCRQibV6MZugvONanuib9njoIicwAkGA0blMgVC3oVTkleKfFVJuhPE8u4XyDCib7BVa9oBeGatYIELxuyTviapvB5fyVvEdBniaJ0bdow/640" referrerpolicy="no-referrer" loading="lazy" alt="豆包工作品牌">
+  <figcaption>字节推出统一办公品牌"豆包工作"（来源：中信建投证券研究）</figcaption>
+</figure>
+
+<div class="grid3">
+  <div class="pcard tencent">
+    <h5>🐧 腾讯 · WorkBuddy</h5>
+    <p><b>定位</b>：大模型时代的工作入口、组织级生产力平台</p>
+    <p><b>用户</b>：6 月月访问量 2097 万，居同类榜首，近 3 月增速约 150%</p>
+    <p><b>优势</b>：微信生态+企微（连接超 1400 万家企业），付费用户盈利水平较好</p>
+    <p><b>模型</b>：低门槛切换外部模型</p>
+  </div>
+  <div class="pcard ali">
+    <h5>🧭 阿里 · 千问办公</h5>
+    <p><b>定位</b>：全栈能力做办公 Agent 整条产品线</p>
+    <p><b>整合</b>：QoderWork（桌面端+任务执行）+ 悟空（钉钉组织关系/权限）+ MuleRun（专家网络与 Skill 市场）</p>
+    <p><b>生态</b>：钉钉 8 亿用户、2600 万企业组织、19 万付费企业</p>
+    <p><b>模型</b>：对千问倾斜明显，切换门槛较高</p>
+  </div>
+  <div class="pcard bytedance">
+    <h5>🎼 字节 · 豆包工作</h5>
+    <p><b>定位</b>：豆包为统一 AI 入口，飞书提供企业协作与知识底座</p>
+    <p><b>整合</b>：飞书/火山引擎/TRAE/扣子并入豆包体系，剑指 B 端</p>
+    <p><b>规模</b>：大模型业务年化营收超 40 亿美元；豆包月活 3.82 亿；飞书新客户超 90% 同步采购 AI 模块</p>
+    <p><b>模型</b>：对自身模型有明显倾斜</p>
+  </div>
+</div>
+
+<h3 class="sub">2.1 腾讯：WorkBuddy 用户量领先，社交生态优势突出，产品力较强</h3>
+
+<ul>
+  <li><b>产品表现</b>：WorkBuddy 是目前国内办公 Agent 市场最成熟的产品——2026 年 6 月月访问量达 <span class="hl">2,097 万次</span>，位居同类产品榜首，近三个月增速约 <span class="up">150%</span>；应用内置的专家、技能和连接器数量多于同类竞品。</li>
+  <li><b>定位</b>：大模型时代的工作入口和组织级生产力平台。个人端以"直接交付结果"为核心目标，通过自主规划、工具调用、本地文件操作和多 Agent 协同覆盖全场景任务；企业端接入腾讯文档、网盘、知识库及企微生态，将分散的个人 Agent 连接为"超级团队"，沉淀企业数字员工资产，实现统一权限、安全与运行管理。</li>
+  <li><b>微信生态优势</b>：微信小程序支持<b>云端沙箱与本机远程双模式</b>控制 WorkBuddy——云端模式任务在腾讯云沙箱执行，结果通常 1-3 分钟内回传，适合通勤出差等轻量场景；本机远程模式经加密安全隧道读写本地文件，适合需访问本地资料的长时间复杂任务；电脑端生成的报告/表格/PPT 可一键回传小程序并转发微信好友。企业微信连接超 <span class="hl">1400 万家</span>真实企业与组织，是 WorkBuddy ToB 战略的强大入口。</li>
+</ul>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NvdXqcxPCRSZ9TrC8Q7CjhibY2P0iawByIuJNqVicY2NaJ7f3X9D6VdotUuicZ8FZibRy4Vk5iaQ6PdZLKtzN5Z0XImShURGDAic6Aic0PgcVb94rIw/640" referrerpolicy="no-referrer" loading="lazy" alt="WorkBuddy产品数据">
+  <figcaption>WorkBuddy：6 月月访问量 2097 万、近三月增速约 150%（来源：中信建投证券研究）</figcaption>
+</figure>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/mmbiz_png/NvdXqcxPCRTlhuxaaLXgWO9DLsmibkPV1X0hqbl59T2aiaXY3V3580hJ6picC0J7pFXdJExZVNuroDRZqb0fMos6VBnANweTscwq3wccoWr6aY/640" referrerpolicy="no-referrer" loading="lazy" alt="微信小程序双模式">
+  <figcaption>微信小程序：云端沙箱 + 本机远程双模式（来源：中信建投证券研究）</figcaption>
+</figure>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/mmbiz_png/NvdXqcxPCRSvU0OZviaTUzwZfEypXAGLVHrhozCeUpibDbt2BDffC7Jd7kibs3MXvmicNHgUyhcuUbrMj9Pb9JIOp5Y8SQHRNucdr7p0uOo81k8/640" referrerpolicy="no-referrer" loading="lazy" alt="企业微信生态入口">
+  <figcaption>企业微信：连接超 1400 万家企业与组织的 ToB 入口（来源：中信建投证券研究）</figcaption>
+</figure>
+
+<h3 class="sub">2.2 阿里巴巴：千问办公整合三个 Agent 产品，产品快速迭代中</h3>
+
+<ul>
+  <li><b>三产品整合、能力互补</b>：<b>QoderWork</b> 脱胎于 Qoder，将代码 Agent 能力从写代码扩展到办公场景，已形成较成熟的桌面端产品和任务执行能力；<b>悟空</b> 由钉钉团队推出，最初目的是通过 AI 实现对钉钉功能的准确调度，沉淀了钉钉的组织关系、权限和企业应用能力；<b>MuleRun</b> 来自陈宇森（钉钉 CEO、千问办公目前负责人）的创业产品，重点探索专家网络和 Skill 市场。整合后主要沿用 QoderWork 的产品页面和架构。</li>
+  <li><b>全栈决心</b>：ATH 体系内底层有通义千问自研模型，中间有阿里云算力与 MaaS 服务，入口有钉钉的存量企业组织，未来有望进一步强化协同效应。</li>
+  <li><b>生态底盘</b>：钉钉是国内用户规模最大的企业应用——截至 2024 年底用户数达 <span class="hl">8 亿</span>、企业组织数 <span class="hl">2600 万</span>、软件付费企业数 <span class="hl">19 万家</span>；悟空深度融合后已直接内置超 2000 万企业组织，依托钉钉全面 CLI 化重构的底层架构，可原生调用上千项业务能力。</li>
+</ul>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NvdXqcxPCRTS9Ztgia5TmhaibTiaMCKFYKhCW39Bo5HhHs2K7rd7Cxg3yHQBjaZMh3QB02FSO6UFhJmo87Hf4TuBTGGWBAptnvJQIpkWJbZgd4/640" referrerpolicy="no-referrer" loading="lazy" alt="千问办公产品架构">
+  <figcaption>千问办公：整合后沿用 QoderWork 页面与架构，悟空打通生态、MuleRun 扩充技能（来源：中信建投证券研究）</figcaption>
+</figure>
+
+<h3 class="sub">2.3 字节：飞书/豆包/火山引擎整合剑指 B 端；推出统一品牌"豆包工作"</h3>
+
+<ul>
+  <li><b>产品演进</b>：过去两年 TRAE 由 AI 编程工具逐步演进为通用工作 Agent——2024-2025 年从 MarsCode 升级为独立 AI IDE，通过 Agent 2.0 和 TRAE SOLO 强化自主开发及多智能体协作能力；2026 年进一步加入 Skills、Memory 和多端协同，并更名为 TRAE Work，应用场景由 Coding 拓展至产品、分析和设计。8 月 25 日推出统一办公品牌"豆包工作"：TRAE Work、扣子与豆包在工作场景的能力整合；TRAE IDE 及 CLI 作为豆包品牌下的编程产品线持续发展；产品和运营团队向豆包产品负责人赵祺汇报。</li>
+  <li><b>战略地位</b>：AI 收入已成为字节整体收入中增速最快的部分——按 2026 年 7 月平均消耗口径推算，大模型业务年化营收运行速率超 <span class="hl">40 亿美元</span>；豆包月活达 <span class="hl">3.82 亿</span>；飞书近期新签企业客户中超 <span class="hl">90%</span> 同步购买飞书 AI 功能模块。</li>
+  <li><b>整合逻辑</b>：办公信息流正由"人—平台—人"转向"人—Agent—平台"，平台逐步退居数据、工具与权限底座，Agent 成为核心入口——<em>AI 能力重要性的提升是此次整合由豆包牵头的重要原因</em>。字节的整合目标接近微软"Copilot（应用）+ Azure（云）+ OpenAI（模型）"模式，意图打通"飞书（应用）+ 火山引擎（云）+ 豆包/Seed（模型）"的"模型—云—应用"一体化栈。</li>
+</ul>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NvdXqcxPCRRFvCejDYepibr6zjgIHIn9a50T9MGfXJB8WkMZAjMMxCV48wCu3z3CK9hgk1QsmDtYNP2wIMBTo5GT3jZE1XibbeXduKvmRnib3g/640" referrerpolicy="no-referrer" loading="lazy" alt="豆包工作品牌发布">
+  <figcaption>8 月 25 日字节推出统一办公品牌"豆包工作"（来源：中信建投证券研究）</figcaption>
+</figure>
+
+<figure>
+  <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NvdXqcxPCRT4Nss6YboiaOEpUTc0srd4zxoaRf9jBlzkQWIPwTlPt2GvEnuGSiboTq585obk3rgDJuhVnseHTAibO1eHz4JyOzkmrVIpVWvSgQ/640" referrerpolicy="no-referrer" loading="lazy" alt="字节的微软模式对标">
+  <figcaption>对标微软"Copilot+Azure+OpenAI"，打通"飞书+火山引擎+豆包/Seed"一体化栈（来源：中信建投证券研究）</figcaption>
+</figure>
+
+<!-- ================= 第三部分：深度分析 ================= -->
+<h2 class="sec" id="part3">三、深度分析：主旨 · 论证逻辑 · 关键论据</h2>
+
+<div class="analyst">
+  <span class="badge">解读者视角 · 以下为本页整理者的分析，非原文内容</span>
+
+  <h4>3.1 文章主旨</h4>
+  <p>这是一篇典型的<b>"赛道切换"叙事研究报告</b>：在 AI Coding 商业化已被充分定价（Anthropic+OpenAI 合计 ARR 预估超 1000 亿美金、编程渗透率接近饱和）之后，报告试图回答"AI 应用的下一个主战场在哪里"，并给出明确答案——<b>办公 Agent（从 Chat 走向 Work）</b>。其真正的落点在于投资建议：<b>办公 Agent 正在从工具走向平台，而平台经济的赢家是互联网大厂</b>，因此 BAT 的战略价值需要被重估。文章同时兼具"空间测算（需求侧）+ 供给侧三因素 + 竞争格局（BAT 对比）"的完整卖方研究框架。</p>
+
+  <h4>3.2 论证逻辑链拆解</h4>
+  <div class="chain">
+    <div class="node"><b>起点（事实）</b>：Coding 驱动本轮 AI 商业化，但渗透率见顶 → 市场需要寻找下一个大规模场景</div>
+    <div class="arrow">▼</div>
+    <div class="node"><b>需求侧</b>：办公场景人群从 5000 万程序员 → 10 亿知识工作者，两种方法测算出千亿~万亿美金市场</div>
+    <div class="arrow">▼</div>
+    <div class="node"><b>供给侧（Why Now）</b>：模型能力↑（3 分→63 分）+ token 成本↓（闭源为开源 6 倍价格且快速下降）+ Harness 成熟（Copilot→Agent→平台化三阶段）三因素共振</div>
+    <div class="arrow">▼</div>
+    <div class="node"><b>验证信号</b>：法律领域 Codex 周活 2-6 月增 108 倍；WorkBuddy 月访问量 900 万→2000 万+；ChatGPT Work 两周周活 600 万→1000 万</div>
+    <div class="arrow">▼</div>
+    <div class="node"><b>竞争格局</b>：模型厂商早发但生态单薄；互联网大厂有生态/产品力/模型中立三重优势 → BAT 组织密集调整卡位</div>
+    <div class="arrow">▼</div>
+    <div class="node"><b>结论（投资建议）</b>：办公 Agent 平台化 = 新的 B 端流量入口 → 重点关注互联网大厂（腾讯领先、阿里字节追赶）</div>
+  </div>
+  <p>这一逻辑链的设计要点在于：<b>用"渗透率天花板"制造紧迫感，用"10 亿人群"打开想象空间，用三因素共振解释时机（Why Now），用高频数据证明拐点已至</b>——四步递进，最终自然导向"买互联网大厂"的结论。</p>
+
+  <h4>3.3 关键论据清单（数据溯源）</h4>
+  <table>
+    <tr><th>论据</th><th>数据</th><th>出处</th></tr>
+    <tr><td>Coding 商业化规模</td><td class="num">Anthropic+OpenAI ARR 超 1000 亿美金</td><td>报告估算</td></tr>
+    <tr><td>潜在用户基数</td><td class="num">全球知识工作者约 10 亿</td><td>微软 2025 报告</td></tr>
+    <tr><td>渗透率锚点</td><td class="num">程序员 90% / 白领基准 50%</td><td>JetBrains / 盖洛普</td></tr>
+    <tr><td>B 端突破信号</td><td class="num">Legal 领域 Codex 周活增 108 倍</td><td>a16z</td></tr>
+    <tr><td>模型能力跃迁</td><td class="num">智能指数 3 分（GPT-3.5）→ 63 分（Claude Opus 5）</td><td>Artificial Analysis</td></tr>
+    <tr><td>开源性价比</td><td class="num">K3 定价 = GPT 5.6 Sol 的 1/2；闭源 token 价格指数为开源 6 倍</td><td>SiliconData</td></tr>
+    <tr><td>腾讯产品验证</td><td class="num">WorkBuddy 月访问量 2097 万，近 3 月 +150%</td><td>中信建投测算</td></tr>
+    <tr><td>海外对标</td><td class="num">ChatGPT Work 周活破 2000 万</td><td>CNBC</td></tr>
+    <tr><td>字节商业化</td><td class="num">大模型年化营收超 40 亿美元；豆包月活 3.82 亿</td><td>公司披露</td></tr>
+    <tr><td>价值分配参照</td><td class="num">Palantir：帮客户赚 100 美金获报酬 24.8 美金</td><td>Palantir 客户模型</td></tr>
+  </table>
+  <p>可以看出，报告的数据底盘较为扎实：宏观基数采用微软/ILO/OECD 等权威机构，行业数据采用 a16z/Artificial Analysis/SiliconData 等第三方，产品数据则依赖自建跟踪与公司披露——<b>权威机构定锚、第三方数据定趋势、自建数据定标的</b>，是头部卖方研究的标准打法。</p>
+
+  <h4>3.4 解读者点评：亮点与可商榷之处</h4>
+  <ul>
+    <li><b>亮点一：双方法测算互相校验</b>。方法一（自上而下订阅口径）与方法二（劳动力价值替代口径）结果区间存在交集（千亿~万亿美金级），降低了单一方法的偏差风险；且方法二借鉴 Palantir 的价值分配比例（约 25%），隐含了"AI 厂商只能拿走替代价值的一部分"这一清醒假设。</li>
+    <li><b>亮点二：竞争分析抓住"生态 vs 模型"的轴心</b>。报告将互联网大厂与模型厂商的差异归结为 Harness 生态与模型中立性——模型厂商的 Agent 天然偏自有模型，而大厂可以路由最优模型。这一框架能解释为何 OpenAI/Anthropic 先发，而报告仍更看好 BAT。</li>
+    <li><b>亮点三：组织架构是先行指标</b>。报告详细梳理 BAT 三家在 3-8 月的组织整合（腾讯云产品六部、阿里 ATH/Token Foundry、字节飞书/TRAE/扣子并入豆包），把"人事即战略"的观察落到投资判断上——办公 Agent 的优先级提升在组织层面已被验证。</li>
+    <li><b>可商榷一：两种测算方法均为乐观估算，且未充分折算国内付费意愿差异</b>。方法一的 ARPU 区间上限（2400 美金/年）取的是 Claude/ChatGPT 顶配套餐价格，而现实中多数用户停留在低档位；渗透率 50% 的基点直接对标盖洛普"使用过 AI"的比例，与"为办公 Agent 付费"仍有距离。更关键的是，报告的 ARPU 假设锚定的是<b>海外订阅价格体系</b>——国内 C 端的付费意愿与付费习惯和海外差异很大：国内用户长期习惯免费互联网产品，为工具类软件订阅付费的比例远低于欧美（视频会员、网盘等少数品类除外），办公 Agent 在国内 C 端的实际付费率与 ARPU 很可能显著低于报告基准；B 端虽有按席位付费的习惯，但国内企业软件预算普遍紧缩、采购决策链长、比价文化重。万亿美金应视为远期理论上限而非可及市场，国内市场的兑现节奏大概率更慢。</li>
+    <li><b>可商榷二：对模型厂商的判断偏静态</b>。报告认为模型厂商生态单薄，但 ChatGPT Work 周活破 2000 万的增速（两周 +67%）实际上不弱于 WorkBuddy；且模型厂商若持续开放 MCP/Skill 生态，"生态劣势"可能被弥合。</li>
+    <li><b>可商榷三：付费率与盈利模型缺位</b>。报告提及 WorkBuddy"付费用户盈利水平较好"、豆包"付费率较低"，但对办公 Agent 的 C 端付费率、B 端续约率、获客成本等关键运营指标缺乏量化——这恰是判断"平台化叙事"能否兑现的核心变量。</li>
+    <li><b>可商榷四：办公 Agent 对 BAT 估值的实际拉动有限</b>。即便办公 Agent 跑通，该项业务在三家的营收与利润盘子中<b>占比极小</b>——腾讯的基本盘是游戏、广告与金融科技，阿里是电商与云，字节是广告与电商，三家本质上仍是<b>传统互联网平台，做的是线上垄断收租的生意</b>（流量分发、交易抽佣、广告变现）。当前市场对三家的定价主要锚定传统主业的现金流与利润增速，办公 Agent 更接近一张"远期期权"而非估值主逻辑：它提供的是战略卡位与叙事弹性，短期难以在财报中兑现，不应高估其对股价的直接驱动。</li>
+    <li><b>投资视角小结</b>：该报告的叙事框架完整、数据丰富，适合作为理解"AI 办公 Agent"竞争格局的底稿；但使用时需打两层折扣——其一，市场空间是乐观的敏感性测算而非预测，国内付费意愿与习惯的差异会拖慢兑现节奏；其二，办公 Agent 在 BAT 收入结构中占比极小，三家的估值仍由传统平台主业主导，办公 Agent 是期权而非主菜。建议跟踪<b>月活/付费率/ARPU 的实际爬坡节奏</b>与<b>组织整合的落地进度</b>两大指标，警惕叙事领先于基本面。</li>
+  </ul>
+</div>
+
+<!-- ================= 风险提示 ================= -->
+<h2 class="sec" id="risk">四、风险提示（原文）</h2>
+
+<div class="risk">
+  <h4>⚠️ 风险提示</h4>
+  生成式AI技术发展不及预期的风险；产品研发难度大的风险；Agent产品迭代不及预期的风险；办公Agent渗透不及预期或渗透速度较慢的风险；办公Agent C端/B端用户付费不及预期的风险；办公Agent市场空间不达预期风险；办公Agent市场空间测算为敏感性分析、存在测算不准确的风险；竞争格局进一步加剧的风险；AI投入不及预期风险；组织架构频繁调整导致摩擦成本较高的风险；人才流失的风险；人力成本上升的风险；算力不足的风险；算力与上游硬件成本上行的风险；战略定力不够的风险；政策监管的风险；B端/C端用户隐私数据泄露的风险；地缘政治局势变化较大的风险。
+</div>
+
+<div class="footer">
+  <b>免责声明</b>：本页面为对微信公众号文章 <a href="https://mp.weixin.qq.com/s/GwNlj7Vos-W_L8zygKgjBw" target="_blank" rel="noopener">《中信建投：从CHAT走向WORK，AI CODING后的下一潜力市场》</a>（中信建投证券研究，2026-08-27）的内容整理与解读，仅供学习交流参考，不构成任何投资建议。文章观点与数据版权归原机构所有；"解读者视角"部分为本页整理者观点，请注意甄别。市场有风险，投资需谨慎。<br>
+  <b>配图说明</b>：图片引自原文（mmbiz.qpic.cn），位置与原文图文结构对应；个别原图已在微信服务器失效，已移除并以正文文字数据替代；若图片因防盗链无法显示，请访问原文链接查看。<br>
+  整理日期：2026-08-30
+</div>
+
+</div>
+</body>
+</html>
