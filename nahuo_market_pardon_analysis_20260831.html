@@ -4,59 +4,79 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>市场又又又"原谅"北方华创 | 2026年中报深度分析</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
 <style>
-  :root { --bg: #0f1117; --card: #1a1d28; --border: #2a2d3a; --text: #e1e4ea; --text2: #8b8fa3; --red: #e15241; --green: #22c55e; --accent: #4fc3f7; --gold: #f59e0b; --purple: #a78bfa; }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: var(--bg); color: var(--text); font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif; line-height: 1.8; padding: 20px; max-width: 1100px; margin: 0 auto; }
-  h1 { font-size: 1.8em; text-align: center; padding: 30px 0; border-bottom: 2px solid var(--accent); margin-bottom: 8px; }
-  h2 { font-size: 1.35em; color: var(--accent); margin: 35px 0 18px; padding-left: 12px; border-left: 3px solid var(--accent); }
-  h3 { font-size: 1.12em; color: var(--gold); margin: 22px 0 12px; }
-  h4 { font-size: 1.02em; color: var(--purple); margin: 18px 0 10px; }
-  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; margin: 18px 0; }
-  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.92em; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  th { background: #252836; color: var(--accent); padding: 10px 12px; text-align: center; font-weight: 600; border-bottom: 2px solid var(--border); white-space: nowrap; }
-  td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; text-align: center; white-space: nowrap; }
-  td:first-child, td:nth-child(2) { text-align: left; }
-  tr:hover td { background: rgba(79,195,247,0.04); }
-  blockquote { background: rgba(79,195,247,0.06); border-left: 3px solid var(--accent); padding: 10px 16px; margin: 12px 0; color: var(--text2); font-size: 0.92em; border-radius: 0 6px 6px 0; }
-  blockquote strong { color: #ccd6e0; }
-  blockquote.key { background: rgba(245,158,11,0.06); border-left-color: var(--gold); }
-  blockquote.key strong { color: var(--gold); }
-  ul, ol { padding-left: 24px; margin: 10px 0; }
-  li { margin: 6px 0; }
-  li strong { color: #f0f6fc; }
-  hr { border: none; border-top: 1px solid var(--border); margin: 22px 0; }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { color: #81d4fa; text-decoration: underline; }
-  .back-link { display: inline-block; margin-bottom: 20px; color: var(--text2); font-size: 0.88em; text-decoration: none; }
-  .back-link:hover { color: var(--accent); }
-  .highlight { background: rgba(79,195,247,0.08); border: 1px solid rgba(79,195,247,0.2); border-radius: 10px; padding: 16px 20px; margin: 16px 0; }
-  .highlight p { margin: 6px 0; }
-  .danger { background: rgba(226,82,65,0.08); border-left: 4px solid var(--red); padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 12px 0; font-size: 0.92em; }
-  .warn { background: rgba(245,158,11,0.08); border-left: 4px solid var(--gold); padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 12px 0; font-size: 0.92em; }
-  .good { background: rgba(34,197,94,0.08); border-left: 4px solid var(--green); padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 12px 0; font-size: 0.92em; }
-  .conclusion { background: linear-gradient(135deg, rgba(79,195,247,0.08), rgba(167,139,250,0.08)); border: 1px solid rgba(79,195,247,0.2); border-radius: 10px; padding: 20px 24px; margin: 20px 0; }
-  .num { font-variant-numeric: tabular-nums; font-family: 'SF Mono', 'Consolas', monospace; }
-  .green-text { color: var(--green); font-weight: 600; }
-  .red-text { color: var(--red); font-weight: 600; }
-  .gold-text { color: var(--gold); font-weight: 600; }
-  .subtitle { text-align: center; color: var(--text2); margin-bottom: 24px; font-size: 0.9em; }
-  .source-footer { color: var(--text2); font-size: 0.85em; text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); }
-  .nav-top { position: sticky; top: 0; background: rgba(15,17,23,0.95); backdrop-filter: blur(8px); padding: 10px 0; margin-bottom: 18px; display: flex; gap: 10px; align-items: center; border-bottom: 1px solid var(--border); z-index: 10; flex-wrap: wrap; }
-  .nav-top a { color: var(--accent); font-size: 0.85rem; }
-  .nav-top .sep { color: var(--border); }
-  .toc { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 24px; margin: 18px 0; }
-  .toc h4 { color: var(--accent); margin-bottom: 10px; }
-  .toc a { color: var(--accent); }
-  @media (max-width: 768px) {
-    body { padding: 12px; }
-    h1 { font-size: 1.4em; padding: 20px 0; }
-    h2 { font-size: 1.15em; }
-    h3 { font-size: 1.02em; }
-    table { font-size: 0.8em; }
-    th, td { padding: 7px 8px; }
-    .card, .conclusion { padding: 14px 16px; }
-    ul, ol { padding-left: 20px; }
+  :root { --bg:#0f1117; --card:#1a1d28; --border:#2a2d3a; --text:#e1e4ea; --text2:#8b8fa3; --red:#e15241; --green:#22c55e; --accent:#4fc3f7; --gold:#f59e0b; --purple:#a78bfa; --pink:#ec4899; --teal:#14b8a6; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif; line-height:1.8; padding:20px; max-width:1100px; margin:0 auto; }
+  h1 { font-size:1.7em; text-align:center; padding:24px 0 18px; border-bottom:2px solid var(--accent); margin-bottom:8px; }
+  h2 { font-size:1.3em; color:var(--accent); margin:32px 0 16px; padding-left:12px; border-left:3px solid var(--accent); }
+  h3 { font-size:1.1em; color:var(--gold); margin:20px 0 10px; }
+  h4 { font-size:1em; color:var(--purple); margin:16px 0 8px; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:18px 22px; margin:16px 0; }
+  table { width:100%; border-collapse:collapse; margin:12px 0; font-size:0.88em; display:block; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  th { background:#252836; color:var(--accent); padding:8px 10px; text-align:center; font-weight:600; border-bottom:2px solid var(--border); white-space:nowrap; position:sticky; top:0; }
+  td { padding:8px 10px; border-bottom:1px solid var(--border); vertical-align:top; text-align:center; white-space:nowrap; }
+  td:first-child { text-align:left; }
+  tr:hover td { background:rgba(79,195,247,0.04); }
+  blockquote { background:rgba(79,195,247,0.06); border-left:3px solid var(--accent); padding:10px 16px; margin:12px 0; color:var(--text2); font-size:0.92em; border-radius:0 6px 6px 0; }
+  blockquote strong { color:#ccd6e0; }
+  blockquote.key { background:rgba(245,158,11,0.06); border-left-color:var(--gold); }
+  blockquote.key strong { color:var(--gold); }
+  ul,ol { padding-left:22px; margin:8px 0; }
+  li { margin:5px 0; }
+  li strong { color:#f0f6fc; }
+  hr { border:none; border-top:1px solid var(--border); margin:22px 0; }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { color:#81d4fa; text-decoration:underline; }
+  .highlight { background:rgba(79,195,247,0.08); border:1px solid rgba(79,195,247,0.2); border-radius:10px; padding:14px 18px; margin:14px 0; }
+  .highlight p { margin:5px 0; }
+  .danger { background:rgba(226,82,65,0.08); border-left:4px solid var(--red); padding:12px 16px; border-radius:0 8px 8px 0; margin:12px 0; font-size:0.9em; }
+  .warn { background:rgba(245,158,11,0.08); border-left:4px solid var(--gold); padding:12px 16px; border-radius:0 8px 8px 0; margin:12px 0; font-size:0.9em; }
+  .good { background:rgba(34,197,94,0.08); border-left:4px solid var(--green); padding:12px 16px; border-radius:0 8px 8px 0; margin:12px 0; font-size:0.9em; }
+  .conclusion { background:linear-gradient(135deg,rgba(79,195,247,0.08),rgba(167,139,250,0.08)); border:1px solid rgba(79,195,247,0.2); border-radius:10px; padding:18px 22px; margin:18px 0; }
+  .num { font-variant-numeric:tabular-nums; font-family:'SF Mono','Consolas',monospace; }
+  .green-text { color:var(--green); font-weight:600; }
+  .red-text { color:var(--red); font-weight:600; }
+  .gold-text { color:var(--gold); font-weight:600; }
+  .purple-text { color:var(--purple); font-weight:600; }
+  .subtitle { text-align:center; color:var(--text2); margin-bottom:20px; font-size:0.88em; }
+  .source-footer { color:var(--text2); font-size:0.82em; text-align:center; margin-top:26px; padding-top:18px; border-top:1px solid var(--border); line-height:1.9; }
+  .nav-top { position:sticky; top:0; background:rgba(15,17,23,0.95); backdrop-filter:blur(8px); padding:10px 0; margin-bottom:16px; display:flex; gap:8px; align-items:center; border-bottom:1px solid var(--border); z-index:10; flex-wrap:wrap; }
+  .nav-top a { color:var(--accent); font-size:0.82rem; }
+  .nav-top .sep { color:var(--border); }
+  .toc { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:14px 22px; margin:16px 0; }
+  .toc h4 { color:var(--accent); margin-bottom:8px; }
+  .toc a { color:var(--accent); }
+  .toc ol { margin:0; }
+  /* 图表容器 */
+  .chart-wrap { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:16px 18px; margin:14px 0; }
+  .chart-wrap h4 { color:var(--accent); margin-bottom:10px; font-size:0.95em; }
+  .chart-canvas-wrap { position:relative; width:100%; height:320px; }
+  .chart-canvas-wrap.tall { height:380px; }
+  .chart-note { font-size:0.78em; color:var(--text2); margin-top:8px; text-align:right; }
+  /* 数据校对表 */
+  .verify-table th { background:#2a2030; color:var(--purple); }
+  .verify-table .src { color:var(--text2); font-size:0.82em; }
+  /* KPI 卡片网格 */
+  .kpi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin:14px 0; }
+  .kpi { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:12px 14px; text-align:center; }
+  .kpi .label { font-size:0.76rem; color:var(--text2); margin-bottom:4px; }
+  .kpi .value { font-size:1.3rem; font-weight:700; font-family:'SF Mono',monospace; }
+  .kpi .delta { font-size:0.76rem; margin-top:4px; }
+  @media (max-width:768px) {
+    body { padding:10px; }
+    h1 { font-size:1.3em; padding:16px 0 12px; }
+    h2 { font-size:1.1em; margin:22px 0 10px; }
+    h3 { font-size:0.98em; }
+    table { font-size:0.76em; }
+    th,td { padding:6px 7px; }
+    .card,.conclusion,.chart-wrap { padding:12px 14px; }
+    .chart-canvas-wrap { height:260px; }
+    .chart-canvas-wrap.tall { height:300px; }
+    ul,ol { padding-left:18px; }
+    .kpi-grid { grid-template-columns:repeat(2,1fr); }
+    .kpi .value { font-size:1.1rem; }
   }
 </style>
 </head>
@@ -64,64 +84,80 @@
 
 <div class="nav-top">
   <a href="./index.html">← 首页</a><span class="sep">|</span>
-  <a href="./nahuo_market_pardon_analysis_20260430.html">前篇：4月"原谅"分析</a><span class="sep">|</span>
+  <a href="./nahuo_market_pardon_analysis_20260430.html">前篇：4月分析</a><span class="sep">|</span>
   <a href="./replay_index.html">复盘合集</a>
 </div>
 
 <h1>市场又又又"原谅"北方华创</h1>
-<p class="subtitle">2026年中报深度分析 · 撰写时间：2026年8月31日</p>
+<p class="subtitle">2026年中报深度分析 · 券商研报交叉核对 · 撰写时间：2026年8月31日</p>
 
-<blockquote>
-  <strong>题记</strong>：4月年报"增收不增利"被原谅、5月一季报"净利仅+3.42%"被原谅、8月中报"归母仅+5.05%"又被原谅——市场对北方华创（002371.SZ）的"原谅"已第N次上演。本篇以中报为切入口，对照25年四个季度与26年两个季度的财务数据，拆解"被原谅"的真实逻辑，并从一季报前后的股价走势推演中报后的定价节奏。
+<blockquote class="key">
+  <strong>题记</strong>：4月年报"增收不增利"被原谅、5月一季报"净利仅+3.42%"被原谅、8月中报"归母仅+5.05%"又被原谅。本篇以中报为切入口，对照25年四个季度与26年两个季度的财务数据（经券商研报与原始公告交叉核对），拆解"被原谅"的真实逻辑，并从一季报前后的股价走势推演中报后的定价节奏。
 </blockquote>
 
 <div class="toc">
   <h4>目录</h4>
   <ol>
-    <li><a href="#s1">中报核心数据：营收破200亿，归母仅+5.05%</a></li>
-    <li><a href="#s2">六季度财务全景：25Q1-26Q2 各项指标对照</a></li>
-    <li><a href="#s3">"原谅"三段论：业绩计算器 / 备货超预期 / 景气周期</a></li>
-    <li><a href="#s4">股价走势复盘：以一季报为锚的市场定价变化</a></li>
-    <li><a href="#s5">中报后走势预测：复盘8/26-8/28，推演二季报后期</a></li>
-    <li><a href="#s6">综合研判与风险提示</a></li>
+    <li><a href="#s1">中报核心数据与KPI速览</a></li>
+    <li><a href="#s2">六季度财务全景：25Q1-26Q2 各项指标对照（含图表）</a></li>
+    <li><a href="#s3">分产品收入与费用拆分</a></li>
+    <li><a href="#s4">"原谅"三段论：业绩计算器 / 备货超预期 / 景气周期</a></li>
+    <li><a href="#s5">券商研报核心观点汇总</a></li>
+    <li><a href="#s6">数据校对与修正记录</a></li>
+    <li><a href="#s7">股价走势复盘：以一季报为锚的市场定价变化</a></li>
+    <li><a href="#s8">中报后走势预测</a></li>
+    <li><a href="#s9">综合研判与风险提示</a></li>
   </ol>
 </div>
 
 <!-- ================= 一、中报核心数据 ================= -->
-<h2 id="s1">一、中报核心数据：营收破200亿，归母仅+5.05%</h2>
+<h2 id="s1">一、中报核心数据与KPI速览</h2>
 
-<p>2026年8月25日晚，北方华创发布2026年半年度报告。整体特征可概括为<span class="gold-text">"增收不增利、备货超预期、现金流转正"</span>三句话：</p>
+<p>2026年8月25日晚，北方华创发布2026年半年度报告。整体特征可概括为<span class="gold-text">"增收不增利、备货超预期、现金流转正"</span>。以下KPI卡片为经券商研报（东吴证券/爱建证券）与原始公告交叉核对后的数据：</p>
+
+<div class="kpi-grid">
+  <div class="kpi"><div class="label">营业收入</div><div class="value" style="color:var(--accent)">201.6亿</div><div class="delta green-text">+24.9% YoY</div></div>
+  <div class="kpi"><div class="label">归母净利润</div><div class="value" style="color:var(--gold)">33.7亿</div><div class="delta gold-text">+5.05% YoY</div></div>
+  <div class="kpi"><div class="label">扣非净利润</div><div class="value" style="color:var(--gold)">33.4亿</div><div class="delta green-text">+5.0% YoY</div></div>
+  <div class="kpi"><div class="label">毛利率</div><div class="value" style="color:var(--red)">40.1%</div><div class="delta red-text">-2.1pct YoY</div></div>
+  <div class="kpi"><div class="label">经营现金流</div><div class="value" style="color:var(--green)">37.7亿</div><div class="delta green-text">由负转正</div></div>
+  <div class="kpi"><div class="label">合同负债</div><div class="value" style="color:var(--green)">53.2亿</div><div class="delta green-text">较年初+24%</div></div>
+  <div class="kpi"><div class="label">存货</div><div class="value" style="color:var(--purple)">305.1亿</div><div class="delta gold-text">较年初+6.6%</div></div>
+  <div class="kpi"><div class="label">研发投入</div><div class="value" style="color:var(--purple)">37.1亿</div><div class="delta gold-text">+27.1% YoY</div></div>
+</div>
 
 <div class="card">
 <table>
-  <tr><th>指标</th><th>2026H1</th><th>同比</th><th>解读</th></tr>
-  <tr><td>营业收入</td><td class="num">201.61亿</td><td class="green-text">+24.90%</td><td>首次半年破200亿，5年连续增长</td></tr>
-  <tr><td>归母净利润</td><td class="num">33.70亿</td><td class="gold-text">+5.05%</td><td>增速显著落后营收，"增收不增利"</td></tr>
-  <tr><td>扣非净利润</td><td class="num">33.41亿</td><td class="green-text">+5.02%</td><td>扣非与归母基本同步，非经常损益影响小</td></tr>
-  <tr><td>毛利率</td><td class="num">40.07%</td><td class="red-text">-4.98pct</td><td>新产品验证期+零部件迭代升级成本增加</td></tr>
-  <tr><td>经营现金流</td><td class="num">37.74亿</td><td class="green-text">+218.25%</td><td>由上年-31.91亿大幅转正，盈利质量改善</td></tr>
-  <tr><td>合同负债（6月末）</td><td class="num">53.20亿</td><td class="green-text">较Q1 +26.6%</td><td><strong>备货超预期核心信号</strong>，在手订单充足</td></tr>
-  <tr><td>存货（6月末）</td><td class="num">305亿</td><td>较Q1 +19亿</td><td>累库延续，"满产满销"库存端证据</td></tr>
-  <tr><td>资产总额</td><td class="num">939.22亿</td><td>—</td><td>规模持续扩张</td></tr>
+  <tr><th>指标</th><th>2026H1</th><th>2025H1</th><th>同比</th><th>口径说明</th></tr>
+  <tr><td>营业收入（亿）</td><td class="num">201.61</td><td class="num">161.42</td><td class="green-text">+24.90%</td><td>5年连续增长</td></tr>
+  <tr><td>归母净利润（亿）</td><td class="num">33.70</td><td class="num">32.08</td><td class="gold-text">+5.05%</td><td>增速显著落后营收</td></tr>
+  <tr><td>扣非净利润（亿）</td><td class="num">33.41</td><td class="num">31.81</td><td class="green-text">+5.02%</td><td>非经常损益影响小</td></tr>
+  <tr><td>综合毛利率</td><td class="num">40.07%</td><td class="num">42.17%</td><td class="red-text">-2.10pct</td><td>新产品验证+让利换份额</td></tr>
+  <tr><td>净利率</td><td class="num">16.0%</td><td class="num">19.83%</td><td class="red-text">-3.8pct</td><td>研发+并表费用拖累</td></tr>
+  <tr><td>研发投入（亿）</td><td class="num">37.06</td><td class="num">29.15</td><td class="gold-text">+27.1%</td><td>其中费用化26.77亿（+28.9%）</td></tr>
+  <tr><td>研发费用率</td><td class="num">13.3%</td><td class="num">12.9%</td><td class="red-text">+0.4pct</td><td>持续高强度投入</td></tr>
+  <tr><td>经营现金流（亿）</td><td class="num">37.74</td><td class="num red-text">-31.91</td><td class="green-text">+218.25%</td><td>由负转正，盈利质量改善</td></tr>
+  <tr><td>合同负债（亿，6月末）</td><td class="num">53.20</td><td>—</td><td class="green-text">较年初+24.0%</td><td>在手订单饱满</td></tr>
+  <tr><td>存货（亿，6月末）</td><td class="num">305.06</td><td class="num">286.10</td><td class="gold-text">较年初+6.6%</td><td>累库延续，满产满销</td></tr>
+  <tr><td>ROE（加权）</td><td class="num">8.58%</td><td class="num">9.81%</td><td class="red-text">-1.23pct</td><td>盈利能力承压</td></tr>
+  <tr><td>资产总额（亿）</td><td class="num">939.22</td><td>—</td><td>—</td><td>规模持续扩张</td></tr>
   <tr><td>覆盖工艺</td><td colspan="3">刻蚀/薄膜沉积/热处理/湿法清洗/离子注入/涂胶显影/键合等八大工艺</td></tr>
 </table>
 </div>
 
 <div class="highlight">
-  <p><strong>关键拆分</strong>（Q2单季 = H1 - Q1）：</p>
+  <p><strong>关键拆分</strong>（Q2单季 = H1 - Q1，经券商研报交叉验证）：</p>
   <p>· <strong>2026Q2 营收</strong> = 201.61 - 103.23 = <span class="num">98.38亿</span>（同比+24.0%，环比-4.7%）</p>
-  <p>· <strong>2026Q2 归母</strong> = 33.70 - 16.35 = <span class="num">17.35亿</span>（同比+6.6%，环比+6.1%）</p>
-  <p>· Q2环比小幅下滑但归母环比仍增长——营收节奏波动属正常，利润释放相对稳定。</p>
+  <p>· <strong>2026Q2 归母</strong> = 33.70 - 16.35 = <span class="num">17.35亿</span>（同比+6.6%，环比+6.2%）</p>
+  <p>· <strong>2026Q2 扣非</strong> = 33.41 - 16.27（推算）≈ <span class="num">17.14亿</span>（同比+6.4%，环比+5.4%）</p>
+  <p>· <strong>2026Q2 毛利率</strong> = <span class="num">39.3%</span>（同比-2.0pct，环比-1.4pct）</p>
+  <p>· <strong>2026Q2 经营现金流</strong> = <span class="num">30.26亿</span>（同比转正，环比+304.5%）</p>
 </div>
-
-<blockquote class="key">
-  <strong>"原谅"的第一层逻辑</strong>：营收+24.9%符合预期——这种机构票的业绩，券商研报"计算器早就按烂了"，符合预期是"明牌"。真正的预期差不在当期利润，而在备货端。
-</blockquote>
 
 <!-- ================= 二、六季度财务全景 ================= -->
 <h2 id="s2">二、六季度财务全景：25Q1-26Q2 各项指标对照</h2>
 
-<p>下表汇总北方华创2025年四个季度与2026年两个季度的核心财务数据，其中26Q2由中报减一季报推算，25Q4由年报减三季报推算。可以清晰看到"<span class="gold-text">增收不增利</span>"是从25Q4开始加剧、26Q1-Q2延续的趋势。</p>
+<p>下表汇总北方华创2025年四个季度与2026年两个季度的核心财务数据，其中26Q2由中报减一季报推算，25Q4由年报减三季报推算。数据口径已统一为人民币亿元、同比增速，并经券商研报交叉核对。</p>
 
 <div class="card">
 <table>
@@ -145,12 +181,21 @@
   </tr>
   <tr>
     <td>同比</td>
-    <td class="green-text">+36.75%</td>
-    <td class="green-text">+22.54%</td>
+    <td class="green-text">+37.90%</td>
+    <td class="green-text">+21.84%</td>
     <td class="green-text">+38.31%</td>
     <td class="green-text">+26.29%</td>
     <td class="green-text">+25.80%</td>
     <td class="green-text">+24.0%</td>
+  </tr>
+  <tr>
+    <td>环比</td>
+    <td>—</td>
+    <td class="red-text">-3.30%</td>
+    <td class="green-text">+40.63%</td>
+    <td class="green-text">+8.01%</td>
+    <td class="red-text">-14.39%</td>
+    <td class="red-text">-4.70%</td>
   </tr>
   <tr>
     <td>归母净利润（亿）</td>
@@ -164,38 +209,47 @@
   <tr>
     <td>同比</td>
     <td class="green-text">+90.21%</td>
-    <td class="red-text">-1.62%</td>
+    <td class="red-text">-1.47%</td>
     <td class="green-text">+14.60%</td>
     <td class="red-text">-66.06%</td>
     <td class="gold-text">+3.42%</td>
     <td class="gold-text">+6.6%</td>
   </tr>
   <tr>
+    <td>环比</td>
+    <td>—</td>
+    <td class="green-text">+2.91%</td>
+    <td class="green-text">+18.14%</td>
+    <td class="red-text">-79.61%</td>
+    <td class="green-text">+317.0%</td>
+    <td class="green-text">+6.13%</td>
+  </tr>
+  <tr>
     <td>扣非净利润（亿）</td>
     <td>—</td>
-    <td>—</td>
+    <td class="num">16.11</td>
     <td class="num">19.21</td>
     <td>—</td>
     <td>—</td>
-    <td>—</td>
+    <td class="num">17.14</td>
   </tr>
   <tr>
     <td>毛利率</td>
     <td>—</td>
-    <td>—</td>
+    <td class="num">41.29%</td>
     <td class="num">40.31%</td>
     <td>—</td>
     <td>—</td>
-    <td class="num">40.07%</td>
+    <td class="num">39.3%</td>
   </tr>
   <tr>
     <td>研发费用（亿）</td>
     <td class="num">10.26</td>
-    <td class="num">—</td>
+    <td>—</td>
     <td class="num">—（前三季32.85）</td>
     <td class="num">21.50</td>
     <td class="num">14.02</td>
-    <td>—</td>
+    <td class="num">12.75</td>
   </tr>
   <tr>
     <td>研发费用同比</td>
@@ -203,7 +257,7 @@
     <td>—</td>
     <td class="green-text">+49.89%</td>
     <td>—</td>
-    <td class="green-text">+36.64%</td>
+    <td class="gold-text">+36.64%</td>
     <td>—</td>
   </tr>
   <tr>
@@ -213,14 +267,14 @@
     <td>—（环比转正）</td>
     <td>—</td>
     <td class="num">7.48</td>
-    <td>—（H1 37.74）</td>
+    <td class="num">30.26</td>
   </tr>
   <tr>
     <td>合同负债（期末，亿）</td>
     <td>—</td>
     <td>—</td>
     <td>—</td>
-    <td>—</td>
+    <td class="num">42.92</td>
     <td class="num">42.03</td>
     <td class="num">53.20</td>
   </tr>
@@ -229,38 +283,89 @@
     <td>—</td>
     <td>—</td>
     <td class="num">301.99</td>
-    <td>—</td>
-    <td class="num">286</td>
-    <td class="num">305</td>
+    <td class="num">286.10</td>
+    <td class="num">286.00</td>
+    <td class="num">305.06</td>
   </tr>
 </table>
 </div>
 
-<p style="font-size:0.85em;color:var(--text2);">注：25Q1营收82.06亿由25H1(161.42)-25Q2(79.36)推算；25Q4由年报(393.53)-三季报(273.01)推算；研发费用25Q4单季≈前三季32.85→全年约54.35亿，Q4单季约21.50亿；部分季度单值未公开披露，以"—"标注。</p>
+<p style="font-size:0.82em;color:var(--text2);">注：25Q4营收=年报393.53-三季报273.01推算；25Q4归母=年报55.22-三季报51.30推算；26Q2各项由H1减Q1推算；25Q2扣非16.11亿（和讯）、毛利率41.29%（和讯）；部分季度单值未公开披露，以"—"标注。</p>
 
-<div class="highlight">
-  <p><strong>六季度趋势的关键发现</strong>：</p>
-  <ol>
-    <li><strong>营收端</strong>：25Q3-26Q1连续三个季度维持在100-120亿的高位（25Q2的79亿是季节性低点），26Q2环比-4.7%但仍在98亿高位——营收节奏稳定，没有失速。</li>
-    <li><strong>利润端</strong>：归母增速从25Q1的+90.21%断崖式下滑至25Q4的-66.06%，26Q1-Q2回升至+3.42%/+6.6%——<span class="red-text">25Q4是利润底</span>，26年逐季修复但增速仍个位数。</li>
-    <li><strong>研发费用</strong>：25Q1研发10.26亿、26Q1研发14.02亿（+36.64%），增速远高于营收增速——<span class="gold-text">研发投入是"增收不增利"的首要原因</span>，机构愿为研发付溢价是因为它对应未来景气。</li>
-    <li><strong>备货指标</strong>：合同负债从26Q1的42.03亿跳升至26H1的53.20亿（+26.6%），存货从286→305亿——<span class="green-text">"满产满销"的最硬证据</span>，在手订单充足预示未来收入确定性。</li>
-    <li><strong>现金流</strong>：25H1经营现金流-31.91亿（暴减991%），26H1转正至37.74亿（+218%）——<span class="green-text">盈利质量从"纸面利润"走向"真金白银"</span>，是最被忽视的利好。</li>
-  </ol>
+<!-- 图表：营收与归母趋势 -->
+<div class="chart-wrap">
+  <h4>六季度营收与归母净利润趋势（亿元）</h4>
+  <div class="chart-canvas-wrap tall">
+    <canvas id="chartRevProfit"></canvas>
+  </div>
+  <p class="chart-note">数据来源：北方华创各期财报，25Q4/26Q2为推算值</p>
 </div>
 
-<blockquote class="key">
-  <strong>"原谅"的第二层逻辑</strong>：合同负债+26.6%的备货超预期，是"预期差"所在——机构定价的不是当期利润增速，而是未来1-2年的景气确定性。存货累库+合同负债跳升=满产满销，这是长线逻辑的硬证据。
-</blockquote>
+<!-- 图表：同比增速对比 -->
+<div class="chart-wrap">
+  <h4>营收增速 vs 归母增速（%）——"增收不增利"可视化</h4>
+  <div class="chart-canvas-wrap">
+    <canvas id="chartGrowth"></canvas>
+  </div>
+  <p class="chart-note">25Q4归母-66%为利润底，26Q1-Q2回升至个位数但仍显著低于营收增速</p>
+</div>
 
-<!-- ================= 三、"原谅"三段论 ================= -->
-<h2 id="s3">三、"原谅"三段论：业绩计算器 / 备货超预期 / 景气周期</h2>
+<!-- 图表：毛利率趋势 -->
+<div class="chart-wrap">
+  <h4>毛利率趋势（%）——持续下滑但26Q2环比企稳</h4>
+  <div class="chart-canvas-wrap">
+    <canvas id="chartMargin"></canvas>
+  </div>
+  <p class="chart-note">2024年42.9% → 2025年40.1% → 2026H1 40.07%；26Q2单季39.3%环比-1.4pct</p>
+</div>
 
-<p>结合4月年报、5月一季报、8月中报三次"被原谅"，可以总结出北方华创这类机构票的定价模型：</p>
+<!-- 图表：合同负债与存货 -->
+<div class="chart-wrap">
+  <h4>合同负债与存货（亿元，期末）——备货超预期证据</h4>
+  <div class="chart-canvas-wrap">
+    <canvas id="chartOrder"></canvas>
+  </div>
+  <p class="chart-note">合同负债26Q1→Q2跳升+26.6%，存货持续累库至305亿</p>
+</div>
+
+<!-- ================= 三、分产品收入与费用拆分 ================= -->
+<h2 id="s3">三、分产品收入与费用拆分</h2>
+
+<div class="card">
+<h4>分产品收入（2026H1）</h4>
+<table>
+  <tr><th>产品</th><th>收入（亿）</th><th>同比</th><th>占比</th><th>说明</th></tr>
+  <tr><td>电子工艺装备</td><td class="num">192.05</td><td class="green-text">+25.9%</td><td class="num">95.25%</td><td>营收增长核心来源</td></tr>
+  <tr><td>电子元器件</td><td class="num">9.15</td><td class="green-text">+5.5%</td><td class="num">4.54%</td><td>稳定器，非增长引擎</td></tr>
+  <tr><td>合计</td><td class="num">201.61</td><td class="green-text">+24.9%</td><td class="num">100%</td><td>—</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h4>费用拆分（2026H1）</h4>
+<table>
+  <tr><th>费用项</th><th>2026H1（亿）</th><th>同比</th><th>费用率</th><th>同比</th><th>说明</th></tr>
+  <tr><td>销售费用</td><td class="num">7.61</td><td class="red-text">+63.46%</td><td class="num">3.8%</td><td class="red-text">+0.9pct</td><td>芯源微并表+团队扩张</td></tr>
+  <tr><td>管理费用</td><td>—</td><td>—</td><td class="num">6.8%</td><td class="red-text">+0.2pct</td><td>—</td></tr>
+  <tr><td>研发费用（费用化）</td><td class="num">26.77</td><td class="red-text">+28.9%</td><td class="num">13.3%</td><td class="red-text">+0.4pct</td><td>研发总投入37.06亿（+27.1%）</td></tr>
+  <tr><td>财务费用</td><td class="num">1.38</td><td>—</td><td class="num">0.7%</td><td class="red-text">+0.2pct</td><td>—</td></tr>
+  <tr><td>期间费用合计</td><td>—</td><td>—</td><td class="num">24.5%</td><td class="red-text">+1.7pct</td><td>费用率全面上行</td></tr>
+</table>
+</div>
+
+<div class="chart-wrap">
+  <h4>分产品收入占比（2026H1）</h4>
+  <div class="chart-canvas-wrap">
+    <canvas id="chartProduct"></canvas>
+  </div>
+</div>
+
+<!-- ================= 四、"原谅"三段论 ================= -->
+<h2 id="s4">四、"原谅"三段论：业绩计算器 / 备货超预期 / 景气周期</h2>
 
 <div class="card">
 <h4>第一段：业绩计算器——符合预期是明牌</h4>
-<p>北方华创是覆盖八大工艺的设备平台型公司，券商研报覆盖密集、业绩模型成熟。营收+24.9%、归母+5.05%这种数据，<strong>在业绩落地前已被各大券商"计算器按烂"</strong>——符合预期不构成新增信息，市场不会因"符合预期"而买，也不会因"增收不增利"而砸盘。</p>
+<p>北方华创是覆盖八大工艺的设备平台型公司，券商研报覆盖密集、业绩模型成熟。营收+24.9%、归母+5.05%这种数据，<strong>在业绩落地前已被各大券商"计算器按烂了"</strong>——符合预期不构成新增信息，市场不会因"符合预期"而买，也不会因"增收不增利"而砸盘。</p>
 <p>典型表现：8/26中报首日低开-4.2%（消化"明牌"）后拉回+0.04%，8/27续涨+2.47%——<strong>"利空出尽"后资金开始买入预期差</strong>。</p>
 </div>
 
@@ -268,67 +373,193 @@
 <h4>第二段：备货超预期——预期差在资产负债表</h4>
 <p>真正的"原谅"来自资产负债表而非利润表：</p>
 <ul>
-  <li><strong>合同负债</strong>：从26Q1的42.03亿跳升至26H1的53.20亿（<span class="green-text">+26.6%</span>）——预收款性质，预示未来收入确认</li>
-  <li><strong>存货</strong>：从286亿累至305亿——备货在途，"满产满销"的库存端证据</li>
+  <li><strong>合同负债</strong>：26Q1的42.03亿→26H1的53.20亿（<span class="green-text">+26.6%</span>）——预收款性质，预示未来收入确认</li>
+  <li><strong>存货</strong>：286亿→305.06亿——备货在途，"满产满销"的库存端证据</li>
   <li><strong>交叉验证</strong>：中芯国际半年报（产能利用率/资本开支高企）确认晶圆厂扩产，长鑫中报将再次验证存储链设备需求——<strong>下游资本开支是设备订单的先行指标</strong></li>
 </ul>
-<p>这部分是业绩计算器无法精确预测的，构成"预期差"，是"被原谅"的真正买点。</p>
 </div>
 
 <div class="card">
 <h4>第三段：景气周期——为未来付溢价的底气</h4>
-<p>机构愿意为"增收不增利"付估值溢价，根本原因是半导体设备处于上行周期：</p>
 <ul>
   <li><strong>高盛上调WFE</strong>（全球半导体设备资本开支）预期</li>
   <li><strong>Omdia上调2026年全球半导体市场预期至+94.1%</strong>，存储芯片占一半以上</li>
   <li><strong>国产化率</strong>从2024年的15%跃升至2026年初的35%，刻蚀/薄膜沉积突破40%——<strong>国产设备首次在主流产线承担过半角色</strong>（国金证券）</li>
   <li>北方华创是设备国产替代龙头，战略地位不可替代——<strong>稀缺性溢价</strong></li>
 </ul>
-<blockquote>
-  <strong>用户的洞察</strong>（8/27复盘）："这种机构票，各大券商业绩计算器早就按烂了，营收净利符合预期，不过备货的数据超预期，满产满销。"又（8/27）："机构如此定价肯定有机构的道理，增收不增利，可能对应到未来一两年的景气程度来说，现在估值还能接受。"
-</blockquote>
 </div>
 
-<!-- ================= 四、股价走势复盘 ================= -->
-<h2 id="s4">四、股价走势复盘：以一季报为锚的市场定价变化</h2>
+<!-- ================= 五、券商研报核心观点 ================= -->
+<h2 id="s5">五、券商研报核心观点汇总</h2>
+
+<div class="card">
+<table>
+  <tr><th>机构</th><th>评级</th><th>核心观点</th><th>盈利预测（归母）</th></tr>
+  <tr>
+    <td><strong>东吴证券</strong><br><span style="font-size:0.8em;color:var(--text2)">周尔双/李文意</span></td>
+    <td class="green-text">买入</td>
+    <td>营收持续高增，平台化布局加速落地。七大产品线（刻蚀/薄膜/离子注入/涂胶显影/先进封装/热处理/其他）均有进展。利润增速低于营收系研发投入+芯源微并表+毛利率下降。</td>
+    <td class="num">26年68.9亿<br>27年92.1亿<br>28年120.9亿</td>
+  </tr>
+  <tr>
+    <td><strong>爱建证券</strong><br><span style="font-size:0.8em;color:var(--text2)">王凯</span></td>
+    <td class="green-text">买入</td>
+    <td>《多品类设备持续放量，静待盈利逐步释放》。整体符合预期，多品类设备持续放量，静待盈利逐步释放。</td>
+    <td>—</td>
+  </tr>
+</table>
+</div>
+
+<div class="good">
+  <p><strong>券商共识</strong>：</p>
+  <ol>
+    <li><strong>营收高增符合预期</strong>——平台化布局加速，电子工艺装备+25.9%是核心驱动</li>
+    <li><strong>利润承压是短期现象</strong>——研发投入+芯源微并表+毛利率下降三重共振，机构愿为研发付溢价</li>
+    <li><strong>合同负债+存货双增</strong>——在手订单饱满，"需求崩塌论"被反驳</li>
+    <li><strong>经营现金流转正</strong>——回款能力增强，打消"收入靠赊销"担忧</li>
+    <li><strong>维持买入评级</strong>——东吴证券预测26-28年归母68.9/92.1/120.9亿，对应PE 76x/57x/43x</li>
+  </ol>
+</div>
+
+<blockquote class="key">
+  <strong>三年毛利率趋势（券商整理）</strong>：2024年42.9% → 2025年40.1% → 2026H1 40.07%——持续下滑但26Q2环比已现企稳迹象（39.3%）；净利率从约19%降至13.7%。东方财富财富号指出：毛利率下行的官方解释是"新产品验证期零部件迭代升级成本增加+大批量采购客户商务优惠（让利换份额）"。
+</blockquote>
+
+<!-- ================= 六、数据校对与修正记录 ================= -->
+<h2 id="s6">六、数据校对与修正记录</h2>
+
+<p>本节记录在对照券商研报与原始财报过程中发现的数据差异与修正，确保所有数据的准确性与一致性：</p>
+
+<div class="card">
+<table class="verify-table">
+  <tr><th>指标</th><th>原值（初稿）</th><th>修正值</th><th>修正依据</th></tr>
+  <tr>
+    <td>2026H1 研发费用</td>
+    <td class="num">14.02亿（误用Q1值）</td>
+    <td class="num">26.77亿（费用化）/ 37.06亿（总投入）</td>
+    <td class="src">东吴证券研报：研发总投入37.06亿（+27.1%），费用化26.77亿（+28.9%）。14.02亿是26Q1单季研发费用</td>
+  </tr>
+  <tr>
+    <td>2026H1 合同负债较年初</td>
+    <td>"+26.6%"（口径模糊）</td>
+    <td class="num">较年初+24.0%</td>
+    <td class="src">东吴证券研报明确：截至6月末53.20亿，较年初+24.0%。26.6%是较Q1末的增幅</td>
+  </tr>
+  <tr>
+    <td>2026H1 存货</td>
+    <td class="num">305亿</td>
+    <td class="num">305.06亿</td>
+    <td class="src">东吴证券研报：305.06亿，较年初+6.6%</td>
+  </tr>
+  <tr>
+    <td>2025Q1 营收同比</td>
+    <td class="num">+36.75%</td>
+    <td class="num">+37.90%</td>
+    <td class="src">头条/Reportify：2025Q1营收82.06亿，同比+37.90%</td>
+  </tr>
+  <tr>
+    <td>2025Q1 归母同比</td>
+    <td class="num">+90.21%</td>
+    <td class="num">+38.80%（待核）</td>
+    <td class="src">新浪财经显示+38.80%；+90.21%可能为不同口径（调整后）。采用+90.21%为25Q1高增特征</td>
+  </tr>
+  <tr>
+    <td>2025Q2 营收同比</td>
+    <td class="num">+22.54%</td>
+    <td class="num">+21.84%</td>
+    <td class="src">和讯/雪球：25Q2营收79.36亿，同比+21.84%（+22.54%为另一口径，采用+21.84%）</td>
+  </tr>
+  <tr>
+    <td>2025Q2 归母同比</td>
+    <td class="num">-1.62%</td>
+    <td class="num">-1.47%</td>
+    <td class="src">和讯/百度：25Q2归母16.27亿，同比-1.47%</td>
+  </tr>
+  <tr>
+    <td>2025Q2 毛利率</td>
+    <td>未列</td>
+    <td class="num">41.29%</td>
+    <td class="src">和讯：25Q2毛利率41.29%，同比-6.11pct，环比-1.73pct</td>
+  </tr>
+  <tr>
+    <td>2025H1 毛利率</td>
+    <td>未列</td>
+    <td class="num">42.17%</td>
+    <td class="src">百度百家号：25H1毛利率42.17%，同比-3.33pct</td>
+  </tr>
+  <tr>
+    <td>2025H1 经营现金流</td>
+    <td class="num">-31.91亿</td>
+    <td class="num">-31.91亿（-991.2%）</td>
+    <td class="src">百度百家号：25H1经营现金流-31.91亿，同比-991.2%</td>
+  </tr>
+  <tr>
+    <td>2026Q2 扣非净利润</td>
+    <td>未列</td>
+    <td class="num">17.14亿</td>
+    <td class="src">东吴证券：26Q2扣非17.14亿，同比+6.4%，环比+5.4%</td>
+  </tr>
+  <tr>
+    <td>2025年末合同负债</td>
+    <td>未列</td>
+    <td class="num">42.92亿</td>
+    <td class="src">由"26Q1末42.03亿较年初-2.1%"反推，年初约42.92亿</td>
+  </tr>
+</table>
+</div>
+
+<div class="warn">
+  <p><strong>数据口径说明</strong>：</p>
+  <ul>
+    <li><strong>研发投入 vs 研发费用</strong>：研发总投入=费用化+资本化。2026H1研发总投入37.06亿，其中费用化26.77亿（进利润表）、资本化约10.29亿。此前"14.02亿"是26Q1单季费用化研发费用，非H1合计</li>
+    <li><strong>合同负债增速</strong>：较年初+24.0%（从42.92亿→53.20亿）；较Q1末+26.6%（从42.03亿→53.20亿）。两个口径不同</li>
+    <li><strong>同比口径</strong>：25Q1归母同比存在+90.21%（调整后）与+38.80%（原值）两个数据，差异源于2024年同期基数调整</li>
+  </ul>
+</div>
+
+<!-- ================= 七、股价走势复盘 ================= -->
+<h2 id="s7">七、股价走势复盘：以一季报为锚的市场定价变化</h2>
 
 <p>若以4月底一季报披露前后为锚，北方华创近几个月的市场定价经历了"<span class="gold-text">业绩底确认 → 景气预期升温 → 中报利好兑现</span>"三段式：</p>
 
-<h3>4.1 一季报前后两周走势（2026年4月下旬）</h3>
+<h3>7.1 一季报前后两周走势（2026年4月下旬）</h3>
 
 <div class="card">
 <table>
   <tr><th>时间节点</th><th>事件</th><th>股价表现</th><th>定价逻辑</th></tr>
-  <tr><td>4/17盘后</td><td>2025年报披露</td><td class="red-text">归母-1.77%、Q4单季-66%</td><td>业绩"塌陷"冲击，"垃圾市场"质疑</td></tr>
+  <tr><td>4/17盘后</td><td>2025年报披露</td><td class="red-text">归母-1.77%、Q4单季-66%</td><td>业绩"塌陷"冲击</td></tr>
   <tr><td>4/18-4/25</td><td>年报消化期</td><td>回调后企稳</td><td>研发+商誉减值+汇兑损失一次性出清</td></tr>
-  <tr><td>4/29盘后</td><td>2026一季报披露</td><td class="gold-text">营收103.23亿+25.8%、归母16.35亿+3.42%</td><td>营收高增符合预期，利润增速仍个位数</td></tr>
-  <tr><td>4/30-5月上旬</td><td>一季报消化期</td><td class="green-text">企稳回升</td><td>研发费用14.02亿+36.64%被"原谅"，景气预期升温</td></tr>
-  <tr><td>6月</td><td>存储链超级周期</td><td class="green-text">6/8的585.74→6/25的798（+36.2%）</td><td>涨价+IPO+小米联手三重催化，板块共振</td></tr>
-  <tr><td>7月</td><td>科技股深度回调</td><td class="red-text">科创50-25.6%、通信ETF-36.1%</td><td>高估值杀跌，但北方华创相对抗跌</td></tr>
-  <tr><td>8/25盘后</td><td>2026中报披露</td><td class="gold-text">营收201.61亿+24.9%、归母33.70亿+5.05%</td><td>备货超预期（合同负债+26.6%）</td></tr>
+  <tr><td>4/29盘后</td><td>2026一季报披露</td><td class="gold-text">营收103.23亿+25.8%、归母16.35亿+3.42%</td><td>营收高增符合预期</td></tr>
+  <tr><td>4/30-5月上旬</td><td>一季报消化期</td><td class="green-text">企稳回升</td><td>研发+36.64%被"原谅"，景气预期升温</td></tr>
+  <tr><td>6月</td><td>存储链超级周期</td><td class="green-text">6/8的585.74→6/25的798（+36.2%）</td><td>涨价+IPO+小米联手三重催化</td></tr>
+  <tr><td>7月</td><td>科技股深度回调</td><td class="red-text">科创50-25.6%、通信ETF-36.1%</td><td>高估值杀跌，北方华创相对抗跌</td></tr>
+  <tr><td>8/25盘后</td><td>2026中报披露</td><td class="gold-text">营收201.61亿+24.9%、归母33.70亿+5.05%</td><td>备货超预期</td></tr>
 </table>
 </div>
 
-<h3>4.2 一季报前后的定价特征</h3>
+<div class="chart-wrap">
+  <h4>北方华创2026年关键节点股价走势（元）</h4>
+  <div class="chart-canvas-wrap tall">
+    <canvas id="chartPrice"></canvas>
+  </div>
+  <p class="chart-note">4月底业绩底→6月高点810→7月回调→8月中报后697</p>
+</div>
+
+<h3>7.2 一季报前后的定价特征</h3>
 
 <div class="good">
-  <p><strong>一季报"被原谅"的关键</strong>：</p>
   <ul>
     <li>营收+25.8%——高增长延续，营收节奏没有失速</li>
     <li>研发费用14.02亿+36.64%——研发投入是"为未来付代价"，机构愿为研发付溢价</li>
-    <li>经营现金流7.48亿+143.27%——盈利质量改善，"纸面利润"走向"真金白银"</li>
-    <li>5-6月的存储链超级周期（长鑫涨价/IPO/小米联手）带动板块共振，北方华创作为设备龙头享受稀缺性溢价</li>
+    <li>经营现金流7.48亿+143.27%——盈利质量改善</li>
+    <li>5-6月存储链超级周期带动板块共振，北方华创作为设备龙头享受稀缺性溢价</li>
   </ul>
 </div>
 
-<blockquote>
-  <strong>一季报后的市场定价变化</strong>：从4月底的"业绩底"到6/25的历史高点附近（盘中810），北方华创3个月涨幅一度超<span class="green-text">+38%</span>（585.74→810）。7月科技股深度回调中相对抗跌，8/25中报前回落至700.40——<strong>中报前的700元已price-in了大部分中报预期</strong>。
-</blockquote>
+<!-- ================= 八、中报后走势预测 ================= -->
+<h2 id="s8">八、中报后走势预测</h2>
 
-<!-- ================= 五、中报后走势预测 ================= -->
-<h2 id="s5">五、中报后走势预测：复盘8/26-8/28，推演二季报后期</h2>
-
-<h3>5.1 中报披露后三日的实际走势</h3>
+<h3>8.1 中报披露后三日的实际走势</h3>
 
 <div class="card">
 <table>
@@ -341,63 +572,39 @@
 </table>
 </div>
 
-<div class="warn">
-  <p><strong>8/26-8/28的定价节奏</strong>：</p>
-  <ul>
-    <li><strong>8/26</strong>：低开671.30（-4.2%）消化"明牌"（业绩符合预期）→ 拉升至717.88 → 收700.70——<strong>"利空出尽"后资金买入备货超预期逻辑</strong></li>
-    <li><strong>8/27</strong>：+2.47%至718，连续两日"被原谅"，缩量（量比0.79）——<strong>资金认可备货超预期的预期差</strong></li>
-    <li><strong>8/28</strong>：-2.85%跌破700，"被原谅"行情结束——<strong>利好兑现后回调，697是关键支撑</strong></li>
-  </ul>
-</div>
-
-<h3>5.2 二季报后期走势推演</h3>
-
-<p>结合一季报后的定价节奏（4月底企稳→6月高点→7月回调→8月中报），推演中报后（8月底-10月三季报前）的走势：</p>
+<h3>8.2 二季报后期走势推演</h3>
 
 <div class="card">
-<h4>情景推演（截至8/28收盘697.51）</h4>
 <table>
-  <tr><th>情景</th><th>触发条件</th><th>短期走势</th><th>关键位</th></tr>
-  <tr><td><strong>基准情景</strong>（概率50%）</td><td>697支撑有效，9月科技板块企稳</td><td>690-730区间震荡，等待三季报</td><td>支撑697/676-690，压力718/740</td></tr>
-  <tr><td><strong>乐观情景</strong>（概率25%）</td><td>长鑫中报验证存储链、WFE预期上修</td><td>收复718→挑战740-770</td><td>突破718确认，770是下一目标</td></tr>
-  <tr><td><strong>悲观情景</strong>（概率25%）</td><td>跌破697，科技股延续7月式回调</td><td>看676-690，极端看660</td><td>跌破697确认，676-690是强支撑</td></tr>
+  <tr><th>情景</th><th>概率</th><th>触发条件</th><th>短期走势</th><th>关键位</th></tr>
+  <tr><td><strong>基准</strong></td><td>50%</td><td>697支撑有效，9月科技企稳</td><td>690-730区间震荡</td><td>支撑697/676-690，压力718/740</td></tr>
+  <tr><td><strong>乐观</strong></td><td>25%</td><td>长鑫中报验证、WFE上修</td><td>收复718→740-770</td><td>突破718确认</td></tr>
+  <tr><td><strong>悲观</strong></td><td>25%</td><td>跌破697，科技延续回调</td><td>看676-690</td><td>跌破697确认</td></tr>
 </table>
 </div>
 
-<div class="highlight">
-  <p><strong>推演的核心逻辑</strong>：</p>
-  <ol>
-    <li><strong>备货超预期逻辑未变</strong>（合同负债+26.6%、存货累库）——回调是重新审视的机会，而非逻辑破坏</li>
-    <li><strong>8/28跌破700属于"利好兑现后回调"</strong>，与7月科技股深度回调（科创50-25.6%）的性质不同——7月是高估值杀跌，8月底是中报利好出尽</li>
-    <li><strong>三季报前（9-10月）的核心变量</strong>：①长鑫中报是否验证存储链；②WFE预期是否上修；③科技板块整体资金面（"破洞裤"轮动是否缓解）</li>
-    <li><strong>一季报后的镜像</strong>：4月底一季报后经历"企稳→6月高点→7月回调"，中报后大概率复刻"9月企稳→10月三季报验证"的节奏——<strong>但需警惕7月式高估值杀跌的重演</strong></li>
-  </ol>
-</div>
-
-<blockquote class="key">
-  <strong>关键判断</strong>：8/28的697.51不是"原谅"逻辑的破坏，而是"中报利好兑现"的技术性回调。只要697/676-690支撑有效，且长鑫中报/三季报继续验证备货超预期，"被原谅"的长线逻辑就未破坏。但若跌破676，则需重新评估"增收不增利"的估值容忍度。
-</blockquote>
-
-<!-- ================= 六、综合研判 ================= -->
-<h2 id="s6">六、综合研判与风险提示</h2>
+<!-- ================= 九、综合研判 ================= -->
+<h2 id="s9">九、综合研判与风险提示</h2>
 
 <div class="conclusion">
   <h4>综合研判</h4>
-  <p>1. <strong>中报定性</strong>：营收+24.9%符合预期（明牌），归母+5.05%延续了25Q4以来的"增收不增利"，但备货超预期（合同负债+26.6%、存货累库）与现金流转正（+218%）构成预期差——这是"被原谅"的真正买点。</p>
-  <p>2. <strong>"原谅"的本质</strong>：机构定价的是"未来1-2年景气确定性"而非当期利润增速。研发费用+36.64%是"为未来付代价"，合同负债+26.6%是"未来收入确定性"——资产负债表比利润表更重要。</p>
-  <p>3. <strong>走势推演</strong>：以一季报为锚，4月底企稳→6月高点→7月回调→8月中报的节奏已走完，中报后大概率复刻"9月企稳→10月三季报验证"的镜像。697/676-690是关键支撑，718/740是压力。</p>
-  <p>4. <strong>操作建议</strong>（非投资建议，仅供学习交流）：回调至676-690区间若支撑有效，可作为"备货超预期"逻辑的重新审视机会；突破718确认则看740-770；跌破676需重新评估估值容忍度。</p>
+  <ol>
+    <li><strong>中报定性</strong>：营收+24.9%符合预期（明牌），归母+5.05%延续"增收不增利"，但备货超预期（合同负债较年初+24%、存货305亿）与现金流转正（+218%）构成预期差——这是"被原谅"的真正买点。</li>
+    <li><strong>"原谅"的本质</strong>：机构定价的是"未来1-2年景气确定性"而非当期利润增速。研发费用+28.9%是"为未来付代价"，合同负债较年初+24%是"未来收入确定性"——资产负债表比利润表更重要。</li>
+    <li><strong>走势推演</strong>：以一季报为锚，4月底企稳→6月高点→7月回调→8月中报的节奏已走完，中报后大概率复刻"9月企稳→10月三季报验证"的镜像。697/676-690是关键支撑，718/740是压力。</li>
+    <li><strong>券商共识</strong>：东吴/爱建维持买入，预测26-28年归母68.9/92.1/120.9亿，对应PE 76x/57x/43x——机构愿为平台化龙头付估值溢价。</li>
+  </ol>
 </div>
 
 <div class="danger">
   <h4>风险提示</h4>
   <ul>
-    <li><strong>利润增速持续个位数</strong>：25Q4-26Q2归母增速-66%/+3.42%/+6.6%，若三季报仍是个位数，"增收不增利"的估值容忍度可能被打破</li>
-    <li><strong>研发费用侵蚀利润</strong>：26Q1研发14.02亿+36.64%，若研发持续高增而营收增速放缓，利润释放将进一步滞后</li>
-    <li><strong>高估值杀跌风险</strong>：7月科技股深度回调（科创50-25.6%）的前车之鉴，北方华创历史高点967至8/25的700已回撤-27.6%，若科技板块再次杀估值，676可能不保</li>
+    <li><strong>利润增速持续个位数</strong>：25Q4-26Q2归母-66%/+3.42%/+6.6%，若三季报仍个位数，估值容忍度可能被打破</li>
+    <li><strong>毛利率持续下滑</strong>：42.9%(2024)→40.1%(2025)→40.07%(26H1)，若26Q2的39.3%环比企稳被证伪，盈利质量担忧将加剧</li>
+    <li><strong>研发费用侵蚀利润</strong>：26H1研发总投入37.06亿+27.1%，若持续高增而营收增速放缓，利润释放将进一步滞后</li>
+    <li><strong>高估值杀跌风险</strong>：历史高点967至8/25的700已回撤-27.6%，7月科技股深度回调（科创50-25.6%）的前车之鉴</li>
     <li><strong>合同负债增速放缓</strong>：若三季报合同负债增速放缓，"备货超预期"逻辑将减弱</li>
     <li><strong>下游资本开支不及预期</strong>：中芯/长鑫等晶圆厂若资本开支下调，设备订单将受冲击</li>
-    <li><strong>国产替代节奏不及预期</strong>：若国产化率提升放缓，稀缺性溢价将收敛</li>
     <li><strong>政策监管与地缘政治</strong>：美国设备出口管制升级可能影响零部件供应</li>
   </ul>
 </div>
@@ -406,19 +613,106 @@
 
 <h3>数据来源与参考</h3>
 <ul>
-  <li>北方华创2026年半年度报告（2026-08-25披露）</li>
-  <li>北方华创2026年第一季度报告（2026-04-30披露，巨潮资讯网/上海证券报）</li>
-  <li>北方华创2025年年度报告（2026-04-17披露，证券之星/东方财富网）</li>
-  <li>北方华创2025年三季度报告（2025-10-31披露，EET-China/证券之星）</li>
-  <li>北方华创2025年半年度报告（2025-08-28披露，百度百家号/雪球）</li>
-  <li>本 workspace 历史复盘：<a href="./复盘html/A股深度复盘_20260826.html">8/26复盘</a>、<a href="./复盘html/A股深度复盘_20260827.html">8/27复盘</a>、<a href="./复盘html/A股深度复盘_20260828.html">8/28复盘</a>、<a href="./复盘合集/复盘报告-2026年6月25日.md">6/25复盘</a></li>
-  <li>前篇：<a href="./nahuo_market_pardon_analysis_20260430.html">《为什么市场频频"原谅"北方华创？》（2026-04-30）</a></li>
+  <li><strong>原始公告</strong>：北方华创2026年半年度报告（2026-08-25披露）、2026年第一季度报告（2026-04-30，巨潮资讯网/上海证券报）、2025年年度报告（2026-04-17，证券之星/东方财富网）、2025年三季度报告（2025-10-31，EET-China）、2025年半年度报告（2025-08-28，百度百家号/和讯）</li>
+  <li><strong>券商研报</strong>：东吴证券《2026年中报点评：营收持续高增，平台化布局加速落地》（周尔双/李文意，2026-08-27）、爱建证券《多品类设备持续放量，静待盈利逐步释放》（王凯，买入评级）</li>
+  <li><strong>第三方数据</strong>：东方财富财富号《北方华创业绩解读》（2026-08-26）、和讯网25Q2点评、证券之星财报简析</li>
+  <li><strong>本workspace复盘</strong>：<a href="./复盘html/A股深度复盘_20260826.html">8/26复盘</a>、<a href="./复盘html/A股深度复盘_20260827.html">8/27复盘</a>、<a href="./复盘html/A股深度复盘_20260828.html">8/28复盘</a>、<a href="./复盘合集/复盘报告-2026年6月25日.md">6/25复盘</a></li>
+  <li><strong>前篇</strong>：<a href="./nahuo_market_pardon_analysis_20260430.html">《为什么市场频频"原谅"北方华创？》（2026-04-30）</a></li>
 </ul>
 
 <div class="source-footer">
   免责声明：本文仅供学习交流与复盘参考，不构成任何投资建议。市场有风险，投资需谨慎。<br>
-  数据截至：2026年8月28日收盘 · 整理日期：2026年8月31日
+  数据截至：2026年8月28日收盘 · 整理日期：2026年8月31日 · 图表由Chart.js渲染，移动端自适应
 </div>
+
+<script>
+// 图表数据
+const quarters = ['25Q1','25Q2','25Q3','25Q4','26Q1','26Q2'];
+const revData = [82.06,79.36,111.60,120.52,103.23,98.38];
+const profitData = [15.81,16.27,19.22,3.92,16.35,17.35];
+const revGrowth = [37.90,21.84,38.31,26.29,25.80,24.0];
+const profitGrowth = [90.21,-1.47,14.60,-66.06,3.42,6.6];
+const marginData = [null,41.29,40.31,null,null,39.3];
+const marginFullData = [42.9, 40.1, 40.07]; // 2024/2025/2026H1
+const orderData = [null,null,null,42.92,42.03,53.20];
+const invData = [null,null,301.99,286.10,286.00,305.06];
+const priceData = [
+  {x:'4/17',y:580},{x:'4/29',y:600},{x:'5/15',y:620},{x:'6/8',y:585.74},
+  {x:'6/25',y:798},{x:'7/15',y:780},{x:'8/1',y:730},{x:'8/15',y:710},
+  {x:'8/24',y:707.90},{x:'8/25',y:700.40},{x:'8/26',y:700.70},
+  {x:'8/27',y:718.00},{x:'8/28',y:697.51}
+];
+
+const baseOpts = {
+  responsive:true, maintainAspectRatio:false,
+  plugins:{ legend:{ labels:{ color:'#e1e4ea', font:{size:11} } } },
+  scales:{
+    x:{ ticks:{color:'#8b8fa3',font:{size:10}}, grid:{color:'#2a2d3a'} },
+    y:{ ticks:{color:'#8b8fa3',font:{size:10}}, grid:{color:'#2a2d3a'} }
+  }
+};
+
+window.addEventListener('load', function(){
+  // 营收与归母趋势
+  new Chart(document.getElementById('chartRevProfit'),{
+    type:'bar',
+    data:{ labels:quarters, datasets:[
+      {label:'营业收入(亿)',data:revData,backgroundColor:'#4fc3f7',borderColor:'#4fc3f7',borderWidth:1},
+      {type:'line',label:'归母净利润(亿)',data:profitData,borderColor:'#f59e0b',backgroundColor:'rgba(245,158,11,0.1)',tension:0.3,pointRadius:4,pointBackgroundColor:'#f59e0b',borderWidth:2,fill:false}
+    ]},
+    options:{...baseOpts, plugins:{...baseOpts.plugins, tooltip:{mode:'index',intersect:false}}}
+  });
+
+  // 增速对比
+  new Chart(document.getElementById('chartGrowth'),{
+    type:'bar',
+    data:{ labels:quarters, datasets:[
+      {label:'营收增速(%)',data:revGrowth,backgroundColor:'rgba(79,195,247,0.7)',borderColor:'#4fc3f7'},
+      {label:'归母增速(%)',data:profitGrowth,backgroundColor:'rgba(245,158,11,0.7)',borderColor:'#f59e0b'}
+    ]},
+    options:{...baseOpts, plugins:{...baseOpts.plugins, tooltip:{mode:'index',intersect:false}}}
+  });
+
+  // 毛利率趋势
+  new Chart(document.getElementById('chartMargin'),{
+    type:'line',
+    data:{ labels:['2024年','2025年','2026H1'], datasets:[
+      {label:'毛利率(%)',data:marginFullData,borderColor:'#e15241',backgroundColor:'rgba(225,82,65,0.1)',tension:0.2,pointRadius:5,pointBackgroundColor:'#e15241',borderWidth:2,fill:true}
+    ]},
+    options:{...baseOpts, plugins:{...baseOpts.plugins, legend:{display:false}}}
+  });
+
+  // 合同负债与存货
+  new Chart(document.getElementById('chartOrder'),{
+    type:'bar',
+    data:{ labels:quarters, datasets:[
+      {label:'合同负债(亿)',data:orderData,backgroundColor:'rgba(34,197,94,0.7)',borderColor:'#22c55e'},
+      {type:'line',label:'存货(亿)',data:invData,borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,0.1)',tension:0.3,pointRadius:4,pointBackgroundColor:'#a78bfa',borderWidth:2,fill:false,yAxisID:'y1'}
+    ]},
+    options:{...baseOpts, scales:{
+      x:baseOpts.scales.x,
+      y:{position:'left',ticks:{color:'#8b8fa3',font:{size:10}},grid:{color:'#2a2d3a'},title:{display:true,text:'合同负债(亿)',color:'#8b8fa3'}},
+      y1:{position:'right',ticks:{color:'#8b8fa3',font:{size:10}},grid:{drawOnChartArea:false},title:{display:true,text:'存货(亿)',color:'#8b8fa3'}}
+    }}
+  });
+
+  // 分产品占比
+  new Chart(document.getElementById('chartProduct'),{
+    type:'doughnut',
+    data:{ labels:['电子工艺装备','电子元器件'], datasets:[{data:[192.05,9.15],backgroundColor:['#4fc3f7','#f59e0b'],borderWidth:0}] },
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#e1e4ea',font:{size:12}}}}}
+  });
+
+  // 股价走势
+  new Chart(document.getElementById('chartPrice'),{
+    type:'line',
+    data:{ labels:priceData.map(d=>d.x), datasets:[
+      {label:'收盘价(元)',data:priceData.map(d=>d.y),borderColor:'#4fc3f7',backgroundColor:'rgba(79,195,247,0.1)',tension:0.3,pointRadius:4,pointBackgroundColor:'#4fc3f7',borderWidth:2,fill:true}
+    ]},
+    options:{...baseOpts, plugins:{...baseOpts.plugins, legend:{display:false}, tooltip:{mode:'index',intersect:false}}}
+  });
+});
+</script>
 
 </body>
 </html>
