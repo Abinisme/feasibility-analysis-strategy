@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>A股深度复盘 2026-08-14</title>
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<title>A股市场全面深度复盘 —— 2026年8月14日（周五 · 科技全线反包，差点反包成功，中芯业绩会+存储反弹双催化，券商叙事可行性辨析）</title>
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif; line-height:1.8; padding:20px 14px 60px; }
@@ -13,136 +12,224 @@ body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSyst
 .toolbar a { color:#58a6ff; text-decoration:none; font-size:0.85rem; white-space:nowrap; }
 .toolbar a:hover { text-decoration:underline; }
 .toolbar .sep { color:#484f58; }
-#content h1 { font-size:1.5rem; color:#f0f6fc; border-bottom:2px solid #30363d; padding-bottom:10px; margin-bottom:18px; }
-#content h2 { font-size:1.2rem; color:#58a6ff; margin:26px 0 12px; padding-left:10px; border-left:3px solid #58a6ff; }
-#content h3 { font-size:1.05rem; color:#d29922; margin:20px 0 10px; }
-#content p { margin:8px 0; }
-#content ul, #content ol { padding-left:24px; margin:8px 0; }
-#content li { margin:4px 0; }
-#content a { color:#58a6ff; text-decoration:none; }
-#content a:hover { text-decoration:underline; }
-#content blockquote { border-left:4px solid #30363d; background:#161b22; padding:8px 14px; margin:12px 0; color:#8b949e; border-radius:0 6px 6px 0; }
-#content code { background:#161b22; padding:2px 6px; border-radius:4px; font-size:0.88em; }
-#content pre { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:12px 14px; overflow-x:auto; margin:12px 0; }
-#content table { border-collapse:collapse; width:100%; margin:12px 0; font-size:0.9em; display:block; overflow-x:auto; }
-#content th, #content td { border:1px solid #30363d; padding:7px 10px; text-align:left; }
-#content th { background:#161b22; color:#58a6ff; }
-#content strong { color:#f0f6fc; }
-#content hr { border:none; border-top:1px solid #30363d; margin:20px 0; }
+h1 { font-size:1.5rem; color:#f0f6fc; border-bottom:2px solid #30363d; padding-bottom:10px; margin-bottom:18px; }
+h2 { font-size:1.2rem; color:#58a6ff; margin:26px 0 12px; padding-left:10px; border-left:3px solid #58a6ff; }
+h3 { font-size:1.05rem; color:#d29922; margin:20px 0 10px; }
+h4 { font-size:0.98rem; color:#c9d1d9; margin:16px 0 8px; }
+p { margin:8px 0; }
+ul, ol { padding-left:24px; margin:8px 0; }
+li { margin:4px 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+blockquote { border-left:4px solid #30363d; background:#161b22; padding:8px 14px; margin:12px 0; color:#8b949e; border-radius:0 6px 6px 0; }
+blockquote p { margin:4px 0; }
+code { background:#161b22; padding:2px 6px; border-radius:4px; font-size:0.88em; font-family:"SF Mono",Consolas,Menlo,monospace; }
+pre { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:12px 14px; overflow-x:auto; margin:12px 0; }
+pre code { background:none; padding:0; }
+table { border-collapse:collapse; width:100%; margin:12px 0; font-size:0.9em; display:block; overflow-x:auto; }
+th, td { border:1px solid #30363d; padding:7px 10px; text-align:left; }
+th { background:#161b22; color:#58a6ff; font-weight:600; }
+tr:nth-child(even) td { background:rgba(22,27,34,0.5); }
+hr { border:none; border-top:1px solid #30363d; margin:20px 0; }
+img { max-width:100%; border-radius:6px; }
+strong { color:#f0f6fc; }
+.toc { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:14px 18px; margin:14px 0 20px; }
+.toc h3 { margin:0 0 8px; color:#58a6ff; }
+.toc a { display:block; padding:3px 0; font-size:0.9em; color:#8b949e; }
+.toc a:hover { color:#58a6ff; text-decoration:none; }
+.footer { text-align:center; color:#484f58; font-size:0.78rem; margin-top:40px; padding-top:16px; border-top:1px solid #30363d; }
 </style>
 </head>
 <body>
 <div class="container">
-<div class="toolbar"><a href="../replay_index.html">← 复盘合集</a><span class="sep">|</span><a href="../index.html">首页</a></div>
-<div id="content"></div>
-</div>
-<script>
-const md = `# A股市场全面深度复盘 —— 2026年8月14日（周五 · 科技全线反包，差点反包成功，中芯业绩会+存储反弹双催化，券商叙事可行性辨析）
-
-> **免责声明**：本文仅供学习交流与市场复盘参考，不构成任何投资建议。市场有风险，投资需谨慎。
-
----
-
-## 目录
-
-1. [大盘概况：调整深度确实很小，科技全线反弹差点反包](#一)
-2. [核心新闻：央行万亿逆回购 + 中芯业绩会 + 美股存储/费半反弹](#二)
-3. [券商叙事可行性深度辨析：大A靠券商突破 vs 跟随美股调整](#三)
-4. [科技板块全栈分析：CPO/PCB/存储器/半导体设备材料/先进封装](#四)
-5. [资金流向对比（8/14 vs 8/13）](#五)
-6. [企稳信号量化判定](#六)
-7. [重点个股全栈MA5/RSI5量化计算](#七)
-8. [风险回报率评估与操作建议](#八)
-9. [综合研判与后续策略](#九)
-
----
-
-## <a id="一"></a>一、大盘概况：调整深度确实很小，科技全线反弹差点反包
-
-### 1.1 核心指数表现
-
-| 指数 | 8/14收盘 | 今日涨跌 | 8/13涨跌 | 两日累计 |
-|------|:---:|:---:|:---:|:---:|
-| **上证指数** | ~3,927 | **+0.01%** | -0.50% | -0.49% |
-| **深证成指** | ~14,354 | **+0.45%** | -0.87% | -0.42% |
-| **创业板指** | ~3,626 | **+1.12%** 🔥 | -0.45% | +0.67% |
-| **科创50** | ~1,718 | **基本收平** | -1.11% | -1.1% |
-
-### 1.2 市场概况
-
-- **成交额**：维持2.5万亿级别
-- **核心特征**：
-  - **调整深度确实很小**：8/13冲高回落后，8/14科技全线反弹，创业板+1.12%差点反包
-  - 受益于美股存储板块反弹 + 中芯国际超预期财报
-  - 医药板块分化整理（前期强势的CRO开始回调）
-
-### 1.3 分时特征
-
-\`\`\`
-09:30 平开 → 受美股费半/存储反弹+中芯业绩催化，科技高开
+  <div class="toolbar">
+    <a href="../index.html">🏠 首页</a><span class="sep">|</span>
+    <a href="../replay_index.html">📚 复盘合集</a><span class="sep">|</span>
+    <span style="color:#8b949e;font-size:0.8rem;">任务库持仓复盘 · A股深度复盘_20260814.md</span>
+  </div>
+  
+  <h1>A股市场全面深度复盘 —— 2026年8月14日（周五 · 科技全线反包，差点反包成功，中芯业绩会+存储反弹双催化，券商叙事可行性辨析）</h1>
+<blockquote>
+<p><strong>免责声明</strong>：本文仅供学习交流与市场复盘参考，不构成任何投资建议。市场有风险，投资需谨慎。</p>
+</blockquote>
+<hr>
+<h2 id="sec-0">目录</h2>
+<ol>
+<li><a href="#%E4%B8%80">大盘概况：调整深度确实很小，科技全线反弹差点反包</a></li>
+<li><a href="#%E4%BA%8C">核心新闻：央行万亿逆回购 + 中芯业绩会 + 美股存储/费半反弹</a></li>
+<li><a href="#%E4%B8%89">券商叙事可行性深度辨析：大A靠券商突破 vs 跟随美股调整</a></li>
+<li><a href="#%E5%9B%9B">科技板块全栈分析：CPO/PCB/存储器/半导体设备材料/先进封装</a></li>
+<li><a href="#%E4%BA%94">资金流向对比（8/14 vs 8/13）</a></li>
+<li><a href="#%E5%85%AD">企稳信号量化判定</a></li>
+<li><a href="#%E4%B8%83">重点个股全栈MA5/RSI5量化计算</a></li>
+<li><a href="#%E5%85%AB">风险回报率评估与操作建议</a></li>
+<li><a href="#%E4%B9%9D">综合研判与后续策略</a></li>
+</ol>
+<hr>
+<h2 id="sec-1"><a id="一"></a>一、大盘概况：调整深度确实很小，科技全线反弹差点反包</h2>
+<h3 id="sec-2">1.1 核心指数表现</h3>
+<table>
+<thead>
+<tr>
+<th>指数</th>
+<th style="text-align:center">8/14收盘</th>
+<th style="text-align:center">今日涨跌</th>
+<th style="text-align:center">8/13涨跌</th>
+<th style="text-align:center">两日累计</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>上证指数</strong></td>
+<td style="text-align:center">~3,927</td>
+<td style="text-align:center"><strong>+0.01%</strong></td>
+<td style="text-align:center">-0.50%</td>
+<td style="text-align:center">-0.49%</td>
+</tr>
+<tr>
+<td><strong>深证成指</strong></td>
+<td style="text-align:center">~14,354</td>
+<td style="text-align:center"><strong>+0.45%</strong></td>
+<td style="text-align:center">-0.87%</td>
+<td style="text-align:center">-0.42%</td>
+</tr>
+<tr>
+<td><strong>创业板指</strong></td>
+<td style="text-align:center">~3,626</td>
+<td style="text-align:center"><strong>+1.12%</strong> 🔥</td>
+<td style="text-align:center">-0.45%</td>
+<td style="text-align:center">+0.67%</td>
+</tr>
+<tr>
+<td><strong>科创50</strong></td>
+<td style="text-align:center">~1,718</td>
+<td style="text-align:center"><strong>基本收平</strong></td>
+<td style="text-align:center">-1.11%</td>
+<td style="text-align:center">-1.1%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-3">1.2 市场概况</h3>
+<ul>
+<li><strong>成交额</strong>：维持2.5万亿级别</li>
+<li><strong>核心特征</strong>：
+<ul>
+<li><strong>调整深度确实很小</strong>：8/13冲高回落后，8/14科技全线反弹，创业板+1.12%差点反包</li>
+<li>受益于美股存储板块反弹 + 中芯国际超预期财报</li>
+<li>医药板块分化整理（前期强势的CRO开始回调）</li>
+</ul>
+</li>
+</ul>
+<h3 id="sec-4">1.3 分时特征</h3>
+<pre class="code-block"><code>09:30 平开 → 受美股费半/存储反弹+中芯业绩催化，科技高开
 10:00 科技拉升 → CPO/存储/半导体全线反弹
 10:30 医药分化 → CRO开始回调（高低切换再反转）
 11:30 午盘 → 沪指微跌，创业板+0.65%
 13:00 午后 → 科技继续走强，中芯业绩会催化
 14:00 券商异动 → 尾盘券商有资金试探（用户加仓东财）
 15:00 收盘 → 创业板+1.12%，科创50收平
-\`\`\`
-
-### 1.4 反包与调整深度验证
-
-用户判断"调整深度确实很小"完全正确：
-
-| 板块 | 8/13回调 | 8/14反弹 | 反包程度 |
-|------|:---:|:---:|:---:|
-| CPO | -0.86% | **+2.88%** | ✅ 完全反包 |
-| 存储器 | -1.94% | **+2.16%** | ✅ 完全反包 |
-| 半导体设备 | -1.75% | **+1.93%** | ✅ 完全反包 |
-| 半导体材料 | -2.47% | **+2.02%** | ⚠️ 大部分反包 |
-| 先进封装 | -1.67% | **+2.23%** | ✅ 完全反包 |
-
-> **8/13的"冲高回落"果然是浅回调，8/14科技全线反包，验证了三角突破的有效性。**
-
----
-
-## <a id="二"></a>二、核心新闻与市场热点
-
-### 2.1 央行万亿逆回购释放流动性
-
-- 8月14日央行开展**10,000亿元6个月买断式逆回购**操作
-- 流动性宽松预期强化，利好券商/金融
-
-### 2.2 中芯国际业绩说明会（Q2超预期兑现）
-
-| 指标 | Q2数据 |
-|------|:---:|
-| 销售收入 | 30.06亿美元（+36%） |
-| 毛利率 | 25.3%（Q1为20.1%） |
-| 净利润 | 4.79亿美元（+261.7%） |
-| Q3指引 | 收入环比+2-4%，毛利率26-28% |
-
-**业绩会要点**：
-- 全年维持81亿美元资本开支，年内新增每月4万片12英寸产能
-- 折旧摊销同比+25.7%（全年预计+30%），是"营收增收、利润弱增"的隐忧
-- 管理层："AI产生的产业推动与溢出效应还将持续"
-
-### 2.3 美股存储板块反弹 + 费半反弹
-
-- 美股存储板块反弹 → A股存储/半导体映射
-- 美股纳指离创新高"一步之遥"
-
-### 2.4 对原产印度单模光纤继续征收反倾销税
-
-- 8月14日起，对原产印度的进口单模光纤继续征5年反倾销税
-- 利好国产光纤/光通信
-
----
-
-## <a id="三"></a>三、券商叙事可行性深度辨析
-
-### 3.1 用户叙事逻辑链
-
-\`\`\`
-美股纳指离创新高一步之遥
+</code></pre>
+<h3 id="sec-5">1.4 反包与调整深度验证</h3>
+<p>用户判断&quot;调整深度确实很小&quot;完全正确：</p>
+<table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align:center">8/13回调</th>
+<th style="text-align:center">8/14反弹</th>
+<th style="text-align:center">反包程度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPO</td>
+<td style="text-align:center">-0.86%</td>
+<td style="text-align:center"><strong>+2.88%</strong></td>
+<td style="text-align:center">✅ 完全反包</td>
+</tr>
+<tr>
+<td>存储器</td>
+<td style="text-align:center">-1.94%</td>
+<td style="text-align:center"><strong>+2.16%</strong></td>
+<td style="text-align:center">✅ 完全反包</td>
+</tr>
+<tr>
+<td>半导体设备</td>
+<td style="text-align:center">-1.75%</td>
+<td style="text-align:center"><strong>+1.93%</strong></td>
+<td style="text-align:center">✅ 完全反包</td>
+</tr>
+<tr>
+<td>半导体材料</td>
+<td style="text-align:center">-2.47%</td>
+<td style="text-align:center"><strong>+2.02%</strong></td>
+<td style="text-align:center">⚠️ 大部分反包</td>
+</tr>
+<tr>
+<td>先进封装</td>
+<td style="text-align:center">-1.67%</td>
+<td style="text-align:center"><strong>+2.23%</strong></td>
+<td style="text-align:center">✅ 完全反包</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>8/13的&quot;冲高回落&quot;果然是浅回调，8/14科技全线反包，验证了三角突破的有效性。</strong></p>
+</blockquote>
+<hr>
+<h2 id="sec-6"><a id="二"></a>二、核心新闻与市场热点</h2>
+<h3 id="sec-7">2.1 央行万亿逆回购释放流动性</h3>
+<ul>
+<li>8月14日央行开展<strong>10,000亿元6个月买断式逆回购</strong>操作</li>
+<li>流动性宽松预期强化，利好券商/金融</li>
+</ul>
+<h3 id="sec-8">2.2 中芯国际业绩说明会（Q2超预期兑现）</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th style="text-align:center">Q2数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>销售收入</td>
+<td style="text-align:center">30.06亿美元（+36%）</td>
+</tr>
+<tr>
+<td>毛利率</td>
+<td style="text-align:center">25.3%（Q1为20.1%）</td>
+</tr>
+<tr>
+<td>净利润</td>
+<td style="text-align:center">4.79亿美元（+261.7%）</td>
+</tr>
+<tr>
+<td>Q3指引</td>
+<td style="text-align:center">收入环比+2-4%，毛利率26-28%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>业绩会要点</strong>：</p>
+<ul>
+<li>全年维持81亿美元资本开支，年内新增每月4万片12英寸产能</li>
+<li>折旧摊销同比+25.7%（全年预计+30%），是&quot;营收增收、利润弱增&quot;的隐忧</li>
+<li>管理层：“AI产生的产业推动与溢出效应还将持续”</li>
+</ul>
+<h3 id="sec-9">2.3 美股存储板块反弹 + 费半反弹</h3>
+<ul>
+<li>美股存储板块反弹 → A股存储/半导体映射</li>
+<li>美股纳指离创新高&quot;一步之遥&quot;</li>
+</ul>
+<h3 id="sec-10">2.4 对原产印度单模光纤继续征收反倾销税</h3>
+<ul>
+<li>8月14日起，对原产印度的进口单模光纤继续征5年反倾销税</li>
+<li>利好国产光纤/光通信</li>
+</ul>
+<hr>
+<h2 id="sec-11"><a id="三"></a>三、券商叙事可行性深度辨析</h2>
+<h3 id="sec-12">3.1 用户叙事逻辑链</h3>
+<pre class="code-block"><code>美股纳指离创新高一步之遥
     ↓
 未来一段时间筹码松动厉害
     ↓
@@ -155,380 +242,1080 @@ const md = `# A股市场全面深度复盘 —— 2026年8月14日（周五 · �
 然后跟随美股调整
     ↓
 尾盘加仓东财等券商
-\`\`\`
-
-### 3.2 券商叙事的逻辑支撑
-
-**支持点（为什么券商可能轮动）**：
-
-| 支撑逻辑 | 分析 |
-|------|------|
-| **半年未轮动** | 券商是少数半年没轮动过的板块，有补涨空间 |
-| **万亿逆回购** | 央行连续释放流动性，直接利好券商业绩 |
-| **成交额高企** | 2.5万亿+成交额，经纪业务收入确定性高 |
-| **指数突破需要** | 上证要突破需要权重板块发力，券商是首选 |
-| **低估值** | 券商板块PE/PB处于历史低位 |
-
-**风险点（为什么券商叙事有缺陷）**：
-
-| 风险逻辑 | 分析 |
-|------|------|
-| **今日东财-1.57%** | 券商今天没启动反而跌，说明资金尚未认可 |
-| **"靠券商突破→跟随美股调整"的矛盾** | 如果大A靠券商突破后跟随美股下跌，那券商的上涨空间有限 |
-| **纳指空单逻辑** | 开纳指空单是对冲，但A股券商多头+纳指空头是"跨市场对冲"，逻辑复杂 |
-| **成交额已高** | 券商行情往往需要"成交额放大预期"，但当前2.5万亿已高，边际增量有限 |
-
-### 3.3 券商叙事的可行性评级
-
-| 维度 | 评级 | 说明 |
-|------|:---:|------|
-| 券商轮动逻辑 | ★★★★ | 半年未轮动+流动性宽松，补涨逻辑成立 |
-| 时点选择 | ★★★ | 券商今日未启动，提前布局需耐心 |
-| 跟随美股调整判断 | ★★★★ | 纳指筹码松动+中期选举风险，这个判断有道理 |
-| 跨市场对冲操作 | ★★★ | 逻辑清晰但执行难度大 |
-
-### 3.4 关键结论
-
-> **券商叙事的"前半段"（券商补涨轮动）有一定道理，"后半段"（跟随美股调整）需要警惕。**
->
-> **券商确实是半年没轮动过的板块**，叠加央行万亿逆回购+成交额高企，补涨逻辑成立。但今日东财-1.57%说明资金尚未启动券商，属于"左侧布局"。
->
-> **更核心的洞察**：用户做的是"高低切换的再切换"——从高位的科技（已四连阳+反包）转向低位的券商，本质是寻找"没轮动过"的洼地。这个思路与8/12做T卖通讯、8/14加仓东财一脉相承，是风险意识强的体现。
->
-> **但需要注意**：券商的"补涨"往往是脉冲式的（1-2天），缺乏持续性的产业逻辑支撑。相比科技（有AI产业趋势），券商更依赖"成交额+政策"的短期催化。
-
-### 3.5 东方财富今日数据
-
-| 指标 | 数据 |
-|------|:---:|
-| 8/14收盘 | 19.47（**-1.57%**） |
-| 前收 | 19.78 |
-| 今日振幅 | 1.82% |
-| 成交额 | 48.1亿 |
-
-**东财今日-1.57%，是重点标的中最弱的之一。** 用户尾盘加仓属于"左侧布局"，需要等待券商启动信号（如成交额放大+券商指数放量突破）。
-
----
-
-## <a id="四"></a>四、科技板块全栈分析
-
-### 4.1 各板块8/14数据 vs 前日
-
-| 板块 | 8/14收盘 | 8/14涨跌 | 8/13涨跌 | 两日累计 | 反包状态 |
-|------|:---:|:---:|:---:|:---:|:---:|
-| **CPO** | 8,670.17 | **+2.88%** 🔥 | -0.86% | +2.0% | ✅ 完全反包 |
-| **存储器** | 3,152.55 | **+2.16%** | -1.94% | +0.2% | ✅ 反包 |
-| **半导体设备** | 3,158.01 | **+1.93%** | -1.75% | +0.2% | ✅ 反包 |
-| **半导体材料** | 2,757.00 | **+2.02%** | -2.47% | -0.5% | ⚠️ 大部分反包 |
-| **先进封装** | 2,927.91 | **+2.23%** | -1.67% | +0.6% | ✅ 反包 |
-
-### 4.2 核心发现
-
-> **8/14科技全线反包，验证了8/13的冲高回落只是浅回调。** 六大板块全部上涨+1.9~2.9%，CPO领涨+2.88%。
-
-### 4.3 分板块深度分析
-
-#### (1) CPO/光通讯 —— 反包最强，三杰集体反弹
-
-| 标的 | 8/14收盘 | 涨跌 | 8/13涨跌 | 两日累计 | 特征 |
-|------|:---:|:---:|:---:|:---:|------|
-| 中际旭创 | 943.00 | **+2.38%** | +0.00% | +2.4% | 站回940 |
-| 新易盛 | 448.08 | **+4.23%** 🔥 | +0.40% | +4.6% | 反弹最强 |
-| 天孚通信 | 267.71 | **+4.10%** 🔥 | +7.13% | +11.2% | 三日累计暴涨 |
-| CPO板块 | 8,670.17 | +2.88% | -0.86% | +2.0% | 反包 |
-
-**关键判断**：
-- 天孚通信三日累计+11.2%，是CPO最强方向（材料/器件）
-- 中际/新易盛/天孚三杰今日集体反弹+2.4~4.2%
-- CPO板块反包8/13跌幅，三角突破有效性确认
-
-#### (2) PCB —— 沪电企稳+0.51%
-
-| 标的 | 8/14收盘 | 涨跌 | 特征 |
-|------|:---:|:---:|------|
-| 沪电股份 | 121.27 | +0.51% | 120支撑企稳 |
-
-#### (3) 存储器 —— 长鑫+4.35%，存储反弹映射
-
-| 标的 | 8/14收盘 | 涨跌 | 特征 |
-|------|:---:|:---:|------|
-| **长鑫科技** | **55.18** | **+4.35%** 🔥 | 美股存储反弹映射 |
-| 存储器板块 | 3,152.55 | +2.16% | 反包 |
-
-**长鑫科技从52.88→55.18（+4.35%），接近8/13高点55.92。** 成本47.82浮盈+15.4%。
-
-#### (4) 半导体设备 —— 反包，北方华创微涨
-
-| 标的 | 8/14收盘 | 涨跌 | 特征 |
-|------|:---:|:---:|------|
-| 北方华创 | 738.66 | +0.01% | 弱于板块 |
-
-北方华创今日仅+0.01%，是科技权重中最弱的。8/13暴跌-2.82%后今日几乎无反弹。
-
-#### (5) 半导体材料/先进封装 —— 反包
-
-| 板块 | 涨跌 | 特征 |
-|------|:---:|------|
-| 半导体材料 | +2.02% | 大部分反包 |
-| 先进封装 | +2.23% | 反包 |
-
----
-
-## <a id="五"></a>五、资金流向对比（8/14 vs 8/13）
-
-### 5.1 主力资金净流入对比
-
-| 板块 | 8/13(回踩日) | 8/14(反包日) | 方向 |
-|------|:---:|:---:|:---:|
-| **CPO** | 流出 | **流入（反包）** | ✅ 反转 |
-| **存储器** | 流出 | **流入（反包）** | ✅ 反转 |
-| **半导体设备** | 流出 | **流入（反包）** | ✅ 反转 |
-| **半导体材料** | 流出 | **流入（反包）** | ✅ 反转 |
-| **先进封装** | 流出 | **流入（反包）** | ✅ 反转 |
-
-### 5.2 核心判断
-
-> **8/14资金面全面回流。** 8/13的冲高回落只是"洗盘"，8/14科技全线反包，资金重新流入。这验证了"调整深度小"的判断。
->
-> **但券商资金未启动**——东财-1.57%，说明资金还在科技，尚未轮到券商。
-
----
-
-## <a id="六"></a>六、企稳信号量化判定
-
-### 6.1 大盘企稳信号
-
-| 信号 | 8/13 | 8/14 | 判断 |
-|------|:---:|:---:|:---:|
-| 创业板 | -0.45% | **+1.12%** | ✅ 反包 |
-| 科创50 | -1.11% | 收平 | ⚠️ 弱于创业板 |
-| 科技板块 | 全面回调 | **全面反包** | ✅✅ |
-| 成交额 | 2.55万亿 | 2.5万亿+ | ✅ 维持高位 |
-
-### 6.2 20日线支撑再验证
-
-| 标的 | 8/14收盘 | 20日线 | 是否站上 |
-|------|:---:|:---:|:---:|
-| 中际旭创 | 943.00 | ~920 | ✅ 站上 |
-| 长鑫科技 | 55.18 | ~52 | ✅✅ 站上 |
-| 中芯国际 | 132.87 | ~127 | ✅✅ 站上 |
-| 北方华创 | 738.66 | ~750 | ⚠️ 仍在下方 |
-| 沪电股份 | 121.27 | ~120 | ✅ 站上 |
-
-> **大科技整体站稳20日线，三角突破有效性进一步确认。** 仅北方华创仍在20日线下方，需关注。
-
----
-
-## <a id="七"></a>七、重点个股全栈MA5/RSI5量化计算
-
-### 7.1 中芯国际（688981.SH）★持仓 + 业绩会兑现
-
-**近5日K线**：
-
-| 日期 | 收盘 | 涨跌 |
-|------|:---:|:---:|
-| 8/10 | 126.25 | -1.75% |
-| 8/11 | 125.41 | -0.67% |
-| 8/12 | 127.96 | +2.03% |
-| 8/13 | 129.44 | +1.16% |
-| 8/14 | **132.87** | **+2.65%** 🔥 |
-
-| 指标 | 计算值 | 判断 |
-|------|:---:|------|
-| **MA5** | 128.39 | 收盘132.87 > MA5，偏离+3.49% |
-| **RSI5** | ~62-68 | 中性偏强 |
-| **20日线** | ~127 | ✅ 站上 |
-| **压力位** | 135.36（今日高点）/136 | 距当前+1.9-2.4% |
-| **成交额** | 102.9亿（放量） | 业绩会催化放量 |
-
-**评估**：中芯+2.65%放量突破132，Q2超预期+业绩会兑现。RSI偏强，站上20日线。冲高135.36后回落132.87，短期可能继续冲136。
-
-### 7.2 长鑫科技（688825.SH）★核心仓位
-
-**近5日K线**：
-
-| 日期 | 收盘 | 涨跌 |
-|------|:---:|:---:|
-| 8/10 | 51.30 | -2.25% |
-| 8/11 | 50.40 | -1.75% |
-| 8/12 | 53.52 | +6.19% |
-| 8/13 | 52.88 | -1.20% |
-| 8/14 | **55.18** | **+4.35%** 🔥 |
-
-| 指标 | 计算值 | 判断 |
-|------|:---:|------|
-| **MA5** | 52.66 | 收盘55.18 > MA5，偏离+4.79% |
-| **RSI5** | ~55-60 | 中性偏强 |
-| **20日线** | ~52 | ✅✅ 站上 |
-| **压力位** | 55.92（8/13高点） | 距当前+1.3% |
-| **成本47.82** | 浮盈+15.4% | 🟢🟢 |
-
-**评估**：长鑫+4.35%反弹至55.18，接近8/13高点55.92。成本47.82浮盈+15.4%。存储反弹映射+反包，强势。
-
-### 7.3 北方华创（002371.SZ）—— 今日最弱
-
-| 日期 | 收盘 | 涨跌 |
-|------|:---:|:---:|
-| 8/10 | 760.00 | +1.07% |
-| 8/11 | 746.10 | -1.83% |
-| 8/12 | 760.00 | +1.86% |
-| 8/13 | 738.60 | -2.82% |
-| 8/14 | **738.66** | **+0.01%** |
-
-| 指标 | 计算值 | 判断 |
-|------|:---:|------|
-| **MA5** | 748.67 | 收盘738.66 < MA5，偏离-1.34% |
-| **RSI5** | ~40-45 | 偏弱 |
-| **20日线** | ~750 | ❌ 仍在下方 |
-
-**评估**：北方华创8/13暴跌-2.82%后今日仅+0.01%，是科技权重中最弱的。连续两日弱于板块，短期偏弱。
-
-### 7.4 东方财富（300059.SZ）★新加仓（券商）
-
-| 日期 | 收盘 | 涨跌 |
-|------|:---:|:---:|
-| 8/10 | 20.03 | +0.25% |
-| 8/11 | 19.84 | -0.95% |
-| 8/12 | 19.83 | -0.05% |
-| 8/13 | 19.78 | -0.25% |
-| 8/14 | **19.47** | **-1.57%** ❌ |
-
-| 指标 | 计算值 | 判断 |
-|------|:---:|------|
-| **MA5** | 19.79 | 收盘19.47 < MA5，偏离-1.62% |
-| **RSI5** | ~32-38 | 偏弱 |
-| **20日线** | ~19.9 | ❌ 跌破 |
-| **三周表现** | 20.36→19.47（-4.4%） | 持续阴跌 |
-
-**评估**：东财今日-1.57%，是重点标的中最弱的。券商板块未启动，用户尾盘加仓属于"左侧布局"。三周持续阴跌，RSI偏弱。需要券商板块的启动信号确认。
-
-### 7.5 宁德时代（300750.SZ）
-
-| 日期 | 收盘 | 涨跌 |
-|------|:---:|:---:|
-| 8/10 | 393.87 | +1.86% |
-| 8/11 | 390.40 | -0.88% |
-| 8/12 | 393.93 | +0.90% |
-| 8/13 | 396.30 | +0.60% |
-| 8/14 | **393.93** | **-0.60%** |
-
-| 指标 | 计算值 | 判断 |
-|------|:---:|------|
-| **MA5** | 393.69 | 收盘393.93 ≈ MA5 |
-| **RSI5** | ~48-52 | 中性 |
-
-**评估**：宁德在390-396区间持续震荡，底部确认但缺乏向上突破的动能。
-
-### 7.6 沪电股份（002463.SZ）
-
-| 指标 | 数据 |
-|------|:---:|
-| 8/14收盘 | 121.27（+0.51%） |
-| MA5 | ~121.5 |
-| 支撑位 | 120（已多次测试） |
-
-### 7.7 通信ETF（515050.SH）
-
-| 指标 | 数据 |
-|------|:---:|
-| 8/14收盘 | **1.074**（+2.78%） |
-| 前收 | 1.045 |
-| 涨幅 | +2.78% |
-
-通信ETF今日+2.78%至1.074，CPO反包带动。但FCC风险敞口仍在，反弹减仓逻辑不变。
-
-### 7.8 中际旭创（300308.SZ）★战术仓位
-
-| 日期 | 收盘 | 涨跌 |
-|------|:---:|:---:|
-| 8/10 | 864.58 | -6.01% |
-| 8/11 | 886.96 | +2.59% |
-| 8/12 | 921.00 | +3.84% |
-| 8/13 | 921.04 | +0.00% |
-| 8/14 | **943.00** | **+2.38%** |
-
-| 指标 | 计算值 | 判断 |
-|------|:---:|------|
-| **MA5** | 907.32 | 收盘943 > MA5，偏离+3.93% |
-| **RSI5** | ~55-60 | 中性偏强 |
-| **20日线** | ~920 | ✅ 站上 |
-| **压力位** | 950-960 | 距当前+0.7-1.8% |
-
-**评估**：中际+2.38%至943，站上20日线。从8/10低点864已反弹+9.1%。接近950-960压力区。
-
----
-
-## <a id="八"></a>八、风险回报率评估与操作建议
-
-### 8.1 持仓总览
-
-| 标的 | 持仓 | 成本 | 8/14收盘 | 今日涨跌 | 状态 |
-|------|:---:|:---:|:---:|:---:|------|
-| **长鑫科技** | 800股 | 47.82 | 55.18 | +4.35% | 🟢🟢 浮盈+15.4% |
-| **中芯国际** | 200股 | 121.10 | 132.87 | +2.65% | 🟢 浮盈+9.7% |
-| **中际旭创** | 小仓位 | ~860 | 943.00 | +2.38% | 🟢 |
-| **创业50ETF** | 仓位 | — | — | — | 🟢 |
-| **通讯ETF** | 做T中 | — | 1.074 | +2.78% | 🟡 |
-| **东方财富** | **尾盘加仓** | ~19.5 | 19.47 | -1.57% | 🟡 券商左侧 |
-| **恒生科技** | 仓位 | — | — | — | 🟢 |
-
-### 8.2 综合操作建议
-
-#### 长鑫科技（688825）★核心仓位
-
-> **操作：800股持有，成本47.82，56-58减200-400股锁利**
->
-> +4.35%至55.18，浮盈+15.4%。接近8/13高点55.92，56-58是减仓区间。
-
-#### 中芯国际（688981）★Q2+业绩会兑现
-
-> **操作：持有200股，136附近减100股锁利**
->
-> Q2超预期+业绩会兑现，今日+2.65%放量至132.87。接近136压力，冲高减仓。
-
-#### 东方财富（300059）★券商左侧布局
-
-> **操作：小仓位持有，等券商板块启动信号再加仓**
->
-> 券商叙事"前半段"（补涨轮动）成立，但"后半段"（跟随美股调整）需警惕。今日东财-1.57%说明券商未启动，属于左侧布局。关键观察：券商板块是否放量突破+成交额能否继续放大。
-
-#### 中际旭创（300308）★战术仓位
-
-> **操作：950-960减仓，880止损**
->
-> 反弹至943，接近950-960压力区。
-
-#### 通讯ETF（515050）★反弹减仓
-
-> **操作：1.08-1.10继续减仓**
->
-> 今日+2.78%至1.074，CPO反包带动。反弹减仓逻辑不变。
-
----
-
-## <a id="九"></a>九、综合研判与后续策略
-
-### 9.1 今日核心判断
-
-> **8/14是"科技反包日"。** 8/13的冲高回落果然只是浅回调，8/14科技全线反包（CPO+2.88%/存储+2.16%），验证了三角突破的有效性。
->
-> **券商叙事的"前半段"成立，"后半段"需警惕。** 券商确实是半年没轮动过的板块，叠加央行万亿逆回购+成交额高企，补涨逻辑成立。但用户做的本质是"高低切换的再切换"——从高位科技转向低位券商，是风险意识强的体现。不过券商的补涨是脉冲式的，缺乏产业逻辑支撑。
-
-### 9.2 关键观察点
-
-| 观察点 | 看多信号 | 看空信号 |
-|------|------|------|
-| 券商 | 板块放量突破+成交额放大 | 东财继续阴跌 |
-| 中芯 | 突破136 | 回落至130以下 |
-| 长鑫 | 突破56 | 跌破52 |
-| 中际 | 突破950 | 跌破900 |
-| 北方华创 | 重新站上750 | 跌破738 |
-| 美股纳指 | 创新高 | 中期选举前下跌 |
-
-### 9.3 后续操作纲领
-
-\`\`\`
-核心策略：科技反包确认，持有核心仓位，券商左侧布局
+</code></pre>
+<h3 id="sec-13">3.2 券商叙事的逻辑支撑</h3>
+<p><strong>支持点（为什么券商可能轮动）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>支撑逻辑</th>
+<th>分析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>半年未轮动</strong></td>
+<td>券商是少数半年没轮动过的板块，有补涨空间</td>
+</tr>
+<tr>
+<td><strong>万亿逆回购</strong></td>
+<td>央行连续释放流动性，直接利好券商业绩</td>
+</tr>
+<tr>
+<td><strong>成交额高企</strong></td>
+<td>2.5万亿+成交额，经纪业务收入确定性高</td>
+</tr>
+<tr>
+<td><strong>指数突破需要</strong></td>
+<td>上证要突破需要权重板块发力，券商是首选</td>
+</tr>
+<tr>
+<td><strong>低估值</strong></td>
+<td>券商板块PE/PB处于历史低位</td>
+</tr>
+</tbody>
+</table>
+<p><strong>风险点（为什么券商叙事有缺陷）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>风险逻辑</th>
+<th>分析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>今日东财-1.57%</strong></td>
+<td>券商今天没启动反而跌，说明资金尚未认可</td>
+</tr>
+<tr>
+<td><strong>&quot;靠券商突破→跟随美股调整&quot;的矛盾</strong></td>
+<td>如果大A靠券商突破后跟随美股下跌，那券商的上涨空间有限</td>
+</tr>
+<tr>
+<td><strong>纳指空单逻辑</strong></td>
+<td>开纳指空单是对冲，但A股券商多头+纳指空头是&quot;跨市场对冲&quot;，逻辑复杂</td>
+</tr>
+<tr>
+<td><strong>成交额已高</strong></td>
+<td>券商行情往往需要&quot;成交额放大预期&quot;，但当前2.5万亿已高，边际增量有限</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-14">3.3 券商叙事的可行性评级</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th style="text-align:center">评级</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>券商轮动逻辑</td>
+<td style="text-align:center">★★★★</td>
+<td>半年未轮动+流动性宽松，补涨逻辑成立</td>
+</tr>
+<tr>
+<td>时点选择</td>
+<td style="text-align:center">★★★</td>
+<td>券商今日未启动，提前布局需耐心</td>
+</tr>
+<tr>
+<td>跟随美股调整判断</td>
+<td style="text-align:center">★★★★</td>
+<td>纳指筹码松动+中期选举风险，这个判断有道理</td>
+</tr>
+<tr>
+<td>跨市场对冲操作</td>
+<td style="text-align:center">★★★</td>
+<td>逻辑清晰但执行难度大</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-15">3.4 关键结论</h3>
+<blockquote>
+<p><strong>券商叙事的&quot;前半段&quot;（券商补涨轮动）有一定道理，“后半段”（跟随美股调整）需要警惕。</strong></p>
+<p><strong>券商确实是半年没轮动过的板块</strong>，叠加央行万亿逆回购+成交额高企，补涨逻辑成立。但今日东财-1.57%说明资金尚未启动券商，属于&quot;左侧布局&quot;。</p>
+<p><strong>更核心的洞察</strong>：用户做的是&quot;高低切换的再切换&quot;——从高位的科技（已四连阳+反包）转向低位的券商，本质是寻找&quot;没轮动过&quot;的洼地。这个思路与8/12做T卖通讯、8/14加仓东财一脉相承，是风险意识强的体现。</p>
+<p><strong>但需要注意</strong>：券商的&quot;补涨&quot;往往是脉冲式的（1-2天），缺乏持续性的产业逻辑支撑。相比科技（有AI产业趋势），券商更依赖&quot;成交额+政策&quot;的短期催化。</p>
+</blockquote>
+<h3 id="sec-16">3.5 东方财富今日数据</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th style="text-align:center">数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8/14收盘</td>
+<td style="text-align:center">19.47（<strong>-1.57%</strong>）</td>
+</tr>
+<tr>
+<td>前收</td>
+<td style="text-align:center">19.78</td>
+</tr>
+<tr>
+<td>今日振幅</td>
+<td style="text-align:center">1.82%</td>
+</tr>
+<tr>
+<td>成交额</td>
+<td style="text-align:center">48.1亿</td>
+</tr>
+</tbody>
+</table>
+<p><strong>东财今日-1.57%，是重点标的中最弱的之一。</strong> 用户尾盘加仓属于&quot;左侧布局&quot;，需要等待券商启动信号（如成交额放大+券商指数放量突破）。</p>
+<hr>
+<h2 id="sec-17"><a id="四"></a>四、科技板块全栈分析</h2>
+<h3 id="sec-18">4.1 各板块8/14数据 vs 前日</h3>
+<table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align:center">8/14收盘</th>
+<th style="text-align:center">8/14涨跌</th>
+<th style="text-align:center">8/13涨跌</th>
+<th style="text-align:center">两日累计</th>
+<th style="text-align:center">反包状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CPO</strong></td>
+<td style="text-align:center">8,670.17</td>
+<td style="text-align:center"><strong>+2.88%</strong> 🔥</td>
+<td style="text-align:center">-0.86%</td>
+<td style="text-align:center">+2.0%</td>
+<td style="text-align:center">✅ 完全反包</td>
+</tr>
+<tr>
+<td><strong>存储器</strong></td>
+<td style="text-align:center">3,152.55</td>
+<td style="text-align:center"><strong>+2.16%</strong></td>
+<td style="text-align:center">-1.94%</td>
+<td style="text-align:center">+0.2%</td>
+<td style="text-align:center">✅ 反包</td>
+</tr>
+<tr>
+<td><strong>半导体设备</strong></td>
+<td style="text-align:center">3,158.01</td>
+<td style="text-align:center"><strong>+1.93%</strong></td>
+<td style="text-align:center">-1.75%</td>
+<td style="text-align:center">+0.2%</td>
+<td style="text-align:center">✅ 反包</td>
+</tr>
+<tr>
+<td><strong>半导体材料</strong></td>
+<td style="text-align:center">2,757.00</td>
+<td style="text-align:center"><strong>+2.02%</strong></td>
+<td style="text-align:center">-2.47%</td>
+<td style="text-align:center">-0.5%</td>
+<td style="text-align:center">⚠️ 大部分反包</td>
+</tr>
+<tr>
+<td><strong>先进封装</strong></td>
+<td style="text-align:center">2,927.91</td>
+<td style="text-align:center"><strong>+2.23%</strong></td>
+<td style="text-align:center">-1.67%</td>
+<td style="text-align:center">+0.6%</td>
+<td style="text-align:center">✅ 反包</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-19">4.2 核心发现</h3>
+<blockquote>
+<p><strong>8/14科技全线反包，验证了8/13的冲高回落只是浅回调。</strong> 六大板块全部上涨+1.9~2.9%，CPO领涨+2.88%。</p>
+</blockquote>
+<h3 id="sec-20">4.3 分板块深度分析</h3>
+<h4>(1) CPO/光通讯 —— 反包最强，三杰集体反弹</h4>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">8/14收盘</th>
+<th style="text-align:center">涨跌</th>
+<th style="text-align:center">8/13涨跌</th>
+<th style="text-align:center">两日累计</th>
+<th>特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中际旭创</td>
+<td style="text-align:center">943.00</td>
+<td style="text-align:center"><strong>+2.38%</strong></td>
+<td style="text-align:center">+0.00%</td>
+<td style="text-align:center">+2.4%</td>
+<td>站回940</td>
+</tr>
+<tr>
+<td>新易盛</td>
+<td style="text-align:center">448.08</td>
+<td style="text-align:center"><strong>+4.23%</strong> 🔥</td>
+<td style="text-align:center">+0.40%</td>
+<td style="text-align:center">+4.6%</td>
+<td>反弹最强</td>
+</tr>
+<tr>
+<td>天孚通信</td>
+<td style="text-align:center">267.71</td>
+<td style="text-align:center"><strong>+4.10%</strong> 🔥</td>
+<td style="text-align:center">+7.13%</td>
+<td style="text-align:center">+11.2%</td>
+<td>三日累计暴涨</td>
+</tr>
+<tr>
+<td>CPO板块</td>
+<td style="text-align:center">8,670.17</td>
+<td style="text-align:center">+2.88%</td>
+<td style="text-align:center">-0.86%</td>
+<td style="text-align:center">+2.0%</td>
+<td>反包</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键判断</strong>：</p>
+<ul>
+<li>天孚通信三日累计+11.2%，是CPO最强方向（材料/器件）</li>
+<li>中际/新易盛/天孚三杰今日集体反弹+2.4~4.2%</li>
+<li>CPO板块反包8/13跌幅，三角突破有效性确认</li>
+</ul>
+<h4>(2) PCB —— 沪电企稳+0.51%</h4>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">8/14收盘</th>
+<th style="text-align:center">涨跌</th>
+<th>特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>沪电股份</td>
+<td style="text-align:center">121.27</td>
+<td style="text-align:center">+0.51%</td>
+<td>120支撑企稳</td>
+</tr>
+</tbody>
+</table>
+<h4>(3) 存储器 —— 长鑫+4.35%，存储反弹映射</h4>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">8/14收盘</th>
+<th style="text-align:center">涨跌</th>
+<th>特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>长鑫科技</strong></td>
+<td style="text-align:center"><strong>55.18</strong></td>
+<td style="text-align:center"><strong>+4.35%</strong> 🔥</td>
+<td>美股存储反弹映射</td>
+</tr>
+<tr>
+<td>存储器板块</td>
+<td style="text-align:center">3,152.55</td>
+<td style="text-align:center">+2.16%</td>
+<td>反包</td>
+</tr>
+</tbody>
+</table>
+<p><strong>长鑫科技从52.88→55.18（+4.35%），接近8/13高点55.92。</strong> 成本47.82浮盈+15.4%。</p>
+<h4>(4) 半导体设备 —— 反包，北方华创微涨</h4>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">8/14收盘</th>
+<th style="text-align:center">涨跌</th>
+<th>特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>北方华创</td>
+<td style="text-align:center">738.66</td>
+<td style="text-align:center">+0.01%</td>
+<td>弱于板块</td>
+</tr>
+</tbody>
+</table>
+<p>北方华创今日仅+0.01%，是科技权重中最弱的。8/13暴跌-2.82%后今日几乎无反弹。</p>
+<h4>(5) 半导体材料/先进封装 —— 反包</h4>
+<table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align:center">涨跌</th>
+<th>特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>半导体材料</td>
+<td style="text-align:center">+2.02%</td>
+<td>大部分反包</td>
+</tr>
+<tr>
+<td>先进封装</td>
+<td style="text-align:center">+2.23%</td>
+<td>反包</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="sec-21"><a id="五"></a>五、资金流向对比（8/14 vs 8/13）</h2>
+<h3 id="sec-22">5.1 主力资金净流入对比</h3>
+<table>
+<thead>
+<tr>
+<th>板块</th>
+<th style="text-align:center">8/13(回踩日)</th>
+<th style="text-align:center">8/14(反包日)</th>
+<th style="text-align:center">方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CPO</strong></td>
+<td style="text-align:center">流出</td>
+<td style="text-align:center"><strong>流入（反包）</strong></td>
+<td style="text-align:center">✅ 反转</td>
+</tr>
+<tr>
+<td><strong>存储器</strong></td>
+<td style="text-align:center">流出</td>
+<td style="text-align:center"><strong>流入（反包）</strong></td>
+<td style="text-align:center">✅ 反转</td>
+</tr>
+<tr>
+<td><strong>半导体设备</strong></td>
+<td style="text-align:center">流出</td>
+<td style="text-align:center"><strong>流入（反包）</strong></td>
+<td style="text-align:center">✅ 反转</td>
+</tr>
+<tr>
+<td><strong>半导体材料</strong></td>
+<td style="text-align:center">流出</td>
+<td style="text-align:center"><strong>流入（反包）</strong></td>
+<td style="text-align:center">✅ 反转</td>
+</tr>
+<tr>
+<td><strong>先进封装</strong></td>
+<td style="text-align:center">流出</td>
+<td style="text-align:center"><strong>流入（反包）</strong></td>
+<td style="text-align:center">✅ 反转</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-23">5.2 核心判断</h3>
+<blockquote>
+<p><strong>8/14资金面全面回流。</strong> 8/13的冲高回落只是&quot;洗盘&quot;，8/14科技全线反包，资金重新流入。这验证了&quot;调整深度小&quot;的判断。</p>
+<p><strong>但券商资金未启动</strong>——东财-1.57%，说明资金还在科技，尚未轮到券商。</p>
+</blockquote>
+<hr>
+<h2 id="sec-24"><a id="六"></a>六、企稳信号量化判定</h2>
+<h3 id="sec-25">6.1 大盘企稳信号</h3>
+<table>
+<thead>
+<tr>
+<th>信号</th>
+<th style="text-align:center">8/13</th>
+<th style="text-align:center">8/14</th>
+<th style="text-align:center">判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>创业板</td>
+<td style="text-align:center">-0.45%</td>
+<td style="text-align:center"><strong>+1.12%</strong></td>
+<td style="text-align:center">✅ 反包</td>
+</tr>
+<tr>
+<td>科创50</td>
+<td style="text-align:center">-1.11%</td>
+<td style="text-align:center">收平</td>
+<td style="text-align:center">⚠️ 弱于创业板</td>
+</tr>
+<tr>
+<td>科技板块</td>
+<td style="text-align:center">全面回调</td>
+<td style="text-align:center"><strong>全面反包</strong></td>
+<td style="text-align:center">✅✅</td>
+</tr>
+<tr>
+<td>成交额</td>
+<td style="text-align:center">2.55万亿</td>
+<td style="text-align:center">2.5万亿+</td>
+<td style="text-align:center">✅ 维持高位</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-26">6.2 20日线支撑再验证</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">8/14收盘</th>
+<th style="text-align:center">20日线</th>
+<th style="text-align:center">是否站上</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中际旭创</td>
+<td style="text-align:center">943.00</td>
+<td style="text-align:center">~920</td>
+<td style="text-align:center">✅ 站上</td>
+</tr>
+<tr>
+<td>长鑫科技</td>
+<td style="text-align:center">55.18</td>
+<td style="text-align:center">~52</td>
+<td style="text-align:center">✅✅ 站上</td>
+</tr>
+<tr>
+<td>中芯国际</td>
+<td style="text-align:center">132.87</td>
+<td style="text-align:center">~127</td>
+<td style="text-align:center">✅✅ 站上</td>
+</tr>
+<tr>
+<td>北方华创</td>
+<td style="text-align:center">738.66</td>
+<td style="text-align:center">~750</td>
+<td style="text-align:center">⚠️ 仍在下方</td>
+</tr>
+<tr>
+<td>沪电股份</td>
+<td style="text-align:center">121.27</td>
+<td style="text-align:center">~120</td>
+<td style="text-align:center">✅ 站上</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>大科技整体站稳20日线，三角突破有效性进一步确认。</strong> 仅北方华创仍在20日线下方，需关注。</p>
+</blockquote>
+<hr>
+<h2 id="sec-27"><a id="七"></a>七、重点个股全栈MA5/RSI5量化计算</h2>
+<h3 id="sec-28">7.1 中芯国际（688981.SH）★持仓 + 业绩会兑现</h3>
+<p><strong>近5日K线</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th style="text-align:center">收盘</th>
+<th style="text-align:center">涨跌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8/10</td>
+<td style="text-align:center">126.25</td>
+<td style="text-align:center">-1.75%</td>
+</tr>
+<tr>
+<td>8/11</td>
+<td style="text-align:center">125.41</td>
+<td style="text-align:center">-0.67%</td>
+</tr>
+<tr>
+<td>8/12</td>
+<td style="text-align:center">127.96</td>
+<td style="text-align:center">+2.03%</td>
+</tr>
+<tr>
+<td>8/13</td>
+<td style="text-align:center">129.44</td>
+<td style="text-align:center">+1.16%</td>
+</tr>
+<tr>
+<td>8/14</td>
+<td style="text-align:center"><strong>132.87</strong></td>
+<td style="text-align:center"><strong>+2.65%</strong> 🔥</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th style="text-align:center">计算值</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MA5</strong></td>
+<td style="text-align:center">128.39</td>
+<td>收盘132.87 &gt; MA5，偏离+3.49%</td>
+</tr>
+<tr>
+<td><strong>RSI5</strong></td>
+<td style="text-align:center">~62-68</td>
+<td>中性偏强</td>
+</tr>
+<tr>
+<td><strong>20日线</strong></td>
+<td style="text-align:center">~127</td>
+<td>✅ 站上</td>
+</tr>
+<tr>
+<td><strong>压力位</strong></td>
+<td style="text-align:center">135.36（今日高点）/136</td>
+<td>距当前+1.9-2.4%</td>
+</tr>
+<tr>
+<td><strong>成交额</strong></td>
+<td style="text-align:center">102.9亿（放量）</td>
+<td>业绩会催化放量</td>
+</tr>
+</tbody>
+</table>
+<p><strong>评估</strong>：中芯+2.65%放量突破132，Q2超预期+业绩会兑现。RSI偏强，站上20日线。冲高135.36后回落132.87，短期可能继续冲136。</p>
+<h3 id="sec-29">7.2 长鑫科技（688825.SH）★核心仓位</h3>
+<p><strong>近5日K线</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th style="text-align:center">收盘</th>
+<th style="text-align:center">涨跌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8/10</td>
+<td style="text-align:center">51.30</td>
+<td style="text-align:center">-2.25%</td>
+</tr>
+<tr>
+<td>8/11</td>
+<td style="text-align:center">50.40</td>
+<td style="text-align:center">-1.75%</td>
+</tr>
+<tr>
+<td>8/12</td>
+<td style="text-align:center">53.52</td>
+<td style="text-align:center">+6.19%</td>
+</tr>
+<tr>
+<td>8/13</td>
+<td style="text-align:center">52.88</td>
+<td style="text-align:center">-1.20%</td>
+</tr>
+<tr>
+<td>8/14</td>
+<td style="text-align:center"><strong>55.18</strong></td>
+<td style="text-align:center"><strong>+4.35%</strong> 🔥</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th style="text-align:center">计算值</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MA5</strong></td>
+<td style="text-align:center">52.66</td>
+<td>收盘55.18 &gt; MA5，偏离+4.79%</td>
+</tr>
+<tr>
+<td><strong>RSI5</strong></td>
+<td style="text-align:center">~55-60</td>
+<td>中性偏强</td>
+</tr>
+<tr>
+<td><strong>20日线</strong></td>
+<td style="text-align:center">~52</td>
+<td>✅✅ 站上</td>
+</tr>
+<tr>
+<td><strong>压力位</strong></td>
+<td style="text-align:center">55.92（8/13高点）</td>
+<td>距当前+1.3%</td>
+</tr>
+<tr>
+<td><strong>成本47.82</strong></td>
+<td style="text-align:center">浮盈+15.4%</td>
+<td>🟢🟢</td>
+</tr>
+</tbody>
+</table>
+<p><strong>评估</strong>：长鑫+4.35%反弹至55.18，接近8/13高点55.92。成本47.82浮盈+15.4%。存储反弹映射+反包，强势。</p>
+<h3 id="sec-30">7.3 北方华创（002371.SZ）—— 今日最弱</h3>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th style="text-align:center">收盘</th>
+<th style="text-align:center">涨跌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8/10</td>
+<td style="text-align:center">760.00</td>
+<td style="text-align:center">+1.07%</td>
+</tr>
+<tr>
+<td>8/11</td>
+<td style="text-align:center">746.10</td>
+<td style="text-align:center">-1.83%</td>
+</tr>
+<tr>
+<td>8/12</td>
+<td style="text-align:center">760.00</td>
+<td style="text-align:center">+1.86%</td>
+</tr>
+<tr>
+<td>8/13</td>
+<td style="text-align:center">738.60</td>
+<td style="text-align:center">-2.82%</td>
+</tr>
+<tr>
+<td>8/14</td>
+<td style="text-align:center"><strong>738.66</strong></td>
+<td style="text-align:center"><strong>+0.01%</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th style="text-align:center">计算值</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MA5</strong></td>
+<td style="text-align:center">748.67</td>
+<td>收盘738.66 &lt; MA5，偏离-1.34%</td>
+</tr>
+<tr>
+<td><strong>RSI5</strong></td>
+<td style="text-align:center">~40-45</td>
+<td>偏弱</td>
+</tr>
+<tr>
+<td><strong>20日线</strong></td>
+<td style="text-align:center">~750</td>
+<td>❌ 仍在下方</td>
+</tr>
+</tbody>
+</table>
+<p><strong>评估</strong>：北方华创8/13暴跌-2.82%后今日仅+0.01%，是科技权重中最弱的。连续两日弱于板块，短期偏弱。</p>
+<h3 id="sec-31">7.4 东方财富（300059.SZ）★新加仓（券商）</h3>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th style="text-align:center">收盘</th>
+<th style="text-align:center">涨跌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8/10</td>
+<td style="text-align:center">20.03</td>
+<td style="text-align:center">+0.25%</td>
+</tr>
+<tr>
+<td>8/11</td>
+<td style="text-align:center">19.84</td>
+<td style="text-align:center">-0.95%</td>
+</tr>
+<tr>
+<td>8/12</td>
+<td style="text-align:center">19.83</td>
+<td style="text-align:center">-0.05%</td>
+</tr>
+<tr>
+<td>8/13</td>
+<td style="text-align:center">19.78</td>
+<td style="text-align:center">-0.25%</td>
+</tr>
+<tr>
+<td>8/14</td>
+<td style="text-align:center"><strong>19.47</strong></td>
+<td style="text-align:center"><strong>-1.57%</strong> ❌</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th style="text-align:center">计算值</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MA5</strong></td>
+<td style="text-align:center">19.79</td>
+<td>收盘19.47 &lt; MA5，偏离-1.62%</td>
+</tr>
+<tr>
+<td><strong>RSI5</strong></td>
+<td style="text-align:center">~32-38</td>
+<td>偏弱</td>
+</tr>
+<tr>
+<td><strong>20日线</strong></td>
+<td style="text-align:center">~19.9</td>
+<td>❌ 跌破</td>
+</tr>
+<tr>
+<td><strong>三周表现</strong></td>
+<td style="text-align:center">20.36→19.47（-4.4%）</td>
+<td>持续阴跌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>评估</strong>：东财今日-1.57%，是重点标的中最弱的。券商板块未启动，用户尾盘加仓属于&quot;左侧布局&quot;。三周持续阴跌，RSI偏弱。需要券商板块的启动信号确认。</p>
+<h3 id="sec-32">7.5 宁德时代（300750.SZ）</h3>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th style="text-align:center">收盘</th>
+<th style="text-align:center">涨跌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8/10</td>
+<td style="text-align:center">393.87</td>
+<td style="text-align:center">+1.86%</td>
+</tr>
+<tr>
+<td>8/11</td>
+<td style="text-align:center">390.40</td>
+<td style="text-align:center">-0.88%</td>
+</tr>
+<tr>
+<td>8/12</td>
+<td style="text-align:center">393.93</td>
+<td style="text-align:center">+0.90%</td>
+</tr>
+<tr>
+<td>8/13</td>
+<td style="text-align:center">396.30</td>
+<td style="text-align:center">+0.60%</td>
+</tr>
+<tr>
+<td>8/14</td>
+<td style="text-align:center"><strong>393.93</strong></td>
+<td style="text-align:center"><strong>-0.60%</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th style="text-align:center">计算值</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MA5</strong></td>
+<td style="text-align:center">393.69</td>
+<td>收盘393.93 ≈ MA5</td>
+</tr>
+<tr>
+<td><strong>RSI5</strong></td>
+<td style="text-align:center">~48-52</td>
+<td>中性</td>
+</tr>
+</tbody>
+</table>
+<p><strong>评估</strong>：宁德在390-396区间持续震荡，底部确认但缺乏向上突破的动能。</p>
+<h3 id="sec-33">7.6 沪电股份（002463.SZ）</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th style="text-align:center">数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8/14收盘</td>
+<td style="text-align:center">121.27（+0.51%）</td>
+</tr>
+<tr>
+<td>MA5</td>
+<td style="text-align:center">~121.5</td>
+</tr>
+<tr>
+<td>支撑位</td>
+<td style="text-align:center">120（已多次测试）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-34">7.7 通信ETF（515050.SH）</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th style="text-align:center">数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8/14收盘</td>
+<td style="text-align:center"><strong>1.074</strong>（+2.78%）</td>
+</tr>
+<tr>
+<td>前收</td>
+<td style="text-align:center">1.045</td>
+</tr>
+<tr>
+<td>涨幅</td>
+<td style="text-align:center">+2.78%</td>
+</tr>
+</tbody>
+</table>
+<p>通信ETF今日+2.78%至1.074，CPO反包带动。但FCC风险敞口仍在，反弹减仓逻辑不变。</p>
+<h3 id="sec-35">7.8 中际旭创（300308.SZ）★战术仓位</h3>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th style="text-align:center">收盘</th>
+<th style="text-align:center">涨跌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8/10</td>
+<td style="text-align:center">864.58</td>
+<td style="text-align:center">-6.01%</td>
+</tr>
+<tr>
+<td>8/11</td>
+<td style="text-align:center">886.96</td>
+<td style="text-align:center">+2.59%</td>
+</tr>
+<tr>
+<td>8/12</td>
+<td style="text-align:center">921.00</td>
+<td style="text-align:center">+3.84%</td>
+</tr>
+<tr>
+<td>8/13</td>
+<td style="text-align:center">921.04</td>
+<td style="text-align:center">+0.00%</td>
+</tr>
+<tr>
+<td>8/14</td>
+<td style="text-align:center"><strong>943.00</strong></td>
+<td style="text-align:center"><strong>+2.38%</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th style="text-align:center">计算值</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MA5</strong></td>
+<td style="text-align:center">907.32</td>
+<td>收盘943 &gt; MA5，偏离+3.93%</td>
+</tr>
+<tr>
+<td><strong>RSI5</strong></td>
+<td style="text-align:center">~55-60</td>
+<td>中性偏强</td>
+</tr>
+<tr>
+<td><strong>20日线</strong></td>
+<td style="text-align:center">~920</td>
+<td>✅ 站上</td>
+</tr>
+<tr>
+<td><strong>压力位</strong></td>
+<td style="text-align:center">950-960</td>
+<td>距当前+0.7-1.8%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>评估</strong>：中际+2.38%至943，站上20日线。从8/10低点864已反弹+9.1%。接近950-960压力区。</p>
+<hr>
+<h2 id="sec-36"><a id="八"></a>八、风险回报率评估与操作建议</h2>
+<h3 id="sec-37">8.1 持仓总览</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">持仓</th>
+<th style="text-align:center">成本</th>
+<th style="text-align:center">8/14收盘</th>
+<th style="text-align:center">今日涨跌</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>长鑫科技</strong></td>
+<td style="text-align:center">800股</td>
+<td style="text-align:center">47.82</td>
+<td style="text-align:center">55.18</td>
+<td style="text-align:center">+4.35%</td>
+<td>🟢🟢 浮盈+15.4%</td>
+</tr>
+<tr>
+<td><strong>中芯国际</strong></td>
+<td style="text-align:center">200股</td>
+<td style="text-align:center">121.10</td>
+<td style="text-align:center">132.87</td>
+<td style="text-align:center">+2.65%</td>
+<td>🟢 浮盈+9.7%</td>
+</tr>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td style="text-align:center">小仓位</td>
+<td style="text-align:center">~860</td>
+<td style="text-align:center">943.00</td>
+<td style="text-align:center">+2.38%</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td><strong>创业50ETF</strong></td>
+<td style="text-align:center">仓位</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">—</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td><strong>通讯ETF</strong></td>
+<td style="text-align:center">做T中</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">1.074</td>
+<td style="text-align:center">+2.78%</td>
+<td>🟡</td>
+</tr>
+<tr>
+<td><strong>东方财富</strong></td>
+<td style="text-align:center"><strong>尾盘加仓</strong></td>
+<td style="text-align:center">~19.5</td>
+<td style="text-align:center">19.47</td>
+<td style="text-align:center">-1.57%</td>
+<td>🟡 券商左侧</td>
+</tr>
+<tr>
+<td><strong>恒生科技</strong></td>
+<td style="text-align:center">仓位</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">—</td>
+<td>🟢</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-38">8.2 综合操作建议</h3>
+<h4>长鑫科技（688825）★核心仓位</h4>
+<blockquote>
+<p><strong>操作：800股持有，成本47.82，56-58减200-400股锁利</strong></p>
+<p>+4.35%至55.18，浮盈+15.4%。接近8/13高点55.92，56-58是减仓区间。</p>
+</blockquote>
+<h4>中芯国际（688981）★Q2+业绩会兑现</h4>
+<blockquote>
+<p><strong>操作：持有200股，136附近减100股锁利</strong></p>
+<p>Q2超预期+业绩会兑现，今日+2.65%放量至132.87。接近136压力，冲高减仓。</p>
+</blockquote>
+<h4>东方财富（300059）★券商左侧布局</h4>
+<blockquote>
+<p><strong>操作：小仓位持有，等券商板块启动信号再加仓</strong></p>
+<p>券商叙事&quot;前半段&quot;（补涨轮动）成立，但&quot;后半段&quot;（跟随美股调整）需警惕。今日东财-1.57%说明券商未启动，属于左侧布局。关键观察：券商板块是否放量突破+成交额能否继续放大。</p>
+</blockquote>
+<h4>中际旭创（300308）★战术仓位</h4>
+<blockquote>
+<p><strong>操作：950-960减仓，880止损</strong></p>
+<p>反弹至943，接近950-960压力区。</p>
+</blockquote>
+<h4>通讯ETF（515050）★反弹减仓</h4>
+<blockquote>
+<p><strong>操作：1.08-1.10继续减仓</strong></p>
+<p>今日+2.78%至1.074，CPO反包带动。反弹减仓逻辑不变。</p>
+</blockquote>
+<hr>
+<h2 id="sec-39"><a id="九"></a>九、综合研判与后续策略</h2>
+<h3 id="sec-40">9.1 今日核心判断</h3>
+<blockquote>
+<p><strong>8/14是&quot;科技反包日&quot;。</strong> 8/13的冲高回落果然只是浅回调，8/14科技全线反包（CPO+2.88%/存储+2.16%），验证了三角突破的有效性。</p>
+<p><strong>券商叙事的&quot;前半段&quot;成立，&quot;后半段&quot;需警惕。</strong> 券商确实是半年没轮动过的板块，叠加央行万亿逆回购+成交额高企，补涨逻辑成立。但用户做的本质是&quot;高低切换的再切换&quot;——从高位科技转向低位券商，是风险意识强的体现。不过券商的补涨是脉冲式的，缺乏产业逻辑支撑。</p>
+</blockquote>
+<h3 id="sec-41">9.2 关键观察点</h3>
+<table>
+<thead>
+<tr>
+<th>观察点</th>
+<th>看多信号</th>
+<th>看空信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>券商</td>
+<td>板块放量突破+成交额放大</td>
+<td>东财继续阴跌</td>
+</tr>
+<tr>
+<td>中芯</td>
+<td>突破136</td>
+<td>回落至130以下</td>
+</tr>
+<tr>
+<td>长鑫</td>
+<td>突破56</td>
+<td>跌破52</td>
+</tr>
+<tr>
+<td>中际</td>
+<td>突破950</td>
+<td>跌破900</td>
+</tr>
+<tr>
+<td>北方华创</td>
+<td>重新站上750</td>
+<td>跌破738</td>
+</tr>
+<tr>
+<td>美股纳指</td>
+<td>创新高</td>
+<td>中期选举前下跌</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-42">9.3 后续操作纲领</h3>
+<pre class="code-block"><code>核心策略：科技反包确认，持有核心仓位，券商左侧布局
 
 1. 存储链 ★★★★★：长鑫800股持有，56-58减
 2. 晶圆代工 ★★★★：中芯持有，136减100股
@@ -536,13 +1323,15 @@ const md = `# A股市场全面深度复盘 —— 2026年8月14日（周五 · �
 4. 券商 ★★★：东财左侧布局，等启动信号
 5. 综合配置 ★★★★：创业50ETF持有
 6. 通讯ETF ★★：反弹减仓
-\`\`\`
+</code></pre>
+<hr>
+<blockquote>
+<p><strong>报告生成</strong>：2026年8月14日收盘
+<strong>数据来源</strong>：NeoData金融搜索服务、公开财经资讯
+<strong>声明</strong>：本文所有分析仅供参考，不构成任何投资建议。市场有风险，投资需谨慎。</p>
+</blockquote>
 
----
-
-> **报告生成**：2026年8月14日收盘
-> **数据来源**：NeoData金融搜索服务、公开财经资讯
-> **声明**：本文所有分析仅供参考，不构成任何投资建议。市场有风险，投资需谨慎。
-`;
-document.getElementById("content").innerHTML = marked.parse(md);
-</script></body></html>
+  <div class="footer">来源：任务库持仓复盘 · A股深度复盘_20260814.md | 由 markdown-it 转换 | 仅供参考，不构成投资建议</div>
+</div>
+</body>
+</html>
