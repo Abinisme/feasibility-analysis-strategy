@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="ihmCLCKwzPrAooecNsXykE">
+<head data-page-node-id="BHKD5iXjmPBqQWEy0FKuTs">
+<meta charset="UTF-8" data-page-node-id="QQQ0lUDkiC2xhaMJybs84d">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="CaQ70pmYxItGmkAwZt3pa7">
+<title>宁德时代 · 腾讯自选股股票投研圆桌报告</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet" data-page-node-id="9YtfPKjZvIRd2nDSToMosy">
+<style>
+:root {
+  --bg-primary: #F7F5F3; --bg-secondary: #FFFFFF; --bg-card: #FFFFFF;
+  --bg-elevated: #FAFAF9; --bg-warm: #F5F2EE; --bg-dark: #2D2926;
+  --text-primary: #2D2926; --text-secondary: #5C5652;
+  --text-muted: #8A8480; --text-light: #A8A29E;
+  --accent: #D97706; --accent-light: #FEF3C7; --accent-hover: #B45309;
+  --border: #E5E2DE; --border-light: #F0EEEC;
+  --red: #DC2626; --green: #059669; --gold: #D97706; --blue: #2563EB;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', Georgia, serif;
+  background: var(--bg-primary); color: var(--text-primary);
+  line-height: 1.8; font-size: 16px; -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: inherit; font-weight: 600; letter-spacing: 0.02em; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-hover); }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+.prose { max-width: 760px; margin: 0 auto; }
+.prose p { font-size: 1.05rem; line-height: 1.9; margin-bottom: 20px; color: var(--text-primary); }
+.section-head { max-width: 1100px; display: grid; grid-template-columns: 120px 1fr; gap: 32px; align-items: baseline; margin: 0 auto 48px; padding: 0 48px; }
+.section-num { font-size: 0.9rem; color: var(--accent); letter-spacing: 0.15em; border-top: 1px solid var(--accent); padding-top: 8px; }
+.section-title { font-size: 2rem; }
+.section-lede { color: var(--text-muted); margin-top: 6px; font-size: 1rem; }
+section { padding: 72px 0; }
+
+/* ===== Nav ===== */
+nav { position: sticky; top: 0; z-index: 100; height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; background: rgba(247,245,243,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+.nav-logo { font-weight: 600; font-size: 1rem; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { color: var(--text-secondary); font-size: 0.95rem; }
+.nav-links a:hover { color: var(--accent); }
+
+/* ===== Hero ===== */
+.hero { max-width: 1100px; margin: 0 auto; padding: 96px 48px 48px; }
+.kicker { color: var(--accent); font-size: 0.9rem; letter-spacing: 0.15em; font-weight: 500; margin-bottom: 24px; }
+.hero h1 { font-size: 3rem; line-height: 1.25; margin-bottom: 24px; max-width: 900px; }
+.hero-dek { max-width: 760px; font-size: 1.15rem; color: var(--text-secondary); line-height: 1.9; margin-bottom: 40px; }
+.host { display: inline-flex; align-items: center; gap: 12px; font-size: 0.95rem; color: var(--text-muted); }
+.host img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border); }
+
+/* ===== Module 1 · Conclusion Card ===== */
+.conclusion-wrap { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+.conclusion-card {
+  padding: 40px 48px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-left: 6px solid var(--accent); border-radius: 20px;
+  box-shadow: 0 4px 28px rgba(217, 119, 6, 0.06);
+}
+#conclusion { padding: 0; }
+#conclusion .section-head { margin-bottom: 48px; }
+.cc-question {
+  font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.05em;
+  margin-bottom: 8px; text-transform: uppercase;
+}
+.cc-question-text {
+  font-size: 1.4rem; font-weight: 600; color: var(--text-primary);
+  margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px dashed var(--border);
+}
+.cc-question-text::before { content: "「"; color: var(--accent); }
+.cc-question-text::after { content: "」"; color: var(--accent); }
+
+.cc-snapshot { margin-bottom: 32px; }
+.cc-snapshot-label {
+  font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.18em;
+  font-weight: 600; margin-bottom: 14px; text-transform: uppercase;
+}
+.cc-snapshot-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  background: var(--bg-elevated); border: 1px solid var(--border-light);
+  border-radius: 12px; overflow: hidden;
+}
+.cc-snap-cell {
+  padding: 16px 20px;
+  border-right: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  background: var(--bg-elevated);
+}
+.cc-snap-cell:nth-child(4n) { border-right: none; }
+.cc-snap-cell:nth-last-child(-n+4) { border-bottom: none; }
+.cc-snap-cell-label {
+  font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+.cc-snap-cell-value {
+  font-size: 1.4rem; font-weight: 600; color: var(--text-primary);
+  font-variant-numeric: tabular-nums; line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+.cc-snap-cell-sub {
+  font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;
+  font-variant-numeric: tabular-nums;
+}
+.cc-snap-up { color: var(--red); }
+.cc-snap-down { color: var(--green); }
+
+.cc-headline-label {
+  font-size: 0.8rem; color: var(--accent); letter-spacing: 0.2em;
+  font-weight: 600; margin-bottom: 14px; text-transform: uppercase;
+}
+.cc-headline {
+  font-size: 1.15rem; font-weight: 500; color: var(--text-primary);
+  letter-spacing: 0.01em; line-height: 1.75;
+  margin-bottom: 32px; padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+.cc-headline strong { font-weight: 700; color: var(--text-primary); }
+.cc-headline em { font-style: normal; font-weight: 700; color: var(--red); }
+
+.cc-actions-intro {
+  font-size: 0.95rem; color: var(--text-muted); letter-spacing: 0.02em;
+  margin-bottom: 18px;
+}
+.cc-actions {
+  display: flex; flex-direction: column;
+  margin-bottom: 28px;
+}
+.cc-action-row {
+  display: grid; grid-template-columns: 180px 1fr;
+  gap: 28px; padding: 18px 0; align-items: baseline;
+  border-bottom: 1px dashed var(--border-light);
+}
+.cc-action-row:last-child { border-bottom: none; }
+.cc-action-label {
+  font-weight: 600; color: var(--accent); font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+.cc-action-detail {
+  color: var(--text-primary); font-size: 1rem; line-height: 1.85;
+}
+.cc-action-detail strong { color: var(--text-primary); font-weight: 600; }
+
+.cc-vote {
+  display: flex; gap: 14px; flex-wrap: wrap; align-items: center;
+  padding-top: 20px; border-top: 1px dashed var(--border);
+}
+.cc-vote-label { font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.05em; }
+.cc-vote-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.85rem; color: var(--text-secondary);
+  padding: 4px 12px; background: var(--bg-elevated); border-radius: 999px;
+  border: 1px solid var(--border-light);
+}
+.cc-vote-tag .dot { width: 8px; height: 8px; border-radius: 50%; }
+
+/* ===== Module 2 · Voice Card ===== */
+.voice-stack { max-width: 1100px; margin: 0 auto; padding: 0 48px; display: flex; flex-direction: column; gap: 24px; }
+.voice-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px 36px; min-width: 0; }
+.voice-head { display: flex; align-items: center; gap: 12px; padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid var(--border-light); }
+.voice-head img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border); }
+.voice-name { font-weight: 600; font-size: 1.1rem; flex: 1; }
+.voice-card ol, .voice-card ul { padding-left: 20px; }
+.voice-card li { margin-bottom: 12px; line-height: 1.8; }
+.voice-card strong { color: var(--text-primary); font-weight: 600; }
+.voice-card h4 { margin: 20px 0 10px; font-size: 1.05rem; color: var(--text-primary); }
+.voice-card p { margin-bottom: 14px; line-height: 1.85; color: var(--text-secondary); }
+.voice-card table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: 0.95rem; margin: 16px 0; }
+.voice-card th, .voice-card td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+.voice-card th { color: var(--text-muted); font-weight: 500; background: var(--bg-elevated); font-size: 0.85rem; }
+.voice-card .table-scroll { overflow-x: auto; margin: 16px 0; }
+.voice-card .pull-quote { border-left: 3px solid var(--accent); padding: 4px 0 4px 16px; margin: 16px 0; color: var(--text-secondary); font-style: italic; }
+
+/* ===== Module 3a · Notes List（主持人札记） ===== */
+.notes-stack { max-width: 1100px; margin: 0 auto; padding: 0 48px; display: flex; flex-direction: column; gap: 16px; }
+.note-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 24px 28px; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: baseline; }
+.note-num { font-size: 1.6rem; font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; line-height: 1; opacity: 0.6; }
+.note-body h4 { font-size: 1.1rem; margin-bottom: 8px; color: var(--text-primary); }
+.note-body p { font-size: 0.98rem; line-height: 1.85; color: var(--text-secondary); margin: 0 0 12px; }
+.note-body p:last-child { margin-bottom: 0; }
+.note-body p strong { color: var(--text-primary); }
+
+/* ===== Module 3b · Q&A Card（主持人 Q&A） ===== */
+.qa-stack { max-width: 1100px; margin: 0 auto; padding: 0 48px; display: flex; flex-direction: column; gap: 18px; }
+.qa-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 28px 32px; }
+.qa-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; letter-spacing: 0.06em; padding: 4px 12px; border-radius: 999px; background: var(--bg-warm); color: var(--text-secondary); margin-bottom: 14px; font-weight: 500; }
+.qa-tag.tag-key { background: #FEF3C7; color: #B45309; }
+.qa-tag.tag-confuse { background: #FEE2E2; color: #B91C1C; }
+.qa-tag.tag-miss { background: #DBEAFE; color: #1D4ED8; }
+.qa-tag.tag-meta { background: #EDE9FE; color: #6D28D9; }
+.qa-question { font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin-bottom: 14px; line-height: 1.5; }
+.qa-question::before { content: "Q. "; color: var(--accent); font-weight: 700; }
+.qa-answer { color: var(--text-secondary); font-size: 1rem; line-height: 1.85; }
+.qa-answer::before { content: "A. "; color: var(--text-muted); font-weight: 600; margin-right: 4px; }
+.qa-answer p { margin-bottom: 12px; }
+.qa-answer p:last-child { margin-bottom: 0; }
+.qa-answer strong { color: var(--text-primary); }
+
+/* ===== Module 4 · Trigger Table（关键变量触发表） ===== */
+.trigger-wrap { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+.trigger-table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; font-variant-numeric: tabular-nums; }
+.trigger-table th, .trigger-table td { padding: 18px 22px; text-align: left; border-bottom: 1px solid var(--border-light); vertical-align: top; }
+.trigger-table tr:last-child td { border-bottom: none; }
+.trigger-table th { background: var(--bg-elevated); color: var(--text-muted); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
+.trigger-var { font-weight: 600; color: var(--text-primary); font-size: 1.02rem; min-width: 200px; }
+.trigger-var .now { display: block; font-weight: 400; color: var(--text-muted); font-size: 0.85rem; margin-top: 4px; letter-spacing: 0; text-transform: none; }
+.trigger-action { color: var(--text-secondary); font-size: 0.98rem; line-height: 1.85; }
+.trigger-action strong { color: var(--text-primary); font-weight: 600; }
+.trigger-action .up { color: var(--red); font-weight: 600; }
+.trigger-action .down { color: var(--green); font-weight: 600; }
+
+/* ===== Sub-section divider（用于 Module 3 内部 3a / 3b 分隔） ===== */
+.subsection-label { max-width: 1100px; margin: 48px auto 20px; padding: 0 48px; font-size: 0.85rem; color: var(--accent); letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; }
+.subsection-label:first-of-type { margin-top: 0; }
+
+/* ===== Passage Card（兜底承接：4 模块外的非标内容） ===== */
+.passage-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 36px 40px; max-width: 1100px; margin: 0 auto 24px; }
+.passage-card h3 { font-size: 1.3rem; margin-bottom: 16px; color: var(--text-primary); }
+.passage-card h4 { font-size: 1.05rem; margin: 24px 0 10px; color: var(--text-primary); }
+.passage-card p { font-size: 1rem; line-height: 1.9; margin-bottom: 16px; color: var(--text-secondary); }
+.passage-card ul, .passage-card ol { padding-left: 22px; margin-bottom: 16px; }
+.passage-card li { margin-bottom: 8px; line-height: 1.85; color: var(--text-secondary); }
+.passage-card strong { color: var(--text-primary); font-weight: 600; }
+.passage-card table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: 0.95rem; margin: 16px 0 24px; }
+.passage-card th, .passage-card td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--border-light); vertical-align: top; }
+.passage-card th { color: var(--text-muted); font-weight: 500; background: var(--bg-elevated); letter-spacing: 0.04em; font-size: 0.85rem; }
+
+/* ===== Footer ===== */
+footer { background: var(--bg-dark); color: var(--text-light); padding: 48px; text-align: center; margin-top: 72px; }
+footer p { max-width: 680px; margin: 0 auto; font-size: 0.95rem; }
+.footer-sub { margin-top: 16px; font-size: 0.8rem; color: var(--text-light); opacity: 0.7; }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .container, .voice-stack, .qa-stack, .trigger-wrap, .notes-stack, .subsection-label, .conclusion-wrap { padding-left: 24px; padding-right: 24px; }
+  .hero { padding-left: 24px; padding-right: 24px; }
+  .conclusion-card { padding: 28px 24px; }
+  .cc-headline { font-size: 1.05rem; line-height: 1.7; }
+  .cc-action-row { grid-template-columns: 1fr; gap: 6px; }
+  .cc-snapshot-grid { grid-template-columns: repeat(2, 1fr); }
+  .cc-snap-cell:nth-child(4n) { border-right: 1px solid var(--border-light); }
+  .cc-snap-cell:nth-child(2n) { border-right: none; }
+  .cc-snap-cell:nth-last-child(-n+4) { border-bottom: 1px solid var(--border-light); }
+  .cc-snap-cell:nth-last-child(-n+2) { border-bottom: none; }
+  .hero h1 { font-size: 2.2rem; }
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .voice-card, .passage-card { padding: 24px; }
+  .qa-card { padding: 22px; }
+  .trigger-table th, .trigger-table td { padding: 14px 14px; }
+  .note-item { padding: 20px; grid-template-columns: 1fr; gap: 8px; }
+  .section-head { padding: 0 24px; }
+}
+
+/* ===== 深色主题适配 · 与项目首页 #0d1117 色系一致 ===== */
+:root {
+  --bg-primary: #0d1117; --bg-secondary: #161b22; --bg-card: #161b22;
+  --bg-elevated: #1c2129; --bg-warm: #161b22; --bg-dark: #010409;
+  --text-primary: #e6edf3; --text-secondary: #c9d1d9;
+  --text-muted: #8b949e; --text-light: #6e7681;
+  --accent: #d4a24c; --accent-light: #1f2937; --accent-hover: #e0b35f;
+  --border: #30363d; --border-light: #21262d;
+  --red: #ff6b6b; --green: #4ade80; --gold: #d4a24c; --blue: #58a6ff;
+}
+body { background: var(--bg-primary) !important; color: var(--text-primary) !important; }
+footer { background: var(--bg-dark) !important; color: var(--text-muted) !important; }
+.qa-tag.tag-key { background: rgba(212,162,76,0.14) !important; color: #d4a24c !important; border-color: rgba(212,162,76,0.32) !important; }
+.qa-tag.tag-confuse { background: rgba(255,107,107,0.13) !important; color: #ff6b6b !important; border-color: rgba(255,107,107,0.30) !important; }
+.qa-tag.tag-miss { background: rgba(88,166,255,0.13) !important; color: #58a6ff !important; border-color: rgba(88,166,255,0.30) !important; }
+.qa-tag.tag-meta { background: rgba(167,139,250,0.14) !important; color: #a78bfa !important; border-color: rgba(167,139,250,0.30) !important; }
+/* ===== 深色主题适配结束 ===== */
+
+</style>
+</head>
+<body data-page-node-id="Ezy0wrR6GlhOmhBXe55UhC">
+
+<nav data-page-node-id="7ZcYYshMc2viXE8SPxg0GF">
+  <a class="nav-logo" data-page-node-id="c0tY8QjpYFbJi5wPB0kVPE">📰 宁德时代 · 圆桌</a>
+  <div class="nav-links" data-page-node-id="vT2XhaVI9xz4DoOfguWFIo">
+    <a href="#conclusion" data-page-node-id="Hw6plIpYXOEB5trArGR5s9">结论</a>
+    <a href="#voices" data-page-node-id="OEnWGwZGTT2a3GatONZtUQ">视角</a>
+    <a href="#thinking" data-page-node-id="v415DRZToD5RBNzOMLdkGD">思考</a>
+    <a href="#watch" data-page-node-id="YnFXvb1GZbxmr04ibS7hmz">关注</a>
+  </div>
+</nav>
+
+<section class="hero" data-page-node-id="N4BMH3zcI60ACarCQRbwUA">
+  <div class="kicker" data-page-node-id="hHmiAiw9q6HB6HT5K8cZFI">ROUND TABLE · 2026-09-09 · 单股深度 · 300750.SZ</div>
+  <h1 data-page-node-id="HLZrzMRFuMN510pGDwvxMe">宁德时代为什么跌成了「缺德时代」？后面还能看吗？</h1>
+  <div class="hero-dek" data-page-node-id="HCIoAiVNHJKLzOO2vBYMRG">把你本地 8 月至今 27 份复盘档案里的宁德轨迹，和这一个月的新闻数据放在一起交叉验证。六个视角独立研判：生意没坏，坏的是它所在这一环的位置。</div>
+  <div class="host" data-page-node-id="ppH4EElPIDjn75kwE2zK0h">
+    <img src="data:image/webp;base64,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" alt="投研主编" data-page-node-id="hLIArWStW5RjFYFlOGEqYn">
+    <span data-page-node-id="0ZOxQ3sxlILD4gfh1FepaY">投研主编 · 圆汇众（Yuan）· 腾讯自选股股票投研专家团</span>
+  </div>
+</section>
+
+<section id="conclusion" data-page-node-id="kg1VlIFnXAqtLlgHZ7HPNG">
+  <div class="section-head" data-page-node-id="CYQCTH0Fg725YW3GUxeZPp">
+    <div class="section-num" data-page-node-id="99mZBBU0J4wb2Am21lsUuI">01 · 结论</div>
+    <div data-page-node-id="mbht6e00q6rNYoI1Z5Au2f"><h2 data-page-node-id="76tH3PygYHzNoQDdTtrkrJ">圆桌怎么看</h2><p class="section-dek" data-page-node-id="7OZ1tcGCKvx7pifSUMUEAj">六视角交叉验证后的综合判断</p></div>
+  </div>
+  <div class="conclusion-wrap" data-page-node-id="r0Oya8NstLiN3V4aniX8bz">
+    <div class="conclusion-card" data-page-node-id="q8n0s8qcyNTPhYkrPG5uOr">
+
+      <div class="cc-question" data-page-node-id="DhxsxlUKcGZmRaTS2NQok2">YOU ASKED</div>
+      <div class="cc-question-text" data-page-node-id="7fLrjbjyJybpVkMeRr41fw">读取本地复盘路径，时间选择 8 月到现在的，查找关于宁德时代的走势复盘，结合查找新闻数据，尝试解析宁德时代近几个月表现不佳的原因，和后续展望</div>
+
+      <div class="cc-snapshot" data-page-node-id="adg8uiti1NIrZdbPokDcHz">
+        <div class="cc-snapshot-label" data-page-node-id="JtDkCUehN3MFWWhUOqcGXM">当前关键数据 · 2026-09-09 上午（盘中，非收盘定稿）</div>
+        <div class="cc-snapshot-grid" data-page-node-id="GyB7BHeXEDkAXQFzc5kRRX">
+          <div class="cc-snap-cell" data-page-node-id="PHlFi9GJPRKJUdIQY4jfBX">
+            <div class="cc-snap-cell-label" data-page-node-id="AG83gZOJYhgPs4GLIpKgJi">最新价</div>
+            <div class="cc-snap-cell-value" data-page-node-id="52fuMc1lD52fJEgFx5oFTI">331.3 元</div>
+            <div class="cc-snap-cell-sub cc-snap-down" data-page-node-id="YvFUvuzEABHxaGe8faLuAp">9/9 盘中 -1.26%，最低 327.10</div>
+          </div>
+          <div class="cc-snap-cell" data-page-node-id="xDC0QIf2BtBtaHpPtLZRbA">
+            <div class="cc-snap-cell-label" data-page-node-id="aZ7rTMIGcQog5G0I095xze">距 5/7 高点 468.75</div>
+            <div class="cc-snap-cell-value" data-page-node-id="ybVllVxxe5jGRKbXKcSv4w">-29.1%</div>
+            <div class="cc-snap-cell-sub cc-snap-down" data-page-node-id="M0MTD8H4QAEfsIhD4OEZDu">三个月回撤近三成</div>
+          </div>
+          <div class="cc-snap-cell" data-page-node-id="FAdSx9TCifF5UVqIWMkV1J">
+            <div class="cc-snap-cell-label" data-page-node-id="30aUOINyeSNpRhEPhsdjmy">8 月单月 vs 创业板指</div>
+            <div class="cc-snap-cell-value" data-page-node-id="iGCzJ3F4cxjMvL0fB5CNT2">-7.7% / +2.8%</div>
+            <div class="cc-snap-cell-sub cc-snap-down" data-page-node-id="FC05vMoSESNtIRIsW08bNL">单月跑输指数 10.5pct</div>
+          </div>
+          <div class="cc-snap-cell" data-page-node-id="f5rW4mjBxpbfzEPTaEwSNA">
+            <div class="cc-snap-cell-label" data-page-node-id="6edgtncLeubYERs4xGoPWG">2026H1 归母净利</div>
+            <div class="cc-snap-cell-value" data-page-node-id="2selsWEGNX9EH9nh8JAdtL">432.84 亿</div>
+            <div class="cc-snap-cell-sub cc-snap-up" data-page-node-id="bOyc5O47CfW53uHJBiXWtM">+41.98%（日赚 2.4 亿）</div>
+          </div>
+          <div class="cc-snap-cell" data-page-node-id="P1W6lAV2ey5E9HJSpuzlRD">
+            <div class="cc-snap-cell-label" data-page-node-id="gumtGnNHNV9CgLDVk09QeZ">2026H1 毛利率</div>
+            <div class="cc-snap-cell-value" data-page-node-id="9e9JjX3wsWzq0eRcaoaPQP">23.93%</div>
+            <div class="cc-snap-cell-sub cc-snap-down" data-page-node-id="H1qvHBEwY0cUwYyWgGcUx3">-1.09pct；Q2 单季 23.15%</div>
+          </div>
+          <div class="cc-snap-cell" data-page-node-id="DmEKaHH95Pbe3EdxyaJHjb">
+            <div class="cc-snap-cell-label" data-page-node-id="JJXwE7DmMA8daYbEiMXL9H">全球动力电池份额</div>
+            <div class="cc-snap-cell-value" data-page-node-id="S17tda2s0kFeeM61Y5kOEF">39.9%</div>
+            <div class="cc-snap-cell-sub cc-snap-up" data-page-node-id="HjstaCOpXJDP4OUAH3xJCX">+1.7pct，仍在上行</div>
+          </div>
+          <div class="cc-snap-cell" data-page-node-id="1n6yQMGBJQFZomGaCuwW4O">
+            <div class="cc-snap-cell-label" data-page-node-id="ZwG72xBanqr9xHCJWS01ao">PE(TTM) / 2026E</div>
+            <div class="cc-snap-cell-value" data-page-node-id="PTxBmCV3y9lVsk1X9KJmAg">18.06x / 16.1x</div>
+            <div class="cc-snap-cell-sub cc-snap-down" data-page-node-id="m7qEDYyX91agkrGLCoN9Y6">近 5 年分位约 12-18%（待核实）</div>
+          </div>
+          <div class="cc-snap-cell" data-page-node-id="ROUmyYD9HR7VBrY6Q7SHbV">
+            <div class="cc-snap-cell-label" data-page-node-id="3GsyAbvNANP8fnKChHCjnz">回购执行进度</div>
+            <div class="cc-snap-cell-value" data-page-node-id="m8wqDpl9CY0DZF317ofUUA">0 股</div>
+            <div class="cc-snap-cell-sub cc-snap-down" data-page-node-id="6hoROLwnT4QUHO9LZgtEHX">200-400 亿授权，41 天零实施</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cc-headline-label" data-page-node-id="dfZljj1uJ5WyGFQbspCM5y">圆桌综合视角</div>
+      <div class="cc-headline" data-page-node-id="3MSrIIiTIGAcjVJxYIWOtu">宁德<strong data-page-node-id="TTSxnpwXxPiED8ITcO7GLw">不是基本面塌了</strong>，而是资金正在把它的定价框架从成长股搬到制造业——在这一轮的定价<em data-page-node-id="L7g3yAK8hUFRUU6wzy9jAF">迁移完成之前</em>，<strong data-page-node-id="mzaReVqEyfVHU9c88JBbN3">EPS 还在涨、份额还在升，股价仍然可以一路跌</strong>。生意没坏，坏的是"中游电芯制造"这一环的位置：上游锂价吃毛利率、下游车企自研吃定价权，中间还有 9/1 落地的消费税。这条链上的每一环都不是致命伤，但叠起来足够杀掉 30% 的市值。<em data-page-node-id="W1Bfl2YcZqFVMjtSeEXjLT">回购真金白银落地之前，场上无人主张加仓</em>；但也<em data-page-node-id="5GAdBbJfdRbVE5DLowvHBb">无人主张清仓</em>——因为没人能用数据否定它的基本面。</div>
+
+      <div class="cc-actions-intro" data-page-node-id="Dtp8nGBW1mbC5hCpMI3WAU">圆桌涌现的核心视角差异：</div>
+      <div class="cc-actions" data-page-node-id="58OZiRrFRApu0zsP0RAZae">
+        <div class="cc-action-row" data-page-node-id="VHeiTOJBdGxv4nzWB0JL3l">
+          <div class="cc-action-label" data-page-node-id="Qh1U92G8MDDr3irb7kY0Hh">🌊 产业链卡位</div>
+          <div class="cc-action-detail" data-page-node-id="MjXzNDsaK5FujhuzoKtj8P">H1 出货 242.7GWh（+25.3%）、全球份额 39.9%（+1.7pct）、储能销量 +102%——景气确实在。但钱去了有矿的上游（天齐锂业预增 3276%-4935%），宁德是被两头挤的那一环。<strong data-page-node-id="tiHKXA5BuZiZvav4PaAXpg">"去宁化"里唯一的硬变量不是理想，是 2026/9/1 落地的 2% 消费税（2027 年升至 4%、自产自用可规避）——它把车企自研从战略选择变成了财务最优解。</strong>判断：生意没坏，位置坏了，而且<strong data-page-node-id="lffL0iUvpjTEaJ8qVJKgtY">加仓信号可能要等到 2027Q1</strong>（枧下窝锂矿环评撤销、复产再停工，锂价高位停留时间比预期长）</div>
+        </div>
+        <div class="cc-action-row" data-page-node-id="UDa0AHiZSjVrPjd0kd0fSG">
+          <div class="cc-action-label" data-page-node-id="WdkQv4WufqQETQFWYeN7YK">🔬 财报质量</div>
+          <div class="cc-action-detail" data-page-node-id="UCtN6R1BbybIlcFDEIDHNK">营收 +54.80%、归母 +41.98%，看着很好。但<strong data-page-node-id="DTxAXZImCQZdUujIDg82Ru">经营现金流只 +2.61%</strong>，净利润现金含量从 192% 掉到 139%；合同负债较年初 <strong data-page-node-id="XsUYizGz4SRLsCZVV4d3ff">-25.9%</strong>（营收涨一半，客户预付备货款反而掉四分之一）；存货 +38.4%（同比 +81%）吃掉 363 亿。<strong data-page-node-id="0dJxSmT8mhLbhCgkWjzbHa">Q1 的 +52% 斜率是被 Q2 自己证伪的——营收踩油门、利润踩刹车，这是典型的以价换量。</strong>但同样客观的是：境外毛利率 29.97%（+0.95pct）、占比 31.46%，<strong data-page-node-id="SwODzlmqvRsqv0xY9c1jch">车企自研替代只发生在国内低毛利盘子海外还在扩</strong>，市场对"去宁化"定价过度了</div>
+        </div>
+        <div class="cc-action-row" data-page-node-id="XZaqxfnfhP5oyhJPex7M5S">
+          <div class="cc-action-label" data-page-node-id="y0iit45MvCLGcqHJQfHhTK">🧮 估值定价</div>
+          <div class="cc-action-detail" data-page-node-id="fWu0zTOHrLxFFdtCUKuXyj">18.06 倍 PE(TTM)、PEG 0.54（2026E），<strong data-page-node-id="dkY2BxZpCwklqKvKlBhyBs">便宜是确定的</strong>。但当场纠正了用户的说法：<strong data-page-node-id="waFensSsQI2COxGQKNQvEH">"明年快个位数 PE"不成立——2027E 对应 12.9 倍，是"十二倍"不是"个位数"</strong>；真正发生的是 PE 在下降，不是 PE 是个位数。最硬的论据不是价位，是卖方在动什么：<strong data-page-node-id="GjWOhi2NZf0IoKfHJIaXag">大华继显目标 PE 由 31x 降到 23x，动的是倍数不是 EPS</strong>——这是"中枢迁移"最直接的实证。赔率约 2.5:1（上 55% vs 下 22%），<strong data-page-node-id="GWr0DYCnnF9CkipBxKKNXF">支持持有，不支持重仓加码</strong></div>
+        </div>
+        <div class="cc-action-row" data-page-node-id="HXLEEinYpBlukkUZAEitpu">
+          <div class="cc-action-label" data-page-node-id="4DeZVvpxgRWNudJN1uZsJR">📡 四层信号</div>
+          <div class="cc-action-detail" data-page-node-id="9NBziFWt9cJ3sbLMueKF7I">政策层中性、产业层衰减、资讯层全面转空、资金层最明确反向——<strong data-page-node-id="7rsMuDxN2kH1Bke03X04Dg">对齐度 0/4 翻多</strong>。Q2 主动偏股基金持股 3.08 亿股 vs 2025 年末 5.17 亿股（-40%），1047 只基金减仓，宽基 ETF 从 888 亿份被动抛到 189 亿份，港股沽空 48.24%。<strong data-page-node-id="51XRNYJmst2ISnSXK5qCWz">这不是单一利空事件，是系统性转向：资金撤退是多季度的、趋势性的，这种卖盘跟基本面无关，你想等它"利空出尽"是等不到的。</strong>也不是"坟"——份额还在提升、按 65 家机构一致预期算约 15.9 倍</div>
+        </div>
+        <div class="cc-action-row" data-page-node-id="vCGPhlBc3O0BWwg7bAzx4J">
+          <div class="cc-action-label" data-page-node-id="8vsFNT8cRdT9kvGvAM6eCT">⚡ 天级盘面</div>
+          <div class="cc-action-detail" data-page-node-id="LUDd1iFMZC3biGVu4pC8EW">8/6 以来所有反弹全是缩量超卖修复，"资金回流"四条标准（放量 / 连续 3 日 / 跑赢板块 / 站上 MA10）<strong data-page-node-id="FtMM0enmNJ4EF2kCuN8xAI">一条都没沾上</strong>。最狠的一刀是 9/7：<strong data-page-node-id="WMEbYeSieqgTRLDjDTy9zj">当天创业板 +3.41%，宁德收跌 -0.80%</strong>——普涨日不涨反跌。身份已经反转：7-8 月它是带动指数的"工具人"，8/25 之后变成创业板的负拖累项。<strong data-page-node-id="gTHqFZY4U0ExKpRaj5khHN">RSI5≈10 只意味着"容易弹"，不意味着"该弹"</strong></div>
+        </div>
+        <div class="cc-action-row" data-page-node-id="WGKRB2QUyX8WaZDMm1rGLH">
+          <div class="cc-action-label" data-page-node-id="Zr01aYP7eORXwxMFvH84rn">🏔️ 逆向框架</div>
+          <div class="cc-action-detail" data-page-node-id="R2na1givw9RmqnRx5rp20A">三条拒绝条件一条未解除，最硬的一条是：<strong data-page-node-id="Ws7fzExZHfoD2eDDBj35Dv">拿着 400 亿授权、573 元天花板的人投了弃权票，我没有资格比管理层更懂这家公司</strong>。 refunds而不是 ten 份——K 线上找得出依据的买点只有 324-327 / 300-303 / 290 三个，间距 -7.4%、-3.3%，<strong data-page-node-id="GmqcDgBSKrLoBDzeVmKA5N">该项目降级为"隆基级"</strong>（隆基教训：支撑位找得很准，错的是行业）。对用户的"反人性"困境给了最直接的回答：<strong data-page-node-id="eWnphyl8BxRqmloFR5FGCL">左侧分批就没有止损位，有止损位就别在止损位上方加仓——混着用才反人性</strong></div>
+        </div>
+      </div>
+
+      <div class="cc-vote" data-page-node-id="uEXlTbbWGJRuDP474yS5Zw">
+        <span class="cc-vote-label" data-page-node-id="xrZX3xv0TMUGYjGt7EZSTF">投票分布：</span>
+        <span class="cc-vote-tag" data-page-node-id="RBwXRdezK7lKqfir4wF6EO"><span class="dot" style="background:var(--gold)" data-page-node-id="5iHGthw4eli1nATn22wwJC"></span>观望·等信号 3</span>
+        <span class="cc-vote-tag" data-page-node-id="SL2S0Lfh5roKe7oXxEZNrI"><span class="dot" style="background:var(--green)" data-page-node-id="qN13lzuqzGAGTUlOA8cV2h"></span>偏空·减仓窗口 2</span>
+        <span class="cc-vote-tag" data-page-node-id="UpxgKVVUWk9pIWEJQeNeDj"><span class="dot" style="background:var(--red)" data-page-node-id="yITQ4GZKy9oMF9M07QasLN"></span>偏多·持有可 1</span>
+        <span class="cc-vote-tag" data-page-node-id="mYS5c8ikJrKdxBQ99icM8q"><span class="dot" style="background:var(--accent)" data-page-node-id="9OR68MSzKTcwMQBSeftlhD"></span>全员否决清仓 6 / 否决加仓 6</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="voices" data-page-node-id="8LdCB28yCIr2vO5F1khGUS">
+  <div class="section-head" data-page-node-id="HQAhZJE43BYYYscGE74epA">
+    <div class="section-num" data-page-node-id="ctImc7fhIepgdJ62lKkXRu">02 · 视角</div>
+    <div data-page-node-id="BPNTHgYG8CFDrBJ7fFZi0e">
+      <div class="section-title" data-page-node-id="bCbBwN0BqKcDekZea7vU90">6 人怎么看</div>
+      <div class="section-lede" data-page-node-id="HM1lcmX2fi64exAnDm17u0">每位从自己的方法论独立诊断 —— 想看完整推理的人来这里</div>
+    </div>
+  </div>
+
+  <div class="voice-stack" data-page-node-id="XJ0jdBd7O22UH0s4DUhhfp">
+
+    <article class="voice-card" data-page-node-id="8SU8DGJhYy8yKC7dexNCDx">
+      <div class="voice-head" data-page-node-id="iGGODYN2P1RBrCJ1MrGpEU">
+        <img src="data:image/webp;base64,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" alt="产业策略师" data-page-node-id="WE5JyPHUfD2cvYZ59IJI41">
+        <div class="voice-name" data-page-node-id="fJy6Il1nfzGh6XOrkDz40F">🌊 产业策略师 · 星望远</div>
+      </div>
+      <p data-page-node-id="zMwrfyA7BgNIvauV4h2MzA">先看产业趋势与卡位。<strong data-page-node-id="8yAGZ1bz8SooHV8kT56ILw">不是"该产业不在景气周期"，而是"钱不流去你这一环了"</strong>——分子在涨、股价在跌，这种背离只有一个解释：市场在给"未来利润归属"重新定价。</p>
+
+      <h4 data-page-node-id="9zhva8OU3WsM039cG6iHce">景气确实在，但利润往上游跑</h4>
+      <table data-page-node-id="NT9gTnY3aLFroDkifCm2F1">
+        <thead data-page-node-id="yzN9qFBoFC6yeRuozcu3qZ"><tr data-page-node-id="AiDkwbysmODeps0f5b0e9v"><th data-page-node-id="rEXw5EElHBhdt1ewFVQrsw">环节</th><th data-page-node-id="LNYON0gVG13yAuFxjzjRDo">2026H1 数据</th><th data-page-node-id="9nPfO18ScOhyB7xJKGPPJ7">方向</th></tr></thead>
+        <tbody data-page-node-id="NSPD8whBF6GdptMFw7Oadm">
+          <tr data-page-node-id="3OMaZvVF10Xt39OHx48kUh"><td data-page-node-id="Shdlqpq7EJ3e9HuOKkclu5">储能</td><td data-page-node-id="JxPac1k3qQXkLAgiUyENxm">全球出货 +89%；宁德销量 109GWh（+102%）、份额 25.4%</td><td data-page-node-id="Jz95lG3lSYyva1sAHxPe8P">🟢 真景气（需打折验证）</td></tr>
+          <tr data-page-node-id="geoOwa5eL92L3COq5ZFFwD"><td data-page-node-id="FQE9TwpJ9FmXuBCM3eoWU2">动力</td><td data-page-node-id="lXlTP10vjaEaDYjjF9O9tf">全球装车 608.5GWh（+20%）；宁德 242.7GWh（+25.3%）</td><td data-page-node-id="rW9NLLhtl9dYkExZCsRtPB">🟢 稳景气</td></tr>
+          <tr data-page-node-id="2QtIpERHs5HRBnVLNBD6Mw"><td data-page-node-id="VW5BSDZgn7SyNqmV0m1i6q">上游锂</td><td data-page-node-id="zTGFmqDeqPSn6QdXfM8HD2">碳酸锂 8 月初 11.7 万 → 8 月底 15.3-16.05 万；天齐锂业 H1 归母预增 3276%-4935%</td><td data-page-node-id="j92j0xiFdweCv1ntNEKs6W">🔴 钱去了有矿的</td></tr>
+        </tbody>
+      </table>
+      <p data-page-node-id="UpbuUMLwJPZ42VbzIuwLtJ">硬规矩：资源品进入涨价周期，最受益的是有矿的上游，不是加工商。动力毛利率 20.63%（-1.78pct）、储能 23.96%（-1.56pct）——<strong data-page-node-id="VtQjqPz16fVRjeY8OyOjUl">宁德毛利率跌完仍是同业最高，境外反而 +0.95pct，定价权还在，但边际方向向下，这才是市场杀的东西</strong>。</p>
+
+      <h4 data-page-node-id="7ocKX3NgxDsuKq26bMighE">"去宁化"：叙事冲击 &gt;&gt; 现实冲击</h4>
+      <ul data-page-node-id="N1S0o5eisTrJZ8X82chpzA">
+        <li data-page-node-id="yyRKXQBPzR8WHZb0QyAsiT"><strong data-page-node-id="fqsZsftb877nxeqID3cJJP">现实（还没那么糟）</strong>：6 月装机份额 42.7%、7 月 42.33%；H1 国内乘用车 46.7%（+5.6pct）、三元 75.2%（+4.3pct）；车企自研阵营除比亚迪外合计份额仅 <strong data-page-node-id="I8p5fe2kpWnAgSWFsS5SA5">2.78%</strong>，加蜂巢也只有 5.48%</li>
+        <li data-page-node-id="5Vzg2MWfGjahWhV0l6w6qi"><strong data-page-node-id="zm1GLbuI9gnNAmEf6GOBZQ">叙事（在加速）</strong>：理想 26.5 亿增资欣旺达动力成二股东（11.17%）、L8/L6/i8 已装自研电芯；小米"龙甲电池"拉欣旺达+中创新航；小鹏 MONA 转中创新航；蔚来终止与宁德固态合作</li>
+        <li data-page-node-id="8M6ZKcSMIgd0Czxcm186rk"><strong data-page-node-id="8qiDAcjaER1HYPYvlzRH3P">唯一硬变量</strong>：2026/9/1 起锂电 2% 消费税、2027/9/1 升至 4%，<strong data-page-node-id="KfbX3zhHEa5c3lm3csh27a">自产自用可规避或抵扣</strong>——白纸黑字的成本项，把车企自研从战略选择变成财务最优解</li>
+      </ul>
+
+      <h4 data-page-node-id="EqDEzF6Zn5UYO3bF4l7ydi">⚠️ 主动修正（三条，请以此为准）</h4>
+      <ul data-page-node-id="mfQ8E4Jw6WMnjcMl9zyqVJ">
+        <li data-page-node-id="IMdCg3NdM5gG0c4BDw32tf"><strong data-page-node-id="ZbL986JnszvmQpaPeUUGmu">境内/境外必须分开定价</strong>：境内毛利率 21.16%（-1.78pct）、境外 29.97%（+0.95pct，收入占比 31.46%）。混合计算低估了宁德韧性——<strong data-page-node-id="DP4oMupEVGu9IyK5Dw3tHG">但 33.7% 海外份额目前靠国内出口撑着，2027 年出口退税归零、匈牙利电芯未量产、西班牙推到 2027 初：最赚钱的那块生意 2027 年要先撞一次政策墙</strong></li>
+        <li data-page-node-id="QxOVDCPbNLW4j4HXDqYhkz"><strong data-page-node-id="T2cHgwCdy4Nc3Sj2vGaWWJ">"储能一芯难求"要打折验证</strong>：营收 +54.8% 的同时合同负债掉了四分之一，财报侧数据与储能紧张叙事打架。判别标准钉死在三季报——<strong data-page-node-id="r7iW3PgC615CRxg2vbHEuD">储能收入占比能否守住 25% + 储能毛利率能否环比上行</strong></li>
+        <li data-page-node-id="8oomZtNtDgcxTlsK7Q5I8q"><strong data-page-node-id="7ZFHKkxJESmr1mMaBGaMPt">锂价高位停留时间比预期长</strong>：枧下窝锂矿环评 8/26 被撤销、复产后再次停工 → <strong data-page-node-id="BCxCFpOZwTPpVIb9yEKzAC">Q3 报表大概率还是难看，毛利率环比企稳最早 Q4，大概率要到 2027Q1</strong>。原"两条信号满足其一即动"改为<strong data-page-node-id="BImoryPkmTeZzvVYLi0S9q">三条至少满足两条，且时点后移</strong></li>
+      </ul>
+
+      <div class="pull-quote" data-page-node-id="DzLrD0Xt3JvDTUmFcQQ09Z">"你亏的不是'买错了公司'，是'买在了产业链利润分配的拐点上'。这家公司的国内业务在被两头挤，海外业务反而越来越好赚——但它最赚钱的那块生意，2027 年要先撞一次政策墙。底仓留着等信号，别在没信号的时候往下摊；这次要等的信号，可能要等到年底。"</div>
+    </article>
+
+    <article class="voice-card" data-page-node-id="dCYoGTWGWvTtSE3QlSE5HD">
+      <div class="voice-head" data-page-node-id="LATx5p8aejVGDM6MDO1Yay">
+        <img src="data:image/webp;base64,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" alt="信号派首席" data-page-node-id="ntOQARyzkEhCkKfOa5npQT">
+        <div class="voice-name" data-page-node-id="vCGCl90SoqQ8EYhuEaqBWw">📡 信号派首席 · 洲四方</div>
+      </div>
+      <p data-page-node-id="dQ9H8BEacvdJRTiZxzKEyX">四层信号必须对齐才动手；宁可错过，不可做错。<strong data-page-node-id="3b0DAmNGnNyDBSOZ6Y6mtC">这不是单一利空事件，是系统性信号转向——对齐度 0/4 翻多。</strong></p>
+
+      <h4 data-page-node-id="5aQQvzGMVakwOjGsQBI1Yt">四层信号对齐度诊断</h4>
+      <table data-page-node-id="FrPK2Owc7TQscJb6vjfJHF">
+        <thead data-page-node-id="qaVDBbdn4UlVkIUqsFCDtT"><tr data-page-node-id="PCAHraZGr2OM2KxHde3BZ9"><th data-page-node-id="Vr2vLFx1MKaRUzHLaEwOvJ">层级</th><th data-page-node-id="dpDZRfDptcu6h8SfXrLHXF">关键事实</th><th data-page-node-id="R3Aqhnrm8Tjiit0pfgpEfq">判定</th></tr></thead>
+        <tbody data-page-node-id="W96tqxFucHpFrcMeeEvwCA">
+          <tr data-page-node-id="yTXenRHbQILTxcuLZXH0V7"><td data-page-node-id="5rmCFwetyMkWSUYK8qrZLb">政策</td><td data-page-node-id="VIyRthEXLplL2zd8ERbPut">2026/9/1 起锂电 2% 消费税、2027/9/1 升 4%；钠电/固态/燃料电池免征至 2028 年底；安全标准提至"不起火不爆炸"</td><td data-page-node-id="t247bC7Oo8h3Vh4vXaJUwS">顺风→中性，不是杀手</td></tr>
+          <tr data-page-node-id="onxgzoBTiBAq3GmcdZfYBD"><td data-page-node-id="MJWBVSygDtqHffWmfHyNUE">产业</td><td data-page-node-id="AkWpgLE6zJD1BeyiuiUYkT">份额/业绩仍强，但 SMM 库存口径 7.6 万→16.9 万吨、期货从 16 万跌到 14 万/吨、排产下修传闻</td><td data-page-node-id="uFAVpBBdgZYIFgzCi9tqN4">🔴 景气衰减 + 格局实质转弱</td></tr>
+          <tr data-page-node-id="RFScj3Li9U5MDIoCcFRZML"><td data-page-node-id="330nDzETQxbdX8eDiIDC0s">资讯</td><td data-page-node-id="p45zKTCjalrS0raG4Ap4ue">利空连续供给：8/6 锂价 → 9/1 消费税 → 9/4 库存口径 → 9/7 理想自研 → 9/8 大跌</td><td data-page-node-id="geyJnBOVaU69E3s6BtGwAD">🔴 全面转空，无反转信号</td></tr>
+          <tr data-page-node-id="MaDjm591n4XKJg3sBqCtBh"><td data-page-node-id="CArbzEy0RbqK89JBK4SPEW">资金</td><td data-page-node-id="gdJJYirr58Y8E2RDMzlHJg">Q2 末基金持股 3.08 亿股 vs 2025 年末 5.17 亿股（<strong data-page-node-id="eoRHYjMQ2Kh8z5HF2hXWfz">-40%</strong>），1047 只基金减仓；宽基 ETF 888 亿→448 亿→189 亿份；港股沽空 48.24%；8/24 起 12 个交易日仅 1 根阳线</td><td data-page-node-id="EVDEBWazRsLpZh08ZhwQih">🔴 最明确转空</td></tr>
+        </tbody>
+      </table>
+
+      <h4 data-page-node-id="tKGsOdaz92pKHbLbJAZtMQ">为什么是"系统性转向"而非"单一事件"</h4>
+      <ul data-page-node-id="TxbfeUeGLq24YM5OFCVsKR">
+        <li data-page-node-id="HGUApg2olsbb7nvatMq63t"><strong data-page-node-id="OGWH5QdM7Fsv7eZBZeTAvR">利空是连续供给的</strong>：每波新利空落在前一波下跌基础上，形成"下跌→新利空→再下跌"螺旋，8/6 到 9/8 累计跌超 18%，中间没一个像样的反弹平台</li>
+        <li data-page-node-id="y6hUtWeprAqlNreMUu2rIR"><strong data-page-node-id="IcUsJYnsUdELFL5eVGmsVJ">资金撤退是多季度的</strong>：Q2 基金持股砍掉 40%，不是看到理想新闻才跑的；宽基 ETF 被动抛售是资金再平衡产物，<strong data-page-node-id="CdW7gX3jV2zyuYyhrpLH6K">这种卖盘跟基本面无关，等不来"利空出尽"</strong></li>
+        <li data-page-node-id="dcgSG6XhXzJDXEPyqfNEqm"><strong data-page-node-id="hVLiyt1DirgUoHmFCr3J43">市场在给它换定价框架</strong>：大华继显目标 PE 从 31x 降到 23x；里昂因 Q2 毛利率逊预期下调 H 股目标价。<strong data-page-node-id="Igwio1Qb1rMNixyVX0GKix">框架切换一旦发生，不是靠一个利好能扳回来的</strong></li>
+      </ul>
+
+      <h4 data-page-node-id="4wXad6HiC9kPCHgKNF15N4">黄金坑测试：不满足</h4>
+      <table data-page-node-id="DVOSoDMS3eLSAwf7XHBuQP">
+        <thead data-page-node-id="BxRxF0vaKiv8PSHS8aCMTf"><tr data-page-node-id="RXAIKfm6b3kvHF6v7s1wiI"><th data-page-node-id="XcTlBiHzWA7M1tlMmK5jS6">硬前提</th><th data-page-node-id="vbF56KaUHvBzHXIsMflyR6">检验</th></tr></thead>
+        <tbody data-page-node-id="jFkCLmG7pw0JAXr0bL21OK">
+          <tr data-page-node-id="1VVmbCQbz9YIhqPXXKQQ59"><td data-page-node-id="jyXP4B70h5885JxGWScsYV">① 行业地位不可替代</td><td data-page-node-id="qzAerPJmoOZaRXWJ2FWe5f">🔴 <strong data-page-node-id="IELXLcVtRqyXzFJOTlLGB8">正在被挑战</strong>——理想、小米、小鹏、蔚来接连转向。还是第一，但"不可替代性"这条最不能松动的前提在松动</td></tr>
+          <tr data-page-node-id="OCMD86eo6FkwnC5fR5Au7b"><td data-page-node-id="ci8aDnlxkViwSxawPMkaf0">② 基本面无实质恶化</td><td data-page-node-id="EEUSXtZqhilIIvpUoXuyvl">✅ <strong data-page-node-id="Du9VqemdvVdvj5tAweZAXH">成立</strong>——H1 营收 +54.8%、利润 +42%、份额提升、储能 +102%</td></tr>
+        </tbody>
+      </table>
+
+      <h4 data-page-node-id="INVzBDT1Jl3piRrvFRN9Tc">操作纪律清单</h4>
+      <ul data-page-node-id="4nj5Mv7tHDpif01tjEk4LF">
+        <li data-page-node-id="lmcuGPxaEu3O6Al4W14DMK"><strong data-page-node-id="iSwNAcEWt7gYkGGzjwTvaf">企稳（至少三条同时出现）</strong>：① 回购真金白银落地（最硬，哪怕只买几个亿）；② 锂价站回 15 万 + 排产传闻落地；③ 放量止跌大阳线（成交额从 50-80 亿放大到 150 亿以上，收阳且次日不回补，缩量小阳不算）；④ Q3 份额仍稳在 46% 附近</li>
+        <li data-page-node-id="rS8FAz3t45cKQ9MHotbIkz"><strong data-page-node-id="PzqL1rEwi1YpvD8hhtRBzb">恶化（出现即减仓/离场）</strong>：① 跌破 326 且放量 → 下一档看 300；② 10 月披露的 9 月回购进展仍是零实施；③ 再有一家主流车企主力车型全系切非宁德；④ 反弹后再破 5 日线 / 出现第一根大阴线</li>
+        <li data-page-node-id="IMtPs3ahL74jkf2VYHvkfS"><strong data-page-node-id="JLAwt8oNUcVU5h8FEevpia">最高优先级</strong>：系统性风险（美债 10Y 进一步上行、地缘升级）→ 无条件离场，覆盖一切</li>
+      </ul>
+
+      <div class="pull-quote" data-page-node-id="Y7vFxTwEUU5Ivqb7J4R6er">"347.55 已经破了。既然选了留底仓，那就给底仓下个定义：底仓 = 即使再跌 30% 也不影响你生活质量的仓位。如果现在的仓位让你睡不着，那它就不是底仓，是太重了。"</div>
+    </article>
+
+    <article class="voice-card" data-page-node-id="OkhNbSE0AL1ZFhyO1oFjHp">
+      <div class="voice-head" data-page-node-id="Iq5ZUh6ecrSHi9MbjMxvGp">
+        <img src="data:image/webp;base64,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" alt="估值分析师" data-page-node-id="bJSu7unY1BXrn5HGS1fNZW">
+        <div class="voice-name" data-page-node-id="AML9KVdl19p9J3tNrh6IJm">🧮 估值分析师 · 文衡价</div>
+      </div>
+      <p data-page-node-id="qI9fanbsevh7vyLbAXIWkR">先看增速区间选尺子，Price = EPS × PE，估值是硬约束不是买入理由。<strong data-page-node-id="gFOwui0eAXWHHBr5tT4XCe">17.9 倍是便宜，不是估值陷阱；但这是"下迁中的便宜"——倍数从 25x 往 12x 搬，搬完之前 EPS 涨、股价也可能继续跌。</strong></p>
+
+      <h4 data-page-node-id="JxTc3veSkKfLR49jjLMLdr">自己算一遍倍数</h4>
+      <table data-page-node-id="b4taz3ZReV5TmRYZjIv5RW">
+        <thead data-page-node-id="5RmUFtNC2R46CCLaYB98Is"><tr data-page-node-id="53k4imadFoSewpKnIezLTU"><th data-page-node-id="FhAd9rnXoNfO71vrY3waIj">项</th><th data-page-node-id="iVESRfIa9CD5imGc6rClyc">计算 / 数值</th></tr></thead>
+        <tbody data-page-node-id="d1fgmwbHT5Vh5XQYPkM7rp">
+          <tr data-page-node-id="rwHNKG1m244ddIGgIFOzT7"><td data-page-node-id="YyffAg1lfeb7ebdEAzIf64">TTM 归母净利</td><td data-page-node-id="A1CU8vN3OUh3ltLNeVHhqB">2025 全年 722.01 亿 − 2025H1 304.86 亿 + 2026H1 432.84 亿 ≈ <strong data-page-node-id="cvzW8CLaBGoAHeI3CQdzqx">850 亿</strong></td></tr>
+          <tr data-page-node-id="UqCnpzF609rBLSYX4AFm7o"><td data-page-node-id="8GuM9wRdiXAaiSOvZ47ywE">股本 / TTM EPS</td><td data-page-node-id="rKTyA0rIn4dWfciknsgc9x">≈ 45.5 亿股 / <strong data-page-node-id="blaZBUB8sCNPX76ppAgesy">18.68 元</strong></td></tr>
+          <tr data-page-node-id="2ynqbL3CPWxA2utM6BjJzf"><td data-page-node-id="1X3retGXCEl3hjPxPGlJoQ">PE(TTM)</td><td data-page-node-id="juY760SUHyVKzsMZgIYUkT">335.49 ÷ 18.68 = <strong data-page-node-id="dCeF7yyNw9T2Dr8k6y22z7">17.96 倍</strong>（行情口径 18.06 ✓）</td></tr>
+          <tr data-page-node-id="SiGGJqVbvoXR8K0bSpV7oP"><td data-page-node-id="vECknuzd0XigZ8AHWRsduf">一致预期（65 家）</td><td data-page-node-id="6tG0L8OnXyeoxwOMBuQCAu">2026E EPS <strong data-page-node-id="SVAyA21Wq3jspr8DFtcAzJ">20.82</strong>（+33.4%）／2027E <strong data-page-node-id="mg2rWvlD94UGESIawkhcVH">26.07</strong>（+25.3%）／2028E <strong data-page-node-id="Lai6iIcRCmxULqWFvznowQ">31.25</strong>（+19.8%）</td></tr>
+          <tr data-page-node-id="fveDbqJKDxbyJn3wxQHfGT"><td data-page-node-id="JkT6PaDi7EXRe708Dh2Kqo">现价对应</td><td data-page-node-id="DQ1izovB292xswqFhV7ovD">2026E <strong data-page-node-id="3ygJ0N7r4igLUOwkGZjy5D">16.1x</strong>／2027E <strong data-page-node-id="7wKcLmh1C6YZZAJWxC80Ju">12.9x</strong>／2028E 10.8x</td></tr>
+        </tbody>
+      </table>
+
+      <h4 data-page-node-id="RtKGjw8yB3wCLywI4kdkVW">❌ 纠正一个说法：「明年快个位数 PE」不成立</h4>
+      <p data-page-node-id="BxzGIgvwLcjY3hHiAIES96"><strong data-page-node-id="tbB6D3918JqwSSQyBpoExG">2027E 对应 12.9 倍，是"十二倍"，不是"个位数"。</strong>要让这句话成立必须满足以下任一：(a) 股价再跌 23% 到 <strong data-page-node-id="PrF4f09VRZAnSCEcgMUnr0">260 元以下</strong>；(b) 2027 年 EPS 上修到 33.5 元以上（净利 1550 亿+，比一致预期高 30%——<strong data-page-node-id="8jBV6NiDBChW6slZ1qmRA7">方向相反，那反而是天大的好事</strong>）；(c) 一致预期系统性错判。<br data-page-node-id="L4qNcGGEYJDHaeT1sUh2BS"><strong data-page-node-id="RDNUBjZvdOpootxMx5mimw">真正发生的是「PE 在下降」，不是「PE 是个位数」。这两句话的差别，就是"要不要现在跑"和"要不要继续拿"的差别，不能混着说。</strong></p>
+
+      <h4 data-page-node-id="TrxGXdah5QzTVg6lcahDPH">PEG：0.54 是真的便宜，但增速分母在衰减</h4>
+      <table data-page-node-id="4mEIBDpb1q9XpFtQOuXIUZ">
+        <thead data-page-node-id="5qoIuU5o1FtlhBWvA2rFNt"><tr data-page-node-id="tdLluZhMX7gwTFTHHNTy08"><th data-page-node-id="rxF8S1hdl3CeRbQSiY6Ylx">年份</th><th data-page-node-id="4FCgUgLXt5CFAoX653F0CL">增速</th><th data-page-node-id="Sa0wnXNBgbGkUUCA096sjD">PEG</th></tr></thead>
+        <tbody data-page-node-id="2KcFHC67PGWqO0AtKc2Evn">
+          <tr data-page-node-id="E8wCRYVZglWojZiaMt7qQJ"><td data-page-node-id="3o4oojujF5r9golnvU3Y45">2026E</td><td data-page-node-id="X2SJnCBMKPUB31hIQWD0d3">+33.4%</td><td data-page-node-id="zY6LWRMd4BB6GnYMtZnvPP"><strong data-page-node-id="9eGytjdLZHlMzPjtNdAzIm">0.54</strong></td></tr>
+          <tr data-page-node-id="8NICLI1sxpg4WQtn9DstVS"><td data-page-node-id="174wljKSQd4wiBcgfKlHfQ">2027E</td><td data-page-node-id="fDr6W7krCD7aSMYLzY7oCz">+25.3%</td><td data-page-node-id="3gP7B7AvHSgCl5Ny0MiBkd"><strong data-page-node-id="bECCPyBjxgHGiNRCBnUjIf">0.72</strong></td></tr>
+          <tr data-page-node-id="cNKtpkoC5NsvN32zIyZUQB"><td data-page-node-id="HMsj4y3a0tPnARbY04V5H2">2028E</td><td data-page-node-id="1gt4VYyt2dEHeFPNo1p7o5">+19.8%</td><td data-page-node-id="edCVbpdhcGzFLDglmDUYWv"><strong data-page-node-id="5hSwEDsSKLvOGbLTMNijAY">0.91</strong></td></tr>
+        </tbody>
+      </table>
+      <p data-page-node-id="LHC1R3U2R764AwhWQ0ax3e">全部 &lt; 1，0.5 出头是明显便宜。<strong data-page-node-id="EuWv2lRzE49R1Qf55Db0SJ">但有个坑：增速分母以每年 8-10pct 衰减，2029 年大概率掉到 15% 以下，届时 PEG 失效、得换回 PE Bands。所以不能拿今天的 0.54 去推"应该修复到 25x"。</strong></p>
+
+      <h4 data-page-node-id="EO7vMqlqMmKwL7G2ZPNFES">PE Bands：位置便宜，但别把"低位"当"底部"</h4>
+      <table data-page-node-id="ePJ0FPLIhoRS2uETEPM4iG">
+        <thead data-page-node-id="sLiFGpJuAelRCDCUUGiDcR"><tr data-page-node-id="Wk9tzSZQ9wd9ntE2F02Hqg"><th data-page-node-id="tl0YtnL8CoNYT61sfigqcN">分位</th><th data-page-node-id="8hrk2aLqXPlwDzyG5fFMro">PE</th><th data-page-node-id="prBmeEFUsdoXqDUlcD3cMB">对应价格</th><th data-page-node-id="ZvilFDNClPBDWaHCni85Ez">现价 335.49 的位置</th></tr></thead>
+        <tbody data-page-node-id="jUnlavdteQH6oiVG0isUnY">
+          <tr data-page-node-id="PPP1fycnyjPUqFWPhPfutY"><td data-page-node-id="xWLhDxpjyhE5wcgWUTj0bu">75%（上轨）</td><td data-page-node-id="pUCSUf87fYeNttJI9uVA6y">30-31x</td><td data-page-node-id="cCXckY0PRmP75n0hkdt4IO">560-579 元</td><td data-page-node-id="8GDV2BtCD2FSR9h9QuoIU6">—</td></tr>
+          <tr data-page-node-id="PYnasY676PO0jI5A9AGnWb"><td data-page-node-id="g4xmouNoXsPdFtepV5l0Cp">50%（中轨，近 5 年中位 25.22x）</td><td data-page-node-id="54eVCwZlc3104kDBMBBM1C">25.2x</td><td data-page-node-id="Gpvlh2NnmHRIWUbbKjiUZN">471 元</td><td data-page-node-id="xLu6uEfjofLRYqpqf6mpxq">下方 29%</td></tr>
+          <tr data-page-node-id="X8TmmNp0ApIfmnuoZi3nMJ"><td data-page-node-id="fjyfi5PL40UXUU6mwlIeA5">25%（下轨）</td><td data-page-node-id="OqMhjsQithACIste7k0JvR">19-20x</td><td data-page-node-id="GpnleGnYvEVlaQKF7AYV0t">355-374 元</td><td data-page-node-id="tN7lOV0tVKAkYGMEGbaS8e"><strong data-page-node-id="S5DHClCWoFOsC7Us1Cmx9R">已跌破，低 5-11%</strong></td></tr>
+          <tr data-page-node-id="aTNrL1A3Dwk11TiITJB8g6"><td data-page-node-id="faMFd3HD6Dig6DfgK66xJG">历史极值底（2024-01-30）</td><td data-page-node-id="9Bi1uqPMHMGaPSHM9vcI3w"><strong data-page-node-id="yDfbAgnxGNOvCJIn1VAw2i">13.98x</strong></td><td data-page-node-id="SlAO7bKyKHBBZBWdMWIx9Y"><strong data-page-node-id="GXXgvncDDQIgb8QnY4Kwgx">261 元</strong></td><td data-page-node-id="69nUu0eR6o7rVVf6XbKsfF">还有 −22% 空间</td></tr>
+        </tbody>
+      </table>
+
+      <h4 data-page-node-id="XPqd8Wt8Rk3UqX7yhRCnQj">便宜还不涨？最硬的证据是"卖方在动什么"</h4>
+      <ul data-page-node-id="I93ADjXAB3j4TGPZaWfSkL">
+        <li data-page-node-id="ciBMKAwEUr6sR7DWnMimkC">主动偏股基金持股比例 3.50%、环比 <strong data-page-node-id="KruTsksNhsD4yO5E3Ns8Sn">-0.99pct</strong>，基金数 -190 家、持股数 -4206 万股</li>
+        <li data-page-node-id="zs4gE710xLx93clHEveoyY"><strong data-page-node-id="OvMKIDWjlmxhhs1HmOAFj7">大华继显目标 PE 由 31x 直接降到 23x（目标价 640→585 元）——动的是倍数不是 EPS</strong>，这是"估值中枢迁移"最直接的实证</li>
+        <li data-page-node-id="vyBkXI3uF7pE4f0n6E4cBe">400 亿按 335 元算只回购 2.6% 股本、增厚 EPS 2.6%，金额上微不足道，<strong data-page-node-id="bVgHxLUeZEyEW9hMYswbUG">但它是信号弹——公司在等更低的价，市场读到的就是"没有托底"</strong></li>
+        <li data-page-node-id="sY1Z61OPmAsxYJV0gbqoFk">同期在发债：年内债券融资超 400 亿，H1 净新增有息负债约 294 亿。<strong data-page-node-id="m2mh3weFVMfyRCXqTm8qcH">一边发债一边不回购，这个组合对股价是负的</strong></li>
+      </ul>
+
+      <h4 data-page-node-id="Fr7HA9xiaOCX4jwTkCfr5i">目标价四情景（Price = EPS × PE）</h4>
+      <table data-page-node-id="LfU6rolhOFgGJKV3DfURZ6">
+        <thead data-page-node-id="jrdrpGr6fjhTK0HAPBX8az"><tr data-page-node-id="PFzPs5Wd4gP6NUgSp1DInM"><th data-page-node-id="ED7LHGA6y1z6nxp8FRcFWZ">情景</th><th data-page-node-id="ugkSUnzwKMXGkh8KWUyzvL">基准 EPS</th><th data-page-node-id="D1w3vEdiDLeSUsku8ZXzvj">PE</th><th data-page-node-id="0FJr03XaqREOEgfaAC3LHd">目标价</th><th data-page-node-id="HcHTJPECSQ5CQUzpZ4rZdd">相对现价</th></tr></thead>
+        <tbody data-page-node-id="euJOlBm5wF8MgY9SU7IHiV">
+          <tr data-page-node-id="dshsG5uITzvLHoUPuYxfZo"><td data-page-node-id="mXSBklEMru7OzWHcxX55FD">成长股回归（毛利率企稳+储能兑现）</td><td data-page-node-id="UY9A1qP0TR1ljnDq3dMY21">2027E 26.0</td><td data-page-node-id="uRgBwdrZG9f09mgbVZnVnW">20x</td><td data-page-node-id="3vNP2Xrg6YEAhFDqfGHsDO"><strong data-page-node-id="Il7SUuBGfQ8jBkrkOhPDHN">520 元</strong></td><td data-page-node-id="gqMV8s3mvHUPlcXnzcjJ7p"><strong data-page-node-id="8W46k5FSxWQLzwEMapQyYq">+55%</strong></td></tr>
+          <tr data-page-node-id="KvTOWQLP6uPrppz5MMQnFe"><td data-page-node-id="T9E1YEw1cKhILNHGszwMGp">中枢稳在当前</td><td data-page-node-id="jDLCHH4gRT7iOznKinEqyv">2027E 26.0</td><td data-page-node-id="aeICgEqHSjqvkTG3VTerlt">15x</td><td data-page-node-id="fYOJz0aIhwE3UP8IOfL2AS">390 元</td><td data-page-node-id="cC5cSnvCgBbuJkvCbOZED6">+16%</td></tr>
+          <tr data-page-node-id="CD6fBoBh9f6YtRpmvF67wb"><td data-page-node-id="In3xapr5CZ5FJn4UVP3zmF">完成向制造业迁移</td><td data-page-node-id="cE2a2w1waA3LIi0kfQkIYo">2027E 26.0</td><td data-page-node-id="s8jFHXGAC5KulmIoH1oD3s">12x</td><td data-page-node-id="LX39uh6LPF8qMuigqCI0Ye">312 元</td><td data-page-node-id="hBs52wKHWlUvSkooxhHCVN">−7%</td></tr>
+          <tr data-page-node-id="np7MLJ3vSEol0CiBftnaA4"><td data-page-node-id="fqMXovuZEYfoMNHWAacYll">极致周期定价</td><td data-page-node-id="BvXzVGyyF3DWNUPAhvhROP">2027E 26.0</td><td data-page-node-id="gtP7Y3j8EBNvQJjmSUGmAX">10x</td><td data-page-node-id="v9e3o2GbABu05Pa8iaZFhB">260 元</td><td data-page-node-id="gCAB7LrVmJEPHeXmQIxu0D">−22%</td></tr>
+        </tbody>
+      </table>
+      <p data-page-node-id="CpEs9vjl5TyESUPxvxrEZX">赔率约 <strong data-page-node-id="NQ0YSFkz5ubhNuW3WwY8Oi">2.5:1（上 55% vs 下 22%）。这个赔率支持持有，不支持重仓加码。</strong></p>
+
+      <h4 data-page-node-id="FngeydS7ZHvIBmjHw0LB83">⚠️ 核心 / 卫星定位：它是卫星，不是"底仓"</h4>
+      <p data-page-node-id="kZ2NxkJO99b1LZtC9gA9Bf">核心仓三条全不满足：3 个月 −28.4%、单日蒸发 540 亿、股息率 2.0%。当前 10Y 美债 4.78% 压制成长估值，宏观偏谨慎该拉高核心比例、收紧卫星盘子，<strong data-page-node-id="FsOpdnCSYQODdalFajgHjb">卫星单票权重上限 8-12%</strong>。</p>
+
+      <div class="pull-quote" data-page-node-id="01HkfC2Eq5yF6WAinJhFjz">"用户'留个底仓'这个动作本身没错，但措辞要改——底仓是核心仓的概念，宁德是卫星。用底仓的心态拿卫星仓会犯两个错：跌了不舍得走（'底仓不卖'），涨了不敢加（'只是底仓'）。"</div>
+    </article>
+
+    <article class="voice-card" data-page-node-id="zYWDiCLRbJlgmOycEzIG4F">
+      <div class="voice-head" data-page-node-id="H48l7QeXeyb2pJ5OHPOm52">
+        <img src="data:image/webp;base64,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" alt="逆向投资人" data-page-node-id="5iKOqTcCRYolPG9TKEsw4b">
+        <div class="voice-name" data-page-node-id="ajQRzzCF2Av3q1U7x0Yjet">🏔️ 逆向投资人 · 坤候底</div>
+      </div>
+      <p data-page-node-id="3aaz6wtCjxuRCyxbogdSUn">只做"大公司回撤"，左侧分批，绝不摊薄亏损标的。<strong data-page-node-id="rZnleZWMDyXnZAPAE40LQy">这不是我敢出手的跌出来的机会——它是"隆基级"，不是"腾讯级"。三条拒绝条件一条都没解除。</strong></p>
+
+      <h4 data-page-node-id="jGuKsKDfBkANCB3FtH4ibD">第一条，也是最硬的：管理层不回购</h4>
+      <p data-page-node-id="rvMIGV5agwYGTvwu5oMIpS">7/24 公告 200-400 亿回购注销、上限 573 元/股，到 8 月底<strong data-page-node-id="RA8r5QJBEyVQGSMCsVO4CY">一股没买</strong>，跌了 28% 还不动手。两种解释：一，他觉得 330 还不便宜——那我凭什么觉得便宜？二，他在等更低的价——那我为什么要抢在他前面？</p>
+
+      <h4 data-page-node-id="MzxDFqW4BGoAMBefWLBzmb">第二条：行业判断超出我的能力圈</h4>
+      <p data-page-node-id="9uCYAESrz7c01po0pJOjgr">碳酸锂库存口径（SMM 7.6 万吨上修到 16.9 万吨）、车企自研爬产进度、储能到底过没过热、枧下窝锂矿复产——这些我判断不了。<strong data-page-node-id="2TEFgffVszYbyGk1HCzGdY">对一个隆基级标的，我不会给满我的十份额度。我不知道的事，就拿不到我的子弹。</strong></p>
+
+      <h4 data-page-node-id="cZBjWdJwObbHsZgqJR3trI">第三条："跌多了"从来不是买入理由，撑住才是</h4>
+      <p data-page-node-id="2nqEgq4TUs96mkrZWzS1jE">9/8 最低 326、9/9 最低 327.10，连续两天收住——这是撑住的<strong data-page-node-id="cqGspDX8ikGffZzF4B3CU4">初步</strong>迹象。但只有两天，且 MA5 343.09 / MA10 352.69 / MA20 371.11 / MA60 379.34 / MA120 396.35 / MA250 377.39 <strong data-page-node-id="3H5QVvtTtTUega4CL0pQXu">全部空头排列</strong>，我不会在所有均线都在头顶时宣布"撑住了"。</p>
+
+      <h4 data-page-node-id="XWVJovWq8ymwtv8iJqyquR">如果条件解除，批次怎么铺（绝不等差）</h4>
+      <table data-page-node-id="k5MwoBeMkvWU6mWVbQcup1">
+        <thead data-page-node-id="Y12ZsvPVpYDeORemAhXOQX"><tr data-page-node-id="s7ugYZ0GSSExNNLRJsPvQY"><th data-page-node-id="OoFpqT1BvpCc9zjO3oYgsu">批次</th><th data-page-node-id="3aHNlscAjotkA6w5nAhjIQ">价位带</th><th data-page-node-id="XmUSLTkMhOVvpsh9HkY2Cf">依据</th><th data-page-node-id="vxiOYP6kTFDhiptoy2aoTU">间距</th></tr></thead>
+        <tbody data-page-node-id="76RCZO7DocWElgsU4Jr8AQ">
+          <tr data-page-node-id="bEYnhyghpISVtP8Oh8InYH"><td data-page-node-id="QK6hqlPrU6HnezoE3oFos4"><strong data-page-node-id="HTh4ays1uQ53xmrEkz1fjj">第一批</strong></td><td data-page-node-id="GoLnBeNcVwGM0LTP9tJX48"><strong data-page-node-id="wiaFZrUuYpYtSrvS9ZqgwS">324-327</strong></td><td data-page-node-id="vqBfhZwJD2GUxf1GGsCxyM">9/8 低点 326.00 + 9/9 低点 327.10 + 年内低点 324.70 三重叠合</td><td data-page-node-id="rQEFhvjRhWExbqAjDxbHzt">只买 1 份，绝不加倍</td></tr>
+          <tr data-page-node-id="M8yfR6Bm5DujtrhNmi4miL"><td data-page-node-id="BcYWNgdCQhTcH1FOqJ7ULB"><strong data-page-node-id="X69HCcznGJOmuaQ7A9XqLN">第二批</strong></td><td data-page-node-id="0fBbuZSj4Ejh9paLq2EBol"><strong data-page-node-id="dy8FLcKvSHe4P031JW4nbw">300-303</strong></td><td data-page-node-id="WSXEGv1rBrMhEB33JzF8vr">52 周低 300.73 + 300 整数关口 + 头肩顶颈线上沿</td><td data-page-node-id="v2TwFhH3yluEmbvhU41ggx">距第一批 <strong data-page-node-id="Rs2evMZHe5G8h67AfwOwAf">−7.4%</strong></td></tr>
+          <tr data-page-node-id="CACH7avTdsSidSFpkoidJJ"><td data-page-node-id="WAGyA6qWgcEHD4NYCwTAVB"><strong data-page-node-id="aHlzSr5SsWXyMQk2r9Hdub">第三批</strong></td><td data-page-node-id="l8U7juVyvWKvDO1EoknXbi"><strong data-page-node-id="doBuSXkPKAdpbOpeaZ7MIl">290 带下沿</strong></td><td data-page-node-id="k2h7SNUK8ia7da9KfIXfwi">头肩顶颈线核心防守带，破则形态确立</td><td data-page-node-id="ED8l5EoqrB0IMfjrK3fu90">距第二批 <strong data-page-node-id="XZC9e7CiIyS6cRYBa0EE3e">−3.3%</strong></td></tr>
+        </tbody>
+      </table>
+      <p data-page-node-id="NHC9M5JadiNSGvGGwYV45N"><strong data-page-node-id="0AL1dXHD9Vf6HxJnjENPsT">明确拒绝把 320 单列为一批</strong>——320 只是整数关口，距 324.7 只有 1.3%，不构成独立支撑，它只是第一批的下沿确认位。<strong data-page-node-id="7H60dZ6NfClUhfEhyzY0gp">最多拿 3 份，不是 10 份</strong>：这是我 17 年唯一一次在方法论内部给标的降级，因为它是隆基级。</p>
+
+      <h4 data-page-node-id="2lHuODvUEKulEO3JcxitLI">直接回答"反人性"这个困境</h4>
+      <p data-page-node-id="ciz90vD3VOLaoUENAx7CoD"><strong data-page-node-id="rMkjCMa6lgRPeDea2wLlSY">"这困境不是反人性，是你把两套互斥的框架装在同一个标的上了。"</strong> 左侧分批的前提是"我准备买十次、扛三年、只亏时间不亏钱"；右侧止损的前提是"我错了就走"。<strong data-page-node-id="HyDmhROzncT9NK7vhjXbIp">你要么选我的——不要止损位，要十份资金和三年耐心；要么选短线的——有止损位，就不要在止损位上方加仓。混着用才反人性。我的框架里根本没有"止损位"这三个字，只有"这个公司死没死"。</strong></p>
+      <ul data-page-node-id="cO4GdekelqLtviBKmJTMmw">
+        <li data-page-node-id="DPYoQiEETbbPjPCntMSULM"><strong data-page-node-id="nJb5cBrHeMsdY5UnAQ4RdA">不要用"十次机会"去救一个已经重仓的标的</strong>：宁德是今年亏损最多的个股，说明仓位已超标。在超标仓位上再加九份，那不叫分批，叫孤注一掷</li>
+        <li data-page-node-id="fGmL2vGFtppW2Tbg17kvtq"><strong data-page-node-id="fJHTzUuVV7KrRuexBYeFga">回购落地前第一批不会动</strong>：曾毓群不买我就不买——这是我唯一能免费拿到的内部人确认</li>
+        <li data-page-node-id="fE33tKtb5lfufBIQ5CWkVM"><strong data-page-node-id="TKoiNakbroThb1UtM1rNrT">唯一会认输的条件跟价格无关，跟份额有关</strong>：市占率若连续两季掉头向下，"大公司不会死"被证伪——那时不是"只亏时间不亏钱"，是时间也在亏</li>
+      </ul>
+
+      <div class="pull-quote" data-page-node-id="0zngfaOZSZG65fXsh8n3JZ">"跌多了鬼故事就多，涨的时候自有大儒辩经——这句话你自己说出来了，说明你看得比谁都清楚。既然知道情绪在极端值之间摆动，就别在鬼故事最多的时候把子弹打光。我给自己十次机会，是因为我知道我买不到最低点；宁德这个票，我连三次机会都要等别人先动手。"</div>
+    </article>
+
+    <article class="voice-card" data-page-node-id="YFxXeCBy6w7U4SwPpOrB1c">
+      <div class="voice-head" data-page-node-id="eBZyIEghxNIC8j4xYcphII">
+        <img src="data:image/webp;base64,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" alt="财报研究员" data-page-node-id="yByfmGBRhzb4haBBkUxigv">
+        <div class="voice-name" data-page-node-id="faU51DZt3xFBOTY5Pe7UgW">🔬 财报研究员 · 钊审财</div>
+      </div>
+      <p data-page-node-id="CqM75Mfql9ILza5dM4A8MN">每一笔买入都得有预期；每季度是一次考试，考不过就走。<strong data-page-node-id="EaBnGwVLfbjg4XNGGGxjB5">业绩没问题，问题出在"增长的质量"和"管理层的动作"——营收 +54.80%、归母 +41.98%，但经营现金流只 +2.61%。</strong></p>
+
+      <h4 data-page-node-id="C3xZSX4Y5sgE1aDwmiFeqB">Q1 vs Q2 的斜率变化才是重点</h4>
+      <table data-page-node-id="5lih9WfESJEvvZFYnJ12un">
+        <thead data-page-node-id="5Xek6gaw1WBQbiwzcC5mT8"><tr data-page-node-id="yqasfzbRAvZ6EjGgIQeT7z"><th data-page-node-id="mGVOGgb6fJF5Z4CGFoaA9d">项</th><th data-page-node-id="3Vc8tFK2kFPCAkEE8vNXA2">Q1</th><th data-page-node-id="2MZrBPIfaiGvNtBlM8VDzi">Q2</th><th data-page-node-id="MqV9FAUvZe4CfceCahYkQD">变化</th></tr></thead>
+        <tbody data-page-node-id="WCsKaGn0MIgx5bLxqDUgzm">
+          <tr data-page-node-id="qm64z1wBChramfCaFaEBiH"><td data-page-node-id="PxKQR9C0JWCMGY2pt12w0F">营收增速</td><td data-page-node-id="8k7la8NnUB1HH0AL646yzk">+52.45%</td><td data-page-node-id="bbhqqamUMV5QBLbU1Hj6pz"><strong data-page-node-id="BmjI5BRKPrZTTPwZHWqnaY">+56.92%</strong></td><td data-page-node-id="M6aYrOqkcvr2URPvD0tENG"><strong data-page-node-id="63yaskFLlI2TZGeOthKqpB">加速</strong></td></tr>
+          <tr data-page-node-id="kyT3HXgTaBRtdRFqfYyCe1"><td data-page-node-id="xX4cg4VK2Nk81wgE7xLoIU">归母增速</td><td data-page-node-id="D0HEZPaIAqDpRDmfZHRnMf">+48.52%</td><td data-page-node-id="524wHBGEXBWzIyT20TZhPF"><strong data-page-node-id="sXBD6fDTSBQa3nlei0ABrb">+36.46%</strong></td><td data-page-node-id="85wHvisQ9iobZYVyaqw88p"><strong data-page-node-id="8hl0IJxafSUG90UNaisGgq">减速</strong></td></tr>
+          <tr data-page-node-id="zbAvQ9KOqfRe6PZ3DiRH4v"><td data-page-node-id="g33tWFwvi6bhbdJQWhXh7H">毛利率</td><td data-page-node-id="tM6QOCR3RWjgijOQr5WHhQ">约 24.82%</td><td data-page-node-id="PVjZZt0qMITiJBSI5oht4W"><strong data-page-node-id="pYItqfLO7UXqOHtiDu2SWC">23.15%</strong></td><td data-page-node-id="HTsOynBRdnka5sdzMdBEJo">环比 <strong data-page-node-id="DRu7UoZl8BP3M02qQlilOH">−1.67pct</strong>、同比 −2.43pct</td></tr>
+        </tbody>
+      </table>
+
+      <h4 data-page-node-id="8EsN5sNRwCzCYcvy66bfYn">业务拆分：谁在赚钱，谁在失血</h4>
+      <table data-page-node-id="la60SOi3lQUDQ6wYkOSsGY">
+        <thead data-page-node-id="NEqY7kfdhpRkqNkRdxWM5D"><tr data-page-node-id="OnDAtm1grtIIMCJXdgJxoe"><th data-page-node-id="UxldNUSQMSp89fnPiw5XC1">板块</th><th data-page-node-id="1Pr9YDNmltchiwsOuXnnvm">H1 收入</th><th data-page-node-id="aQHF7iTFOoUPAfMVGtmeqP">占比</th><th data-page-node-id="2YdUhtiDvTuNALThqQkjNf">同比</th><th data-page-node-id="iZKoQbFeT8FoxRsKSnaTRE">毛利率</th><th data-page-node-id="8A6I4GIKg6ZBZM7IVdwd88">同比</th></tr></thead>
+        <tbody data-page-node-id="2zbh5Wc6ACA6NQHa7aOcBr">
+          <tr data-page-node-id="tliscd2qHFMHi0O6vmviw2"><td data-page-node-id="xUkwGkE2kuv83lSTaK9XHA">动力电池系统</td><td data-page-node-id="ilXO92l4VAIJveH5UPI5ez">1,921.25 亿</td><td data-page-node-id="MymCwsVvUM443IqGLcDzKv">69.38%</td><td data-page-node-id="pIwBHXBqlUROBniDaGhkNA">+46.02%</td><td data-page-node-id="aHH1z1yAdhDRI6AhCx5Kqr">20.63%</td><td data-page-node-id="GNHjYQORUKmjneIqJ5VUAh"><strong data-page-node-id="byVCSOQJXlHmECnz6CEZI6">−1.78pct</strong></td></tr>
+          <tr data-page-node-id="CUdI7cD3QUYHq1qqGQ2ftS"><td data-page-node-id="GfcyJshTTqr8orbTWSUjwR">储能电池系统</td><td data-page-node-id="aho3FTyUyjMBbYyLJLvnso">532.61 亿</td><td data-page-node-id="v18KeVAEqdupgLyjgvWXzr">19.23%</td><td data-page-node-id="ZjnGDgIjyjWVreblKpqZBi">+87.54%</td><td data-page-node-id="NnBD1SE2fTiiQy78mwPseB">23.96%</td><td data-page-node-id="4npbuuLtsvY1UxUDyrV1Td">−1.56pct</td></tr>
+          <tr data-page-node-id="OJzTmlU1vMn3eAjYeMyw3A"><td data-page-node-id="DqZK1MkLLY9f2wnem5jAXu">电池材料及回收、矿产资源</td><td data-page-node-id="MA3bV1Z2GYlEuVNss0CyXv">188.11 亿</td><td data-page-node-id="XCX8m0t6doVGwVAFZylDod">6.79%</td><td data-page-node-id="OUJlAlfziUnSD4rYvIWUSu">+67.23%</td><td data-page-node-id="4S5GCe5eFzgso3nQaGSqM7"><strong data-page-node-id="LeUY9S4bCyMKtsanYGDzF0">27.04%</strong></td><td data-page-node-id="m1VT3tQdvEhlA2NqzaymqJ"><strong data-page-node-id="uNgWf1D4hf70KKxhyERiaE">+5.81pct</strong></td></tr>
+          <tr data-page-node-id="6IC8k7tEHS0x2YP0eXXBM6"><td data-page-node-id="ESus80jrYHbES2nCZqy1zC">其他</td><td data-page-node-id="UdFXyZ3Caw7UA0gKVj8m44">127.20 亿</td><td data-page-node-id="vUx4CR63iiyIS4d1dYEc9C">4.59%</td><td data-page-node-id="B8c7H6eYvpFjQcFprqRHFZ">—</td><td data-page-node-id="TGlDlblPYtd63ADAX40dMg">—</td><td data-page-node-id="VCNmmTuDAsXU9fsVacORQ3">—</td></tr>
+        </tbody>
+      </table>
+      <p data-page-node-id="yWiUGqGFbRaSSyETVrBUNo"><strong data-page-node-id="RKuIZDPfQ0n1BpgK77RTfi">境内毛利率 21.16%（-1.78pct） vs 境外 29.97%（+0.95pct）</strong>，境外收入 871.29 亿、占比 31.46%。<strong data-page-node-id="CYwHUXgJJCFJTDG6dNSBqI">车企自研替代主要发生在国内，海外定点周期长、切换慢，份额还在扩——这是市场对"去宁化"定价过度的地方。</strong></p>
+
+      <h4 data-page-node-id="OALgd2K0fmKcPCHUACENY3">三处"对不上"</h4>
+      <ul data-page-node-id="oX0j9kKCWIfAAtuUwjh5oH">
+        <li data-page-node-id="6A1MgKIMInqQw3fAkYJ9nR"><strong data-page-node-id="UcxDoB1ku9Ns9aOQf7lzCL">经营现金流只 +2.61%，利润 +41.98%</strong>：存货 945.26→1,308.19 亿（吃掉 362.93 亿）+ 应收类 207 亿 + 合同负债反向失血 127.5 亿，合计占用约 <strong data-page-node-id="U2mOkcnWt1ZFlqXs57v1Vz">697 亿</strong>。<strong data-page-node-id="BwA4kYWMs9LYOnBJTb9O1Y">净利润现金含量从 192% 掉到 139%</strong></li>
+        <li data-page-node-id="MRPpotkK3DkbZnA0aiRtgk"><strong data-page-node-id="R0NIcdDmP0QIXG8nme96MX">合同负债 −25.9%</strong>（492.33→364.83 亿）：营收 +54.8% 的同时客户预付备货款掉了四分之一，说明<strong data-page-node-id="4MKFvq0oFXGm1TaoJ7tMxG">下游在缩短备货周期、把订单"水分"挤掉</strong>。排产下修不是空穴来风，财报 7/24 里早就写了</li>
+        <li data-page-node-id="qhzJfNJTSvGA3y5971PdaU"><strong data-page-node-id="Q6k24tB5bJEpe5wNwPynFg">汇兑收益消失</strong>：财务费用从 −58.22 亿变成 −6.31 亿，半年少了约 <strong data-page-node-id="AnYLyowRoGu8QH3Mz1lq0Q">52 亿</strong>。净利 +42% 是扛着这 52 亿逆风跑出来的（加分项），但人民币继续升值还会继续啃利润</li>
+      </ul>
+
+      <h4 data-page-node-id="YqfXN4ekMJLfrxiOUxoYy2">回购"公告了不实施"</h4>
+      <p data-page-node-id="S1REuw5fdiHymN80caQqXb">公司手里货币资金 3,720.53 亿 + 交易性金融资产 681.58 亿 ≈ <strong data-page-node-id="ZyGphxcyCmvEIe5adyWvSn">4,402 亿</strong>，400 亿不到十分之一。<strong data-page-node-id="2GVAXxFa69hMRYGP2THRTg">所以这不是能力问题，是意愿和择时问题。回购注销是白纸黑字的承诺，承诺和动作之间的 gap 就是在消耗信任。</strong></p>
+
+      <h4 data-page-node-id="24bwTZVtUAydAUg3hCQaOQ">下一次考试：三季报盯这五个数</h4>
+      <ul data-page-node-id="vJyIcUgl4Ei3kaFMLSfJW9">
+        <li data-page-node-id="p3J9bUymURGqCwwP5CDhL3">毛利率能否止跌——<strong data-page-node-id="SP4aDFL3CRvXcRa1rrVUhu">Q3 跌破 22% → 从"底仓"降级为"清掉"</strong></li>
+        <li data-page-node-id="MihbiBVdwmnkvw3zDXs5V4">合同负债环比是否回正（现在 364.83 亿）</li>
+        <li data-page-node-id="qgKBeNBM2kRfjunIPWdga7">经营现金流 / 归母净利比值（H1 是 139%）</li>
+        <li data-page-node-id="AMUzPoQPv8j4d29BKYpzqv">存货是否继续堆（1,308 亿已占总资产 11.49%，年初 9.70%）</li>
+        <li data-page-node-id="TUvwBWnqiHTI2pXN851S5O">回购到底买不买（到 2027 年 8 月还没动，那这个方案就只是个姿态）</li>
+      </ul>
+
+      <div class="pull-quote" data-page-node-id="W5f7GbDrWHlXqF57OPrwyd">"全球份额还在扩（38.2%→39.9%）、海外毛利率 30%、现金流仍是正的 602 亿——所以我不会清仓。但 Q1 那个 +52% 的斜率没了，毛利率在降，合同负债在缩，回购没兑现——所以我不会在这个位置加仓，一股都不加。"</div>
+    </article>
+
+    <article class="voice-card" data-page-node-id="KvzqGhStZ3Hbkj6kHq05Wz">
+      <div class="voice-head" data-page-node-id="q5IL0zCVDMMrUetQU9DUXF">
+        <img src="data:image/webp;base64,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" alt="短线冲浪手" data-page-node-id="meQqNXq5Bk3Uqb5sygAccS">
+        <div class="voice-name" data-page-node-id="uxfspyZWAA4hX7TJxlpWkw">⚡ 短线冲浪手 · 磊追浪</div>
+      </div>
+      <p data-page-node-id="6pI5sRm6N8L01ot8bAY5n0">周，不看一天；只做主线里最强的那个。<strong data-page-node-id="1098QcRRFMBAgoWUE9TBmB">这不是回调，是"主线外的持续失血"——新闻天天有、鬼故事最多的票我不碰。</strong></p>
+
+      <h4 data-page-node-id="7qWBDnMjMLB6QXryEkzvZX">宏观：这是一个"存量博弈 + 风险偏好下移 + 资源涨价吸金"的市场</h4>
+      <table data-page-node-id="LzEiLilghbFuRLQCXxGCSv">
+        <thead data-page-node-id="JfXGRXrsCHERGDSGFV7Dsd"><tr data-page-node-id="4s6CADAIz0WtOyfKOntCVt"><th data-page-node-id="DzkbRS9m9HG5trHRWeoOlk">变量</th><th data-page-node-id="tKkXkbNDd9tUwXZZppbAZF">9/9 早间</th><th data-page-node-id="rTSgJr0OWUvBVmlggp6iqs">对宁德的含义</th></tr></thead>
+        <tbody data-page-node-id="V6DQNIWApbphh0WWkUfHP4">
+          <tr data-page-node-id="6nk5GjzJyMSxPeUA9yeiDZ"><td data-page-node-id="nbaFF7fHcuHWA6iNwi8ZzW">美联储</td><td data-page-node-id="b2BmiOD6vRi1mW9QkGQMsH">CME 隐含 9 月<strong data-page-node-id="NeSI5HIR6spz4uD6kBfcTD">加息</strong> 25bp 概率近 60%</td><td data-page-node-id="mkXxrtKTOu6BILvxDBgDnb">不是降息，直接压高久期资产估值</td></tr>
+          <tr data-page-node-id="2Ufn1PwLaD37zp5Vk1SC5v"><td data-page-node-id="loWGoVXNyNFqe0WT7NG3OL">美债 10Y</td><td data-page-node-id="hLDwC18eccBKDQUPEbxOlJ">约 <strong data-page-node-id="sOwhHvwsqtAuqtpBihsxtx">4.79%</strong></td><td data-page-node-id="uru4br7o8tgdmLoBu0p6fZ">贴现率高企，成长股首当其冲</td></tr>
+          <tr data-page-node-id="oTrzBSTfL9uQjQCJ1hHPxo"><td data-page-node-id="p0CBi9tr5F1IfwBx7pCJlj">油价 / 铜价</td><td data-page-node-id="4kAKLcsOJawPM0w2105AXJ">WTI 93.03；LME 铜连续两日创历史新高</td><td data-page-node-id="Z21BdZiUxFqTSezv9HVP8F">资金往油气/资源跑，吸成长股的钱</td></tr>
+          <tr data-page-node-id="AT3xMpLHDkzDdrnGGtPZwn"><td data-page-node-id="wGZOm5HDei9QWciFPc6nAl">风格</td><td data-page-node-id="L5aqjPIKwXT6cxkZfR2K5J">9/8：74 涨停 0 跌停，但创业板 −1.15%、科创50 −1.52%</td><td data-page-node-id="mqk1zJrR1SUmJA6m6sN2fg"><strong data-page-node-id="xQXI6LAtvPWRo89vtBT8pj">小市值题材碾压大市值权重</strong></td></tr>
+        </tbody>
+      </table>
+
+      <h4 data-page-node-id="3CPRWbWSXzUXMxlssm8QHN">8 月至今每一次反弹的性质（核心表）</h4>
+      <table data-page-node-id="ih5xU4eaTUDK65HdvU2dOv">
+        <thead data-page-node-id="MWV0R00O5yhQG05lGkG4l0"><tr data-page-node-id="rgCN7MdmzRQhQZ2CeN1lKJ"><th data-page-node-id="u4oYBqafKz5lRpMXcQSvti">日期</th><th data-page-node-id="O3PUPDtC0etMLJTel1NGqa">涨跌</th><th data-page-node-id="BEyms89bJfWlH1CdATOENc">性质判定</th></tr></thead>
+        <tbody data-page-node-id="mLOcKnXWzDtJWXdQEdmYIe">
+          <tr data-page-node-id="BpSqiXqCMHaRKXHGDQSxxX"><td data-page-node-id="FDPrFC5aHTuSYh1K1vW5TW">8/6</td><td data-page-node-id="O8FVTHu0HVYQ9ZsXQrOeRL"><strong data-page-node-id="gbeWff3OzPkPTxJq4zFXrT">−4.24%（放量）</strong></td><td data-page-node-id="eEeB2ke2R8oT32YLH77GDt">破位起点</td></tr>
+          <tr data-page-node-id="BEIZmfmKqrR0o2B48JeSZ7"><td data-page-node-id="oXB5rGxvggIT3kKeRqf0CF">8/10</td><td data-page-node-id="H0mY6oHbknwTpmNAUAstnf">+1.86%</td><td data-page-node-id="PmGC6sVYg2Z7pJ4yEhBxzD">唯一有"资金回补"味道，但<strong data-page-node-id="b7x4YR6VFIVfWzZJzZPX67">后续没接上</strong></td></tr>
+          <tr data-page-node-id="QpTCrR4ZD47HOqxOM7hTBH"><td data-page-node-id="kX2l9HDi0zq40BdZdH60iE">8/12–8/21</td><td data-page-node-id="L3CIk4Bsxpw8wOVhYHO6yy">+0.90% / +1.54% / +1.60%</td><td data-page-node-id="lTzETOtFw4oWrD5mIyP1cR"><strong data-page-node-id="xnWlprrDapmqKtLYvdUshe">"工具人"被动拉抬</strong>——为指数服务，不是资金主动买</td></tr>
+          <tr data-page-node-id="67GyvGu2kmlFcaD58KLwgP"><td data-page-node-id="R1Bq9WHcSig9ECzni3HLEC">8/20</td><td data-page-node-id="m8QVc3iSfqfGdkQjaiHGQO">−1.03%</td><td data-page-node-id="ybEYcjGGHhhluDRcfQnNqz"><strong data-page-node-id="D2WXgvrmk7AySCjmnKQVok">性质转折</strong>：反弹日它逆势跌</td></tr>
+          <tr data-page-node-id="oZQwGpAxEOo6bFK40VWjI5"><td data-page-node-id="fijDTGHB3DFVgCl5jb0Hrj">8/25</td><td data-page-node-id="iiqgA06yXvy6vag0Xre0JJ"><strong data-page-node-id="CI4xjOTth3asVyvymjzDMM">−2.88%（放量）</strong></td><td data-page-node-id="sw3EWqb8gH579mifXPyjNN"><strong data-page-node-id="azfa3M6ZuMsbq0uOgTiBDB">工具人失效</strong>，破 380</td></tr>
+          <tr data-page-node-id="rXZGikEyD6m44gQ5ATxjzu"><td data-page-node-id="hZqW0UPtqND6niWWjfIggx">9/3–9/4</td><td data-page-node-id="neHLOBH5pUA7Iqf5QN5Nuy">+0.35% / +0.43%</td><td data-page-node-id="x1aTefL1X2rgbZX414iotE"><strong data-page-node-id="1eORqSMCtdGTpvmZi2DG5f">缩量超卖修复（一天半）</strong></td></tr>
+          <tr data-page-node-id="sMPhxp5Z1X1N6oBO3Aph8Q"><td data-page-node-id="oGXZR30it4m71kEUXB8ozF">9/7</td><td data-page-node-id="A4RFccZFabhIjCZGykcR3A"><strong data-page-node-id="PqpbYv8odyBIOyCyAhBwdE">−0.80%</strong></td><td data-page-node-id="NZeyvxwac1xIOH5ZymFL9y"><strong data-page-node-id="EhBxxszXrZjv1qMxc6jSyG">最狠的一刀</strong>：当天创业板 +3.41%，它收跌</td></tr>
+          <tr data-page-node-id="MOXMDCdHCduYenAq0fxMBe"><td data-page-node-id="wFugr4BKUhAsK9MQbhbhYN">9/8</td><td data-page-node-id="UY2eoAMPjM5tmXTuf39YAa"><strong data-page-node-id="TXGpN0cYWJFSG9u9a0Cd2c">−3.65%</strong>（174.45 亿）</td><td data-page-node-id="IcmdrNe2LRjQI2AeNuDIGe">主跌，盘中最低 326，主力 −13.43 亿</td></tr>
+          <tr data-page-node-id="DADbRHknc00YSCMrTHdjM4"><td data-page-node-id="5U952pVXz461RNwMZpwFZk">9/9 盘中</td><td data-page-node-id="bUZITV7twbWepJksDX6mFc">−1.18%（最低 327.10）</td><td data-page-node-id="EotXlHqyCyNse9zE5OPTa4">缩量阴跌、未见承接</td></tr>
+        </tbody>
+      </table>
+
+      <h4 data-page-node-id="BfU5nPp5eqTDD16xsrsjox">与创业板的联动：身份已经反转</h4>
+      <ul data-page-node-id="rQkQ35AL146R0u689G9Wyh">
+        <li data-page-node-id="XwEseANgSKoWmYzV2e7zET"><strong data-page-node-id="zEHv3doNpAsMEe7FHzcQED">7 月–8 月中</strong>：它是"工具人"，+0.90% 带动创业板 +1.49%，是正贡献</li>
+        <li data-page-node-id="e5OKm6I3ffy9AsJGGZMLGZ"><strong data-page-node-id="EtQdMv1JdLVcYXFI4ePR9T">8/25 之后</strong>：角色反转，变成创业板第一权重的持续拖累项</li>
+        <li data-page-node-id="85npKJ0kpBkF0sXDZFgmSa"><strong data-page-node-id="kt0oSz23TfCQpZXgkCJYqT">9/9 最刺眼的背离</strong>：创业板指高开 <strong data-page-node-id="sOswHdLuBCYNyYJWhDFckK">+1.15%</strong>，宁德低开并下探 <strong data-page-node-id="E5bKr9j65xZxrxbgWAStaJ">327.10</strong>。<strong data-page-node-id="2uxzACmgbZAtBw9LZUTmyH">它已经不是"被创业板拖累"，而是创业板涨幅的负拖累项，且是独立的 Alpha 下跌</strong></li>
+        <li data-page-node-id="sfFOabfkxKVyiQMACQvoz7">港股侧：H 股一度跌超 4%，<strong data-page-node-id="nY0TFwSfJ5AlzviE79aPWv">AH 溢价 43.28%——港股那边比 A 股还悲观</strong></li>
+      </ul>
+
+      <h4 data-page-node-id="F7NzwKkNMiNBIfPYglEpan">技术关键位</h4>
+      <table data-page-node-id="N32xhsiEP8MzKcoUhNYBYZ">
+        <thead data-page-node-id="kEBgYPU2FQfEl9WP4ZIKLP"><tr data-page-node-id="BGHGsXDOqdDCqT44JhXdKj"><th data-page-node-id="BZk8XmHKn9rRJDZ9Hd5pCj">类型</th><th data-page-node-id="y1HDNoF6PlklqMhm4FpjPz">位置</th></tr></thead>
+        <tbody data-page-node-id="LqZf8B0CJWXJgU0Fzt0SpP">
+          <tr data-page-node-id="of3uPuVvkXQbJo6llZJ2LB"><td data-page-node-id="O1TrMpEC2iTN2GzUWNBtUw">现价（9/9 10:22）</td><td data-page-node-id="YhWqdMx9RNeAR4dFBQS093">331.52，总市值 15,338.67 亿，PE(TTM) 18.05，PB 4.11，股息率 2.48%</td></tr>
+          <tr data-page-node-id="PQww9oRzlMECzcCuiYlzQW"><td data-page-node-id="sqh0uwcNKI4S5YnyPAeLwy">MA5</td><td data-page-node-id="cn2rw4bCERmnA2E8noTB1P">346.50（9/8 收盘已偏离 −3.18%）</td></tr>
+          <tr data-page-node-id="8jpv0xCg6lB9BGxHzOI1nf"><td data-page-node-id="gKtWRQHW9XwRzwQfbp5fAg">短期支撑</td><td data-page-node-id="cjN7lOYlDzat6HS0CDnzjM"><strong data-page-node-id="IjuHnf7PayCB2chaDj3HyC">326</strong>（9/8 低点）→ <strong data-page-node-id="4yKnQVIzm6RwXixlJIghEt">320</strong></td></tr>
+          <tr data-page-node-id="bcsZSQAMJS967yFDRteVRp"><td data-page-node-id="how0op7m4SkqAOJrcnd2eQ">中期支撑</td><td data-page-node-id="LvpoKfw2vAGrwfF5GKBpyM">300–310（若 320 失守）</td></tr>
+          <tr data-page-node-id="NoYUs3DtsnNhaTbYg1PdWy"><td data-page-node-id="Iwqaxw6RZ7whBh0Pfr9J53">压力</td><td data-page-node-id="C5hszSG9NHlAZpiXxWTxp2"><strong data-page-node-id="kQ5vNBcMnhtql6PRHy436P">348–351</strong>（9/4–9/7 平台）→ 358 → 365–368</td></tr>
+          <tr data-page-node-id="XJU8IfGf5JDjrnNMnxTIPa"><td data-page-node-id="IEQkjF5QvgDWSc49hmnqHH">超卖</td><td data-page-node-id="wTWSlcc0GBH3Ph5TgTnBHy">RSI5 ≈ <strong data-page-node-id="hQkTo1Q6u3MwjY1wdPfIyl">10</strong></td></tr>
+        </tbody>
+      </table>
+
+      <div class="pull-quote" data-page-node-id="pDIR0yMNhAiyrQpwwECmfx">"亏了就认错，不越跌越买，不加仓亏损标的。宁德是今年亏损最多的票，这个事实本身说明对它的判断已经连续出错——在连续出错的标的上加仓，是'为面子补仓'，不是'为逻辑加仓'。"</div>
+    </article>
+
+  </div>
+</section>
+
+<section id="thinking" data-page-node-id="MUGsJi7iVgXJJ4yNtNWmSk">
+  <div class="section-head" data-page-node-id="5kTIHoIKRkdUiZHdXK9PVR">
+    <div class="section-num" data-page-node-id="7dhbLDFhgwlxzafRH8hofN">03 · 思考</div>
+    <div data-page-node-id="QfCDdhgUmq45KNfRfrej4p">
+      <div class="section-title" data-page-node-id="ySpiYpDW3qw6mEXY8DWfDz">深度思考</div>
+      <div class="section-lede" data-page-node-id="zKYeWRDoJclAHk9g0pTspD">主持人替你想到的 —— 你没想到的问题、可能误读的地方、应该问但没问的</div>
+    </div>
+  </div>
+
+  <div class="subsection-label" data-page-node-id="PZFGzSQVWIduZyGAbnXu3f">3a · 主持人札记</div>
+  <div class="notes-stack" data-page-node-id="oWyKWeM9QipLoVwZ683QRh">
+    <article class="note-item" data-page-node-id="mPMONEThqjx2AhFaT8YvOw">
+      <div class="note-num" data-page-node-id="HrAqlRI1cQEdmSe5zt1l6s">01</div>
+      <div class="note-body" data-page-node-id="pVAwmXCmclsoWqVXQFTMDR">
+        <h4 data-page-node-id="6sU1QAGa2sWrgaIs7vtENk">这场讨论里最有信息量的动作，是产业策略师自己推翻了自己</h4>
+        <p data-page-node-id="E9tSiHugeA3nl8zyXyDjns">他第一版写"储能是真景气、订单排到 2027 年"，很笃定。拿到财报研究员的分层数据后主动回来改口：储能真紧张的话毛利率该往上走，可中报是 −1.56pct，合同负债还掉了四分之一。<strong data-page-node-id="sGNp7hk7Rc2nZDsqCENfHF">财报侧的数据和储能的紧张叙事是打架的。</strong>这恰恰是整场讨论质量最高的地方：当正反两面都摆在桌上，应该让数据拿走裁判权，而不是维护第一印象。</p>
+      </div>
+    </article>
+    <article class="note-item" data-page-node-id="jr48U8386AGTZRUZOltvrG">
+      <div class="note-num" data-page-node-id="s9sfubccOlwAFlL1w4EjXX">02</div>
+      <div class="note-body" data-page-node-id="1AqSyQP6mZLZCh2ShbEZpB">
+        <h4 data-page-node-id="M8zeGX1vWpvXX3VIeYLkq9">六份报告里最一致的一件事，不是"该拿还是该走"，而是"这不是价值陷阱"</h4>
+        <p data-page-node-id="EB9BJ8DrhGhHDXNZTDPB0m">从最看好到最悲观的六个人，没有任何一个主张宁德基本面塌了。分歧全部集中在后半句：<strong data-page-node-id="eVqqVwBHGMbQ1HBYWzrJz6">它在哪儿、现在该给多少倍。</strong>这个区别很重要——"公司坏了"和"倍数搬家中"是两种完全不同的病，前者要跑，后者只能等。你档案里 8 月底那句"缺德时代"，抱怨的其实是后者，但我们很容易把它读作前者。</p>
+      </div>
+    </article>
+    <article class="note-item" data-page-node-id="UE7zFI73VxLWwmV7fbgnFC">
+      <div class="note-num" data-page-node-id="rJEl8rXOkvdWWSlQoyIlo6">03</div>
+      <div class="note-body" data-page-node-id="m9bAcIdozBwdHlE47OZBjj">
+        <h4 data-page-node-id="PQ8HObWtV2Uky1ZxiZfV5V">真正的信号比新闻早了一个半月</h4>
+        <p data-page-node-id="8TVXLFwlaMcPf2SFGEI7GN">大家都盯着 9/7 理想那条新闻，但<strong data-page-node-id="LIFOUPFuqbD08aiNKrQ9Jg">中报是 7/24 就发的</strong>：合同负债较年初 −25.9%、经营现金流只 +2.61%、存货吃掉 362.93 亿。<strong data-page-node-id="4GUQLFw5bmbwQLI2EcoXpa">这些比任何一条"去宁化"新闻都更早表态。</strong>不是理想的分手把股价打下来的，是这件事先发生在报表里，然后才轮到新闻来给它配文案。</p>
+      </div>
+    </article>
+    <article class="note-item" data-page-node-id="8KPf7c5wsMIpGnJBdK8eAO">
+      <div class="note-num" data-page-node-id="9GlkVU4GiouRsku5oFWtHk">04</div>
+      <div class="note-body" data-page-node-id="a1f41L2yCh4nhBVoCc1Bcq">
+        <h4 data-page-node-id="PCGciF290CmS92d75aMrEW">回购这件事，400 亿本身不重要，重要的是它是一张免费的内部人投票</h4>
+        <p data-page-node-id="4aK7NG3tPnBRrdsGPASxxU">400 亿在 4,402 亿在手现金面前微不足道，按现价算只回购约 2.6% 股本、增厚 EPS 2.6%——对基本面几乎没影响。但六人里五个把它列为第一观察信号，理由都一样：<strong data-page-node-id="NWFQMD5lkg9F1kaqjelDKo">你可以辩称自己对估值一无所知，但你没法辩称一个拿着授权、看着报表、亲身经历 −28% 的人也在掂量同一个位置。</strong>逆向投资人那句话说得最狠也最实在："我从来不要求自己比管理层更懂这家公司。"</p>
+      </div>
+    </article>
+    <article class="note-item" data-page-node-id="QXK7Mr2q3mnbTr6RmGxgtn">
+      <div class="note-num" data-page-node-id="exErTmVLdLWc7nuTSFAKRc">05</div>
+      <div class="note-body" data-page-node-id="rISAAF63sAqUfrkFGn4Q5Q">
+        <h4 data-page-node-id="MDigdLKA648K1LpVo236t9">你自己给出的那句话，比任何框架都准</h4>
+        <p data-page-node-id="kAuO6k1WgL5AsfI3gjvUrW">"跌多了鬼故事就多，涨的时候自有大儒辩经。"这半年里同一家公司、同一份报表，8 月被叫"凤雏"，8 月底成了"卧龙"，9 月变成"缺德时代"，最近一周叫"去宁化"。<strong data-page-node-id="jhiwxWYGCHBvl4QmCTlCh3">叙述在换词，事实没换新。</strong>你能在 9/7 就把这句话说出来，说明你已经站在了情绪摆动的端点上——接下来真正该防的不是继续跌，而是<strong data-page-node-id="bfxoYH3lyE6qjIX8nv2jHv">在鬼故事最密的时候把子弹打光，同时在大儒最齐的时候把筹码交出去</strong>。</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="subsection-label" data-page-node-id="ghFMhQXjaoCQTEvGipbqxC">3b · 主持人 Q&amp;A</div>
+  <div class="qa-stack" data-page-node-id="DljozB6xkzxXcGqvPHoe91">
+    <article class="qa-card" data-page-node-id="BcdcLzf8LCDXRPxWYxex9Z">
+      <span class="qa-tag tag-confuse" data-page-node-id="FHLoqeefy1UzGs6xs0oR5x">⚠️ 易混淆</span>
+      <div class="qa-question" data-page-node-id="aiCMhB1tJ809HSao2pIe05">宁德到底是"错杀"还是"真跌"？六个人吵了半天，答案到底偏向哪边？</div>
+      <div class="qa-answer" data-page-node-id="AJvQAlWwRbZH2D9WZ8Xisd">
+        <p data-page-node-id="bn7kuqzY45NDsLXIgQV36I">两个不同的维度给出两个都对、方向却相反的答案。<strong data-page-node-id="ywCKyRXNsncMFgoWTpdWZd">从"公司死了没有"看，它不是真跌</strong>——份额还在往上（全球 39.9%、+1.7pct）、现金净额还是正的 602 亿、海外毛利率 29.97%、18 倍 PE 对应 PEG 0.54。<strong data-page-node-id="RlzijpaPAMCGJh2HsVPJgE">从"这一环还给不给溢价"看，它也不是错杀</strong>——上游碳酸锂吃毛利率、下游车企自研吃定价权，中间还有 9/1 起征的消费税。</p>
+        <p data-page-node-id="K1XwJCIuWfabHNlyrIQrSv">最诚实的说法是：<strong data-page-node-id="V0APhUwWpWPCHEpS9tcywP">公司没错杀，倍数在被杀。</strong>这也解释了为什么六个人既不主张清仓、也不主张加仓。</p>
+      </div>
+    </article>
+    <article class="qa-card" data-page-node-id="1C6oGyxQH4vAqX63bEO4le">
+      <span class="qa-tag tag-key" data-page-node-id="TcBnL23Q0dneZZZjHSHgCb">🔑 关键</span>
+      <div class="qa-question" data-page-node-id="X4SEmmA3KFLqHAdLLXS3Kt">回购价格上限到底是 573 元还是 417.58 元？两个数字同时出现在报告里。</div>
+      <div class="qa-answer" data-page-node-id="W9Q7tEq7YLnWR49wuBktol">
+        <p data-page-node-id="vNH5k4VEQl0nxfO2kVCMVv"><strong data-page-node-id="pL1SC89vhcwnYyfWz60ZCA">这是本轮最需要你动手核实的一个数。</strong>你的本地复盘档案记为 573 元/股，9/3 港交所公告的媒体引述为 417.58 元/股，财报研究员和短线冲浪手都标注了"待核实"。最可能的解释是分红除权后的口径调整，或 A/H 两个不同方案——但我们没有确认。</p>
+        <p data-page-node-id="LBICs4bDcw7MP8b8iPtdcu"><strong data-page-node-id="L1ptW77F7CmLZAT2D2cvrc">建议你在券商终端或巨潮原文核一次，别拿任何一个数字当锚。</strong>同样待核实的还有：PE 近 5 年精确分位（成员手算出的是 12-18% 的估算区间）、H 股 PE(TTM) 25.98 与 A 股 18.06 的口径差异。</p>
+      </div>
+    </article>
+    <article class="qa-card" data-page-node-id="TGu4nQYzlY9WQxSPjLHQk3">
+      <span class="qa-tag tag-miss" data-page-node-id="NdTd2iQrqukAXgDl3H0fYS">🔍 易疏忽</span>
+      <div class="qa-question" data-page-node-id="A0zulpFPgKFpOw1pIDZjo5">大家都在谈"理想分手"，但真正不可逆的变量是那条税务通知。</div>
+      <div class="qa-answer" data-page-node-id="ruoetzuwPlHGUUJKDq2iF8">
+        <p data-page-node-id="vf1F8dFKR35w2OpaaZjRJU">几乎所有讨论都围着理想的 L8 转，但产业策略师点了唯一一条硬变量：<strong data-page-node-id="F3txoSeFCYhoj3qOOWRIUW">财政部明确 2026/9/1 起对锂离子蓄电池按 2% 征消费税，2027 年升至 4%，而自产自用可规避或抵扣。</strong>这把"车企要不要自研电池"从一道战略题变成了一道算术题——自研不再是为了争话语权，而是为了省税。<strong data-page-node-id="TO0Pn3Ugd2WYmrekvR6M4h">新闻情绪可以被证伪，成本项证伪不了。</strong></p>
+        <p data-page-node-id="Ct9ks8OWQLaUiREpyuAUyk">同理容易被忽略的是另一端：宁德现在最好赚的那 31.46% 收入在海外，而 <strong data-page-node-id="YOAw5ZQnf6OwgcU5w9uCph">2027 年出口退税归零</strong>、匈牙利电芯未量产、西班牙推到 2027 年初——<strong data-page-node-id="04Crt77JYe6h5JAFBfnuxj">海外这个缓冲垫，恰恰是 2027 年最先撞墙的那块</strong>。</p>
+      </div>
+    </article>
+    <article class="qa-card" data-page-node-id="XcaG5ALy2FdgvEb04yqBUL">
+      <span class="qa-tag tag-meta" data-page-node-id="p6yz9f3uBp2ELaM6ZaHSHg">⭐ 重要</span>
+      <div class="qa-question" data-page-node-id="HWFvNhEWN5yTjtaN4mx3Jm">你要等的信号，最早什么时候来？</div>
+      <div class="qa-answer" data-page-node-id="DQaIKXmpzsDOz77b2hDVX5">
+        <p data-page-node-id="35YnPZuJSQt5FE7MPgPzAj">这是你没问但最该问的。归并六人的观察清单后，<strong data-page-node-id="OCoKQG0wr0JRqguKNlOHZd">最早的两个时间窗非常明确</strong>：</p>
+        <p data-page-node-id="ILhRpsvrBWEEsBlf83YEvE">① <strong data-page-node-id="DqTZMXH4viynvSKcaTc1Ew">10 月前三个交易日</strong>——按规定披露 9 月回购进展。成本最低的一次观察：还是"零实施"则悲观端论据自动加强；第一次出现哪怕几亿回购，那是管理层投的赞成票。<br data-page-node-id="RqkNDN65SL7eLb4kxKMp2f">② <strong data-page-node-id="4Q81Rzes0ZwZBvGMdNrasm">10 月底三季报</strong>——同时给出三个数：毛利率能否守住 23%（Q2 是 23.15%）、合同负债能否环比回正、经营现金流/净利比值能否止跌（H1 是 139%）。<br data-page-node-id="s1qJBgJpVM08uzPhc0cvFR">更早的还有<strong data-page-node-id="LJI9o204mbcUHFLEYtY0BP">月度份额数据</strong>（每月中旬），7 月单月 42.33% 已经低于 H1 累计的 46.04%。</p>
+      </div>
+    </article>
+    <article class="qa-card" data-page-node-id="hdKOfsydg0V9mduAvsAulQ">
+      <span class="qa-tag tag-confuse" data-page-node-id="D2FsMTrtraL0aZHN2uooFx">⚠️ 易混淆</span>
+      <div class="qa-question" data-page-node-id="zibToxYBm2CQrYYuQMt1NP">同样一个 326，逆向投资人说是买点，短线冲浪手说是下跌中继——谁对？</div>
+      <div class="qa-answer" data-page-node-id="hIMnGQChkb4EwuPIlzPOXX">
+        <p data-page-node-id="BkK6yWkz1AcPcOL3HVljSn">都对，因为他们根本不在同一个时间尺度上说话。<strong data-page-node-id="MoiDzdlua8xx4YkHvxISFH">短线冲浪手看的是"接下来两周能不能站回 348"，326 破了他就确认下一档看 300-310；逆向投资人看的是"未来三年这家公司死没死"，他在 324-327 准备下第一批 1 份，下面还有 300-303 和 290 两批等着。</strong></p>
+        <p data-page-node-id="M94CAs1swWWc3dJ823BB4h">冲突的根源不在数据，在前提：<strong data-page-node-id="ybXiyRUg6QDCns0elk4WrS">你要的是"这周别再跌"，还是"三年后它还在且赚得更多"？</strong>你档案里那句"点位到了要加仓但下面就是止损位"，本质上就是这两把尺子被同时按在了同一个账户上——这是唯一一个必须你自己回答、别人替不了的问题。</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="watch" data-page-node-id="ZiAxxpftUMq8jdBKDTNgVV">
+  <div class="section-head" data-page-node-id="EQuIiiG0SEOwGrhUwpjqp1">
+    <div class="section-num" data-page-node-id="pMWWkfTfomDgygi8XzFrnQ">04 · 关注</div>
+    <div data-page-node-id="H02VFWpzxKcTz768quezku">
+      <div class="section-title" data-page-node-id="dDTG265Bcs4P2npteL1Mp9">后续关注</div>
+      <div class="section-lede" data-page-node-id="u1HiTKns4syuhNyANGtyXB">当下综合视角是基于现有数据的快照 —— 什么时候该回来重看，什么情况下我们这次的视角可能错了</div>
+    </div>
+  </div>
+
+  <div class="subsection-label" data-page-node-id="CxvSwoDRwmakMuKvKkqZXY">4a · 关键变量观察台</div>
+  <div class="trigger-wrap" data-page-node-id="GHaT6sz1i2SqtDA9a5fFBW">
+    <table class="trigger-table" data-page-node-id="cO3zXQn1KHrzIOpAYWohrA">
+      <thead data-page-node-id="g73Gotjl3IdjtsH81od4sv">
+        <tr data-page-node-id="d8mAakclDVAQMsaPvGvxii">
+          <th style="width: 30%;" data-page-node-id="CQoGLMeaknGR0xje95iGgC">变量 · 当前</th>
+          <th data-page-node-id="9IxE66dzXDtBsBfim8I9rr">重新评估触发线</th>
+        </tr>
+      </thead>
+      <tbody data-page-node-id="HpHhzDU6RUHxzHDsnfTDI4">
+        <tr data-page-node-id="EhDaBeywolIigxcalfQlUY">
+          <td class="trigger-var" data-page-node-id="vvGNHCDySh6FQyIW6GvRv3">回购实施进度<span class="now" data-page-node-id="ln2pnx1N7OZ8mG62dqr1JN">当前：0 股（8/31 确认未实施）</span></td>
+          <td class="trigger-action" data-page-node-id="FXjUm7FysiUIgoWa2KtOlG">月度公告出现首次回购（哪怕几亿）→ <span class="up" data-page-node-id="wrhTXQYELxLGScvuge16wz">管理层对当前价格投了赞成票，唯一可兼作刹车与喇叭的信号</span>；到 2026 年底仍零实施 → <span class="down" data-page-node-id="nrbMFU14TaULY4szlzR9ux">托底假设失效，目标价 −22% 那档要当基准情形看</span></td>
+        </tr>
+        <tr data-page-node-id="JDICMyHJhvCEVNVkoFDqOx">
+          <td class="trigger-var" data-page-node-id="7RUx44VNgxMn0DOBBhe5M2">单季毛利率<span class="now" data-page-node-id="bSCQxZ7uHOMRo61daEkCNl">当前：Q2 23.15%（H1 23.93%，−1.09pct）</span></td>
+          <td class="trigger-action" data-page-node-id="AOKjHvWs29z2lufz6YAnDG">Q3 守住 23% → <span class="up" data-page-node-id="S3zfb39IFYS8cAP2JbSU9B">价格战进入相持阶段，中枢下迁暂缓</span>；跌破 <strong data-page-node-id="xqBVYKR6lFgd9JpgkO9WU4">22%</strong> → <span class="down" data-page-node-id="ZJvlCQue5ZlxS7pCTclmGk">以价换量进入第二阶段，估值中枢下迁确认</span></td>
+        </tr>
+        <tr data-page-node-id="cw8S7bGP4uzNfmCEiakcgt">
+          <td class="trigger-var" data-page-node-id="R4ELY6dg4yKyUztqwywKfi">合同负债<span class="now" data-page-node-id="wVx1jYyqs80wuvdagD7ZeR">当前：364.83 亿（较年初 −25.9%）</span></td>
+          <td class="trigger-action" data-page-node-id="1A8Y8RkdqbiEhIPMKMoKcW">环比回正 → <span class="up" data-page-node-id="RH5fSZdaTruPCKPhMnyZrs">下游备货意愿恢复，排产下修传闻被抽空</span>；连续两季同比为负 → <span class="down" data-page-node-id="avETMwgPBo2D7xBKUDtYIS">需求拐点确立，EPS 斜率要走平（最硬的一条减仓线）</span></td>
+        </tr>
+        <tr data-page-node-id="P4bTzrhqvvXcncjLikFqdB">
+          <td class="trigger-var" data-page-node-id="oPXqjgEKqyKjmcBRFKShJm">国内动力电池份额<span class="now" data-page-node-id="FFCcCkfrjtv7DzoCRrd9HM">当前：H1 46.04% / 7 月单月 42.33%</span></td>
+          <td class="trigger-action" data-page-node-id="R6z5CXyDz8tUzaOB8cr6x2">稳在 <strong data-page-node-id="EWetFHbke6SC0Z3OVkDqPa">42% 以上</strong>且车企自研阵营份额仍为个位数 → <span class="up" data-page-node-id="X89dbJHXjpsNiG5zk0Z3E8">"去宁化"停留在叙事层面</span>；跌破 <strong data-page-node-id="k3v4o7ye7mt0mP1KSba7jR">41%</strong> → <span class="down" data-page-node-id="2ydWoPlgJCvJxUp0xYRfS1">叙事转数据，定价权溢价被彻底拿掉</span></td>
+        </tr>
+        <tr data-page-node-id="xX9oyziVkZrOWE8tH7EQlr">
+          <td class="trigger-var" data-page-node-id="68tZml9M4gkCpG0Pzgv0xe">碳酸锂价格<span class="now" data-page-node-id="C7BVuGrrLT6E6YCUHmNzg9">当前：约 14-15 万/吨（9 月首周 −11%）</span></td>
+          <td class="trigger-action" data-page-node-id="3kqFc7Ec9ENbs9bRGGicrq">站回 <strong data-page-node-id="RH5wLyHe89q9ZYtlGjdwor">15 万以上</strong>并企稳 → <span class="up" data-page-node-id="RlubUNqVS94ep9tAtMcDWd">电池厂毛利率修复通道打开</span>；持续低于 14 万 → <span class="down" data-page-node-id="FHsNBnoGDxZSVol5zzPE5A">别急着当利好，可能是需求而非供给驱动的下跌</span></td>
+        </tr>
+        <tr data-page-node-id="rCYycjLX5esIIdPAwap30u">
+          <td class="trigger-var" data-page-node-id="fbcyjKgi3EjRKmEZn8PTLC">海外收入占比与 2027 出口退税<span class="now" data-page-node-id="KDjnfZHOehGuXIB1YDpzeD">当前：境外占比 31.46%、毛利率 29.97%</span></td>
+          <td class="trigger-action" data-page-node-id="LIoENa9qyFw8OzdVaN2e7f">匈牙利/西班牙投产爬坡顺利 → <span class="up" data-page-node-id="p5VtAN8wjDADCBSZd9qJu9">可对冲境内挤压</span>；<strong data-page-node-id="UjpUbPX8DQJr6IPRYOroWU">2027 年出口退税归零落地而海外产能未跟上</strong> → <span class="down" data-page-node-id="haKsn7wfGGpUsSx13hdvYL">最赚钱的那块先撞政策墙</span></td>
+        </tr>
+        <tr data-page-node-id="VM5wrBkiMRUnUTf3qE3fuE">
+          <td class="trigger-var" data-page-node-id="9UBykGoNoHhHRFCNMKGyGH">A 股关键技术位<span class="now" data-page-node-id="eE9dhwomGw6hkxRCudxAqx">当前：331（9/9 盘中），年内低 324.70 / 52 周低 300.73</span></td>
+          <td class="trigger-action" data-page-node-id="T9gqIHnLWbJTiyMGmUQvft">放量收复 <strong data-page-node-id="iGA5C1tR82zgIpbjA0gIue">348-351</strong> 并站稳 3 日 → <span class="up" data-page-node-id="ZvwdoVvhbeUsTVxGPjBbNM">才谈得上"资金回流"第一步</span>；放量跌破 <strong data-page-node-id="NIfI8IR76r2AS3QdbStoBi">326</strong> → <span class="down" data-page-node-id="WvA3keFA8g76m19LPSNOSu">下一档看 300-310</span></td>
+        </tr>
+        <tr data-page-node-id="6KO0vSxY9OTKKx4hqcVSQL">
+          <td class="trigger-var" data-page-node-id="wY9N7zHd1PrD6t3ADR01BE">宏观贴现率与市场风格<span class="now" data-page-node-id="QPKF6NuU5taLa9XhAOed9j">当前：10Y 美债 4.78-4.79%，小市值题材轮动</span></td>
+          <td class="trigger-action" data-page-node-id="1BXiUj4UHiCxBbK0rnR6gP">美债回落至 4.5% 以下 + 市场出现可持续主线 → <span class="up" data-page-node-id="z49jPxmTjANcYiKfc2n6Zt">大市值成长股重启的前提条件具备</span>；美债继续上行或地缘冲突升级 → <span class="down" data-page-node-id="HjGlE90tDS91k3l36b7J1D">无条件降低风险敞口，此条优先级最高</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection-label" data-page-node-id="tMuDt0BHiD18Ei7w0vm3KX">4b · 综合视角失效条件</div>
+  <div class="notes-stack" data-page-node-id="ziJzRsG2wN8BqxlTN4izHH">
+    <div class="note-item" data-page-node-id="z9rpsnp7Wpfq0P3VfUVU8O">
+      <div class="note-num" data-page-node-id="EOPjqNSlL9KBaBYElmezah">01</div>
+      <div class="note-body" data-page-node-id="tDBEbTaRxUkSAHKyMmnCkm">
+        若三季报<strong data-page-node-id="56SyfP5Ik9GyeLNEbYElZJ">毛利率跌破 22%</strong> 且<strong data-page-node-id="xfqzF6rrCi33VG7wpzqaGe">经营现金流继续跑输归母净利</strong>（净利润现金含量从 139% 再往下），则"不是价值陷阱"这个六人共识的第一块基石松动——那意味着问题不在倍数，在分子本身。
+      </div>
+    </div>
+    <div class="note-item" data-page-node-id="CCpE4moFFWbW1OlpNnMtwt">
+      <div class="note-num" data-page-node-id="AC6CWTCHsocTocibNJb8NF">02</div>
+      <div class="note-body" data-page-node-id="PD1GsYlOVWLOuykTF0BKvu">
+        若到 <strong data-page-node-id="UKWRst2JeSivyBCEF4xQJF">2026 年底回购仍零实施</strong>，且 200 亿下限被证实无约束力，则"管理层只是择时、不是不着急"的解读失效——逆向投资人和短线冲浪手同时把回购列为第一信号，这条塌了，两家的框架都得改口。
+      </div>
+    </div>
+    <div class="note-item" data-page-node-id="EmElMS0pccXb1ynEIOHDXV">
+      <div class="note-num" data-page-node-id="F59E9D3n6CgMejmdJDf7iW">03</div>
+      <div class="note-body" data-page-node-id="CFKEhweQJkyaC3tYLHJPx1">
+        若出现<strong data-page-node-id="n1ausMZAl7AfBjyKSjjocq">再有一到两家主流车企宣布主力车型全系切换非宁德电芯</strong>，同时车企自研阵营合计份额从当前的 <strong data-page-node-id="1bFiD8ng34HqvdxdIyGvPF">&lt;6% 升到两位数</strong>，则"去宁化是叙事不是数据"的判断被推翻——份额若从 H1 的 46.04% 掉到 41% 以下，性质就变了。
+      </div>
+    </div>
+    <div class="note-item" data-page-node-id="nc2GeCnxnrDkgHZ2lguELN">
+      <div class="note-num" data-page-node-id="JUb32LjVszWArYe7ZWFuj0">04</div>
+      <div class="note-body" data-page-node-id="DCdITaGN7HVbxDyYxlx2JS">
+        若<strong data-page-node-id="aEx724G9Dyx3u1ZBNupKj1">碳酸锂回落到 14 万以下并持续，同时储能毛利率掉到 20% 以下</strong>，则产业策略师已主动打折的那句"储能是真景气"被彻底推翻——届时储能在报表上就从利润弹性来源变成第二个拖累项。
+      </div>
+    </div>
+    <div class="note-item" data-page-node-id="8G82Yl4hQDR2MotmY6K8eL">
+      <div class="note-num" data-page-node-id="xGkbfRJHXejiQQYzm48Md9">05</div>
+      <div class="note-body" data-page-node-id="4NMmGU98PRPDJ4Jl0qPwlD">
+        若 <strong data-page-node-id="sVBKMsjFe23E99DJ8T0Wzr">2027E EPS 一致预期从当前 26.07 元被系统性砍到 20 元以下</strong>（对应增速从 +25.3% 掉到个位数），则估值分析师"EPS 斜率仍在往上"这一核心支撑断裂——届时 18 倍 PE 就真成了"下迁路上的一站"而非"低位"，PE Bands 下轨会跟着 EPS 往下弯。
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer data-page-node-id="IIEE8e9BtAQGQbxVttjaCZ">
+  <p data-page-node-id="IQwCXmDLxIdzzLxoapECJB">⚠️ 以上内容由 AI 基于公开信息整理生成，仅供参考，不构成任何投资建议或个股推荐。投资有风险，决策需谨慎。</p>
+  <p class="footer-sub" data-page-node-id="dL1KqbYDqLQJ4VKN7GRPGG">stock-partner-team · Generated 2026-09-09</p>
+</footer>
+
+</body>
+</html>
