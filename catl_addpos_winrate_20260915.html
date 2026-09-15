@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宁德时代 · 316 加仓胜率评估</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-primary: #F7F5F3; --bg-secondary: #FFFFFF; --bg-card: #FFFFFF;
+  --bg-elevated: #FAFAF9; --bg-warm: #F5F2EE; --bg-dark: #2D2926;
+  --text-primary: #2D2926; --text-secondary: #5C5652;
+  --text-muted: #8A8480; --text-light: #A8A29E;
+  --accent: #D97706; --accent-light: #FEF3C7; --accent-hover: #B45309;
+  --border: #E5E2DE; --border-light: #F0EEEC;
+  --red: #DC2626; --green: #059669; --gold: #D97706; --blue: #2563EB;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', Georgia, serif;
+  background: var(--bg-primary); color: var(--text-primary);
+  line-height: 1.8; font-size: 16px; -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: inherit; font-weight: 600; letter-spacing: 0.02em; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-hover); }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+.prose { max-width: 760px; margin: 0 auto; }
+.prose p { font-size: 1.05rem; line-height: 1.9; margin-bottom: 20px; color: var(--text-primary); }
+.section-head { max-width: 1100px; display: grid; grid-template-columns: 120px 1fr; gap: 32px; align-items: baseline; margin: 0 auto 48px; padding: 0 48px; }
+.section-num { font-size: 0.9rem; color: var(--accent); letter-spacing: 0.15em; border-top: 1px solid var(--accent); padding-top: 8px; }
+.section-title { font-size: 2rem; }
+.section-lede { color: var(--text-muted); margin-top: 6px; font-size: 1rem; }
+section { padding: 72px 0; }
+
+/* ===== Nav ===== */
+nav { position: sticky; top: 0; z-index: 100; height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; background: rgba(247,245,243,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+.nav-logo { font-weight: 600; font-size: 1rem; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { color: var(--text-secondary); font-size: 0.95rem; }
+.nav-links a:hover { color: var(--accent); }
+
+/* ===== Hero ===== */
+.hero { max-width: 1100px; margin: 0 auto; padding: 96px 48px 48px; }
+.kicker { color: var(--accent); font-size: 0.9rem; letter-spacing: 0.15em; font-weight: 500; margin-bottom: 24px; }
+.hero h1 { font-size: 3rem; line-height: 1.25; margin-bottom: 24px; max-width: 900px; }
+.hero-dek { max-width: 760px; font-size: 1.15rem; color: var(--text-secondary); line-height: 1.9; margin-bottom: 40px; }
+.host { display: inline-flex; align-items: center; gap: 12px; font-size: 0.95rem; color: var(--text-muted); }
+.host img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border); }
+
+/* ===== Module 1 · Conclusion Card ===== */
+.conclusion-wrap { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+.conclusion-card {
+  padding: 40px 48px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-left: 6px solid var(--accent); border-radius: 20px;
+  box-shadow: 0 4px 28px rgba(217, 119, 6, 0.06);
+}
+#conclusion { padding: 0; }
+#conclusion .section-head { margin-bottom: 48px; }
+.cc-question {
+  font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.05em;
+  margin-bottom: 8px; text-transform: uppercase;
+}
+.cc-question-text {
+  font-size: 1.4rem; font-weight: 600; color: var(--text-primary);
+  margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px dashed var(--border);
+}
+.cc-question-text::before { content: "「"; color: var(--accent); }
+.cc-question-text::after { content: "」"; color: var(--accent); }
+
+.cc-snapshot { margin-bottom: 32px; }
+.cc-snapshot-label {
+  font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.18em;
+  font-weight: 600; margin-bottom: 14px; text-transform: uppercase;
+}
+.cc-snapshot-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  background: var(--bg-elevated); border: 1px solid var(--border-light);
+  border-radius: 12px; overflow: hidden;
+}
+.cc-snap-cell {
+  padding: 16px 20px;
+  border-right: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  background: var(--bg-elevated);
+}
+.cc-snap-cell:nth-child(4n) { border-right: none; }
+.cc-snap-cell:nth-last-child(-n+4) { border-bottom: none; }
+.cc-snap-cell-label {
+  font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+.cc-snap-cell-value {
+  font-size: 1.4rem; font-weight: 600; color: var(--text-primary);
+  font-variant-numeric: tabular-nums; line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+.cc-snap-cell-sub {
+  font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;
+  font-variant-numeric: tabular-nums;
+}
+.cc-snap-up { color: var(--red); }
+.cc-snap-down { color: var(--green); }
+
+.cc-headline-label {
+  font-size: 0.8rem; color: var(--accent); letter-spacing: 0.2em;
+  font-weight: 600; margin-bottom: 14px; text-transform: uppercase;
+}
+.cc-headline {
+  font-size: 1.15rem; font-weight: 500; color: var(--text-primary);
+  letter-spacing: 0.01em; line-height: 1.75;
+  margin-bottom: 32px; padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+.cc-headline strong { font-weight: 700; color: var(--text-primary); }
+.cc-headline em { font-style: normal; font-weight: 700; color: var(--red); }
+
+.cc-actions-intro {
+  font-size: 0.95rem; color: var(--text-muted); letter-spacing: 0.02em;
+  margin-bottom: 18px;
+}
+.cc-actions {
+  display: flex; flex-direction: column;
+  margin-bottom: 28px;
+}
+.cc-action-row {
+  display: grid; grid-template-columns: 180px 1fr;
+  gap: 28px; padding: 18px 0; align-items: baseline;
+  border-bottom: 1px dashed var(--border-light);
+}
+.cc-action-row:last-child { border-bottom: none; }
+.cc-action-label {
+  font-weight: 600; color: var(--accent); font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+.cc-action-detail {
+  color: var(--text-primary); font-size: 1rem; line-height: 1.85;
+}
+.cc-action-detail strong { color: var(--text-primary); font-weight: 600; }
+
+.cc-vote {
+  display: flex; gap: 14px; flex-wrap: wrap; align-items: center;
+  padding-top: 20px; border-top: 1px dashed var(--border);
+}
+.cc-vote-label { font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.05em; }
+.cc-vote-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.85rem; color: var(--text-secondary);
+  padding: 4px 12px; background: var(--bg-elevated); border-radius: 999px;
+  border: 1px solid var(--border-light);
+}
+.cc-vote-tag .dot { width: 8px; height: 8px; border-radius: 50%; }
+
+/* ===== Module 2 · Voice Card ===== */
+.voice-stack { max-width: 1100px; margin: 0 auto; padding: 0 48px; display: flex; flex-direction: column; gap: 24px; }
+.voice-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px 36px; min-width: 0; }
+.voice-head { display: flex; align-items: center; gap: 12px; padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid var(--border-light); }
+.voice-head img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border); }
+.voice-name { font-weight: 600; font-size: 1.1rem; flex: 1; }
+.voice-card ol, .voice-card ul { padding-left: 20px; }
+.voice-card li { margin-bottom: 12px; line-height: 1.8; }
+.voice-card strong { color: var(--text-primary); font-weight: 600; }
+.voice-card h4 { margin: 20px 0 10px; font-size: 1.05rem; color: var(--text-primary); }
+.voice-card p { margin-bottom: 14px; line-height: 1.85; color: var(--text-secondary); }
+.voice-card table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: 0.95rem; margin: 16px 0; }
+.voice-card th, .voice-card td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+.voice-card th { color: var(--text-muted); font-weight: 500; background: var(--bg-elevated); font-size: 0.85rem; }
+.voice-card .table-scroll { overflow-x: auto; margin: 16px 0; }
+.voice-card .pull-quote { border-left: 3px solid var(--accent); padding: 4px 0 4px 16px; margin: 16px 0; color: var(--text-secondary); font-style: italic; }
+
+/* ===== Module 3a · Notes List（主持人札记） ===== */
+.notes-stack { max-width: 1100px; margin: 0 auto; padding: 0 48px; display: flex; flex-direction: column; gap: 16px; }
+.note-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 24px 28px; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: baseline; }
+.note-num { font-size: 1.6rem; font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; line-height: 1; opacity: 0.6; }
+.note-body h4 { font-size: 1.1rem; margin-bottom: 8px; color: var(--text-primary); }
+.note-body p { font-size: 0.98rem; line-height: 1.85; color: var(--text-secondary); margin: 0 0 12px; }
+.note-body p:last-child { margin-bottom: 0; }
+.note-body p strong { color: var(--text-primary); }
+
+/* ===== Module 3b · Q&A Card（主持人 Q&A） ===== */
+.qa-stack { max-width: 1100px; margin: 0 auto; padding: 0 48px; display: flex; flex-direction: column; gap: 18px; }
+.qa-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 28px 32px; }
+.qa-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; letter-spacing: 0.06em; padding: 4px 12px; border-radius: 999px; background: var(--bg-warm); color: var(--text-secondary); margin-bottom: 14px; font-weight: 500; }
+.qa-tag.tag-key { background: #FEF3C7; color: #B45309; }
+.qa-tag.tag-confuse { background: #FEE2E2; color: #B91C1C; }
+.qa-tag.tag-miss { background: #DBEAFE; color: #1D4ED8; }
+.qa-tag.tag-meta { background: #EDE9FE; color: #6D28D9; }
+.qa-question { font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin-bottom: 14px; line-height: 1.5; }
+.qa-question::before { content: "Q. "; color: var(--accent); font-weight: 700; }
+.qa-answer { color: var(--text-secondary); font-size: 1rem; line-height: 1.85; }
+.qa-answer::before { content: "A. "; color: var(--text-muted); font-weight: 600; margin-right: 4px; }
+.qa-answer p { margin-bottom: 12px; }
+.qa-answer p:last-child { margin-bottom: 0; }
+.qa-answer strong { color: var(--text-primary); }
+
+/* ===== Module 4 · Trigger Table（关键变量触发表） ===== */
+.trigger-wrap { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+.trigger-table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; font-variant-numeric: tabular-nums; }
+.trigger-table th, .trigger-table td { padding: 18px 22px; text-align: left; border-bottom: 1px solid var(--border-light); vertical-align: top; }
+.trigger-table tr:last-child td { border-bottom: none; }
+.trigger-table th { background: var(--bg-elevated); color: var(--text-muted); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
+.trigger-var { font-weight: 600; color: var(--text-primary); font-size: 1.02rem; min-width: 200px; }
+.trigger-var .now { display: block; font-weight: 400; color: var(--text-muted); font-size: 0.85rem; margin-top: 4px; letter-spacing: 0; text-transform: none; }
+.trigger-action { color: var(--text-secondary); font-size: 0.98rem; line-height: 1.85; }
+.trigger-action strong { color: var(--text-primary); font-weight: 600; }
+.trigger-action .up { color: var(--red); font-weight: 600; }
+.trigger-action .down { color: var(--green); font-weight: 600; }
+
+/* ===== Sub-section divider（用于 Module 3 内部 3a / 3b 分隔） ===== */
+.subsection-label { max-width: 1100px; margin: 48px auto 20px; padding: 0 48px; font-size: 0.85rem; color: var(--accent); letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; }
+.subsection-label:first-of-type { margin-top: 0; }
+
+/* ===== Passage Card（兜底承接：4 模块外的非标内容） ===== */
+.passage-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 36px 40px; max-width: 1100px; margin: 0 auto 24px; }
+.passage-card h3 { font-size: 1.3rem; margin-bottom: 16px; color: var(--text-primary); }
+.passage-card h4 { font-size: 1.05rem; margin: 24px 0 10px; color: var(--text-primary); }
+.passage-card p { font-size: 1rem; line-height: 1.9; margin-bottom: 16px; color: var(--text-secondary); }
+.passage-card ul, .passage-card ol { padding-left: 22px; margin-bottom: 16px; }
+.passage-card li { margin-bottom: 8px; line-height: 1.85; color: var(--text-secondary); }
+.passage-card strong { color: var(--text-primary); font-weight: 600; }
+.passage-card table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: 0.95rem; margin: 16px 0 24px; }
+.passage-card th, .passage-card td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--border-light); vertical-align: top; }
+.passage-card th { color: var(--text-muted); font-weight: 500; background: var(--bg-elevated); letter-spacing: 0.04em; font-size: 0.85rem; }
+
+/* ===== Footer ===== */
+footer { background: var(--bg-dark); color: var(--text-light); padding: 48px; text-align: center; margin-top: 72px; }
+footer p { max-width: 680px; margin: 0 auto; font-size: 0.95rem; }
+.footer-sub { margin-top: 16px; font-size: 0.8rem; color: var(--text-light); opacity: 0.7; }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .container, .voice-stack, .qa-stack, .trigger-wrap, .notes-stack, .subsection-label, .conclusion-wrap { padding-left: 24px; padding-right: 24px; }
+  .hero { padding-left: 24px; padding-right: 24px; }
+  .conclusion-card { padding: 28px 24px; }
+  .cc-headline { font-size: 1.05rem; line-height: 1.7; }
+  .cc-action-row { grid-template-columns: 1fr; gap: 6px; }
+  .cc-snapshot-grid { grid-template-columns: repeat(2, 1fr); }
+  .cc-snap-cell:nth-child(4n) { border-right: 1px solid var(--border-light); }
+  .cc-snap-cell:nth-child(2n) { border-right: none; }
+  .cc-snap-cell:nth-last-child(-n+4) { border-bottom: 1px solid var(--border-light); }
+  .cc-snap-cell:nth-last-child(-n+2) { border-bottom: none; }
+  .hero h1 { font-size: 2.2rem; }
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .voice-card, .passage-card { padding: 24px; }
+  .qa-card { padding: 22px; }
+  .trigger-table th, .trigger-table td { padding: 14px 14px; }
+  .note-item { padding: 20px; grid-template-columns: 1fr; gap: 8px; }
+  .section-head { padding: 0 24px; }
+}
+
+/* ===== 深色主题适配 · 与项目首页 #0d1117 色系一致 ===== */
+:root {
+  --bg-primary: #0d1117; --bg-secondary: #161b22; --bg-card: #161b22;
+  --bg-elevated: #1c2129; --bg-warm: #161b22; --bg-dark: #010409;
+  --text-primary: #e6edf3; --text-secondary: #c9d1d9;
+  --text-muted: #8b949e; --text-light: #6e7681;
+  --accent: #d4a24c; --accent-light: #1f2937; --accent-hover: #e0b35f;
+  --border: #30363d; --border-light: #21262d;
+  --red: #ff6b6b; --green: #4ade80; --gold: #d4a24c; --blue: #58a6ff;
+}
+body { background: var(--bg-primary) !important; color: var(--text-primary) !important; }
+footer { background: var(--bg-dark) !important; color: var(--text-muted) !important; }
+.qa-tag.tag-key { background: rgba(212,162,76,0.14) !important; color: #d4a24c !important; border-color: rgba(212,162,76,0.32) !important; }
+.qa-tag.tag-confuse { background: rgba(255,107,107,0.13) !important; color: #ff6b6b !important; border-color: rgba(255,107,107,0.30) !important; }
+.qa-tag.tag-miss { background: rgba(88,166,255,0.13) !important; color: #58a6ff !important; border-color: rgba(88,166,255,0.30) !important; }
+.qa-tag.tag-meta { background: rgba(167,139,250,0.14) !important; color: #a78bfa !important; border-color: rgba(167,139,250,0.30) !important; }
+/* ===== 深色主题适配结束 ===== */
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo">📰 宁德时代 · 加仓胜率</a>
+  <div class="nav-links">
+    <a href="#conclusion">结论</a>
+    <a href="#voices">视角</a>
+    <a href="#thinking">思考</a>
+    <a href="#watch">关注</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="kicker">ROUND TABLE · 2026-09-15 · 胜率评估 · 300750.SZ</div>
+  <h1>在 316 加仓，胜率到底有多大？</h1>
+  <div class="hero-dek">价格回到了 2025 年 9 月的水平，但这一年间每股收益涨了 43.5%、估值压缩了 30.2%。同样一个 316，含金量并不相同。六位成员各自取数、各自回测，给出的胜率从 30% 到 70% 不等——差异不在判断，在定义。</div>
+  <div class="host">
+    <img src="data:image/webp;base64,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" alt="投研主编">
+    <span>投研主编 · 圆汇众（Yuan）· 腾讯自选股股票投研专家团</span>
+  </div>
+</section>
+
+<section id="conclusion">
+  <div class="section-head">
+    <div class="section-num">01 · 结论</div>
+    <div><h2>圆桌怎么看</h2><p class="section-dek">六视角交叉验证后的胜率参考</p></div>
+  </div>
+  <div class="conclusion-wrap">
+    <div class="conclusion-card">
+
+      <div class="cc-question">本次评估的问题</div>
+      <div class="cc-question-text">股价在 9 月 15 日收于 316.36 元，创 52 周新低，与一年前的价位几乎重合。需要评估的是：在这个位置加仓，赢面究竟多大。胜率随持有期长短和目标定义而变，本报告要做的是把这些差异讲清楚，而不是给一个笼统的数字。</div>
+
+      <div class="cc-snapshot">
+        <div class="cc-snapshot-label">当前关键数据 · 2026-09-15 收盘</div>
+        <div class="cc-snapshot-grid">
+          <div class="cc-snap-cell">
+            <div class="cc-snap-cell-label">收盘价</div>
+            <div class="cc-snap-cell-value">316.36</div>
+            <div class="cc-snap-cell-sub cc-snap-down">-6.16%，距 52 周低仅 0.11%</div>
+          </div>
+          <div class="cc-snap-cell">
+            <div class="cc-snap-cell-label">PE(TTM) / 一年前同日</div>
+            <div class="cc-snap-cell-value">17.22 / 24.68</div>
+            <div class="cc-snap-cell-sub cc-snap-down">估值压缩 30.2%</div>
+          </div>
+          <div class="cc-snap-cell">
+            <div class="cc-snap-cell-label">TTM 每股收益 / 一年前同日</div>
+            <div class="cc-snap-cell-value">18.37 / 12.80</div>
+            <div class="cc-snap-cell-sub cc-snap-up">每股收益增长 43.5%</div>
+          </div>
+          <div class="cc-snap-cell">
+            <div class="cc-snap-cell-label">成交额</div>
+            <div class="cc-snap-cell-value">155.59 亿</div>
+            <div class="cc-snap-cell-sub cc-snap-down">前日 88.7 亿，放量 75%</div>
+          </div>
+          <div class="cc-snap-cell">
+            <div class="cc-snap-cell-label">主力净流出</div>
+            <div class="cc-snap-cell-value">34.52 亿</div>
+            <div class="cc-snap-cell-sub cc-snap-down">全市场居首，散户净流入 23.01 亿</div>
+          </div>
+          <div class="cc-snap-cell">
+            <div class="cc-snap-cell-label">平均成本 / 获利盘</div>
+            <div class="cc-snap-cell-value">382.58 / 8.75%</div>
+            <div class="cc-snap-cell-sub cc-snap-down">91% 筹码在现价上方</div>
+          </div>
+          <div class="cc-snap-cell">
+            <div class="cc-snap-cell-label">技术状态</div>
+            <div class="cc-snap-cell-value">八条均线在上方</div>
+            <div class="cc-snap-cell-sub cc-snap-down">RSI2 13.33，贴破布林下轨</div>
+          </div>
+          <div class="cc-snap-cell">
+            <div class="cc-snap-cell-label">2026H1 归母 / 现金流</div>
+            <div class="cc-snap-cell-value">432.84 亿 / 602.17 亿</div>
+            <div class="cc-snap-cell-sub cc-snap-up">利润 +41.98%，现金流仅 +2.61%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cc-headline-label">圆桌综合视角</div>
+      <div class="cc-headline"><strong>加仓的胜率高低，取决于你把什么算作"赢"。</strong>如果目标是博一波超跌修复、赚到 15% 至 20% 就走，六个视角给出的历史胜率在<em>八成上下</em>，这是本轮的共识。如果目标是持有一年等回本再加收益，胜率降到<em>五成半左右</em>，六位给的 12 个月数字分布在 45% 到 70% 之间。分歧来自各自对周期位置和资金面的判断不同。<strong>短期胜率取决于情绪，长期胜率取决于三季报。</strong></div>
+
+      <div class="cc-actions-intro">胜率参考矩阵 —— 同一位置，不同持有期与不同目标，答案差得很远：</div>
+      <div class="cc-actions">
+        <div class="cc-action-row">
+          <div class="cc-action-label">5 个交易日</div>
+          <div class="cc-action-detail"><strong>35% – 40%</strong>。短线冲浪手对 RSI2 低于 15 且跌破布林下轨的历史回测。超卖通常先给一个日内反抽，但收盘口径的 5 日胜率明显低于五成</div>
+        </div>
+        <div class="cc-action-row">
+          <div class="cc-action-label">20 个交易日</div>
+          <div class="cc-action-detail"><strong>65% – 71%</strong>。同一回测的 20 日窗口；若叠加"创 60 日收盘新低"条件，样本胜率升到 <strong>83%</strong>。这是本轮性价比最高的窗口，赚的是均值回归的钱</div>
+        </div>
+        <div class="cc-action-row">
+          <div class="cc-action-label">1 个月</div>
+          <div class="cc-action-detail"><strong>30% – 55%</strong>。信号派首席 30-35%、产业策略师 38%、财报研究员 52%、估值分析师 55%。四人跨度大，因为有人算"不亏"、有人算"正收益"</div>
+        </div>
+        <div class="cc-action-row">
+          <div class="cc-action-label">3 个月</div>
+          <div class="cc-action-detail"><strong>35% – 62%</strong>。信号派首席 35-40%、产业策略师 45%、财报研究员 58%、估值分析师 62%。三季报落地后分化，考好升到 65%、考砸降到 35%</div>
+        </div>
+        <div class="cc-action-row">
+          <div class="cc-action-label">12 个月</div>
+          <div class="cc-action-detail"><strong>45% – 70%</strong>。逆向投资人 45-50%、产业策略师 50%、信号派首席 50-55%、财报研究员 65%、估值分析师 70%。<strong>中位数在 55% 上下</strong></div>
+        </div>
+        <div class="cc-action-row">
+          <div class="cc-action-label">换个问法</div>
+          <div class="cc-action-detail">逆向投资人把"胜率"拆成两问，这个拆法最接近实际决策：<strong>一年内出现过 15% 以上浮盈的概率约 85%</strong>，但<strong>一年后仍在水上的概率只有 45% 至 50%</strong>。等到 300 撑住再加，后者抬到 55% 至 60%</div>
+        </div>
+      </div>
+
+      <div class="cc-actions-intro">核心分析观点的分歧所在：</div>
+      <div class="cc-actions">
+        <div class="cc-action-row">
+          <div class="cc-action-label">看盈利的人乐观</div>
+          <div class="cc-action-detail">估值分析师给 12 个月 70%，理由是若 PE 不变，滚动每股收益一年内有望从 18.37 涨到 22 至 23（约 +20%），光靠盈利就能推价。财报研究员给 65%，依据是归母 TTM 一年间从 583.65 亿涨到 850 亿（+45.6%）。<strong>这一组算的是"公司能赚多少钱"</strong></div>
+        </div>
+        <div class="cc-action-row">
+          <div class="cc-action-label">看周期的人悲观</div>
+          <div class="cc-action-detail">产业策略师给 50%，他算的是 2027 年需求增速可能掉档：2026H1 国内新型储能新增装机只有 58.6GWh、同比 <strong>-16%</strong>，而 2026 年底累计装机 200GW 已提前完成 2027 年规划目标。信号派首席给 50-55%，因为四层信号只亮 0.5 层、近 20 日主力净流出 80.7 亿。<strong>这一组算的是"市场愿意给这些钱多少倍"</strong></div>
+        </div>
+        <div class="cc-action-row">
+          <div class="cc-action-label">一年前的证据</div>
+          <div class="cc-action-detail">2025-09-12 收 316.69，从那天算起的一整年：第 5 个交易日赚 13.7%、第 20 个赚 10.5%、区间最高 467.35（<strong>+47.6%</strong>），一年后回到 316.36，<strong>净收益 -0.1%</strong>。这一年内的最低价是 316.00，就出现在今天——<strong>几乎没经历过像样的浮亏，最多赚了近五成，最后归于零</strong></div>
+        </div>
+        <div class="cc-action-row">
+          <div class="cc-action-label">盘面结构</div>
+          <div class="cc-action-detail">今天开盘 335.00 即全天最高，午后成交占全天 71%，收盘贴当日低位，内盘大于外盘，属于<strong>放量派发而非恐慌见底</strong>。同类形态历史出现 8 次：次日 71% 翻红，但 +5 日只剩 57%、+10 日 43%</div>
+        </div>
+        <div class="cc-action-row">
+          <div class="cc-action-label">筹码位置</div>
+          <div class="cc-action-detail">获利盘仅 8.75%、平均成本 382.58，<strong>上方 91% 全是套牢盘，下方近一年没有成交密集区</strong>。最近的、有依据的支撑在 300 附近，距现价还有 5% 的空间——这意味着想设止损位的话，空间不小</div>
+        </div>
+      </div>
+
+      <div class="cc-vote">
+        <span class="cc-vote-label">立场分布：</span>
+        <span class="cc-vote-tag"><span class="dot" style="background:var(--green)"></span>胜率不占优、等信号 3</span>
+        <span class="cc-vote-tag"><span class="dot" style="background:var(--red)"></span>估值已有安全边际、可分批 2</span>
+        <span class="cc-vote-tag"><span class="dot" style="background:var(--gold)"></span>取决于入场位置、等更低支撑 1</span>
+        <span class="cc-vote-tag"><span class="dot" style="background:var(--accent)"></span>无人主张在 316 一次打满 6 / 6</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="voices">
+  <div class="section-head">
+    <div class="section-num">02 · 视角</div>
+    <div>
+      <div class="section-title">6 人怎么看</div>
+      <div class="section-lede">每位从自己的方法论独立诊断 —— 想看完整推理的人来这里</div>
+    </div>
+  </div>
+
+  <div class="voice-stack">
+
+    <article class="voice-card">
+      <div class="voice-head">
+        <img src="data:image/webp;base64,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" alt="估值分析师">
+        <div class="voice-name">🧮 估值分析师 · 文衡价</div>
+      </div>
+      <p>先定增速区间再选尺子，估值是硬约束不是买入理由。<strong>我在腾讯上吃过亏：估值便宜不等于不跌，还要看资金面压力有没有释放。</strong></p>
+
+      <h4>那组核心事实的核实结果</h4>
+      <table>
+        <thead><tr><th>项目</th><th>2025-09-12</th><th>2026-09-15</th><th>变化</th></tr></thead>
+        <tbody>
+          <tr><td>收盘价</td><td>316.69</td><td>316.36</td><td><strong>-0.1%</strong></td></tr>
+          <tr><td>TTM 每股收益</td><td>12.8012</td><td>18.3719</td><td><strong>+43.5%</strong></td></tr>
+          <tr><td>PE(TTM)</td><td>24.68</td><td>17.22</td><td><strong>-30.2%</strong></td></tr>
+        </tbody>
+      </table>
+      <p>一年时间，每股收益涨 43.5%，价格没动，估值被压缩 30%。同样一个 316，含金量完全不同：去年买的人付了 24.7 倍，现在付 17.2 倍。含义是双向的——<strong>下行有更厚的估值垫，但市场用 30% 的杀估值表达了它不信下一个 43%。</strong></p>
+
+      <h4>PE Bands 与分位</h4>
+      <p>近 3.2 年周度 PE 序列（n=40）：25 分位 17.43，50 分位 21.20，75 分位 21.90，90 分位 25.17。当前 17.22 位于约 25 分位，<strong>贴着下轨</strong>。对应价格线（按 EPS 18.37）：25 分位约 314、50 分位约 388、75 分位约 400、90 分位约 461，当前价正好压在下轨线上。</p>
+      <p>口径说明：没有把 2021 至 2022 年纳入。那是 PE 80 到 150 倍、增速 100% 以上的另一套 regime，用固定倍数硬套会严重失真。</p>
+
+      <h4>分位条件概率与胜率</h4>
+      <table>
+        <thead><tr><th>持有期</th><th>胜率</th><th>中位收益</th><th>区间</th></tr></thead>
+        <tbody>
+          <tr><td>1 个月</td><td>50%</td><td>+1.0%</td><td>-9% 至 +40%</td></tr>
+          <tr><td>3 个月</td><td>62%</td><td>+27.9%</td><td>-21% 至 +45%</td></tr>
+          <tr><td>12 个月</td><td>100%</td><td>+47.0%</td><td>+41% 至 +90%</td></tr>
+        </tbody>
+      </table>
+      <p>样本只有 8 个，且 2024 年 9 月那波普涨抬高了远期收益，需打折。综合修正后他给的是：<strong>1 个月约 55%、3 个月约 60%、12 个月约 70%</strong>。12 个月给到 70% 的主要依据是——若 PE 不变，滚动每股收益一年内有望走到 22 至 23（约 +20%），仅靠盈利就能推价。</p>
+
+      <h4>赔率</h4>
+      <table>
+        <thead><tr><th>情景</th><th>PE</th><th>目标价</th><th>空间</th></tr></thead>
+        <tbody>
+          <tr><td>悲观（PE 回 13 倍）</td><td>13×</td><td>约 271</td><td><strong>-14%</strong></td></tr>
+          <tr><td>深熊（下修叠加杀估值）</td><td>13×</td><td>约 247</td><td>-22%</td></tr>
+          <tr><td>基准（PE 稳在 17-18 倍）</td><td>17.5×</td><td>约 364</td><td><strong>+15%</strong></td></tr>
+          <tr><td>乐观（PE 回中位）</td><td>21×</td><td>约 437</td><td><strong>+38%</strong></td></tr>
+          <tr><td>极端（回一年前 24.7 倍）</td><td>24.7×</td><td>约 514</td><td>+62%</td></tr>
+        </tbody>
+      </table>
+      <p>赔率约 1.5 到 1.8 比 1。若按基准对深熊，则不足 1 比 1。<strong>上涨主要靠 PE 回归，而不是靠盈利惊喜——共识里的每股收益增长已经相对确定。</strong></p>
+
+      <h4>仓位定位</h4>
+      <p>宁德属于<strong>卫星仓位</strong>（新能源与高端制造赛道，博行业超额），不是核心底仓。含义有三层：单票设权重天花板（他的习惯是不超过组合 10% 至 15%）、加仓必须分批而不能一次性打满、宏观偏谨慎时先保核心红利底仓的比例。</p>
+
+      <div class="pull-quote">"这是估值修复型机会，属可拿但不急。确认信号——三季报和资金面——比价格本身更重要。"</div>
+    </article>
+
+    <article class="voice-card">
+      <div class="voice-head">
+        <img src="data:image/webp;base64,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" alt="财报研究员">
+        <div class="voice-name">🔬 财报研究员 · 钊审财</div>
+      </div>
+      <p>每一笔买入都得有预期，每季度是一次考试。<strong>盈利还在增长的公司，加仓胜率不该由股价跌了多少决定，而由下一次考试能不能过决定。</strong></p>
+
+      <h4>两组数的独立验证</h4>
+      <p>归母 TTM 从 583.65 亿涨到 850.00 亿，增幅 45.6%。价格已经帮你把估值消化掉 30%，从财务视角看这是"利润在长、估值在退"的状态。只要增长不断，下跌反而在提高安全边际。<strong>但增长这根柱子一开始晃，再便宜也是价值陷阱。</strong></p>
+
+      <h4>三季报判定阈值</h4>
+      <table>
+        <thead><tr><th>指标</th><th>当前值</th><th>健康阈值</th><th>警戒阈值</th></tr></thead>
+        <tbody>
+          <tr><td>单季毛利率</td><td>23.15%（Q2，同比 -2.4pct）</td><td>≥24%</td><td>低于 23% 且连续两季下探</td></tr>
+          <tr><td>合同负债</td><td>364.83 亿（同比 -0.4%）</td><td>环比回升</td><td>再降超 10% 且同比转负</td></tr>
+          <tr><td>经营现金流 / 归母</td><td><strong>1.39x</strong>（去年 1.93x）</td><td>≥1.2x</td><td>低于 1.0x</td></tr>
+          <tr><td>存货</td><td><strong>1308.19 亿（同比 +81%）</strong></td><td>不超过营收增速</td><td>超营收 20pct 且持续</td></tr>
+          <tr><td>资产减值</td><td>连接器未覆盖</td><td>每季低于 20 亿</td><td>每季超 40 亿</td></tr>
+          <tr><td>境外毛利率</td><td>29.97%（+0.95pct）</td><td>≥29%</td><td>低于 28%</td></tr>
+        </tbody>
+      </table>
+      <p><strong>已亮黄灯的两项</strong>：经营现金流与归母之比从 1.93 倍滑到 1.39 倍，说明钱没跟利润同步赚回来；存货同比 +81% 快于营收 +55%，可能有旺季备货与锂价备料的成分，但需要三季报确认不是需求走弱的积压。应收端反而健康，周转率从 2.80 升到 3.36。<strong>这两项是他不敢把胜率给到 70% 以上的原因。</strong></p>
+
+      <h4>三季报的情景概率</h4>
+      <table>
+        <thead><tr><th>情景</th><th>概率</th><th>对应胜率</th></tr></thead>
+        <tbody>
+          <tr><td>考得好（毛利率企稳、合同负债回正、现金流比 ≥1.2x）</td><td><strong>约 52%</strong></td><td>约 65%</td></tr>
+          <tr><td>考得一般（毛利率持平、现金流中性）</td><td><strong>约 31%</strong></td><td>约 50%</td></tr>
+          <tr><td>考砸（毛利率破 23%，或现金流比低于 1.0x）</td><td><strong>约 17%</strong></td><td>约 35%</td></tr>
+        </tbody>
+      </table>
+      <p>推导依据：上半年营收 +54.8%、归母 +42% 兑现度很好，且一致预期 2026E 每股收益 20.82 元高于当前 TTM 的 18.37 元，说明市场仍假定增长延续。但毛利率连续两季下探、利润质量下滑是真实的边际恶化，行业价格竞争未见拐点，所以他把"考砸"概率从去年的低个位数提到 17%。</p>
+
+      <h4>时间维度的胜率</h4>
+      <ul>
+        <li><strong>1 个月约 52%</strong>：基本面这几周不会变，纯情绪与资金驱动，接近随机略偏乐观</li>
+        <li><strong>3 个月约 58%</strong>：三季报落地后分化，考好升到约 65%，考砸降到约 35%</li>
+        <li><strong>12 个月约 65%</strong>：若 2027E 每股收益 26.11 元兑现，对应现价仅 12.1 倍</li>
+      </ul>
+
+      <h4>回购是信号不是实质买盘</h4>
+      <p>9/11 首笔回购 604,293 股，均价 330.93 元，金额 2.0 亿元。这个量级很小：相当于总市值的 0.014%，仅当日成交额的 1.3%。事实是回购价 331 元、现价 316 元，<strong>回购也没接住</strong>。但方向有意义，管理层愿意在 330 一线动用真金白银，是认为股价偏离价值的表态。<strong>信号价值大于托底价值，它加成的是管理层信心，不是资金面。他不会因为这 2 亿上调胜率。</strong></p>
+
+      <h4>管理层动作的一致性</h4>
+      <p>回购 2 亿、发债（第六期绿债 8/27、Q2 有息负债增 225 亿）、海外扩产（埃及 5GWh）、缩减国内项目投资、收购重庆耀宁、中期分红。<strong>真实态度是"进攻性资本配置加防御性股东回报"并行</strong>，重心明显在投未来。回购与分红是给短期股价的安抚，但力度远小于扩产和发债，说明<strong>管理层赌的是三年后，不是三个月后</strong>。</p>
+
+      <div class="pull-quote">"先建 5% 到 10% 的观察仓，把仓位留给三季报：考好逐步加到单票上限 20%，考砸就不加甚至减。每一笔买入都得有新的预期支撑，没有预期就是赌博。"</div>
+    </article>
+
+    <article class="voice-card">
+      <div class="voice-head">
+        <img src="data:image/webp;base64,UklGRv4NAABXRUJQVlA4IPINAAAQOwCdASqAAIAAPlEijkUjoiEhKpGMcHAKCWIAzmxaz7fbec1bX875EPGGN/3HcsHbA8wX9UOlJ5mfuA9038Zvdj6Bv7EdbH6Bv7AenB+2fwt/uf+2ntc3Rfwr8kPuX3H9gnOP1+6kfyv8D/mOKn5Eah3sn/XcHaAP5tvCy1R+/nmv/7LylPGj859gf+T/3f/r/3L8o/kk/7/9D6Qvp//0e4n+s//V7Iv7geyl+3jeyGUNOHNOSXtL3XC/V40gdsN1/KQOAjaBf/F1Dr6HbuvTJ0Z9phb04pEtX88vh+qZhxDp8LlGjyBXxJ6b20pK9TU6BJVRNNKhyfVq621aQHLwhinbICK4pWqEEql/4QThpnPscsKsr7DHvWqYgPBR6OdBEVN0di44HaQnKrOV45xrhdYO/eEw4/m3WVIEgwbVP+sE2ug2oJnZ6lU+2G9vTci5Ph2SLKI9/91Q3BpxLpJM2nzyPI2ZIJlqQA49bXxVHz5vt5WkrbJtjS6UT9tEhSGUuSlBrpCXl4OS2MOTym/Z36iE7CtQKv7AmNfGg21WIgoDu0W9IFkvoTEy5YTCxpvF+aLkYcrDic8FMg/2Pa52gx6DxVo1/B66diVwHtXvshBwtIcmGmof9skGEs0dnLggAP7+lCi2B2Ld0sLdu90jV4eUZrpotz8R0vC7ICic3WCrYM0NsWaWuf6Vvf8V85vhPcCeEinv9AJX9h5rf0Nu8hp52CnuA3pAPhnqdG0ZsL5E7fKau+za8bq/ZVgyu2M3ZGwGFLFBAPtdtLPBKDWzFV4kLxxo4G43zYMJDGqlfbJRMXvS6WZ+bo1e6xt3tP+YoITQd2DG3LRx0U4X6irOd1Vt4WgRu1wC6xb2qfheEYv4KZwD4ezjPG3uy3yeadMsswU27PIhTbU7+ztwe4bdkCWMiZsP71hR2VywWk72Wf44qln1+Xka/VpqOqUZtuOp6+HpUjVyMSRHUN9FL5oBoau6b0NGKWZSoEwrKlwsgucJexYl/Qf1UmaA6vsq4sFb9Mnp7/fUzQTD23+mvPkeUyYSuN4iOWbhgE+qG0AlNWy3hZzsIaQIzFiveqfmaSDsIHyo0grzhi90J9pQSSL22nZDc9vydpppeXhVq1j/IpYIHjBKgqdSHnf/ZrFQXEpETpOZLmuBjK17FEMqyPsey4CyMpRADMszznWJsOljCrkJ2Vf1Vr8xxTJCsXNtlZStBac+9wKE1L0667x9ZIopvzY+XVTUGV6cY57//crZwVUOoirthGuzjyCkVA/wFHHO7TWiXr0DDubkKCAsUG6Dh6z9p6mjRDLv49ymV6X4vdaqxW2lAktalIy2FVTlP3VFHyqNNk+WEBlj/Ms/HwHo60I8YQvQDYoCz4tmZLHe6SClMdRKYyM3etboY5Ki/ywCl5NRWP6UDRFLezvQl9N6xgbxEJyYMQMvJZ/oqqhWFwCvt6hCdH4jj6RY+l3dCoRdmA1Qh+P/Gg3tdm1pQWYR1+ut7CST97Td/QjERh3mOiKMO3SRNY1NsEcPwLtSmWsvbA1simnKOKAb1QSbM0aSd4byFwS4n90L1PzFX8o3JLYFst6irmtcuKdpgop5TaPvTAFXyTAtkGe/OBnfwfRHJccKv1obk/3C3YHu3/BBS+flYOiY8jFMSJKiKvKou/gWfT33/Tcw4b7feEVXElnw8CrcL3VmT4MFIXIYN47XeD4IOu79mu2qp7U6PTse03Ph2MEWCFPCE72soAvX82l5QRh/VcELqbQvr68ktz26OvlgDKC5sZ8EW1YYf4LXEqbQCrXjRoMFgigHbLy1TKLknXjRANoW2AkKEJZ7/I5nEQkUN8LckDHwac9tW5b1Jhr0SA3ujwN5AxHIW6k8q0EEuqJmnCpBC+90aTXaRFxDeUv6ncYOw9pmDsrtgGDY8KsOmWtfM4oj7aJXNYVIh7XqmUs0RmYOtYoYlIekyMjZ6WKEPdzQb2kjgzHN1GVZ9N3sZrJUIYNf+E93XG1cGGJbE4wyCIOGEExiE2RmOh2onpUf4543t4LZxLkUBuPOW47OV3st17ayMXOHMrUZalEUPkDuCFMjlymjdooBynSD6ur1BdxiNEKRS1aC1lJiojzPuciolQuMyc9C7XyJBZV8NAkn7k6+3HHrp4BvtZqAzYRs4jae6KSpg/aR/TLIMiAzqai/l0YoNq23aDFmcq6C9xATNRmBsbuwWuHikStIW7cRPN812duq3wgaYEVyCgkh7Qc30OdutJQdYWt1ggm1Gr0SZ/5/qQ9h/KDVcw4uL9z0rdLPuidKuNJRvA/Nz2JRwOeeSmsteGWUXSja12HX1eHb4mNJClbW9gcbBrljZi/keJjmJAgXJfGFOZIzV67n/Afuh7+Sa8op0GW3ByJnyFBDCmw4CGwxGJ0S/vv68cT44ehUL95oIiFSklm9MVVoANfCXhcu/Eko3o72GNc18/ng/B3uvmrOMq5xV+E57r8FGz8F8P7zZZwUoyIsFwOr3MuKXzfoPtzg3fDT4W7vSWtr9Lcg1R3FvV0d7rB55G/DL+/1A824XpO/+XPRfvwxtdPhLE1AZrpJR6eDLjgRgxda1e4G6MumJ8J3XLgPb50E4MWv/aGV7F2KQQpb88QNrP4nw+VsC3tPJHBg+xz8d+0ldT0TXaoA4XpOPNTx4OlVVjnPglLbfB9xFW/AXPXE6KD4+RogFq9tOByq9oI4cLxyZn66/b1VFurnQtoRUBU+Ihwl5Jh/ymvoZtThBNDhxAJdCcZQzH+gtRX2vkRaRgE7kix853x5HB5H4Y+mZdGuwAeh2egkAV+L8g2qbJJ2RP63Pv9tK03n+N0za7c1t1evtlP2EL1S+3agZIbXfwapeDq/t+imMJSaPCjawn0+M2cygcFRz6JUlNs2KhVt1HvBvr+YnPEp0KGzPlHdQYMTcwrkMVybf3ZP+I7Z7nKT50OLbbeelND5NkI/GAElRZZ1SGn5FQwBVjhsp1RxIzO9+UE+/7U++H2+E/q/K1TAnCQcQRD+UWCVMEwSW8Ub9OK/6QmgaSwli4T1ZlKcw1h+LN3D/WQEd0qSu+umCoFmijduSF/otyG6B6vAFJXeit+vtPHy0SBfrQb6+FL+rOJJzCESCIeszU7Sq65dYxrMl5Dr8FP7RkoAjLkC7W/Jk6QK13p1yuaFFnVqT78DH9WmYch8ly0Ie45cmp84yFhW4VwTitQ2QQcs63qBs8j5v6C/8/E5nqEi+lSCVyu65mwhAbA/82Hf/jp1b34V54ng+7mSpf2/FqcwvEP127b6xzV6P8xdPTOkMkiNRG7Vprxgb0s/LAZ8xOCNs1euyUnjkNzJPCugv8kPkla+CWoHZFzXuv5/vK54SPcn0aX2j/xEUwLFZaJbjh+RlykCqtYdj3/Z7zDBGdI3aFvCTzFdKLy1QYYeZSGGWwfPhhl3J2EPqiECv1cnEyulU6S5agdYv3OMFS8ERpAdpkCyDxIjcLWtjSZLVKaTU7K3WrK6odq4oWiYTD4XIuWHhzd72Y/XiFNMA1RAan8vI654jTP4vW94Ut+0zsRTNNKV9x0gq9hQjHZfntXadaKFuIBRyWlunCLpFSbHAoZ5NgpWViPD+5fz2Kzj/+8AzMOd6ZxK3lvxEWRVQs460FiiTOO6ZM+/f1xgQGvOhtfAIz3PiGIn7WIEGHfTRw17875uizHrhKMTn+WhjyAuh2YwmGgjHqTfFqOHqxJu2bbHfDbmOD5bTOpttMawEX1Lj1hpPCm92rwdvMDrbmRI0osNeFXnhE4Xx5sQiuurjv8pTkF7jORF7FiaWTF8LrslL6MeRNqOCOhr0erLGusndT2nUYm0YDVfzp2F157zcNC9ycqTX5L1uusVMJWEM0GDjhIZq5plEKHrtuMY4Lg5EaVAR/HwNcvmsm+6X6SUauQ1Af3aAzZloIW9GJBZzZlRsLsWvueStatKz3pLVLjClm2JhQ7kpBYkfVHtY00yLg0dr/PYxxubG/921W90zxy0glnQ5f5Sbsz1ioo6PDMrypzkwGIvV6sHO566u06bMFCDYzLoh+33QXtK2tEHC2IPn9g3T7di8dtYEVYABG96iG8l0hiDFyNA+o2Tg2hIKuydXjzh0d7vGznvVLZDBaVwZPnXqfwMUaPpVIvQLlgUVrvTYKoIccOvk9dwPPMwp0lJxUFdsfDXFHIFBm45cMAgGTPMViDp04PeBMcbBz8lIIVQZLZ3pLzOdUuFdZRbzKM2F4CijfCu95VumzxGIPWqH8Tsqi83/0pcVNH88OzpjNXpepsYWqUCkua4M9Y+bTaRiXSIAQsggLBjF+TDYGXEmYFIWgHl5yROP9FStSg1UAo9cnVnYG4Vj5RcHQffpuhWWAyzfhKuqave/BeuuTmbkd2R3DJOOdmaFIHxLKmzKykdwY/W/PtfEN2l10kkOPLG3B9xEv86isPQjzaGKkVE1y0ySkKKjF0tAkyDQ2cfCgwFaOluKXa4kpYfxNeNxBa/Z0qvVq2N4qAprqn5eyYjzCl99qxpEtyh8zigsF7+qeQzoNJOObxIwJJtmmT8BJh5ei631ie3vf1dB7fjpEzQWK07OLea9VzpE7x++ViSLUouo85E/ZsS+6E2PhXNEw72akmZhTUfIUmHyJrAGVfCTDTLBBqfzVCDkpHH72QjO62SArIuLla5I8M0HmUkL0d1bkvzbpnOOhEVLk07Q9d+tDTb7T6vvQ/4HgaYG8v4J9829VW3Nuzs7K1G8BOV5NkyqYZCnzZBAAA=" alt="产业策略师">
+        <div class="voice-name">🌊 产业策略师 · 星望远</div>
+      </div>
+      <p>先看产业趋势与卡位，景气下行段里再便宜也不碰。<strong>这题的本质不是"宁德好不好"，而是"你现在买的到底是什么"。</strong></p>
+
+      <h4>产业周期位置：从井喷转向存量博弈</h4>
+      <p>这一轮景气的发动机是储能需求井喷加供给缺弹性，碳酸锂一度冲到 20 万/吨。现在方向变了：<strong>碳酸锂主力合约已跌破 13 万/吨，较 5 月高点跌超 35%</strong>；8 月产量 112330 吨（同比 +32%），而 2026H1 国内新型储能新增装机仅 58.6GWh，<strong>同比 -16%</strong>。</p>
+      <p>关键变量在国内独立储能：2026 年底累计装机预计 200GW，<strong>提前完成 2027 年 180GW 的规划目标</strong>，这意味着 2027 年需求增速大概率掉档。</p>
+
+      <h4>那个矛盾的三个维度</h4>
+      <table>
+        <thead><tr><th>维度</th><th>事实</th><th>方向</th></tr></thead>
+        <tbody>
+          <tr><td>份额</td><td>2026 年 1-5 月全球市占率 40.2%（+2.2pct）；国内按摩根大通口径 48%；产能利用率 96.9%</td><td>变好</td></tr>
+          <tr><td>储能质量</td><td>收入 +87.54%，但营业成本 +91.46%，成本跑赢收入，毛利率 -1.56pct</td><td>总量好、质量差</td></tr>
+          <tr><td>产能格局</td><td>隔膜协会发倡议警告盲目扩产；宁德以整合者身份收购重庆耀宁（24GWh）</td><td>行业变差、宁德相对变好</td></tr>
+        </tbody>
+      </table>
+      <p><strong>矛盾的本质：盈利是后视镜，股价是前挡风玻璃。</strong>盈利还在涨是因为需求总量、份额、满产都是当期事实；估值被砍 30% 是市场在贴现 2027 年的产能过剩、价格战与去宁化预期。含义很明确：<strong>不能因为业绩好就推论股价该涨，市场已经在交易下一个周期。</strong></p>
+
+      <h4>去宁化目前是叙事</h4>
+      <p>客户动作是真的：小米澎程系列全面搭载龙甲电池（中创新航加欣旺达），供应商从 2 家扩到 4 家；理想增资欣旺达动力 26.5 亿、持股 11.17% 成二股东。<strong>但份额数据没有验证去宁化</strong>——宁德全球份额反而 +2.2pct，国内 48%。他判断这是存量博弈下 OEM 想自己切蛋糕的叙事，尚未形成系统性份额流失。这条要盯 7、8 月单月份额，<strong>若跌破 38% 至 39%，才是从叙事变数据</strong>。</p>
+
+      <h4>产业维度胜率</h4>
+      <table>
+        <thead><tr><th>时间维度</th><th>胜率</th><th>依据</th></tr></thead>
+        <tbody>
+          <tr><td>1 个月</td><td><strong>约 38%</strong></td><td>催化真空期，碳酸锂弱势未出尽，技术面破 52 周低点</td></tr>
+          <tr><td>3 个月</td><td><strong>约 45%</strong></td><td>Q4 抢装与 400 亿回购托底，但价格战与去宁化情绪延续</td></tr>
+          <tr><td>12 个月</td><td><strong>约 50%</strong></td><td>17 倍估值提供均值回归空间，但 2027 需求见顶压制天花板</td></tr>
+        </tbody>
+      </table>
+      <p>情景概率：去宁化停留叙事、份额守住 <strong>约 52%</strong>；去宁化缓慢成数据 <strong>约 32%</strong>；去宁化加速叠加 2027 需求滑坡 <strong>约 16%</strong>。<strong>赔率不对称：回到 400 以上的概率他估仅 25% 至 30%，下行空间却被 2027 年预期打开。</strong></p>
+
+      <h4>他判断不了的部分</h4>
+      <p><strong>固态电池是否颠覆液态锂电体系，这是最大变量。</strong>辉能 Gen3.5 已量产、松下 2026Q4 出货、赛科动力 2026 年底中试线、奇瑞 2027 上车验证——时间点、路线、宁德是否卡位，他置信度低。他对份额未受损置信度高，对 2027 需求判断置信度中，对固态电池颠覆路径置信度低，<strong>所以上面的胜率数字本身带有约 ±8 个百分点的置信区间。</strong></p>
+
+      <div class="pull-quote">"产业没坏到 17 倍 PE 该有的样子，但也没好到能撑起追涨。胜率勉强五成、赔率不占优，属于可以分批、不该重仓的位置。"</div>
+    </article>
+
+    <article class="voice-card">
+      <div class="voice-head">
+        <img src="data:image/webp;base64,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" alt="信号派首席">
+        <div class="voice-name">📡 信号派首席 · 洲四方</div>
+      </div>
+      <p>四层信号必须对齐才动手，资金是介入时机的硬约束。<strong>方向还认得，但四层信号只亮半层，资金在夺路而逃。</strong></p>
+
+      <h4>四层信号对齐度 0.5 / 4</h4>
+      <table>
+        <thead><tr><th>层级</th><th>状态</th><th>读数</th></tr></thead>
+        <tbody>
+          <tr><td>政策</td><td>半亮</td><td>长周期扶持没变，但短期边际逆风：消费税升至 4%、固态电池新标准</td></tr>
+          <tr><td>产业</td><td>负向</td><td>客户去宁化、赛力斯与华为主导权变更、产能过剩、锂价未企稳</td></tr>
+          <tr><td>资讯</td><td>负向</td><td>利空集中发酵，是负反馈，不是正向持续性信号</td></tr>
+          <tr><td>资金</td><td>负向</td><td>主力 20 日净流出约 80.7 亿，9/15 单日 -34.52 亿放量</td></tr>
+        </tbody>
+      </table>
+
+      <h4>资金层的核实结果</h4>
+      <ul>
+        <li><strong>主力净流向</strong>：近 5 日 -15.6 亿、近 10 日 -29.4 亿、近 20 日约 -80.7 亿；9/15 单日 -34.52 亿（超大单 -30.54 亿加大单 -3.98 亿）</li>
+        <li><strong>口径核实</strong>：34.52 亿是准确的收盘标准口径，23.35 亿大概是盘中某时点的快照。对应散户端净流入 +34.52 亿，<strong>典型的主力跑、散户接</strong></li>
+        <li><strong>融资余额</strong>：9/1 的 232.8 亿加到 9/9 峰值 242.4 亿，9/14 回落到 236.2 亿。<strong>杠杆资金是一路加着杠杆往下走的</strong>，意味着潜在被动平仓压力</li>
+      </ul>
+
+      <h4>胜率估计</h4>
+      <p>先给基准：<strong>只有一层或零层信号亮灯时入场，他的经验胜率约 30% 至 35%（1 个月维度），明显低于 50% 的基准。四层对齐时 1 个月能到 65% 至 70%。</strong></p>
+      <table>
+        <thead><tr><th>时间维度</th><th>胜率</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td>1 个月</td><td><strong>30% – 35%</strong></td><td>技术性反抽概率存在，但反抽不等于反转</td></tr>
+          <tr><td>3 个月</td><td><strong>35% – 40%</strong></td><td>产业拐点没出来，趋势反转缺根基</td></tr>
+          <tr><td>12 个月</td><td><strong>50% – 55%</strong></td><td>龙头地位加 17 倍估值不算贵，均值回归有底，但要承担时间成本</td></tr>
+        </tbody>
+      </table>
+      <p>当前对齐度下的分档（3 至 6 个月）：乐观 30%、中性 45%、悲观 25%。</p>
+
+      <h4>什么信号让胜率抬升或下降</h4>
+      <p><strong>抬升（两个以上同时出现，3 个月胜率可到 55% 至 65%）</strong>：回购放量（首笔才 2.0 亿，占授权下限 1.0%，只是象征性，单日金额上台阶如超 10 亿才算真托底）；主力连续 3 日以上净流入且成交放大；锂价企稳；政策端明确利好；技术站稳 MA5 与 MA10。</p>
+      <p><strong>下降（出现就不该参与）</strong>：放量破 300（融资盘强平传导）；融资余额加速下降；去宁化从传闻变成公告加定量份额；系统性风险释放中途。</p>
+
+      <h4>外部系统性风险的权重</h4>
+      <p>10 年期美债盘中破 5%、费城半导体 -5.86%、9/17 凌晨美联储点阵图，这三件事短期权重很高。它们不改变宁德基本面，但会压全球成长股估值、扰动北向资金。当前本就脆弱且破位，这些是加速破位的催化剂。</p>
+
+      <div class="pull-quote">"美债破 5% 和费半大跌还没到无条件离场线，属高波动环境，但足以把 1 个月胜率再压 5 到 10 个百分点。9/17 点阵图落地前是典型的事件真空加风险未定，我的纪律是不做最早的人。"</div>
+    </article>
+
+    <article class="voice-card">
+      <div class="voice-head">
+        <img src="data:image/webp;base64,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" alt="短线冲浪手">
+        <div class="voice-name">⚡ 短线冲浪手 · 磊追浪</div>
+      </div>
+      <p>只做主线里最强的那个，破 5 日线就走人。<strong>这个位置技术上极端超卖，但趋势上完全没有右侧信号。</strong></p>
+
+      <h4>他做的回测（本轮唯一的量化统计）</h4>
+      <p>用近一年 250 个交易日的日线，判据是 RSI2。今天同时满足 <strong>RSI2 低于 15</strong> 与 <strong>收盘跌破布林下轨 314.74</strong>。历史上该组合出现 26 次，去掉连续重叠后独立事件约 10 段：</p>
+      <table>
+        <thead><tr><th>持有窗口</th><th>正收益概率</th><th>均值</th><th>中位</th></tr></thead>
+        <tbody>
+          <tr><td>+1 日</td><td>48%</td><td>-0.04%</td><td>-0.07%</td></tr>
+          <tr><td>+3 日</td><td>28%</td><td>-0.92%</td><td>-1.35%</td></tr>
+          <tr><td>+5 日</td><td><strong>32%</strong></td><td>-1.62%</td><td>-2.30%</td></tr>
+          <tr><td>+10 日</td><td>41%</td><td>-1.82%</td><td>-0.32%</td></tr>
+          <tr><td>+20 日</td><td><strong>71%</strong></td><td><strong>+1.98%</strong></td><td><strong>+2.02%</strong></td></tr>
+          <tr><td>+60 日</td><td>46%</td><td>+8.35%</td><td>-1.30%</td></tr>
+        </tbody>
+      </table>
+      <p>再叠加"创 60 日收盘新低"（今天确为 52 周收盘新低），样本 15 次：+1 日 57%、+5 日 38%（中位 -1.21%）、+10 日 <strong>75%</strong>（+3.99%）、+20 日 <strong>83%</strong>（+6.05%，中位 +5.33%）。</p>
+      <p><strong>结论数字</strong>（316.36 直接买入）：5 日内正收益约 <strong>35% 至 40%</strong>；20 日内正收益约 <strong>65% 至 70%</strong>，这是性价比最高的窗口；60 日内约 <strong>50% 至 55%</strong>，离散极大（历史 -15% 至 +33%）。三个条件指向同一件事：<strong>短期还在杀，中段才修复。</strong></p>
+
+      <h4>今天这根 K 线的性质</h4>
+      <p>开盘 335.00 基本即全天最高（335.73），实体一根杀到 316.36，收在当日区间最低 1.8% 的位置，跌 6.16%，成交 155.59 亿（前日 88.7 亿，放量 75%）。午后成交占全天约 71%，尾盘几乎无承接，内盘 261221 大于外盘 219262。<strong>定性是放量派发，不是恐慌见底。</strong>同类形态历史出现 8 次：次日 71% 翻红，但 +5 日只剩 57%、+10 日 43%。<strong>次日常有技术反抽，但那是逃命波，不是右侧信号。</strong></p>
+
+      <h4>资金面的核实</h4>
+      <p>今日主力净流出 <strong>34.52 亿</strong>（主力流入 73.59 亿减流出 108.11 亿），这是主力口径的准确值。<strong>散户小单净流入 +23.01 亿</strong>，与主力净流出形成对照，教科书式的派发。近 5 日主力累计净流出约 15.6 亿（9/9、9/10、9/14 还是净流入，今天一根 K 线把前几天流入全打回），近 20 日约 77.4 亿。</p>
+      <p>放量的含义：155.59 亿对前日 88.7 亿，<strong>放量下跌且收在低位等于派发</strong>，不是缩量企稳。<strong>主力还在净卖出，后面很难有像样的拉升。洗盘和派发的分界就在资金流向。</strong></p>
+
+      <h4>为什么短期和一年的胜率完全不同</h4>
+      <p>2025-09-12 收 316.69 之后，5 日涨 13.7%、20 日涨 10.5%、区间最高 +47.6%，一年后却回到 316.36。<strong>因为当时均线多头排列、趋势向上，超卖反弹是趋势中的回踩，回踩后能延续；现在 MA5 331.78 低于 MA10 339.14 低于 MA20 358.16 低于 MA60 低于 MA250，空头排列，MACD 零轴下方绿柱放大。趋势向下时，超卖反弹的天花板就是 MA10 与 MA20，碰到压力位大概率再下一台阶。</strong></p>
+
+      <h4>当周主线不在宁德这边</h4>
+      <p>半导体设备 +48.21 亿、PCB +46.25 亿、存储 +43.95 亿净流入；CPO -76.65 亿、光通信 -72.71 亿、机器人 -52.96 亿、锂矿 -48.06 亿净流出。<strong>锂电链正在被抽血，资金在往半导体切。</strong>全市场成交 1.6127 万亿创年内最低、1120 涨 4376 跌，缩量普跌的存量博弈，超跌反弹天然要打折扣。</p>
+
+      <div class="pull-quote">"20 日反弹胜率 65% 至 70% 赚的是均值回归的钱，和持有一年赚钱（需要趋势反转）是两码事，别把技术性反弹当趋势反转做。"</div>
+    </article>
+
+    <article class="voice-card">
+      <div class="voice-head">
+        <img src="data:image/webp;base64,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" alt="逆向投资人">
+        <div class="voice-name">🏔️ 逆向投资人 · 坤候底</div>
+      </div>
+      <p>只买大公司回撤，左侧分批，绝不摊薄亏损标的。<strong>我买的是"跌到关键支撑、并且撑住了"。</strong></p>
+
+      <h4>胜率要拆成两个问题</h4>
+      <table>
+        <thead><tr><th>入场位置</th><th>一年内出现过 ≥15% 浮盈</th><th>一年后仍在水上</th><th>一年后跌超 15%</th></tr></thead>
+        <tbody>
+          <tr><td><strong>316（现价直接加）</strong></td><td>约 85%</td><td><strong>45% – 50%</strong></td><td>25% – 30%</td></tr>
+          <tr><td><strong>300（周线低点撑住再加）</strong></td><td>约 85%</td><td><strong>55% – 60%</strong></td><td>18% – 22%</td></tr>
+          <tr><td><strong>290（次级周线低点）</strong></td><td>约 80%</td><td>约 60%</td><td>约 15%</td></tr>
+        </tbody>
+      </table>
+      <p>316 和 300 差的不只是 5% 的价格，差的是<strong>是不是支撑</strong>。316 是今天刚跌破 324 至 326 前低的位置，属于破位、支撑未验证；300.73 是 2025-09-12 那根周 K 的实体低点，是画得出来的、有依据的支撑。他的纪律是撑住才买。</p>
+      <p>情景概率（一年维度）：<strong>乐观约 35%</strong>（重回 380 至 430）、<strong>中性约 40%</strong>（300 至 360 来回，最终贴近原点）、<strong>悲观约 25%</strong>（破 300 看向 264 至 290）。中性给最大权重，理由就是下面这段历史。</p>
+
+      <h4>历史类比回测</h4>
+      <p>2025-09-12 收 316.69，和今天几乎同一个价。之后一年：+5 日 360.18（+13.7%）、+20 日 349.83（+10.5%）、+60 日 383.49（+21.1%）、区间最高 467.35（2026-05-07，<strong>+47.6%</strong>）、一年后 316.36（-0.1%）。</p>
+      <p><strong>在 52 周新低加极度超卖的位置买入，一年内出现可观浮盈几乎是规律。</strong>今天 RSI6 18.08、RSI2 13.33、KDJ J 13.43、MACD 柱 -6.93、股价贴着布林下轨 314.7，这种超卖读数下反弹概率不用怀疑。</p>
+      <p><strong>但最终回到原点的概率同样不低。</strong>上一轮一模一样的起点，走完 +47.6%，一年后净收益 -0.1%。</p>
+
+      <h4>他的分批计划（每档都有 K 线依据）</h4>
+      <table>
+        <thead><tr><th>位置</th><th>依据</th><th>注码</th></tr></thead>
+        <tbody>
+          <tr><td><strong>316 附近</strong></td><td>2025-09-12 收盘 316.69 加整数关口</td><td>半可依据，只放 1 份试探</td></tr>
+          <tr><td><strong>300 附近</strong></td><td>2025-09-12 周 K 低点 300.73</td><td>撑住买 1 份</td></tr>
+          <tr><td><strong>290 附近</strong></td><td>2025-09-05 低点 290.72</td><td>1 份</td></tr>
+          <tr><td><strong>264 附近</strong></td><td>2025 年 8 月双底 263.74 与 264.41，多次触及未破</td><td><strong>最强支撑</strong>，1 份</td></tr>
+          <tr><td><strong>250 附近</strong></td><td>2025 年 8 月中低点 248.41 与 252.39</td><td>1 份</td></tr>
+          <tr><td><strong>240 附近</strong></td><td>2025 年 6 月平台 239.88 至 243</td><td>1 份</td></tr>
+        </tbody>
+      </table>
+      <p>间距是 16、10、26、12、10，完全由 K 线结构决定，不是等距。十次用完就不买，能吃到多少吃多少。往上不追，破位不补。</p>
+
+      <h4>他判断不了的边界</h4>
+      <p>宁德和隆基是同一类：重资产、产能周期的行业龙头。他在隆基上栽过——价格判断没错、支撑位找得准，真正没料到的是行业产能过剩能让龙头也痛很久。<strong>宁德现在的行业问题（产能出清节奏、固态电池路线会不会颠覆现有格局）恰恰是他承认自己不擅长的那一环。</strong></p>
+      <p>他能判断的是"316 便宜、17 倍处历史低位、大公司不会死"，判断不了的是"出清要多久、路线会不会变"。对加仓的含义：<strong>这部分胜率他估不了，只能靠仓位和分批兜底。</strong></p>
+
+      <h4>深套者的胜率陷阱</h4>
+      <p><strong>"想加仓"里很可能混着"摊薄成本、快点回本"的冲动，而不是纯粹的"这里便宜"。</strong>账面上看不出区别，但"想回本"会系统性高估胜率、低估时间成本。</p>
+
+      <div class="pull-quote">"我框架里加仓的唯一理由是支撑位撑住了，不是我已经亏了很多。加可以，但按支撑位分次、每次一份，把'想回本'和'这里便宜'分开看。"</div>
+    </article>
+
+  </div>
+</section>
+
+<section id="thinking">
+  <div class="section-head">
+    <div class="section-num">03 · 思考</div>
+    <div>
+      <div class="section-title">深度思考</div>
+      <div class="section-lede">主持人替你想到的 —— 你没想到的问题、可能误读的地方、应该问但没问的</div>
+    </div>
+  </div>
+
+  <div class="subsection-label">3a · 主持人札记</div>
+  <div class="notes-stack">
+    <article class="note-item">
+      <div class="note-num">01</div>
+      <div class="note-body">
+        <h4>"胜率"这个问题，六个人给出了六个不同的分母</h4>
+        <p>我最开始以为大家会给出接近的数字，结果分布从 30% 到 70%。仔细看才发现，分歧不在判断，在定义。</p>
+        <p>短线冲浪手算的是"5 日内正收益"，得到 35% 至 40%；估值分析师算的是"12 个月正收益"，得到 70%；逆向投资人干脆拆成两个问题——"一年内出现过浮盈"（85%）和"一年后仍在水上"（45% 至 50%）。</p>
+        <p><strong>这三个数字没有一个错，但它们回答的是三个不同的问题。</strong>如果你打算赚一波反弹就走，参考第一个；如果你打算拿一年等回本，参考第二个；如果只是想确认"这个位置历史上会不会给机会"，参考第三个。</p>
+        <p>所以我在结论卡里没有给单一数字。给单一数字反而会误导，因为用户没说的那个变量才是关键：打算拿多久。</p>
+      </div>
+    </article>
+    <article class="note-item">
+      <div class="note-num">02</div>
+      <div class="note-body">
+        <h4>一年前那次 316，把这个问题回答了一半</h4>
+        <p>2025-09-12 那天收 316.69。如果从那天买入并持有一年，路径是这样的：第 5 个交易日就赚 13.7%，第 20 个交易日赚 10.5%，中途最高摸到 467.35（+47.6%），然后一路回到 316.36，一年净收益 -0.1%。</p>
+        <p><strong>这一年内，最低价是 316.00，出现在今天。也就是说那次买入几乎没有经历过像样的浮亏，最多的时候赚了近五成，最后归于零。</strong></p>
+        <p>这个样本给了一个很反直觉的结论：<strong>在这种位置买入，你大概率不会被套，但也大概率赚不到钱。</strong>被套和赚钱是两回事。</p>
+        <p>需要提醒的是这个样本的局限：那一年赶上 2025Q4 到 2026Q1 的上涨环境，整体风险偏好在回升。现在的外部环境（美债破 5%、创业板四连跌、成交创年内最低）明显不同。<strong>拿它当规律用会出事，当参照看比较合适。</strong></p>
+      </div>
+    </article>
+    <article class="note-item">
+      <div class="note-num">03</div>
+      <div class="note-body">
+        <h4>资金口径的矛盾，最后是两位成员各自独立核实的</h4>
+        <p>我手上一直有两个数字：本地复盘记的主力净流出 23.35 亿，连接器给的 34.52 亿。信号派首席和短线冲浪手分别取数核实，两人结论一致——<strong>34.52 亿是收盘的标准主力口径（超大单加大单），23.35 亿大概是盘中某时点的快照。</strong></p>
+        <p>我特意记录这个细节，是因为它提醒我们：同一天、同一只股票，不同的取数时点和口径能差出 48%。如果你按 23.35 亿判断"抛压不算太猛"，方向就偏了。</p>
+        <p>短板在于，这个数只有两位成员独立核实过，其余四位沿用了我的快照。<strong>我在任务说明里给共享数据时应该标注口径存疑，这是我的疏漏。</strong></p>
+      </div>
+    </article>
+    <article class="note-item">
+      <div class="note-num">04</div>
+      <div class="note-body">
+        <h4>最值得注意的，是短线冲浪手那个"20 日胜率 65% 到 70%，60 日降到 50% 到 55%"的落差</h4>
+        <p>他自己做的回测：RSI2 低于 15 且收盘跌破布林下轨，历史上出现 26 次，20 日后正收益概率 71%；如果叠加"创 60 日收盘新低"，20 日胜率升到 83%。</p>
+        <p>但同一个样本，60 日后的胜率回落到 46% 到 55%。<strong>这中间的落差就是均值回归和趋势反转的区别。</strong></p>
+        <p>超卖反弹赚的是"价格偏离均线太远之后的回抽"这笔钱，通常持续两到三周；而超卖反弹能不能变成趋势反转，取决于完全不同的东西——产业周期、资金面、盈利预期。<strong>技术指标管不了后者。</strong></p>
+      </div>
+    </article>
+    <article class="note-item">
+      <div class="note-num">05</div>
+      <div class="note-body">
+        <h4>财报研究员和逆向投资人的那句对撞，是整场讨论里最硬的</h4>
+        <p>财报研究员说：三季报毛利率、合同负债、现金流比值这三项坏掉两项，就该走，不扛不补。逆向投资人说：破位不补，等更低的支撑位撑住再加，从不设止损。</p>
+        <p><strong>这两句话不能同时成立。</strong>前者认为"基本面恶化就等于逻辑失效"，后者认为"只要公司不死、价格够低就可以继续买"。</p>
+        <p>两个人都清楚这个分歧。逆向投资人的表述是："他负责看见，我负责据此决定少下多少注。"这是一种很成熟的相处方式——不试图说服对方，而是让对方的发现改变自己的注码大小。</p>
+        <p>但它留下的问题必须由你自己回答：<strong>如果三季报真的变差，你是走，还是等更低的位置再进一档？</strong>这两条路的历史成败差别很大，且没有中间态。</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="subsection-label">3b · 主持人 Q&amp;A</div>
+  <div class="qa-stack">
+    <article class="qa-card">
+      <span class="qa-tag tag-key">🔑 关键</span>
+      <div class="qa-question">所以加仓的胜率到底是多少？</div>
+      <div class="qa-answer">
+        <p>取决于你把什么算作"赢"，也取决于你打算拿多久。分三档给你。</p>
+        <p><strong>第一档，博一波反弹就走（目标 15% 至 20%）。</strong>历史胜率约八成。依据是逆向投资人那段回测：在 52 周新低加极度超卖的位置买入，一年内出现 15% 以上浮盈的概率约 85%；短线冲浪手的回测佐证——20 个交易日内正收益概率 65% 至 71%，叠加创 60 日新低后升到 83%。<strong>代价是你得接受 5 天内大概率还在亏（胜率只有 35% 至 40%），而且必须真的到位置就走。</strong></p>
+        <p><strong>第二档，持有一年等回本加收益。</strong>胜率约五成半。六个人给的 12 个月数字是 45%、50%、50% 至 55%、65%、70%，中位数在 55% 上下。</p>
+        <p><strong>第三档，只想确认这个位置历史上会不会给机会。</strong>会，而且概率很高（一年内 80% 以上出现过可观浮盈）。但"给机会"和"你能拿到"是两件事，2025-09-12 那个样本就是标准案例：赚过 47.6%，一年后是 -0.1%。</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <span class="qa-tag tag-confuse">⚠️ 易混淆</span>
+      <div class="qa-question">为什么六个人的数字差这么多？</div>
+      <div class="qa-answer">
+        <p>不是谁看错了，是他们的尺子不同。</p>
+        <p><strong>看盈利的人乐观。</strong>估值分析师给 12 个月 70%，理由是滚动每股收益一年内有望从 18.37 涨到 22 至 23（约 +20%），就算 PE 不修复，光靠盈利也能推价。财报研究员给 65%，理由是归母 TTM 一年间已经从 583.65 亿涨到 850 亿（+45.6%）。<strong>这一组算的是"公司能赚多少钱"。</strong></p>
+        <p><strong>看周期和资金的人悲观。</strong>产业策略师给 50%，因为他算的是 2027 年需求增速可能掉档：2026H1 国内新型储能新增装机只有 58.6GWh、同比 -16%，而 2026 年底累计装机 200GW 已经提前完成了 2027 年的规划目标。信号派首席给 50% 至 55%，因为四层信号只亮半层，近 20 日主力净流出 80.7 亿。<strong>这一组算的是"市场愿意给这些钱多少倍"。</strong></p>
+        <p>这两组人不是在同一件事上吵架。<strong>过去一年这只票恰好证明了后者的威力：每股收益涨 43.5%，估值杀 30.2%，价格原地不动。</strong></p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <span class="qa-tag tag-miss">🔍 易疏忽</span>
+      <div class="qa-question">"回到一年前的价格"这个说法，漏掉了最重要的一半</div>
+      <div class="qa-answer">
+        <p>一年前 316.69 对应的滚动每股收益是 12.80 元，市盈率 24.68 倍。现在 316.36 对应的滚动每股收益是 18.37 元，市盈率 17.22 倍。</p>
+        <p><strong>价格回到原点，估值便宜了三成。</strong>这个差别不是文字游戏，它直接决定胜率。</p>
+        <p>如果现在是"估值和一年前一样贵"，那 316 就是个危险的位置。但实际情况是：你用一年前的价格，买到了比一年前高出 43.5% 的盈利，代价是市场愿意给的倍数降了三成。</p>
+        <p>所以真正的问题不是"会不会跌回一年前"，而是<strong>"市场愿不愿意停止压缩这个倍数"</strong>。这个问题只有三季报和资金面能回答。</p>
+        <p>顺带纠正一个日期：316 这个价位对应的其实是 2025-09-12，不是 2025-09-15。后者当天收 346.39，已经涨了 9.4%。这两个起点算出来的"一年收益"差了将近一个涨停板。</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <span class="qa-tag tag-confuse">⚠️ 易混淆</span>
+      <div class="qa-question">同样一个 316，逆向投资人说是"半可依据"，短线冲浪手说"下方无支撑"，矛盾吗？</div>
+      <div class="qa-answer">
+        <p>不矛盾，他们在说两件不同的事。</p>
+        <p>逆向投资人讲的是<strong>长期历史平台</strong>：2025 年 9 月的 300 至 320 曾经是一个平台，所以 316 算"半可依据"——他明确说这是"刚破的位，不是撑住的位"，所以只算一半。</p>
+        <p>短线冲浪手讲的是<strong>近一年成交结构</strong>：过去 250 个交易日里，316 以下没有成交密集区，所以短线没有参照物，止损位没处设。</p>
+        <p>两个人的意思其实一致——<strong>这个位置的下方是空的</strong>。区别在于逆向派愿意用更远的历史平台（300、290、264）来锚定，短线派只看近一年的筹码分布。</p>
+        <p>对你的实际意义是：<strong>如果你想设一个止损位，最近的有依据位置在 300 附近，距离现价还有 5% 的空间。</strong>这个空间不小，得提前想清楚。</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <span class="qa-tag tag-meta">⭐ 重要</span>
+      <div class="qa-question">三位成员都提到了同一件事：可能混进了"摊薄成本"的动机</div>
+      <div class="qa-answer">
+        <p>逆向投资人说得最直接：<strong>"想加仓"里很可能混着"摊薄成本、快点回本"的冲动，而不是纯粹的"这里便宜"。</strong></p>
+        <p>财报研究员从另一个角度说了同一件事：他主张先建 5% 到 10% 的观察仓，把仓位留给三季报，考好再加、考砸就不加。<strong>这实际上是在把"想加"和"该加多少"拆开。</strong></p>
+        <p>信号派首席则直接把这个位置定义为<strong>减仓信号而非加仓信号</strong>（因为出现了一根放量长阴线且均线全破）。</p>
+        <p>三个人用三种方式指向同一个提醒：<strong>你今年在这只票上亏得最多，这个事实本身会扭曲你对胜率的判断。</strong>不是说不能加，而是说——如果你发现自己说不清"为什么是现在加"而不是"为什么是 316 加"，那多半是摊薄冲动在起作用。</p>
+        <p>一个可操作的检验方法：<strong>假设你已经空仓，你会不会在这个位置开仓？</strong>如果答案是"不会"，那现在的加仓动机就是摊薄成本，不是价值判断。</p>
+      </div>
+    </article>
+    <article class="qa-card">
+      <span class="qa-tag tag-confuse">⚠️ 易混淆</span>
+      <div class="qa-question">"分批建仓"和"越跌越买"是一回事吗？</div>
+      <div class="qa-answer">
+        <p><strong>不是，而且这是本轮最容易被混为一谈的地方。</strong></p>
+        <p>逆向投资人的分批有明确前提：每一档都必须对应一个<strong>有 K 线依据的支撑位</strong>（300.73、290.72、264.41……），每一档只买一份、绝不加倍，且要求"撑住了才买"。他自己说过一句很关键的话——"硬凑数字是我最忌讳的事"，所以当 320 只卡整数、没有 K 线对应时，他拒绝把它列为一批。</p>
+        <p>而"越跌越买"通常没有位置依据，只有"跌了就补"的冲动，且在亏损扩大时倾向于加更多。</p>
+        <p><strong>区别在于：前者的加仓条件是"价格到了某个有依据的位置"，后者的加仓条件是"我又亏了更多"。</strong></p>
+        <p>财报研究员和短线冲浪手都明确说了"不越跌越买"。逆向投资人虽然做左侧，但他的左侧是被支撑位约束的左侧。<strong>三个人的共同点是：加仓必须由外部依据触发，不能由自己的浮亏触发。</strong></p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="watch">
+  <div class="section-head">
+    <div class="section-num">04 · 关注</div>
+    <div>
+      <div class="section-title">后续关注</div>
+      <div class="section-lede">当下胜率参考是基于现有数据的快照 —— 什么时候该回来重看，什么情况下我们这次的估计可能错了</div>
+    </div>
+  </div>
+
+  <div class="subsection-label">4a · 关键变量观察台</div>
+  <div class="trigger-wrap">
+    <table class="trigger-table">
+      <thead>
+        <tr>
+          <th style="width: 30%;">变量 · 当前</th>
+          <th>重新评估触发线</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="trigger-var">52 周低点 316.00<span class="now">当前：收盘 316.36，距破位线 0.11%</span></td>
+          <td class="trigger-action">有效跌破且 3 日内收不回 → <span class="down">进入无成交密集区段，下方参照要退到 300 附近</span>；重新站上 331.78（MA5）并站稳 → <span class="up">破位失败信号，短线强度开始修复</span></td>
+        </tr>
+        <tr>
+          <td class="trigger-var">三季报（10 月下旬）<span class="now">当前：待考</span></td>
+          <td class="trigger-action">毛利率守住 23% 且合同负债环比回正 → <span class="up">财报研究员给出的胜率升至约 65%</span>；毛利率跌破 23% 或现金流与归母之比低于 1.0x → <span class="down">胜率降至约 35%，判定为基本面与预期不一致</span></td>
+        </tr>
+        <tr>
+          <td class="trigger-var">机构一致预期 2026E 每股收益<span class="now">当前：20.82 元，尚未下修</span></td>
+          <td class="trigger-action">维持或上修 → <span class="up">下跌性质仍是估值中枢下移，每股收益这条腿的支撑还在</span>；出现系统性下修 → <span class="down">从估值问题转为盈利问题，17 倍会越跌越贵</span></td>
+        </tr>
+        <tr>
+          <td class="trigger-var">主力资金流向<span class="now">当前：单日 -34.52 亿，近 20 日 -80.7 亿</span></td>
+          <td class="trigger-action">连续 3 日净流入且成交放大 → <span class="up">信号派首席把 3 个月胜率上调至 55% 至 65% 的条件之一</span>；继续单日净流出超 20 亿 → <span class="down">加速赶底，抛压尚未释放完</span></td>
+        </tr>
+        <tr>
+          <td class="trigger-var">回购执行力度<span class="now">当前：首笔 2.0 亿，占授权下限 1.0%</span></td>
+          <td class="trigger-action">单日金额上台阶（如超 10 亿） → <span class="up">从表态式转向托底式，是六位中唯一被普遍认可的信号</span>；到年底累计仍不足 20 亿 → <span class="down">态度信号失效，市场会读作姿态</span></td>
+        </tr>
+        <tr>
+          <td class="trigger-var">碳酸锂价格<span class="now">当前：主力合约跌破 13 万/吨，较 5 月高点跌超 35%</span></td>
+          <td class="trigger-action">在 13 万/吨企稳不再破位 → <span class="up">产业策略师给出的胜率抬升首要条件</span>；继续下探 → <span class="down">成本端虽利好，但需求走弱的信号更强，压制胜率天花板</span></td>
+        </tr>
+        <tr>
+          <td class="trigger-var">全球动力电池份额<span class="now">当前：2026 年 1-5 月 40.2%（+2.2pct）</span></td>
+          <td class="trigger-action">7、8 月单月份额守住 40% 以上 → <span class="up">去宁化停留在叙事层面，龙头逻辑完好</span>；跌破 38% 至 39% → <span class="down">从叙事变成数据，护城河的重估不再是倍数问题</span></td>
+        </tr>
+        <tr>
+          <td class="trigger-var">融资余额<span class="now">当前：9/1 232.8 亿 → 9/9 峰值 242.4 亿 → 9/14 236.2 亿</span></td>
+          <td class="trigger-action">加速下降 → <span class="down">被动去杠杆，形成强平传导压力</span>；企稳回升 → <span class="up">杠杆资金的观望情绪转向</span></td>
+        </tr>
+        <tr>
+          <td class="trigger-var">外部贴现率<span class="now">当前：10 年期美债盘中破 5%，费城半导体 -5.86%</span></td>
+          <td class="trigger-action">美债回落到 5% 下方 → <span class="up">成长股估值压力缓解的前提成立</span>；9/17 点阵图超预期鹰派且美债稳站 5% 上方 → <span class="down">信号派首席的估计是 1 个月胜率再压 5 到 10 个百分点</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection-label">4b · 胜率参考失效条件</div>
+  <div class="notes-stack">
+    <div class="note-item">
+      <div class="note-num">01</div>
+      <div class="note-body">
+        <strong>盈利端。</strong>若三季报中毛利率跌破 23%、或经营现金流与归母净利之比跌到 1.0 倍以下、或出现单季超 40 亿的资产减值，则估值分析师与财报研究员给出的 65% 至 70% 长期胜率失去依据。到那时"估值在还债"这个核心判断要改成"盈利在下修"，两者的应对完全不同。
+      </div>
+    </div>
+    <div class="note-item">
+      <div class="note-num">02</div>
+      <div class="note-body">
+        <strong>周期端。</strong>若 2027 年国内新型储能装机增速转负、或全球动力电池需求增速跌到 10% 以下，则产业策略师基于"总量见顶、龙头受益"给出的 50% 胜率还要下调。他明确说过这条的置信区间是正负 8 个百分点，说明他自己对这个判断的不确定性已经很高。
+      </div>
+    </div>
+    <div class="note-item">
+      <div class="note-num">03</div>
+      <div class="note-body">
+        <strong>份额端。</strong>若 7、8 月单月全球份额跌破 38% 至 39%，或车企自研阵营合计份额从当前个位数突破到两位数，则"去宁化仍是叙事"这个多位成员共同依赖的前提被推翻。届时所有基于"份额未受损"的估值锚都要重算。
+      </div>
+    </div>
+    <div class="note-item">
+      <div class="note-num">04</div>
+      <div class="note-body">
+        <strong>资金端。</strong>若主力净流出在单日 20 亿以上连续出现，或融资余额加速下降引发强平，则短线冲浪手那个"20 日胜率 65% 至 70%"的统计基础失效。他的回测基于均值回归，而强平驱动的下跌会持续偏离均线，均值回归的前提不存在。
+      </div>
+    </div>
+    <div class="note-item">
+      <div class="note-num">05</div>
+      <div class="note-body">
+        <strong>技术端。</strong>若价格有效跌破 300 且下方没有形成新的成交密集区，则逆向投资人的分批框架需要整体下移一档。他的支撑表建立在 2025 年的历史平台上，那些位置一旦被快速连续击穿，说明这轮下跌的性质超出了技术性调整，需要用 264、250 这些更远的参照。
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <p>⚠️ 以上内容由 AI 基于公开信息整理生成，仅供参考，不构成任何投资建议或个股推荐。投资有风险，决策需谨慎。</p>
+  <p class="footer-sub">stock-partner-team · Generated 2026-09-15</p>
+</footer>
+
+</body>
+</html>
