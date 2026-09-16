@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>宁德时代（300750）· 316 位置加仓胜率评估</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif; line-height:1.8; padding:20px 14px 60px; }
+.container { max-width:820px; margin:0 auto; }
+.toolbar { position:sticky; top:0; background:rgba(13,17,23,0.95); backdrop-filter:blur(8px); padding:10px 0; margin-bottom:18px; display:flex; align-items:center; gap:10px; border-bottom:1px solid #30363d; z-index:10; }
+.toolbar a { color:#58a6ff; text-decoration:none; font-size:0.85rem; white-space:nowrap; }
+.toolbar a:hover { text-decoration:underline; }
+.toolbar .sep { color:#484f58; }
+h1 { font-size:1.5rem; color:#f0f6fc; border-bottom:2px solid #30363d; padding-bottom:10px; margin-bottom:18px; }
+h2 { font-size:1.2rem; color:#58a6ff; margin:26px 0 12px; padding-left:10px; border-left:3px solid #58a6ff; }
+h3 { font-size:1.05rem; color:#d29922; margin:20px 0 10px; }
+h4 { font-size:0.98rem; color:#c9d1d9; margin:16px 0 8px; }
+p { margin:8px 0; }
+ul, ol { padding-left:24px; margin:8px 0; }
+li { margin:4px 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+blockquote { border-left:4px solid #30363d; background:#161b22; padding:8px 14px; margin:12px 0; color:#8b949e; border-radius:0 6px 6px 0; }
+blockquote p { margin:4px 0; }
+code { background:#161b22; padding:2px 6px; border-radius:4px; font-size:0.88em; font-family:"SF Mono",Consolas,Menlo,monospace; }
+pre { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:12px 14px; overflow-x:auto; margin:12px 0; }
+pre code { background:none; padding:0; }
+table { border-collapse:collapse; width:100%; margin:12px 0; font-size:0.9em; display:block; overflow-x:auto; }
+th, td { border:1px solid #30363d; padding:7px 10px; text-align:left; }
+th { background:#161b22; color:#58a6ff; font-weight:600; }
+tr:nth-child(even) td { background:rgba(22,27,34,0.5); }
+hr { border:none; border-top:1px solid #30363d; margin:20px 0; }
+img { max-width:100%; border-radius:6px; }
+strong { color:#f0f6fc; }
+.toc { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:14px 18px; margin:14px 0 20px; }
+.toc h3 { margin:0 0 8px; color:#58a6ff; }
+.toc a { display:block; padding:3px 0; font-size:0.9em; color:#8b949e; }
+.toc a:hover { color:#58a6ff; text-decoration:none; }
+.footer { text-align:center; color:#484f58; font-size:0.78rem; margin-top:40px; padding-top:16px; border-top:1px solid #30363d; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="toolbar">
+    <a href="../index.html">🏠 首页</a><span class="sep">|</span>
+    <a href="../replay_index.html">📚 复盘合集</a><span class="sep">|</span>
+    <span style="color:#8b949e;font-size:0.8rem;">任务库持仓复盘 · catl_addpos_winrate_20260915.md</span>
+  </div>
+  
+  <h1>宁德时代（300750）· 316 位置加仓胜率评估</h1>
+<blockquote>
+<p>ROUND TABLE · 2026-09-15 · 投研主编 圆汇众
+数据来源：腾讯自选股连接器（westock-mcp）＋ 六位成员独立回测
+数据截至 2026-09-15 收盘</p>
+</blockquote>
+<hr>
+<h2 id="sec-0">01 · 结论卡</h2>
+<h3 id="sec-1">议题</h3>
+<p>股价在 9 月 15 日收于 316.36 元，跌 6.16%，创 52 周新低。这个价格与一年前的 316.69 几乎重合，因此产生了&quot;回到一年前&quot;的说法。本次要评估的是：在这个位置加仓，赢面究竟有多大。需要说明的是，胜率不是一个单一数字，它随持有期长短和目标定义而变，六位成员从各自框架给出的估计差异很大，本报告的任务是把这些差异讲清楚。</p>
+<h3 id="sec-2">先纠正两个前提</h3>
+<p><strong>第一，316 对应的日期是 2025-09-12，不是 2025-09-15。</strong> 2025-09-12 收 316.69；而 2025-09-15 当天已经涨到 346.39，两个交易日涨了 9.4%。差这几天的意义在于：如果按 2025-09-15 那天买入，一年后的今天是亏 8.7%；按 2025-09-12 买入，一年后是亏 0.1%。同样的&quot;回到一年前&quot;，起点不同，结论差出一个涨停。</p>
+<p><strong>第二，价格回来了，估值没有。</strong> 一年前 316.69 对应的滚动每股收益是 12.80 元，市盈率 24.68 倍；现在 316.36 对应滚动每股收益 18.37 元，市盈率 17.22 倍。一年间每股收益涨了 43.5%，估值压缩了 30.2%，两个变量几乎完全对冲，价格才停在原地。<strong>此 316 非彼 316。</strong></p>
+<h3 id="sec-3">当前关键数据快照</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th style="text-align:center">数值</th>
+<th style="text-align:center">方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9/15 收盘</td>
+<td style="text-align:center"><strong>316.36 元</strong></td>
+<td style="text-align:center">-6.16%</td>
+</tr>
+<tr>
+<td>盘中最低 / 52 周低</td>
+<td style="text-align:center"><strong>316.00</strong></td>
+<td style="text-align:center">收在新低上方 0.11%</td>
+</tr>
+<tr>
+<td>成交额</td>
+<td style="text-align:center"><strong>155.59 亿</strong></td>
+<td style="text-align:center">前日 88.7 亿，放量 75%</td>
+</tr>
+<tr>
+<td>主力净流出</td>
+<td style="text-align:center"><strong>34.52 亿</strong></td>
+<td style="text-align:center">全市场居首（主力口径）</td>
+</tr>
+<tr>
+<td>PE(TTM) / 一年前同日</td>
+<td style="text-align:center"><strong>17.22 / 24.68</strong></td>
+<td style="text-align:center">估值压缩 30.2%</td>
+</tr>
+<tr>
+<td>TTM 每股收益 / 一年前同日</td>
+<td style="text-align:center"><strong>18.37 / 12.80</strong></td>
+<td style="text-align:center">每股收益增长 43.5%</td>
+</tr>
+<tr>
+<td>平均成本 / 获利盘</td>
+<td style="text-align:center"><strong>382.58 / 8.75%</strong></td>
+<td style="text-align:center">91% 筹码在现价上方</td>
+</tr>
+<tr>
+<td>技术状态</td>
+<td style="text-align:center"><strong>八条均线全部在上方</strong></td>
+<td style="text-align:center">RSI2 13.33，贴破布林下轨</td>
+</tr>
+</tbody>
+</table>
+<p>（数据来源：<code>data_quote</code>、<code>data_kline</code>、<code>data_technical</code>、<code>data_chip</code>、<code>data_finance</code>）</p>
+<h3 id="sec-4">圆桌综合视角</h3>
+<p><strong>加仓的胜率高低，取决于你把什么算作&quot;赢&quot;。</strong> 如果目标是博一波超跌修复、赚到 15% 到 20% 就走，六个视角给出的历史胜率在八成上下，这是本轮的共识。如果目标是持有一年等回本甚至回本再加收益，胜率降到五成半左右，六位成员给的 12 个月数字分布在 45% 到 70% 之间，分歧主要来自对周期位置和资金面的判断不同。<strong>短期胜率取决于情绪，长期胜率取决于三季报。</strong></p>
+<h3 id="sec-5">胜率参考矩阵</h3>
+<p>这张表是本轮的核心产出。同一位置、不同持有期与不同目标，答案差得很远。</p>
+<p><strong>按持有期（正收益概率）</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">持有期</th>
+<th style="text-align:center">胜率区间</th>
+<th>数据来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">5 个交易日</td>
+<td style="text-align:center"><strong>35% – 40%</strong></td>
+<td>短线冲浪手：RSI2&lt;15 且破布林下轨的历史回测</td>
+</tr>
+<tr>
+<td style="text-align:center">20 个交易日</td>
+<td style="text-align:center"><strong>65% – 71%</strong></td>
+<td>短线冲浪手 71%；叠加创 60 日新低样本为 83%</td>
+</tr>
+<tr>
+<td style="text-align:center">1 个月</td>
+<td style="text-align:center"><strong>30% – 55%</strong></td>
+<td>信号派首席 30-35%、产业策略师 38%、财报研究员 52%、估值分析师 55%</td>
+</tr>
+<tr>
+<td style="text-align:center">3 个月</td>
+<td style="text-align:center"><strong>35% – 62%</strong></td>
+<td>信号派首席 35-40%、产业策略师 45%、财报研究员 58%、估值分析师 62%</td>
+</tr>
+<tr>
+<td style="text-align:center">60 个交易日</td>
+<td style="text-align:center"><strong>50% – 55%</strong></td>
+<td>短线冲浪手，离散极大（历史区间 -15% 至 +33%）</td>
+</tr>
+<tr>
+<td style="text-align:center">12 个月</td>
+<td style="text-align:center"><strong>45% – 70%</strong></td>
+<td>逆向投资人 45-50%、产业策略师 50%、信号派首席 50-55%、财报研究员 65%、估值分析师 70%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>按目标定义（逆向投资人给出的拆法，最接近实际决策场景）</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">入场位置</th>
+<th style="text-align:center">一年内出现过 ≥15% 浮盈</th>
+<th style="text-align:center">一年后仍在水上</th>
+<th style="text-align:center">一年后跌超 15%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>316（现价直接加）</strong></td>
+<td style="text-align:center"><strong>约 85%</strong></td>
+<td style="text-align:center"><strong>45% – 50%</strong></td>
+<td style="text-align:center">25% – 30%</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>300（周线低点撑住再加）</strong></td>
+<td style="text-align:center">约 85%</td>
+<td style="text-align:center">55% – 60%</td>
+<td style="text-align:center">18% – 22%</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>290（次级周线低点）</strong></td>
+<td style="text-align:center">约 80%</td>
+<td style="text-align:center">约 60%</td>
+<td style="text-align:center">约 15%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>这张表回答了最容易被混淆的那个问题。</strong> “在低位买入能赚到钱&quot;和&quot;买入后一年是赚的”，在历史上是两件不同概率的事。上一轮从同一个 316 出发，一年内最高涨 47.6%，一年后收益 -0.1% 就是例证。</p>
+<h3 id="sec-6">核心分析观点</h3>
+<table>
+<thead>
+<tr>
+<th>视角</th>
+<th>论据与判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>估值定价</strong></td>
+<td>当前 17.22 倍贴着近三年 PE 序列的 25 分位线（17.43）。历史上落到这个分位后 3 个月胜率 62%、12 个月样本内全部为正，但<strong>样本只有 8 个，且含 2024 年 9 月普涨，必须打折看</strong>。给出的胜率是 1 个月 55%、3 个月 60%、12 个月 70%，赔率约 1.5 到 1.8 比 1</td>
+</tr>
+<tr>
+<td><strong>财报质量</strong></td>
+<td>归母 TTM 从 583.65 亿涨到 850 亿（+45.6%），底子扎实。但两个黄灯已经亮起：经营现金流与归母之比从 1.93 倍滑到 1.39 倍，存货同比 +81% 快于营收 +55%。给出的胜率是 1 个月 52%、3 个月 58%、12 个月 65%，并把三季报判定为分水岭：考好 52% 概率、考砸 17% 概率</td>
+</tr>
+<tr>
+<td><strong>产业周期</strong></td>
+<td>碳酸锂主力合约跌破 13 万/吨（较 5 月高点跌超 35%），2026H1 国内新型储能新增装机同比 <strong>-16%</strong>，而 2026 年底累计装机将提前完成 2027 年规划目标，<strong>2027 年需求增速存在掉档风险</strong>。给出的胜率最低：1 个月 38%、3 个月 45%、12 个月 50%，并自认置信区间 ±8 个百分点</td>
+</tr>
+<tr>
+<td><strong>四层信号</strong></td>
+<td>政策半亮、产业负向、资讯负向、资金负向，对齐度 0.5/4。近 5 日主力净流出 15.6 亿、近 20 日 80.7 亿，融资余额从 9/1 的 232.8 亿加到 9/9 峰值 242.4 亿又在 9/14 回落。给出的胜率是 1 个月 30-35%、3 个月 35-40%、12 个月 50-55%</td>
+</tr>
+<tr>
+<td><strong>盘面结构</strong></td>
+<td>今天开盘 335.00 即为全天最高，午后成交占全天 71%，收盘贴当日低位，内盘大于外盘，<strong>属于放量派发而不是恐慌见底</strong>。同类形态历史出现 8 次，次日 71% 翻红但 +5 日只剩 57%、+10 日 43%</td>
+</tr>
+<tr>
+<td><strong>逆向位置</strong></td>
+<td>获利盘仅 8.75%、平均成本 382.58。<strong>“超卖给的是浮盈，不保证落袋”</strong>，且承认自己判断不了产能出清节奏（隆基教训），因此主张用分批和更低位置来对冲判断不了的那部分</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-7">立场分布</h3>
+<p><strong>认为当前位置胜率不占优、主张等信号：3 票</strong>（产业策略师、信号派首席、短线冲浪手）
+<strong>认为估值已提供足够安全边际、可分批：2 票</strong>（估值分析师、财报研究员）
+<strong>认为胜率取决于入场位置、主张等更低支撑：1 票</strong>（逆向投资人）</p>
+<blockquote>
+<p>需要点明的一致项：<strong>六位没有任何一位主张在 316 一次性打满</strong>。分歧在于&quot;能不能开始分批&quot;和&quot;该在哪个位置分批&quot;，而不是&quot;该不该重仓&quot;。</p>
+</blockquote>
+<hr>
+<h2 id="sec-8">02 · 子专家观点</h2>
+<h3 id="sec-9">估值分析师 · 文衡价</h3>
+<p><strong>方法论定调</strong>：先定增速区间再选尺子，估值是硬约束不是买入理由。我在腾讯上吃过亏：估值便宜不等于不跌，还要看资金面压力有没有释放。</p>
+<h4>那组核心事实的核实结果</h4>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:center">2025-09-12</th>
+<th style="text-align:center">2026-09-15</th>
+<th style="text-align:center">变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>收盘价</td>
+<td style="text-align:center">316.69</td>
+<td style="text-align:center">316.36</td>
+<td style="text-align:center"><strong>-0.1%</strong></td>
+</tr>
+<tr>
+<td>TTM 每股收益</td>
+<td style="text-align:center">12.8012</td>
+<td style="text-align:center">18.3719</td>
+<td style="text-align:center"><strong>+43.5%</strong></td>
+</tr>
+<tr>
+<td>PE(TTM)</td>
+<td style="text-align:center">24.68</td>
+<td style="text-align:center">17.22</td>
+<td style="text-align:center"><strong>-30.2%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>（每股收益取 <code>data_finance</code>：2025-06-30 报告期与 2026-06-30 报告期的 EPSTTM 值；价格取周 K 收盘。）</p>
+<p>一年时间，每股收益涨 43.5%，价格没动，估值被压缩 30%。<strong>同样一个 316，含金量完全不同。</strong> 去年买的人付了 24.7 倍，现在付 17.2 倍。</p>
+<p>对胜率的含义是双向的：<strong>下行有更厚的估值垫，但市场用 30% 的杀估值表达了它不信下一个 43%。</strong> 杀估值本身就是问题的一部分。</p>
+<h4>PE Bands 与分位</h4>
+<p>近 3.2 年周度 PE 序列（n=40）：25 分位 17.43，50 分位 21.20，75 分位 21.90，90 分位 25.17。当前 17.22 位于约 25 分位，<strong>贴着下轨</strong>。</p>
+<p>对应价格线（按 EPS 18.37 计算）：25 分位约 314、50 分位约 388、75 分位约 400、90 分位约 461。当前价正好压在 25 分位线上。</p>
+<blockquote>
+<p>口径说明：没有把 2021 至 2022 年纳入波段。那是 PE 80 到 150 倍、增速 100% 以上的另一套 regime，用固定倍数硬套会严重失真。近三年才是与当前增速匹配的可比区间。</p>
+</blockquote>
+<h4>PEG 交叉验证</h4>
+<p>17.22 ÷ 33.4（2026E 增速）= <strong>0.52</strong>；用三年 CAGR 约 20% 计算，PEG 约 <strong>0.86</strong>。两条都低于 1，指向便宜。但宁德增速在逐年放缓，电池又是重资产、带周期属性的赛道，市场给一定的&quot;增速衰减折价&quot;是合理的。<strong>这也是它 PE 低于比亚迪（26.11）却不宜简单说被低估的原因。</strong></p>
+<h4>分位条件概率与胜率</h4>
+<p>历史上落到下四分位（PE ≤ 17.5）之后的滚动收益分布，月度采样，样本 8 个：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">持有期</th>
+<th style="text-align:center">胜率</th>
+<th style="text-align:center">中位收益</th>
+<th>区间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1 个月</td>
+<td style="text-align:center">50%</td>
+<td style="text-align:center">+1.0%</td>
+<td>-9% 至 +40%</td>
+</tr>
+<tr>
+<td style="text-align:center">3 个月</td>
+<td style="text-align:center">62%</td>
+<td style="text-align:center">+27.9%</td>
+<td>-21% 至 +45%</td>
+</tr>
+<tr>
+<td style="text-align:center">12 个月</td>
+<td style="text-align:center">100%</td>
+<td style="text-align:center">+47.0%</td>
+<td>+41% 至 +90%</td>
+</tr>
+</tbody>
+</table>
+<p>样本小，且 2024 年 9 月那波普涨抬高了远期收益，需打折。</p>
+<p>综合分位基率、每股收益增长贡献与当前负动能修正后：</p>
+<ul>
+<li><strong>1 个月胜率约 55%</strong></li>
+<li><strong>3 个月胜率约 60%</strong></li>
+<li><strong>12 个月胜率约 70%</strong></li>
+</ul>
+<p>12 个月给到 70% 的主要依据是：<strong>若 PE 不变，滚动每股收益一年内有望从 18.37 走到 22 至 23（约 +20%），仅靠盈利就能推价。</strong> 剩下 30% 的风险归于 PE 继续向下消化这个长尾。</p>
+<h4>赔率</h4>
+<table>
+<thead>
+<tr>
+<th>情景</th>
+<th style="text-align:center">PE</th>
+<th style="text-align:center">目标价</th>
+<th style="text-align:center">空间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>悲观（PE 回 13 倍，2024 低点）</td>
+<td style="text-align:center">13×</td>
+<td style="text-align:center">约 271</td>
+<td style="text-align:center"><strong>-14%</strong></td>
+</tr>
+<tr>
+<td>深熊（每股收益下修叠加杀估值）</td>
+<td style="text-align:center">13×</td>
+<td style="text-align:center">约 247</td>
+<td style="text-align:center">-22%</td>
+</tr>
+<tr>
+<td>基准（PE 稳在 17 至 18 倍）</td>
+<td style="text-align:center">17.5×</td>
+<td style="text-align:center">约 364</td>
+<td style="text-align:center"><strong>+15%</strong></td>
+</tr>
+<tr>
+<td>乐观（PE 回中位）</td>
+<td style="text-align:center">21×</td>
+<td style="text-align:center">约 437</td>
+<td style="text-align:center"><strong>+38%</strong></td>
+</tr>
+<tr>
+<td>极端（回一年前 24.7 倍）</td>
+<td style="text-align:center">24.7×</td>
+<td style="text-align:center">约 514</td>
+<td style="text-align:center">+62%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>赔率约 1.5 到 1.8 比 1。</strong> 若按基准对深熊，则不足 1 比 1。机构一致目标价 535 元隐含更高倍数与更远期每股收益。</p>
+<p><strong>结论：赔率不算特别诱人。上涨主要靠 PE 回归，而不是靠盈利惊喜——共识里的每股收益增长已经相对确定。</strong></p>
+<h4>胜率的前提条件</h4>
+<p><strong>显著上升</strong>：三季报兑现 30% 左右净利增速并上修预期；PE 中枢在 18 至 21 稳住不再新低；资金面回流、宁德重新变成机构主导；储能与海外放量预期上修。</p>
+<p><strong>显著下降</strong>：2026E 每股收益被下修（价格战、碳酸锂成本、海外政策）；PE 中枢继续下移（便宜可以更便宜，且能在低位待很久）；单日大跌若来自监管、大股东或外资事件，那就必须先等压力释放。</p>
+<h4>仓位定位</h4>
+<p>宁德属于<strong>卫星仓位</strong>（新能源与高端制造赛道，博行业超额），不是核心底仓。含义有三层：单一成长票设权重天花板（他的习惯是单票不超过组合 10% 至 15%）、加仓必须分批而不能一次性打满、宏观偏谨慎时先保核心红利底仓的比例。<strong>这是&quot;估值修复&quot;型机会，属可拿但不急，确认信号（三季报与资金面）比价格本身重要。</strong></p>
+<hr>
+<h3 id="sec-10">财报研究员 · 钊审财</h3>
+<p><strong>方法论定调</strong>：每一笔买入都得有预期，每季度是一次考试。<strong>盈利还在增长的公司，加仓胜率不该由股价跌了多少决定，而由下一次考试能不能过决定。</strong></p>
+<h4>两组数的独立验证</h4>
+<table>
+<thead>
+<tr>
+<th>时点</th>
+<th style="text-align:center">价格</th>
+<th style="text-align:center">TTM 每股收益</th>
+<th style="text-align:center">PE(TTM)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2025-09-12</td>
+<td style="text-align:center">316.69</td>
+<td style="text-align:center">12.80</td>
+<td style="text-align:center">24.74</td>
+</tr>
+<tr>
+<td>2026-09-15</td>
+<td style="text-align:center">316.36</td>
+<td style="text-align:center">18.37</td>
+<td style="text-align:center">17.22</td>
+</tr>
+</tbody>
+</table>
+<p>归母 TTM 从 583.65 亿涨到 850.00 亿，增幅 45.6%。两组数完全对得上。</p>
+<p>价格已经帮你把估值消化掉 30%，从财务视角看这是&quot;利润在长、估值在退&quot;的状态。只要增长不断，下跌反而在提高安全边际。<strong>但增长这根柱子一开始晃，再便宜也是价值陷阱。</strong></p>
+<h4>三季报判定阈值</h4>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>当前值</th>
+<th>健康阈值</th>
+<th>警戒阈值（触发即胜率显著下降）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单季毛利率</td>
+<td>23.15%（Q2 单季，同比 -2.4pct）</td>
+<td>≥24%</td>
+<td>低于 23% 且连续两季下探</td>
+</tr>
+<tr>
+<td>合同负债</td>
+<td>364.83 亿（同比 -0.4%）</td>
+<td>环比回升</td>
+<td>环比再降超 10% 且同比转负</td>
+</tr>
+<tr>
+<td>经营现金流 / 归母</td>
+<td>1.39x（去年同期 1.93x）</td>
+<td>≥1.2x</td>
+<td>低于 1.0x</td>
+</tr>
+<tr>
+<td>存货</td>
+<td>1308.19 亿（同比 +81%）</td>
+<td>增速不超过营收</td>
+<td>增速超营收 20pct 且持续</td>
+</tr>
+<tr>
+<td>资产减值</td>
+<td>连接器未覆盖</td>
+<td>每季低于 20 亿</td>
+<td>每季超 40 亿</td>
+</tr>
+<tr>
+<td>资产负债率 / 有息负债</td>
+<td>63.65% / 1490 亿（Q2 增 225 亿）</td>
+<td>—</td>
+<td>率超 65% 且 Q3 再增超 150 亿</td>
+</tr>
+<tr>
+<td>境外毛利率</td>
+<td>29.97%（+0.95pct）</td>
+<td>≥29%</td>
+<td>低于 28%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>已亮黄灯的两项</strong>：经营现金流与归母之比从 1.93 倍滑到 1.39 倍，说明钱没跟利润同步赚回来；存货同比 +81% 快于营收 +55%，可能有下半年旺季备货与锂价备料的成分，但已需要三季报确认不是需求走弱的积压。应收端反而健康，周转率从 2.80 提升到 3.36。</p>
+<p><strong>这两项是他不敢把胜率给到 70% 以上的原因。</strong></p>
+<h4>三季报的情景概率</h4>
+<table>
+<thead>
+<tr>
+<th>情景</th>
+<th style="text-align:center">概率</th>
+<th style="text-align:center">对应胜率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>考得好（毛利率企稳、合同负债回正、现金流比 ≥1.2x）</td>
+<td style="text-align:center"><strong>约 52%</strong></td>
+<td style="text-align:center">约 65%</td>
+</tr>
+<tr>
+<td>考得一般（毛利率持平、现金流中性、无大额减值）</td>
+<td style="text-align:center"><strong>约 31%</strong></td>
+<td style="text-align:center">约 50%</td>
+</tr>
+<tr>
+<td>考砸（毛利率破 23%，或现金流比 &lt;1.0x，或大额减值）</td>
+<td style="text-align:center"><strong>约 17%</strong></td>
+<td style="text-align:center">约 35%</td>
+</tr>
+</tbody>
+</table>
+<p>推导依据：上半年营收 +54.8%、归母 +42% 兑现度很好，且一致预期 2026E 每股收益 20.82 元高于当前 TTM 的 18.37 元，说明市场仍假定增长延续，底子扎实。但毛利率连续两季下探、利润质量下滑是真实的边际恶化，行业价格竞争未见拐点，所以他把&quot;考砸&quot;概率从去年的低个位数提到 17%。</p>
+<h4>时间维度的胜率</h4>
+<ul>
+<li><strong>1 个月约 52%</strong>：基本面这几周不会变，纯情绪与资金驱动，接近随机略偏乐观</li>
+<li><strong>3 个月约 58%</strong>：三季报落地后分化，考好升到约 65%，考砸降到约 35%，加权后中性偏高</li>
+<li><strong>12 个月约 65%</strong>：时间拉长盈利增长主导。若 2027E 每股收益 26.11 元兑现，对应现价仅 12.1 倍</li>
+</ul>
+<h4>回购是信号不是实质买盘</h4>
+<p>9/11 首笔回购 604,293 股，均价 330.93 元，金额 2.0 亿元。这个量级很小：相当于总市值的 0.014%，仅当日成交额的 1.3%。事实是回购价 331 元、现价 316 元，<strong>回购也没接住</strong>。</p>
+<p>但方向有意义：管理层愿意在 330 一线动用真金白银，是认为股价偏离价值的表态。<strong>信号价值大于托底价值，它加成的是管理层信心，不是资金面。他不会因为这 2 亿上调胜率。</strong></p>
+<h4>管理层动作的一致性</h4>
+<p>回购 2 亿、发债（第六期绿债 8/27、子公司拟发债 7/24、Q2 有息负债增 225 亿）、海外扩产（埃及 5GWh）、缩减国内项目投资、收购重庆耀宁、中期分红。</p>
+<p><strong>真实态度是&quot;进攻性资本配置＋防御性股东回报&quot;并行</strong>，重心明显在投未来：加杠杆、扩高毛利海外产能、收缩低回报国内产能、整合产业链。回购与分红是给短期股价的安抚，但力度远小于扩产和发债，说明<strong>管理层赌的是三年后，不是三个月后</strong>。</p>
+<h4>他的操作框架</h4>
+<p>先建 5% 到 10% 的观察仓，把仓位留给三季报：考好则逐步加到单票上限 20%，考砸则不加甚至减。<strong>每一笔买入都得有新的预期支撑，没有预期就是赌博。</strong></p>
+<blockquote>
+<p>与逆向投资人的核心分歧：若三季报基本面真恶化，他会走，逆向派会说&quot;大公司不会死、越跌越买&quot;；若考好则方向一致。</p>
+</blockquote>
+<hr>
+<h3 id="sec-11">产业策略师 · 星望远</h3>
+<p><strong>方法论定调</strong>：先看产业趋势与卡位，景气下行段里再便宜也不碰。<strong>这题的本质不是&quot;宁德好不好&quot;，而是&quot;你现在买的到底是什么&quot;。</strong></p>
+<h4>产业周期位置：第五轮锂电周期从井喷转向存量博弈</h4>
+<p>这一轮景气的发动机是储能需求井喷加供给缺弹性，碳酸锂一度冲到 20 万/吨。现在方向变了：<strong>碳酸锂主力合约已跌破 13 万/吨，较 5 月高点跌超 35%</strong>；8 月产量 112330 吨（同比 +32%），而 2026H1 国内新型储能新增装机仅 58.6GWh，<strong>同比 -16%</strong>。</p>
+<p>关键变量在国内独立储能：2026 年底累计装机预计 200GW，<strong>提前完成 2027 年 180GW 的规划目标</strong>，这意味着 2027 年需求增速大概率掉档。产业位置是上游价格下行中段、电池产能过剩、整合启动，属于典型的&quot;总量见顶、龙头受益&quot;阶段。</p>
+<h4>那个矛盾的三个维度</h4>
+<p><strong>份额变好</strong>：2026 年 1 至 5 月动力电池全球市占率 40.2%（+2.2pct）；摩根大通口径国内市占率由去年 44% 升至上半年 48%。全球装车 608GWh，前十中国企业占七席。宁德产能利用率 96.9%，满产。</p>
+<p><strong>储能总量变好、质量变差</strong>：H1 储能收入 532.61 亿（+87.54%），但营业成本 +91.46%，成本跑赢收入，储能毛利率 -1.56pct 至 23.96%；动力毛利率 -1.78pct。典型的增收不增利。</p>
+<p><strong>行业变差、宁德相对变好</strong>：隔膜协会已发倡议警告盲目扩产；但宁德在捡漏，收购吉利系重庆耀宁（24GWh 即将完工项目）并赴埃及建厂 5GWh。小摩直言这是行业整合启动信号，OEM 自建电池策略遇挫。</p>
+<p><strong>矛盾的本质：盈利是后视镜，股价是前挡风玻璃。</strong> 盈利还在涨是因为需求总量、份额、满产都是当期事实；估值被砍 30% 是市场在贴现 2027 年的产能过剩、价格战与去宁化预期。对胜率判断的含义很明确：<strong>不能因为业绩好就推论股价该涨，市场已经在交易下一个周期。</strong></p>
+<h4>去宁化目前是叙事</h4>
+<p>客户动作是真的：小米澎程系列全面搭载龙甲电池（中创新航＋欣旺达），供应商从 2 家扩到 4 家；理想增资欣旺达动力 26.5 亿、持股 11.17% 成二股东，i6 引入中创新航。</p>
+<p><strong>但份额数据没有验证去宁化</strong>：宁德全球份额反而 +2.2pct，国内 48%。他的判断是，这是存量博弈下 OEM 想自己切蛋糕的叙事，叠加个别高端客户的供应商多元化，尚未形成系统性份额流失。<strong>这条要盯 7、8 月单月全球份额，若跌破 38% 至 39%，才是从叙事变数据。</strong></p>
+<h4>产能出清进度</h4>
+<p>处在&quot;过热扩产&quot;转向&quot;整合初期&quot;的过渡带。行业在建产能仍多，但出现两个拐点信号：宁德以整合者身份收购，隔膜环节自发呼吁理性扩产。<strong>按产业链框架，当前最受益的环节恰恰是整合者加成本领先者，也就是宁德本身</strong>，而不是上游矿（碳酸锂下行不利）或设备（扩产放缓不利）。</p>
+<h4>产业维度胜率</h4>
+<p>情景概率：去宁化停留叙事、份额守住（全球 ≥40%、国内 ≥48%）<strong>约 52%</strong>；去宁化缓慢成数据、份额温和下滑 2 至 4 个百分点<strong>约 32%</strong>；去宁化加速叠加 2027 需求滑坡<strong>约 16%</strong>。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">时间维度</th>
+<th style="text-align:center">胜率</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1 个月</td>
+<td style="text-align:center"><strong>约 38%</strong></td>
+<td>催化真空期，碳酸锂弱势未出尽，技术面破 52 周低点</td>
+</tr>
+<tr>
+<td style="text-align:center">3 个月</td>
+<td style="text-align:center"><strong>约 45%</strong></td>
+<td>Q4 抢装与 400 亿回购托底，但价格战与去宁化情绪延续</td>
+</tr>
+<tr>
+<td style="text-align:center">12 个月</td>
+<td style="text-align:center"><strong>约 50%</strong></td>
+<td>17 倍估值提供均值回归空间，但 2027 需求见顶压制天花板</td>
+</tr>
+</tbody>
+</table>
+<p>三个数字都在 50% 或以下。<strong>赔率不对称：回到 400 以上的概率他估仅 25% 至 30%，下行空间却被 2027 年预期打开。</strong></p>
+<h4>胜率的前提条件</h4>
+<p><strong>上升</strong>：碳酸锂在 13 万/吨企稳不再破位；7、8 月全球份额守住 40% 以上；下半年储能抢装兑现；电芯价格企稳、价格战收敛；固态电池路线明确且宁德卡位。</p>
+<p><strong>崩塌</strong>：全球份额跌破 38%；储能毛利率继续下行破 20%；国内独立储能项目收益不达预期扩散、2027 需求转负；固态电池路线绕开宁德现有产能。</p>
+<h4>他判断不了的部分</h4>
+<p><strong>固态电池是否颠覆液态锂电体系，这是最大变量。</strong> 辉能 Gen3.5 已量产、松下 2026Q4 出货、赛科动力 2026 年底中试线、奇瑞 2027 上车验证——时间点、路线、宁德是否卡位，他置信度低。</p>
+<p>他对份额未受损置信度高，对 2027 需求判断置信度中，对固态电池颠覆路径置信度低，<strong>所以上面的胜率数字本身带有约 ±8 个百分点的置信区间。</strong></p>
+<blockquote>
+<p>“产业没坏到 17 倍 PE 该有的样子，但也没好到能撑起追涨。胜率勉强五成、赔率不占优，属于可以分批、不该重仓的位置。”</p>
+</blockquote>
+<hr>
+<h3 id="sec-12">信号派首席 · 洲四方</h3>
+<p><strong>方法论定调</strong>：四层信号必须对齐才动手，资金是介入时机的硬约束。<strong>方向还认得，但四层信号只亮半层，资金在夺路而逃。</strong></p>
+<h4>四层信号对齐度 0.5 / 4</h4>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th style="text-align:center">状态</th>
+<th>读数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>政策</td>
+<td style="text-align:center">半亮</td>
+<td>长周期扶持没变，但短期边际逆风：消费税 2% 升至 4%、固态电池新标准，都是压估值的东西</td>
+</tr>
+<tr>
+<td>产业</td>
+<td style="text-align:center">负向</td>
+<td>客户去宁化、赛力斯与华为主导权变更、产能过剩、锂价未企稳，产业拐点没确认</td>
+</tr>
+<tr>
+<td>资讯</td>
+<td style="text-align:center">负向</td>
+<td>利空集中发酵，是负反馈，不是正向持续性信号</td>
+</tr>
+<tr>
+<td>资金</td>
+<td style="text-align:center">负向</td>
+<td>主力 20 日净流出约 80.7 亿，9/15 单日 -34.52 亿放量。放量下跌，不是资金进场</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>“方向是大前提，资金是介入时机的硬约束。现在方向被产业噪音打上问号、资金又在流出，这是四层里最不该动手的组合。”</p>
+</blockquote>
+<h4>资金层的核实结果</h4>
+<p><strong>主力净流向</strong>：近 5 日 -15.6 亿、近 10 日 -29.4 亿、近 20 日约 -80.7 亿；9/15 单日 -34.52 亿（超大单 -30.54 亿＋大单 -3.98 亿）。</p>
+<p><strong>口径核实</strong>：34.52 亿是准确的收盘标准口径。23.35 亿大概率是盘中某时点快照或只含部分单量。对应散户端净流入 +34.52 亿，<strong>典型的主力跑、散户接</strong>。</p>
+<p><strong>融资余额</strong>：9/1 的 232.8 亿加到 9/9 峰值 242.4 亿，9/14 回落到 236.2 亿。<strong>杠杆资金是一路加着杠杆往下走的</strong>，9/14 才回落。高位杠杆盘意味着潜在被动平仓压力。</p>
+<p><strong>北向</strong>：二季度末持股 8.94 亿股、占比 21.00%，环比增 1.33 亿股。<strong>季度数据太滞后，不能用于择时</strong>，只说明外资筹码高度集中。</p>
+<h4>胜率估计</h4>
+<p>先给基准：<strong>只有一层或零层信号亮灯时入场，他的经验胜率约 30% 至 35%（1 个月维度），明显低于 50% 的基准。四层对齐时 1 个月能到 65% 至 70%。</strong></p>
+<p>当前对齐度下的分档（3 至 6 个月）：乐观 30%（政策加码、锂价企稳、主力回流、去宁化证伪）、中性 45%（300 至 360 箱体震荡磨时间）、悲观 25%（产能过剩加剧、去宁化坐实、放量破 300）。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">时间维度</th>
+<th style="text-align:center">胜率</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1 个月</td>
+<td style="text-align:center"><strong>30% – 35%</strong></td>
+<td>RSI6 18.08、布林下轨 314.7，技术性反抽概率存在，但<strong>反抽不等于反转</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">3 个月</td>
+<td style="text-align:center"><strong>35% – 40%</strong></td>
+<td>产业拐点没出来，趋势反转缺根基</td>
+</tr>
+<tr>
+<td style="text-align:center">12 个月</td>
+<td style="text-align:center"><strong>50% – 55%</strong></td>
+<td>龙头地位加 17 倍估值不算贵，均值回归有底，但要承担时间成本</td>
+</tr>
+</tbody>
+</table>
+<h4>什么信号让胜率抬升或下降</h4>
+<p><strong>抬升（两个以上同时出现，3 个月胜率可到 55% 至 65%）</strong>：回购放量（首笔才 2.0 亿，占授权下限 1.0%，只是象征性，单日金额上台阶如超 10 亿才算真托底）；主力连续 3 日以上净流入且成交放大；锂价企稳；政策端明确利好；技术站稳 MA5 与 MA10。</p>
+<p><strong>下降（出现就不该参与）</strong>：放量破 300（融资盘强平传导）；融资余额加速下降；去宁化从传闻变成公告加定量份额；系统性风险释放中途。</p>
+<h4>外部系统性风险的权重</h4>
+<p>10 年期美债盘中破 5%、费城半导体 -5.86%、9/17 凌晨美联储点阵图，这三件事短期权重很高。它们不改变宁德基本面，但会压全球成长股估值、扰动北向资金。当前本就脆弱且破位，这些是加速破位的催化剂。</p>
+<blockquote>
+<p>“美债破 5% 和费半大跌还没到战争或金融危机级别的无条件离场线，属高波动环境，但足以把 1 个月胜率再压 5 到 10 个百分点。9/17 点阵图落地前是典型的事件真空加风险未定，我的纪律是不做最早的人。”</p>
+</blockquote>
+<h4>他的纪律视角</h4>
+<p>9/15 那根 -6.16% 的放量大阴线已经出来了，<strong>按他的规则这是减仓信号，不是加仓信号</strong>。MA5、MA10、MA20 全线破掉且空头排列，获利盘只剩 8.75%、平均成本 382.58 压在头顶，反弹到 330 至 340 全是解套抛压。</p>
+<blockquote>
+<p>“'跌到成本区就补仓摊薄’是左侧思维，属于我判断不了的东西。加仓的前提是信号确认后的右侧，不是价格够低。”</p>
+</blockquote>
+<hr>
+<h3 id="sec-13">短线冲浪手 · 磊追浪</h3>
+<p><strong>方法论定调</strong>：只做主线里最强的那个，破 5 日线就走人。<strong>这个位置技术上极端超卖，但趋势上完全没有右侧信号。</strong></p>
+<h4>他做的回测（本轮唯一的量化统计）</h4>
+<p>用近一年 250 个交易日的日线，判据是 RSI2。今天同时满足<strong>RSI2 &lt; 15 极端超卖</strong>与<strong>收盘跌破布林下轨 314.74</strong>。历史上该组合出现 26 次，去掉连续重叠后独立事件约 10 段：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">持有窗口</th>
+<th style="text-align:center">正收益概率</th>
+<th style="text-align:center">均值</th>
+<th style="text-align:center">中位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">+1 日</td>
+<td style="text-align:center">48%</td>
+<td style="text-align:center">-0.04%</td>
+<td style="text-align:center">-0.07%</td>
+</tr>
+<tr>
+<td style="text-align:center">+3 日</td>
+<td style="text-align:center">28%</td>
+<td style="text-align:center">-0.92%</td>
+<td style="text-align:center">-1.35%</td>
+</tr>
+<tr>
+<td style="text-align:center">+5 日</td>
+<td style="text-align:center">32%</td>
+<td style="text-align:center">-1.62%</td>
+<td style="text-align:center">-2.30%</td>
+</tr>
+<tr>
+<td style="text-align:center">+10 日</td>
+<td style="text-align:center">41%</td>
+<td style="text-align:center">-1.82%</td>
+<td style="text-align:center">-0.32%</td>
+</tr>
+<tr>
+<td style="text-align:center">+20 日</td>
+<td style="text-align:center"><strong>71%</strong></td>
+<td style="text-align:center"><strong>+1.98%</strong></td>
+<td style="text-align:center"><strong>+2.02%</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">+60 日</td>
+<td style="text-align:center">46%</td>
+<td style="text-align:center">+8.35%</td>
+<td style="text-align:center">-1.30%</td>
+</tr>
+</tbody>
+</table>
+<p>再叠加&quot;创 60 日收盘新低&quot;（今天确为 52 周收盘新低），样本 15 次：+1 日 57%、+5 日 38%（中位 -1.21%）、+10 日 <strong>75%</strong>（+3.99%）、+20 日 <strong>83%</strong>（+6.05%，中位 +5.33%）。</p>
+<p><strong>结论数字</strong>（316.36 直接买入）：</p>
+<ul>
+<li><strong>5 日内正收益约 35% 至 40%</strong>；若按&quot;盘中曾不亏&quot;口径约 55% 至 60%（超卖通常先给一个日内反抽）</li>
+<li><strong>20 日内正收益约 65% 至 70%</strong>，这是性价比最高的窗口</li>
+<li><strong>60 日内正收益约 50% 至 55%</strong>，离散极大（历史 -15% 至 +33%）</li>
+</ul>
+<p>三个条件指向同一件事：<strong>短期还在杀，中段才修复。</strong></p>
+<h4>今天这根 K 线的性质</h4>
+<p>开盘 335.00 基本即全天最高（335.73），实体一根杀到 316.36，收在当日区间最低 1.8% 的位置，跌 6.16%，成交 155.59 亿（前日 88.7 亿，放量 75%）。午后成交占全天约 71%，尾盘几乎无承接，内盘 261221 大于外盘 219262，主动卖压主导。</p>
+<p><strong>定性是放量派发，不是恐慌见底。</strong> 历史上同类&quot;高开长阴＋收盘贴当日低位＋跌幅超 4%&quot;出现 8 次：次日 71% 翻红（均值 +0.95%），但 +5 日只剩 57%、+10 日 43%。<strong>次日常有技术反抽，但那是逃命波，不是右侧信号。</strong></p>
+<h4>资金面的核实</h4>
+<p>今日主力净流出 <strong>34.52 亿</strong>（主力流入 73.59 亿减流出 108.11 亿），这是主力口径的准确值。<strong>散户小单净流入 +23.01 亿</strong>，与主力净流出形成对照，教科书式的派发。近 5 日主力累计净流出约 15.6 亿（9/9、9/10、9/14 还是净流入，今天一根 K 线把前几天流入全打回），近 20 日约 77.4 亿。</p>
+<p>放量的含义：155.59 亿对前日 88.7 亿，<strong>放量下跌且收在低位等于派发</strong>，不是缩量企稳。<strong>主力还在净卖出，后面很难有像样的拉升。洗盘和派发的分界就在资金流向。</strong></p>
+<h4>52 周新低的结构特殊性</h4>
+<p>316.36 是过去一年最低收盘，获利盘仅 8.75%、平均成本 382.58。<strong>上方 91% 都是套牢盘，下方近一年成交密集区是空的</strong>，最近的低位平台是 2025 年 9 月的 300 至 320 一带。</p>
+<p>抢反弹的问题在于下方无支撑参考，急跌又快又深，止损位没处设。等右侧的代价是牺牲 V 型初段，但胜率可抬到 55% 至 60%。</p>
+<h4>为什么短期反弹胜率和一年持有胜率完全不同</h4>
+<p>2025-09-12 收 316.69 之后，5 日涨 13.7%、20 日涨 10.5%、区间最高 +47.6%，一年后却回到 316.36。</p>
+<p><strong>因为当时均线多头排列、趋势向上，超卖反弹是趋势中的回踩，回踩后能延续；现在 MA5 331.78 &lt; MA10 339.14 &lt; MA20 358.16 &lt; MA30 &lt; MA60 &lt; MA250，空头排列，MACD 零轴下方绿柱放大（DIF -15.25、DEA -11.79、柱 -6.93）。趋势向下时，超卖反弹的天花板就是 MA10 与 MA20，碰到压力位大概率再下一台阶。</strong></p>
+<blockquote>
+<p>“20 日反弹胜率 65% 至 70% 赚的是均值回归的钱（偏离均线太远的回抽），和持有一年赚钱（需要趋势反转）是两码事，别把技术性反弹当趋势反转做。”</p>
+</blockquote>
+<h4>胜率的时间衰减</h4>
+<p>5 日 35% 至 40% → 10 日约 40% → 20 日 65% 至 70%（均值回归兑现，大概率回抽 MA10 与 MA20）→ 60 日 50% 至 55%（完全看趋势能否反转）。</p>
+<h4>当周主线不在宁德这边</h4>
+<p>半导体设备 +48.21 亿、PCB +46.25 亿、存储 +43.95 亿净流入；CPO -76.65 亿、光通信 -72.71 亿、机器人 -52.96 亿、锂矿 -48.06 亿净流出。<strong>锂电链正在被抽血，资金在往半导体切。</strong> 全市场成交 1.6127 万亿创年内最低、1120 涨 4376 跌，缩量普跌的存量博弈，超跌反弹天然要打折扣。</p>
+<blockquote>
+<p>“按我的纪律，破 5 日线就走人。今天收盘 316.36 远在 MA5 331.78 下方，空头排列加主力净流出加破 52 周新低，我不会在这个位置做右侧加仓。一定要参与，只能定性为左侧潜伏，且必须等止跌信号。”</p>
+</blockquote>
+<hr>
+<h3 id="sec-14">逆向投资人 · 坤候底</h3>
+<p><strong>方法论定调</strong>：只买大公司回撤，左侧分批，绝不摊薄亏损标的。<strong>我买的是&quot;跌到关键支撑、并且撑住了&quot;。</strong></p>
+<h4>胜率要拆成两个问题</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">入场位置</th>
+<th style="text-align:center">一年内出现过 ≥15% 浮盈</th>
+<th style="text-align:center">一年后仍在水上</th>
+<th style="text-align:center">一年后跌超 15%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>316（现价直接加，破位位）</strong></td>
+<td style="text-align:center">约 85%</td>
+<td style="text-align:center"><strong>45% – 50%</strong></td>
+<td style="text-align:center">25% – 30%</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>300（周线低点撑住再加）</strong></td>
+<td style="text-align:center">约 85%</td>
+<td style="text-align:center"><strong>55% – 60%</strong></td>
+<td style="text-align:center">18% – 22%</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>290（次级周线低点）</strong></td>
+<td style="text-align:center">约 80%</td>
+<td style="text-align:center">约 60%</td>
+<td style="text-align:center">约 15%</td>
+</tr>
+</tbody>
+</table>
+<p>316 和 300 差的不只是 5% 的价格，差的是<strong>是不是支撑</strong>。316 是今天刚跌破 324 至 326 前低的位置，属于破位、支撑未验证；300.73 是 2025-09-12 那根周 K 的实体低点，是画得出来的、有依据的支撑。他的纪律是撑住才买，所以两者在他的账本里不是一类东西。</p>
+<p>情景概率（一年维度）：<strong>乐观约 35%</strong>（出清预期改善或固态电池催化，重回 380 至 430）、<strong>中性约 40%</strong>（超卖反弹后震荡，300 至 360 来回，最终贴近原点）、<strong>悲观约 25%</strong>（过剩延续，破 300 看向 264 至 290）。中性给最大权重，理由就是下面这段历史。</p>
+<h4>历史类比回测</h4>
+<p>2025-09-12 收 316.69，和今天几乎同一个价。之后一年：+5 日 360.18（+13.7%）、+20 日 349.83（+10.5%）、+60 日 383.49（+21.1%）、区间最高 467.35（2026-05-07，<strong>+47.6%</strong>）、一年后 316.36（-0.1%）。</p>
+<p>这段路径本身就是答案：</p>
+<p><strong>在 52 周新低加极度超卖的位置买入，一年内出现可观浮盈几乎是规律。</strong> 今天 RSI6 18.08、RSI2 13.33、KDJ J 13.43、MACD 柱 -6.93、股价贴着布林下轨 314.7，这种超卖读数下反弹概率不用怀疑。</p>
+<p><strong>但最终回到原点的概率同样不低。</strong> 上一轮一模一样的起点，走完 +47.6%，一年后净收益 -0.1%。</p>
+<blockquote>
+<p>“超卖给的是浮盈，不保证落袋。指望加进去一年后赚钱，这位置的历史胜率接近抛硬币；若只博一波 15% 至 20%、到位置就走，胜率能到八成以上。<strong>这笔加仓的胜率，取决于你是哪种人。</strong>”</p>
+</blockquote>
+<h4>筹码结构的核实</h4>
+<p>获利盘 8.75%、平均成本 382.58、90 集中度 25.02。压在上面的人超过九成，平均浮亏约 17%。这个结构的历史特征很固定：<strong>反弹快，但一到成本密集区就卖压如山</strong>。330 至 360 是最近两个月的换手区，382 是全场平均成本，这两道坎决定反弹天花板。</p>
+<h4>他的分批计划（每档都有 K 线依据）</h4>
+<ul>
+<li><strong>316 附近</strong>：半可依据（2025-09-12 收盘 316.69 加整数关口），只放 1 份试探</li>
+<li><strong>300 附近</strong>：2025-09-12 周 K 低点 300.73，撑住买 1 份</li>
+<li><strong>290 附近</strong>：2025-09-05 低点 290.72，1 份</li>
+<li><strong>264 附近</strong>：2025 年 8 月双底 263.74 与 264.41，多次触及未破，<strong>最强支撑</strong>，1 份</li>
+<li><strong>250 附近</strong>：2025 年 8 月中低点 248.41 与 252.39，1 份</li>
+<li><strong>240 附近</strong>：2025 年 6 月平台 239.88 至 243，1 份</li>
+</ul>
+<p>间距是 16、10、26、12、10，完全由 K 线结构决定，不是等距。十次用完就不买，能吃到多少吃多少。往上不追，破位不补，等下一个更低更硬的位置。</p>
+<h4>他判断不了的边界</h4>
+<p>宁德和隆基是同一类：重资产、产能周期的行业龙头。他在隆基上栽过——价格判断没错、支撑位找得准，真正没料到的是行业产能过剩能让龙头也痛很久。<strong>宁德现在的行业问题（电池产能出清节奏、固态电池路线会不会颠覆现有格局）恰恰是他承认自己不擅长的那一环。</strong></p>
+<p>他能判断的是&quot;316 便宜、17 倍处历史低位、大公司不会死&quot;，判断不了的是&quot;出清要多久、路线会不会变&quot;。对加仓的含义：<strong>这部分胜率他估不了，只能靠仓位和分批兜底。</strong> 这正是他坚决不在 316 重仓、要把子弹留给更低位置的原因。</p>
+<h4>深套者的胜率陷阱</h4>
+<p>用户今年在这只票上亏得最多，现在想加仓。他泼了盆冷水：<strong>“想加仓&quot;里很可能混着&quot;摊薄成本、快点回本&quot;的冲动，而不是纯粹的&quot;这里便宜”。</strong> 账面上看不出区别，但&quot;想回本&quot;会系统性高估胜率、低估时间成本。</p>
+<blockquote>
+<p>“我框架里加仓的唯一理由是支撑位撑住了，不是我已经亏了很多。别人跟我买同一只票为什么亏钱？不是买错票，是一把梭、没分批、扛不住。<strong>加可以，但按支撑位分次、每次一份，把’想回本’和’这里便宜’分开看。</strong>”</p>
+</blockquote>
+<h4>与财报研究员的分歧收敛</h4>
+<p>两人在 316 位置的动作其实已经合流，都不重仓，只是理由不同：一个怕三季报，一个怕破位加 91% 套牢盘。</p>
+<p><strong>真正的对撞在卖出端</strong>：财报派的规则是&quot;季度阈值一触发就走，不扛不补&quot;，逆向派是&quot;破位不补，等更低支撑撑住再加&quot;。这是两种卖出纪律的正面冲突，没有折中方案。</p>
+<hr>
+<h2 id="sec-15">03 · 深度思考</h2>
+<h3 id="sec-16">3a · 主持人札记</h3>
+<p><strong>01｜&quot;胜率&quot;这个问题，六个人给出了六个不同的分母</strong></p>
+<p>我最开始以为大家会给出接近的数字，结果分布从 30% 到 70%。仔细看才发现，分歧不在判断，在定义。</p>
+<p>短线冲浪手算的是&quot;5 日内正收益&quot;，得到 35% 至 40%；估值分析师算的是&quot;12 个月正收益&quot;，得到 70%；逆向投资人干脆拆成两个问题——“一年内出现过浮盈”（85%）和&quot;一年后仍在水上&quot;（45% 至 50%）。</p>
+<p><strong>这三个数字没有一个错，但它们回答的是三个不同的问题。</strong> 如果你打算赚一波反弹就走，参考第一个；如果你打算拿一年等回本，参考第二个；如果只是想确认&quot;这个位置历史上会不会给机会&quot;，参考第三个。</p>
+<p>所以我在结论卡里没有给单一数字。给单一数字反而会误导，因为用户没说的那个变量才是关键：<strong>你打算拿多久。</strong></p>
+<p><strong>02｜315 天前的那次 316，把这个问题回答了一半</strong></p>
+<p>2025-09-12 那天收 316.69。如果从那天买入并持有一年，路径是这样的：第 5 个交易日就赚 13.7%，第 20 个交易日赚 10.5%，中途最高摸到 467.35（+47.6%），然后一路回到 316.36，一年净收益 -0.1%。</p>
+<p><strong>这一年内，最低价是 316.00，出现在今天。也就是说那次买入几乎没有经历过像样的浮亏，最多的时候赚了近五成，最后归于零。</strong></p>
+<p>这个样本给了一个很反直觉的结论：<strong>在这种位置买入，你大概率不会被套，但也大概率赚不到钱。</strong> 被套和赚钱是两回事。</p>
+<p>我要提醒的是这个样本的局限：那一年赶上 2025Q4 到 2026Q1 的上涨环境，整体风险偏好在回升。现在的外部环境（美债破 5%、创业板四连跌、成交创年内最低）明显不同。<strong>拿它当规律用会出事，当参照看比较合适。</strong></p>
+<p><strong>03｜资金口径的矛盾，最后是短线冲浪手和信号派首席各自独立核实的</strong></p>
+<p>我手上一直有两个数字：本地复盘记的主力净流出 23.35 亿，连接器给的 34.52 亿。信号派首席和短线冲浪手分别取数核实，两人结论一致——<strong>34.52 亿是收盘的标准主力口径（超大单加大单），23.35 亿大概是盘中某时点的快照。</strong></p>
+<p>我特意记录这个细节，是因为它提醒我们：同一天、同一只股票，不同的取数时点和口径能差出 48%。如果你按 23.35 亿判断&quot;抛压不算太猛&quot;，方向就偏了。</p>
+<p>短板在于，这个数只有两个成员独立核实过，其余四位沿用了我的快照。<strong>我在任务说明里给共享数据时应该标注口径存疑，这是我的疏漏。</strong></p>
+<p><strong>04｜最值得注意的一条，是短线冲浪手那个&quot;20 日胜率 65% 到 70%，60 日降到 50% 到 55%&quot;的落差</strong></p>
+<p>他自己做的回测：RSI2 低于 15 且收盘跌破布林下轨，历史上出现 26 次，20 日后正收益概率 71%；如果叠加&quot;创 60 日收盘新低&quot;，20 日胜率升到 83%。</p>
+<p>但同一个样本，60 日后的胜率回落到 46% 到 55%。<strong>这中间的落差就是均值回归和趋势反转的区别。</strong></p>
+<p>超卖反弹赚的是&quot;价格偏离均线太远之后的回抽&quot;这笔钱，通常持续两到三周；而超卖反弹能不能变成趋势反转，取决于完全不同的东西——产业周期、资金面、盈利预期。<strong>技术指标管不了后者。</strong></p>
+<p><strong>05｜财报研究员和逆向投资人的那句对撞，是整场讨论里最硬的</strong></p>
+<p>财报研究员说：三季报毛利率、合同负债、现金流比值这三项坏掉两项，就该走，不扛不补。逆向投资人说：破位不补，等更低的支撑位撑住再加，从不设止损。</p>
+<p><strong>这两句话不能同时成立。</strong> 前者认为&quot;基本面恶化就等于逻辑失效&quot;，后者认为&quot;只要公司不死、价格够低就可以继续买&quot;。</p>
+<p>两个人都清楚这个分歧，逆向投资人还专门发了一条消息来说明。他的表述是：“他负责看见，我负责据此决定少下多少注。”</p>
+<p><strong>这其实是一种很成熟的相处方式——不试图说服对方，而是让对方的发现改变自己的注码大小。</strong> 但它留下的问题必须由你自己回答：<strong>如果三季报真的变差，你是走，还是等更低的位置再进一档？</strong> 这两条路的历史成败差别很大，且没有中间态。</p>
+<h3 id="sec-17">3b · 主持人 Q&amp;A</h3>
+<p><strong>🔑 关键｜所以加仓的胜率到底是多少？</strong></p>
+<p><strong>取决于你把什么算作&quot;赢&quot;，也取决于你打算拿多久。</strong> 三档给你：</p>
+<p><strong>第一档，博一波反弹就走（目标 15% 至 20%）。</strong> 历史胜率约八成。依据是逆向投资人那段回测：在 52 周新低加极度超卖的位置买入，一年内出现 15% 以上浮盈的概率约 85%；短线冲浪手的回测佐证——20 个交易日内正收益概率 65% 至 71%，叠加创 60 日新低后升到 83%。<strong>代价是你得接受 5 天内大概率还在亏（胜率只有 35% 至 40%），而且必须真的到位置就走。</strong></p>
+<p><strong>第二档，持有一年等回本加收益。</strong> 胜率约五成半。六个人给的 12 个月数字是 45%、50%、50% 至 55%、65%、70%，中位数在 55% 上下。分歧的原因是各自对&quot;周期位置&quot;和&quot;资金面能否改善&quot;的判断不同。</p>
+<p><strong>第三档，只想确认这个位置历史上会不会给机会。</strong> 会，而且概率很高（一年内 80% 以上出现过可观浮盈）。但&quot;给机会&quot;和&quot;你能拿到&quot;是两件事，2025-09-12 那个样本就是标准案例：赚过 47.6%，一年后是 -0.1%。</p>
+<p><strong>⚠️ 易混淆｜为什么六个人的数字差这么多？是我看错了吗？</strong></p>
+<p>不是你错了，是他们的尺子不同。</p>
+<p><strong>看盈利的人乐观。</strong> 估值分析师给 12 个月 70%，理由是滚动每股收益一年内有望从 18.37 涨到 22 至 23（约 +20%），就算 PE 不修复，光靠盈利也能推价。财报研究员给 65%，理由是归母 TTM 一年间已经从 583.65 亿涨到 850 亿（+45.6%），底子扎实。</p>
+<p><strong>看周期和资金的人悲观。</strong> 产业策略师给 50%，因为他算的是 2027 年需求增速可能掉档：2026H1 国内新型储能新增装机只有 58.6GWh、同比 <strong>-16%</strong>，而 2026 年底累计装机 200GW 已经提前完成了 2027 年的规划目标。信号派首席给 50% 至 55%，因为四层信号只亮半层，近 20 日主力净流出 80.7 亿。</p>
+<p><strong>这两组人不是在同一件事上吵架。</strong> 一组在算&quot;公司能赚多少钱&quot;，另一组在算&quot;市场愿意给这些钱多少倍&quot;。<strong>过去一年这只票恰好证明了后者的威力：每股收益涨 43.5%，估值杀 30.2%，价格原地不动。</strong></p>
+<p><strong>🔍 易疏忽｜&quot;回到一年前的价格&quot;这个说法，漏掉了最重要的一半</strong></p>
+<p>一年前 316.69 对应的滚动每股收益是 12.80 元，市盈率 24.68 倍。现在 316.36 对应的滚动每股收益是 18.37 元，市盈率 17.22 倍。</p>
+<p><strong>价格回到原点，估值便宜了三成。</strong> 这个差别不是文字游戏，它直接决定胜率。</p>
+<p>如果现在是&quot;估值和一年前一样贵&quot;，那 316 就是个危险的位置。但实际情况是：<strong>你用一年前的价格，买到了比一年前高出 43.5% 的盈利，代价是市场愿意给的倍数降了三成。</strong></p>
+<p>所以真正的问题不是&quot;会不会跌回一年前&quot;，而是&quot;<strong>市场愿不愿意停止压缩这个倍数</strong>&quot;。这个问题只有三季报和资金面能回答。</p>
+<p>顺带纠正一个日期：316 这个价位对应的其实是 2025-09-12，不是 2025-09-15。后者当天收 346.39，已经涨了 9.4%。这两个起点算出来的&quot;一年收益&quot;差了将近一个涨停板。</p>
+<p><strong>⚠️ 易混淆｜同样一个 316，逆向投资人说是&quot;半可依据&quot;，短线冲浪手说&quot;下方无支撑&quot;，矛盾吗？</strong></p>
+<p>不矛盾，他们在说两件不同的事。</p>
+<p>逆向投资人讲的是<strong>长期历史平台</strong>：2025 年 9 月的 300 至 320 曾经是一个平台，所以 316 算&quot;半可依据&quot;（他明确说这是&quot;刚破的位，不是撑住的位&quot;，所以只算一半）。</p>
+<p>短线冲浪手讲的是<strong>近一年成交结构</strong>：过去 250 个交易日里，316 以下没有成交密集区，所以短线没有参照物，止损位没处设。</p>
+<p>两个人的意思其实一致——<strong>这个位置的下方是空的</strong>。区别在于逆向派愿意用更远的历史平台（300、290、264）来锚定，短线派只看近一年的筹码分布。</p>
+<p>对你的实际意义是：<strong>如果你想设一个止损位，最近的有依据位置在 300 附近，距离现价还有 5% 的空间。</strong> 这个空间不小，得提前想清楚。</p>
+<p><strong>⭐ 重要｜三位成员都提到了同一件事：你可能混进了&quot;摊薄成本&quot;的动机</strong></p>
+<p>逆向投资人说得最直接：<strong>“想加仓&quot;里很可能混着&quot;摊薄成本、快点回本&quot;的冲动，而不是纯粹的&quot;这里便宜”。</strong></p>
+<p>财报研究员从另一个角度说了同一件事：他主张先建 5% 到 10% 的观察仓，把仓位留给三季报，考好再加、考砸就不加。<strong>这实际上是在把&quot;想加&quot;和&quot;该加多少&quot;拆开。</strong></p>
+<p>信号派首席则直接把这个位置定义为<strong>减仓信号而非加仓信号</strong>（因为出现了一根放量长阴线且均线全破）。</p>
+<p><strong>三个人用三种方式指向同一个提醒：你今年在这只票上亏得最多，这个事实本身会扭曲你对胜率的判断。</strong> 我不是说你不能加，而是说——<strong>如果你发现自己说不清&quot;为什么是现在加&quot;而不是&quot;为什么是 316 加&quot;，那多半是摊薄冲动在起作用。</strong></p>
+<p>一个可操作的检验方法：<strong>假设你已经空仓，你会不会在这个位置开仓？</strong> 如果答案是&quot;不会&quot;，那你现在的加仓动机就是摊薄成本，不是价值判断。</p>
+<p><strong>⚠️ 易混淆｜&quot;分批建仓&quot;和&quot;越跌越买&quot;是一回事吗？</strong></p>
+<p><strong>不是，而且这是本轮最容易被混为一谈的地方。</strong></p>
+<p>逆向投资人的分批有明确前提：每一档都必须对应一个<strong>有 K 线依据的支撑位</strong>（300.73、290.72、264.41……），每一档只买一份、绝不加倍，且要求&quot;撑住了才买&quot;。他自己说过一句很关键的话——<strong>“硬凑数字是我最忌讳的事”</strong>，所以当 320 只卡整数、没有 K 线对应时，他拒绝把它列为一批。</p>
+<p>而&quot;越跌越买&quot;通常没有位置依据，只有&quot;跌了就补&quot;的冲动，且在亏损扩大时倾向于加更多。</p>
+<p><strong>区别在于：前者的加仓条件是&quot;价格到了某个有依据的位置&quot;，后者的加仓条件是&quot;我又亏了更多&quot;。</strong></p>
+<p>财报研究员和短线冲浪手都明确说了&quot;不越跌越买&quot;。逆向投资人虽然做左侧，但他的左侧是被支撑位约束的左侧。<strong>三个人的共同点是：加仓必须由外部依据触发，不能由自己的浮亏触发。</strong></p>
+<hr>
+<h2 id="sec-18">04 · 后续关注</h2>
+<h3 id="sec-19">4a · 关键变量观察台</h3>
+<table>
+<thead>
+<tr>
+<th>变量 · 当前</th>
+<th>重新评估触发线</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>52 周低点 316.00</strong><br>当前：收盘 316.36，距破位线 0.11%</td>
+<td>有效跌破且 3 日内收不回 → <span style="color:#2e7d32">进入无成交密集区段，下方参照要退到 300 附近</span>；重新站上 331.78（MA5）并站稳 → <span style="color:#d32f2f">破位失败信号，短线强度开始修复</span></td>
+</tr>
+<tr>
+<td><strong>三季报（10 月下旬）</strong><br>当前：待考</td>
+<td>毛利率守住 23% 且合同负债环比回正 → <span style="color:#d32f2f">财报研究员给出的胜率升至约 65%</span>；毛利率跌破 23% 或现金流与归母之比低于 1.0x → <span style="color:#2e7d32">胜率降至约 35%，判定为基本面与预期不一致</span></td>
+</tr>
+<tr>
+<td><strong>机构一致预期 2026E 每股收益</strong><br>当前：20.82 元，尚未下修</td>
+<td>维持或上修 → <span style="color:#d32f2f">下跌性质仍是估值中枢下移，每股收益这条腿的支撑还在</span>；出现系统性下修 → <span style="color:#2e7d32">从估值问题转为盈利问题，17 倍会越跌越贵</span></td>
+</tr>
+<tr>
+<td><strong>主力资金流向</strong><br>当前：单日 -34.52 亿，近 20 日 -80.7 亿</td>
+<td>连续 3 日净流入且成交放大 → <span style="color:#d32f2f">信号派首席把 3 个月胜率上调至 55% 至 65% 的条件之一</span>；继续单日净流出超 20 亿 → <span style="color:#2e7d32">加速赶底，抛压尚未释放完</span></td>
+</tr>
+<tr>
+<td><strong>回购执行力度</strong><br>当前：首笔 2.0 亿，占授权下限 1.0%</td>
+<td>单日金额上台阶（如超 10 亿） → <span style="color:#d32f2f">从表态式转向托底式，是六位中唯一被普遍认可的信号</span>；到年底累计仍不足 20 亿 → <span style="color:#2e7d32">态度信号失效，市场会读作姿态</span></td>
+</tr>
+<tr>
+<td><strong>碳酸锂价格</strong><br>当前：主力合约跌破 13 万/吨，较 5 月高点跌超 35%</td>
+<td>在 13 万/吨企稳不再破位 → <span style="color:#d32f2f">产业策略师给出的胜率抬升首要条件</span>；继续下探 → <span style="color:#2e7d32">成本端虽利好，但需求走弱的信号更强，压制胜率天花板</span></td>
+</tr>
+<tr>
+<td><strong>全球动力电池份额</strong><br>当前：2026 年 1 至 5 月 40.2%（+2.2pct）</td>
+<td>7、8 月单月份额守住 40% 以上 → <span style="color:#d32f2f">去宁化停留在叙事层面，龙头逻辑完好</span>；跌破 38% 至 39% → <span style="color:#2e7d32">从叙事变成数据，护城河的重估不再是倍数问题</span></td>
+</tr>
+<tr>
+<td><strong>融资余额</strong><br>当前：9/1 232.8 亿 → 9/9 峰值 242.4 亿 → 9/14 236.2 亿</td>
+<td>加速下降 → <span style="color:#2e7d32">被动去杠杆，形成强平传导压力</span>；企稳回升 → <span style="color:#d32f2f">杠杆资金的观望情绪转向</span></td>
+</tr>
+<tr>
+<td><strong>外部贴现率</strong><br>当前：10 年期美债盘中破 5%，费城半导体 -5.86%</td>
+<td>美债回落到 5% 下方 → <span style="color:#d32f2f">成长股估值压力缓解的前提成立</span>；9/17 点阵图超预期鹰派且美债稳站 5% 上方 → <span style="color:#2e7d32">信号派首席的估计是 1 个月胜率再压 5 到 10 个百分点</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-20">4b · 综合视角失效条件</h3>
+<p><strong>如果以下任一情况出现，本次圆桌的胜率参考需要重新评估：</strong></p>
+<p><strong>01 · 盈利端</strong>：若三季报中毛利率跌破 23%、或经营现金流与归母净利之比跌到 1.0 倍以下、或出现单季超 40 亿的资产减值，则估值分析师与财报研究员给出的 65% 至 70% 长期胜率失去依据。到那时&quot;估值在还债&quot;这个核心判断要改成&quot;盈利在下修&quot;，两者的应对完全不同。</p>
+<p><strong>02 · 周期端</strong>：若 2027 年国内新型储能装机增速转负、或全球动力电池需求增速跌到 10% 以下，则产业策略师基于&quot;总量见顶、龙头受益&quot;给出的 50% 胜率还要下调。他明确说过这条的置信区间是 ±8 个百分点，说明他自己对这个判断的不确定性已经很高。</p>
+<p><strong>03 · 份额端</strong>：若 7、8 月单月全球份额跌破 38% 至 39%，或车企自研阵营合计份额从当前个位数突破到两位数，则&quot;去宁化仍是叙事&quot;这个多位成员共同依赖的前提被推翻。届时所有基于&quot;份额未受损&quot;的估值锚都要重算。</p>
+<p><strong>04 · 资金端</strong>：若主力净流出在单日 20 亿以上连续出现，或融资余额加速下降引发强平，则短线冲浪手那个&quot;20 日胜率 65% 至 70%&quot;的统计基础失效。他的回测基于均值回归，而强平驱动的下跌会持续偏离均线，均值回归的前提不存在。</p>
+<p><strong>05 · 技术端</strong>：若价格有效跌破 300 且下方没有形成新的成交密集区，则逆向投资人的分批框架需要整体下移一档。他的支撑表建立在 2025 年的历史平台上，那些位置一旦被快速连续击穿，说明这轮下跌的性质超出了技术性调整，需要用 264、250 这些更远的参照。</p>
+<hr>
+<h2 id="sec-21">附：本轮数据的口径说明与待核实项</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>情况</th>
+<th>处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主力净流出金额</td>
+<td>23.35 亿（本地复盘口径）vs 34.52 亿（连接器口径）</td>
+<td>信号派首席与短线冲浪手各自独立核实，<strong>34.52 亿（超大单加大单）为准</strong>，23.35 亿疑为盘中快照</td>
+</tr>
+<tr>
+<td>一年前基准日</td>
+<td>316 对应 2025-09-12（收 316.69），非 2025-09-15（收 346.39）</td>
+<td>已在本报告开头纠正</td>
+</tr>
+<tr>
+<td>一年前 TTM 每股收益</td>
+<td>12.8012（2025-06-30 报告期）</td>
+<td>取 <code>data_finance</code>，与 2026-06-30 报告期的 18.3719 同口径对比</td>
+</tr>
+<tr>
+<td>PE 分位区间</td>
+<td>估值分析师取近 3.2 年周度序列（n=40），未纳入 2021 至 2022 年</td>
+<td>因增速与倍数 regime 不同，属合理剔除，但分位结论仅适用于近三年</td>
+</tr>
+<tr>
+<td>分位条件概率样本</td>
+<td>8 个（估值分析师）、10 段独立事件（短线冲浪手 RSI2 回测）</td>
+<td><strong>样本量小，两位成员均已自行标注需打折</strong></td>
+</tr>
+<tr>
+<td>历史路径的可外推性</td>
+<td>2025-09-12 至 2026-09-15 处于上涨环境</td>
+<td>该样本用于参照而非规律，已在札记中提示</td>
+</tr>
+<tr>
+<td>三季报披露时间</td>
+<td>预计 10 月下旬</td>
+<td>具体日期待公司公告</td>
+</tr>
+<tr>
+<td>回购后续进展</td>
+<td>连接器明细仅见 9/11 首笔</td>
+<td>后续进展公告待核实</td>
+</tr>
+<tr>
+<td>收购重庆耀宁</td>
+<td>交易结构与对价未在公告清单覆盖</td>
+<td>待核实，不影响本轮结论</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<blockquote>
+<p>本报告由六位成员独立取数、独立回测后汇编。胜率数字为各成员基于自身框架的概率估计，非统计意义上的精确概率，引用时请连同其前提条件一并考虑。</p>
+</blockquote>
+<blockquote>
+<p>⚠️ 以上内容由 AI 基于公开信息整理生成，仅供参考，不构成任何投资建议或个股推荐。投资有风险，决策需谨慎。</p>
+</blockquote>
+
+  <div class="footer">来源：任务库持仓复盘 · catl_addpos_winrate_20260915.md | 由 markdown-it 转换 | 仅供参考，不构成投资建议</div>
+</div>
+</body>
+</html>
