@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宁德时代 9 月总结与 10 月操作计划 · 腾讯自选股股票投研圆桌报告</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-primary: #F7F5F3; --bg-secondary: #FFFFFF; --bg-card: #FFFFFF;
+  --bg-elevated: #FAFAF9; --bg-warm: #F5F2EE; --bg-dark: #2D2926;
+  --text-primary: #2D2926; --text-secondary: #5C5652;
+  --text-muted: #8A8480; --text-light: #A8A29E;
+  --accent: #D97706; --accent-light: #FEF3C7; --accent-hover: #B45309;
+  --border: #E5E2DE; --border-light: #F0EEEC;
+  --red: #DC2626; --green: #059669; --gold: #D97706; --blue: #2563EB;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', Georgia, serif;
+  background: var(--bg-primary); color: var(--text-primary);
+  line-height: 1.8; font-size: 16px; -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: inherit; font-weight: 600; letter-spacing: 0.02em; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-hover); }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+.prose { max-width: 760px; margin: 0 auto; }
+.prose p { font-size: 1.05rem; line-height: 1.9; margin-bottom: 20px; color: var(--text-primary); }
+.section-head { max-width: 1100px; display: grid; grid-template-columns: 120px 1fr; gap: 32px; align-items: baseline; margin: 0 auto 48px; padding: 0 48px; }
+.section-num { font-size: 0.9rem; color: var(--accent); letter-spacing: 0.15em; border-top: 1px solid var(--accent); padding-top: 8px; }
+.section-title { font-size: 2rem; }
+.section-lede { color: var(--text-muted); margin-top: 6px; font-size: 1rem; }
+section { padding: 72px 0; }
+
+/* ===== Nav ===== */
+nav { position: sticky; top: 0; z-index: 100; height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; background: rgba(247,245,243,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+.nav-logo { font-weight: 600; font-size: 1rem; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { color: var(--text-secondary); font-size: 0.95rem; }
+.nav-links a:hover { color: var(--accent); }
+
+/* ===== Hero ===== */
+.hero { max-width: 1100px; margin: 0 auto; padding: 96px 48px 48px; }
+.kicker { color: var(--accent); font-size: 0.9rem; letter-spacing: 0.15em; font-weight: 500; margin-bottom: 24px; }
+.hero h1 { font-size: 3rem; line-height: 1.25; margin-bottom: 24px; max-width: 900px; }
+.hero-dek { max-width: 760px; font-size: 1.15rem; color: var(--text-secondary); line-height: 1.9; margin-bottom: 40px; }
+.host { display: inline-flex; align-items: center; gap: 12px; font-size: 0.95rem; color: var(--text-muted); }
+.host img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border); }
+
+/* ===== Module 1 · Conclusion Card ===== */
+.conclusion-wrap { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+.conclusion-card {
+  padding: 40px 48px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-left: 6px solid var(--accent); border-radius: 20px;
+  box-shadow: 0 4px 28px rgba(217, 119, 6, 0.06);
+}
+#conclusion { padding: 0; }
+#conclusion .section-head { margin-bottom: 48px; }
+.cc-question {
+  font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.05em;
+  margin-bottom: 8px; text-transform: uppercase;
+}
+.cc-question-text {
+  font-size: 1.4rem; font-weight: 600; color: var(--text-primary);
+  margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px dashed var(--border);
+}
+.cc-question-text::before { content: "「"; color: var(--accent); }
+.cc-question-text::after { content: "」"; color: var(--accent); }
+
+.cc-snapshot { margin-bottom: 32px; }
+.cc-snapshot-label {
+  font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.18em;
+  font-weight: 600; margin-bottom: 14px; text-transform: uppercase;
+}
+.cc-snapshot-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  background: var(--bg-elevated); border: 1px solid var(--border-light);
+  border-radius: 12px; overflow: hidden;
+}
+.cc-snap-cell {
+  padding: 16px 20px;
+  border-right: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  background: var(--bg-elevated);
+}
+.cc-snap-cell:nth-child(4n) { border-right: none; }
+.cc-snap-cell:nth-last-child(-n+4) { border-bottom: none; }
+.cc-snap-cell-label {
+  font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+.cc-snap-cell-value {
+  font-size: 1.4rem; font-weight: 600; color: var(--text-primary);
+  font-variant-numeric: tabular-nums; line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+.cc-snap-cell-sub {
+  font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;
+  font-variant-numeric: tabular-nums;
+}
+.cc-snap-up { color: var(--red); }
+.cc-snap-down { color: var(--green); }
+
+.cc-headline-label {
+  font-size: 0.8rem; color: var(--accent); letter-spacing: 0.2em;
+  font-weight: 600; margin-bottom: 14px; text-transform: uppercase;
+}
+.cc-headline {
+  font-size: 1.15rem; font-weight: 500; color: var(--text-primary);
+  letter-spacing: 0.01em; line-height: 1.75;
+  margin-bottom: 32px; padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+.cc-headline strong { font-weight: 700; color: var(--text-primary); }
+.cc-headline em { font-style: normal; font-weight: 700; color: var(--red); }
+
+.cc-actions-intro {
+  font-size: 0.95rem; color: var(--text-muted); letter-spacing: 0.02em;
+  margin-bottom: 18px;
+}
+.cc-actions {
+  display: flex; flex-direction: column;
+  margin-bottom: 28px;
+}
+.cc-action-row {
+  display: grid; grid-template-columns: 180px 1fr;
+  gap: 28px; padding: 18px 0; align-items: baseline;
+  border-bottom: 1px dashed var(--border-light);
+}
+.cc-action-row:last-child { border-bottom: none; }
+.cc-action-label {
+  font-weight: 600; color: var(--accent); font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+.cc-action-detail {
+  color: var(--text-primary); font-size: 1rem; line-height: 1.85;
+}
+.cc-action-detail strong { color: var(--text-primary); font-weight: 600; }
+
+.cc-vote {
+  display: flex; gap: 14px; flex-wrap: wrap; align-items: center;
+  padding-top: 20px; border-top: 1px dashed var(--border);
+}
+.cc-vote-label { font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.05em; }
+.cc-vote-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.85rem; color: var(--text-secondary);
+  padding: 4px 12px; background: var(--bg-elevated); border-radius: 999px;
+  border: 1px solid var(--border-light);
+}
+.cc-vote-tag .dot { width: 8px; height: 8px; border-radius: 50%; }
+
+/* ===== Module 2 · Voice Card ===== */
+.voice-stack { max-width: 1100px; margin: 0 auto; padding: 0 48px; display: flex; flex-direction: column; gap: 24px; }
+.voice-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px 36px; min-width: 0; }
+.voice-head { display: flex; align-items: center; gap: 12px; padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid var(--border-light); }
+.voice-head img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border); }
+.voice-name { font-weight: 600; font-size: 1.1rem; flex: 1; }
+.voice-card ol, .voice-card ul { padding-left: 20px; }
+.voice-card li { margin-bottom: 12px; line-height: 1.8; }
+.voice-card strong { color: var(--text-primary); font-weight: 600; }
+.voice-card h4 { margin: 20px 0 10px; font-size: 1.05rem; color: var(--text-primary); }
+.voice-card p { margin-bottom: 14px; line-height: 1.85; color: var(--text-secondary); }
+.voice-card table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: 0.95rem; margin: 16px 0; }
+.voice-card th, .voice-card td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-light); }
+.voice-card th { color: var(--text-muted); font-weight: 500; background: var(--bg-elevated); font-size: 0.85rem; }
+.voice-card .table-scroll { overflow-x: auto; margin: 16px 0; }
+.voice-card .pull-quote { border-left: 3px solid var(--accent); padding: 4px 0 4px 16px; margin: 16px 0; color: var(--text-secondary); font-style: italic; }
+
+/* ===== Module 3a · Notes List（主持人札记） ===== */
+.notes-stack { max-width: 1100px; margin: 0 auto; padding: 0 48px; display: flex; flex-direction: column; gap: 16px; }
+.note-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 24px 28px; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: baseline; }
+.note-num { font-size: 1.6rem; font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; line-height: 1; opacity: 0.6; }
+.note-body h4 { font-size: 1.1rem; margin-bottom: 8px; color: var(--text-primary); }
+.note-body p { font-size: 0.98rem; line-height: 1.85; color: var(--text-secondary); margin: 0 0 12px; }
+.note-body p:last-child { margin-bottom: 0; }
+.note-body p strong { color: var(--text-primary); }
+
+/* ===== Module 3b · Q&A Card（主持人 Q&A） ===== */
+.qa-stack { max-width: 1100px; margin: 0 auto; padding: 0 48px; display: flex; flex-direction: column; gap: 18px; }
+.qa-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 28px 32px; }
+.qa-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; letter-spacing: 0.06em; padding: 4px 12px; border-radius: 999px; background: var(--bg-warm); color: var(--text-secondary); margin-bottom: 14px; font-weight: 500; }
+.qa-tag.tag-key { background: #FEF3C7; color: #B45309; }
+.qa-tag.tag-confuse { background: #FEE2E2; color: #B91C1C; }
+.qa-tag.tag-miss { background: #DBEAFE; color: #1D4ED8; }
+.qa-tag.tag-meta { background: #EDE9FE; color: #6D28D9; }
+.qa-question { font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin-bottom: 14px; line-height: 1.5; }
+.qa-question::before { content: "Q. "; color: var(--accent); font-weight: 700; }
+.qa-answer { color: var(--text-secondary); font-size: 1rem; line-height: 1.85; }
+.qa-answer::before { content: "A. "; color: var(--text-muted); font-weight: 600; margin-right: 4px; }
+.qa-answer p { margin-bottom: 12px; }
+.qa-answer p:last-child { margin-bottom: 0; }
+.qa-answer strong { color: var(--text-primary); }
+
+/* ===== Module 4 · Trigger Table（关键变量触发表） ===== */
+.trigger-wrap { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+.trigger-table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; font-variant-numeric: tabular-nums; }
+.trigger-table th, .trigger-table td { padding: 18px 22px; text-align: left; border-bottom: 1px solid var(--border-light); vertical-align: top; }
+.trigger-table tr:last-child td { border-bottom: none; }
+.trigger-table th { background: var(--bg-elevated); color: var(--text-muted); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
+.trigger-var { font-weight: 600; color: var(--text-primary); font-size: 1.02rem; min-width: 200px; }
+.trigger-var .now { display: block; font-weight: 400; color: var(--text-muted); font-size: 0.85rem; margin-top: 4px; letter-spacing: 0; text-transform: none; }
+.trigger-action { color: var(--text-secondary); font-size: 0.98rem; line-height: 1.85; }
+.trigger-action strong { color: var(--text-primary); font-weight: 600; }
+.trigger-action .up { color: var(--red); font-weight: 600; }
+.trigger-action .down { color: var(--green); font-weight: 600; }
+
+/* ===== Sub-section divider（用于 Module 3 内部 3a / 3b 分隔） ===== */
+.subsection-label { max-width: 1100px; margin: 48px auto 20px; padding: 0 48px; font-size: 0.85rem; color: var(--accent); letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; }
+.subsection-label:first-of-type { margin-top: 0; }
+
+/* ===== Passage Card（兜底承接：4 模块外的非标内容） ===== */
+.passage-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 36px 40px; max-width: 1100px; margin: 0 auto 24px; }
+.passage-card h3 { font-size: 1.3rem; margin-bottom: 16px; color: var(--text-primary); }
+.passage-card h4 { font-size: 1.05rem; margin: 24px 0 10px; color: var(--text-primary); }
+.passage-card p { font-size: 1rem; line-height: 1.9; margin-bottom: 16px; color: var(--text-secondary); }
+.passage-card ul, .passage-card ol { padding-left: 22px; margin-bottom: 16px; }
+.passage-card li { margin-bottom: 8px; line-height: 1.85; color: var(--text-secondary); }
+.passage-card strong { color: var(--text-primary); font-weight: 600; }
+.passage-card table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: 0.95rem; margin: 16px 0 24px; }
+.passage-card th, .passage-card td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--border-light); vertical-align: top; }
+.passage-card th { color: var(--text-muted); font-weight: 500; background: var(--bg-elevated); letter-spacing: 0.04em; font-size: 0.85rem; }
+
+/* ===== Footer ===== */
+footer { background: var(--bg-dark); color: var(--text-light); padding: 48px; text-align: center; margin-top: 72px; }
+footer p { max-width: 680px; margin: 0 auto; font-size: 0.95rem; }
+.footer-sub { margin-top: 16px; font-size: 0.8rem; color: var(--text-light); opacity: 0.7; }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .container, .voice-stack, .qa-stack, .trigger-wrap, .notes-stack, .subsection-label, .conclusion-wrap { padding-left: 24px; padding-right: 24px; }
+  .hero { padding-left: 24px; padding-right: 24px; }
+  .conclusion-card { padding: 28px 24px; }
+  .cc-headline { font-size: 1.05rem; line-height: 1.7; }
+  .cc-action-row { grid-template-columns: 1fr; gap: 6px; }
+  .cc-snapshot-grid { grid-template-columns: repeat(2, 1fr); }
+  .cc-snap-cell:nth-child(4n) { border-right: 1px solid var(--border-light); }
+  .cc-snap-cell:nth-child(2n) { border-right: none; }
+  .cc-snap-cell:nth-last-child(-n+4) { border-bottom: 1px solid var(--border-light); }
+  .cc-snap-cell:nth-last-child(-n+2) { border-bottom: none; }
+  .hero h1 { font-size: 2.2rem; }
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .voice-card, .passage-card { padding: 24px; }
+  .qa-card { padding: 22px; }
+  .trigger-table th, .trigger-table td { padding: 14px 14px; }
+  .note-item { padding: 20px; grid-template-columns: 1fr; gap: 8px; }
+  .section-head { padding: 0 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo">📰 宁德时代 · 圆桌</a>
+  <div class="nav-links">
+    <a href="#conclusion">结论</a>
+    <a href="#weekly">周线</a>
+    <a href="#voices">视角</a>
+    <a href="#thinking">思考</a>
+    <a href="#watch">关注</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="kicker">ROUND TABLE · 2026-09-30 · 9 月总结 · 周线盘点 · 10 月操作计划</div>
+  <h1>9 月跌完了，10 月怎么打算</h1>
+  <div class="hero-dek">全月 -19.93%、五周全阴，跌幅 100% 来自估值端。六位成员按各自框架复盘 9 月，给出 10 月的点位与条件。持有 200 股 + 备加 100 股的人，需要的是一套能照着执行的顺序。</div>
+  <div class="host">
+    <img src="data:image/webp;base64,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" alt="投研主编">
+    <span>投研主编 · 圆汇众（Yuan）· 腾讯自选股股票投研专家团</span>
+  </div>
+</section>
+
+<section id="conclusion">
+  <div class="section-head">
+    <div class="section-num">01 · 结论</div>
+    <div><h2>圆桌怎么看</h2><p class="section-dek">9 月全月 -19.93%，五周全阴；跌幅 100% 来自估值端</p></div>
+  </div>
+  <div class="conclusion-wrap">
+    <div class="conclusion-card">
+      <div class="cc-question">YOU ASKED</div>
+      <div class="cc-question-text">9 月整体表现总结 + 按周线做走势盘点 + 10 月操作计划与点位分析（持有 200 股，另有可加仓 100 股的备用金）</div>
+      <div class="cc-snapshot">
+        <div class="cc-snapshot-label">当前关键数据 · 2026-09-30 收盘</div>
+        <div class="cc-snapshot-grid">
+        <div class="cc-snap-cell">
+          <div class="cc-snap-cell-label">收盘价</div>
+          <div class="cc-snap-cell-value"><strong>291.11</strong></div>
+          <div class="cc-snap-cell-sub cc-snap-up">+1.50%</div>
+        </div>
+        <div class="cc-snap-cell">
+          <div class="cc-snap-cell-label">9 月全月</div>
+          <div class="cc-snap-cell-value"><strong>-19.93%</strong>（363.55 → 291.11）</div>
+          <div class="cc-snap-cell-sub cc-snap-down">五周全阴</div>
+        </div>
+        <div class="cc-snap-cell">
+          <div class="cc-snap-cell-label">距 5/7 高点 467.35</div>
+          <div class="cc-snap-cell-value"><strong>-37.71%</strong></div>
+          <div class="cc-snap-cell-sub cc-snap-down">—</div>
+        </div>
+        <div class="cc-snap-cell">
+          <div class="cc-snap-cell-label">成交额 / 换手</div>
+          <div class="cc-snap-cell-value">86.14 亿 / 0.70%</div>
+          <div class="cc-snap-cell-sub ">平量</div>
+        </div>
+        <div class="cc-snap-cell">
+          <div class="cc-snap-cell-label">PE(TTM)</div>
+          <div class="cc-snap-cell-value"><strong>15.85</strong></div>
+          <div class="cc-snap-cell-sub cc-snap-down">9/15 为 17.22</div>
+        </div>
+        <div class="cc-snap-cell">
+          <div class="cc-snap-cell-label">PB / 股息率</div>
+          <div class="cc-snap-cell-value">约 3.55 / 约 2.86%</div>
+          <div class="cc-snap-cell-sub ">—</div>
+        </div>
+        <div class="cc-snap-cell">
+          <div class="cc-snap-cell-label">总市值</div>
+          <div class="cc-snap-cell-value">13,469 亿</div>
+          <div class="cc-snap-cell-sub cc-snap-down">9/15 为 14,637 亿</div>
+        </div>
+        <div class="cc-snap-cell">
+          <div class="cc-snap-cell-label">MA5 / MA10</div>
+          <div class="cc-snap-cell-value">292.88 / 297.79</div>
+          <div class="cc-snap-cell-sub ">现价 -0.60% / -2.24%</div>
+        </div>
+        <div class="cc-snap-cell">
+          <div class="cc-snap-cell-label">RSI6</div>
+          <div class="cc-snap-cell-value">28.06</div>
+          <div class="cc-snap-cell-sub cc-snap-up">9/29 为 16.44</div>
+        </div>
+        <div class="cc-snap-cell">
+          <div class="cc-snap-cell-label">MACD 柱</div>
+          <div class="cc-snap-cell-value">-2.474</div>
+          <div class="cc-snap-cell-sub ">-6.75 → -3.857 → -2.474</div>
+        </div>
+        <div class="cc-snap-cell">
+          <div class="cc-snap-cell-label">回购累计</div>
+          <div class="cc-snap-cell-value">16.03 亿 / 521.5 万股</div>
+          <div class="cc-snap-cell-sub ">均价 330.93 → 305.65 → 301.70</div>
+        </div>
+        </div>
+      </div>
+      <div class="cc-headline-label">圆桌综合视角</div>
+      <div class="cc-headline">9 月跌的 <em>不是业绩，是估值框架</em>——全月 -19.93% 里每股收益一分未动。但"跌得多"不等于"便宜"：按加息后的新中枢（13.45x，269–286）衡量，现价 291 是 <em>溢价 +4%~+8%</em>，不是折价。估值分析师把"便宜"从八分自己下调到 <strong>六分</strong>，逆向投资人则坚持 291 不是 K 线上的支撑位——两套框架在"现价没有折扣"这一点上 <strong>罕见地指向同一结论</strong>。10 月的 <em>唯一决定性变量仍是三季报毛利率</em>，在那之前 100 股备用金不宜动用。</div>
+      <div class="cc-actions-intro">圆桌的几条核心视角</div>
+      <div class="cc-actions">
+      <div class="cc-action-row">
+        <div class="cc-action-label">① 从估值拆解看</div>
+        <div class="cc-action-detail">跌的是 PE，不是 EPS。 三季报未出，TTM 每股收益仍是 18.3719，全月 -72.4 元的跌幅 100% 由市盈率端贡献（19.79 → 15.85）。PEG 主口径修正后为 <strong>0.62</strong>（前瞻对前瞻），落在明确便宜区间。但要注意：<strong>"已跌破 25 分位下轨"这个读数被加息污染了</strong>——那条历史 PE 带是在零加息环境里构建的，折算回旧口径后现价实际只落在约 <strong>20-25 分位</strong>，不是 5 分位。更关键的一条：把现价拿去跟<strong>加息后的新中枢</strong>比（13.45x，对应 269–286），现价是 <strong>溢价 +4%~+8%</strong>，不是折价——只有跟已经作废的加息前中枢（14.5x）比才是 -3%。对照逆向那档 264（12.1x），现价溢价 <strong>+10.2%</strong>。估值分析师原报"便宜八分"、PEG 0.62，最终自己收回改成<strong>六分</strong>——<strong>安全边际只有 3-5%，不是 15%</strong>。</div>
+      </div>
+      <div class="cc-action-row">
+        <div class="cc-action-label">② 从产业卡位看</div>
+        <div class="cc-action-detail">这是板块贝塔，不是个股 alpha。 电池行业指数（01801737）7/1-9/30 跌 <strong>-25.16%</strong>，同期宁德 <strong>-25.66%</strong>，<strong>几乎完全同步，宁德没有显著跑输</strong>。所以 9 月是电池板块的系统性杀估值，宁德是被砸的载体（占创业板指权重约 16%），份额崩塌的叙事成立但<strong>不是这波杀跌的主因</strong>。</div>
+      </div>
+      <div class="cc-action-row">
+        <div class="cc-action-label">③ 从盘面量价看</div>
+        <div class="cc-action-detail">跌势在衰竭，但衰竭不等于反转。 周跌幅序列 -3.45% → -5.84% → -8.64% → -2.80% → -0.81%，配合天量转地量，动能确实在衰减。但 9/30 那根 +1.50% 是<strong>平量反抽</strong>（86.14 亿，仅 5 日均量 1.007 倍，盘中最高 292.70 连 MA5 都没摸到），四条转强标准全不过。</div>
+      </div>
+      <div class="cc-action-row">
+        <div class="cc-action-label">④ 从信号纪律看</div>
+        <div class="cc-action-detail">资金层的确认键仍未按下。 四层信号从 9/18 的 2.5/4 下修至 <strong>2/4</strong>，下修的是最硬的那层——资金。MACD 柱收窄是"二阶导转正、一阶导仍为负"，只配登记不配决策。</div>
+      </div>
+      <div class="cc-action-row">
+        <div class="cc-action-label">⑤ 从财报质地看</div>
+        <div class="cc-action-detail">9 月没有新财报，所以这不是财报杀。 但管理层出了三张牌，其中藏着一个矛盾：回购 16 亿（把钱还给股东）对发债 45 亿 + 锂矿资本开支（还要再筹钱），<strong>资金主流方向是扩产不是回馈股东</strong>。且 9/18 之后到月底<strong>没有新增回购</strong>——最恐慌时停手，是表态式的典型特征。</div>
+      </div>
+      <div class="cc-action-row">
+        <div class="cc-action-label">⑥ 排产数据打架，是本轮最硬的一颗雷。</div>
+        <div class="cc-action-detail">9 月产量三方口径互不相容：<strong>花旗 -3%</strong>（口径里 8 月还是 +7%，10 月展望 +5~6%）、<strong>ZE Consulting（摩根大通引用）累计下调 14% 至 -5%</strong>、<strong>TD 大东时代 +5~6%（且承认主动放慢产线节拍）</strong>。三者必有一错，而它直击的是<strong>营收</strong>——估值分析师算过，营收每下修 5% 合理价下移约 23 元，杀伤力是毛利率的两倍。对应硬红线：<strong>产能利用率跌破 90% → 立刻冻结全部加仓</strong>（这条只否决加仓，不动 200 股底仓）。</div>
+      </div>
+      <div class="cc-action-row">
+        <div class="cc-action-label">⑦ 从宏观贴现率看</div>
+        <div class="cc-action-detail">这是估值重定价型下跌，不是产业型下跌。 9 月中旬美联储宣布 <strong>2023 年 7 月以来首次加息</strong>，贴现率上行直接压制高久期成长资产。这一条改变了整件事的性质：<strong>反弹要靠加息预期降温，不是靠产业数据好转。</strong> 加息预期若继续升温，三季报再漂亮估值端照样被压着；反过来，加息预期降温时，即使基本面没变化股价也会反弹。</div>
+      </div>
+      <div class="cc-action-row">
+        <div class="cc-action-label">⑧ 你的预期要拆成两场考试。</div>
+        <div class="cc-action-detail">既然这波是板块贝塔，那么 <strong>"公司过没过关"和"价格过没过关"是两场独立的考试</strong>。三季报达标只说明第一场及格，<strong>不构成"立刻投"的理由</strong>——板块级的估值压制不会因为一家公司财报好看就解除。</div>
+      </div>
+      <div class="cc-action-row">
+        <div class="cc-action-label">⑨ 两套框架必须装在一起读，不能二选一。</div>
+        <div class="cc-action-detail">估值派提供<strong>价格锚</strong>（269–286 是中枢、275 是估值买点、264 是 12.1x），逆向派提供<strong>执行纪律</strong>（跌到不接、撑住才接、每档间隔 ≥5 个交易日、不翻倍）。<strong>只装估值框架会买贵，只装逆向框架不知道该在哪些价位执行。而两套现在指向同一个结论：291 不是折扣，是溢价。</strong></div>
+      </div>
+      </div>
+      <div class="cc-vote-label" style="margin-top:22px">圆桌立场分布</div>
+      <div class="cc-vote"><span class="cc-vote-label"><strong>100 股备用金，现在动不动？</strong>：</span><span class="cc-vote-tag"><span class="dot" style="background:var(--red)"></span><strong>5 票不动</strong></span><span class="cc-vote-tag"><span class="dot" style="background:var(--accent)"></span>1 票有条件动（291 附近可先 40 股，但须预期未下修）</span></div>
+      <div class="cc-vote"><span class="cc-vote-label"><strong>200 股底仓怎么办？</strong>：</span><span class="cc-vote-tag"><span class="dot" style="background:var(--red)"></span><strong>3 票继续拿</strong></span><span class="cc-vote-tag"><span class="dot" style="background:var(--accent)"></span>1 票拿但设减半线</span><span class="cc-vote-tag"><span class="dot" style="background:var(--gold)"></span>1 票"按纪律中下旬就该减过了"</span><span class="cc-vote-tag"><span class="dot" style="background:var(--blue)"></span>1 票拿但毛利率环比继续降则减一半</span></div>
+      <div class="cc-vote"><span class="cc-vote-label"><strong>现价 291 算不算"打了折"？</strong>：</span><span class="cc-vote-tag"><span class="dot" style="background:var(--red)"></span><strong>5 票：不算</strong>（相对加息后中枢 269–286 溢价 +4~8%，相对逆向首档 264 溢价 +10.2%）</span><span class="cc-vote-tag"><span class="dot" style="background:var(--accent)"></span>1 票：算便宜，但自认是容错设计不是估值买点</span></div>
+      <div class="cc-vote"><span class="cc-vote-label"><strong>9/30 的 +1.50% 是什么？</strong>：</span><span class="cc-vote-tag"><span class="dot" style="background:var(--red)"></span><strong>6 票一致</strong>：超跌反抽，不是转折</span></div>
+      <div class="cc-vote"><span class="cc-vote-label"><strong>10 月最关键的一个数</strong>：</span><span class="cc-vote-tag"><span class="dot" style="background:var(--red)"></span><strong>6 票一致指向同一个</strong>：三季报毛利率</span></div>
+      <div class="cc-vote"><span class="cc-vote-label"><strong>产能利用率（现 94.86%）跌破 90%</strong>：</span><span class="cc-vote-tag"><span class="dot" style="background:var(--red)"></span><strong>6 票一致</strong>：硬红线，立刻冻结全部加仓（与三季报无关，不依赖财报口径）</span></div>
+      <div class="cc-vote"><span class="cc-vote-label"><strong>回购跌穿（291.11 低于全部三笔均价）</strong>：</span><span class="cc-vote-tag"><span class="dot" style="background:var(--red)"></span>中性偏减分 3 票</span><span class="cc-vote-tag"><span class="dot" style="background:var(--accent)"></span>信号价值 &gt; 托底价值 2 票</span><span class="cc-vote-tag"><span class="dot" style="background:var(--gold)"></span>中性 1 票</span></div>
+      <div class="cc-vote"><span class="cc-vote-label"><strong>9 月产量三方口径打架（-3% / -5% / +5~6%）</strong>：</span><span class="cc-vote-tag"><span class="dot" style="background:var(--red)"></span><strong>6 票：10 月第一颗雷</strong>，须用产能利用率 &lt;90% 做硬红线，且只否决加仓不动底仓</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="weekly">
+  <div class="section-head">
+    <div class="section-num">02 · 周线</div>
+    <div>
+      <div class="section-title">9 月周线盘点</div>
+      <div class="section-lede">五周全阴，逐周拆解跌幅、量能与归因</div>
+    </div>
+  </div>
+  <div class="passage-card">
+<h3>先定性：9 月不是孤立事件</h3>
+<p>8/7 收 386.67、8/31 收 363.55，8 月就已在阴跌；9/1 收 358.10 已是全月最高收盘。所以 9 月五连阴是 <strong>5/7 高点 467.35 以来趋势性下跌的中段</strong>，既不是起点也不是终点。这个定性决定了后面所有判断的基调：<strong>W4、W5 的跌势收敛，是"这一段跌累了"，不是"趋势结束了"。</strong></p>
+<h3>五周逐一拆解</h3>
+<table>
+<thead><tr><th>周次</th><th>区间</th><th>周收盘</th><th>周涨跌</th><th>量能特征</th><th>形态性质</th></tr></thead>
+<tbody>
+<tr><td>W1</td><td>09-01 ~ 09-04</td><td>351.00</td><td><strong>-3.45%</strong></td><td>温和</td><td>阴跌起步，均线拐头</td></tr>
+<tr><td>W2</td><td>09-07 ~ 09-11</td><td>330.51</td><td><strong>-5.84%</strong></td><td>放量</td><td>加速，跌破 350 平台</td></tr>
+<tr><td>W3</td><td>09-14 ~ 09-18</td><td>301.95</td><td><strong>-8.64%</strong></td><td><strong>天量</strong>（9/15 -6.16% / 155.59 亿；9/16 -3.44% / <strong>239.80 亿</strong>、量比 2.31）</td><td><strong>主跌段、恐慌杀跌，近三年最差单周</strong></td></tr>
+<tr><td>W4</td><td>09-21 ~ 09-24</td><td>293.50</td><td><strong>-2.80%</strong></td><td>缩量（9/23 仅 74.44 亿、量比 0.50）</td><td>9/22 +2.53% 反弹后回吐，杀跌衰竭</td></tr>
+<tr><td>W5</td><td>09-28 ~ 09-30</td><td>291.11</td><td><strong>-0.81%</strong></td><td>地量（9/29 86.09 亿、9/30 86.14 亿，换手 0.70%）</td><td><strong>止跌企稳雏形</strong></td></tr>
+</tbody></table>
+<div class="pull-quote">W4 为 4 个交易日（9/25 中秋休市）；W5 为 3 个交易日（国庆假期前）。</div>
+<h3>加速还是衰竭？用跌幅序列说话</h3>
+<p><strong>-3.45% → -5.84% → -8.64% → -2.80% → -0.81%。</strong></p>
+<p>前三周是标准加速（约 1 → 1.7 → 2.5 倍），W3 见峰值，W4、W5 连续收敛，W5 只剩 W3 的十分之一。<strong>下跌动能明确衰竭。</strong> 量能配合上也是同一条曲线：W3 天量出货 → W4 缩量 → W5 地量。</p>
+<p><strong>但衰竭不等于反转。</strong> 衰竭只是把"趋势下跌"切成了"震荡筑底"，中间还隔着最关键的一步——增量资金进场。而 9 月末的地量（换手 0.70%）说明的是"没人卖了"，不是"有人在买"。这个差别决定 10 月是盘整还是二次探底。</p>
+<h3>每月一问：9 月跌的是什么？</h3>
+<p>把 Price = EPS × PE 摆出来，答案很干净：</p>
+<table>
+<thead><tr><th></th><th>8/29</th><th>9/15</th><th>9/30</th><th>全月变化</th></tr></thead>
+<tbody>
+<tr><td>股价</td><td>363.54（反算）</td><td>316.36</td><td>291.11</td><td><strong>-19.93%</strong></td></tr>
+<tr><td>EPS(TTM)</td><td>18.3719</td><td>18.3719</td><td>18.3719</td><td><strong>0</strong></td></tr>
+<tr><td>PE(TTM)</td><td>19.79</td><td>17.22</td><td><strong>15.85</strong></td><td><strong>-19.9%</strong></td></tr>
+</tbody></table>
+<p>三季报还没出，TTM 分子没有更新，所以每股收益端一分钱没动。全月 -72.43 元的跌幅，100% 来自估值端：PE 少了 3.94 倍 × EPS 18.3719 = -72.4 元，严丝合缝对上。</p>
+<p><strong>这是纯粹的杀估值，不是杀盈利。</strong> 而且杀的方式不健康——<strong>五周全阴、周周新低、中间没有一根像样的反弹周</strong>。情绪杀通常是一两根大阴线砸完就反抽，一路阴跌意味着<strong>有持续性的卖盘</strong>，不是一次性恐慌。</p>
+<p>---</p>
+  </div>
+</section>
+
+<section id="voices">
+  <div class="section-head">
+    <div class="section-num">03 · 视角</div>
+    <div>
+      <div class="section-title">6 人怎么看</div>
+      <div class="section-lede">每位从自己的方法论独立诊断 —— 想看完整推理的人来这里</div>
+    </div>
+  </div>
+  <div class="voice-stack">
+      <article class="voice-card">
+        <div class="voice-head">
+          <img src="data:image/webp;base64,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" alt="🌊 产业策略师 · 星望远">
+          <div class="voice-name">🌊 产业策略师 · 星望远</div>
+        </div>
+        <div class="pull-quote">跌的是份额叙事，不是行业景气</div>
+<p><strong>一句话</strong>：9 月跌的是<strong>估值，不是经营</strong>。订单、份额、毛利率趋势并未恶化，但全球利率、锂价、政策三条外部线同步转向，把这轮跌定性为"利空驱动"是错的——<strong>这是再定价</strong>。</p>
+<h4>【本轮更正】对照组选错了，板块贝塔的结论要改</h4>
+<p>我上一版用储能概念（−3.66%）、反内卷（−3.46%）、电池回收（−3.55%）作对照组，得出"板块没跌、唯独宁德跌"。<strong>对照组选错了——这三个是主题指数，不是电池行业指数。</strong></p>
+<p>换成正确的对照组：<strong>电池行业指数（01801737）</strong>：</p>
+<table>
+<thead><tr><th>区间</th><th>电池行业指数</th><th>宁德时代</th><th>差值</th></tr></thead>
+<tbody>
+<tr><td>8/25–9/30</td><td>-17.4%</td><td>-18.3%</td><td><strong>-0.9pct</strong></td></tr>
+<tr><td>7/1–9/30</td><td><strong>-25.16%</strong></td><td><strong>-25.66%</strong></td><td><strong>-0.5pct</strong></td></tr>
+</tbody></table>
+<p><strong>结论更正：宁德 ≈ 板块贝塔，没有显著跑输。</strong> 9 月是电池板块的系统性杀估值，宁德不是被单独定价的靶子，而是<strong>被砸的载体</strong>（占创业板指权重约 16%，是板块里流动性最好、最方便砸的标的）。</p>
+<p>所以：<strong>"份额崩塌"叙事成立，但不是这波杀跌的主因；"毛利率"方向正确，但幅度被这轮板块贝塔掩盖了。</strong></p>
+<h4>【新增三条关键变量】这三张牌比公司层面的事更重要</h4>
+<p><strong>牌一：全球宏观利率——9 月中旬美联储宣布自 2023 年 7 月以来首次加息。</strong></p>
+<p>贴现率上行直接压制高久期成长资产估值。<strong>全球的"电池故事"都在被重定价，这是板块级的，不是公司级的。</strong> 站在策略角度：加息周期刚启动的阶段，我不会主动加仓高久期资产。</p>
+<p><strong>牌二：碳酸锂在 9 月破位——期货主力 9/28 跌破 12 万元/吨，创年内新低，较 5 月高点回落逾 40%；电池级碳酸锂现货均价 122,400 元/吨，较 8 月末 -21.81%，9 月表观需求环比降、库存去化放缓。</strong></p>
+<p>这是双刃剑，而且<strong>市场当期选择的是"旺季不旺"那一面</strong>：</p>
+<ul><li>成本端：利好中游电芯，且 2027 年成本会明显受益</li><li>需求端：<strong>锂价破位本身是"旺季不旺"的证据，是需求证伪的股价信号</strong></li><li>消费税落地后，成本红利会被下游共担机制稀释，中游拿不满</li></ul>
+<p><strong>判断：短期市场交易需求侧证伪，中期成本红利要到 2027 年才兑现，且会被下游分摊。</strong></p>
+<p><strong>牌三：反内卷政策升级为产能纪律——主管单位明确"科学谋划产能、合理布局产能、有序发展产能、坚决遏制低水平产能盲目扩张"，并推动建立产能监测预警机制。</strong></p>
+<p>这是分散化行业的供给侧利好，但半导体式"国家大基金扶持"的期待不适用——锂电已是全球第一，政策重心是"防内卷"而非"促扩张"。</p>
+<h4>【重大发现】储能链 2026 年在涨价，不是价格战——这条推翻我前两轮的悲观表述</h4>
+<p>我前两轮说"储能低价中标、毛利率被压"，<strong>方向错了，现在更正。</strong></p>
+<table>
+<thead><tr><th>品种</th><th>2025 年末</th><th>2026 年最新</th><th>涨幅</th></tr></thead>
+<tbody>
+<tr><td>314Ah 主流储能电芯</td><td>0.31 元/Wh</td><td><strong>0.365 元/Wh</strong>（2026/8）</td><td><strong>+20%+</strong></td></tr>
+<tr><td>2h 储能系统中标均价</td><td>—</td><td>0.599-0.602 元/Wh（H1）</td><td>同比 <strong>+8.3%</strong></td></tr>
+<tr><td>4h 储能系统中标均价</td><td>—</td><td>0.541 元/Wh（H1）</td><td>同比 <strong>+21.1%</strong></td></tr>
+<tr><td>4h 独立储能 EPC</td><td>885.7 元/kWh（2025H1）</td><td>958.5 元/kWh（2026H1）</td><td>上涨</td></tr>
+<tr><td>磷酸铁</td><td>1 万/吨（年初）</td><td>1.5 万/吨</td><td><strong>+50%</strong></td></tr>
+</tbody></table>
+<p>旁证：PCS 厂商盛弘股份全系涨价 10%-30%（7/21 起）；裕能全系涨 2000 元/吨。</p>
+<p><strong>宁德储能份额</strong>：H1 全球储能电池出货 461.3GWh（+71%），<strong>宁德 125GWh、+81%、份额 27.1%，是第二名的两倍以上</strong>。</p>
+<p><strong>那为什么毛利率还在降？</strong> 因为成本端涨得更快——<strong>锂价从 2025 年中不足 6 万/吨涨到 2026 年 6 月 21 万/吨</strong>。</p>
+<p><strong>而锂价 9 月刚从 21 万跌到 12 万（-40%+）。售价在涨 + 成本在跌 = Q4 和 2027Q1 储能毛利率有明确的剪刀差修复空间。</strong></p>
+<p><strong>这是本月报告里最该写进去的一条</strong>：市场按"结构性恶化"定价，但更可能是<strong>成本传导的时滞</strong>。修复的时点推后了，不是永远回不去。</p>
+<h4>【口径更正】H1 综合毛利率是 23.93%，不是 23.15%</h4>
+<p>我前两轮引用的是自媒体口径（23.15%，实为 Q2 单季）。财报口径：<strong>2026H1 综合毛利率 23.93%，同比 -1.09pct。</strong></p>
+<table>
+<thead><tr><th>板块</th><th>毛利率</th><th>同比</th></tr></thead>
+<tbody>
+<tr><td>动力电池</td><td>20.63%</td><td><strong>-1.78pct</strong></td></tr>
+<tr><td>储能电池</td><td>23.96%</td><td>-1.56pct</td></tr>
+<tr><td>材料回收/矿产</td><td>27.04%</td><td>—</td></tr>
+<tr><td><strong>境外</strong></td><td><strong>29.97%</strong></td><td><strong>+0.95pct（唯一在改善）</strong></td></tr>
+<tr><td>境内</td><td>21.16%</td><td><strong>-1.78pct</strong></td></tr>
+</tbody></table>
+<p>境外营收 871.29 亿（+42.35%），占比约 31%。<strong>"毛利率下滑"这个叙事里，被卷的只有境内，境外在改善。</strong></p>
+<p>同业对照：宁德 23.93%(-1.09)｜中创新航 16.7%｜国轩 15.60%｜欣旺达 15.33%｜亿纬 14.31%(-3.02)｜正力新能 12.5%(-5.4)｜孚能亏损。<strong>宁德超额毛利 7-11pct，且二线降得更陡。</strong></p>
+<h4>【新增风险】Q3 净利 250-260 亿有下行风险</h4>
+<ul><li><strong>ZE Consulting（摩根大通引用）</strong>：累计下调宁德 9 月产量预期 <strong>14%</strong>，9 月产量环比由 +9% 下修至 <strong>-5%</strong></li><li><strong>TD 大东时代</strong>：9 月排产 110-115GWh 环比 +5~6%，但承认"9 月前三周成品库存累积超内部预期、主动放慢产线节拍"</li><li>行业：9 月排产环比 +9.2%，但实际装机增速只有 6%-7%，成品库存高出正常周转 5-7 天；10 月行业排产环比从 +9.2% 回落到 <strong>+3.9%</strong></li><li>摩根大通仍列为 Top Pick，估算宁德 2026 全年产量突破 1.1TWh、销量近 1.0TWh（+50%）；预计 10 月产量环比反弹 +6%</li></ul>
+<p><strong>裁决点</strong>：10 月排产能否兑现正增长。<strong>兑现 = 主动控库存；转负 = 需求真的走弱。</strong></p>
+<h4>【回答"是不是重演光伏"】现在是光伏 2021 年的位置，不是 2023 年</h4>
+<p><strong>不像</strong>：①价格在涨不在跌（储能电芯 +20%、系统 +8~21%）；②龙头超额毛利 7-11pct 且二线降更陡、境外 29.97% 还在改善；③需求增速逐季加速（1Q +40% → 2Q +60% → 3Q +62%，9 月装车同比 +39.5%、环比 +21.6%）；④有供给侧政策干预（产能备案暂停 + 消费税）。</p>
+<p><strong>像</strong>：①储能规划扩产超 800GWh、总规划近 2TWh，确实过剩；②下游整车厂真的在做电芯（理想 26.5 亿入股欣旺达、小米龙甲、小鹏中创新航一供）——<strong>这条比光伏更狠，光伏当年下游业主不会自己造组件。</strong></p>
+<p><strong>可证伪的前瞻指标</strong>：别盯滞后的毛利率，盯 <strong>314Ah 储能电芯 0.365 元/Wh 什么时候掉头向下</strong>。它现在在涨，<strong>它一转跌就是光伏剧本正式开演。</strong></p>
+<h4>三条牌合起来的定性</h4>
+<p><strong>订单、份额、毛利率趋势并未同步恶化，所以这轮跌不是"经营利空驱动"，而是"估值再定价驱动"。</strong></p>
+<ul><li>份额叙事（真）：理想+小米合计约占国内装机 13.6%，属高端点状流失，里昂明确"无迹象显示被系统性抢份额"</li><li>毛利率（真）：H1 综合 -1.09pct、动力 -1.78pct，是唯一需要严肃对待的产业问题</li><li>产能备案暂停（被误读为利空）：中长期利好存量龙头，这条被当利空砸是错杀</li><li>长期真问题：下游客户垂直一体化（比亚迪模式被理想/小米/小鹏集体复制）——<strong>你的客户变成了你的竞争对手</strong></li></ul>
+<p><strong>产业定位结论</strong>：宁德手里还有两张真牌——<strong>储能</strong>（连续五年全球第一，H1 +87.5%）和<strong>海外</strong>（2025 海外市占率 30%，匈牙利/西班牙/印尼在建）。它正在从"动力电池唯一卡位"滑向"全球储能 + 海外产能的规模制造龙头"。这个转型能不能撑住估值，是 10 月之后的核心矛盾。</p>
+<h4>10 月产业日历</h4>
+<table>
+<thead><tr><th>时间</th><th>事件</th><th>盯什么</th></tr></thead>
+<tbody>
+<tr><td>10/8–10/12</td><td>9 月新能源车产销、9 月动力电池装机数据</td><td>国内乘用车份额是否守住 <strong>45%+</strong>；全球是否守住 <strong>38%+</strong></td></tr>
+<tr><td>10 月中旬（里昂口径）/ 10/22（市场预期日）</td><td><strong>2026 三季报</strong></td><td><strong>毛利率环比</strong>——里昂直言这是判断"暂时性 vs 结构性"的唯一关键</td></tr>
+<tr><td>10 月中下旬</td><td>储能月度装机/招标数据</td><td>招标均价是否止跌</td></tr>
+<tr><td>10 月全月</td><td>产能备案暂停后的<strong>产能监测预警机制细则</strong></td><td>若落地为"限新增 + 存量保护"，是错杀修复的催化</td></tr>
+<tr><td>11 月（会被 10 月提前交易）</td><td>理想自研 5C 三元锂开始交付</td><td>"去宁化"从传闻变事实的第一个可验证节点</td></tr>
+</tbody></table>
+<h4>264 / 250 / 240 的产业含义</h4>
+<p>（按 291.11 ≈ 13,469 亿市值线性折算；2026E 归母取 H1 432.84 亿 + Q3 一致预期 250-260 亿 + Q4 约 250-270 亿 ≈ <strong>945 亿</strong>）</p>
+<table>
+<thead><tr><th>价位</th><th>市值</th><th>PE(TTM)</th><th>PE(2026E)</th><th>隐含的产业假设</th></tr></thead>
+<tbody>
+<tr><td><strong>264</strong></td><td>12,213 亿</td><td>14.4</td><td><strong>12.9x</strong></td><td>温和悲观：2027 利润零增长、国内份额小幅流失，但储能+海外对冲掉动力国内失血。<strong>"去宁化点状化"的定价</strong></td></tr>
+<tr><td><strong>250</strong></td><td>11,567 亿</td><td>13.6</td><td><strong>12.2x</strong></td><td>把两条都打进去：国内份额掉到 40% 以下 + 毛利率再降 1pct + 储能增速从 +87% 降到 +30%。<strong>"去宁化系统性化 + 反内卷限价"的定价</strong></td></tr>
+<tr><td><strong>240</strong></td><td>11,105 亿</td><td>13.1</td><td><strong>11.8x</strong></td><td>最危险的路径：动力电池被当<strong>纯周期制造业</strong>给 10 倍出头，储能不再给成长溢价。<strong>这就是隆基的结局</strong></td></tr>
+</tbody></table>
+<p><strong>264 是我愿意开始加的位置（且需毛利率配合），250 是需要重新审视长期逻辑的位置，240 是我要认真问自己"这个产业趋势是不是已经结束了"的位置。</strong></p>
+<p>---</p>
+      </article>
+      <article class="voice-card">
+        <div class="voice-head">
+          <img src="data:image/webp;base64,UklGRrwNAABXRUJQVlA4ILANAACwOwCdASqAAIAAPlEgjESjoiEXCt4cOAUEsQBonkxH9+o86mz/3H8CfkJ0n1SeaJzj/yPs57VXmAfph/tPsv7kHmA/a/9ivdy9EPoAf1X/T9a56B37Vemj+6Xwe/tx+1vtEf/e7HeHf439P/jP7L+33NXiR/KPwV+P/uXHHwDvxv+f/6TgsQBfXH/g+HR8ier/2W/2Xop/6/yjvFr9E9gT8y/9r1D//HzQ/T3/q/0nwHfzb+69az0Uv28TkmXr+ZDgfH9F7AOBFsVNnCkKmm7KT462sLdsXHXFFgAe7BQj/tgjfbATYbhhXlSObuBXv5LeSXh4JtvyfD0TI2+AYZTIfgkA8frzHy1j2zI0P5eovuhSm3/ScnDLn+fvrqaW/WOYCo9LThz/njYHmOofZwu8G18aarTLE7VtTHf8YVRYfaO76cDdKAsk6u7Rb9BSFS3sOB22ty4x2Rb3tKeXLAUMAOu28EFF7tr+56kx3xMCo08hO8QKjf04JjCn5ve/xMNDMxPsLHwIwibDi+uva4Se2SfizdhukvDjm9S4rEchFC/1o32fmoc+zlxOG4V4USsJzvvHKCJrZPwL9TmXVyI7UPlhmmIEDg54rx38hJzXT1qJbIwwVYN4KOd4fuTxghBEVSAAxAAA/v4btAKPAoyS2WuY7mPh3GOp7/g52KaDdj1/5bFgjbgiEls0gHAHlQl0t3DImR1mpUVV3nqJNIY9h0ivbDSP4js53z4jeaqn9BAtRVRX7iqR2S7c/QT0Kw4jqG7+UCzXa7OZSyupKL1mllIsPG2sPqEtE8hPHd3rd7R2N71wjLPJfvomQxFoJsiTYVNPYq2osmAAKhE/OoyJFMV9it1skAVD/HPTyDpQK9J9tQ33fblIZRb/Mv+kh3OwF3qmy48zj9l3/UlrQ/udzut/eU4liIix6scpxtirls+1Gqt6+JFJ7cg3XgF4/kPTYm0/OL+Ht7zS9d35Bn+6u8xYBXz+0Fq20wCz99ETFTx0ETkyqyPgoiWrmv3mh0TStW0g+nk6IjaIz3zbsPXfgyIcKzAPjkLNHH86JoKy0Nw1b1+ti6yGFRRHbRAusG4xycU0SydDbPY/5ceU/b3vapC04xnqXvqdc+D4GTi9f4nVyb6Kci9KtSBXhUjHYEw+XZL7B9fTUbtDraskf7MbzVG1ng5EPZQIAI0pwvBWx/mfzmWHKPKO6Iy7RfYzfVAC9osLxIzAgC1h4fscz3JI0yDFC+C7wSkF+RbAaCowNuOuePKkkPwIeTVVSvBWGFX0nLUNuYfq+wdmY3x8U5o2uLi0EPCbPT3dAoUBW5i29lt1kVq0CajJFSsFBbxmy6zBI1PJY3U8rDWmr59y06ISVawU9jUl+qzDPDe+qpbA/fRy3YB9cOoxZoSsZBLOMUEy5IvOIBaC7j2tDGPgCyy/1zeubPcOMM0IFQdmkYVkxCe3VPYA6Vim56PtDcnHu2BC1hmJVvNvD/f7VNVLcyUg9Z7cMPmL/2UMWxWDDRBY7tTNbAqlGcZ2wiH3yv/2cSMpXZnaIEJ30BVMPyJezGGPOI80X2XHbgeIDXKTjjEvBILJ8s1xvvse3mfnPH/UYfOJwIz4BVvm60wFG6TSkCbeQYfHYVNasFvRxmMk480rEjDoujsatOqFI3cRIH88AFV7BNH8DTH5193anFq7JD/EZ1zb4Fmz10M7NqxQv1ec9sEUbdE1i7yuAHWsP2FIlsMqkVOTQbNxZz+0moS2yIlKIH2++YRTexk9xiLtZYbHBszse5aMDz7pPqzszeNRQp5/85JdzFOUq3SBHkvaBSI5NBaXymp+JZw5Vt6n5/UCd90dfm05YX16Z9hD3L//I2V2e8JKDI61kw1x409bF48A/p/J6xg3XhYr1qDre1O4l/kDcC+4WhfC0cF+lpj+p/jAF810XzalkqprsODgy51BHqsJ/Ubx7h9y09NrEBPz54pRav0nP4AzWkr+Bg+x3CA+DNQBTASG2h/HuZB2/5Wn6saNisj8ejI1Z9+B5BQoMCl0IPcvLWuSc9cVg4p9BjQeFBbGszS+IKAFK2qbrRBgajt5HQ+/Q82AluhmHaPZiv0EleD3pTFwD8N9bOj6Udvr0m3s+j1RQN2Mnt83a4t0Tbu7az/kr4XLW88/Zskw8siqtjARTKd6k/x7SDW2q2W9x6A9++I5vnjd7Oq2snsPMzirsEFdL61TE7ZDW+ooA0GsDeD+43jd5NXhUnI1sxfu4NM1c3c6zdovg+8budNzrI+vPdod3mABMAcd13R6u7TpQmcNlnAl3pwvD1cGKP2o7sYOokwe5jiftg2vJW1Pb0y+8xsVAemiO7MRaaPsUemE9eJ5Ax1z1XR+x7aHTjk+inj2kLgdtRcM4/u4/GL3udXDV+Fntni8W2UeYSyO9/X24wycAh8tv4p+uHMllNl7zpmsnT12zXvwKpd49+hCosezqQDmQXSWx9JqoKzQ0MUqtZl0TrlOhPEOXas+dTWSrolnNejnZ/j9qtzsive8oFCOH1nlfhlzYRC0E34MIWnCaw0Lf4z+pKwP/k//B5/AzXkzourPptcdXIaJqCMXxol0//YwOP2tdaAj/DX4RSe9Dp7f98uo54rsPja6xhxguzXT0r9CH/KibCGKslH6LHOv2BxPws6p70/VFfuPaI6mZcVabFDyfyzvK245Akp2r1NF4/WvBMuaz4+K7O+zeAecD3MTwbET+TZNbGor4zVdFt/D9OxSOhr71dwnUkE2zsOUgusPmZQX5C0uuNnssDPeygxErpVUG1hUTsfJxIilcChAJzuSPIRGa0BcFI5z+pXxBqTPwmvyT62rrx1ThWnhsjMwbmAA5Jh2usp7L3gO8ch/TkA7JcuObEJn5SNlWO6VDBdXTCCGvzPqsAXTV5h3n2iJApXNlt2ilIbdyYhb5wXTL9ZHGg3fvwD5ufe2ihWGVwH/JPLpC41Lsl8I5LmzbaY2ZLjDLvUZQOxNCUdRrLWDTRwtuBFXqhuFZM8rhhb56NsnUx8GIhhGLXhZoeoG1aPKuBX7Ifq2CBn6ZNersOHibq/6UF7DbF2B/1xa1lcC+xl6le2euNPwNMlumISqv6DbTgAbaJimOn5j1tVIUcjK3x2ff0AAMsLdgLvxTMb2QHvffilapoP3cY34Asu6xYLpYf1NSRZj9ajesWFTXZU1PiuSY4him4FZnjdrPbJYa28qn/LHDDL1N5A1jX3inwzG3PAgTqu50lDm/grU+VNsEUCvWp74tBQ1DJfKODeZqBf3T2obCUs7U6SF/0uuYNnGtg+qnQRrTH1xRt6InMmqAkBIbZB4C1vyre0Z9tQpfSTwrT6MQX+Q0ABjobockoys6w7+kULu1//jeKKACCIGzR6eFSOlfB3lCS7E9oHMGPCLju1pANJ+2XN7SL+FOcLxRIFGelKS2PO1E0sFWJ/4J2U3TG76pMVzG9X2S4cpFhvyvSsjzOlssWtIExVf7IJ2j5AXKlD7tH+KIAO6XxfN7ejo/8ydngxpWP7OYjsDnLvG+e/pfUp+afBQfEywjpyCF2Ml7JiFyjeperCriO/mmPhR+XtajQTReZaksYrqxg5/CYfjC3aVn5dW7FMnxgp5iBPcoNLtkY+id4V1h29KB176DEDr8tSZNh69zJvpGEKeB6IwXJAtPsx6xI0D/+TJ5eO7Pvh/d4OQ8Fys9QaJDhS1c0IuKHjgdB4Xz0vXgkZnW2ScKgCZL4sg7P8T48pYbv00WfZlUurphrVBg+L9JBNEQ9s7UFaXP/ctnBLGIt4gaKzY89GMYBCNMB+22huDAp01ND+V1aQ8KcMDFCI2mlC1u+NR4ltynj2rq759BqRGOswOQP/3bCP98gaxruCsDZJFvW/UlP//+A7n5wKfqPhDynfC6nCHve3yHULpAl5SyoUR6uKK59XTnsj8dN8fLILXgXeZop/2yTkT3ewU+AyE20JZ2e1z2/+ji/kHOC1WuvKhe1nbKOy8IOk9NdR6R37x9kvdIyikRYdrqsbkCPeiVFeYdbBjOQjNXsf2ulsRt2tSIMgBV90p3cqeoVt32s6bFanDf5B4ePtnhOoJE1wMihR2SJqZOCqOkxSRqR+bAW/G7M6M4BonLzUzBTmY+mB08XyUb1AU+wylvg8DtiXRLnK/f2cLjlNXnPxPzY+rcb9dCJq2QaABZt8tFS++5i98fidANcj0Rzc+BEBWRCX80EaXQyrOOP1+4UQB9UllRCXVZ1xBLzF7BYl/thya2YtHq+HfCtfAUKoQAJ3y8q9OqTTxaN/A9g7vbuHq1mqD139fMxNQ4AcpjanmPgWjRlgMR3mZFdI8oBVUEo5TUlPz5oDDrpJFpvf75/eUhWOQJmr6wXR2xtiOg/CXCH9eM9Jb82mH+ntVY4eixx90+1C8HykCh7oJ93lkn+Cn1X+dtgd+zAC4aKyqKgilhSryc2InohB7EVEovRNAcZtMnHU13si2/hnMX5eA0lItq1vVber5wXcJjifNmy6fKsBnvn3YATjQHf+/uyFinbR2IrBhC/tJaW3KnaWklwDdyhRb30bnuPdQRPzzFI2RfHYAw9jI2fFrJnIzRDPifpl5PAT1Cgihysay75HKwkyGVSAsOgL1BbLGXrVcqQxBOD322YRWUbQZwO2WIygIIHSaf8czqO7PERjlIAA=" alt="🧮 估值分析师 · 文衡价">
+          <div class="voice-name">🧮 估值分析师 · 文衡价</div>
+        </div>
+        <div class="pull-quote">跌的是 PE，不是 EPS</div>
+<p><strong>一句话</strong>：9 月 -19.9% 的跌幅 100% 由估值端贡献，盈利端毫发无损。但我报过七分、八分，最终收回——<strong>"便宜"只值六分</strong>；而且按不受加息污染的尺子量，<strong>现价相对加息后的中枢是溢价 4-8%，不是折价</strong>。</p>
+<h4>当前分位</h4>
+<p>沿用近 3.2 年 PE Bands（25/50/90 分位 = 17.43 / 21.20 / 25.17），按 EPS(TTM) 18.3719 换算：</p>
+<table>
+<thead><tr><th>分位线</th><th>PE</th><th>对应价格</th><th>现价 291.11 的位置</th></tr></thead>
+<tbody>
+<tr><td>90 分位</td><td>25.17</td><td>462.4</td><td>-37.1%</td></tr>
+<tr><td>50 分位（中轨）</td><td>21.20</td><td>389.5</td><td>-25.3%</td></tr>
+<tr><td>25 分位（下轨）</td><td>17.43</td><td>320.2</td><td><strong>-9.1%（已跌破）</strong></td></tr>
+<tr><td><strong>现价</strong></td><td><strong>15.85</strong></td><td><strong>291.11</strong></td><td><strong>低于 25 分位，但经加息折算后实为 20-25 分位</strong>（见下方更正）</td></tr>
+</tbody></table>
+<h4>【第三轮更正·方法论层面】PE 分位被加息污染了，"便宜"从八分降到六分</h4>
+<p>我前几轮反复用的论据是"PE(TTM) 15.85 跌破近 3.2 年 25 分位下轨（17.43），位于 5 分位以内，非常便宜"。</p>
+<p><strong>这个读数在加息之后不成立。</strong></p>
+<p>原因：<strong>那条历史 PE 带是在"零加息"环境里构建的。</strong> 美联储这次是 2023 年 7 月以来<strong>首次</strong>加息——也就是说，3.2 年的样本期里<strong>一次加息都没有</strong>。加息周期一开，<strong>整条带要整体下移</strong>：不是股价去适应带，是带本身要重画。</p>
+<p>按贴现率效应折算（加息 25-50bp → 估值中枢 -2.5%~-8%）：</p>
+<table>
+<thead><tr><th></th><th>数值</th></tr></thead>
+<tbody>
+<tr><td>现价 PE(TTM)</td><td>15.85</td></tr>
+<tr><td>折算回<strong>旧口径的可比位置</strong></td><td><strong>16.26 - 17.23</strong></td></tr>
+<tr><td>对照旧 25 分位（17.43）</td><td><strong>现价实际落在约 20-25 分位</strong>，不是 5 分位以内</td></tr>
+</tbody></table>
+<p><strong>"便宜"的打分：从八分降到六分。说人话——我以为打了 15% 的折，其实只打了 3-5%。</strong></p>
+<p>这是逆向投资人那句"291 是现价、没打折"逼出来的。他是对的，而且比我以为的更对。</p>
+<h4>【终版·偏离度】现价相对加息后的中枢，是溢价 4-8%，不是折价</h4>
+<p>我给一条最重要的结论：<strong>别把现价和加息前的中枢比。</strong></p>
+<p>如果拿 291 去比加息前的 14.5x，现价 14.1x 确实略便宜（-3%）；但中枢已经重定价到 13.45x 了，<strong>拿现价跟新中枢比才是正确的比法</strong>：</p>
+<table>
+<thead><tr><th>比较基准</th><th>中枢</th><th>现价 291 的偏离</th><th>含义</th></tr></thead>
+<tbody>
+<tr><td>加息前中枢</td><td>14.5x</td><td><strong>-3%</strong></td><td>略便宜（但这个基准已作废）</td></tr>
+<tr><td><strong>加息后新中枢</strong></td><td><strong>13.45x（269-286）</strong></td><td><strong>+4% ~ +8%</strong></td><td><strong>小幅溢价，不是折价</strong></td></tr>
+<tr><td>逆向的 264</td><td>12.1x</td><td><strong>+10.2%</strong></td><td>我要的折扣</td></tr>
+</tbody></table>
+<p><strong>我终于承认：我要的折扣，现价没有。</strong> 这跟逆向投资人说的是同一件事，只是他的语言是 K 线，我的语言是 PE 倍数。</p>
+<p><strong>但我第一笔买在 291，是刻意的容错设计——不是因为它便宜，是因为基本面止损暂时解除了。</strong> 要折扣请往下找 275 或 264，这里没有。</p>
+<h4>【终版】"便宜"六分：六分和八分的操作差别</h4>
+<table>
+<thead><tr><th></th><th>八分（我原来的判断）</th><th><strong>六分（终版）</strong></th></tr></thead>
+<tbody>
+<tr><td>含义</td><td>明确便宜，可重仓买</td><td>不算贵，但安全边际有限</td></tr>
+<tr><td>安全边际</td><td>15%</td><td><strong>3-5%</strong></td></tr>
+<tr><td>仓位动作</td><td>三笔全打</td><td><strong>先打一两笔，留子弹</strong></td></tr>
+<tr><td>心态</td><td>越跌越买</td><td>跌了也不慌，因为本来就没打算一次打完</td></tr>
+</tbody></table>
+<p><strong>分数从 8 掉到 6，不是从 6 掉到 4。六分仍然是"便宜"，只是没有我原先以为的那么便宜。</strong> 这两分的差，是"我以为打了 15% 的折"和"其实只打了 3-5%"的差。</p>
+<h4>【方法论自评】我这个框架的软肋</h4>
+<ol><li><strong>对美联储路径依赖过重</strong> —— 如果加息预期重新降温，我的新中枢会往上修，届时 291 就变成真便宜。<strong>我可能因为一个宏观判断，错过一次公司层面的机会。</strong></li><li><strong>乐观情形（16-18x）区间给得太宽（327-368，宽 41 元）</strong> —— 这是诚实的，但作为参考它的精度不够。</li><li><strong>PE Bands 是 descriptive 不是 prescriptive</strong> —— 它描述市场过去给过什么价，不能规定市场将来该给什么价。<strong>市场可以在极端情绪下给出任何倍数。</strong></li></ol>
+<h4>【圆桌措辞】建议改用"基本面定价 vs 交易定价"</h4>
+<p>我把我们俩的分歧叫"中枢 vs 折扣"，你的反驳我接受。建议改用：</p>
+<div class="pull-quote"><strong>基本面定价 vs 交易定价。</strong></div>
+<p>我按基本面定价（什么价对应什么盈利），你按交易定价（什么位置有筹码和 K 线依据）。<strong>这样表述准确，且不带有"谁更谨慎谁更激进"的价值判断。</strong></p>
+<h4>【数据局限】必须在报告里说清楚</h4>
+<ol><li><strong>PE 历史分位是推算值</strong>（缺少逐日 PE 序列），20-25 分位是估算，不是精确计算</li><li><strong>加息幅度按 25-50bp 假设</strong> —— 若实际加息幅度不同，新中枢需重算</li><li><strong>贴现率效应 -2.5%~-8% 是经验值</strong>，不是精确模型输出</li><li><strong>Q3 财报未出</strong>，所有 2026E 数据基于一致预期</li></ol>
+<p><strong>这些数字是思考框架，不是精确预测。用户可以拿去用，但要知道它们是估算。</strong></p>
+<h4>【终版·加仓开关表】</h4>
+<table>
+<thead><tr><th>开关</th><th>阈值</th><th>状态</th><th>动作</th></tr></thead>
+<tbody>
+<tr><td>Q3 毛利率</td><td>&lt;23.15% / 23.15-24% / &gt;25%</td><td><strong>待验证（10/22 或最迟 10/31 前）</strong></td><td>停手 / 前两笔 / 三笔全打</td></tr>
+<tr><td><strong>开工率（新增硬红线）</strong></td><td><strong>跌破 90%</strong></td><td><strong>待验证（月度数据）</strong></td><td><strong>立刻冻结全部加仓</strong></td></tr>
+<tr><td>2026E 一致预期</td><td>营收或 EPS 被下修</td><td>待验证</td><td>价位表作废重算</td></tr>
+</tbody></table>
+<p><strong>开工率这条是花旗的数据逼出来的</strong>：摩根士丹利/花旗给 9 月产量 -3%，跟 TD 的 +5~6% 打架。二者必有一错。开工率跌破 90% 说明减产为真，那营收预测就崩了——<strong>这条比毛利率更硬，因为它不依赖财报口径。</strong></p>
+<p><strong>注意：这不是开工率一破就要卖 200 股。</strong> 它否决的是加仓，不是底仓。底仓的去留由 Q3 毛利率决定。</p>
+<h4>【终版·三句措辞】我要更正自己说过的三句话</h4>
+<ol><li><strong>撤回</strong>：从"资金面闭合，加仓可以启动"改为 <strong>"基本面止损暂时解除，交易层面的观察继续有效"</strong>——前者是行动指令，我只该给条件不给指令</li><li><strong>统一说法</strong>：<strong>"跌得慢了 ≠ 变便宜了"</strong>（跌幅收窄是卖压减轻，不是估值变便宜；这两件事在 9 月的行情里被混为一谈了）</li><li><strong>档间隔硬规则</strong>：采用逆向投资人的版本——<strong>相邻两档成交日间隔 ≥5 个交易日，间隔不足时只取较低那档</strong>。我原来说"跌到就买"，那是错的，会把分批做成加倍</li></ol>
+<h4>【升级结论】两套框架互为补短，必须装在一起</h4>
+<p>这场分歧的终点不是谁说服谁，是<strong>各自补上了对方的短板</strong>：</p>
+<ol><li><strong>我补了他的短板</strong>：他原来只有 K 线依据，现在有了估值锚（269-286 是中枢、275 是真正的估值买点、264 是 12.1x）。他的档位从"按跌幅倒推"变成"有基本面含义的位置"</li><li><strong>他补了我的短板</strong>：我原来是"跌到就买"，现在有了<strong>间隔约束</strong>和<strong>撑住才买</strong>，分批不会在单边下跌里被打光</li><li><strong>共同结论</strong>：<strong>291 不是折扣，是溢价。</strong> 我算出来是 +4%~+8%，他说"291 是现价、没打折"——同一件事的两种说法</li></ol>
+<p><strong>所以这两套不是二选一，是必须同时装：只装我的会买贵，只装他的不知道在哪执行。</strong></p>
+<h4>【本轮自我更正】PEG 主口径从 1.17 修正到 0.62</h4>
+<p>我上一版用 TTM EPS 18.3719 → 2026E 20.88 = +13.6% 算 PEG，得出 1.17（"合理不贵"）。<strong>这个增速被系统性低估了，问题出在基数。</strong></p>
+<p>TTM 是滞后混合值（= 2025H2 + 2026H1）。反算：2026H1 归母 432.84 亿（+41.98%）→ 2025H1 = 304.9 亿；TTM 归母 = 18.3719 × 46.27 = 850.2 亿 → 2025H2 = 417.4 亿。<strong>2025 全年 ≈ 722.3 亿，2025 EPS ≈ 15.61。</strong></p>
+<p>于是 <strong>2026E（945-966 亿）÷ 2025（722.3 亿）= +30.8%~+33.8%</strong>，而不是 +13.6%。<strong>TTM 基数被 2025H2 拖低了整整 18 个百分点。</strong></p>
+<table>
+<thead><tr><th>口径</th><th>PE</th><th>增速</th><th>PEG</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>① TTM 基（<strong>误用</strong>）</td><td>15.85</td><td>+13.6%</td><td>1.17</td><td>❌ TTM 滞后失真，不该作主口径</td></tr>
+<tr><td>② 年度同比基</td><td>15.85</td><td>+31~34%</td><td>0.51</td><td>可用，但混合了滞后 PE</td></tr>
+<tr><td><strong>③ 前瞻对前瞻（新主口径）</strong></td><td><strong>13.94（2026E）</strong></td><td><strong>+22.6%（2026-2028 CAGR）</strong></td><td><strong>0.62</strong></td><td>✅ <strong>推荐</strong></td></tr>
+<tr><td>④ 三年 CAGR（TTM 基）</td><td>15.85</td><td>+19.5%</td><td>0.81</td><td>参考</td></tr>
+</tbody></table>
+<p>四个口径里只有被 TTM 污染的口径① 超过 1，其余全在 0.5-0.8。<strong>增速 &gt;20% 时 PEG 是有区分度的，这把尺子在这里可以用</strong>（上一版判"工具不适用"的结论收回）；但 PE Bands 仍是主尺。两把尺子现在同向指向便宜。</p>
+<h4>两条定价路径：市场已按"制造型"定价</h4>
+<table>
+<thead><tr><th>口径</th><th>EPS</th><th>现价对应 PE</th></tr></thead>
+<tbody>
+<tr><td>TTM</td><td>18.3719</td><td><strong>15.85x</strong></td></tr>
+<tr><td>2026E</td><td>20.88</td><td><strong>13.94x</strong></td></tr>
+<tr><td>2027E</td><td>26.14</td><td>11.14x</td></tr>
+<tr><td>2028E</td><td>31.36</td><td>9.28x</td></tr>
+</tbody></table>
+<p><strong>13.9x 的 2026E forward PE，落在"制造型/代工"区间（12-15x）中段偏下，完全不在平台型区间（20-25x）。</strong> 市场当前给宁德的定价，已把它当成一家有周期性的电池制造企业，而不是"电池平台 + 储能 + 换电 + 材料体系"的平台公司。<strong>杀的不是业绩，是商业模式的估值范式。</strong></p>
+<table>
+<thead><tr><th>2026E PE</th><th>价格</th><th>距现价</th></tr></thead>
+<tbody>
+<tr><td>15x（制造型上沿）</td><td>306.3</td><td>+5.2%</td></tr>
+<tr><td><strong>14.1x（现价）</strong></td><td><strong>291.11</strong></td><td>—</td></tr>
+<tr><td>12x（制造型下沿/代工上沿）</td><td><strong>245.0</strong></td><td><strong>-15.8%</strong></td></tr>
+<tr><td>10x（纯代工地板）</td><td><strong>204.2</strong></td><td><strong>-29.9%</strong></td></tr>
+</tbody></table>
+<p><strong>若继续往纯代工定价收敛，理论下行空间 -16% 到 -30%。</strong> 这个数字必须摆出来，不能只讲"便宜"。</p>
+<h4>毛利率 -1.1pct：这才是下调估值中枢的真正理由，而且可量化</h4>
+<p>营收 +54.80%、归母 +41.98%——利润增速跑输营收 13 个百分点。按我的框架，平台型公司的特征是规模效应带来利润率上行；<strong>宁德现在是反过来的：卖得越多，毛利率越低</strong>。所以市场按制造型定价就不是错杀，是<strong>定价范式的合理重置</strong>。</p>
+<p>再叠一层：全球份额 39.9%、国内乘用车 46.7%（+5.6pct）是<strong>用 1.1pct 毛利率换来的</strong>。份额在涨、利润率在跌 = 以价换量。增长的"数量"很好看，"质量"在下降。</p>
+<p><strong>可量化敏感度</strong>：按 2026 全年营收约 5,600 亿估算，<strong>毛利率每再降 1pct → 毛利少约 56 亿 → 归母下修约 43 亿 → 2026E EPS 少约 0.93 元 → 按 14x 口径，合理价下移约 13 元。</strong></p>
+<h4>【第二轮更新】美联储加息：把中枢从 14.1x 打到 13.2-13.7x</h4>
+<p>你说"三条缺口我全堵不上"，但有一条我必须提醒——<strong>美联储加息这条你漏放变量了，它恰恰是我最需要的那一类：可量化、可跟踪、可逆。</strong></p>
+<p>我按贴现率框架重算：加息 → 无风险利率上行 → 权益风险溢价不变的前提下，远期现金流折现值下降。对宁德这种高久期成长资产（久期接近 10），冲击是直接的。</p>
+<table>
+<thead><tr><th>情形</th><th>合理 PE(2026E) 中枢</th><th>对应价格</th></tr></thead>
+<tbody>
+<tr><td>加息前</td><td>14.1x</td><td>291</td></tr>
+<tr><td><strong>加息后（新中枢）</strong></td><td><strong>13.2–13.7x</strong></td><td><strong>276–286</strong></td></tr>
+</tbody></table>
+<p><strong>275 这个位置我原本标"TTM 15x 整数关"，现在有了更实的含义：加息后的 13.45x（2026E 口径）新中枢。</strong></p>
+<p><strong>所以价位表往上收，不是往下放</strong>——加息把"合理价"整体下移了，291 从"制造型中段"变成了"制造型上沿附近"。</p>
+<h4>【归因修正】9 月这 20% 到底是谁干的</h4>
+<p>原来我说"9 月 -19.9% 全是杀估值"，这个说法太粗。现在拆开：</p>
+<ul><li><strong>约 60%：贴现率 + 板块贝塔</strong>（美联储加息、高久期资产被重定价；电池行业指数 7/1-9/30 -25.16%，宁德 -25.66%，几乎同步）</li><li><strong>约 40%：宏观风险偏好</strong>（利率冲击下的资金撤离，是"资金走了"，不是"基本面坏了"）</li><li><strong>几乎为 0：盈利预期变化</strong>（TTM EPS 未变，2026E 一致预期未下修）</li></ul>
+<p><strong>所以"杀估值"的归因要精确为"杀贴现率 + 杀板块贝塔"，不是"杀公司"。</strong> 而<strong>板块中枢从 19x 停在 14x</strong>，那个才是"增长质量"（毛利率换份额）造成的——<strong>两件事要分开看：9 月这波跌是宏观的，中枢停在 14x 是产业的。</strong></p>
+<h4>【营收端敏感度】比毛利率更致命</h4>
+<table>
+<thead><tr><th>情形</th><th>营收</th><th>归母</th><th>EPS(2026E)</th><th>14x 合理价</th><th>较现价</th></tr></thead>
+<tbody>
+<tr><td>基准</td><td>5,600 亿</td><td>966 亿</td><td>20.88</td><td>292</td><td>+0.3%</td></tr>
+<tr><td>营收 -5%（5,320 亿）</td><td>5,320 亿</td><td>891 亿</td><td>19.26</td><td><strong>270</strong></td><td>-7.3%</td></tr>
+<tr><td>营收 -10%（5,040 亿）</td><td>5,040 亿</td><td>816 亿</td><td>17.64</td><td><strong>247</strong></td><td>-15.2%</td></tr>
+</tbody></table>
+<p><strong>营收每下修 5% → 合理价下移约 23 元，比毛利率每降 1pct（-13 元）更致命。</strong> 所以三季报里"营业收入"这一行的权重，比"毛利率"还高。</p>
+<h4>【Q3 毛利率三档定量判定】把定性转成可执行</h4>
+<table>
+<thead><tr><th>Q3 单季毛利率</th><th>判定</th><th>动作</th></tr></thead>
+<tbody>
+<tr><td><strong>&lt; 23.15%</strong>（低于 2026Q2 单季，且动力跌破 20.63%）</td><td>恶化确认</td><td><strong>100 股全部停手</strong></td></tr>
+<tr><td><strong>23.15%–24%</strong>（止跌但未修复）</td><td>弱企稳</td><td>只执行前两笔 70 股，第三笔停手</td></tr>
+<tr><td><strong>&gt; 25%</strong>（回到 H1 之上的真实修复）</td><td>修复确认</td><td>三笔全执行，且中枢上修至 16-18x，对应 <strong>327-368</strong></td></tr>
+</tbody></table>
+<p><strong>注意：Q2 单季毛利率是 23.15%（不是 H1 的 23.93%），这是正确的比较基准。</strong></p>
+<h4>【加仓节奏前移】资金面性质闭合</h4>
+<table>
+<thead><tr><th>信号</th><th>判定</th><th>性质归类</th></tr></thead>
+<tbody>
+<tr><td>9/30 缩量上涨、回购加码</td><td>底部特征</td><td>可跟踪</td></tr>
+<tr><td>前期急跌已出清恐慌盘</td><td>卖压峰值已过</td><td>可跟踪</td></tr>
+<tr><td>美联储加息</td><td>贴现率上行</td><td><strong>可跟踪、可逆</strong></td></tr>
+<tr><td>大股东减持/限售解禁/外资系统性撤出</td><td>—</td><td><strong>未发现</strong></td></tr>
+<tr><td>公司层面治理/造假</td><td>—</td><td><strong>未发现</strong></td></tr>
+</tbody></table>
+<p><strong>没有一条是"结构性撤出"。</strong> 结论从"再等等"改为<strong>"按条件分批"</strong>——把资金面这条从"扣分项"降级为"观察项"，加仓节奏前移。</p>
+<h4>10 月价位表（估值侧，100 股备用金）</h4>
+<p><strong>触发逻辑</strong>：我的买入锚点是<strong>盈利预期方向</strong>，不是静态估值。每档生效条件是"<strong>跌到这个价 且 2026E 一致预期没有下修</strong>"。</p>
+<table>
+<thead><tr><th>档位</th><th>价格</th><th>TTM PE</th><th>2026E PE</th><th>估值含义</th><th>我的动作倾向</th></tr></thead>
+<tbody>
+<tr><td>—</td><td>320</td><td>17.4</td><td>15.3</td><td>回到 25 分位下轨</td><td><strong>不追</strong>，持有观察</td></tr>
+<tr><td>第一笔</td><td><strong>291</strong></td><td>15.85</td><td>13.9</td><td>跌破下轨、制造型中段</td><td>40 股</td></tr>
+<tr><td>第二笔</td><td><strong>275</strong></td><td>15.0</td><td>13.2</td><td>TTM 15x 整数关</td><td>30 股</td></tr>
+<tr><td>第三笔</td><td><strong>245-250</strong></td><td>13.5</td><td>12.0</td><td>制造型下沿/代工上沿</td><td>30 股</td></tr>
+<tr><td>极端区</td><td>204-220</td><td>11.1-12.0</td><td>10.0-10.6</td><td>纯代工定价中枢</td><td>已超备用金额度，须先查预期是否崩</td></tr>
+</tbody></table>
+<p>上行方向作为兑现参考：389.5（50 分位中轨，+33.8%）、417.6（2026E 20x 平台型下沿，+43.5%）。</p>
+<p><strong>若加满后宁德占权益仓位超 15%，只执行前两笔（70 股），剩下的留给其他标的。</strong></p>
+<h4>五条"什么都不做"的门槛</h4>
+<ol><li>三季报 EPS 不及预期 / 2026E 一致预期下修 → 什么都不做</li><li>下跌伴随资金面结构性压制（大股东减持、限售解禁、外资系统性撤出）→ 什么都不做。<strong>9 月五周全阴、无反弹周，这个形态本身就提示"这不是情绪杀，是有持续性的卖盘"</strong></li><li>PE 下移的同时盈利预期也同步下修（戴维斯双杀雏形）→ 不加</li><li>价格在 320 以上 → 什么都不做，不追高</li><li><strong>【新增，最高优先级】Q3 毛利率若环比继续下滑 → 即使净利 250-260 亿达标，也不加仓</strong></li></ol>
+<p>第 5 条的理由：净利达标是"量"兑现，毛利率继续走低说明让价换量是<strong>结构性</strong>而非暂时性，那么 2026E 的 966 亿本身就要下修——<strong>EPS 预期一变，我所有的价位表全部失效</strong>。反之，若 Q3 毛利率企稳回升（哪怕持平），加仓条件才真正闭合。</p>
+<p><strong>这条把"三季报观察什么"从模糊的"业绩好不好"变成了单一可验证变量：看毛利率，不看净利。</strong> 净利市场已经预期到了，毛利率没有预期，它是唯一的增量信息。</p>
+<p>---</p>
+      </article>
+      <article class="voice-card">
+        <div class="voice-head">
+          <img src="data:image/webp;base64,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" alt="📡 信号派首席 · 洲四方">
+          <div class="voice-name">📡 信号派首席 · 洲四方</div>
+        </div>
+        <div class="pull-quote">减速不是反转，资金键没按下</div>
+<p><strong>一句话</strong>：9 月这根 -19.93% 的月线，四层信号里最硬的一层（资金）是全月持续塌方的，另外三层没能托住。MACD 柱收窄、RSI 修复，我看到的是<strong>跌势减速，不是反转</strong>。100 股备用金，在我的纪律里<strong>现在不动</strong>。</p>
+<h4>四层信号月度矩阵</h4>
+<table>
+<thead><tr><th>层级</th><th>9 月边际变化</th><th>当前定级</th><th>证据</th><th>判断</th></tr></thead>
+<tbody>
+<tr><td><strong>政策层</strong></td><td>无方向性变化</td><td><strong>偏亮（不升级）</strong></td><td>9/18 给过"转亮"，一个月下来未被证伪</td><td>政策是慢变量，月度维度是背景板不是驱动。政策扶持 ≠ 资金跟随</td></tr>
+<tr><td><strong>产业层</strong></td><td>半亮转弱</td><td><strong>半亮偏弱</strong></td><td>回购三笔均价逐笔下移 330.93 → 305.65 → 301.70，<strong>现价已跌破全部三笔</strong></td><td>公司自己在买、价格还在跌，说明有资金愿意以更低价格卖给它</td></tr>
+<tr><td><strong>资讯层</strong></td><td>噪音多于信号</td><td><strong>半亮偏弱</strong></td><td>9 月资讯密度高，但大多是"跌完之后找原因"的归因稿</td><td>我的过滤规则：<strong>信号必须持续出现</strong>，一次性解释稿不算信号</td></tr>
+<tr><td><strong>资金层</strong></td><td>持续恶化</td><td><strong>明确为负（关键层）</strong></td><td>五周全阴，W3 -8.64% 近三年最差单周；现价在所有均线之下，已跌破年线</td><td>这是最硬的一层，也是唯一有权否决其它三层的一层</td></tr>
+</tbody></table>
+<p><strong>月度总分：2/4，比 9/18 的 2.5/4 下修 0.5。</strong> 下修的原因不在政策、不在产业，而在——9 月最后两周用真金白银看到的事实是：资金不但没来，还在继续走。<strong>好逻辑 ≠ 好投资。</strong></p>
+<h4>MACD 柱收窄 + RSI 修复：二阶导转正，一阶导仍为负</h4>
+<p>柱从 -6.75 → -3.857 → -2.474 连续两段收窄；RSI6 从 16.44 修复到 28.06。</p>
+<ul><li>DIF -20.942 / DEA -19.705，两者都深在零轴下方，DIF 仍在 DEA 之下——<strong>下跌方向没变，只是跌得没那么急了</strong></li><li>RSI6 到 28.06 叫"不再极端"，不叫"转强"，28 仍在弱势区</li><li><strong>MACD 柱收窄历史上同时出现在两种场景</strong>：真筑底，和下跌中继（喘口气再往下后半程）。单看这个指标我分不出来。所以它只配做"登记"，不配做决策</li></ul>
+<p>只有 DIF 上穿 DEA 形成水下金叉、柱由负转正，才算形态上有反转雏形——即使到那一步，也只是"形态允许我继续观察"，距离"可以动"还差一个资金确认键。</p>
+<h4>9/30 那根 +1.50% 的定性</h4>
+<p>三条假说，每条配硬标准：</p>
+<ol><li><strong>节前效应</strong>：缩量、尾盘异动、节后首日容易回吐。9/30 是国庆前最后一个交易日，天然落在这个窗口</li><li><strong>超跌反抽</strong>：RSI6 从 16.44 修复 + MACD 柱连续收窄 + 9/29 刚创新低后第一天修复——<strong>教科书级的反抽画像</strong></li><li><strong>资金回流（真信号）</strong>：须同时满足 ①成交量较节前 5 日均量明显放大；②连续 2-3 日收阳且不破 285.74；③锂电/储能板块整体同步走强而非宁德孤军突进；④资讯层出现 ≥2 条独立于股价的一手正向信息</li></ol>
+<p><strong>判定：归类为「超跌反抽 + 节前效应叠加」，暂不认可为资金回流。</strong> 缺量能证据；一个交易日的红盘不满足"信号必须持续出现"；创新低后的第一根阳线，统计上就是噪音的代名词。</p>
+<p><strong>转向标准（写死，节后照此对照）</strong>：节后头 3 个交易日，若 ①站稳 MA10（297.79）上方，②量能高于节前均量，③板块同步而非孤涨——三条齐活，资金层从"明确为负"上修为"边际转正（待确认）"。<strong>只满足一条是反抽，满足了再回落是假突破。</strong></p>
+<h4>10 月信号侧操作清单</h4>
+<p><strong>🔴 出现任何一条 → 备用金绝对不动（并考虑减原有持仓）</strong></p>
+<ol><li>跌破 9/29 低点 <strong>285.74</strong>（创新低 = 反抽失败，趋势延续）</li><li>MACD 柱重新走扩（说明 9 月底的收窄只是下跌中继）</li><li>锂电/储能板块指数继续跑输大盘——孤股反弹我不认</li><li>出现系统性风险事件——<strong>"墙要倒了你不能站在墙下面"，这条优先级最高，覆盖一切</strong></li></ol>
+<p><strong>🟡 原有 200 股的纪律（这才是重点）</strong></p>
+<ul><li>中长线仓位：<strong>第一根大阴线出来一定要减</strong>。9 月 W3 -8.64%、9/29 近一年新低，严格照我的纪律，中下旬就该减过了</li><li>条件单建议：<strong>MA10（297.79）作为减半线，MA5（292.88）作为观察线，285.74 作为趋势确认失败线</strong>。挂条件单，别用眼睛盯——卖点难在它挑战人性</li><li>提醒：跌了 37.71% 不是不减的理由。纪律看的是均线有没有破，不看已经跌了多少</li></ul>
+<p><strong>🟢 备用金的分批条件（四条全满足才谈"首档"，且先只用 1/3）</strong></p>
+<ol><li>上文"三日资金确认标准"全部兑现</li><li>资讯层出现 ≥2 条独立一手正向信息且相互印证</li><li>站在 MA10 之上，且第 4-5 个交易日不回落</li><li><strong>三季报出来之后再给 3 个交易日观察</strong>——业绩公布前加仓是赌财报，不是我的打法</li></ol>
+<p>第二批要等 MA20（318.46）被收复。<strong>分 2-3 份打，绝不在单一信号日一次打光。</strong></p>
+<p>---</p>
+      </article>
+      <article class="voice-card">
+        <div class="voice-head">
+          <img src="data:image/webp;base64,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" alt="⚡ 短线冲浪手 · 磊追浪">
+          <div class="voice-name">⚡ 短线冲浪手 · 磊追浪</div>
+        </div>
+        <div class="pull-quote">衰竭我认，转折不认</div>
+<p><strong>一句话</strong>：9 月跌幅序列 -3.45% → -5.84% → -8.64% → -2.80% → -0.81%，配合天量转地量，下跌动能确实衰竭；但 9/30 那根 +1.50% 是平量反抽，四条转强标准全不过。<strong>10 月我的判断：285.74 是生死线，300-305 是真假线，120 亿是资金线。三条线给出明确答案之前，备用金不动。</strong></p>
+<h4>9/30 那根阳线的成色</h4>
+<p>关键证据在量：9/30 涨 1.50% 成交 <strong>86.14 亿</strong>，9/29 跌 1.78% 成交 <strong>86.09 亿</strong>，几乎一样。五天均量约 85.6 亿，9/30 只有 <strong>1.007 倍——平量反弹，不是放量反弹</strong>。真转折一定量先动。</p>
+<p>另一个细节：9/30 最高 <strong>292.70</strong>，<strong>连 MA5（292.88）盘中都没摸到</strong>。一根碰不到最近均线的阳线，谈不上转折。</p>
+<table>
+<thead><tr><th>转强标准</th><th>实际情况</th><th>判定</th></tr></thead>
+<tbody>
+<tr><td>① 放量站上均线</td><td>收 291.11 &lt; MA5 292.88（-0.60%）；量能≈5 日均量 1.0 倍</td><td>❌ 双重不过</td></tr>
+<tr><td>② 连续 3 日企稳</td><td>9/29 仍创近一年新低 285.74</td><td>❌</td></tr>
+<tr><td>③ 跑赢板块</td><td>见下方更正：宁德 ≈ 板块贝塔，且资金在主题票不在权重票</td><td>❌</td></tr>
+<tr><td>④ 站上 MA10</td><td>差 -2.24%</td><td>❌</td></tr>
+</tbody></table>
+<p><strong>四条全否，0/4。</strong></p>
+<h4>【自我更正】四条转强标准：全否，包括第③条</h4>
+<p>我上一版把"跑赢板块"标为"待核实"。<strong>现已判定为明确不过：</strong></p>
+<ul><li>行业指数（电池）近一月 -19.8%、近三月 -33%，宁德 -18.3% / -29.7%——<strong>跌幅与行业基本同步</strong></li><li>同期固态电池 +14.5%、锂矿 +12.4%、锂电专用设备 +10.3%——<strong>钱在锂电概念/固态/设备等主题票里，不在宁德这类高确定性权重里</strong></li><li>反内卷指数 -3.46%、电池回收 -3.55%，<strong>行业主线在跌，主题票却在涨</strong></li></ul>
+<p><strong>宁德是"行业贝塔 + 无相对强度"，不是"跌幅小于行业"。第③条判定为不过，四条全否，0/4。</strong></p>
+<div class="pull-quote"><strong>主理人注</strong>：原文曾写"宁德跌得比行业还多"，与其自列的 -18.3% vs -19.8% 不符（跌幅实为略小）。已按其本意改为"基本同步"。另需注意口径：短线派此处引用的是<strong>近一月/近三月</strong>窗口，产业策略师引用的是 <strong>7/1–9/30</strong> 与 <strong>8/25–9/30</strong> 窗口（宁德 -25.66% vs 电池指数 -25.16%，略跑输 0.5pct）。<strong>窗口不同，强弱方向会翻转，说明这个差值的量级本来就小到不足以支撑"跑赢/跑输"的判断</strong>——真正稳的结论只有一条：<strong>宁德 ≈ 板块贝塔。</strong></div>
+<h4>【定性升级】这波是"估值重定价型"下跌，不是"利空驱动型"</h4>
+<p>我认这个定位。区分标准很简单：<strong>利空驱动型跌完会横盘等基本面修复；估值重定价型跌的时候没人在看基本面，涨的时候也不会因为你财报好看而涨。</strong></p>
+<p><strong>这直接改变了观察优先级：反弹要靠加息预期降温，不是靠产业数据好转。</strong></p>
+<table>
+<thead><tr><th>类型</th><th>反弹触发</th><th>对应证据</th></tr></thead>
+<tbody>
+<tr><td>利空驱动型</td><td>三季报数据好转</td><td>财报、装机、份额</td></tr>
+<tr><td><strong>估值重定价型（本轮）</strong></td><td><strong>加息预期降温</strong></td><td><strong>美债利率、点阵图、板块整体估值</strong></td></tr>
+</tbody></table>
+<p><strong>所以三季报的重要性要往后排。</strong> 加息预期若继续升温，三季报再漂亮估值端照样被压着；反过来，加息预期降温时，即使基本面没变化，股价也会反弹。</p>
+<h4>【锂价破位】对宁德是双刃剑，短期是利空</h4>
+<p>碳酸锂主力 9/28 跌破 12 万元/吨创年内新低，较 5 月高点 -40%+；电池级现货 122,400 元/吨，较 8 月末 -21.81%。</p>
+<ul><li><strong>成本端利好</strong>：2027 年成本会明显受益</li><li><strong>需求端警告</strong>：锂价破位本身是"旺季不旺"的证据，<strong>是需求证伪的股价信号</strong></li><li><strong>时间差</strong>：9/28 锂价破 12 万，9/29 宁德创新低——<strong>前后脚，市场当期选择的是需求那一面</strong></li></ul>
+<h4>10 月分层点位表</h4>
+<p><strong>上方压力</strong></p>
+<table>
+<thead><tr><th>位置</th><th>依据</th><th>突破意味着什么</th><th>强度</th></tr></thead>
+<tbody>
+<tr><td><strong>292.70 / 292.88</strong></td><td>9/30 最高 + MA5</td><td>短线止跌、MA5 走平。⚠️ MA5 以约 <strong>2.7 元/天</strong>下移，10 月上旬会自己掉到 285 以下，<strong>"站上 MA5"将变成伪信号</strong></td><td>⭐⭐⭐ 有依据但会失真</td></tr>
+<tr><td><strong>297.79（逐日下移）</strong></td><td>MA10（日降约 2.5 元）</td><td>反抽升级为反弹。第一周 MA10 从 297.79 掉到 290 附近，<strong>横盘不动会"被动站上"</strong>，必须配合量能</td><td>⭐⭐⭐ 移动靶</td></tr>
+<tr><td><strong>300-305 平台</strong></td><td>9/17 收 304.30、9/22 收 304.63、9/23 收 301.00 密集区 + 整数关口</td><td><strong>最有分量。</strong> 吃掉它，形态才从"下降通道"转"底部震荡"</td><td>⭐⭐⭐⭐ <strong>最硬</strong></td></tr>
+<tr><td><strong>316-318</strong></td><td>9/15 收 316.36 + MA20 318.46</td><td>中期趋势修复，月线级别反攻起点</td><td>⭐⭐⭐</td></tr>
+<tr><td><strong>330-338</strong></td><td>W2 收 330.51 + MA30 338.04</td><td>趋势反转确认，10 月大概率够不到</td><td>⭐⭐ 远位参考</td></tr>
+</tbody></table>
+<p><strong>下方支撑</strong></p>
+<table>
+<thead><tr><th>位置</th><th>依据</th><th>跌破意味着什么</th><th>强度</th></tr></thead>
+<tbody>
+<tr><td><strong>285.74 / 286.80</strong></td><td>9/29 盘中低（近一年最低）+ 收盘低</td><td>W5 止跌失败，下跌重启</td><td>⭐⭐⭐⭐</td></tr>
+<tr><td><strong>280</strong></td><td>整数关口</td><td>心理关口，无密集区验证</td><td>⭐⭐ 弱</td></tr>
+<tr><td><strong>273.80</strong></td><td>BOLL 下轨</td><td>波动率放大、超卖加速段</td><td>⭐⭐⭐ 移动靶</td></tr>
+<tr><td><strong>264 / 250</strong></td><td>—</td><td>—</td><td>⭐ <strong>我可见数据里找不到依据</strong></td></tr>
+</tbody></table>
+<p><strong>关于 264 和 250，我必须说实话</strong>：在我可见的数据里，264 找不到任何前期密集成交区、前低或均线支撑的对应——只能从跌幅比例倒推（对应自 467.35 回撤约 -43.5%），是"按跌够了算出来的位置"，不是"有筹码堆在那里的位置"。250 同理（回撤约 -46.5%），只有整数关口心理意义。<strong>这两档我会在图上画出来当观察标记，但不会当操作依据。</strong> 我的依据只认三样：前低、均线、真实成交密集区。</p>
+<div class="pull-quote"><strong>主理人注</strong>：这条与逆向投资人的判断冲突，很可能是<strong>数据窗口差异</strong>——本轮共享快照只回溯到 2025 年 9 月，而逆向引用的 263-266 / 250-252 平台位于 2025 年 6-8 月，不在可见窗口内。本轮无法独立复核，两条意见如实并列呈现。</div>
+<h4>10 月操作计划（盘面侧）</h4>
+<p>四条必须<strong>同时成立</strong>：</p>
+<ol><li><strong>板块先动</strong>——新能源/锂电出现连续涨停家数、9:25 集合竞价封单量领先。要看<strong>板块里有没有别的票先起来</strong>；只有宁德一只在涨，那是护盘不是主线</li><li><strong>放量站上 MA10，且量能回到 120 亿以上</strong>——120 亿是我的门槛（9/16 天量 239.80 亿、9/21-22 约 145 亿、9 月末地量 86 亿）。<strong>这是硬指标</strong>：MA10 在快速下移，光看"站上均线"会被均线自己送上去，必须有量验证</li><li><strong>连续 3 日不创新低</strong>（不能再破 285.74）</li><li><strong>跑赢板块</strong>——已判定为<strong>不过</strong>：宁德 ≈ 板块贝塔，无相对强度，且同期固态电池 +14.5%、锂矿 +12.4%、锂电设备 +10.3%，<strong>钱在主题票里不在权重票里</strong></li></ol>
+<p><strong>时点上，节后第一周我不动。</strong> 长假后首日最容易跳空，高开追进去就是接盘，低开又是情绪杀。三个交易日消化完再说。</p>
+<p><strong>不符合条件怎么办？不动用，100 股留着等。</strong> 这不是保守，是我框架最核心的一条：<strong>我不加仓亏损标的</strong>。用户已持 200 股，在下降趋势里往里加钱就是越跌越买。有人会说"时间也是成本"，但反过来讲，<strong>没有信号的等待不是成本，是纪律</strong>。宁可踏空一段，也别在半山腰把最后一颗子弹打光。</p>
+<h4>节后开盘观察点</h4>
+<ol><li><strong>港股宁德时代（03750）是最直接的领先指标</strong>——A 股休市期间港股照常交易，A 股开盘往往对齐这段涨跌幅。这是我节后第一个要看的，比猜方向准</li><li><strong>外盘</strong>：美股特斯拉及锂电链、纳指风险偏好（待核实）</li><li><strong>消息面</strong>：三季报预告窗口（10 月中旬）、碳酸锂价格、储能招标、9 月新能源车销量</li><li><strong>节后第一周盯四件事</strong>：首日跳空缺口方向与是否回补 / <strong>9:25 集合竞价封单量</strong> / 成交额能否回到 <strong>120 亿</strong> / 板块内其他票（亿纬、国轩、赣锋等）是否共振——<strong>龙头要有人跟，没人跟的涨是假涨</strong></li></ol>
+<p>---</p>
+      </article>
+      <article class="voice-card">
+        <div class="voice-head">
+          <img src="data:image/webp;base64,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" alt="🏔️ 逆向投资人 · 坤候底">
+          <div class="voice-name">🏔️ 逆向投资人 · 坤候底</div>
+        </div>
+        <div class="pull-quote">我这个月被纪律救了一次，也被偷懒教训了一次</div>
+<p><strong>一句话</strong>：9 月我被自己的纪律救了一次（三档作废），也被自己的偷懒教训了一次（把跌幅当便宜）。10 月我不预测方向：<strong>264 撑住买 20 股，250-252 撑住买 20 股，往下 240 / 230 / 209 各 20 股；撑不住一份不买，涨上去一股不追。已有 200 股继续拿，但盯份额和毛利，不盯价格。</strong></p>
+<h4>9 月复盘：纪律保护了我什么</h4>
+<p>9/29 我把 316 / 300 / 290 三档全部作废。回看周线：W3 收 301.95（-8.64%）、W5 收 291.11。如果我的纪律是"跌到就买"，这三档会让我在 316、300、290 各买一份，现在三份全在半山腰，而 291 下面还有 264、250 两级台阶没接。<strong>作废三档 = 把三份子弹留到了更低的位置。</strong></p>
+<p>这不是我预测准了，恰恰相反——<strong>我 9 月初给的三档本身就是错的</strong>。错在把"跌了很多"当成"跌到位了"。宁德的 PE 中枢本来就是制造业的低中枢，15.85 未必是它的历史低位区间；我拿"跌幅 -37.71%"当便宜的证据，这是偷懒。<strong>跌得多 ≠ 便宜</strong>，这句话这个月我又学了一遍。</p>
+<h4>【核心】100 股怎么分：5 份 × 20 股，绝不加倍</h4>
+<p>我知道我的铁律是每只 10 份，但那是对<strong>独立建仓</strong>说的。现在这笔是 2.9 万的<strong>补仓额度</strong>，建立在已有 200 股底仓之上，任务是摊低成本，不是从零建仓。100 股拆 10 份、每份 10 股（约 2900 元），摩擦成本占比抬上去不说，更麻烦的是<strong>金额小到"随手就买了"，纪律会失效</strong>。<strong>我的方法核心从来不是"分几份"，而是"每一份都得有个 K 线上的理由"。</strong> 5 份 × 20 股、每份 5000-5800 元，是能让我认真对待的最小单位。</p>
+<p>这是我方法论在小数额上的务实让步，我明说。但<strong>绝不加倍这条我没让步</strong>——跌到最低一档也是 20 股。</p>
+<table>
+<thead><tr><th>档位</th><th>股数</th><th>触发区间</th><th>K 线依据</th><th>触发条件（"撑住"，不是"跌到"）</th></tr></thead>
+<tbody>
+<tr><td>第 1 档</td><td>20</td><td><strong>263-266</strong></td><td>2025 年 8 月平台</td><td>收盘连续 3 日站上 264，期间无单日放量（成交额 &gt; 前 5 日均量 150%）杀跌破 263</td></tr>
+<tr><td>第 2 档</td><td>20</td><td><strong>250-252</strong></td><td>2025 年 6-7 月箱体下沿（<strong>最强一档</strong>）</td><td>触及后收下影线且次日不创新低；或在该区间横盘 ≥5 日不破</td></tr>
+<tr><td>第 3 档</td><td>20</td><td><strong>240-241</strong></td><td>240 整数关口 + 前期平台</td><td>站稳 3 日不破</td></tr>
+<tr><td>第 4 档</td><td>20</td><td><strong>230-231</strong></td><td>前期成交密集区</td><td>站稳 3 日不破</td></tr>
+<tr><td>第 5 档</td><td>20</td><td><strong>209-210</strong></td><td>2025 年极端低位，终极支撑</td><td>站稳才买，破了不买</td></tr>
+<tr><td>跌破 209</td><td>—</td><td>不设档</td><td>下方无清晰结构</td><td>走出来再看，不硬凑</td></tr>
+</tbody></table>
+<p>间距：291→264（-9.3%）、264→251（-4.9%）、251→240.5（-4.2%）、240.5→230.5（-4.2%）、230.5→209.5（-9.1%）。<strong>不均匀、由 K 线决定，不是等差数列</strong>——这是我的底线。</p>
+<p><strong>如果只能买一档，我选 250-252</strong>：多次触及未破的箱体下沿，是这张表里唯一的"最强支撑"。</p>
+<p><strong>如果 10 月一路不触发：不买，放着。</strong> 291 这个位置不上不下——MA5 292.88 都站不上，MA20 318.46 压在上面，年线早就破了。反弹到 300 以上我更不会追，"涨上去了我不追，我又不是神"。备用金等 10 月下旬三季报出来，再根据新的价格结构重画一遍表。如果三季报把股价直接推上去，这 100 股就不买了，错过就错过。</p>
+<p>唯一弹性：若出现<strong>单日放量急杀到 250 以下、当天收回长下影</strong>（恐慌盘一次性出清），第 2 档的"站稳 3 日"可缩短到 2 日。<strong>股数不变，仍 20 股。</strong></p>
+<h4>285.74 算不算一档？不算</h4>
+<p>三条理由：① 它是 9/29 一天的盘中低点，只有一次触及痕迹，我的支撑位要求"多次触及未破"，一次不算平台；② 9/30 收 291.11 说明 286 附近有承接，但它紧贴 MA5（292.88），本质是下跌途中的中继位，不是可识别的支撑结构；③ 四选一依据（前期低点 / 平台 / 52 周低点 / 整数关口）它只勉强沾上"52 周低点"，而且是最新、尚未被二次测试的——这种位置我不敢当档用。</p>
+<p>但我不扔掉它：<strong>285.74 是我的观察锚</strong>。破了 = 下跌没结束，按表往下走；不破且二次探底成功 = 可能形成双底，那时我回头重新评估 286。<strong>观察位，不计入买入档。</strong></p>
+<p>264 / 250-252 <strong>不调整</strong>。9 月单边下跌，没在 264 或 250 形成新的成交密集区，旧平台既没被破坏也没被强化，维持原判。</p>
+<h4>已有的 200 股：拿，但把话说完整</h4>
+<p>成本约 391（待你确认），浮亏约 25.6%。我的卖出只有三个理由：牛市结束、PE 到历史高位、快速冲顶。现在 PE 15.85，牛市没结束，更没冲顶——<strong>三条一条都不成立，按我的框架这 200 股不动</strong>。</p>
+<p>但沿用 9/29 那句诚实话：<strong>如果"代工厂化"成真，"大公司不会死"的前提就被打穿。</strong> 我不因为浮亏 25% 就含糊过去。</p>
+<p>宁德比当年的隆基强两点，这两点支撑我继续拿：</p>
+<ol><li>宁德现在<strong>还在赚钱</strong>，PE 15.85 是正 PE；隆基从 70 跌到 13 那一段是亏损、PE 为负。<strong>能赚钱的周期股和不能赚钱的周期股是两个物种</strong></li><li>宁德全球份额仍第一，是绝对龙头；隆基在光伏里只是龙头之一，不是垄断。所以宁德的"底"比隆基硬</li></ol>
+<p>我给这 200 股挂<strong>两条证伪线，都不是价格</strong>：</p>
+<ul><li>动力电池份额继续下滑，被二线厂持续抢食</li><li>单 Wh 毛利被拉平，溢价消失（毛利率持续走低）</li></ul>
+<p>价格跌破 209 我不卖——那是我的买点信号，不是卖点。但上面两条如果兑现，"龙头溢价没了"就等于我的前提没了，那时我承认判断失效，重新审视这 200 股。<strong>盯经营指标，不盯 K 线——这是我给隆基那一课交的作业。</strong></p>
+<h4>【第三次更新】我不跟着挪到 291，理由是三条</h4>
+<p>估值分析师把资金面闭合后，把节奏前移到"291 买 40 股 + 275 买 30 股"。<strong>我不跟着挪。</strong></p>
+<p><strong>291 就是我 9/29 亲手作废的 290 那一档。</strong> 如果因为"基本面搞清楚了"就在同一个位置买回去，我的表就不是表了，是橡皮筋。三条理由：</p>
+<ol><li><strong>291 不是 K 线上可识别的支撑位</strong>；</li><li>291 站不上 MA5（292.88）、MA20（318.46）压着、年线（377）破着——<strong>不上不下</strong>；</li><li><strong>291 是现价，没有打折。</strong> 我的方法就是"只买跌出来的"，在现价买等于承认我不需要打折，那我就不是我了。</li></ol>
+<h4>【分歧的正确表述】是"基本面定价 vs 交易定价"（措辞已与估值分析师统一）</h4>
+<p>三个数摆一条线：</p>
+<table>
+<thead><tr><th></th><th>位置</th></tr></thead>
+<tbody>
+<tr><td>估值分析师的基本面中枢区间</td><td><strong>270-280</strong></td></tr>
+<tr><td>我的前两档</td><td><strong>264、250-252</strong>（全在他中枢区间的<strong>下沿之外</strong>）</td></tr>
+<tr><td>他的最坏情形（纯代工）</td><td>245、204</td></tr>
+<tr><td>我的第 3 档、第 5 档</td><td><strong>240-241、209-210</strong>（撞在他那两个数上）</td></tr>
+</tbody></table>
+<p><strong>我的第一档就在他的中枢之下，我的后两档守在他的最坏情形上。</strong> 这不是巧合，是我的表的构造方式——<strong>先打折再买，打折不够就往下找</strong>。</p>
+<p>所以：<strong>不是"谨慎 vs 激进"，是"基本面定价 vs 交易定价"（措辞已与他统一）。他赢在买得到，我赢在买得便宜；他的代价是可能买贵，我的代价是可能买不到。</strong></p>
+<p><strong>他让步了，而且承认得比我预期更彻底。</strong> 他算出三个数：现价相对加息前的旧中枢（14.5x）是 -3%，看着便宜；但相对<strong>加息后的新中枢（13.45x，269–286）是 +4%~+8%，是溢价</strong>；相对我这档 264（12.1x）是 +10.2%。</p>
+<p><strong>用我的话翻译一遍：他也是从溢价里往中枢挤，我是从中枢往下再打折。我们的起点都是溢价，只是他要回到中枢，我要再往下找折扣。两条路不同，但起点是同一个——291 不便宜。</strong></p>
+<p>他把"便宜"从八分降到六分，安全边际只有 3-5%。<strong>这个结论我认，而且它比我的 K 线论据更硬</strong>——我只能说"291 站不上 MA5"，他能算出现价贵了百分之多少。</p>
+<p>他第一笔买在 291 是<strong>容错设计</strong>，不是估值买点——他自己也这么说了。我尊重这个设计，但我不跟着挪，理由不变。</p>
+<h4>【我认错一处】否决项排序改了</h4>
+<p>他给的敏感度：营收每下修 5% → 合理价 -23 元；毛利率每降 1pct → -13 元。<strong>营收端杀伤力接近毛利率两倍。我原来的排序错了，已改：</strong></p>
+<div class="pull-quote"><strong>营收/开工率下修（第一）&gt; 毛利率（第二）&gt; 份额（第三）</strong></div>
+<p>这条把我向产业策略师要的"开工率 + 锂库存"从"想要"升级成"必须"：<strong>开工率 94.86% 若往下走，我的前两档要在 Q3 财报之前就撤掉</strong>，不能等毛利率出来。</p>
+<h4>【锂价我要说得更狠】它不是救命稻草，是反向信号</h4>
+<p>售价与锂价联动，成本利好会被售价端抵消；同时锂价破位本身就是需求证伪的证据。链路是：</p>
+<p><strong>锂价跌 → 需求可能真不行 → 营收下修 → -23 元/5%。</strong></p>
+<p><strong>锂价跌是把我的第一否决项往响里推，不是往轻里推。</strong></p>
+<h4>【资金面 A/B 分类，我只认一半】</h4>
+<p>他说这次是 B 类（宏观贴现率上行、可跟踪可逆），不是腾讯那种 A 类（结构性撤出、能在坑里趴很久）。</p>
+<ul><li><strong>没用的一半</strong>：我从不区分这类，因为我不看资金面。而且腾讯 700→200 是我的<strong>成功案例</strong>——我从 400 买到 200 出头，趴了很久还是赚了。<strong>我怕的从来不是"趴很久"，是"永远爬不出来"。</strong></li><li><strong>有用的一半</strong>：隆基那课告诉我"时间可能长到超出你能扛的范围"；他说这次可逆，等于我的"只亏时间不亏钱"里那个"时间"是可测的。<strong>这一半我收下。</strong></li></ul>
+<h4>【最终版】四道否决</h4>
+<ol><li><strong>营收/开工率下修</strong>（第一）</li><li><strong>毛利率继续下滑</strong>（第二）</li><li><strong>份额跌破 45%</strong>（第三）</li><li><strong>板块确认</strong>——若没有 3 只以上亿纬/国轩/欣旺达同步收阳，宁德独涨 = 护盘，不接</li></ol>
+<p><strong>264 / 250-252 / 240-241 / 230-231 / 209-210，每档 20 股，绝不加倍；撑不住一份不买，涨上去一股不追；10 月不触发就不买。</strong></p>
+<h4>【终版·硬规则】相邻两档间隔必须 ≥5 个交易日</h4>
+<p>这条是估值分析师逼出来的，我认。没有它，单边下跌里两档会在同一周被打光，那就不是分批，是加倍。</p>
+<ul><li>相邻两档成交日<strong>间隔 ≥5 个交易日</strong>（≈ 一周），<strong>第 1 档除外</strong></li><li>若间隔不足 5 日：<strong>只取较低那一档，跳过较高那档</strong>（即按更低的价格执行，不按更近的价格）</li><li>全程只用 100 股，打完即止</li><li><strong>跌到 ≠ 触发</strong>，触发条件一律是"<strong>撑住</strong>"（连续 3 日站上该档且不破）</li></ul>
+<h4>【终版·排产数据出来时怎么办】黄灯不等于停手</h4>
+<p>排产/产量是黄灯信号（我第一否决项是营收/开工率，它比毛利率更早出现）。处理规则三条：</p>
+<ol><li><strong>10 月排产环比负增长</strong> → 264、250-252 两档<strong>触发条件加严</strong>：从"连续 3 日站上"改为"连续 5 日站上 + 期间无单日放量杀跌破档位下限"</li><li><strong>连续第二个月负增长</strong> → <strong>264、250-252 直接作废</strong>，重画表格；起始档下移一档（从 240-241 起步）</li><li><strong>产能利用率（现 94.86%）跌破 90%</strong> → <strong>全部档位暂停</strong>，等月度数据回正再重启</li></ol>
+<p><strong>注意这是在档位上加条件，不是提前买入。</strong> 排产差 → 我买得更晚、更便宜，不是更快。</p>
+<h4>【我认错第三处】跌得慢了 ≠ 撑住了</h4>
+<p>我原来把 W4、W5 跌幅收敛当成"卖压枯竭、接近可买"。这个推论错了：</p>
+<p><strong>跌得慢了是卖压减轻，我要的是买盘出现——这两个不是一回事。</strong> 地量（换手 0.70%）说明的是"没人卖了"，不是"有人在买"。而"撑住"的定义里必须有买盘。</p>
+<p>这条改的是我的措辞：<strong>"跌势衰竭"不等于"可以接"</strong>。衰竭了也可能在低位横很久才有人接，也可能根本没人接。</p>
+<h4>【我的软肋】三条，明说</h4>
+<ol><li><strong>我不看资金面</strong>——如果这波是资金结构性撤离，我看不出来，我会一直按表接下去</li><li><strong>2025 年 6-8 月的平台我凭记忆</strong>，本轮数据窗口只到 2025 年 9 月，无法独立复核。若那两个平台不存在，我的前两档就是无依据的</li><li><strong>我不会因为基本面改善而上移档位</strong>——若三季报大超预期、股价直接上去，这 100 股就永远买不到。这是我的框架主动放弃的收益</li></ol>
+<h4>【对"代工厂化"的正面回答】六成夸大，四成真</h4>
+<ul><li><strong>四成真</strong>：客户"多供应商化"不可逆，宁德从"唯一供应商"变"赛马里的一个选项"，长期定价权确实在被稀释（部分客户已转中航锂电）</li><li><strong>六成夸大</strong>：宁德还有三样代工厂没有的东西——① 规模与研发带来的<strong>成本曲线</strong>（95% vs 行业 65% 产能利用率）；② <strong>储能/海外/换电等新场景</strong>；③ <strong>材料体系与制造工艺定义权</strong>（CTP/麒麟结构创新、标准参与）</li></ul>
+<p><strong>判定：这是"重资产产能周期制造业"的定价，不是"代工厂"的定价。这两件事差着一个估值中枢——15.85 倍给的是前者。</strong></p>
+<p><strong>这条不在我能力圈内。</strong> 我把"去宁化"翻译成我能判的东西：<strong>营收/开工率（第一）、毛利率（第二）、份额（第三）</strong>。真要成为代工厂，这三个数会先塌。我的警戒对象从"去宁化"换成"电池行业是不是在重演光伏"。</p>
+<h4>回购均价被跌穿：中性偏减分</h4>
+<p>三笔均价 330.93 → 305.65 → 301.70，现价 291.11 全部跌穿。</p>
+<p><strong>减分的理由</strong>：① 均价一路下移，说明管理层也是买一路套一路，<strong>他们对底部的判断并不比市场准</strong>；② 16.03 亿相对万亿级市值只有千分之一量级，撑不住股价，主要是信号意义；③ 回购是<strong>注销</strong>还是用于<strong>股权激励/员工持股</strong>，性质完全不同——后者本质是给员工发福利。<strong>这一条本轮没查到，标为待确认。</strong></p>
+<p><strong>不至于减分的理由</strong>：管理层敢在 330 以上买，至少排除了"内部有雷"这个尾部风险。</p>
+<p>一句话：<strong>回购跌穿告诉我，"便宜"这件事没人能保证，包括公司自己。它不改变我的分批计划，只降低我对"291 就是底"的信心。</strong></p>
+<p>---</p>
+      </article>
+      <article class="voice-card">
+        <div class="voice-head">
+          <img src="data:image/webp;base64,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" alt="🔬 财报研究员 · 钊审财">
+          <div class="voice-name">🔬 财报研究员 · 钊审财</div>
+        </div>
+        <div class="pull-quote">9 月没有新财报，所以这不是财报杀</div>
+<p><strong>一句话</strong>：9 月跌了 19.93%，但这个月<strong>没有新财报</strong>，所以这是估值杀 + 情绪杀。长线仓位靠基本面止损，中间涨涨跌跌我不关心——<strong>200 股的止损条件没有被触发</strong>。10 月那场三季报才是真正的考试。在那之前，那 100 股备用金我一分不动。</p>
+<h4>管理层出了三张牌</h4>
+<p><strong>牌一：回购从 2 亿加到 16.03 亿。</strong> 节奏清晰：9/11 试探 2.00 亿@330.93 → 9/16 加大到 9.47 亿@305.65 → 9/18 再 4.56 亿@301.70。<strong>股价越跌买得越多</strong>，说明管理层认为 300 一线是价值区，是恐慌中逆向执行而非追涨。</p>
+<p>但泼盆冷水：授权 200-400 亿只用了 16.03 亿，占授权下限 4.0%、<strong>占市值约 0.12%</strong>。对 EPS 增厚可忽略——<strong>信号价值远大于财务价值</strong>。</p>
+<p>更要警惕的细节：<strong>截至 9/30 累计仍是 16.03 亿，意味着 9/18 之后到月底、包括跌到 291 那一段没有新增。最恐慌时停手 = "表态式回购"的典型特征。</strong> 必须在 10 月初回购进展公告里核实——<strong>这是三季报之前的第一个考试点。</strong></p>
+<p><strong>牌二：45 亿绿色科创债。</strong> 有息负债 1490.29 亿、半年经营现金流 602.17 亿，不缺钱，45 亿只占有息负债 3%。判断：不是缺钱信号，是趁低利率锁长期资金配合海外扩产，中性偏正面。</p>
+<p><strong>牌三：江西锂矿环评重启。</strong> 材料与矿产是 H1 唯一毛利改善分部（27.04%，+5.81pct），向上游延伸方向我认。但锂矿是重资产周期品，<strong>判断靠不靠谱不看项目本身，看启动时点</strong>：锂价低位重启 = 逆周期布局（靠谱）；锂价高位重启 = 又一次追周期。<strong>当前锂价水位无数据，标注待核实。</strong></p>
+<p><strong>三张牌合起来看，有一个矛盾（这是我本轮最想强调的独立观点）</strong>：</p>
+<div class="pull-quote">回购（把钱还给股东）="钱没地方花"；发债 45 亿 + 锂矿资本开支（还要再筹钱）="钱有地方花"。 <strong>16 亿 vs 45 亿 + 几十亿资本开支，资金主流方向是扩产和上游延伸，不是回馈股东。</strong> 所以现阶段回购只能算"管理层对估值的态度票"，<strong>不能算资本配置转向</strong>。什么时候才算转向？回购累计量级接近发债和资本开支体量的时候。</div>
+<h4>10 月考试日历</h4>
+<table>
+<thead><tr><th>时间</th><th>事件</th><th>盯什么</th></tr></thead>
+<tbody>
+<tr><td>节后首个交易日前后（预计 10/9，待核实）</td><td>回购进展公告（规则要求每月前 3 个交易日披露截至上月末数据）</td><td>截至 9/30 累计回购金额/股数/均价，<strong>9 月下旬是否停手</strong></td></tr>
+<tr><td>10 月中旬</td><td>月度动力电池装机/产量数据</td><td>出货量、市占率——算单 Wh 盈利的分子分母都要</td></tr>
+<tr><td><strong>10/15–10/28</strong>（法定截止 10/31）</td><td><strong>三季报正式披露</strong></td><td>见判定表</td></tr>
+<tr><td>财报后 1-3 个交易日</td><td>机构调研纪要、券商点评</td><td>只看前面客观数据，后面结论别太当真</td></tr>
+</tbody></table>
+<h4>【核心】三季报判定表</h4>
+<p>市场预期（中信里昂）：Q3 单季归母 <strong>250-260 亿</strong>，同比 +35%-40%。以此为标尺。</p>
+<table>
+<thead><tr><th>#</th><th>指标</th><th>当前值(H1)</th><th>健康线</th><th>警戒线</th><th>触发后意味着什么</th><th>冻结 100 股？</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>综合毛利率</td><td>23.93%(-1.09pct)</td><td>止跌或环比回升</td><td><strong>&lt;23.0%</strong></td><td>以价换量未见底</td><td>黄灯</td></tr>
+<tr><td>2</td><td>动力电池毛利率</td><td>20.63%(-1.78pct)</td><td>≥20.63%</td><td><strong>&lt;19% 黄 / &lt;18% 红</strong></td><td>红灯=代工化确认，定价权瓦解</td><td><strong>红灯冻结</strong></td></tr>
+<tr><td>3</td><td>储能毛利率</td><td>23.96%(-1.56pct)</td><td>≥23.96%</td><td><strong>&lt;22%</strong></td><td>第二曲线溢价消失</td><td>黄灯</td></tr>
+<tr><td>4</td><td><strong>单 Wh 归母</strong></td><td>约 0.10 元/Wh（销量口径待核实）</td><td>≥0.09</td><td><strong>&lt;0.08</strong></td><td><strong>代工化红线</strong></td><td><strong>一票冻结</strong></td></tr>
+<tr><td>5</td><td><strong>合同负债</strong></td><td>364.83 亿（较年初 -25.9%）</td><td>环比持平或回升</td><td><strong>环比再降 ≥10%</strong></td><td>订单前瞻走弱</td><td><strong>一票冻结</strong></td></tr>
+<tr><td>6</td><td><strong>Q3 单季归母</strong></td><td>—</td><td>≥250 亿</td><td><strong>&lt;230 亿</strong></td><td>显著低于一致预期</td><td><strong>一票冻结</strong></td></tr>
+<tr><td>7</td><td>经营现金流/归母</td><td>1.39x</td><td>≥1.3x</td><td><strong>&lt;1.1x</strong></td><td>利润含金量下降</td><td>黄灯</td></tr>
+<tr><td>8</td><td>存货</td><td>1308.19 亿</td><td>周转天数不升</td><td><strong>环比再增 &gt;10%</strong></td><td>备货还是滞销</td><td>黄灯</td></tr>
+<tr><td>9</td><td>剪刀差</td><td>收入 +54.80% vs 净利 +41.98%</td><td>净利增速追平</td><td><strong>继续扩大</strong></td><td>规模不经济</td><td>黄灯</td></tr>
+<tr><td>10</td><td>境外毛利率/占比</td><td>29.97% / 31.46%</td><td>占比升、毛利率 ≥29%</td><td><strong>&lt;28% 或占比下滑</strong></td><td>海外红利见顶</td><td>黄灯</td></tr>
+<tr><td>11</td><td>消费税传导</td><td>—</td><td>净利率不受侵蚀</td><td><strong>净利率环比降 &gt;1pct 且无法解释</strong></td><td>政策成本无法转嫁</td><td>黄灯</td></tr>
+<tr><td>12</td><td>有息负债</td><td>1490.29 亿</td><td>稳定</td><td><strong>环比增 &gt;20%</strong></td><td>靠杠杆扩张</td><td>黄灯</td></tr>
+</tbody></table>
+<p><strong>冻结规则</strong>：</p>
+<ul><li><strong>一票否决（单条即冻结）</strong>：#2 红灯、#4、#5、#6</li><li><strong>双黄冻结</strong>：其余黄灯项同时触发 ≥2 条</li><li><strong>考前冻结</strong>：三季报披露前，无论价格怎么走，100 股不动</li></ul>
+<h4>回购进度的量化观察标准</h4>
+<table>
+<thead><tr><th>档位</th><th>10 月标准</th><th>解读</th></tr></thead>
+<tbody>
+<tr><td><strong>趋势性回购</strong>（提升管理层信任）</td><td>月末累计 ≥40-60 亿（占授权下限 20-30%）；月内新增 ≥15-20 亿；<strong>股价跌破 290 仍在成交</strong>；有注销动作</td><td>用公司的钱对估值投票，价格触发而非窗口触发</td></tr>
+<tr><td><strong>表态式回购</strong>（不改变判断）</td><td>月内新增 &lt;10 亿、累计 &lt;26 亿（占授权下限 &lt;13%）；只脉冲式下单两天后停手；反弹到 320 以上就消失</td><td>只是姿态，不构成买入理由</td></tr>
+</tbody></table>
+<p>补一句：回购用的是公司的钱，<strong>不等于管理层个人掏钱增持</strong>。若有个人增持，含金量高一档。</p>
+<h4>200 股 + 100 股</h4>
+<p><strong>200 股：不动。</strong> 我的长线止损只认基本面不认跌幅。9 月 -19.93%、距高点 -37.71% 都是价格变化不是基本面变化——9 月压根没新财报，拿什么止损？</p>
+<p>但前提必须你自己确认：<strong>买入时的预期是什么？</strong> 同一份财报对不同预期结论完全不同——</p>
+<ul><li>预期是"储能 + 海外驱动第二增长"：H1 支持（储能 +87.54%、境外占比 31.46%、毛利率 29.97%），预期成立，继续拿</li><li>预期是"动力电池利润率上行/提价"：H1 已证伪（毛利率 -1.78pct），这 200 股的持有逻辑早该重审，不用等三季报</li></ul>
+<p><strong>100 股备用金：三季报前不动，这是常识。</strong> 每笔买入都得有新的预期支撑，没有预期就是赌博——而三季报前的预期是残缺的。</p>
+<ul><li>财报后全绿或仅 1 条黄灯 → 可按新预期分批动用，先上 30-50 股（观察仓性质），剩下等 Q4 月度数据</li><li>触发任一冻结项 → 100 股不动，同时回头重估 200 股</li><li>估值提醒：PE(TTM) 15.85 是低位区间，但<strong>低 PE ≠ 便宜</strong>——如果 E 还在往下走，低 PE 是价值陷阱。这正是三季报要回答的</li><li>备用金不投宁德 ≠ 空仓。我不空仓，市场不好就调仓到红利那边去</li></ul>
+<p>---</p>
+      </article>
+  </div>
+</section>
+
+<section id="thinking">
+  <div class="section-head">
+    <div class="section-num">04 · 思考</div>
+    <div>
+      <div class="section-title">深度思考</div>
+      <div class="section-lede">主持人替你想到的 —— 你没想到的问题、可能误读的地方、应该问但没问的</div>
+    </div>
+  </div>
+  <div class="subsection-label">4a · 主持人札记</div>
+  <div class="notes-stack">
+      <article class="note-item">
+        <div class="note-num">01</div>
+        <div class="note-body">
+          <h4>我上一版写错了一条结论，这里更正：9 月不是"只有宁德在跌"</h4>
+<p>初稿里我写过"板块没跌、只有宁德跌"，依据是储能概念 -3.66%、反内卷 -3.46%、电池回收 -3.55%。<strong>这三个是主题指数，不是电池行业指数，对照组选错了。</strong></p>
+<p>换成电池行业指数（01801737）之后，结论整个反过来：</p>
+<table>
+<thead><tr><th>区间</th><th>电池行业指数</th><th>宁德时代</th><th>差值</th></tr></thead>
+<tbody>
+<tr><td>8/25–9/30</td><td>-17.4%</td><td>-18.3%</td><td>-0.9pct</td></tr>
+<tr><td>7/1–9/30</td><td><strong>-25.16%</strong></td><td><strong>-25.66%</strong></td><td>-0.5pct</td></tr>
+</tbody></table>
+<p><strong>宁德 ≈ 板块贝塔，不是被单独定价的靶子。</strong> 这个更正因为它的含义不小：如果是个股 alpha，那么"公司自己变好"就能修复；如果是板块贝塔，那么<strong>公司变好也未必涨</strong>——因为压制来自板块级的贴现率，不来自公司。</p>
+<p><strong>这是本轮最该记住的一条更正。</strong> 它把 10 月的观察顺序也改了：先看加息预期，再看三季报。</p>
+        </div>
+      </article>
+      <article class="note-item">
+        <div class="note-num">02</div>
+        <div class="note-body">
+          <h4>我注意到一个自己差点犯的错：把"跌得多"当成"跌到位"</h4>
+<p>逆向投资人主动承认了他 9 月初的三档（316/300/290）是错的，理由是"把跌幅 -37.71% 当成了便宜的证据"。这句话值得单独记下来，因为它是一个很容易犯的错误——<strong>跌幅是相对高点算的，便宜是相对价值算的，两件事没有必然关系。</strong></p>
+<p>从 467.35 跌到 291.11 是 -37.71%，但如果 467.35 本身就包含了泡沫，那么 -37.71% 只是泡沫的消退，不是价值的出现。宁德的 PE 中枢本来就是制造业的低中枢，15.85 倍未必是它的历史低位。</p>
+<p><strong>这条在收尾阶段又被推进了一层。</strong> 估值分析师用不受加息污染的尺子重新量了一遍：拿现价去比<strong>加息后的新中枢</strong>（13.45x，对应 269-286），291 不是折价，是<strong>溢价 4-8%</strong>。他原报"便宜八分"，最终自己改成<strong>六分</strong>——用他的话说，"我以为打了 15% 的折，其实只打了 3-5%"。</p>
+<p>逆向投资人那句"291 是现价，没有打折"，和估值分析师这句"现价是溢价 4-8%"，<strong>是同一句话的两种说法</strong>。一个用 K 线讲，一个用 PE 倍数讲，讲的都是：<strong>跌了 37.71% 之后，这个价格仍然不便宜。</strong></p>
+        </div>
+      </article>
+      <article class="note-item">
+        <div class="note-num">03</div>
+        <div class="note-body">
+          <h4>"衰竭"和"反转"之间隔着一道墙，这道墙叫增量资金</h4>
+<p>周跌幅序列在收敛，量能从天量转到地量，MACD 柱连续三段收窄——这些都在说同一件事：卖压在枯竭。</p>
+<p>但地量说明的是"没人卖了"，不是"有人在买"。9/30 成交额 86.14 亿、换手 0.70%，这是近期的地量水平。<strong>从"没人卖"到"有人买"，中间需要一次放量确认，而这次确认至今没有出现。</strong></p>
+<p>短线冲浪手划的 120 亿门槛，本质上就是在等这个确认。</p>
+        </div>
+      </article>
+      <article class="note-item">
+        <div class="note-num">04</div>
+        <div class="note-body">
+          <h4>一个容易被误读的陷阱：均线在往下跑</h4>
+<p>MA5 以约 2.7 元/天、MA10 约 2.5 元/天的速度下移。这意味着 10 月上旬会出现一种情况：<strong>股价横着不动，却"被动站上"了均线。</strong></p>
+<p>如果只盯着"站上 MA5"这个信号，很容易在下跌途中误判为转强。这就是为什么短线冲浪手强调"必须配合量能"——<strong>在均线快速下移的环境里，价格信号会失真，量能信号不会。</strong></p>
+<p>这条建议在报告里保留，因为它是那种"看图看久了自然会懂、但第一次遇到一定会踩"的坑。</p>
+        </div>
+      </article>
+      <article class="note-item">
+        <div class="note-num">05</div>
+        <div class="note-body">
+          <h4>六个人吵了半天，最后指向同一个数</h4>
+<p>这是本轮最值得注意的是一件事。产业策略师说"毛利率是唯一需要严肃对待的产业问题"，估值分析师新增的最高优先级门槛是"Q3 毛利率环比若继续下滑则什么都不做"，财报研究员把毛利率列为第一条判定项，逆向投资人把"单 Wh 毛利被拉平"设为证伪线。</p>
+<p><strong>四个完全不同的方法论，收敛到了同一个可验证变量。</strong></p>
+<p>而且估值分析师还点出了为什么是毛利率而不是净利：<strong>净利 250-260 亿市场已经预期到了，毛利率没有预期，它是唯一的增量信息。</strong> 换句话说，三季报出来后，净利达标是"符合预期"（不构成利好），毛利率企稳才是"超预期"。</p>
+        </div>
+      </article>
+      <article class="note-item">
+        <div class="note-num">06</div>
+        <div class="note-body">
+          <h4>三个月度数据打架了，而打架的方向恰好是最致命的那个</h4>
+<p>这是收尾阶段翻出来的、比毛利率更急的一条。三家机构给宁德 9 月产量，方向完全相反：</p>
+<table>
+<thead><tr><th>来源</th><th>9 月产量环比</th><th>备注</th></tr></thead>
+<tbody>
+<tr><td>花旗（摩根士丹利亦持此口径）</td><td><strong>-3%</strong></td><td>8 月还是 +7%，10 月展望 +5~6%</td></tr>
+<tr><td>ZE Consulting（摩根大通引用）</td><td><strong>-5%</strong></td><td>累计下调 9 月预期 14%</td></tr>
+<tr><td>TD 大东时代</td><td><strong>+5~6%</strong></td><td>但承认"成品库存累积超内部预期、主动放慢产线节拍"</td></tr>
+</tbody></table>
+<p><strong>三者必有一错，而它直击的是营收，不是毛利率。</strong> 估值分析师算过敏感度：营收每下修 5% → 合理价下移约 23 元；毛利率每降 1pct → 下移约 13 元。<strong>营收的杀伤力接近毛利率的两倍。</strong> 逆向投资人因此把否决项排序整个改了：营收/开工率 &gt; 毛利率 &gt; 份额。</p>
+<p><strong>我把它记在这里，是因为它有一个可跟踪的替代指标：产能利用率（现 94.86%）。</strong> 月度数据出得快、不依赖财报口径，跌破 90% 就是硬红线。在三季报（10/15–10/28）出来之前，这是唯一能提前证伪或证实的东西。</p>
+        </div>
+      </article>
+  </div>
+  <div class="subsection-label">4b · 主持人 Q&amp;A</div>
+  <div class="qa-stack">
+      <article class="qa-card">
+        <span class="qa-tag tag-key">🔑 关键</span>
+        <div class="qa-question">100 股备用金到底该不该动？六个人给了六个答案，怎么理解？</div>
+        <div class="qa-answer">
+<p>六个答案其实是<strong>三套不同的时间尺度</strong>，不是六套不同的判断：</p>
+<table>
+<thead><tr><th>派别</th><th>代表</th><th>主张</th><th>时间尺度</th></tr></thead>
+<tbody>
+<tr><td><strong>右侧派</strong></td><td>短线冲浪手、信号派首席</td><td>四条信号全满足才动，节后第一周不动</td><td>天级别</td></tr>
+<tr><td><strong>事件派</strong></td><td>财报研究员</td><td>三季报前绝对不动，考前冻结</td><td>事件驱动</td></tr>
+<tr><td><strong>价格派</strong></td><td>逆向投资人</td><td>264 撑住才买第一份</td><td>位置驱动</td></tr>
+<tr><td><strong>估值派</strong></td><td>估值分析师</td><td>291 附近可先 40 股，但他自己说明这是容错设计不是估值买点</td><td>估值驱动</td></tr>
+</tbody></table>
+<p><strong>这四派不是互斥的，是层层收紧的关系</strong>：价格派说"还没到有依据的支撑"，事件派说"而且考试还没考"，右侧派说"而且资金还没回来"，估值派说"可以先买一点，但这是容错不是便宜"。</p>
+<p><strong>每一层都在前一层的基础上加了一个条件。所以最保守的那个答案，实际上是四个条件的交集</strong>——这也解释了为什么 5 位不主张现在动、而唯一主张可动的那位也承认"这不是折扣"。</p>
+<p><strong>收尾时这一点变得更清楚了</strong>：估值分析师自己算出，现价相对加息后的新中枢是<strong>溢价 +4%~+8%</strong>，并把"便宜"从八分下调到六分。<strong>所以四派现在连"现价是否便宜"都不再有分歧——都不认为便宜。</strong></p>
+<p>从财报研究员的框架看，最实在的一句是：<strong>"每笔买入都得有新的预期支撑，没有预期就是赌博——而三季报前的预期是残缺的。"</strong></p>
+        </div>
+      </article>
+      <article class="qa-card">
+        <span class="qa-tag tag-meta">⭐ 重要</span>
+        <div class="qa-question">如果三季报还没出，有没有更早的警报？</div>
+        <div class="qa-answer">
+<p>有，而且比三季报早：</p>
+<ol><li><strong>产能利用率（现 94.86%）</strong> —— 跌破 90% 即冻结全部加仓。月度数据出得快，不依赖财报口径</li><li><strong>10 月排产环比</strong> —— 转负即把逆向的前两档触发条件加严；连续第二个月为负则这两档直接作废</li><li><strong>回购进展公告</strong>（节后前 3 个交易日披露）—— 9 月下旬已停手，若 10 月月内新增仍 &lt;10 亿，"管理层认为 300 一线是价值区"这个推论失效</li></ol>
+<p><strong>这三条的共同点是不用等财报。</strong> 三季报要到 10/15–10/28 才出，而节后第一周就能看到回购进展、10 月中旬就能看到排产和装机。<strong>真正的顺序是：先看这三条，再看三季报。</strong></p>
+        </div>
+      </article>
+      <article class="qa-card">
+        <span class="qa-tag tag-confuse">⚠️ 易混淆</span>
+        <div class="qa-question">"衰竭"是不是等于"见底"？</div>
+        <div class="qa-answer">
+<p>不是。这是本轮最容易混淆的一对概念。</p>
+<p>衰竭的 evidence 很硬：周跌幅 -8.64% → -2.80% → -0.81%，量能天量 → 地量，MACD 柱连续三段收窄。但短线冲浪手说得清楚：<strong>衰竭只是把"趋势下跌"切成了"震荡筑底"，中间还隔着增量资金进场这一步。</strong></p>
+<p>而且信号派首席补了一个关键限定：<strong>MACD 柱收窄历史上同时出现在两种场景——真筑底，和下跌中继（喘口气再往下后半程）。单看这个指标分不出来。</strong></p>
+<p>所以正确读法是：<strong>衰竭降低了"继续暴跌"的概率，但没有提高"即将上涨"的概率。</strong> 它改变的是下跌的速度，不是方向。</p>
+        </div>
+      </article>
+      <article class="qa-card">
+        <span class="qa-tag tag-miss">🔍 易疏忽</span>
+        <div class="qa-question">9/18 之后到月底，回购没有新增</div>
+        <div class="qa-answer">
+<p>这条容易被忽略，因为大家的注意力都在"回购从 2 亿加到 16.03 亿"这个加码动作上。</p>
+<p>但财报研究员指出：截至 9/30 累计仍是 16.03 亿，意味着<strong>9/18 之后到月底、包括跌到 291 那一段，公司没有继续买</strong>。</p>
+<p>这个细节的含义不小：公司在 330、305、301 三个价位买了，但在 291-297 这段（更低的价位）停手了。<strong>"越跌越买"的叙事在最后两周断掉了。</strong></p>
+<p>如果 10 月初的回购进展公告证实了这一点，那就是一个管理层行为层面的负面信号，而且会早于三季报反映在价格上。</p>
+        </div>
+      </article>
+      <article class="qa-card">
+        <span class="qa-tag tag-meta">⭐ 重要</span>
+        <div class="qa-question">264 和 250 到底有没有依据？两位专家给出了相反答案</div>
+        <div class="qa-answer">
+<p>逆向投资人说：263-266 是 2025 年 8 月平台，250-252 是 2025 年 6-7 月箱体下沿，<strong>是他认的最强一档</strong>。</p>
+<p>短线冲浪手说：在他可见数据里，264 找不到任何前期密集成交区、前低或均线支撑的对应，只能从跌幅比例倒推，<strong>是"按跌够了算出来的位置"</strong>。</p>
+<p><strong>我核对后认为这是数据窗口差异，不是方法论冲突</strong>——本轮共享快照只回溯到 2025 年 9 月（250 个交易日），而逆向引用的两个平台位于 2025 年 6-8 月，不在可见窗口内。<strong>本轮无法独立复核，两条意见如实并列。</strong></p>
+<p>这对你的实际含义是：<strong>如果 264/250 确有 2025 年的成交密集区支撑，那它们比 280（纯整数关口）更值得参考；如果找不到，那就只能按整数关口处理，权重降低。</strong> 建议连接器恢复后自行核对 2025 年 6-8 月的周线。</p>
+        </div>
+      </article>
+      <article class="qa-card">
+        <span class="qa-tag tag-meta">⭐ 重要</span>
+        <div class="qa-question">200 股底仓，六个人的态度其实有真分歧</div>
+        <div class="qa-answer">
+<p>表面看大家都在说"拿"，但细看有三档不同的态度：</p>
+<ul><li><strong>纯拿派</strong>（逆向投资人、财报研究员）：三条卖出理由一条不成立，PE 15.85 且公司还在赚钱，继续拿</li><li><strong>条件减仓派</strong>（产业策略师）：三季报毛利率环比继续下行则<strong>先减一半</strong>；份额跌破 45% 是第二条</li><li><strong>纪律减仓派</strong>（信号派首席）：<strong>第一根大阴线出来一定要减</strong>，按纪律 9 月中下旬就该减过了；MA10（297.79）是减半线，285.74 是趋势确认失败线</li></ul>
+<p><strong>这个分歧的根源是框架不同</strong>：逆向和财报的框架里没有"止损位"这个概念（买的是"公司不会死"），信号派的框架里止损是硬纪律（"跌了 37.71% 不是不减的理由"）。</p>
+<p>短线冲浪手把话说得很直接：<strong>"现价在 MA5、MA10 之下，按纯右侧打法，破 MA10 就该减了，现在已不是'走不走'的选择题，是深套后如何处理。"</strong></p>
+<p>这里我不做取舍，只把三种态度摆出来。但有一条值得注意：<strong>产业策略师和财报研究员虽然都主张拿，但都设了"毛利率环比继续下滑"这个触发条件</strong>——也就是说， conditional holders 的退出条件是一致的。</p>
+        </div>
+      </article>
+      <article class="qa-card">
+        <span class="qa-tag tag-key">🔑 关键</span>
+        <div class="qa-question">三季报到底看什么？</div>
+        <div class="qa-answer">
+<p><strong>看毛利率，不看净利。</strong></p>
+<p>理由（估值分析师）：净利 250-260 亿是市场一致预期，已经 price in 了，达标只是"符合预期"，不构成利好。而毛利率没有一致预期，<strong>它是唯一的增量信息</strong>。</p>
+<p>具体的四个数（财报研究员）：</p>
+<ol><li><strong>动力电池毛利率</strong>——跌破 19% 黄灯、18% 红灯（红灯 = 代工化确认）</li><li><strong>单 Wh 归母</strong>——跌破 0.08 元/Wh 是代工化红线</li><li><strong>合同负债环比</strong>——再降 ≥10% 即订单前瞻走弱</li><li><strong>Q3 单季归母</strong>——低于 230 亿即显著低于预期</li></ol>
+<p>估值分析师还给了敏感度换算：<strong>毛利率每再降 1pct → 2026E EPS 少约 0.93 元 → 按 14x 口径合理价下移约 13 元。</strong></p>
+<p>---</p>
+        </div>
+      </article>
+  </div>
+</section>
+
+<section id="watch">
+  <div class="section-head">
+    <div class="section-num">05 · 关注</div>
+    <div>
+      <div class="section-title">后续关注</div>
+      <div class="section-lede">当下综合视角是基于现有数据的快照 —— 什么时候该回来重看，什么情况下我们这次的视角可能错了</div>
+    </div>
+  </div>
+  <div class="subsection-label">5a · 关键变量观察台</div>
+  <div class="trigger-wrap">
+    <table class="trigger-table">
+      <thead>
+        <tr>
+          <th style="width: 32%;">变量 · 当前</th>
+          <th>重新评估触发线</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="trigger-var"><strong>三季报毛利率</strong><span class="now">当前 H1 综合 23.93%，动力 20.63%</span></td>
+          <td class="trigger-action">环比企稳或回升 → 加仓条件闭合；环比继续下滑 → 即使净利达标也不动，2026E EPS 预期需下修</td>
+        </tr>
+        <tr>
+          <td class="trigger-var"><strong>产能利用率</strong><span class="now">当前 现 94.86%</span></td>
+          <td class="trigger-action"><strong>跌破 90% → 立刻冻结全部加仓</strong>（只否决加仓，不动 200 股底仓）；这条靠月度数据、<strong>不依赖财报口径，出得比三季报早</strong></td>
+        </tr>
+        <tr>
+          <td class="trigger-var"><strong>10 月排产环比</strong><span class="now">当前 行业 9 月 +9.2% → 10 月 +3.9%</span></td>
+          <td class="trigger-action">转负 → 逆向前两档触发条件加严（3 日 → 5 日站稳）；<strong>连续第二个月为负 → 264 / 250-252 两档作废重画</strong></td>
+        </tr>
+        <tr>
+          <td class="trigger-var"><strong>现价相对加息后中枢的偏离</strong><span class="now">当前 现 +4%~+8%</span></td>
+          <td class="trigger-action">回落至 <strong>269-286</strong> → 回到中枢；跌到 <strong>264（12.1x）</strong> → 才第一次出现真正的折扣</td>
+        </tr>
+        <tr>
+          <td class="trigger-var"><strong>相邻两档成交间隔</strong></td>
+          <td class="trigger-action">必须 ≥5 个交易日；不足则只取较低那档、跳过较高那档——防止分批在单边下跌里变成加倍</td>
+        </tr>
+        <tr>
+          <td class="trigger-var"><strong>9/29 低点 285.74</strong></td>
+          <td class="trigger-action">跌破 → W5 止跌失败，下跌重启（短线派：趋势确认失败线）；不破且二次探底成功 → 可能形成双底</td>
+        </tr>
+        <tr>
+          <td class="trigger-var"><strong>MA5 292.88 / MA10 297.79（逐日下移）</strong></td>
+          <td class="trigger-action">站上 MA5 = 短线止跌（但均线日降 2.5-2.7 元，会失真）；放量站上 MA10 = 反抽升级为反弹（须配合 120 亿量能）</td>
+        </tr>
+        <tr>
+          <td class="trigger-var"><strong>300-305 平台</strong><span class="now">当前 9/17、9/22、9/23 密集区</span></td>
+          <td class="trigger-action">吃掉 → 形态从"下降通道"转"底部震荡"；这是上方最硬的一道坎</td>
+        </tr>
+        <tr>
+          <td class="trigger-var"><strong>成交额 120 亿</strong><span class="now">当前 9 月末地量 86 亿</span></td>
+          <td class="trigger-action">回到 120 亿以上且站上 MA10 → 资金回流确认；持续 86 亿上下 → 无人接盘，盘整或二次探底</td>
+        </tr>
+        <tr>
+          <td class="trigger-var"><strong>回购累计 16.03 亿</strong><span class="now">当前 授权 200-400 亿</span></td>
+          <td class="trigger-action">10 月累计 ≥40-60 亿且股价跌破 290 仍在成交 → 趋势性回购；月内新增 &lt;10 亿 → 表态式，不改变判断</td>
+        </tr>
+        <tr>
+          <td class="trigger-var"><strong>单 Wh 归母</strong><span class="now">当前 约 0.10 元/Wh</span></td>
+          <td class="trigger-action">跌破 0.08 → 代工化红线，一票冻结备用金</td>
+        </tr>
+        <tr>
+          <td class="trigger-var"><strong>合同负债</strong><span class="now">当前 364.83 亿，较年初 -25.9%</span></td>
+          <td class="trigger-action">环比再降 ≥10% → 订单前瞻走弱，一票冻结</td>
+        </tr>
+        <tr>
+          <td class="trigger-var"><strong>国内乘用车份额</strong><span class="now">当前 46.7%，+5.6pct</span></td>
+          <td class="trigger-action">跌破 45% → 去宁化从"点状"变"系统性"</td>
+        </tr>
+        <tr>
+          <td class="trigger-var"><strong>港股 03750</strong></td>
+          <td class="trigger-action">A 股休市期间港股照常交易，节后开盘往往对齐这段涨跌幅——节后第一个要看的领先指标</td>
+        </tr>
+        <tr>
+          <td class="trigger-var"><strong>9 月装机数据</strong><span class="now">当前 10/8-10/12</span></td>
+          <td class="trigger-action">国内乘用车份额守 45%+、全球守 38%+ → 份额叙事被证伪</td>
+        </tr>
+        <tr>
+          <td class="trigger-var"><strong>PE(TTM) 15.85 / 2026E 14.1x</strong></td>
+          <td class="trigger-action">若继续向纯代工 10-12x 收敛 → 对应 245 元（-15.8%）到 204 元（-29.9%）</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="subsection-label">5b · 综合视角失效条件</div>
+  <div class="notes-stack">
+    <div class="note-item">
+      <div class="note-num">01</div>
+      <div class="note-body"><strong>三季报毛利率环比继续下滑</strong> —— 则"杀估值不杀盈利"这个核心判断被推翻，性质从估值压缩升级为盈利下修，所有价位表失效</div>
+    </div>
+    <div class="note-item">
+      <div class="note-num">02</div>
+      <div class="note-body"><strong>2026E 一致预期（EPS 20.88）被下修</strong> —— 则估值分析师的价位表全部作废重算。同一个价格，估值含义会变贵</div>
+    </div>
+    <div class="note-item">
+      <div class="note-num">03</div>
+      <div class="note-body"><strong>9 月装机数据显示国内乘用车份额跌破 45%</strong> —— 则"去宁化被夸大"这个判断不成立，份额叙事从预期变成事实</div>
+    </div>
+    <div class="note-item">
+      <div class="note-num">04</div>
+      <div class="note-body"><strong>回购进展公告证实 9 月下旬停手，且 10 月月内新增 &lt;10 亿</strong> —— 则"管理层认为 300 一线是价值区"这个推论失效，回购只剩表态意义</div>
+    </div>
+    <div class="note-item">
+      <div class="note-num">05</div>
+      <div class="note-body"><strong>节后放量跌破 285.74 并连续 3 日不收回</strong> —— 则"跌势衰竭"的判断被证伪，下跌进入第二段，本报告的点位表需整体下移</div>
+    </div>
+    <div class="note-item">
+      <div class="note-num">06</div>
+      <div class="note-body"><strong>产能利用率跌破 90%</strong> —— 则"营收端未下修"这个前提崩塌，营收敏感度（-23 元/5%）被激活，逆向的 264 / 250-252 两档同时作废，估值侧价位表整体下移</div>
+    </div>
+    <div class="note-item">
+      <div class="note-num">07</div>
+      <div class="note-body"><strong>加息预期显著降温（美债利率回落、点阵图转向）</strong> —— 则估值中枢上修回 14.1x 以上，291 从"溢价 4-8%"变成真便宜，<strong>本轮"两套框架都说现价没折扣"的结论反向失效</strong></div>
+    </div>
+    <div class="note-item">
+      <div class="note-num">08</div>
+      <div class="note-body"><strong>出现系统性风险事件（外部冲击、局势升级）</strong> —— 则所有个股层面的分析暂时失效，优先级覆盖一切</div>
+    </div>
+  </div>
+</section>
+
+<section id="appendix">
+  <div class="section-head">
+    <div class="section-num">06 · 附录</div>
+    <div>
+      <div class="section-title">数据来源与口径说明</div>
+      <div class="section-lede">取数路径、复权处理、算法自检与待核实项</div>
+    </div>
+  </div>
+  <div class="passage-card">
+<p><strong>本轮数据状态</strong>：腾讯自选股连接器（westock-mcp）<strong>未连接</strong>，Tushare 接口本轮亦不可用。因此分两路取数：</p>
+<ul><li><strong>行情与技术指标</strong>：引自前几轮已获取的数据集，技术指标由 250 条前复权日线自算</li><li><strong>产业与月度数据</strong>：<strong>降级为联网检索（WebSearch）</strong>——包括电池行业指数 01801737、碳酸锂价格、储能招标价、9 月排产与产能利用率、券商目标价。<strong>这类数据的精度弱于连接器模式，已在正文逐条标注来源。</strong></li></ul>
+<p><strong>复权处理</strong>：Tushare 日线为不复权价，期间有两次分红除权。已按复权因子分段处理（2026-08-10 后 1.9566，2026-04-22 至 08-07 为 1.9495，2026-04-21 前 1.9194）。</p>
+<p><strong>算法自检</strong>：均线、RSI、MACD、BOLL、KDJ 均为自算，算法已用历史接口值校验（9/15 的 RSI6 回算得 18.08，与当日接口值一致）。</p>
+<p><strong>待核实项</strong>（本轮无法独立验证，已在正文标注）：</p>
+<ul><li>264 / 250-252 是否有 2025 年 6-8 月的成交密集区支撑（数据窗口不足）</li><li>回购用途为注销还是股权激励/员工持股</li><li>三季报具体披露日期（法定截止 10/31，市场预期 10/15-10/28）</li><li>当前碳酸锂价格水位</li><li>单 Wh 盈利的销量口径</li><li>9 月板块相对强度（跑赢/跑输）——已在收尾阶段判定为"宁德 ≈ 板块贝塔"，但窗口差异导致方向会翻转，精确差值待复核</li><li>PE 历史精确分位（本轮为推算值，<strong>缺少逐日 PE 序列</strong>）</li><li><strong>花旗/摩根士丹利 9 月产量报告原文</strong>（本轮为二手转述，未找到原始报告）</li><li><strong>产能利用率的统计口径</strong>（"全口径"还是"动储加权"）；<strong>2025 年开工率基准</strong>（2026 年 89.33% 的对比基数）</li><li><strong>9 月产量三方口径冲突的裁决</strong>（花旗 -3% / ZE -5% / TD +5~6%，三者必有一错，须等月度装机数据验证）</li><li>ZE Consulting 数据的具体来源与样本口径</li></ul>
+<p><strong>持仓成本说明</strong>：本地档案记录显示 4 月时持有 100 股、成本 389.99 元。当前 200 股的加权成本<strong>待你确认</strong>，本报告暂按约 390 元口径处理，浮亏约 25%。</p>
+<p>---</p>
+<div class="pull-quote">⚠️ 以上内容由 AI 基于公开信息整理生成，仅供参考，不构成任何投资建议或个股推荐。投资有风险，决策需谨慎。</div>
+  </div>
+</section>
+
+
+<footer>
+  <p>⚠️ 以上内容由 AI 基于公开信息整理生成，仅供参考，不构成任何投资建议或个股推荐。投资有风险，决策需谨慎。</p>
+  <p class="footer-sub">stock-partner-team · Generated 2026-09-30</p>
+</footer>
+
+</body>
+</html>
