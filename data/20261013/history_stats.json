@@ -1,0 +1,181 @@
+{
+  "lu_ld_series": [
+    {
+      "trade_date": "20260915",
+      "lu": 31,
+      "ld": 32
+    },
+    {
+      "trade_date": "20260916",
+      "lu": 89,
+      "ld": 3
+    },
+    {
+      "trade_date": "20260917",
+      "lu": 50,
+      "ld": 2
+    },
+    {
+      "trade_date": "20260918",
+      "lu": 77,
+      "ld": 1
+    },
+    {
+      "trade_date": "20260921",
+      "lu": 101,
+      "ld": 3
+    },
+    {
+      "trade_date": "20260922",
+      "lu": 63,
+      "ld": 5
+    },
+    {
+      "trade_date": "20260923",
+      "lu": 51,
+      "ld": 15
+    },
+    {
+      "trade_date": "20260924",
+      "lu": 52,
+      "ld": 16
+    },
+    {
+      "trade_date": "20260928",
+      "lu": 35,
+      "ld": 55
+    },
+    {
+      "trade_date": "20260929",
+      "lu": 56,
+      "ld": 11
+    },
+    {
+      "trade_date": "20260930",
+      "lu": 55,
+      "ld": 11
+    },
+    {
+      "trade_date": "20261008",
+      "lu": 43,
+      "ld": 16
+    },
+    {
+      "trade_date": "20261009",
+      "lu": 71,
+      "ld": 10
+    },
+    {
+      "trade_date": "20261012",
+      "lu": 47,
+      "ld": 22
+    },
+    {
+      "trade_date": "20261013",
+      "lu": 67,
+      "ld": 9
+    }
+  ],
+  "lianban_dist": {
+    "3": 5,
+    "2": 6
+  },
+  "max_board": 3,
+  "lianban_count": 11,
+  "lianban_top": [
+    {
+      "ts_code": "605577.SH",
+      "name": "龙版传媒",
+      "连板": 3,
+      "close": 19.6,
+      "pct_chg": 9.9888,
+      "qq_amt": 11.16
+    },
+    {
+      "ts_code": "605136.SH",
+      "name": "丽人丽妆",
+      "连板": 3,
+      "close": 11.42,
+      "pct_chg": 10.0193,
+      "qq_amt": 3.59
+    },
+    {
+      "ts_code": "002696.SZ",
+      "name": "百洋股份",
+      "连板": 3,
+      "close": 8.86,
+      "pct_chg": 10.0621,
+      "qq_amt": 3.09
+    },
+    {
+      "ts_code": "002343.SZ",
+      "name": "慈文传媒",
+      "连板": 3,
+      "close": 7.36,
+      "pct_chg": 10.0149,
+      "qq_amt": 1.17
+    },
+    {
+      "ts_code": "603096.SH",
+      "name": "新经典",
+      "连板": 3,
+      "close": 20.97,
+      "pct_chg": 10.021,
+      "qq_amt": 0.9
+    },
+    {
+      "ts_code": "600693.SH",
+      "name": "东百集团",
+      "连板": 2,
+      "close": 12.3,
+      "pct_chg": 10.0179,
+      "qq_amt": 20.58
+    },
+    {
+      "ts_code": "002667.SZ",
+      "name": "*ST威领",
+      "连板": 2,
+      "close": 26.85,
+      "pct_chg": 9.9959,
+      "qq_amt": 8.54
+    },
+    {
+      "ts_code": "600851.SH",
+      "name": "海欣股份",
+      "连板": 2,
+      "close": 9.46,
+      "pct_chg": 10.0,
+      "qq_amt": 5.09
+    },
+    {
+      "ts_code": "603968.SH",
+      "name": "醋化股份",
+      "连板": 2,
+      "close": 14.36,
+      "pct_chg": 10.0383,
+      "qq_amt": 4.03
+    },
+    {
+      "ts_code": "001231.SZ",
+      "name": "农心科技",
+      "连板": 2,
+      "close": 28.17,
+      "pct_chg": 9.9961,
+      "qq_amt": 2.69
+    },
+    {
+      "ts_code": "301030.SZ",
+      "name": "*ST仕净",
+      "连板": 2,
+      "close": 5.4,
+      "pct_chg": 20.0,
+      "qq_amt": 2.37
+    }
+  ],
+  "high63": 66,
+  "low63": 143,
+  "prev_lu_n": 47,
+  "prev_lu_today_avg": 1.54,
+  "prev_lu_today_median": 0.01,
+  "prev_lu_today_up_ratio": 50.0
+}

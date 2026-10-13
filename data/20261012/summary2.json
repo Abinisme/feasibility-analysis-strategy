@@ -1,0 +1,974 @@
+{
+  "date": "20261012",
+  "total_live": 5561,
+  "up": 1167,
+  "down": 4325,
+  "flat": 69,
+  "up_ratio": 21.0,
+  "mean_pct": -1.6,
+  "median_pct": -1.68,
+  "amount_yi_total": 15507.5,
+  "limit_up": 48,
+  "limit_down": 23,
+  "failed_limit(炸板)": 32,
+  "seal_rate(封板率)": 60.0,
+  "pct_ge5": 123,
+  "pct_le5": 472,
+  "pct_ge9": 60,
+  "pct_le9": 55,
+  "amount_ge20yi": 105,
+  "mv_le50yi_share": 43.4,
+  "industry_top12": [
+    {
+      "industry": "传媒娱乐",
+      "n": 36,
+      "mean_pct": 2.2,
+      "median_pct": 1.67,
+      "amount_yi": 195.82,
+      "up": 25,
+      "limit_up": 3
+    },
+    {
+      "industry": "公路桥梁",
+      "n": 18,
+      "mean_pct": 1.09,
+      "median_pct": 0.73,
+      "amount_yi": 18.11,
+      "up": 13,
+      "limit_up": 0
+    },
+    {
+      "industry": "金融行业",
+      "n": 46,
+      "mean_pct": 1.01,
+      "median_pct": 0.97,
+      "amount_yi": 391.33,
+      "up": 35,
+      "limit_up": 0
+    },
+    {
+      "industry": "摩托车",
+      "n": 6,
+      "mean_pct": 1.01,
+      "median_pct": 0.5,
+      "amount_yi": 9.84,
+      "up": 3,
+      "limit_up": 0
+    },
+    {
+      "industry": "发电设备",
+      "n": 59,
+      "mean_pct": -0.11,
+      "median_pct": -0.6,
+      "amount_yi": 206.88,
+      "up": 24,
+      "limit_up": 2
+    },
+    {
+      "industry": "家电行业",
+      "n": 31,
+      "mean_pct": -0.19,
+      "median_pct": -0.68,
+      "amount_yi": 108.99,
+      "up": 11,
+      "limit_up": 1
+    },
+    {
+      "industry": "钢铁行业",
+      "n": 52,
+      "mean_pct": -0.69,
+      "median_pct": -0.52,
+      "amount_yi": 109.14,
+      "up": 14,
+      "limit_up": 0
+    },
+    {
+      "industry": "开发区",
+      "n": 10,
+      "mean_pct": -0.72,
+      "median_pct": -0.7,
+      "amount_yi": 12.96,
+      "up": 1,
+      "limit_up": 0
+    },
+    {
+      "industry": "印刷包装",
+      "n": 18,
+      "mean_pct": -0.74,
+      "median_pct": -0.52,
+      "amount_yi": 44.16,
+      "up": 6,
+      "limit_up": 0
+    },
+    {
+      "industry": "物资外贸",
+      "n": 20,
+      "mean_pct": -0.82,
+      "median_pct": -0.87,
+      "amount_yi": 30.92,
+      "up": 5,
+      "limit_up": 1
+    },
+    {
+      "industry": "电器行业",
+      "n": 53,
+      "mean_pct": -0.83,
+      "median_pct": -1.53,
+      "amount_yi": 183.83,
+      "up": 13,
+      "limit_up": 2
+    },
+    {
+      "industry": "电力行业",
+      "n": 60,
+      "mean_pct": -0.92,
+      "median_pct": -0.92,
+      "amount_yi": 204.68,
+      "up": 15,
+      "limit_up": 1
+    }
+  ],
+  "industry_bottom12": [
+    {
+      "industry": "飞机制造",
+      "n": 14,
+      "mean_pct": -2.34,
+      "median_pct": -2.1,
+      "amount_yi": 40.9,
+      "up": 0,
+      "limit_up": 0
+    },
+    {
+      "industry": "纺织机械",
+      "n": 7,
+      "mean_pct": -2.37,
+      "median_pct": -2.3,
+      "amount_yi": 9.24,
+      "up": 2,
+      "limit_up": 0
+    },
+    {
+      "industry": "次新股",
+      "n": 161,
+      "mean_pct": -2.41,
+      "median_pct": -2.23,
+      "amount_yi": 432.53,
+      "up": 22,
+      "limit_up": 0
+    },
+    {
+      "industry": "电子器件",
+      "n": 140,
+      "mean_pct": -2.53,
+      "median_pct": -2.45,
+      "amount_yi": 964.61,
+      "up": 10,
+      "limit_up": 0
+    },
+    {
+      "industry": "化纤行业",
+      "n": 23,
+      "mean_pct": -2.73,
+      "median_pct": -2.7,
+      "amount_yi": 99.55,
+      "up": 4,
+      "limit_up": 0
+    },
+    {
+      "industry": "农药化肥",
+      "n": 43,
+      "mean_pct": -2.77,
+      "median_pct": -2.57,
+      "amount_yi": 81.13,
+      "up": 3,
+      "limit_up": 0
+    },
+    {
+      "industry": "化工行业",
+      "n": 139,
+      "mean_pct": -2.79,
+      "median_pct": -2.51,
+      "amount_yi": 537.71,
+      "up": 15,
+      "limit_up": 0
+    },
+    {
+      "industry": "石油行业",
+      "n": 21,
+      "mean_pct": -2.84,
+      "median_pct": -3.26,
+      "amount_yi": 53.52,
+      "up": 2,
+      "limit_up": 0
+    },
+    {
+      "industry": "有色金属",
+      "n": 65,
+      "mean_pct": -2.9,
+      "median_pct": -2.91,
+      "amount_yi": 422.31,
+      "up": 4,
+      "limit_up": 0
+    },
+    {
+      "industry": "房地产",
+      "n": 98,
+      "mean_pct": -2.93,
+      "median_pct": -2.92,
+      "amount_yi": 222.73,
+      "up": 7,
+      "limit_up": 0
+    },
+    {
+      "industry": "农林牧渔",
+      "n": 59,
+      "mean_pct": -3.01,
+      "median_pct": -2.67,
+      "amount_yi": 248.25,
+      "up": 6,
+      "limit_up": 1
+    },
+    {
+      "industry": "煤炭行业",
+      "n": 38,
+      "mean_pct": -3.1,
+      "median_pct": -2.83,
+      "amount_yi": 163.86,
+      "up": 3,
+      "limit_up": 0
+    }
+  ],
+  "limit_up_by_industry": [
+    {
+      "industry": "未分类",
+      "limit_up": 26,
+      "mean_pct": -1.6
+    },
+    {
+      "industry": "商业百货",
+      "limit_up": 3,
+      "mean_pct": -1.26
+    },
+    {
+      "industry": "传媒娱乐",
+      "limit_up": 3,
+      "mean_pct": 2.2
+    },
+    {
+      "industry": "生物制药",
+      "limit_up": 2,
+      "mean_pct": -1.61
+    },
+    {
+      "industry": "机械行业",
+      "limit_up": 2,
+      "mean_pct": -1.5
+    },
+    {
+      "industry": "发电设备",
+      "limit_up": 2,
+      "mean_pct": -0.11
+    },
+    {
+      "industry": "电器行业",
+      "limit_up": 2,
+      "mean_pct": -0.83
+    },
+    {
+      "industry": "电子信息",
+      "limit_up": 1,
+      "mean_pct": -1.17
+    },
+    {
+      "industry": "电力行业",
+      "limit_up": 1,
+      "mean_pct": -0.92
+    },
+    {
+      "industry": "物资外贸",
+      "limit_up": 1,
+      "mean_pct": -0.82
+    },
+    {
+      "industry": "家电行业",
+      "limit_up": 1,
+      "mean_pct": -0.19
+    },
+    {
+      "industry": "纺织行业",
+      "limit_up": 1,
+      "mean_pct": -1.22
+    },
+    {
+      "industry": "其它行业",
+      "limit_up": 1,
+      "mean_pct": -1.69
+    },
+    {
+      "industry": "塑料制品",
+      "limit_up": 1,
+      "mean_pct": -1.92
+    },
+    {
+      "industry": "农林牧渔",
+      "limit_up": 1,
+      "mean_pct": -3.01
+    }
+  ],
+  "top_gainers": [
+    {
+      "ts_code": "301052.SZ",
+      "name": "果麦文化",
+      "industry": "未分类",
+      "close": 30.47,
+      "pct_chg": 20.01,
+      "amount_yi": 5.84,
+      "total_mv_yi": 30.15
+    },
+    {
+      "ts_code": "688004.SH",
+      "name": "博汇科技",
+      "industry": "未分类",
+      "close": 37.25,
+      "pct_chg": 20.01,
+      "amount_yi": 4.1,
+      "total_mv_yi": 29.83
+    },
+    {
+      "ts_code": "300829.SZ",
+      "name": "金丹科技",
+      "industry": "未分类",
+      "close": 28.02,
+      "pct_chg": 20.0,
+      "amount_yi": 6.13,
+      "total_mv_yi": 63.68
+    },
+    {
+      "ts_code": "301030.SZ",
+      "name": "*ST仕净",
+      "industry": "未分类",
+      "close": 4.5,
+      "pct_chg": 20.0,
+      "amount_yi": 0.58,
+      "total_mv_yi": 9.11
+    },
+    {
+      "ts_code": "301419.SZ",
+      "name": "阿莱德",
+      "industry": "未分类",
+      "close": 47.7,
+      "pct_chg": 20.0,
+      "amount_yi": 4.22,
+      "total_mv_yi": 71.55
+    },
+    {
+      "ts_code": "301658.SZ",
+      "name": "首航新能",
+      "industry": "未分类",
+      "close": 27.12,
+      "pct_chg": 20.0,
+      "amount_yi": 5.12,
+      "total_mv_yi": 111.84
+    },
+    {
+      "ts_code": "688517.SH",
+      "name": "金冠电气",
+      "industry": "未分类",
+      "close": 21.18,
+      "pct_chg": 20.0,
+      "amount_yi": 4.71,
+      "total_mv_yi": 28.93
+    },
+    {
+      "ts_code": "300006.SZ",
+      "name": "莱美药业",
+      "industry": "生物制药",
+      "close": 6.56,
+      "pct_chg": 19.93,
+      "amount_yi": 13.34,
+      "total_mv_yi": 69.27
+    },
+    {
+      "ts_code": "920575.BJ",
+      "name": "*ST康乐",
+      "industry": "未分类",
+      "close": 5.57,
+      "pct_chg": 17.51,
+      "amount_yi": 0.59,
+      "total_mv_yi": 15.65
+    },
+    {
+      "ts_code": "301310.SZ",
+      "name": "鑫宏业",
+      "industry": "未分类",
+      "close": 69.93,
+      "pct_chg": 16.36,
+      "amount_yi": 9.16,
+      "total_mv_yi": 134.16
+    },
+    {
+      "ts_code": "301223.SZ",
+      "name": "中荣股份",
+      "industry": "未分类",
+      "close": 21.11,
+      "pct_chg": 15.36,
+      "amount_yi": 1.5,
+      "total_mv_yi": 40.77
+    },
+    {
+      "ts_code": "920200.BJ",
+      "name": "振宏股份",
+      "industry": "次新股",
+      "close": 32.2,
+      "pct_chg": 13.94,
+      "amount_yi": 2.17,
+      "total_mv_yi": 32.7
+    },
+    {
+      "ts_code": "301002.SZ",
+      "name": "崧盛股份",
+      "industry": "未分类",
+      "close": 30.7,
+      "pct_chg": 13.28,
+      "amount_yi": 4.78,
+      "total_mv_yi": 41.43
+    },
+    {
+      "ts_code": "300781.SZ",
+      "name": "因赛集团",
+      "industry": "未分类",
+      "close": 30.6,
+      "pct_chg": 12.09,
+      "amount_yi": 5.7,
+      "total_mv_yi": 50.24
+    },
+    {
+      "ts_code": "688156.SH",
+      "name": "路德科技",
+      "industry": "未分类",
+      "close": 25.4,
+      "pct_chg": 11.4,
+      "amount_yi": 3.23,
+      "total_mv_yi": 25.58
+    },
+    {
+      "ts_code": "688282.SH",
+      "name": "理工导航",
+      "industry": "未分类",
+      "close": 55.97,
+      "pct_chg": 11.29,
+      "amount_yi": 1.31,
+      "total_mv_yi": 49.87
+    },
+    {
+      "ts_code": "300093.SZ",
+      "name": "金刚光伏",
+      "industry": "玻璃行业",
+      "close": 21.7,
+      "pct_chg": 11.23,
+      "amount_yi": 2.15,
+      "total_mv_yi": 120.0
+    },
+    {
+      "ts_code": "300904.SZ",
+      "name": "威力传动",
+      "industry": "未分类",
+      "close": 52.78,
+      "pct_chg": 10.42,
+      "amount_yi": 3.03,
+      "total_mv_yi": 38.2
+    },
+    {
+      "ts_code": "301190.SZ",
+      "name": "善水科技",
+      "industry": "未分类",
+      "close": 48.45,
+      "pct_chg": 10.14,
+      "amount_yi": 9.4,
+      "total_mv_yi": 103.99
+    },
+    {
+      "ts_code": "600831.SH",
+      "name": "广电网络",
+      "industry": "传媒娱乐",
+      "close": 3.91,
+      "pct_chg": 10.14,
+      "amount_yi": 1.54,
+      "total_mv_yi": 27.8
+    },
+    {
+      "ts_code": "000892.SZ",
+      "name": "欢瑞世纪",
+      "industry": "电子信息",
+      "close": 5.34,
+      "pct_chg": 10.1,
+      "amount_yi": 12.58,
+      "total_mv_yi": 52.38
+    },
+    {
+      "ts_code": "002692.SZ",
+      "name": "远程股份",
+      "industry": "电力行业",
+      "close": 5.24,
+      "pct_chg": 10.08,
+      "amount_yi": 2.66,
+      "total_mv_yi": 37.63
+    },
+    {
+      "ts_code": "001330.SZ",
+      "name": "博纳影业",
+      "industry": "未分类",
+      "close": 7.67,
+      "pct_chg": 10.04,
+      "amount_yi": 15.72,
+      "total_mv_yi": 105.43
+    },
+    {
+      "ts_code": "002441.SZ",
+      "name": "众业达",
+      "industry": "商业百货",
+      "close": 9.21,
+      "pct_chg": 10.04,
+      "amount_yi": 2.55,
+      "total_mv_yi": 50.15
+    },
+    {
+      "ts_code": "600693.SH",
+      "name": "东百集团",
+      "industry": "商业百货",
+      "close": 11.18,
+      "pct_chg": 10.04,
+      "amount_yi": 3.03,
+      "total_mv_yi": 97.25
+    }
+  ],
+  "top_losers": [
+    {
+      "ts_code": "688670.SH",
+      "name": "金迪克",
+      "industry": "未分类",
+      "close": 15.34,
+      "pct_chg": -19.98,
+      "amount_yi": 0.53,
+      "total_mv_yi": 18.9
+    },
+    {
+      "ts_code": "688796.SH",
+      "name": "百奥赛图",
+      "industry": "次新股",
+      "close": 94.56,
+      "pct_chg": -17.76,
+      "amount_yi": 6.21,
+      "total_mv_yi": 422.59
+    },
+    {
+      "ts_code": "300198.SZ",
+      "name": "*ST纳川",
+      "industry": "塑料制品",
+      "close": 2.02,
+      "pct_chg": -15.13,
+      "amount_yi": 1.01,
+      "total_mv_yi": 20.84
+    },
+    {
+      "ts_code": "688662.SH",
+      "name": "富信科技",
+      "industry": "未分类",
+      "close": 99.1,
+      "pct_chg": -13.65,
+      "amount_yi": 17.18,
+      "total_mv_yi": 113.67
+    },
+    {
+      "ts_code": "001246.SZ",
+      "name": "C力勤资源",
+      "industry": "次新股",
+      "close": 39.0,
+      "pct_chg": -13.43,
+      "amount_yi": 24.54,
+      "total_mv_yi": 674.24
+    },
+    {
+      "ts_code": "688399.SH",
+      "name": "硕世生物",
+      "industry": "未分类",
+      "close": 26.31,
+      "pct_chg": -12.07,
+      "amount_yi": 1.93,
+      "total_mv_yi": 32.66
+    },
+    {
+      "ts_code": "300464.SZ",
+      "name": "星徽股份",
+      "industry": "未分类",
+      "close": 8.34,
+      "pct_chg": -10.8,
+      "amount_yi": 2.02,
+      "total_mv_yi": 38.97
+    },
+    {
+      "ts_code": "688117.SH",
+      "name": "圣诺生物",
+      "industry": "未分类",
+      "close": 16.09,
+      "pct_chg": -10.76,
+      "amount_yi": 2.69,
+      "total_mv_yi": 35.45
+    },
+    {
+      "ts_code": "688655.SH",
+      "name": "迅捷兴",
+      "industry": "未分类",
+      "close": 58.99,
+      "pct_chg": -10.76,
+      "amount_yi": 8.56,
+      "total_mv_yi": 78.69
+    },
+    {
+      "ts_code": "920779.BJ",
+      "name": "武汉蓝电",
+      "industry": "未分类",
+      "close": 30.24,
+      "pct_chg": -10.51,
+      "amount_yi": 1.79,
+      "total_mv_yi": 24.21
+    },
+    {
+      "ts_code": "301716.SZ",
+      "name": "C鸿富诚",
+      "industry": "次新股",
+      "close": 485.0,
+      "pct_chg": -10.35,
+      "amount_yi": 16.87,
+      "total_mv_yi": 363.37
+    },
+    {
+      "ts_code": "688432.SH",
+      "name": "有研硅",
+      "industry": "未分类",
+      "close": 40.91,
+      "pct_chg": -10.34,
+      "amount_yi": 20.14,
+      "total_mv_yi": 511.5
+    },
+    {
+      "ts_code": "920202.BJ",
+      "name": "安达股份",
+      "industry": "次新股",
+      "close": 13.09,
+      "pct_chg": -10.22,
+      "amount_yi": 0.87,
+      "total_mv_yi": 14.66
+    },
+    {
+      "ts_code": "688244.SH",
+      "name": "永信至诚",
+      "industry": "未分类",
+      "close": 21.57,
+      "pct_chg": -10.13,
+      "amount_yi": 3.93,
+      "total_mv_yi": 32.56
+    },
+    {
+      "ts_code": "002285.SZ",
+      "name": "世联行",
+      "industry": "房地产",
+      "close": 2.94,
+      "pct_chg": -10.09,
+      "amount_yi": 7.55,
+      "total_mv_yi": 58.59
+    },
+    {
+      "ts_code": "603668.SH",
+      "name": "天马科技",
+      "industry": "未分类",
+      "close": 9.41,
+      "pct_chg": -10.04,
+      "amount_yi": 2.0,
+      "total_mv_yi": 47.6
+    },
+    {
+      "ts_code": "600664.SH",
+      "name": "哈药股份",
+      "industry": "生物制药",
+      "close": 6.65,
+      "pct_chg": -10.01,
+      "amount_yi": 3.96,
+      "total_mv_yi": 167.48
+    },
+    {
+      "ts_code": "600722.SH",
+      "name": "金牛化工",
+      "industry": "化工行业",
+      "close": 15.19,
+      "pct_chg": -10.01,
+      "amount_yi": 13.13,
+      "total_mv_yi": 103.34
+    },
+    {
+      "ts_code": "603002.SH",
+      "name": "宏昌电子",
+      "industry": "化工行业",
+      "close": 15.91,
+      "pct_chg": -10.01,
+      "amount_yi": 14.44,
+      "total_mv_yi": 180.43
+    },
+    {
+      "ts_code": "603588.SH",
+      "name": "高能环境",
+      "industry": "环保行业",
+      "close": 14.93,
+      "pct_chg": -10.01,
+      "amount_yi": 9.41,
+      "total_mv_yi": 227.42
+    },
+    {
+      "ts_code": "000056.SZ",
+      "name": "*ST皇庭",
+      "industry": "房地产",
+      "close": 2.43,
+      "pct_chg": -10.0,
+      "amount_yi": 0.51,
+      "total_mv_yi": 28.74
+    },
+    {
+      "ts_code": "002636.SZ",
+      "name": "金安国纪",
+      "industry": "电子器件",
+      "close": 64.5,
+      "pct_chg": -10.0,
+      "amount_yi": 25.19,
+      "total_mv_yi": 469.56
+    },
+    {
+      "ts_code": "002717.SZ",
+      "name": "*ST岭南",
+      "industry": "建筑建材",
+      "close": 0.45,
+      "pct_chg": -10.0,
+      "amount_yi": 0.02,
+      "total_mv_yi": 8.19
+    },
+    {
+      "ts_code": "601579.SH",
+      "name": "会稽山",
+      "industry": "酿酒行业",
+      "close": 36.25,
+      "pct_chg": -10.0,
+      "amount_yi": 9.05,
+      "total_mv_yi": 173.81
+    },
+    {
+      "ts_code": "603021.SH",
+      "name": "*ST华鹏",
+      "industry": "玻璃行业",
+      "close": 4.05,
+      "pct_chg": -10.0,
+      "amount_yi": 0.48,
+      "total_mv_yi": 12.96
+    }
+  ],
+  "amt_top25": [
+    {
+      "ts_code": "300308.SZ",
+      "name": "中际旭创",
+      "industry": "机械行业",
+      "close": 724.47,
+      "pct_chg": -6.41,
+      "amount_yi": 156.24
+    },
+    {
+      "ts_code": "300750.SZ",
+      "name": "宁德时代",
+      "industry": "未分类",
+      "close": 298.38,
+      "pct_chg": 0.21,
+      "amount_yi": 125.8
+    },
+    {
+      "ts_code": "300502.SZ",
+      "name": "新易盛",
+      "industry": "未分类",
+      "close": 347.6,
+      "pct_chg": -6.1,
+      "amount_yi": 125.49
+    },
+    {
+      "ts_code": "688825.SH",
+      "name": "长鑫科技",
+      "industry": "次新股",
+      "close": 48.34,
+      "pct_chg": -5.22,
+      "amount_yi": 109.8
+    },
+    {
+      "ts_code": "002384.SZ",
+      "name": "东山精密",
+      "industry": "电子信息",
+      "close": 135.9,
+      "pct_chg": -6.59,
+      "amount_yi": 100.86
+    },
+    {
+      "ts_code": "688256.SH",
+      "name": "寒武纪",
+      "industry": "未分类",
+      "close": 971.88,
+      "pct_chg": -1.43,
+      "amount_yi": 82.9
+    },
+    {
+      "ts_code": "603986.SH",
+      "name": "兆易创新",
+      "industry": "未分类",
+      "close": 310.84,
+      "pct_chg": -4.78,
+      "amount_yi": 79.83
+    },
+    {
+      "ts_code": "300394.SZ",
+      "name": "天孚通信",
+      "industry": "电子信息",
+      "close": 229.54,
+      "pct_chg": -2.34,
+      "amount_yi": 65.05
+    },
+    {
+      "ts_code": "002709.SZ",
+      "name": "天赐材料",
+      "industry": "化工行业",
+      "close": 34.74,
+      "pct_chg": -2.63,
+      "amount_yi": 58.86
+    },
+    {
+      "ts_code": "600127.SH",
+      "name": "金健米业",
+      "industry": "农林牧渔",
+      "close": 13.9,
+      "pct_chg": -8.43,
+      "amount_yi": 58.81
+    },
+    {
+      "ts_code": "601138.SH",
+      "name": "工业富联",
+      "industry": "未分类",
+      "close": 52.05,
+      "pct_chg": -7.17,
+      "amount_yi": 57.98
+    },
+    {
+      "ts_code": "688498.SH",
+      "name": "源杰科技",
+      "industry": "未分类",
+      "close": 1122.11,
+      "pct_chg": -6.96,
+      "amount_yi": 56.47
+    },
+    {
+      "ts_code": "600176.SH",
+      "name": "中国巨石",
+      "industry": "玻璃行业",
+      "close": 38.3,
+      "pct_chg": -0.7,
+      "amount_yi": 55.82
+    },
+    {
+      "ts_code": "603228.SH",
+      "name": "景旺电子",
+      "industry": "未分类",
+      "close": 96.09,
+      "pct_chg": -0.92,
+      "amount_yi": 54.08
+    },
+    {
+      "ts_code": "600183.SH",
+      "name": "生益科技",
+      "industry": "电子器件",
+      "close": 120.0,
+      "pct_chg": -3.33,
+      "amount_yi": 53.94
+    },
+    {
+      "ts_code": "002475.SZ",
+      "name": "立讯精密",
+      "industry": "电子器件",
+      "close": 46.32,
+      "pct_chg": -2.67,
+      "amount_yi": 50.99
+    },
+    {
+      "ts_code": "300450.SZ",
+      "name": "先导智能",
+      "industry": "其它行业",
+      "close": 37.88,
+      "pct_chg": 3.13,
+      "amount_yi": 47.43
+    },
+    {
+      "ts_code": "002938.SZ",
+      "name": "鹏鼎控股",
+      "industry": "未分类",
+      "close": 76.48,
+      "pct_chg": 2.45,
+      "amount_yi": 47.41
+    },
+    {
+      "ts_code": "603259.SH",
+      "name": "药明康德",
+      "industry": "未分类",
+      "close": 157.85,
+      "pct_chg": 0.03,
+      "amount_yi": 47.31
+    },
+    {
+      "ts_code": "601899.SH",
+      "name": "紫金矿业",
+      "industry": "有色金属",
+      "close": 30.22,
+      "pct_chg": -1.88,
+      "amount_yi": 45.7
+    },
+    {
+      "ts_code": "002487.SZ",
+      "name": "大金重工",
+      "industry": "钢铁行业",
+      "close": 47.1,
+      "pct_chg": 7.66,
+      "amount_yi": 45.67
+    },
+    {
+      "ts_code": "300274.SZ",
+      "name": "阳光电源",
+      "industry": "电器行业",
+      "close": 82.35,
+      "pct_chg": 2.07,
+      "amount_yi": 45.45
+    },
+    {
+      "ts_code": "300364.SZ",
+      "name": "中文在线",
+      "industry": "传媒娱乐",
+      "close": 25.41,
+      "pct_chg": 3.84,
+      "amount_yi": 44.92
+    },
+    {
+      "ts_code": "600487.SH",
+      "name": "亨通光电",
+      "industry": "电子信息",
+      "close": 49.69,
+      "pct_chg": -6.16,
+      "amount_yi": 44.69
+    },
+    {
+      "ts_code": "002436.SZ",
+      "name": "兴森科技",
+      "industry": "电子器件",
+      "close": 35.37,
+      "pct_chg": -8.15,
+      "amount_yi": 44.3
+    }
+  ]
+}
