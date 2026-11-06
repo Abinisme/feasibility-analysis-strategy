@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>A股复盘 —— 2026年11月6日（周五 · 全球AI硬件杀估值；专题："同样是AI叙事"是个伪命题——设备补跌 vs 光模块反弹的赔率对决）</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif; line-height:1.8; padding:20px 14px 60px; }
+.container { max-width:820px; margin:0 auto; }
+.toolbar { position:sticky; top:0; background:rgba(13,17,23,0.95); backdrop-filter:blur(8px); padding:10px 0; margin-bottom:18px; display:flex; align-items:center; gap:10px; border-bottom:1px solid #30363d; z-index:10; }
+.toolbar a { color:#58a6ff; text-decoration:none; font-size:0.85rem; white-space:nowrap; }
+.toolbar a:hover { text-decoration:underline; }
+.toolbar .sep { color:#484f58; }
+h1 { font-size:1.5rem; color:#f0f6fc; border-bottom:2px solid #30363d; padding-bottom:10px; margin-bottom:18px; }
+h2 { font-size:1.2rem; color:#58a6ff; margin:26px 0 12px; padding-left:10px; border-left:3px solid #58a6ff; }
+h3 { font-size:1.05rem; color:#d29922; margin:20px 0 10px; }
+h4 { font-size:0.98rem; color:#c9d1d9; margin:16px 0 8px; }
+p { margin:8px 0; }
+ul, ol { padding-left:24px; margin:8px 0; }
+li { margin:4px 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+blockquote { border-left:4px solid #30363d; background:#161b22; padding:8px 14px; margin:12px 0; color:#8b949e; border-radius:0 6px 6px 0; }
+blockquote p { margin:4px 0; }
+code { background:#161b22; padding:2px 6px; border-radius:4px; font-size:0.88em; font-family:"SF Mono",Consolas,Menlo,monospace; }
+pre { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:12px 14px; overflow-x:auto; margin:12px 0; }
+pre code { background:none; padding:0; }
+table { border-collapse:collapse; width:100%; margin:12px 0; font-size:0.9em; display:block; overflow-x:auto; }
+th, td { border:1px solid #30363d; padding:7px 10px; text-align:left; }
+th { background:#161b22; color:#58a6ff; font-weight:600; }
+tr:nth-child(even) td { background:rgba(22,27,34,0.5); }
+hr { border:none; border-top:1px solid #30363d; margin:20px 0; }
+img { max-width:100%; border-radius:6px; }
+strong { color:#f0f6fc; }
+.toc { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:14px 18px; margin:14px 0 20px; }
+.toc h3 { margin:0 0 8px; color:#58a6ff; }
+.toc a { display:block; padding:3px 0; font-size:0.9em; color:#8b949e; }
+.toc a:hover { color:#58a6ff; text-decoration:none; }
+.footer { text-align:center; color:#484f58; font-size:0.78rem; margin-top:40px; padding-top:16px; border-top:1px solid #30363d; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="toolbar">
+    <a href="../index.html">🏠 首页</a><span class="sep">|</span>
+    <a href="../replay_index.html">📚 复盘合集</a><span class="sep">|</span>
+    <span style="color:#8b949e;font-size:0.8rem;">任务库持仓复盘 · A股复盘_20261106_设备与光模块赔率对决.md</span>
+  </div>
+  
+  <h1>A股复盘 —— 2026年11月6日（周五 · 全球AI硬件杀估值；专题：&quot;同样是AI叙事&quot;是个伪命题——设备补跌 vs 光模块反弹的赔率对决）</h1>
+<blockquote>
+<p><strong>免责声明</strong>：本文仅供学习交流与市场复盘参考，不构成任何投资建议。市场有风险，投资需谨慎。</p>
+<p><strong>数据口径</strong>：指数/个股来自 tushare 与腾讯行情（前复权）；估值（PE/PB）来自腾讯行情快照；技术指标自算；事件引自公开报道。</p>
+</blockquote>
+<hr>
+<h2 id="sec-0">目录</h2>
+<ol>
+<li>今日盘面：外围史诗级杀跌，A股被动跟跌（“换仓&quot;而非&quot;崩盘”）</li>
+<li><strong>专题核心：为什么&quot;同样是 AI 叙事&quot;，今天差了 9 个百分点</strong></li>
+<li>两边的量化对照（PE / 位置 / 赔率 / 拥挤度）</li>
+<li>“设备补跌” vs “光模块反弹”：赔率与概率的双重拆解</li>
+<li>结论：两份&quot;AI 叙事&quot;的资产，风险性质完全不同</li>
+<li>操作建议</li>
+</ol>
+<hr>
+<h2 id="sec-1">一、今日盘面：外围史诗级杀跌，A股被动跟跌</h2>
+<h3 id="sec-2">1.1 导火索在隔夜</h3>
+<table>
+<thead>
+<tr>
+<th>市场/指标</th>
+<th style="text-align:center">表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>道指</td>
+<td style="text-align:center"><strong>-3.44%</strong></td>
+</tr>
+<tr>
+<td>标普500</td>
+<td style="text-align:center"><strong>-4.36%</strong></td>
+</tr>
+<tr>
+<td><strong>纳指</strong></td>
+<td style="text-align:center"><strong>-5.52%</strong>（较历史高点回撤 11.9%，进入回调区间）</td>
+</tr>
+<tr>
+<td>纳斯达克100</td>
+<td style="text-align:center">-6.36%</td>
+</tr>
+<tr>
+<td><strong>费城半导体指数</strong></td>
+<td style="text-align:center"><strong>-12.25%（创 2020 年 3 月以来最大单日跌幅）</strong></td>
+</tr>
+<tr>
+<td><strong>英伟达 / AMD</strong></td>
+<td style="text-align:center"><strong>-9% / -17%</strong></td>
+</tr>
+<tr>
+<td>康宁 / Lumentum</td>
+<td style="text-align:center">-12.9% / <strong>-18.68%</strong></td>
+</tr>
+<tr>
+<td><strong>VIX</strong></td>
+<td style="text-align:center"><strong>+69.48%（报 28.15）</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>触发因素</strong>：美国中期选举出现&quot;蓝潮&quot;（民主党横扫国会）→ <strong>市场担忧 AI 监管收紧</strong>（有议员主张&quot;暂停先进人工智能发展&quot;；11/3 地方投票中 44 项涉及暂停数据中心建设）。</p>
+<blockquote>
+<p><strong>⭐ 这不是&quot;业绩雷&quot;，是&quot;政治雷&quot;</strong> —— 打击的是&quot;AI 数据中心的建设预期&quot;，不是&quot;当期财报&quot;。</p>
+</blockquote>
+<h3 id="sec-3">1.2 A股：被动跟跌，不是主动崩盘</h3>
+<table>
+<thead>
+<tr>
+<th>指数</th>
+<th style="text-align:center">收盘</th>
+<th style="text-align:center">涨跌</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证</td>
+<td style="text-align:center">3,649.18</td>
+<td style="text-align:center"><strong>-1.10%</strong></td>
+<td>最低 3,610，尾盘拉回</td>
+</tr>
+<tr>
+<td>深成</td>
+<td style="text-align:center">11,175.78</td>
+<td style="text-align:center">-2.57%</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>创业板</strong></td>
+<td style="text-align:center">2,465.23</td>
+<td style="text-align:center"><strong>-3.96%</strong></td>
+<td>失守 2,470</td>
+</tr>
+<tr>
+<td>科创50</td>
+<td style="text-align:center">1,253.20</td>
+<td style="text-align:center">-2.60%</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>上证50</strong></td>
+<td style="text-align:center">2,787.41</td>
+<td style="text-align:center"><strong>-0.84%</strong></td>
+<td><strong>收在全天最高点</strong></td>
+</tr>
+</tbody>
+</table>
+<p>成交 <strong>1.66 万亿（缩量 4,635 亿）</strong>；涨 758 / 跌 4,741（红盘率 13.8%）。</p>
+<p><strong>结构（“换仓&quot;而非&quot;离场”）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>杀跌</th>
+<th>逆势</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CPO/光模块</strong>：中际旭创 <strong>-9.19%</strong>、新易盛 -7.28%、天孚 -5%+、剑桥科技/东山精密跌停、工业富联 -8.08%</td>
+<td><strong>石油</strong>：中石油 +1.28%</td>
+</tr>
+<tr>
+<td><strong>PCB / 存储 / 半导体</strong>：澜起 -10%、寒武纪 -5%、长鑫 -4.98%</td>
+<td><strong>煤炭</strong>：神华 +1.57%</td>
+</tr>
+<tr>
+<td>CRO：近岸蛋白 -13%、康龙化成 -8%</td>
+<td><strong>银行</strong>：工行 +1.08%、沪农商行 +4%</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>消费</strong>：茅台 +0.07%</td>
+</tr>
+<tr>
+<td></td>
+<td>农业涨停潮、AI短剧（浙文影业 5 板）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐ “上证50 收在全天最高 + 中石油/神华/工行翻红”</strong> —— 资金没有离场，是从&quot;讲故事的高位票&quot;换到&quot;有分红、有现金流&quot;的底部票。</p>
+</blockquote>
+<hr>
+<h2 id="sec-4">二、专题核心：为什么&quot;同样是 AI 叙事&quot;，今天差了 9 个百分点</h2>
+<blockquote>
+<p><strong>你的问题：同样是 AI 叙事，不会差这么多。设备补跌的风险大，还是光估值反弹的机会大？</strong></p>
+</blockquote>
+<p><strong>先回答第一句：这个前提本身不成立。</strong></p>
+<p><strong>&quot;AI 叙事&quot;不是一个叙事，是两个完全相反的叙事</strong>：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>中际旭创（光模块）</strong></th>
+<th><strong>北方华创（半导体设备）</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>叙事内核</strong></td>
+<td><strong>“全球 AI 资本开支”</strong> —— 北美云厂商建数据中心，需要光模块</td>
+<td><strong>“中国自主可控”</strong> —— 国内晶圆厂扩产，需要国产设备</td>
+</tr>
+<tr>
+<td><strong>需求来自</strong></td>
+<td><strong>海外</strong>（Meta/微软/谷歌/亚马逊）</td>
+<td><strong>国内</strong>（中芯、华虹、长存、长鑫）</td>
+</tr>
+<tr>
+<td><strong>对美国&quot;蓝潮&quot;的暴露</strong></td>
+<td>⚠️ <strong>直接暴露</strong>（监管落地 → 数据中心建设放缓 → 光模块订单下修）</td>
+<td>✅ <strong>免疫，甚至反向受益</strong>（中美脱钩加剧 → 国产替代加速）</td>
+</tr>
+<tr>
+<td><strong>定价权</strong></td>
+<td>弱（全球竞争，价格战）</td>
+<td>强（国内几乎没有替代者）</td>
+</tr>
+<tr>
+<td><strong>今日表现</strong></td>
+<td><strong>-9.19%</strong></td>
+<td><strong>-0.18%</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐⭐ 这就是&quot;差的 9 个百分点&quot;的全部答案</strong>：
+<strong>&quot;蓝潮&quot;打的是&quot;全球 AI 资本开支&quot;这条叙事，而北方华创站在&quot;中国自主可控&quot;这条叙事上 —— 后者恰恰是前者受损时的受益方。</strong>
+<strong>它们不是&quot;同一个叙事的两端&quot;，是&quot;两条方向相反的叙事&quot;。</strong></p>
+</blockquote>
+<hr>
+<h2 id="sec-5">三、两边的量化对照（数据颠覆直觉）</h2>
+<h3 id="sec-6">3.1 核心对比表</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th style="text-align:center"><strong>中际旭创</strong></th>
+<th style="text-align:center"><strong>北方华创</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>收盘</td>
+<td style="text-align:center"><strong>448.00</strong>（-9.19%）</td>
+<td style="text-align:center"><strong>560.00</strong>（-0.18%）</td>
+</tr>
+<tr>
+<td><strong>PE(TTM)</strong></td>
+<td style="text-align:center"><strong>20.37</strong></td>
+<td style="text-align:center"><strong>70.48</strong></td>
+</tr>
+<tr>
+<td><strong>PB</strong></td>
+<td style="text-align:center"><strong>5.59</strong></td>
+<td style="text-align:center"><strong>9.53</strong></td>
+</tr>
+<tr>
+<td>换手率</td>
+<td style="text-align:center">4.88%</td>
+<td style="text-align:center">1.91%</td>
+</tr>
+<tr>
+<td>2026 年内高</td>
+<td style="text-align:center">1,415.69（6/22）</td>
+<td style="text-align:center">967.24（7/1）</td>
+</tr>
+<tr>
+<td><strong>距 2026 高</strong></td>
+<td style="text-align:center"><strong>-68.4%</strong></td>
+<td style="text-align:center"><strong>-42.1%</strong></td>
+</tr>
+<tr>
+<td>2026 年内低</td>
+<td style="text-align:center"><strong>427.34（就是今天）</strong></td>
+<td style="text-align:center">421.49（4/7）</td>
+</tr>
+<tr>
+<td><strong>距 2026 低</strong></td>
+<td style="text-align:center"><strong>+4.8%（几乎在最低点）</strong></td>
+<td style="text-align:center"><strong>+32.9%</strong></td>
+</tr>
+<tr>
+<td><strong>2025 年区间</strong></td>
+<td style="text-align:center"><strong>334.81 ~ 656.61</strong></td>
+<td style="text-align:center"><strong>385.86 ~ 488.11</strong></td>
+</tr>
+<tr>
+<td><strong>现价在 2025 区间的位置</strong></td>
+<td style="text-align:center"><strong>448（34% 分位）</strong></td>
+<td style="text-align:center"><strong>560（已超 2025 年最高 15%）</strong></td>
+</tr>
+<tr>
+<td>MA20</td>
+<td style="text-align:center">604.26（<strong>-25.9%</strong>）</td>
+<td style="text-align:center">544.50（<strong>+2.8%，站上</strong>）</td>
+</tr>
+<tr>
+<td>MA60</td>
+<td style="text-align:center">789.21（-43.2%）</td>
+<td style="text-align:center">636.20（-12.0%）</td>
+</tr>
+<tr>
+<td><strong>MA250（年线）</strong></td>
+<td style="text-align:center">776.23（<strong>-42.3%</strong>）</td>
+<td style="text-align:center">564.39（<strong>-0.8%，就在年线上</strong>）</td>
+</tr>
+<tr>
+<td>近 5 日</td>
+<td style="text-align:center"><strong>-19.0%</strong></td>
+<td style="text-align:center"><strong>+17.0%</strong></td>
+</tr>
+<tr>
+<td>近 20 日</td>
+<td style="text-align:center"><strong>-42.1%</strong></td>
+<td style="text-align:center">-5.7%</td>
+</tr>
+<tr>
+<td>近 60 日</td>
+<td style="text-align:center">-53.0%</td>
+<td style="text-align:center">-24.6%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-7">3.2 三个反直觉的发现</h3>
+<h4>发现一：<strong>跌得多≠便宜，PE 差 3.5 倍</strong></h4>
+<ul>
+<li><strong>中际旭创 PE 20.37</strong>（跌 68% 之后的&quot;便宜&quot;）</li>
+<li><strong>北方华创 PE 70.48</strong>（跌 42% 之后仍然&quot;贵&quot;）</li>
+</ul>
+<blockquote>
+<p><strong>但 PE 要放在&quot;盈利质量&quot;里看</strong>：</p>
+<ul>
+<li>中际旭创的 20 倍 PE，建立在**“AI 资本开支高峰期的利润”**上 —— 如果 2027 年订单下修 30%，PE 立刻变成 <strong>29 倍</strong></li>
+<li>北方华创的 70 倍 PE，建立在**“订单尚未确认收入”**上（设备行业收入确认滞后 6-12 个月）—— 如果订单如期交付，2027 年 PE 可能降到 <strong>35-40 倍</strong>
+<strong>所以&quot;PE 20 vs 70&quot;这个对比，误导性极强 —— 一个是&quot;周期顶的 20 倍&quot;，一个是&quot;订单起的 70 倍&quot;。</strong></li>
+</ul>
+</blockquote>
+<h4>发现二：<strong>中际旭创跌 68%，只回到&quot;2025 年的中间&quot;；北方华创跌 42%，仍在&quot;2025 年最高点之上&quot;</strong></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">2025 年区间</th>
+<th style="text-align:center">现价</th>
+<th style="text-align:center">位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td style="text-align:center">334.81 ~ 656.61</td>
+<td style="text-align:center"><strong>448</strong></td>
+<td style="text-align:center"><strong>34% 分位（还没到 2025 年的低点）</strong></td>
+</tr>
+<tr>
+<td><strong>北方华创</strong></td>
+<td style="text-align:center">385.86 ~ 488.11</td>
+<td style="text-align:center"><strong>560</strong></td>
+<td style="text-align:center"><strong>超 2025 年最高 15%</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐⭐ 这是今天最重要的一个数据</strong>：
+<strong>你以为&quot;中际旭创跌了 68% 很惨、应该便宜了&quot;，但相对 2025 年，它只是回到&quot;中间位置&quot;，下方还有 -25.3%（到 2025 年低点 334.81）的空间。</strong>
+<strong>你以为&quot;北方华创只跌 42%、很危险&quot;，但它的现价是&quot;2025 年从来没见过的价格&quot;，跌回 2025 年最高点也只有 -12.8%。</strong>
+<strong>两者的&quot;绝对跌幅&quot;和&quot;相对历史位置&quot;完全相反。</strong></p>
+</blockquote>
+<h4>发现三：<strong>技术面是两个极端</strong></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">中际旭创</th>
+<th style="text-align:center">北方华创</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MA250</td>
+<td style="text-align:center"><strong>-42.3%（年线之下）</strong></td>
+<td style="text-align:center"><strong>-0.8%（几乎在年线上）</strong></td>
+</tr>
+<tr>
+<td>MA20</td>
+<td style="text-align:center">-25.9%</td>
+<td style="text-align:center"><strong>+2.8%（站上）</strong></td>
+</tr>
+<tr>
+<td>布林带位置</td>
+<td style="text-align:center"><strong>1%（贴死下轨）</strong></td>
+<td style="text-align:center">中性</td>
+</tr>
+<tr>
+<td>今日最低</td>
+<td style="text-align:center"><strong>427.34（年内新低）</strong></td>
+<td style="text-align:center">528.88（远高于年内低）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>中际旭创：年线下方 42%、布林 1%、今日创年内新低 —— “标准下跌趋势”</strong>
+<strong>北方华创：站上 MA20、贴着年线 —— “上升趋势中的回调”</strong>
+<strong>技术面不是&quot;谁跌得多谁有反弹&quot;，是&quot;谁在趋势里谁有支撑&quot;。</strong></p>
+</blockquote>
+<hr>
+<h2 id="sec-8">四、“设备补跌” vs “光模块反弹”：赔率与概率的双重拆解</h2>
+<h3 id="sec-9">4.1 赔率（下跌空间 vs 上涨空间）</h3>
+<p><strong>中际旭创（现价 448.00）</strong>：</p>
+<ul>
+<li>下方支撑：<strong>427.34（今日最低/2026 年内低）</strong> → 再下 <strong>334.81（2025 年低点）</strong></li>
+<li>上方压力：MA5 500.98（+11.8%）、<strong>MA20 604.26（+34.9%）</strong></li>
+<li><strong>到 2025 年低点的下跌空间 = -25.3%</strong></li>
+<li><strong>赔率（到 MA20 / 到 2025 低点）= 34.9 / 25.3 = 1.38</strong></li>
+</ul>
+<p><strong>北方华创（现价 560.00）</strong>：</p>
+<ul>
+<li>下方支撑：<strong>MA250 564.39（就在脚下）</strong> → 再下 <strong>MA20 544.50（-2.8%）</strong> → 再下 <strong>488.11（2025 年最高，-12.8%）</strong></li>
+<li>上方压力：MA60 636.20（+13.6%）</li>
+<li><strong>到 2025 年最高点的下跌空间 = -12.8%</strong></li>
+<li><strong>赔率（到 MA60 / 到 2025 最高）= 13.6 / 12.8 = 1.06</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">下跌空间</th>
+<th style="text-align:center">上涨空间</th>
+<th style="text-align:center"><strong>静态赔率</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td style="text-align:center">-25.3%（到 334.81）</td>
+<td style="text-align:center">+34.9%（到 MA20 604）</td>
+<td style="text-align:center"><strong>1.38</strong></td>
+</tr>
+<tr>
+<td><strong>北方华创</strong></td>
+<td style="text-align:center">-12.8%（到 488.11）</td>
+<td style="text-align:center">+13.6%（到 MA60 636）</td>
+<td style="text-align:center"><strong>1.06</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>静态赔率：中际旭创更好（1.38 &gt; 1.06）。但这只是&quot;一半的答案&quot;。</strong></p>
+</blockquote>
+<h3 id="sec-10">4.2 概率（这才是决定性的）</h3>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>需要的条件</th>
+<th style="text-align:center">我的概率估计</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>中际旭创反弹到 MA20（+34.9%）</strong></td>
+<td>①美国 AI 监管担忧缓解 ②AI 资本开支持续 ③费半止跌</td>
+<td style="text-align:center"><strong>30-40%</strong></td>
+<td>&quot;蓝潮&quot;是<strong>新增的、未定价的政治风险</strong>，短期难证伪（监管立法周期以年计）</td>
+</tr>
+<tr>
+<td><strong>中际旭创跌到 334.81（-25.3%）</strong></td>
+<td>①美国真的限制数据中心 ②光模块订单下修</td>
+<td style="text-align:center"><strong>40-50%</strong></td>
+<td>44 项地方投票已涉及暂停数据中心，<strong>这是&quot;进行时&quot;不是&quot;将来时&quot;</strong></td>
+</tr>
+<tr>
+<td><strong>北方华创跌到 488（-12.8%）</strong></td>
+<td>①PE 70 被市场抛弃 ②半导体整体补跌</td>
+<td style="text-align:center"><strong>40-50%</strong></td>
+<td>它的位置（2025 最高点之上）+ PE 70，<strong>确实有&quot;补跌&quot;的动能</strong></td>
+</tr>
+<tr>
+<td><strong>北方华创涨到 636（+13.6%）</strong></td>
+<td>①国产替代订单持续 ②CoWoS 涨价传导</td>
+<td style="text-align:center"><strong>45-55%</strong></td>
+<td>逻辑独立于美国政策，<strong>且 MA20/年线提供技术支撑</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-11">4.3 期望值（赔率 × 概率）</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th>计算</th>
+<th style="text-align:center"><strong>期望值</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td>0.35 × (+34.9%) + 0.65 × (-25.3%)</td>
+<td style="text-align:center"><strong>-4.2%</strong></td>
+</tr>
+<tr>
+<td><strong>北方华创</strong></td>
+<td>0.50 × (+13.6%) + 0.50 × (-12.8%)</td>
+<td style="text-align:center"><strong>+0.4%</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐⭐ 这是今天最硬的一个结论</strong>：
+<strong>中际旭创的&quot;静态赔率更好&quot;（1.38 vs 1.06），但&quot;概率更差&quot;（30-40% vs 45-55%），所以期望值反而是负的（-4.2%）。</strong>
+<strong>北方华创的&quot;静态赔率更差&quot;，但&quot;概率更好&quot;，期望值接近零（+0.4%）。</strong></p>
+<p><strong>翻译成人话：</strong>
+<strong>&quot;光模块反弹&quot;是&quot;赔率高、胜率低&quot;的赌局（像买彩票）；</strong>
+<strong>&quot;设备&quot;是&quot;赔率低、胜率中等&quot;的赌局（像开赌场）。</strong>
+<strong>两者期望值都接近零或为负 —— 说明现在两边都不是&quot;好的买点&quot;。</strong></p>
+</blockquote>
+<hr>
+<h2 id="sec-12">五、结论：两份&quot;AI 叙事&quot;的资产，风险性质完全不同</h2>
+<h3 id="sec-13">5.1 一句话回答你的问题</h3>
+<blockquote>
+<p><strong>“设备补跌&quot;是&quot;估值风险”（可修复）；“光模块反弹&quot;是&quot;叙事风险”（不可修复，除非政策转向）。</strong></p>
+</blockquote>
+<p><strong>展开说</strong>：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>设备补跌</strong></th>
+<th><strong>光模块反弹</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>风险/机会的性质</strong></td>
+<td>贵了要跌（PE 70、位置高）</td>
+<td>便宜了要涨（PE 20、跌 68%）</td>
+</tr>
+<tr>
+<td><strong>跌/涨完之后</strong></td>
+<td><strong>逻辑没破，能涨回来</strong></td>
+<td><strong>叙事被重定价，可能继续跌</strong></td>
+</tr>
+<tr>
+<td><strong>决定变量</strong></td>
+<td>国产替代订单（国内政策，可控）</td>
+<td>美国 AI 监管（海外政治，不可控）</td>
+</tr>
+<tr>
+<td><strong>可预测性</strong></td>
+<td>较高（订单可跟踪）</td>
+<td>低（政策不可测）</td>
+</tr>
+<tr>
+<td><strong>类比</strong></td>
+<td><strong>“贵的好公司”</strong></td>
+<td><strong>“便宜的周期股（可能是顶部）”</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-14">5.2 三个&quot;必须承认&quot;的事实</h3>
+<ol>
+<li><strong>北方华创 PE 70 是真贵</strong> —— 即使跌 42%，它仍比 2025 年最高点贵 15%。<strong>&quot;补跌&quot;是合理的担忧，不是无理取闹。</strong></li>
+<li><strong>中际旭创 PE 20 是&quot;假便宜&quot;</strong> —— 因为它的利润建立在&quot;AI 资本开支高峰&quot;上，<strong>一旦订单下修，PE 立刻回到 30-40 倍</strong>。</li>
+<li><strong>两者现在都不是买点</strong> —— 期望值一个 -4.2%、一个 +0.4%。</li>
+</ol>
+<h3 id="sec-15">5.3 如果一定要在两者之间选</h3>
+<p><strong>我的排序（从&quot;相对可接受&quot;到&quot;相对危险&quot;）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">排序</th>
+<th>标的</th>
+<th>理由</th>
+<th>但需要什么前提</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>1</strong></td>
+<td><strong>北方华创</strong></td>
+<td>逻辑独立（国产替代）、技术有支撑（MA20/年线）、期望值接近零</td>
+<td><strong>PE 70 需要 1-2 个季度业绩消化；跌破 544.50 要减</strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>2</strong></td>
+<td>中际旭创</td>
+<td>赔率更高（1.38）、位置更低（布林 1%）</td>
+<td><strong>必须先看到&quot;美国 AI 监管明朗&quot; + “缩量止跌”</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>但更重要的是第三条</strong>：</p>
+<blockquote>
+<p><strong>⭐⭐ 两者都不是&quot;现在该重仓&quot;的资产。因为它们的&quot;共同分母&quot;（AI 资本开支）正在被重新定价。</strong>
+<strong>在&quot;分母&quot;重新定价的过程中，&quot;便宜&quot;和&quot;贵&quot;都会继续失效</strong> —— 这就是 10/22 我们讨论过的&quot;估值锚消失&quot;。</p>
+</blockquote>
+<hr>
+<h2 id="sec-16">六、操作建议</h2>
+<h3 id="sec-17">6.1 今日盘面三个维度的验证</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>①资金流</strong></td>
+<td>“换仓&quot;而非&quot;离场”：光模块/算力被卖，石油/煤炭/银行/消费被买；成交缩量 4,635 亿至 1.66 万亿</td>
+</tr>
+<tr>
+<td><strong>②企稳信号</strong></td>
+<td><strong>未企稳</strong>：创业板失守 2,470、红盘率 13.8%、中际旭创创年内新低 427.34、CPO 全线杀跌</td>
+</tr>
+<tr>
+<td><strong>③抗跌性</strong></td>
+<td><strong>&quot;叙事免疫&quot;的资产抗跌</strong>：北方华创 -0.18%（自主可控）、上证50 -0.84%（红利）；&quot;叙事暴露&quot;的资产崩塌：中际旭创 -9.19%、新易盛 -7.28%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-18">6.2 分标的操作</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">今日</th>
+<th><strong>操作建议</strong></th>
+<th>关键位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>北方华创</strong></td>
+<td style="text-align:center">560.00（-0.18%）</td>
+<td><strong>持有，但设减仓预案</strong> —— PE 70 是最大风险；<strong>跌破 544.50（MA20）减 1/3，跌破 488 减半</strong></td>
+<td>544.50 / 564.39（年线）</td>
+</tr>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td style="text-align:center">448.00（-9.19%）</td>
+<td><strong>不补</strong> —— 三个条件仍未满足（缩量 &lt;150 亿、不破 427.34、站上 MA5 500.98）；<strong>若跌到 334-360 区间（2025 年低点附近）且缩量，才值得看</strong></td>
+<td><strong>427.34</strong></td>
+</tr>
+<tr>
+<td>宁德时代</td>
+<td style="text-align:center">254.22（-3.73%）</td>
+<td>持有（PE 13.41、PB 3.04，估值最低）</td>
+<td>—</td>
+</tr>
+<tr>
+<td>长鑫科技</td>
+<td style="text-align:center">40.41（-4.98%）</td>
+<td>持有（PE 19.71）</td>
+<td>—</td>
+</tr>
+<tr>
+<td>东方财富</td>
+<td style="text-align:center">18.78（-1.05%）</td>
+<td>持有（抗跌）</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-19">6.3 一个&quot;反常识&quot;的提醒</h3>
+<blockquote>
+<p><strong>⭐⭐ 不要再问&quot;谁跌得多&quot; —— 要问&quot;谁跌得对&quot;。</strong></p>
+<p><strong>中际旭创跌 68%，是因为&quot;它的叙事（全球 AI 资本开支）正在被美国政治重定价&quot;—— 这是&quot;跌得对&quot;。</strong>
+<strong>北方华创跌 42%，是因为&quot;它的估值（PE 70）太高&quot;—— 这也是&quot;跌得对&quot;，但性质不同：前者是&quot;逻辑受损&quot;，后者是&quot;价格回归&quot;。</strong></p>
+<p><strong>“逻辑受损&quot;的资产，反弹是&quot;逃命机会”；“价格回归&quot;的资产，下跌是&quot;上车机会”。</strong>
+<strong>这就是为什么我建议：北方华创设&quot;减仓预案&quot;但不&quot;清仓&quot;；中际旭创&quot;不补仓&quot;但要&quot;盯着 334-360&quot;。</strong></p>
+</blockquote>
+<h3 id="sec-20">6.4 下周观察</h3>
+<table>
+<thead>
+<tr>
+<th>观察项</th>
+<th>指标</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>①今晚美股（费半）</strong></td>
+<td>费半 -12.25% 后是否反抽</td>
+<td><strong>最直接变量</strong></td>
+</tr>
+<tr>
+<td><strong>②中际旭创 427.34</strong></td>
+<td>今日新低</td>
+<td>跌破则看 400 → 334</td>
+</tr>
+<tr>
+<td><strong>③北方华创 544.50</strong></td>
+<td>MA20</td>
+<td>跌破则&quot;补跌&quot;开始</td>
+</tr>
+<tr>
+<td><strong>④成交能否守住 1.5 万亿</strong></td>
+<td>今日 1.66 万亿</td>
+<td>缩量到 1.3 万亿以下 = 抛压衰竭</td>
+</tr>
+<tr>
+<td><strong>⑤ETF 是否重新出手</strong></td>
+<td>今日&quot;没动&quot;</td>
+<td><strong>10/23 与 11/6 的差别就在于此</strong></td>
+</tr>
+<tr>
+<td><strong>⑥美国 AI 监管进展</strong></td>
+<td>立法/行政令</td>
+<td><strong>中际旭创的&quot;生死线&quot;</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="sec-21">附录：核心对比速查</h2>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th style="text-align:center">中际旭创</th>
+<th style="text-align:center">北方华创</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>收盘</td>
+<td style="text-align:center">448.00（-9.19%）</td>
+<td style="text-align:center">560.00（-0.18%）</td>
+</tr>
+<tr>
+<td>PE(TTM) / PB</td>
+<td style="text-align:center"><strong>20.37 / 5.59</strong></td>
+<td style="text-align:center"><strong>70.48 / 9.53</strong></td>
+</tr>
+<tr>
+<td>距 2026 高</td>
+<td style="text-align:center"><strong>-68.4%</strong></td>
+<td style="text-align:center">-42.1%</td>
+</tr>
+<tr>
+<td>距 2026 低</td>
+<td style="text-align:center">+4.8%（今日新低）</td>
+<td style="text-align:center">+32.9%</td>
+</tr>
+<tr>
+<td>2025 区间位置</td>
+<td style="text-align:center"><strong>34% 分位</strong></td>
+<td style="text-align:center"><strong>超 2025 最高 15%</strong></td>
+</tr>
+<tr>
+<td>MA20 / MA250</td>
+<td style="text-align:center">-25.9% / <strong>-42.3%</strong></td>
+<td style="text-align:center"><strong>+2.8% / -0.8%</strong></td>
+</tr>
+<tr>
+<td>叙事</td>
+<td style="text-align:center"><strong>全球 AI 资本开支（需求侧）</strong></td>
+<td style="text-align:center"><strong>中国自主可控（供给侧）</strong></td>
+</tr>
+<tr>
+<td>美国政策暴露</td>
+<td style="text-align:center">⚠️ <strong>直接</strong></td>
+<td style="text-align:center">✅ <strong>免疫/受益</strong></td>
+</tr>
+<tr>
+<td>静态赔率</td>
+<td style="text-align:center"><strong>1.38</strong></td>
+<td style="text-align:center">1.06</td>
+</tr>
+<tr>
+<td>胜率估计</td>
+<td style="text-align:center">30-40%</td>
+<td style="text-align:center">45-55%</td>
+</tr>
+<tr>
+<td><strong>期望值</strong></td>
+<td style="text-align:center"><strong>-4.2%</strong></td>
+<td style="text-align:center"><strong>+0.4%</strong></td>
+</tr>
+<tr>
+<td>风险性质</td>
+<td style="text-align:center"><strong>叙事重定价（不可修复）</strong></td>
+<td style="text-align:center"><strong>估值回归（可修复）</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><em>报告生成时间：2026-11-06 收盘后</em></p>
+
+  <div class="footer">来源：任务库持仓复盘 · A股复盘_20261106_设备与光模块赔率对决.md | 由 markdown-it 转换 | 仅供参考，不构成投资建议</div>
+</div>
+</body>
+</html>
