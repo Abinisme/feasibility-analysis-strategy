@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>A股深度复盘 —— 2026年11月10日（周二 · 专题：个股 vs 指数的量化对决——"全清换指数"到底对不对）</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif; line-height:1.8; padding:20px 14px 60px; }
+.container { max-width:820px; margin:0 auto; }
+.toolbar { position:sticky; top:0; background:rgba(13,17,23,0.95); backdrop-filter:blur(8px); padding:10px 0; margin-bottom:18px; display:flex; align-items:center; gap:10px; border-bottom:1px solid #30363d; z-index:10; }
+.toolbar a { color:#58a6ff; text-decoration:none; font-size:0.85rem; white-space:nowrap; }
+.toolbar a:hover { text-decoration:underline; }
+.toolbar .sep { color:#484f58; }
+h1 { font-size:1.5rem; color:#f0f6fc; border-bottom:2px solid #30363d; padding-bottom:10px; margin-bottom:18px; }
+h2 { font-size:1.2rem; color:#58a6ff; margin:26px 0 12px; padding-left:10px; border-left:3px solid #58a6ff; }
+h3 { font-size:1.05rem; color:#d29922; margin:20px 0 10px; }
+h4 { font-size:0.98rem; color:#c9d1d9; margin:16px 0 8px; }
+p { margin:8px 0; }
+ul, ol { padding-left:24px; margin:8px 0; }
+li { margin:4px 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+blockquote { border-left:4px solid #30363d; background:#161b22; padding:8px 14px; margin:12px 0; color:#8b949e; border-radius:0 6px 6px 0; }
+blockquote p { margin:4px 0; }
+code { background:#161b22; padding:2px 6px; border-radius:4px; font-size:0.88em; font-family:"SF Mono",Consolas,Menlo,monospace; }
+pre { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:12px 14px; overflow-x:auto; margin:12px 0; }
+pre code { background:none; padding:0; }
+table { border-collapse:collapse; width:100%; margin:12px 0; font-size:0.9em; display:block; overflow-x:auto; }
+th, td { border:1px solid #30363d; padding:7px 10px; text-align:left; }
+th { background:#161b22; color:#58a6ff; font-weight:600; }
+tr:nth-child(even) td { background:rgba(22,27,34,0.5); }
+hr { border:none; border-top:1px solid #30363d; margin:20px 0; }
+img { max-width:100%; border-radius:6px; }
+strong { color:#f0f6fc; }
+.toc { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:14px 18px; margin:14px 0 20px; }
+.toc h3 { margin:0 0 8px; color:#58a6ff; }
+.toc a { display:block; padding:3px 0; font-size:0.9em; color:#8b949e; }
+.toc a:hover { color:#58a6ff; text-decoration:none; }
+.footer { text-align:center; color:#484f58; font-size:0.78rem; margin-top:40px; padding-top:16px; border-top:1px solid #30363d; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="toolbar">
+    <a href="../index.html">🏠 首页</a><span class="sep">|</span>
+    <a href="../replay_index.html">📚 复盘合集</a><span class="sep">|</span>
+    <span style="color:#8b949e;font-size:0.8rem;">任务库持仓复盘 · A股深度复盘_20261110.md</span>
+  </div>
+  
+  <h1>A股深度复盘 —— 2026年11月10日（周二 · 专题：个股 vs 指数的量化对决——&quot;全清换指数&quot;到底对不对）</h1>
+<blockquote>
+<p><strong>免责声明</strong>：本文仅供学习交流与市场复盘参考，不构成任何投资建议。市场有风险，投资需谨慎。</p>
+<p><strong>数据口径</strong>：指数/个股来自 tushare 与腾讯行情（前复权）；技术指标自算；资金流来自同花顺；<strong>所有&quot;个股 vs 指数&quot;的对比均基于同一区间（近 60 / 250 交易日）的前复权收盘价计算，未做分红再投资调整</strong>。</p>
+</blockquote>
+<hr>
+<h2 id="sec-0">目录</h2>
+<ol>
+<li>今日盘面：小盘强、权重弱，传媒娱乐爆发</li>
+<li><strong>专题：个股 vs 指数 —— 用 250 天数据回答你的四个问题</strong></li>
+<li>维度一：资金流对比（11/10 vs 11/9）</li>
+<li>维度二：企稳信号量化判定</li>
+<li>维度三：相对抗跌性与独立反弹概率</li>
+<li>五只标的全栈量化（MA5/RSI5/MACD/RR）</li>
+<li>综合研判与操作建议</li>
+<li>附录：数据速查</li>
+</ol>
+<hr>
+<h2 id="sec-1">一、今日盘面：小盘强、权重弱</h2>
+<h3 id="sec-2">1.1 核心指数</h3>
+<table>
+<thead>
+<tr>
+<th>指数</th>
+<th style="text-align:center">收盘</th>
+<th style="text-align:center">涨跌</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>上证指数</strong></td>
+<td style="text-align:center">3,663.72</td>
+<td style="text-align:center"><strong>+0.08%</strong></td>
+</tr>
+<tr>
+<td><strong>深证成指</strong></td>
+<td style="text-align:center">11,241.54</td>
+<td style="text-align:center"><strong>+0.86%</strong></td>
+</tr>
+<tr>
+<td><strong>创业板指</strong></td>
+<td style="text-align:center"><strong>2,494.40</strong></td>
+<td style="text-align:center"><strong>+1.46%</strong></td>
+</tr>
+<tr>
+<td><strong>科创50</strong></td>
+<td style="text-align:center">1,265.02</td>
+<td style="text-align:center">+0.64%</td>
+</tr>
+<tr>
+<td>北证50</td>
+<td style="text-align:center">902.51</td>
+<td style="text-align:center">+0.75%</td>
+</tr>
+<tr>
+<td>沪深300</td>
+<td style="text-align:center">4,059.11</td>
+<td style="text-align:center">+0.07%</td>
+</tr>
+<tr>
+<td>中证500</td>
+<td style="text-align:center">6,645.89</td>
+<td style="text-align:center">+0.91%</td>
+</tr>
+<tr>
+<td><strong>中证1000</strong></td>
+<td style="text-align:center">6,579.36</td>
+<td style="text-align:center"><strong>+1.22%</strong></td>
+</tr>
+<tr>
+<td><strong>上证50</strong></td>
+<td style="text-align:center">2,772.96</td>
+<td style="text-align:center"><strong>-0.58%（最弱）</strong></td>
+</tr>
+<tr>
+<td><strong>国证2000</strong></td>
+<td style="text-align:center">8,748.47</td>
+<td style="text-align:center"><strong>+1.75%（最强）</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>成交 15,167 亿</strong>；<strong>涨 4,273 / 跌 1,149（红盘率 78.8%）</strong>；<strong>涨超5% 468 家 vs 跌超5% 9 家（52:1）</strong>。</p>
+<blockquote>
+<p><strong>⭐ 今天是&quot;小盘+成长强、权重弱&quot;的老结构</strong>：国证2000 +1.75% vs 上证50 -0.58%，落差 2.33pct。</p>
+</blockquote>
+<h3 id="sec-3">1.2 板块结构</h3>
+<p><strong>行业涨幅</strong>：<strong>传媒娱乐 +4.24%</strong>、纺织机械 +3.51%、电子器件 +2.51%、陶瓷 +2.50%、电子信息 +2.41%
+<strong>行业跌幅</strong>：船舶制造 -1.04%、石油 -0.63%、煤炭 -0.57%、飞机制造 -0.22%、金融 -0.13%</p>
+<p><strong>资金流向</strong>：<strong>文化传媒 +29.65（+4.07%）</strong>、消费电子 +23.05（+4.35%）、汽车零部件 +16.45、银行 +14.87、<strong>半导体 +12.91（+2.95%）</strong></p>
+<h3 id="sec-4">1.3 你的五只标的</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">收盘</th>
+<th style="text-align:center">今日</th>
+<th style="text-align:center">成交</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td style="text-align:center"><strong>471.00</strong></td>
+<td style="text-align:center"><strong>+4.20%</strong> 🟢</td>
+<td style="text-align:center">185.6亿</td>
+</tr>
+<tr>
+<td>长鑫科技</td>
+<td style="text-align:center">40.45</td>
+<td style="text-align:center">+1.15% 🟢</td>
+<td style="text-align:center">96.4亿</td>
+</tr>
+<tr>
+<td><strong>北方华创</strong></td>
+<td style="text-align:center"><strong>538.68</strong></td>
+<td style="text-align:center"><strong>-1.13%</strong> 🔴（唯一下跌）</td>
+<td style="text-align:center">43.6亿</td>
+</tr>
+<tr>
+<td>宁德时代</td>
+<td style="text-align:center">249.95</td>
+<td style="text-align:center">+0.53% 🟢</td>
+<td style="text-align:center">80.2亿</td>
+</tr>
+<tr>
+<td><strong>东方财富</strong></td>
+<td style="text-align:center">18.78</td>
+<td style="text-align:center"><strong>0.00%（连续2日平盘）</strong></td>
+<td style="text-align:center">24.1亿</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐ 一个值得注意的对比</strong>：<strong>中际旭创今天 +4.20%（你的&quot;最痛&quot;涨了），北方华创 -1.13%（你的&quot;最强&quot;跌了）</strong> —— <strong>这正是&quot;个股折磨人&quot;的日常形态：你永远猜不到明天谁涨谁跌。</strong></p>
+</blockquote>
+<hr>
+<h2 id="sec-5">二、专题：个股 vs 指数 —— 用 250 天数据回答你的四个问题</h2>
+<blockquote>
+<p><strong>你的问题（原话）：</strong>
+<em>“总感觉拿着这些个股很折磨，每天有涨有跌，虽说都是龙头公司，但很多时候跑不过板块指数，特指中际旭创，跌起来猛得很，担惊受怕的。全清了换创业板和科创指数会怎么样，科技反弹会不完整，长期看会是好策略吗？”</em></p>
+<p><strong>这四个问题，我用同一区间的实盘数据来回答。</strong></p>
+</blockquote>
+<h3 id="sec-6">2.1 核心数据表（近 250 交易日，约 1 年）</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center"><strong>250日累计</strong></th>
+<th style="text-align:center"><strong>年化波动</strong></th>
+<th style="text-align:center"><strong>最大回撤</strong></th>
+<th style="text-align:center"><strong>夏普（收益/波动）</strong></th>
+<th style="text-align:center"><strong>跌&gt;5%天数</strong></th>
+<th style="text-align:center">涨&gt;5%天数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>东方财富</strong></td>
+<td style="text-align:center"><strong>-4.4%</strong></td>
+<td style="text-align:center"><strong>25.8%</strong></td>
+<td style="text-align:center"><strong>-15.1%</strong></td>
+<td style="text-align:center"><strong>3.71（最高）</strong></td>
+<td style="text-align:center"><strong>0</strong></td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td>长鑫科技</td>
+<td style="text-align:center">-17.4%</td>
+<td style="text-align:center"><strong>67.2%</strong></td>
+<td style="text-align:center">-37.2%</td>
+<td style="text-align:center">1.23</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">6</td>
+</tr>
+<tr>
+<td>北方华创</td>
+<td style="text-align:center">-30.0%</td>
+<td style="text-align:center">52.3%</td>
+<td style="text-align:center">-38.4%</td>
+<td style="text-align:center">1.34</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td><strong>科创50</strong></td>
+<td style="text-align:center"><strong>-30.0%</strong></td>
+<td style="text-align:center">46.7%</td>
+<td style="text-align:center"><strong>-35.7%</strong></td>
+<td style="text-align:center">1.50</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td><strong>创业板指</strong></td>
+<td style="text-align:center"><strong>-30.5%</strong></td>
+<td style="text-align:center"><strong>40.2%</strong></td>
+<td style="text-align:center">-36.1%</td>
+<td style="text-align:center"><strong>1.73</strong></td>
+<td style="text-align:center"><strong>1</strong></td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td>宁德时代</td>
+<td style="text-align:center">-37.3%</td>
+<td style="text-align:center">42.4%</td>
+<td style="text-align:center">-45.4%</td>
+<td style="text-align:center">1.48</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td style="text-align:center"><strong>-56.2%</strong></td>
+<td style="text-align:center"><strong>85.6%</strong></td>
+<td style="text-align:center"><strong>-56.1%</strong></td>
+<td style="text-align:center"><strong>0.51（最低）</strong></td>
+<td style="text-align:center"><strong>12</strong></td>
+<td style="text-align:center">5</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐⭐⭐ 这一张表，把你四个问题全部回答了。</strong></p>
+</blockquote>
+<h3 id="sec-7">2.2 问题一：“跑不过板块指数”—— 只对 2 只有效，不是全部</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">250 日</th>
+<th style="text-align:center">vs 创业板指（-30.5%）</th>
+<th style="text-align:center">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>东方财富</strong></td>
+<td style="text-align:center">-4.4%</td>
+<td style="text-align:center"><strong>+26.1pct</strong></td>
+<td style="text-align:center">✅ <strong>大幅跑赢</strong></td>
+</tr>
+<tr>
+<td><strong>长鑫科技</strong></td>
+<td style="text-align:center">-17.4%</td>
+<td style="text-align:center"><strong>+13.1pct</strong></td>
+<td style="text-align:center">✅ <strong>跑赢</strong></td>
+</tr>
+<tr>
+<td><strong>北方华创</strong></td>
+<td style="text-align:center">-30.0%</td>
+<td style="text-align:center">+0.5pct</td>
+<td style="text-align:center">⚠️ <strong>基本持平</strong></td>
+</tr>
+<tr>
+<td><strong>宁德时代</strong></td>
+<td style="text-align:center">-37.3%</td>
+<td style="text-align:center"><strong>-6.8pct</strong></td>
+<td style="text-align:center">❌ 跑输</td>
+</tr>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td style="text-align:center"><strong>-56.2%</strong></td>
+<td style="text-align:center"><strong>-25.7pct</strong></td>
+<td style="text-align:center">❌❌ <strong>严重跑输</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>所以准确的表述是</strong>：</p>
+<ul>
+<li><strong>“特指中际旭创”—— 你说对了</strong>，它一年跑输创业板指 <strong>25.7 个百分点</strong>，是五只中唯一&quot;严重跑输&quot;的</li>
+<li><strong>但&quot;东方财富跑赢 26.1pct、长鑫跑赢 13.1pct&quot;</strong> —— <strong>你的组合里有两只是&quot;超额来源&quot;</strong></li>
+</ul>
+<blockquote>
+<p><strong>⭐ 这是一个非常重要的区分</strong>：
+<strong>“个股跑不过指数&quot;不是一个普遍规律，而是一个&quot;筛选结果”</strong> —— 跑输的是&quot;高波动 + 无超额&quot;的（中际旭创），跑赢的是&quot;独立逻辑 + 低波动&quot;的（东财）。</p>
+</blockquote>
+<h3 id="sec-8">2.3 问题二：“跌起来猛得很”—— 中际旭创是真的，其他人不是</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">年化波动</th>
+<th style="text-align:center">vs 创业板指（40.2%）</th>
+<th style="text-align:center"><strong>跌&gt;5% 天数（60日）</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td style="text-align:center"><strong>85.6%</strong></td>
+<td style="text-align:center"><strong>2.13 倍</strong></td>
+<td style="text-align:center"><strong>12 天（60 天里 1/5 的日子跌超5%）</strong></td>
+</tr>
+<tr>
+<td>长鑫科技</td>
+<td style="text-align:center">67.2%</td>
+<td style="text-align:center">1.67 倍</td>
+<td style="text-align:center">5 天</td>
+</tr>
+<tr>
+<td>北方华创</td>
+<td style="text-align:center">52.3%</td>
+<td style="text-align:center">1.30 倍</td>
+<td style="text-align:center">2 天</td>
+</tr>
+<tr>
+<td>宁德时代</td>
+<td style="text-align:center">42.4%</td>
+<td style="text-align:center">1.05 倍</td>
+<td style="text-align:center">2 天</td>
+</tr>
+<tr>
+<td><strong>东方财富</strong></td>
+<td style="text-align:center"><strong>25.8%</strong></td>
+<td style="text-align:center"><strong>0.64 倍</strong></td>
+<td style="text-align:center"><strong>0 天</strong></td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td style="text-align:center">40.2%</td>
+<td style="text-align:center">1.00 倍</td>
+<td style="text-align:center">1 天</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐⭐ 你的&quot;担惊受怕&quot;有精确的量化来源</strong>：
+<strong>中际旭创在过去 60 个交易日里，有 12 天单日跌超 5%（相当于每 5 个交易日就有 1 天暴跌）</strong>，而创业板指只有 1 天。
+<strong>这不是&quot;感觉&quot;，这是&quot;频率&quot;</strong> —— 高频暴跌会持续制造&quot;要不要割&quot;的心理折磨，<strong>最终的结果往往是&quot;割在最低点&quot;</strong>。</p>
+<p><strong>但反过来，东方财富 0 天跌超5%、波动 25.8%（比指数还低）</strong> —— <strong>说明&quot;个股&quot;不是原罪，&quot;高波动个股&quot;才是。</strong></p>
+</blockquote>
+<h3 id="sec-9">2.4 问题三：“全清换指数会怎么样”—— 分三种情形</h3>
+<p><strong>情形 A：把&quot;中际旭创&quot;换成创业板指（过去 250 天回测）</strong></p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th style="text-align:center">持有中际旭创</th>
+<th style="text-align:center">换成创业板指</th>
+<th style="text-align:center"><strong>改善</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>收益</td>
+<td style="text-align:center"><strong>-56.2%</strong></td>
+<td style="text-align:center"><strong>-30.5%</strong></td>
+<td style="text-align:center"><strong>+25.7pct</strong></td>
+</tr>
+<tr>
+<td>年化波动</td>
+<td style="text-align:center">85.6%</td>
+<td style="text-align:center">40.2%</td>
+<td style="text-align:center"><strong>-45.4pct（减半）</strong></td>
+</tr>
+<tr>
+<td>最大回撤</td>
+<td style="text-align:center">-56.1%</td>
+<td style="text-align:center">-36.1%</td>
+<td style="text-align:center"><strong>+20pct</strong></td>
+</tr>
+<tr>
+<td>跌&gt;5% 天数</td>
+<td style="text-align:center">12 天</td>
+<td style="text-align:center">1 天</td>
+<td style="text-align:center"><strong>-11 天</strong></td>
+</tr>
+<tr>
+<td>夏普</td>
+<td style="text-align:center">0.51</td>
+<td style="text-align:center">1.73</td>
+<td style="text-align:center"><strong>3.4 倍</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐ 对这一只来说，“换指数&quot;是&quot;全面改善”</strong> —— 收益更好、波动更小、回撤更浅、心理更稳。</p>
+</blockquote>
+<p><strong>情形 B：把&quot;东方财富&quot;换成创业板指</strong></p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th style="text-align:center">持有东方财富</th>
+<th style="text-align:center">换成创业板指</th>
+<th style="text-align:center">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>收益</td>
+<td style="text-align:center"><strong>-4.4%</strong></td>
+<td style="text-align:center">-30.5%</td>
+<td style="text-align:center">❌ <strong>少赚 26.1pct</strong></td>
+</tr>
+<tr>
+<td>波动</td>
+<td style="text-align:center"><strong>25.8%</strong></td>
+<td style="text-align:center">40.2%</td>
+<td style="text-align:center">❌ 波动变大</td>
+</tr>
+<tr>
+<td>夏普</td>
+<td style="text-align:center"><strong>3.71</strong></td>
+<td style="text-align:center">1.73</td>
+<td style="text-align:center">❌ 变差</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐ 对这一只来说，“换指数&quot;是&quot;全面恶化”</strong> —— 你会放弃一个&quot;低波动 + 高超额&quot;的资产。</p>
+</blockquote>
+<p><strong>情形 C：把&quot;宁德时代&quot;换成指数</strong></p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th style="text-align:center">宁德</th>
+<th style="text-align:center">创业板指</th>
+<th style="text-align:center">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>收益</td>
+<td style="text-align:center">-37.3%</td>
+<td style="text-align:center">-30.5%</td>
+<td style="text-align:center">✅ +6.8pct</td>
+</tr>
+<tr>
+<td>波动</td>
+<td style="text-align:center">42.4%</td>
+<td style="text-align:center">40.2%</td>
+<td style="text-align:center">≈ 持平</td>
+</tr>
+<tr>
+<td>夏普</td>
+<td style="text-align:center">1.48</td>
+<td style="text-align:center">1.73</td>
+<td style="text-align:center">✅ 略优</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐ 中性偏正</strong> —— 换了不会错，但不换也能接受。</p>
+</blockquote>
+<p><strong>所以&quot;全清换指数&quot;的答案是</strong>：
+<strong>对&quot;高波动 + 无超额&quot;的（中际旭创）是正确；对&quot;低波动 + 有超额&quot;的（东方财富）是错误。</strong>
+<strong>“全清&quot;是一个&quot;一刀切&quot;的决策，而正确的做法是&quot;按夏普排序，换掉最差的、留下最好的”。</strong></p>
+<h3 id="sec-10">2.5 问题四：“科技反弹会不完整”—— 会，但代价是&quot;双向&quot;的</h3>
+<p><strong>极端日弹性（近 250 日实测）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">指数涨&gt;2% 时（n=8）</th>
+<th style="text-align:center">指数跌&gt;2% 时（n=17）</th>
+<th style="text-align:center"><strong>上行/下行弹性比</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td style="text-align:center"><strong>+7.85%</strong>（指数的 4.7 倍）</td>
+<td style="text-align:center"><strong>-7.40%</strong>（同样 ~5 倍）</td>
+<td style="text-align:center"><strong>0.94（对称）</strong></td>
+</tr>
+<tr>
+<td><strong>北方华创</strong></td>
+<td style="text-align:center"><strong>+4.28%</strong></td>
+<td style="text-align:center"><strong>-2.73%</strong></td>
+<td style="text-align:center"><strong>0.64（上行&gt;下行）</strong></td>
+</tr>
+<tr>
+<td><strong>东方财富</strong></td>
+<td style="text-align:center">+0.99%</td>
+<td style="text-align:center">-1.04%</td>
+<td style="text-align:center">1.04（几乎不跟）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐⭐ 这张表揭示了一个关键事实</strong>：
+<strong>中际旭创的弹性是&quot;对称&quot;的</strong> —— 指数涨 2% 它涨 7.85%，指数跌 2% 它跌 7.40%。
+<strong>所以&quot;换指数会导致反弹不完整&quot;是真的（少赚），但&quot;下跌也不完整&quot;也是真的（少亏）</strong> —— <strong>净效果就是&quot;夏普 1.73 vs 0.51&quot;。</strong></p>
+<p><strong>而北方华创的弹性是&quot;上行为主&quot;（4.28% vs -2.73%，上行是下行的 1.57 倍）</strong> —— <strong>这才是&quot;好&quot;的个股该有的形态：涨得多、跌得少。</strong></p>
+<p><strong>所以&quot;要不要换指数&quot;的判据不是&quot;能不能跑赢反弹&quot;，而是&quot;这只股的弹性是对称的还是不对称的&quot;</strong>：</p>
+<ul>
+<li><strong>对称的（中际旭创）= 换指数</strong></li>
+<li><strong>上行&gt;下行的（北方华创）= 留着</strong></li>
+<li><strong>不跟指数的（东方财富）= 留着</strong></li>
+</ul>
+</blockquote>
+<h3 id="sec-11">2.6 问题五：“长期看是好策略吗”—— 看夏普，不看收益</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">排序</th>
+<th>标的</th>
+<th style="text-align:center">夏普</th>
+<th>解读</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td><strong>东方财富</strong></td>
+<td style="text-align:center"><strong>3.71</strong></td>
+<td>最强（低波动 + 高超额）</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td><strong>创业板指</strong></td>
+<td style="text-align:center"><strong>1.73</strong></td>
+<td>基准</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td>科创50</td>
+<td style="text-align:center">1.50</td>
+<td>接近基准</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td>宁德时代</td>
+<td style="text-align:center">1.48</td>
+<td>接近基准</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td>北方华创</td>
+<td style="text-align:center">1.34</td>
+<td>略低于基准</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td>长鑫科技</td>
+<td style="text-align:center">1.23</td>
+<td>低于基准（波动太大）</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td><strong>中际旭创</strong></td>
+<td style="text-align:center"><strong>0.51</strong></td>
+<td><strong>最差（收益/波动严重不匹配）</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐⭐⭐ &quot;长期策略&quot;的核心结论</strong>：
+<strong>夏普比率 = 单位风险换来的收益。创业板指 1.73 vs 中际旭创 0.51 —— 指数的&quot;风险调整后收益&quot;是中际旭创的 3.4 倍。</strong>
+<strong>这意味着：长期持有中际旭创，你承受了 2 倍的波动，却换来&quot;比指数少赚 25.7pct&quot;的结果。</strong>
+<strong>这不是&quot;运气差&quot;，这是&quot;数学&quot;</strong> —— 高波动资产如果&quot;没有持续超额收益&quot;，长期必然输给低波动资产（因为复利对波动有惩罚）。</p>
+</blockquote>
+<h3 id="sec-12">2.7 一个必须说的补充：换指数的&quot;三个隐性代价&quot;</h3>
+<p><strong>不能只讲&quot;换指数好&quot;，也要讲清楚代价</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">代价</th>
+<th>说明</th>
+<th>量化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>① 放弃&quot;个股黑马&quot;的可能性</strong></td>
+<td>指数只能拿到&quot;平均&quot;，拿不到&quot;东方财富那种 +26pct 超额&quot;</td>
+<td>东财夏普 3.71 &gt; 指数 1.73</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>② 反弹日&quot;不够爽&quot;</strong></td>
+<td>指数涨 2% 时，中际旭创能涨 7.85%</td>
+<td>但跌时也 -7.40%</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>③ 换指数也躲不掉&quot;科技熊市&quot;</strong></td>
+<td>创业板指 250 日 -30.5%，一样是亏</td>
+<td>只是&quot;亏得少、亏得慢&quot;</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐ 所以&quot;全清换指数&quot;不是&quot;从此不亏&quot;，而是&quot;用’平均’换’稳定’&quot;</strong> ——
+<strong>它把你的&quot;最大回撤从 -56% 压到 -36%、把’12 天暴跌’压到’1 天’、把夏普从 0.51 提到 1.73&quot;</strong>。
+<strong>代价是：你放弃了&quot;东方财富式的超额&quot;，也放弃了&quot;中际旭创式的 +7.85% 单日暴涨&quot;。</strong></p>
+</blockquote>
+<h3 id="sec-13">2.8 我的建议：不是&quot;全清&quot;，是&quot;按夏普做结构性替换&quot;</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">夏普</th>
+<th style="text-align:center">建议</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td style="text-align:center"><strong>0.51</strong></td>
+<td style="text-align:center"><strong>换成创业板指/科创50（或减到最小仓）</strong></td>
+<td>夏普最低、跑输 25.7pct、波动 2.1 倍、跌&gt;5% 12 天</td>
+</tr>
+<tr>
+<td><strong>长鑫科技</strong></td>
+<td style="text-align:center">1.23</td>
+<td style="text-align:center"><strong>可保留，但降权重</strong></td>
+<td>夏普低于指数（波动 67.2% 太大）</td>
+</tr>
+<tr>
+<td><strong>北方华创</strong></td>
+<td style="text-align:center">1.34</td>
+<td style="text-align:center"><strong>保留</strong></td>
+<td>弹性&quot;上行&gt;下行&quot;（4.28% vs -2.73%），这是&quot;好股&quot;特征</td>
+</tr>
+<tr>
+<td><strong>宁德时代</strong></td>
+<td style="text-align:center">1.48</td>
+<td style="text-align:center"><strong>保留或部分换</strong></td>
+<td>接近基准，中性</td>
+</tr>
+<tr>
+<td><strong>东方财富</strong></td>
+<td style="text-align:center"><strong>3.71</strong></td>
+<td style="text-align:center"><strong>保留（核心）</strong></td>
+<td>夏普最高、0 天跌&gt;5%、跑赢 26.1pct</td>
+</tr>
+</tbody>
+</table>
+<p><strong>具体路径（如果你决定执行）</strong>：</p>
+<pre class="code-block"><code>第一步：把中际旭创的仓位&quot;对半&quot;——
+  一半换创业板指（159915）或科创50ETF（588000）
+  一半保留，但设 427.34 硬止损
+
+第二步：观察 1 个月——
+  若换成指数后，回撤明显收窄、睡眠质量改善 → 说明&quot;波动&quot;才是你的主要痛点
+  若换成指数后，看到反弹日&quot;涨得少&quot;很难受 → 说明你其实是&quot;风险偏好高&quot;，可以再换回来
+
+第三步：把&quot;夏普&quot;作为未来选股的第一过滤器——
+  任何个股，先看&quot;它的夏普是否 &gt; 创业板指（1.73）&quot;
+  如果 &lt; 1.0 → 不要重仓
+</code></pre>
+<blockquote>
+<p><strong>⭐⭐ 一句话总结</strong>：
+<strong>“全清换指数&quot;这个念头，本质是&quot;你终于开始用’风险’而不是’故事’来评价持仓” —— 这是好事。但&quot;全清&quot;是矫枉过正，正确的是&quot;换掉夏普最低的（中际旭创），留下夏普最高的（东方财富）&quot;。</strong>
+<strong>因为你的组合里，真正折磨你的不是&quot;五只个股&quot;，是&quot;一只中际旭创&quot;（12 天跌超5%、波动 85.6%、跑输 25.7pct）。</strong>
+<strong>把它处理掉，你的&quot;折磨&quot;会减少 80%，而不是&quot;全部清零重新开始&quot;。</strong></p>
+</blockquote>
+<hr>
+<h2 id="sec-14">三、维度一：资金流对比（11/10 vs 11/9）—— 成长全面回流</h2>
+<h3 id="sec-15">3.1 关键概念</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th style="text-align:center">11/9</th>
+<th style="text-align:center"><strong>11/10</strong></th>
+<th style="text-align:center">变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>机器人概念</strong></td>
+<td style="text-align:center">-51.23亿</td>
+<td style="text-align:center"><strong>+87.42亿</strong></td>
+<td style="text-align:center">✅✅✅ <strong>+138.6亿（转正）</strong></td>
+</tr>
+<tr>
+<td><strong>人工智能</strong></td>
+<td style="text-align:center">-103.76亿</td>
+<td style="text-align:center"><strong>+62.96亿</strong></td>
+<td style="text-align:center">✅✅✅ <strong>+166.7亿（转正）</strong></td>
+</tr>
+<tr>
+<td><strong>人形机器人</strong></td>
+<td style="text-align:center">+2.41亿</td>
+<td style="text-align:center"><strong>+59.11亿</strong></td>
+<td style="text-align:center">✅ +56.7亿</td>
+</tr>
+<tr>
+<td><strong>深股通</strong></td>
+<td style="text-align:center">-196.59亿</td>
+<td style="text-align:center"><strong>+38.55亿</strong></td>
+<td style="text-align:center">✅✅✅ <strong>+235亿（转正！）</strong></td>
+</tr>
+<tr>
+<td><strong>融资融券</strong></td>
+<td style="text-align:center">-269.24亿</td>
+<td style="text-align:center"><strong>-50.89亿</strong></td>
+<td style="text-align:center">✅✅ <strong>+218亿（大幅收窄）</strong></td>
+</tr>
+<tr>
+<td><strong>芯片概念</strong></td>
+<td style="text-align:center">-10.53亿</td>
+<td style="text-align:center"><strong>+31.81亿</strong></td>
+<td style="text-align:center">✅ 转正</td>
+</tr>
+<tr>
+<td>东数西算</td>
+<td style="text-align:center">-9.22亿</td>
+<td style="text-align:center">+13.05亿</td>
+<td style="text-align:center">✅ 转正</td>
+</tr>
+<tr>
+<td><strong>CPO</strong></td>
+<td style="text-align:center">+58.85亿</td>
+<td style="text-align:center"><strong>+3.81亿</strong></td>
+<td style="text-align:center">⚠️ 仍正但大幅收窄</td>
+</tr>
+<tr>
+<td><strong>PCB</strong></td>
+<td style="text-align:center">+27.01亿</td>
+<td style="text-align:center"><strong>-22.26亿</strong></td>
+<td style="text-align:center">❌ <strong>转负</strong></td>
+</tr>
+<tr>
+<td><strong>存储芯片</strong></td>
+<td style="text-align:center">-49.49亿</td>
+<td style="text-align:center">-0.10亿</td>
+<td style="text-align:center">⚠️ 基本持平（仍是唯一没转正的）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-16">3.2 流入/流出 TOP</h3>
+<p><strong>概念净流入</strong>：<strong>机器人 +87.42</strong>、<strong>华为 +81.51</strong>、虚拟现实 +67.15、小米 +65.53、<strong>人工智能 +62.96</strong>、智能穿戴 +60.48</p>
+<p><strong>概念净流出</strong>：<strong>国企改革 -103.85</strong>、中报预增 -80.47、央企国企改革 -72.96、<strong>沪股通 -65.75</strong>、风电 -61.13、<strong>中特估 -53.04</strong></p>
+<p><strong>行业净流入</strong>：<strong>文化传媒 +29.65（+4.07%）</strong>、消费电子 +23.05（+4.35%）、汽车零部件 +16.45、银行 +14.87、<strong>半导体 +12.91（+2.95%）</strong></p>
+<p><strong>行业净流出</strong>：工业金属 -22.02、军工 -18.54、<strong>元件 -16.60</strong>、煤炭 -15.07、医疗服务 -13.98</p>
+<blockquote>
+<p><strong>⭐⭐ 三个结论</strong>：
+<strong>1）成长全面回流</strong>：机器人 +87亿、AI +63亿、芯片 +32亿 —— <strong>这是 11 月以来最健康的&quot;成长资金回补&quot;</strong>。
+<strong>2）但&quot;深股通 +38.55 亿（转正）、融资 -50.89 亿（大幅收窄）&quot;</strong> —— <strong>杠杆和外资首次同时改善</strong>，这是比 11/9 更扎实的信号。
+<strong>3）“PCB 转负（-22.26亿）、CPO 收窄到 +3.81亿”</strong> —— <strong>昨天最强的&quot;英伟达供应链&quot;，今天资金反而不追了</strong>（因为昨晚费半没给出明确方向）。</p>
+</blockquote>
+<hr>
+<h2 id="sec-17">四、维度二：企稳信号量化判定</h2>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">今日</th>
+<th style="text-align:center"><strong>RSI5</strong></th>
+<th style="text-align:center"><strong>MACD柱</strong></th>
+<th style="text-align:center">变化</th>
+<th style="text-align:center">MA5</th>
+<th style="text-align:center">MA20</th>
+<th style="text-align:center">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>北方华创</strong></td>
+<td style="text-align:center">-1.13%</td>
+<td style="text-align:center"><strong>52.6</strong></td>
+<td style="text-align:center"><strong>+16.469（最强）</strong></td>
+<td style="text-align:center">从 +16.593 略降</td>
+<td style="text-align:center">-1.70%</td>
+<td style="text-align:center"><strong>-0.19%（跌破）</strong></td>
+<td style="text-align:center">⚠️ <strong>动能最强但破 MA20</strong></td>
+</tr>
+<tr>
+<td><strong>宁德时代</strong></td>
+<td style="text-align:center">+0.53%</td>
+<td style="text-align:center">51.6</td>
+<td style="text-align:center">+9.765</td>
+<td style="text-align:center">从 +10.150 略降</td>
+<td style="text-align:center">-1.58%</td>
+<td style="text-align:center"><strong>+0.60%（收复）</strong></td>
+<td style="text-align:center">✅ <strong>重上 MA20</strong></td>
+</tr>
+<tr>
+<td><strong>东方财富</strong></td>
+<td style="text-align:center">0.00%</td>
+<td style="text-align:center">57.0</td>
+<td style="text-align:center">+0.198</td>
+<td style="text-align:center">略降</td>
+<td style="text-align:center">-0.66%</td>
+<td style="text-align:center"><strong>+2.34%</strong></td>
+<td style="text-align:center">✅ <strong>最稳</strong></td>
+</tr>
+<tr>
+<td><strong>长鑫科技</strong></td>
+<td style="text-align:center">+1.15%</td>
+<td style="text-align:center">42.1</td>
+<td style="text-align:center">+0.469</td>
+<td style="text-align:center">持平</td>
+<td style="text-align:center">-2.52%</td>
+<td style="text-align:center">-3.99%</td>
+<td style="text-align:center">⚠️ 中性</td>
+</tr>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td style="text-align:center"><strong>+4.20%</strong></td>
+<td style="text-align:center"><strong>35.5</strong></td>
+<td style="text-align:center"><strong>-10.361</strong></td>
+<td style="text-align:center"><strong>从 -15.162 明显收窄</strong></td>
+<td style="text-align:center">-1.78%</td>
+<td style="text-align:center"><strong>-18.43%</strong></td>
+<td style="text-align:center">⚠️ <strong>止跌加速但仍是空头</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐⭐ 今天的三个关键变化</strong>：
+<strong>1）中际旭创的 MACD 柱从 -15.162 收窄到 -10.361（幅度 4.8）</strong> —— 这是&quot;止跌&quot;的实质性进展，配合 +4.20% 的大涨，<strong>技术上&quot;最坏的时候&quot;可能过去了</strong>。
+<strong>2）宁德重新收复 MA20（+0.60%）</strong> —— 昨天跌破、今天收回，<strong>说明 248.45 有支撑</strong>。
+<strong>3）北方华创跌破 MA20（-0.19%）</strong> —— 昨天&quot;盘中破、收盘收&quot;，今天<strong>收盘破了</strong>（538.68 &lt; 539.73）。<strong>按纪律，这是&quot;减 1/3&quot;的信号。</strong></p>
+</blockquote>
+<hr>
+<h2 id="sec-18">五、维度三：相对抗跌性与独立反弹概率</h2>
+<h3 id="sec-19">5.1 两日累计（11/9-11/10 vs 上证 +0.40%）</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">11/9</th>
+<th style="text-align:center">11/10</th>
+<th style="text-align:center"><strong>两日累计</strong></th>
+<th style="text-align:center">相对上证</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证指数</td>
+<td style="text-align:center">+0.32%</td>
+<td style="text-align:center">+0.08%</td>
+<td style="text-align:center"><strong>+0.40%</strong></td>
+<td style="text-align:center">—</td>
+</tr>
+<tr>
+<td>创业板指</td>
+<td style="text-align:center">-0.27%</td>
+<td style="text-align:center">+1.46%</td>
+<td style="text-align:center">+1.19%</td>
+<td style="text-align:center">+0.79pct</td>
+</tr>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td style="text-align:center">+0.90%</td>
+<td style="text-align:center"><strong>+4.20%</strong></td>
+<td style="text-align:center"><strong>+5.14%</strong></td>
+<td style="text-align:center"><strong>+4.74pct（最强）</strong></td>
+</tr>
+<tr>
+<td><strong>长鑫科技</strong></td>
+<td style="text-align:center">-1.04%</td>
+<td style="text-align:center">+1.15%</td>
+<td style="text-align:center">+0.10%</td>
+<td style="text-align:center">-0.30pct</td>
+</tr>
+<tr>
+<td><strong>宁德时代</strong></td>
+<td style="text-align:center">-2.19%</td>
+<td style="text-align:center">+0.53%</td>
+<td style="text-align:center">-1.67%</td>
+<td style="text-align:center">-2.07pct</td>
+</tr>
+<tr>
+<td><strong>东方财富</strong></td>
+<td style="text-align:center">0.00%</td>
+<td style="text-align:center">0.00%</td>
+<td style="text-align:center"><strong>0.00%</strong></td>
+<td style="text-align:center">-0.40pct</td>
+</tr>
+<tr>
+<td><strong>北方华创</strong></td>
+<td style="text-align:center">-2.71%</td>
+<td style="text-align:center">-1.13%</td>
+<td style="text-align:center"><strong>-3.81%</strong></td>
+<td style="text-align:center"><strong>-4.21pct（最弱）</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐ 反差很大</strong>：<strong>中际旭创两日 +5.14%（最强），北方华创两日 -3.81%（最弱）</strong> —— <strong>这正好是&quot;昨天谁强今天谁弱&quot;的完整反转。</strong></p>
+</blockquote>
+<h3 id="sec-20">5.2 独立反弹概率（11/11 视角）</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th>支持因素</th>
+<th>抑制因素</th>
+<th style="text-align:center"><strong>概率</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td>MACD 明显收窄（-15.16→-10.36）、两日 +5.14%、CPO 资金仍正</td>
+<td>跌破 MA20（-18.43%）、成交 185.6亿仍大、今晚费半未定</td>
+<td style="text-align:center"><strong>50-55%</strong></td>
+</tr>
+<tr>
+<td><strong>东方财富</strong></td>
+<td>站上 MA20+MA60、夏普 3.71、0 天暴跌</td>
+<td>空间窄（RR 1.67）</td>
+<td style="text-align:center"><strong>45-50%</strong></td>
+</tr>
+<tr>
+<td><strong>宁德时代</strong></td>
+<td>收复 MA20、MACD +9.765</td>
+<td>两日 -1.67%、跑输指数</td>
+<td style="text-align:center"><strong>45-50%</strong></td>
+</tr>
+<tr>
+<td><strong>长鑫科技</strong></td>
+<td>MACD +0.469、今日 +1.15%</td>
+<td>仍跌破 MA5/MA20、RR 4.31</td>
+<td style="text-align:center"><strong>40-45%</strong></td>
+</tr>
+<tr>
+<td><strong>北方华创</strong></td>
+<td>MACD +16.469（最强）</td>
+<td><strong>收盘跌破 MA20、两日 -3.81%（最弱）</strong></td>
+<td style="text-align:center"><strong>40-45%</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="sec-21">六、五只标的全栈量化（MA5/RSI5/MACD/RR）</h2>
+<h3 id="sec-22">6.1 技术指标总表</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">收盘</th>
+<th style="text-align:center">今日</th>
+<th style="text-align:center"><strong>RSI5</strong></th>
+<th style="text-align:center">MA5</th>
+<th style="text-align:center">MA20</th>
+<th style="text-align:center">MA60</th>
+<th style="text-align:center">MA120</th>
+<th style="text-align:center"><strong>MACD柱</strong></th>
+<th style="text-align:center">支撑</th>
+<th style="text-align:center">压力</th>
+<th style="text-align:center"><strong>RR</strong></th>
+<th style="text-align:center">距高</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>长鑫科技</strong></td>
+<td style="text-align:center">40.45</td>
+<td style="text-align:center">+1.15%</td>
+<td style="text-align:center"><strong>42.1</strong></td>
+<td style="text-align:center">41.49<br>(-2.52%)</td>
+<td style="text-align:center">42.13<br>(-3.99%)</td>
+<td style="text-align:center">51.10<br>(-20.8%)</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center"><strong>+0.469</strong></td>
+<td style="text-align:center">38.75</td>
+<td style="text-align:center">47.78</td>
+<td style="text-align:center"><strong>4.31</strong></td>
+<td style="text-align:center">-34.5%</td>
+</tr>
+<tr>
+<td><strong>北方华创</strong></td>
+<td style="text-align:center">538.68</td>
+<td style="text-align:center">-1.13%</td>
+<td style="text-align:center"><strong>52.6</strong></td>
+<td style="text-align:center">548.00<br>(-1.70%)</td>
+<td style="text-align:center">539.73<br><strong>(-0.19%)</strong></td>
+<td style="text-align:center">629.06<br>(-14.4%)</td>
+<td style="text-align:center">672.42<br>(-19.9%)</td>
+<td style="text-align:center"><strong>+16.469</strong></td>
+<td style="text-align:center">468.34</td>
+<td style="text-align:center">615.00</td>
+<td style="text-align:center"><strong>1.09</strong></td>
+<td style="text-align:center">-44.3%</td>
+</tr>
+<tr>
+<td><strong>东方财富</strong></td>
+<td style="text-align:center">18.78</td>
+<td style="text-align:center"><strong>0.00%</strong></td>
+<td style="text-align:center"><strong>57.0</strong></td>
+<td style="text-align:center">18.90<br>(-0.66%)</td>
+<td style="text-align:center">18.35<br><strong>(+2.34%)</strong></td>
+<td style="text-align:center">18.62<br><strong>(+0.8%)</strong></td>
+<td style="text-align:center">19.17<br>(-2.0%)</td>
+<td style="text-align:center"><strong>+0.198</strong></td>
+<td style="text-align:center">18.35</td>
+<td style="text-align:center">19.50</td>
+<td style="text-align:center"><strong>1.67</strong></td>
+<td style="text-align:center">-35.8%</td>
+</tr>
+<tr>
+<td><strong>宁德时代</strong></td>
+<td style="text-align:center">249.95</td>
+<td style="text-align:center">+0.53%</td>
+<td style="text-align:center"><strong>51.6</strong></td>
+<td style="text-align:center">253.95<br>(-1.58%)</td>
+<td style="text-align:center">248.45<br><strong>(+0.60%)</strong></td>
+<td style="text-align:center">310.88<br>(-19.6%)</td>
+<td style="text-align:center">351.33<br>(-28.9%)</td>
+<td style="text-align:center"><strong>+9.765</strong></td>
+<td style="text-align:center">248.45</td>
+<td style="text-align:center">290.88</td>
+<td style="text-align:center"><strong>27.3</strong>⚠️</td>
+<td style="text-align:center">-46.5%</td>
+</tr>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td style="text-align:center"><strong>471.00</strong></td>
+<td style="text-align:center"><strong>+4.20%</strong></td>
+<td style="text-align:center"><strong>35.5</strong></td>
+<td style="text-align:center">479.55<br>(-1.78%)</td>
+<td style="text-align:center">577.44<br><strong>(-18.43%)</strong></td>
+<td style="text-align:center">774.90<br>(-39.2%)</td>
+<td style="text-align:center">946.34<br><strong>(-50.2%)</strong></td>
+<td style="text-align:center"><strong>-10.361</strong></td>
+<td style="text-align:center">427.34</td>
+<td style="text-align:center">733.35</td>
+<td style="text-align:center"><strong>6.01</strong></td>
+<td style="text-align:center"><strong>-66.7%</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-23">6.2 风险回报率细算</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">现价</th>
+<th style="text-align:center">支撑</th>
+<th style="text-align:center">下跌空间</th>
+<th style="text-align:center">压力</th>
+<th style="text-align:center">上涨空间</th>
+<th style="text-align:center"><strong>RR</strong></th>
+<th>评价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>宁德时代</strong></td>
+<td style="text-align:center">249.95</td>
+<td style="text-align:center">248.45（MA20）</td>
+<td style="text-align:center"><strong>-0.6%</strong></td>
+<td style="text-align:center">290.88</td>
+<td style="text-align:center">+16.4%</td>
+<td style="text-align:center"><strong>27.3</strong></td>
+<td>❌ <strong>支撑贴边，极端失真</strong></td>
+</tr>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td style="text-align:center">471.00</td>
+<td style="text-align:center">427.34（年内低）</td>
+<td style="text-align:center">-9.3%</td>
+<td style="text-align:center">733.35（60日高）</td>
+<td style="text-align:center">+55.7%</td>
+<td style="text-align:center"><strong>6.01</strong></td>
+<td>⚠️ 压力失真；<strong>按 MA5 479.55 算 RR = 1.81/9.3 = 0.19（极差）</strong></td>
+</tr>
+<tr>
+<td><strong>长鑫科技</strong></td>
+<td style="text-align:center">40.45</td>
+<td style="text-align:center">38.75（20日低）</td>
+<td style="text-align:center">-4.2%</td>
+<td style="text-align:center">47.78（20日高）</td>
+<td style="text-align:center">+18.1%</td>
+<td style="text-align:center"><strong>4.31</strong></td>
+<td>✅ <strong>结构最可读</strong></td>
+</tr>
+<tr>
+<td><strong>东方财富</strong></td>
+<td style="text-align:center">18.78</td>
+<td style="text-align:center">18.35（MA20）</td>
+<td style="text-align:center">-2.3%</td>
+<td style="text-align:center">19.50</td>
+<td style="text-align:center">+3.8%</td>
+<td style="text-align:center"><strong>1.67</strong></td>
+<td>⚠️ 空间窄</td>
+</tr>
+<tr>
+<td><strong>北方华创</strong></td>
+<td style="text-align:center">538.68</td>
+<td style="text-align:center">468.34（20日低）</td>
+<td style="text-align:center"><strong>-13.1%</strong></td>
+<td style="text-align:center">615.00</td>
+<td style="text-align:center">+14.2%</td>
+<td style="text-align:center"><strong>1.09</strong></td>
+<td>⚠️ <strong>赔率最差（-13.1% vs +14.2%）</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐ RR 的三个关键读法</strong>：
+<strong>1）宁德 27.3 是&quot;支撑贴边 0.6%&quot;的失真值</strong> —— MA20 是最后防线，破了就是悬崖。
+<strong>2）中际旭创 6.01 是&quot;压力取错&quot;（60日高 733）</strong> —— <strong>按 MA5 479.55 算，真实 RR 只有 0.19（极差）</strong>，意味着&quot;向上只有 1.8% 就遇到 MA5 阻力，向下有 9.3% 空间&quot;。
+<strong>3）北方华创 1.09 是&quot;赔率最差&quot;的</strong> —— 下方 -13.1% 到 20 日低、上方 +14.2% 到 20 日高，<strong>几乎是 1:1，没有优势</strong>。</p>
+</blockquote>
+<hr>
+<h2 id="sec-24">七、综合研判与操作建议</h2>
+<h3 id="sec-25">7.1 市场定性</h3>
+<blockquote>
+<p><strong>11/10 是&quot;成长资金回补 + 小盘普涨日&quot;：</strong>
+<strong>①指数：上证 +0.08%、创业板 +1.46%、国证2000 +1.75% vs 上证50 -0.58%（小盘强、权重弱）；</strong>
+<strong>②广度：涨 4,273 / 跌 1,149（78.8%）、涨超5% 468 家 vs 跌超5% 9 家（52:1）；</strong>
+<strong>③资金：机器人 +87.42亿、AI +62.96亿、芯片 +31.81亿（成长全面回流）；<strong>深股通 +38.55亿（转正）、融资 -50.89亿（大幅收窄）</strong>；</strong>
+<strong>④但：PCB 转负 -22.26亿、CPO 收窄到 +3.81亿 —— 昨天的&quot;英伟达供应链&quot;今天不追了；</strong>
+<strong>⑤成交 15,167 亿（仍偏低），说明&quot;存量调仓&quot;多于&quot;增量进场&quot;。</strong></p>
+</blockquote>
+<h3 id="sec-26">7.2 核心专题结论（你有权知道的最重要的一段）</h3>
+<table>
+<thead>
+<tr>
+<th>你的问题</th>
+<th>数据答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>“跑不过板块指数”</strong></td>
+<td><strong>只对中际旭创（-25.7pct）和宁德（-6.8pct）成立；东财跑赢 +26.1pct、长鑫 +13.1pct</strong></td>
+</tr>
+<tr>
+<td><strong>“跌起来猛”</strong></td>
+<td><strong>中际旭创波动 85.6%（指数 2.1 倍）、60 天里 12 天跌&gt;5%；东财 0 天、波动比指数还低</strong></td>
+</tr>
+<tr>
+<td><strong>“全清换指数会怎么样”</strong></td>
+<td><strong>换中际旭创：全面改善（收益 +25.7pct、波动减半、夏普 3.4 倍）；换东财：全面恶化（少赚 26.1pct）</strong></td>
+</tr>
+<tr>
+<td><strong>“科技反弹会不完整吗”</strong></td>
+<td><strong>会（指数涨 2% 时旭创涨 7.85%），但下跌也不完整（-7.40%），弹性对称，净效果是夏普 1.73 vs 0.51</strong></td>
+</tr>
+<tr>
+<td><strong>“长期是好策略吗”</strong></td>
+<td><strong>对夏普 &lt;1.0 的（旭创 0.51）是好策略；对夏普 &gt;3 的（东财 3.71）是坏策略</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-27">7.3 分标的操作建议</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">强弱</th>
+<th><strong>操作建议</strong></th>
+<th>关键位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>东方财富</strong></td>
+<td style="text-align:center">🟢 <strong>最稳（夏普 3.71）</strong></td>
+<td><strong>保留（核心）</strong> —— 唯一站上 MA20+MA60、0 天跌超5%；空间窄，19.50 减</td>
+<td>18.35 / 19.50</td>
+</tr>
+<tr>
+<td><strong>宁德时代</strong></td>
+<td style="text-align:center">🟢 <strong>收复 MA20</strong></td>
+<td><strong>持有</strong> —— 重新站上 248.45；跌破则减</td>
+<td>248.45</td>
+</tr>
+<tr>
+<td><strong>长鑫科技</strong></td>
+<td style="text-align:center">🟡 <strong>中性</strong></td>
+<td><strong>持有观察</strong>（夏普 1.23 低于基准，可降权重）；破 38.75 减</td>
+<td>38.75</td>
+</tr>
+<tr>
+<td><strong>北方华创</strong></td>
+<td style="text-align:center">🟡 <strong>动能最强但收盘破 MA20</strong></td>
+<td>🔴 <strong>执行减 1/3</strong> —— 昨日&quot;盘中破收回收&quot;，<strong>今日收盘 538.68 &lt; MA20 539.73，纪律触发</strong></td>
+<td>539.73 / 468.34</td>
+</tr>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td style="text-align:center">🔴 <strong>夏普最低（0.51）</strong></td>
+<td><strong>建议&quot;对半&quot;处理</strong>：一半换创业板指（159915）/科创50ETF（588000），一半保留并设 <strong>427.34</strong> 硬止损</td>
+<td>427.34 / 479.55（MA5）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-28">7.4 仓位与观察</h3>
+<p><strong>仓位：3-4 成</strong>（维持）。</p>
+<p><strong>四条支持</strong>：①成长资金全面回补（机器人 +87亿、AI +63亿）②深股通转正 +38.55亿、融资收窄到 -50.89亿 ③涨超5% 468 vs 跌超5% 9（52:1）④宁德收复 MA20</p>
+<p><strong>四条谨慎</strong>：①成交仅 1.52 万亿（无增量）②PCB/CPO 资金反而不追 ③今晚费半方向未定 ④北方华创收盘破 MA20</p>
+<p><strong>明日（11/11）观察</strong>：</p>
+<ol>
+<li><strong>今晚费半（11/10 美东）</strong> —— 仍然是最关键的裁判</li>
+<li><strong>中际旭创 479.55（MA5）</strong> —— 站上则确认反弹，否则只是反抽</li>
+<li><strong>北方华创 539.73（MA20）</strong> —— 已跌破，看能否收回</li>
+<li><strong>宁德 248.45</strong> —— 守住则底部确认</li>
+<li><strong>成交能否回到 1.7 万亿+</strong></li>
+</ol>
+<hr>
+<h2 id="sec-29">八、附录：数据速查</h2>
+<h3 id="sec-30">8.1 核心数据（11/10）</h3>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证/深成/创业板/科创50</td>
+<td>3,663.72(+0.08%) / 11,241.54(+0.86%) / <strong>2,494.40(+1.46%)</strong> / 1,265.02(+0.64%)</td>
+</tr>
+<tr>
+<td>上证50 / 国证2000</td>
+<td>2,772.96(<strong>-0.58%</strong>) / 8,748.47(<strong>+1.75%</strong>)</td>
+</tr>
+<tr>
+<td>两市成交</td>
+<td>15,167 亿</td>
+</tr>
+<tr>
+<td>涨跌家数</td>
+<td><strong>4,273 / 1,149</strong>（78.8%）</td>
+</tr>
+<tr>
+<td>涨超5% / 跌超5%</td>
+<td><strong>468 / 9</strong></td>
+</tr>
+<tr>
+<td>传媒娱乐</td>
+<td><strong>+4.24%（领涨）</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-31">8.2 五标的速查</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">收盘</th>
+<th style="text-align:center">今日</th>
+<th style="text-align:center">RSI5</th>
+<th style="text-align:center">MACD柱</th>
+<th style="text-align:center">MA20</th>
+<th style="text-align:center">RR</th>
+<th style="text-align:center">夏普</th>
+<th style="text-align:center">操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>东方财富</td>
+<td style="text-align:center">18.78</td>
+<td style="text-align:center">0.00%</td>
+<td style="text-align:center">57.0</td>
+<td style="text-align:center">+0.198</td>
+<td style="text-align:center"><strong>+2.34%</strong></td>
+<td style="text-align:center">1.67</td>
+<td style="text-align:center"><strong>3.71</strong></td>
+<td style="text-align:center">保留</td>
+</tr>
+<tr>
+<td>宁德时代</td>
+<td style="text-align:center">249.95</td>
+<td style="text-align:center">+0.53%</td>
+<td style="text-align:center">51.6</td>
+<td style="text-align:center">+9.765</td>
+<td style="text-align:center"><strong>+0.60%</strong></td>
+<td style="text-align:center">27.3⚠️</td>
+<td style="text-align:center">1.48</td>
+<td style="text-align:center">持有</td>
+</tr>
+<tr>
+<td>长鑫科技</td>
+<td style="text-align:center">40.45</td>
+<td style="text-align:center">+1.15%</td>
+<td style="text-align:center">42.1</td>
+<td style="text-align:center">+0.469</td>
+<td style="text-align:center">-3.99%</td>
+<td style="text-align:center">4.31</td>
+<td style="text-align:center">1.23</td>
+<td style="text-align:center">持有观察</td>
+</tr>
+<tr>
+<td>北方华创</td>
+<td style="text-align:center">538.68</td>
+<td style="text-align:center">-1.13%</td>
+<td style="text-align:center">52.6</td>
+<td style="text-align:center"><strong>+16.469</strong></td>
+<td style="text-align:center"><strong>-0.19%</strong></td>
+<td style="text-align:center">1.09</td>
+<td style="text-align:center">1.34</td>
+<td style="text-align:center"><strong>减1/3</strong></td>
+</tr>
+<tr>
+<td>中际旭创</td>
+<td style="text-align:center">471.00</td>
+<td style="text-align:center"><strong>+4.20%</strong></td>
+<td style="text-align:center">35.5</td>
+<td style="text-align:center">-10.361</td>
+<td style="text-align:center">-18.43%</td>
+<td style="text-align:center">6.01</td>
+<td style="text-align:center"><strong>0.51</strong></td>
+<td style="text-align:center"><strong>对半换指数</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-32">8.3 &quot;个股 vs 指数&quot;核心对比（250 日）</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">累计</th>
+<th style="text-align:center">波动</th>
+<th style="text-align:center">回撤</th>
+<th style="text-align:center">夏普</th>
+<th style="text-align:center">跌&gt;5%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>东方财富</td>
+<td style="text-align:center"><strong>-4.4%</strong></td>
+<td style="text-align:center"><strong>25.8%</strong></td>
+<td style="text-align:center"><strong>-15.1%</strong></td>
+<td style="text-align:center"><strong>3.71</strong></td>
+<td style="text-align:center"><strong>0</strong></td>
+</tr>
+<tr>
+<td>长鑫科技</td>
+<td style="text-align:center">-17.4%</td>
+<td style="text-align:center">67.2%</td>
+<td style="text-align:center">-37.2%</td>
+<td style="text-align:center">1.23</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td>北方华创</td>
+<td style="text-align:center">-30.0%</td>
+<td style="text-align:center">52.3%</td>
+<td style="text-align:center">-38.4%</td>
+<td style="text-align:center">1.34</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td>科创50</td>
+<td style="text-align:center">-30.0%</td>
+<td style="text-align:center">46.7%</td>
+<td style="text-align:center">-35.7%</td>
+<td style="text-align:center">1.50</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td><strong>创业板指</strong></td>
+<td style="text-align:center"><strong>-30.5%</strong></td>
+<td style="text-align:center"><strong>40.2%</strong></td>
+<td style="text-align:center">-36.1%</td>
+<td style="text-align:center"><strong>1.73</strong></td>
+<td style="text-align:center"><strong>1</strong></td>
+</tr>
+<tr>
+<td>宁德时代</td>
+<td style="text-align:center">-37.3%</td>
+<td style="text-align:center">42.4%</td>
+<td style="text-align:center">-45.4%</td>
+<td style="text-align:center">1.48</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td style="text-align:center"><strong>-56.2%</strong></td>
+<td style="text-align:center"><strong>85.6%</strong></td>
+<td style="text-align:center"><strong>-56.1%</strong></td>
+<td style="text-align:center"><strong>0.51</strong></td>
+<td style="text-align:center"><strong>12</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><em>报告生成时间：2026-11-10 收盘后</em></p>
+
+  <div class="footer">来源：任务库持仓复盘 · A股深度复盘_20261110.md | 由 markdown-it 转换 | 仅供参考，不构成投资建议</div>
+</div>
+</body>
+</html>
