@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>脆弱地基上的超级帝国 · 黄仁勋靠什么控制英伟达33年 | 图文提炼</title>
+<style>
+:root{
+  --bg:#0b0e14; --card:#141922; --card2:#1a2029; --border:#252c38;
+  --text:#e6e9ef; --text2:#9aa4b2; --text3:#6b7688;
+  --nv:#76b900; --nv-dim:rgba(118,185,0,.12); --nv-border:rgba(118,185,0,.3);
+  --red:#ef4444; --red-dim:rgba(239,68,68,.1);
+  --amber:#f59e0b; --amber-dim:rgba(245,158,11,.1);
+  --blue:#3b82f6; --blue-dim:rgba(59,130,246,.1);
+  --purple:#a78bfa; --purple-dim:rgba(167,139,250,.1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",Helvetica,Arial,sans-serif;
+  line-height:1.8; padding:0 0 80px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px;}
+
+/* ===== 顶部导航 ===== */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,14,20,.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:10px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.topbar a{color:var(--text2);text-decoration:none;font-size:13px;transition:color .2s;}
+.topbar a:hover{color:var(--nv);}
+.topbar .brand{color:var(--nv);font-weight:700;font-size:13px;letter-spacing:.5px;}
+
+/* ===== Hero ===== */
+.hero{
+  padding:56px 0 40px;text-align:center;position:relative;
+  border-bottom:1px solid var(--border);margin-bottom:8px;
+}
+.hero::before{
+  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:420px;height:220px;
+  background:radial-gradient(circle,rgba(118,185,0,.13),transparent 70%);
+  pointer-events:none;
+}
+.hero .kicker{
+  display:inline-block;font-size:11px;letter-spacing:2px;color:var(--nv);
+  border:1px solid var(--nv-border);background:var(--nv-dim);
+  padding:4px 14px;border-radius:20px;margin-bottom:20px;
+}
+.hero h1{
+  font-size:2.1rem;line-height:1.35;font-weight:800;
+  background:linear-gradient(135deg,#fff 20%,#a8d84a 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  margin-bottom:14px;
+}
+.hero .sub{color:var(--text2);font-size:.95rem;max-width:620px;margin:0 auto;}
+.hero .src{margin-top:20px;font-size:12px;color:var(--text3);}
+
+/* ===== 一句话结论 ===== */
+.thesis{
+  background:linear-gradient(135deg,rgba(118,185,0,.08),rgba(118,185,0,.02));
+  border:1px solid var(--nv-border);border-radius:14px;
+  padding:24px 26px;margin:32px 0;
+}
+.thesis .label{font-size:11px;letter-spacing:1.5px;color:var(--nv);margin-bottom:10px;font-weight:700;}
+.thesis p{font-size:1rem;line-height:1.9;color:var(--text);}
+.thesis strong{color:var(--nv);font-weight:700;}
+
+/* ===== 关键数字 ===== */
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:28px 0;}
+.kpi{
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:18px 16px;text-align:center;transition:border-color .2s,transform .2s;
+}
+.kpi:hover{border-color:var(--nv-border);transform:translateY(-2px);}
+.kpi .v{font-size:1.65rem;font-weight:800;color:var(--nv);line-height:1.2;}
+.kpi .v.red{color:var(--red);}
+.kpi .v.amber{color:var(--amber);}
+.kpi .v.blue{color:var(--blue);}
+.kpi .l{font-size:11.5px;color:var(--text2);margin-top:6px;line-height:1.4;}
+
+/* ===== 章节 ===== */
+.sec{margin:52px 0;}
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+.sec-num{
+  flex-shrink:0;width:34px;height:34px;border-radius:9px;
+  background:var(--nv-dim);border:1px solid var(--nv-border);
+  color:var(--nv);font-weight:800;font-size:14px;
+  display:flex;align-items:center;justify-content:center;
+}
+.sec-head h2{font-size:1.28rem;font-weight:700;color:#fff;}
+.sec-head .en{font-size:11px;color:var(--text3);letter-spacing:1px;margin-left:auto;font-weight:400;}
+
+.card{
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:22px 24px;margin-bottom:16px;
+}
+.card h3{font-size:1rem;color:#fff;margin-bottom:12px;font-weight:700;}
+.card p{font-size:.9rem;color:var(--text2);line-height:1.9;}
+.card p+p{margin-top:10px;}
+.card strong{color:var(--text);font-weight:600;}
+.card .hl{color:var(--nv);font-weight:700;}
+
+/* ===== 股权对比图 ===== */
+.bar-section{margin:18px 0;}
+.bar-row{margin-bottom:18px;}
+.bar-label{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:6px;}
+.bar-label .name{color:var(--text);font-weight:600;}
+.bar-label .val{color:var(--nv);font-weight:700;}
+.bar-label .val.muted{color:var(--text3);font-weight:600;}
+.bar-track{height:22px;background:#0f1319;border-radius:6px;overflow:hidden;position:relative;border:1px solid var(--border);}
+.bar-fill{height:100%;border-radius:5px;display:flex;align-items:center;padding-left:8px;font-size:10.5px;font-weight:700;color:#0b0e14;transition:width .8s ease;}
+.bar-fill.green{background:linear-gradient(90deg,#5f9e00,#8ed11a);}
+.bar-fill.blue{background:linear-gradient(90deg,#2563eb,#60a5fa);}
+.bar-fill.gray{background:linear-gradient(90deg,#4b5563,#6b7280);color:#e6e9ef;}
+.bar-fill.amber{background:linear-gradient(90deg,#b45309,#f59e0b);}
+.bar-note{font-size:11px;color:var(--text3);margin-top:5px;}
+
+/* ===== 支柱四宫格 ===== */
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:18px 0;}
+.pillar{
+  background:var(--card2);border:1px solid var(--border);border-radius:11px;
+  padding:18px;transition:border-color .2s;
+}
+.pillar:hover{border-color:var(--nv-border);}
+.pillar .ico{font-size:1.4rem;margin-bottom:8px;}
+.pillar .t{font-size:.92rem;font-weight:700;color:#fff;margin-bottom:6px;}
+.pillar .d{font-size:12.5px;color:var(--text2);line-height:1.7;}
+
+/* ===== 时间线 ===== */
+.timeline{position:relative;padding-left:26px;margin:20px 0;}
+.timeline::before{
+  content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;
+  background:linear-gradient(180deg,var(--nv),rgba(118,185,0,.15));
+}
+.tl-item{position:relative;margin-bottom:22px;}
+.tl-item::before{
+  content:'';position:absolute;left:-26px;top:6px;width:11px;height:11px;
+  border-radius:50%;background:var(--bg);border:2px solid var(--nv);
+}
+.tl-item.key::before{background:var(--nv);box-shadow:0 0 0 4px rgba(118,185,0,.15);}
+.tl-year{font-size:11.5px;color:var(--nv);font-weight:700;letter-spacing:.5px;margin-bottom:3px;}
+.tl-title{font-size:.92rem;font-weight:700;color:#fff;margin-bottom:4px;}
+.tl-desc{font-size:12.8px;color:var(--text2);line-height:1.75;}
+
+/* ===== 数据表 ===== */
+.tbl-wrap{overflow-x:auto;margin:16px 0;}
+table{width:100%;border-collapse:collapse;font-size:12.8px;}
+th{
+  background:#0f1319;color:var(--nv);font-weight:700;text-align:left;
+  padding:10px 12px;border-bottom:2px solid var(--border);white-space:nowrap;
+}
+td{padding:9px 12px;border-bottom:1px solid var(--border);color:var(--text2);}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:rgba(118,185,0,.03);}
+td strong{color:var(--text);}
+.num-green{color:#4ade80;font-weight:700;}
+.num-red{color:var(--red);font-weight:700;}
+.num-amber{color:var(--amber);font-weight:700;}
+
+/* ===== 对比双栏 ===== */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;}
+.duo .box{
+  border-radius:11px;padding:18px;border:1px solid var(--border);background:var(--card2);
+}
+.duo .box.red{border-color:rgba(239,68,68,.28);background:var(--red-dim);}
+.duo .box.green{border-color:var(--nv-border);background:var(--nv-dim);}
+.duo .box h4{font-size:.9rem;margin-bottom:10px;color:#fff;}
+.duo .box ul{list-style:none;padding:0;}
+.duo .box li{font-size:12.5px;color:var(--text2);line-height:1.8;padding-left:14px;position:relative;}
+.duo .box li::before{content:'·';position:absolute;left:3px;color:var(--nv);font-weight:800;}
+
+/* ===== 引用 ===== */
+.quote{
+  border-left:3px solid var(--nv);background:rgba(118,185,0,.05);
+  padding:14px 18px;border-radius:0 10px 10px 0;margin:16px 0;
+  font-size:13.5px;color:var(--text);line-height:1.9;font-style:italic;
+}
+.quote .by{display:block;margin-top:8px;font-size:11.5px;color:var(--text3);font-style:normal;}
+
+/* ===== 风险/警示框 ===== */
+.alert{
+  border-radius:11px;padding:16px 20px;margin:16px 0;font-size:13px;line-height:1.85;
+  border-left:3px solid var(--amber);background:var(--amber-dim);color:#fcd34d;
+}
+.alert strong{color:#fde68a;}
+.alert.red{border-left-color:var(--red);background:var(--red-dim);color:#fca5a5;}
+.alert.red strong{color:#fecaca;}
+
+/* ===== 结论框 ===== */
+.verdict{
+  background:linear-gradient(135deg,rgba(118,185,0,.1),rgba(59,130,246,.06));
+  border:1px solid var(--nv-border);border-radius:14px;padding:26px 28px;margin:32px 0;
+}
+.verdict h3{color:#fff;font-size:1.05rem;margin-bottom:14px;}
+.verdict ol{padding-left:20px;}
+.verdict li{font-size:13.5px;color:var(--text2);line-height:2;margin-bottom:8px;}
+.verdict li strong{color:var(--text);}
+
+/* ===== 脚注 ===== */
+.foot{
+  margin-top:48px;padding-top:20px;border-top:1px solid var(--border);
+  text-align:center;font-size:11.5px;color:var(--text3);line-height:1.9;
+}
+
+/* ===== 响应式 ===== */
+@media(max-width:640px){
+  .hero{padding:38px 0 30px;}
+  .hero h1{font-size:1.5rem;}
+  .hero .sub{font-size:.86rem;}
+  .wrap{padding:0 14px;}
+  .card{padding:18px 16px;}
+  .duo{grid-template-columns:1fr;}
+  .sec{margin:38px 0;}
+  .sec-head h2{font-size:1.1rem;}
+  .sec-head .en{display:none;}
+  table{font-size:11.5px;}
+  th,td{padding:7px 8px;}
+  .kpi-grid{grid-template-columns:repeat(2,1fr);}
+  .kpi .v{font-size:1.35rem;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="./index.html">← 返回首页</a>
+  <span class="brand">图文提炼 · 治理结构</span>
+</div>
+
+<div class="wrap">
+
+  <!-- Hero -->
+  <div class="hero">
+    <span class="kicker">深度长文 · 图文提炼</span>
+    <h1>脆弱地基上的超级帝国<br>黄仁勋靠什么控制英伟达 33 年</h1>
+    <p class="sub">他不靠股权、不靠超级投票权、不靠分级董事会——却把一家 5 万亿美元的公司，做成了一套完全围绕个人运转的系统。</p>
+    <p class="src">原文：晚点LatePost · 文丨李赓 &nbsp;|&nbsp; 提炼整理：2026-11-19</p>
+  </div>
+
+  <!-- 一句话结论 -->
+  <div class="thesis">
+    <div class="label">核心结论</div>
+    <p>黄仁勋持股仅 <strong>3.58%</strong>、无超级投票权、董事会每年集体改选——从制度上看，股东随时可以一次性把他换掉。他真正的控制权来自三样东西：<strong>极度扁平的组织架构</strong>（36–60 人直接汇报、Top 5 邮件直读）、<strong>反共识的技术豪赌</strong>（CUDA、Mellanox）、以及<strong>极具压迫感的个人威权</strong>（当众痛骂 + 99% 支持率的奇妙统一）。代价是：这家公司没有二把手，也没有演练好的接班人。</p>
+  </div>
+
+  <!-- 关键数字 -->
+  <div class="kpi-grid">
+    <div class="kpi"><div class="v red">3.58%</div><div class="l">黄仁勋持股<br>（IPO时7.9%）</div></div>
+    <div class="kpi"><div class="v">5.26万亿</div><div class="l">市值峰值(美元)<br>2026-10-06</div></div>
+    <div class="kpi"><div class="v blue">36→60</div><div class="l">直接下属人数<br>2025.10→2026.1</div></div>
+    <div class="kpi"><div class="v">99%</div><div class="l">Glassdoor<br>CEO支持率</div></div>
+  </div>
+
+  <!-- 01 权力迷局 -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-num">01</div>
+      <h2>权力迷局：一份没有解释的辞呈</h2>
+      <span class="en">THE VACUUM</span>
+    </div>
+
+    <div class="card">
+      <h3>事件：突如其来的权力真空</h3>
+      <p>2026年11月12日上午，英伟达公告黄仁勋辞去总裁、CEO 与董事职务，<strong>即刻生效</strong>。公告未说明原因，黄本人未发声。</p>
+      <p>公告前三天，预测市场 Polymarket 上线「英伟达下一任 CEO」盘口，克雷斯隐含赔率一度 <strong>45%</strong>。截至发稿累计交易超 <strong>400 万美元</strong>，25 个选项赔率均低于 20%——最说明问题的是：<span class="hl">临时 CEO 克雷斯的赔率跌至 9%，低于「黄仁勋重返 CEO」的赔率</span>。</p>
+      <p>市场用真金白银投票：<strong>没人相信这家公司能没有他。</strong></p>
+    </div>
+
+    <div class="alert red">
+      <strong>一个反常识的制度事实：</strong>英伟达没有分级董事会、没有每年更换董事人数的限制、没有创始人绝对否决权。所有董事每年集体改选，任期一年。这意味着——<strong>从公司章程上看，黄仁勋对英伟达的控制力几乎是零</strong>。
+    </div>
+  </div>
+
+  <!-- 02 3.58%的地基 -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-num">02</div>
+      <h2>3.58%：一个随时可被推翻的地基</h2>
+      <span class="en">THE 3.58% FOUNDATION</span>
+    </div>
+
+    <div class="card">
+      <h3>横向对比：别人是怎么锁住控制权的</h3>
+      <div class="bar-section">
+        <div class="bar-row">
+          <div class="bar-label"><span class="name">Alphabet 创始人（佩奇+布林）</span><span class="val">52.7% 投票权</span></div>
+          <div class="bar-track"><div class="bar-fill blue" style="width:52.7%">B类股 6.9%股本 → 58.9%投票权</div></div>
+          <div class="bar-note">双层股权结构：用 6.9% 的流通股本，锁住 58.9% 的投票权</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span class="name">Anthropic 七位联合创始人</span><span class="val">50.1% 投票权</span></div>
+          <div class="bar-track"><div class="bar-fill amber" style="width:50.1%">经济持股仅约 10%</div></div>
+          <div class="bar-note">「创始人有限责任公司」持有一股 Class F 股，直接拿走 50.1% 投票权</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span class="name">黄仁勋（英伟达）</span><span class="val red">3.58% 投票权</span></div>
+          <div class="bar-track"><div class="bar-fill green" style="width:3.58%"></div></div>
+          <div class="bar-note">无多层股权、无超级投票权 —— 与上面两家形成极端反差</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span class="name">先锋领航 + 贝莱德（被动基金）</span><span class="val muted">7.31% + 7.43%</span></div>
+          <div class="bar-track"><div class="bar-fill gray" style="width:14.74%">14.74%</div></div>
+          <div class="bar-note">两家被动指数基金合计持股，是黄仁勋的近 4 倍（但不干预决策）</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>英伟达的股权稀释史</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>时间</th><th>节点</th><th>黄仁勋持股</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td>1993</td><td>公司注册</td><td>33.3%</td><td>三位创始人各出 200 美元，各占 1/3</td></tr>
+            <tr><td>1999</td><td>IPO 上市</td><td class="num-amber">7.9%</td><td>上市摊薄</td></tr>
+            <tr><td>2026</td><td>上市 27 年后</td><td class="num-red">3.58%</td><td>持续扩股稀释；历年套现总额不过 29 亿美元</td></tr>
+            <tr><td>—</td><td>全体董事+高管合计</td><td class="num-red">3.94%</td><td><strong>已超过黄仁勋本人持股</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="alert">
+        <strong>数字上的荒诞：</strong>全体董事和高管加起来持股 3.94%，比 CEO 还多。从股权角度看，黄仁勋甚至连「自己人」都不占多数。
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 控制术四支柱 -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-num">03</div>
+      <h2>没有股权，靠什么统治？四大支柱</h2>
+      <span class="en">FOUR PILLARS OF CONTROL</span>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="ico">🕸️</div>
+        <div class="t">① 扁平到极致的组织</div>
+        <div class="d">36–60 名直接下属，分属战略/硬件/软件/AI/公关/网络七个板块。没有事业部，按计算栈搭建，人才公共池，项目临时组队、指定「队长」直接向黄汇报。CFO、CTO、CIO 均只挂执行副总裁头衔。</div>
+      </div>
+      <div class="pillar">
+        <div class="ico">✉️</div>
+        <div class="t">② Top 5 邮件制度</div>
+        <div class="d">每位员工定期发「最重要五件事」，直送团队和高管。黄仁勋<strong>每天读约 100 封</strong>。2010 年员工达 5,700 人时开始推行——这是他在万人规模下仍能保持一线感知的核心工具。</div>
+      </div>
+      <div class="pillar">
+        <div class="ico">📋</div>
+        <div class="t">③ 白板 + 大会复盘</div>
+        <div class="d">几乎不开一对一会议。季度复盘是几百名业务负责人大会，<strong>不用 PPT，只用白板</strong>。总部几十间会议室墙上都挂白板，黄仁勋专用会议室甚至没有铭牌。</div>
+      </div>
+      <div class="pillar">
+        <div class="ico">🔥</div>
+        <div class="t">④ 有预谋的怒火</div>
+        <div class="d">第一次解释观点和颜悦色，一旦被反驳就当众痛骂。首席科学家柯克解读：这可能是「有预谋的激励工具」。配合随身携带的期权袋、TC（顶级贡献者）特别授予机制，形成恐惧与忠诚的奇特混合。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>治理逻辑：「使命即老板」</h3>
+      <p>黄仁勋的原话是 <span class="hl">"mission is the boss"</span>。2026 年 1 月播客中他说：直接汇报下属约 60 名，<strong>「英伟达目前也可以说有 61 个 CEO」</strong>。接班条件限定为「自己挣」，不传给子女。</p>
+      <p>这套设计的精妙之处在于：<strong>它用「扁平」消灭了中间层权力，却又让所有信息最终汇聚到一个人身上</strong>。表面是去中心化，实际是极致的中心化。</p>
+    </div>
+
+    <div class="quote">
+      如果黄仁勋从摩天大楼的玻璃窗看到商机，就此一跃而下，我相信英伟达员工也会跟着跳下去。
+      <span class="by">—— Stephen Witt《The Thinking Machine》开篇</span>
+    </div>
+  </div>
+
+  <!-- 04 技术豪赌 -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-num">04</div>
+      <h2>技术方向：两次反共识的豪赌</h2>
+      <span class="en">THE BETS</span>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">2002</div>
+        <div class="tl-title">信号出现：科学家在用 GPU 做科学计算</div>
+        <div class="tl-desc">流体力学、气象、蛋白质折叠、期权定价、核磁共振影像——但程序必须「伪装成游戏」才能跑。首席科学家提出：固定功能图形早晚被英特尔吞进 CPU，通用计算才能打开游戏外的市场。</div>
+      </div>
+      <div class="tl-item key">
+        <div class="tl-year">2004 → 2006.11</div>
+        <div class="tl-title">豪赌 CUDA：秘密开发两年半后落地</div>
+        <div class="tl-desc">全线 GPU 嵌入 CUDA 能力。成本高过 AMD，黄仁勋自己承认<span class="hl">「毛利率从很差变得更差」</span>。对冲基金 Starboard Value 曾发信质疑：不如直接发股息。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2016</div>
+        <div class="tl-title">兑现：深度学习爆发，CUDA 已更新至 8.0</div>
+        <div class="tl-desc">软硬件累计投入据传突破<strong>数十亿美元</strong>。十年冷板凳，一朝成为整个 AI 时代的默认入口。</div>
+      </div>
+      <div class="tl-item key">
+        <div class="tl-year">2019.3.7</div>
+        <div class="tl-title">豪赌 Mellanox：69 亿美元全现金</div>
+        <div class="tl-desc">以色列公司，InfiniBand 标准领导者，利润率很薄。三家竞逐（英伟达/英特尔/赛灵思），对手封顶约 122.50 美元/股，黄仁勋出 <strong>125 美元</strong>拿下。理由：未来计算机是数据中心，差异化在网络；AI 训练是「超大规模的倒置」。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2024.5 → 2026财年</div>
+        <div class="tl-title">兑现：原 Mellanox 业务单季营收 32 亿美元</div>
+        <div class="tl-desc">为独立退市前最后一季的<strong>7 倍多</strong>；2026 财年网络业务年收入超 <strong>310 亿美元</strong>。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2023.5</div>
+        <div class="tl-title">分水岭：一份财报让世界改口</div>
+        <div class="tl-desc">下季营收指引 110 亿美元，超华尔街预期五成。纳斯达克开盘股价单日涨约 <strong>24%</strong>，市值一天增加约 <strong>2,000 亿美元</strong>（创当时美股纪录），收盘市值超沃尔玛与埃克森美孚之和。<span class="hl">「AI 领域的战争开打，而英伟达是唯一的军火商。」</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>方法论：EIOFS —— 不是预言家，是扑食者</h3>
+      <p>黄仁勋并不拥有预测 AI 起飞的「特殊视力」。用 Kim 的话说：他<span class="hl">「在看见显著信号前不乱下注，看见之后以对手无法匹敌的速度和彻底性扑上去」</span>——难在「扑」字。</p>
+      <p>他 2024 年 3 月在斯坦福商学院提出的框架叫 <strong>EIOFS（Early Indicators of Future Success，未来成功的早期指标）</strong>，只看三个信号：<strong>① 解决的问题是否足够重要 ② 关键技术是否突破 ③ 早期开发者是否认可</strong>。别人也能做的事，就让别人做。</p>
+    </div>
+
+    <div class="duo">
+      <div class="box red">
+        <h4>❌ 失败的两次</h4>
+        <ul>
+          <li><strong>Tegra 手机芯片</strong>：错失智能手机时代——手机芯片需与基带绑定，那是高通主场</li>
+          <li><strong>Arm 400 亿美元收购</strong>：被监管拦下（FTC 理由：英伟达自身使用 Arm 架构，收购中立平台有垄断风险）</li>
+        </ul>
+      </div>
+      <div class="box green">
+        <h4>✅ 成功的两次</h4>
+        <ul>
+          <li><strong>CUDA（2006）</strong>：十年亏损投入，换来 AI 时代唯一入口</li>
+          <li><strong>Mellanox（2019）</strong>：69 亿美元买下网络，2026 财年贡献 310 亿美元年收入</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 怒火与忠诚 -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-num">05</div>
+      <h2>怒火与忠诚：99% 支持率的悖论</h2>
+      <span class="en">FEAR & LOYALTY</span>
+    </div>
+
+    <div class="card">
+      <h3>经典案例：萧奎斯特与「8 美元 → 1000 美元」</h3>
+      <p>2007 年，掌管全球供应商网络的萧奎斯特被要求缩短台积电下游台湾封装厂的前置时间。她认为不可能，当众顶了回去：<strong>「你根本就不了解这是怎么一回事。」</strong></p>
+      <p>黄仁勋当众怒骂：<span class="hl">「我以为你是营运人员，你根本不是，你不懂营运！」</span></p>
+      <p>她飞台湾一周摸清全部数据：前置时间 <strong>3 周</strong>，而真正的生产周期仅 <strong>36 小时</strong>。理论上前置时间可压缩——但单颗封装成本会从 <strong>8 美元暴涨到 1,000 美元</strong>。</p>
+      <p>带着结果回来，黄仁勋没有发火，只说了一句：<strong>「这才是正确答案。」</strong></p>
+      <p>此后她为数百家厂商制定成本明细表，把生产周期从几个月压到几周。2024 年，她持有的股票价值超 <strong>2 亿美元</strong>。</p>
+      <div class="alert">
+        <strong>关键洞察：</strong>怒火的真正功能不是发泄，而是<strong>逼出「带数据回来的答案」</strong>。他要的不是服从，是「你先去搞清楚，再来反驳我」。
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>恐惧的另一面：惊人的低流失率</h3>
+      <div class="kpi-grid" style="margin:16px 0;">
+        <div class="kpi"><div class="v">2.5%</div><div class="l">2025年员工流失率<br>（行业平均16.4%）</div></div>
+        <div class="kpi"><div class="v">0.9%</div><div class="l">中国大陆区流失率</div></div>
+        <div class="kpi"><div class="v amber">10万+</div><div class="l">「Stand with Jensen」<br>请愿签名</div></div>
+        <div class="kpi"><div class="v blue">5,248</div><div class="l">其中自报现任员工<br>（约占全员12%）</div></div>
+      </div>
+      <p>2026 年 8 月 Glassdoor「最佳 CEO」评选，黄仁勋员工支持率 <strong>99%</strong>，位列 50 位上榜 CEO 之首（2025 年全美「最佳管理公司」第一，支持率 98%）。</p>
+      <p>11 月 12 日 WIRED 报道：内网意见箱一条敦促董事会倾听员工的帖子获 <strong>1,600 多条</strong>评论，高赞评论是——<span class="hl">「如果你相信这个使命，就把老板带回来。」</span></p>
+      <p>11 月 16 日上午，「Stand with Jensen」请愿签名超 <strong>10 万</strong>，其中自报现任员工 5,248 人，约占全员 12%，要求独立调查结果出炉前恢复其职务。</p>
+      <div class="quote">
+        全公司每个人的薪酬建议都送到他手里。传闻他随身带一小袋期权——他回应：「对啊，我现在口袋里就装着呢。」
+        <span class="by">—— 2025年7月 All-In 播客</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 06 外部裂缝 -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-num">06</div>
+      <h2>帝国的裂缝：太强，所以被围剿</h2>
+      <span class="en">EXTERNAL PRESSURE</span>
+    </div>
+
+    <div class="card">
+      <h3>财务统治力：全行业 38% 的利润</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>指标</th><th>数据</th><th>含义</th></tr></thead>
+          <tbody>
+            <tr><td>2025–2026Q3 累计营收</td><td class="num-green">4,330 亿美元</td><td>—</td></tr>
+            <tr><td>同期净利润</td><td class="num-green">2,602 亿美元</td><td>净利率约 60%</td></tr>
+            <tr><td>AI 加速器市场份额</td><td class="num-amber">约 80%</td><td>绝对垄断</td></tr>
+            <tr><td>数据中心造价占比（Bernstein）</td><td class="num-red">39%</td><td>整机预算近四成被英伟达拿走</td></tr>
+            <tr><td>数据中心总毛利占比（Bernstein）</td><td class="num-red">30%</td><td>—</td></tr>
+            <tr><td>2026 全行业 AI 利润占比</td><td class="num-red">约 38%</td><td>Castellano 估算：全行业利润超 6,000 亿，英伟达全年约 2,270 亿</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="alert red">
+        <strong>这正是危险的来源：</strong>一位投资人的判断是——危险不只因私人争议，而是<strong>英伟达过于强大、利润过多，引发了全行业的制衡动力</strong>。
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>客户分流：大客户们正在集体「去英伟达化」</h3>
+      <ul style="list-style:none;padding:0;">
+        <li style="padding:10px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--text2);"><strong style="color:var(--text);">AMD</strong> — 新一代 Helios 机架系统拿下微软、Meta、OpenAI、甲骨文订单</li>
+        <li style="padding:10px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--text2);"><strong style="color:var(--text);">谷歌</strong> — 2026 年 4 月发布两颗训练/推理自研芯片，Anthropic TPU 协议扩为多年期大规模供货，Meta、苹果采用</li>
+        <li style="padding:10px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--text2);"><strong style="color:var(--text);">亚马逊</strong> — 推进自研芯片商用，拿下 Anthropic 未来十年超 <strong>1,000 亿美元</strong>投入承诺</li>
+        <li style="padding:10px 0;font-size:13px;color:var(--text2);"><strong style="color:var(--text);">OpenAI / Anthropic / Meta</strong> — 每季度在 AMD、谷歌、亚马逊之间轮换下单</li>
+      </ul>
+      <p style="margin-top:14px;">SemiAnalysis（2026年11月13日报告）指出：下游客户将优先采购<strong>能耗比占优</strong>的算力平台。英伟达坚持 GPU 路线，能效不如云厂商定制 ASIC——<span class="hl">可能承压最重</span>。</p>
+    </div>
+
+    <div class="card">
+      <h3>生态冲突：卖铲子的人，与挖金子的人</h3>
+      <div class="duo">
+        <div class="box green">
+          <h4>英伟达的立场</h4>
+          <ul>
+            <li>卖硬件 + 生态网络，追求出货量与生态扩张</li>
+            <li>芯片应卖向全球，包括中国——否则中国生态会沿不同路径生长</li>
+            <li>2026 年可能认购 Anthropic 融资 <strong>100 亿美元</strong></li>
+          </ul>
+        </div>
+        <div class="box red">
+          <h4>大模型厂商的立场</h4>
+          <ul>
+            <li>追求自身算力增长、抑制对手算力</li>
+            <li>Anthropic 创始人 Dario 与黄仁勋在「AI 安全」「是否卖芯片给中国」上冲突不断</li>
+            <li>Anthropic 被认为是「阻断 GPU 流向中国」的最大获利方</li>
+          </ul>
+        </div>
+      </div>
+      <div class="quote">
+        主持人：「我们的核武器比谁都多，但从不把浓缩铀卖到任何地方。」<br>
+        黄仁勋：「我们（AI 芯片）不是浓缩铀，它是一块芯片，一块他们（中国）自己就能造出来的芯片。」
+        <span class="by">—— 2026年4月 Dwarkesh Patel 采访</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>离职 4 天后的政策反应：管制立即收紧</h3>
+      <p>2026 年 11 月 16 日，美国商务部 BIS 发布临时最终规则（IFR）《限制远程获取先进半导体》，三条核心：</p>
+      <ul style="margin:10px 0 0 20px;font-size:13px;color:var(--text2);line-height:2;">
+        <li>① 海外数据中心纳入许可证管制</li>
+        <li>② 部分高风险算力中介层国家购买芯片需单独许可</li>
+        <li>③ 进一步收紧先进制程许可</li>
+      </ul>
+      <p style="margin-top:12px;">浪潮供应链人士称，上周起内部全速加快英伟达硬件采购，情绪是——<span class="hl">「不要抱有侥幸心理，放弃幻想」</span>，预估对华管控还将升级。</p>
+    </div>
+  </div>
+
+  <!-- 07 接班难题 -->
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-num">07</div>
+      <h2>接班难题：没有演练好的「库克」</h2>
+      <span class="en">THE SUCCESSION GAP</span>
+    </div>
+
+    <div class="card">
+      <h3>一个 CEO 的工作，需要三个人分</h3>
+      <p>Stephen Witt 的判断：<span class="hl">几乎需要 3 个 CEO 才能完成黄仁勋一个人的工作。</span></p>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>人选</th><th>背景</th><th>拟分管</th></tr></thead>
+          <tbody>
+            <tr><td><strong>雷内·哈斯</strong></td><td>Arm 现任 CEO、前英伟达高管</td><td>经营与对外</td></tr>
+            <tr><td><strong>伊恩·巴克</strong></td><td>CUDA 缔造者</td><td>数据中心客户与技术战略</td></tr>
+            <tr><td><strong>约拿·阿尔本</strong></td><td>GPU 工程负责人</td><td>GPU 工程</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="bar-note" style="margin-top:8px;">方案来源：Tae Kim《The Nvidia Way》</div>
+    </div>
+
+    <div class="duo">
+      <div class="box green">
+        <h4>乐观派</h4>
+        <ul>
+          <li><strong>高盛 CEO 索罗门</strong>：「生态系统不围绕某一个人运转」</li>
+          <li><strong>巴克莱 CEO 文卡特</strong>：「技术本身还在」</li>
+          <li><strong>纽约大学教授加洛韦</strong>：以乔布斯、盖茨的离去作类比</li>
+        </ul>
+      </div>
+      <div class="box red">
+        <h4>反驳：类比不成立</h4>
+        <ul>
+          <li><strong>乔布斯</strong>：离去未崩，是因为 2004、2009、2011年1月<strong>三次病休都由库克代管</strong>，接棒无悬念</li>
+          <li><strong>微软</strong>：鲍尔默任职 <strong>14 年</strong>错失移动时代，直到 <strong>2014 年</strong>纳德拉才带来复兴</li>
+          <li>英伟达既没有提前演练好的库克，AI 竞争也不会给它 14 年去等下一个纳德拉</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="alert">
+      <strong>最新进展：</strong>2026 年 11 月 16 日有外媒报道，黄仁勋正努力希望重返 CEO 岗位，但能否回归尚未可知。
+    </div>
+  </div>
+
+  <!-- 结论 -->
+  <div class="verdict">
+    <h3>📌 提炼总结：这篇文章真正在说什么</h3>
+    <ol>
+      <li><strong>制度上极其脆弱，现实中极其稳固。</strong>3.58% 持股 + 无超级投票权 + 董事会每年改选，理论上随时可被替换；但扁平组织、Top 5 邮件、威权管理、期权激励四件套，让他成为公司运转的绝对核心。这是一套「去中心化的假象 + 极端中心化的事实」。</li>
+      <li><strong>控制力的来源不是权力，是「不可替代性」。</strong>两次反共识豪赌（CUDA 十年亏损、Mellanox 69 亿美元）证明了他的判断力。董事会不敢动他，不是不想，是不能——没有第二个人能同时看懂技术、组织和生态。</li>
+      <li><strong>「愤怒」是管理工具，「忠诚」是真实产出。</strong>2.5% 流失率、99% 支持率、10 万人请愿——这套看似压迫的管理，在英伟达内部产生了极高的凝聚力。恐惧与忠诚在这里不是矛盾，而是同一套机制的两面。</li>
+      <li><strong>最大的风险从来不是个人丑闻，是「太成功」。</strong>80% 市场份额、38% 全行业利润、39% 数据中心造价——这必然引发客户分流（AMD/谷歌/亚马逊）、生态冲突（Anthropic）与政策收紧（BIS 新规）。单一公司的超额利润，在系统层面会自行寻找平衡。</li>
+      <li><strong>接班是最大的未解命题。</strong>乔布斯的平稳交接靠的是三年三次病休的实战演练；微软换帅用掉了 14 年。英伟达两者都没有——它既没有演练过，也等不起。</li>
+    </ol>
+  </div>
+
+  <div class="foot">
+    本文为《脆弱地基上的超级帝国：黄仁勋靠什么控制英伟达 33 年》的图文提炼<br>
+    原文：晚点LatePost ｜ 文丨李赓 ｜ 提炼整理：2026-11-19<br>
+    <span style="color:#4b5563;">注：原文为 2026 年时间线推演式报道，涉及情节为叙事设定，请与真实事实区分。仅供学习交流，不构成投资建议。</span>
+  </div>
+
+</div>
+
+</body>
+</html>
