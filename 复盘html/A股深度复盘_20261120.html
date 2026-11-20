@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>A股深度复盘 —— 2026年11月20日（周五 · 黑色星期五：仅313只上涨、跌超5%达2863家；专题：指数-1.23%与中位-5.08%的"伪装"、多资产全景、化债逻辑）</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0d1117; color:#c9d1d9; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif; line-height:1.8; padding:20px 14px 60px; }
+.container { max-width:820px; margin:0 auto; }
+.toolbar { position:sticky; top:0; background:rgba(13,17,23,0.95); backdrop-filter:blur(8px); padding:10px 0; margin-bottom:18px; display:flex; align-items:center; gap:10px; border-bottom:1px solid #30363d; z-index:10; }
+.toolbar a { color:#58a6ff; text-decoration:none; font-size:0.85rem; white-space:nowrap; }
+.toolbar a:hover { text-decoration:underline; }
+.toolbar .sep { color:#484f58; }
+h1 { font-size:1.5rem; color:#f0f6fc; border-bottom:2px solid #30363d; padding-bottom:10px; margin-bottom:18px; }
+h2 { font-size:1.2rem; color:#58a6ff; margin:26px 0 12px; padding-left:10px; border-left:3px solid #58a6ff; }
+h3 { font-size:1.05rem; color:#d29922; margin:20px 0 10px; }
+h4 { font-size:0.98rem; color:#c9d1d9; margin:16px 0 8px; }
+p { margin:8px 0; }
+ul, ol { padding-left:24px; margin:8px 0; }
+li { margin:4px 0; }
+a { color:#58a6ff; text-decoration:none; }
+a:hover { text-decoration:underline; }
+blockquote { border-left:4px solid #30363d; background:#161b22; padding:8px 14px; margin:12px 0; color:#8b949e; border-radius:0 6px 6px 0; }
+blockquote p { margin:4px 0; }
+code { background:#161b22; padding:2px 6px; border-radius:4px; font-size:0.88em; font-family:"SF Mono",Consolas,Menlo,monospace; }
+pre { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:12px 14px; overflow-x:auto; margin:12px 0; }
+pre code { background:none; padding:0; }
+table { border-collapse:collapse; width:100%; margin:12px 0; font-size:0.9em; display:block; overflow-x:auto; }
+th, td { border:1px solid #30363d; padding:7px 10px; text-align:left; }
+th { background:#161b22; color:#58a6ff; font-weight:600; }
+tr:nth-child(even) td { background:rgba(22,27,34,0.5); }
+hr { border:none; border-top:1px solid #30363d; margin:20px 0; }
+img { max-width:100%; border-radius:6px; }
+strong { color:#f0f6fc; }
+.toc { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:14px 18px; margin:14px 0 20px; }
+.toc h3 { margin:0 0 8px; color:#58a6ff; }
+.toc a { display:block; padding:3px 0; font-size:0.9em; color:#8b949e; }
+.toc a:hover { color:#58a6ff; text-decoration:none; }
+.footer { text-align:center; color:#484f58; font-size:0.78rem; margin-top:40px; padding-top:16px; border-top:1px solid #30363d; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="toolbar">
+    <a href="../index.html">🏠 首页</a><span class="sep">|</span>
+    <a href="../replay_index.html">📚 复盘合集</a><span class="sep">|</span>
+    <span style="color:#8b949e;font-size:0.8rem;">任务库持仓复盘 · A股深度复盘_20261120.md</span>
+  </div>
+  
+  <h1>A股深度复盘 —— 2026年11月20日（周五 · 黑色星期五：仅313只上涨、跌超5%达2863家；专题：指数-1.23%与中位-5.08%的&quot;伪装&quot;、多资产全景、化债逻辑）</h1>
+<blockquote>
+<p><strong>免责声明</strong>：本文仅供学习交流与市场复盘参考，不构成任何投资建议。市场有风险，投资需谨慎。</p>
+<p><strong>数据口径</strong>：指数/个股来自 tushare 与腾讯行情（前复权）；技术指标自算；全市场广度用 tushare 5,572 只逐只计算；多资产年内表现用腾讯前复权 K 线（基准 2026 年首个交易日）；资金流来自同花顺。</p>
+</blockquote>
+<hr>
+<h2 id="sec-0">目录</h2>
+<ol>
+<li>今日盘面：指数&quot;体面&quot;，个股&quot;血洗&quot;</li>
+<li>核心事件：美联储 50bp 鹰派 + AI 叙事重定价 + 筹码出清</li>
+<li><strong>专题一：验证&quot;所有资产全在亏钱&quot;—— 只有两个资产是正的</strong></li>
+<li><strong>专题二：验证&quot;慢牛伪装&quot;与&quot;一切为了化债&quot;—— 数据给出六成肯定</strong></li>
+<li>维度一：资金流对比（11/20 vs 11/19）</li>
+<li>维度二：企稳信号量化判定</li>
+<li>维度三：相对抗跌性与独立反弹概率</li>
+<li>五只标的全栈量化（<strong>长鑫 RR=None</strong>）</li>
+<li>综合研判与操作建议</li>
+<li>附录：数据速查</li>
+</ol>
+<hr>
+<h2 id="sec-1">一、今日盘面：指数&quot;体面&quot;，个股&quot;血洗&quot;</h2>
+<h3 id="sec-2">1.1 核心指数</h3>
+<table>
+<thead>
+<tr>
+<th>指数</th>
+<th style="text-align:center">收盘</th>
+<th style="text-align:center">涨跌</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>上证指数</strong></td>
+<td style="text-align:center"><strong>3,533.79</strong></td>
+<td style="text-align:center"><strong>-1.23%</strong></td>
+<td>盘中最低 <strong>3,500.83（-2.16%）</strong>，尾盘 ETF 托底拉回</td>
+</tr>
+<tr>
+<td>深证成指</td>
+<td style="text-align:center">10,256.39</td>
+<td style="text-align:center"><strong>-3.09%</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>创业板指</strong></td>
+<td style="text-align:center"><strong>2,212.13</strong></td>
+<td style="text-align:center"><strong>-3.54%</strong></td>
+<td>创阶段新低</td>
+</tr>
+<tr>
+<td><strong>科创50</strong></td>
+<td style="text-align:center">1,231.09</td>
+<td style="text-align:center"><strong>-3.12%</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>科创综指</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center"><strong>-5.23%</strong></td>
+<td>最惨宽基</td>
+</tr>
+<tr>
+<td><strong>上证50</strong></td>
+<td style="text-align:center"><strong>2,785.92</strong></td>
+<td style="text-align:center"><strong>+0.45%（尾盘翻红）</strong></td>
+<td>唯一红盘</td>
+</tr>
+<tr>
+<td><strong>国证2000</strong></td>
+<td style="text-align:center">7,431.20</td>
+<td style="text-align:center"><strong>-5.15%</strong></td>
+<td>小盘崩盘</td>
+</tr>
+</tbody>
+</table>
+<p><strong>成交 1.42 万亿（放量 1,171 亿）—— 放量下跌</strong>。</p>
+<h3 id="sec-3">1.2 市场广度：这才是今天的真相</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th style="text-align:center">数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>涨跌家数</strong></td>
+<td style="text-align:center"><strong>313 / 5,236</strong>（平 23）</td>
+</tr>
+<tr>
+<td><strong>红盘率</strong></td>
+<td style="text-align:center"><strong>5.6%</strong></td>
+</tr>
+<tr>
+<td><strong>全 A 平均涨跌</strong></td>
+<td style="text-align:center"><strong>-4.76%</strong></td>
+</tr>
+<tr>
+<td><strong>全 A 中位涨跌</strong></td>
+<td style="text-align:center"><strong>-5.08%</strong></td>
+</tr>
+<tr>
+<td><strong>跌超 5% 家数</strong></td>
+<td style="text-align:center"><strong>2,863 家（51.4%）</strong></td>
+</tr>
+<tr>
+<td><strong>跌超 9% 家数</strong></td>
+<td style="text-align:center"><strong>303 家</strong></td>
+</tr>
+<tr>
+<td>涨停 / 跌停</td>
+<td style="text-align:center">30 / <strong>68</strong></td>
+</tr>
+<tr>
+<td>创业板平均 / 中位</td>
+<td style="text-align:center"><strong>-5.67% / -6.11%</strong></td>
+</tr>
+<tr>
+<td>科创板平均 / 中位</td>
+<td style="text-align:center"><strong>-6.42% / -6.58%</strong></td>
+</tr>
+<tr>
+<td>主板平均 / 中位</td>
+<td style="text-align:center">-4.02% / -4.32%</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐⭐⭐ 今天最重要的一个数字对比</strong>：
+<strong>上证指数 -1.23%，但全 A 中位数 -5.08% —— 缺口 3.85 个百分点。</strong>
+<strong>超过一半的股票（2,863 家 / 51.4%）单日跌超 5%，303 家跌超 9%。</strong>
+<strong>&quot;指数跌 1.23%&quot;和&quot;你的账户跌 5%&quot;同时成立 —— 这就是你说的&quot;伪装&quot;的量化形态。</strong></p>
+</blockquote>
+<h3 id="sec-4">1.3 结构：红利创新高，科技被砸穿</h3>
+<table>
+<thead>
+<tr>
+<th>逆势（越涨越猛）</th>
+<th>表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>四大行</strong></td>
+<td><strong>建设银行、工商银行、中国银行、中信银行均创历史新高</strong>（工行/建行涨超 3%）</td>
+</tr>
+<tr>
+<td>长江电力</td>
+<td>创历史新高</td>
+</tr>
+<tr>
+<td>中国石油</td>
+<td><strong>+4%</strong></td>
+</tr>
+<tr>
+<td>保险</td>
+<td>+0.39%（资金 +12.52 亿）</td>
+</tr>
+<tr>
+<td>局部题材</td>
+<td>PCB（中京电子 2 连板、满坤科技 20CM）、机器人（克来机电）、华为算力（真视通 4 连板）、AI漫剧（龙版传媒）</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>崩塌</th>
+<th>表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>半导体（行业 -6.85%）</strong></td>
+<td>通富微电跌停、联合化学 20CM 跌停、海光信息/沐曦股份重挫</td>
+</tr>
+<tr>
+<td><strong>存储（-6.61%）</strong></td>
+<td>资金 -73.71 亿</td>
+</tr>
+<tr>
+<td><strong>第三代半导体（-6.30%）</strong></td>
+<td>资金 -50.54 亿</td>
+</tr>
+<tr>
+<td>汽车芯片（-6.17%）</td>
+<td>资金 -55.11 亿</td>
+</tr>
+<tr>
+<td>军工装备（-5.66%）</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-5">1.4 尾盘：ETF 天量托底</h3>
+<table>
+<thead>
+<tr>
+<th>ETF</th>
+<th style="text-align:center">成交额</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>上证50ETF 华夏</strong></td>
+<td style="text-align:center"><strong>超 240 亿</strong></td>
+<td><strong>创历史最高成交纪录，较昨日同时刻放量近 10 倍</strong></td>
+</tr>
+<tr>
+<td>沪深300ETF 嘉实</td>
+<td style="text-align:center">超 234 亿</td>
+<td>创历史最高，放量超 2.4 倍</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐ “上证50ETF 单日 240 亿、创历史纪录” —— 这是&quot;国家队在关键点位（3,500）出手&quot;的最硬证据。</strong>
+<strong>但也要看清：托的是&quot;指数&quot;，不是&quot;你的股票&quot;。</strong> 上证50 翻红 +0.45%，同时 5,236 家下跌。</p>
+</blockquote>
+<hr>
+<h2 id="sec-6">二、核心事件：三因素共振</h2>
+<h3 id="sec-7">2.1 外部（主导）</h3>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>细节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>美联储鹰派</strong></td>
+<td>理事<strong>沃勒明示&quot;单次加息 50bp&quot;的可能性</strong>；芝加哥联储主席不排除超常规加息；10 月纪要&quot;几乎所有与会者认为未来几个月可能进一步加息&quot;</td>
+</tr>
+<tr>
+<td><strong>美元/美债</strong></td>
+<td>美元指数<strong>创年内新高</strong>、10 年期美债收益率上行 → 全球无风险利率抬升</td>
+</tr>
+<tr>
+<td><strong>美股</strong></td>
+<td>三大指数均跌超 2%，<strong>标普 500 六连跌</strong>，均创 4 月以来新低；<strong>费半 -2.41%</strong></td>
+</tr>
+<tr>
+<td><strong>Anthropic IPO</strong></td>
+<td>史上最大规模 IPO，<strong>首日冲高回落、盘后跌 4.7%</strong>，未能重振 AI 信心</td>
+</tr>
+<tr>
+<td><strong>亚洲</strong></td>
+<td><strong>韩国 KOSPI -5.21%</strong>（三星 -7%、海力士 -6%）、<strong>日经 -5.06%</strong></td>
+</tr>
+<tr>
+<td><strong>黄金</strong></td>
+<td>现货黄金跌破关键关口、<strong>创 14 个月新低</strong> → A 股贵金属板块被拖累</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-8">2.2 内部</h3>
+<table>
+<thead>
+<tr>
+<th>因素</th>
+<th>细节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AI 叙事定价基础松动</strong></td>
+<td>多家超大规模云厂商<strong>单季自由现金流转负</strong> → &quot;资本开支持续性&quot;的质疑<strong>由分歧转向共识</strong>（博时语）</td>
+</tr>
+<tr>
+<td><strong>筹码出清</strong></td>
+<td>前期科技主线累计涨幅大、交易拥挤，获利兑现压力释放</td>
+</tr>
+<tr>
+<td><strong>BIS 管制新规生效</strong></td>
+<td>光模块等海外链受压</td>
+</tr>
+<tr>
+<td><strong>增量资金缺失</strong></td>
+<td>存量博弈下抛压被放大</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-9">2.3 机构的两句话（值得记住）</h3>
+<table>
+<thead>
+<tr>
+<th>机构</th>
+<th>原话</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>华泰证券</strong></td>
+<td><strong>“市场已处于底部区域，股权风险溢价、股债收益差、破净个股占比等估值与结构指标接近历次底部阈值，底部信号进一步增强，但反弹更可能渐进而非一蹴而就。”</strong></td>
+</tr>
+<tr>
+<td><strong>陈果（东方财富）</strong></td>
+<td><strong>“恐慌并不比亢奋更理性”、“相信价值”</strong></td>
+</tr>
+<tr>
+<td>中信证券</td>
+<td>外部冲击中<strong>A股主要宽基较美股、韩股更抗跌</strong>，融资余额回落、杠杆趋于稳健</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐ 注意一个反差</strong>：<strong>今天 A 股 -1.23%（上证），而韩国 -5.21%、日经 -5.06%</strong> —— <strong>A 股确实是&quot;相对抗跌&quot;的</strong>（因为红利权重护盘）。<strong>这个&quot;抗跌&quot;是真的，但它保护的是指数，不是你的成长股。</strong></p>
+</blockquote>
+<hr>
+<h2 id="sec-10">三、专题一：验证&quot;所有资产全在亏钱&quot;—— 只有两个资产是正的</h2>
+<blockquote>
+<p><strong>你的话</strong>：<em>“所有资产全在亏钱啊，只能说宏观环境始终会平均影响每一个人。”</em></p>
+</blockquote>
+<h3 id="sec-11">3.1 2026 年内多资产全景（前复权，基准为年内首个交易日）</h3>
+<table>
+<thead>
+<tr>
+<th>资产</th>
+<th style="text-align:center"><strong>年内涨跌</strong></th>
+<th style="text-align:center">距年内高</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>红利ETF（510880）</strong></td>
+<td style="text-align:center"><strong>+12.94%</strong> ✅</td>
+<td style="text-align:center"><strong>-2.0%</strong></td>
+</tr>
+<tr>
+<td><strong>国债ETF（511010，10年）</strong></td>
+<td style="text-align:center"><strong>+2.50%</strong> ✅</td>
+<td style="text-align:center">-0.0%</td>
+</tr>
+<tr>
+<td>上证指数</td>
+<td style="text-align:center"><strong>-12.17%</strong></td>
+<td style="text-align:center">-16.7%</td>
+</tr>
+<tr>
+<td>科创50</td>
+<td style="text-align:center">-12.28%</td>
+<td style="text-align:center"><strong>-44.2%</strong></td>
+</tr>
+<tr>
+<td>恒生指数</td>
+<td style="text-align:center">-14.91%</td>
+<td style="text-align:center">-19.9%</td>
+</tr>
+<tr>
+<td>可转债ETF（511380）</td>
+<td style="text-align:center"><strong>-16.42%</strong></td>
+<td style="text-align:center">-22.0%</td>
+</tr>
+<tr>
+<td><strong>黄金ETF（518880）</strong></td>
+<td style="text-align:center"><strong>-23.33%</strong> 🔴</td>
+<td style="text-align:center"><strong>-38.8%</strong></td>
+</tr>
+<tr>
+<td><strong>创业板指</strong></td>
+<td style="text-align:center"><strong>-32.85%</strong></td>
+<td style="text-align:center"><strong>-49.4%</strong></td>
+</tr>
+<tr>
+<td><strong>中概互联ETF</strong></td>
+<td style="text-align:center"><strong>-43.85%</strong> 🔴🔴</td>
+<td style="text-align:center"><strong>-51.1%</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-12">3.2 三个发现</h3>
+<table>
+<thead>
+<tr>
+<th>发现</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① 九类资产里只有两个是正收益</strong></td>
+<td><strong>红利 +12.94%、国债 +2.50%</strong> —— 你的&quot;所有资产全在亏钱&quot;<strong>基本成立（7/9 亏损）</strong></td>
+</tr>
+<tr>
+<td><strong>② 黄金 -23.33% 是最反直觉的</strong></td>
+<td>传统&quot;避险资产&quot;今年跌 23%、距高 -38.8%（创 14 个月新低）—— <strong>&quot;避险&quot;在&quot;美元+加息&quot;面前失效了</strong></td>
+</tr>
+<tr>
+<td><strong>③ 红利是唯一&quot;完整上涨&quot;的</strong></td>
+<td>只有 2% 回撤 —— 这是&quot;唯一没有亏钱的股票类资产&quot;</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐⭐⭐ 你说&quot;宏观环境始终会平均影响每一个人&quot;—— 数据给了一个更残酷的修正</strong>：
+<strong>宏观不是&quot;平均影响&quot;，而是&quot;分层影响&quot;。</strong>
+<strong>2026 年的排序是：红利 +12.9% &gt; 国债 +2.5% &gt; 上证 -12.2% &gt; 恒生 -14.9% &gt; 黄金 -23.3% &gt; 创业板 -32.9% &gt; 中概 -43.9%。</strong>
+<strong>同一年，最好的（红利）和最差的（中概）差 56 个百分点 —— 这不是&quot;平均&quot;，这是&quot;选择的结果&quot;。</strong>
+<strong>宏观决定&quot;水位&quot;，但&quot;你在哪个池子里&quot;决定&quot;你是被淹还是被托起来&quot;。</strong></p>
+</blockquote>
+<h3 id="sec-13">3.3 &quot;红利 + 国债&quot;是今年唯一的解</h3>
+<table>
+<thead>
+<tr>
+<th>组合</th>
+<th style="text-align:center">年内</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>红利ETF + 国债ETF（50/50）</strong></td>
+<td style="text-align:center"><strong>约 +7.7%</strong></td>
+<td><strong>今年唯一&quot;正收益&quot;的简单组合</strong></td>
+</tr>
+<tr>
+<td>全A等权（中位）</td>
+<td style="text-align:center">-24.2%</td>
+<td>大多数人的实际体验</td>
+</tr>
+<tr>
+<td>满仓创业板</td>
+<td style="text-align:center">-32.9%</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>这不是&quot;事后诸葛&quot;</strong> —— 这是过去一年&quot;红利+债券&quot;的经典配置，<strong>在&quot;加息 + 风险偏好收缩 + 化债&quot;的三重环境下，它是唯一有正收益的哑铃。</strong></p>
+<hr>
+<h2 id="sec-14">四、专题二：验证&quot;慢牛伪装&quot;与&quot;一切为了化债&quot;</h2>
+<blockquote>
+<p><strong>你的话</strong>：<em>“国内撕开慢牛伪装，一切为了化债，还是继续定投美股吧。”</em></p>
+</blockquote>
+<h3 id="sec-15">4.1 “慢牛伪装”—— <strong>数据支持（六成）</strong></h3>
+<table>
+<thead>
+<tr>
+<th>证据</th>
+<th style="text-align:center">数据</th>
+<th style="text-align:center">判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>指数与个股的缺口</strong></td>
+<td style="text-align:center">上证 <strong>-1.23%</strong> vs 全A中位 <strong>-5.08%</strong>（缺口 <strong>3.85pct</strong>）</td>
+<td style="text-align:center">✅ <strong>伪装成立</strong></td>
+</tr>
+<tr>
+<td><strong>年内指数与个股的缺口</strong></td>
+<td style="text-align:center">上证 <strong>-12.17%</strong> vs 全A中位 <strong>-24.22%</strong>（缺口 <strong>12.05pct</strong>）</td>
+<td style="text-align:center">✅ <strong>伪装成立</strong></td>
+</tr>
+<tr>
+<td><strong>红利与全A的差距</strong></td>
+<td style="text-align:center">红利 <strong>+12.94%</strong> vs 全A中位 <strong>-24.22%</strong>（差 <strong>37.2pct</strong>）</td>
+<td style="text-align:center">✅ <strong>&quot;慢牛&quot;只属于红利</strong></td>
+</tr>
+<tr>
+<td><strong>上涨家数占比</strong></td>
+<td style="text-align:center">年内 <strong>15.8%</strong>、今天 <strong>5.6%</strong></td>
+<td style="text-align:center">✅ <strong>&quot;牛&quot;只覆盖少数</strong></td>
+</tr>
+<tr>
+<td><strong>指数的&quot;托底&quot;来源</strong></td>
+<td style="text-align:center">上证50ETF 单日 240 亿创纪录、四大行创历史新高</td>
+<td style="text-align:center">✅ <strong>&quot;牛&quot;是买出来的</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐⭐ 所以你&quot;撕开慢牛伪装&quot;这个判断，在数据上成立</strong>：
+<strong>所谓&quot;慢牛&quot;，本质是&quot;红利/银行的结构性牛市&quot; + “88% 个股的熊市”。</strong>
+<strong>上证 -12% 看起来&quot;温和&quot;，是因为银行权重把指数撑住了；而你的持仓（科技/成长）跌了 40-70%。</strong>
+<strong>“指数温柔、账户残酷”—— 这就是伪装的完整形态。</strong></p>
+</blockquote>
+<h3 id="sec-16">4.2 “一切为了化债”—— <strong>逻辑链成立，但归因过度（四成）</strong></h3>
+<p><strong>化债的传导链（这条链是真实的）</strong>：</p>
+<pre class="code-block"><code>地方债务化解 → 银行不良资产压力下降 → 银行资产质量改善
+→ 银行股估值重估（破净修复）→ 四大行创历史新高
+→ 红利指数 +12.94%（今年唯一上涨的股票资产）
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>证据</th>
+<th style="text-align:center">数据</th>
+<th style="text-align:center">支持度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>银行资金流入</td>
+<td style="text-align:center"><strong>+43.12 亿（行业第一）</strong></td>
+<td style="text-align:center">✅</td>
+</tr>
+<tr>
+<td>四大行创新高</td>
+<td style="text-align:center">工行/建行/中行/招行</td>
+<td style="text-align:center">✅</td>
+</tr>
+<tr>
+<td>红利ETF 年内 +12.94%</td>
+<td style="text-align:center">距高仅 -2%</td>
+<td style="text-align:center">✅</td>
+</tr>
+<tr>
+<td>中特估 +82.29 亿、证金 +55.70 亿</td>
+<td style="text-align:center">防御资金抱团</td>
+<td style="text-align:center">✅</td>
+</tr>
+</tbody>
+</table>
+<p><strong>但&quot;一切为了化债&quot;是过度归因的四条理由</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>今天的下跌主因</th>
+<th style="text-align:center">与化债的关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>美联储 50bp 加息预期</strong></td>
+<td style="text-align:center"><strong>无关</strong>（纯外部）</td>
+</tr>
+<tr>
+<td><strong>AI 叙事重定价（自由现金流转负）</strong></td>
+<td style="text-align:center"><strong>无关</strong>（全球性）</td>
+</tr>
+<tr>
+<td><strong>筹码出清/交易拥挤</strong></td>
+<td style="text-align:center"><strong>无关</strong>（内部结构）</td>
+</tr>
+<tr>
+<td>化债</td>
+<td style="text-align:center"><strong>只解释了&quot;红利为什么强&quot;，没解释&quot;科技为什么崩&quot;</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐⭐ 更准确的表述是</strong>：
+<strong>不是&quot;一切为了化债&quot;，而是&quot;化债 + 加息 + AI 重定价&quot;三件事，共同把资金赶进了红利。</strong>
+<strong>“化债&quot;提供的是&quot;红利的合法性”（银行资产质量改善），“加息&quot;提供了&quot;红利的相对吸引力”（股息率 vs 无风险利率），“AI 重定价&quot;提供了&quot;资金的被迫迁徙”（成长股不能买）。</strong>
+<strong>三者合力，才有&quot;红利 +12.9% / 中概 -43.9%&quot;的极端分化。</strong>
+<strong>单说&quot;为了化债&quot;，会把&quot;美联储&quot;和&quot;AI 周期&quot;这两个更大的变量漏掉 —— 而它们才是决定&quot;什么时候结束&quot;的关键。</strong></p>
+</blockquote>
+<h3 id="sec-17">4.3 对&quot;继续定投美股&quot;的客观评估</h3>
+<table>
+<thead>
+<tr>
+<th>支持</th>
+<th>反对</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ 纳指回撤&gt;10% 后定投 1 年胜率 <strong>79%</strong>（23 年样本）</td>
+<td>⚠️ <strong>12 月加息 50bp 的概率在上升</strong>（今天新增变量）</td>
+</tr>
+<tr>
+<td>✅ 美元走强 → 人民币计价的美股收益被放大</td>
+<td>⚠️ <strong>标普 500 已六连跌</strong>，趋势尚未止跌</td>
+</tr>
+<tr>
+<td>✅ A股/港股今年 -12%~-44%，分散是理性的</td>
+<td>⚠️ <strong>QDII 溢价 17%-40%</strong>（昨天已提示，今天未改善）</td>
+</tr>
+<tr>
+<td>✅ AI 长期趋势未变（英伟达营收仍 +103%）</td>
+<td>⚠️ <strong>纳指年线 25,143 是关键防线</strong>（昨日 24,510，已跌破？需盯）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐ 一句话</strong>：<strong>&quot;继续定投美股&quot;是合理的，但&quot;今天加大纳指买入比例&quot;在&quot;加息 50bp 概率上升&quot;的新信息下，节奏可以放慢一点</strong> —— <strong>定投的核心是&quot;不断供&quot;，不是&quot;加码&quot;。</strong></p>
+</blockquote>
+<hr>
+<h2 id="sec-18">五、维度一：资金流对比（11/20 vs 11/19）</h2>
+<h3 id="sec-19">5.1 关键概念</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th style="text-align:center">11/19</th>
+<th style="text-align:center"><strong>11/20</strong></th>
+<th style="text-align:center">变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>芯片概念</strong></td>
+<td style="text-align:center">+30.29亿</td>
+<td style="text-align:center"><strong>-156.83亿</strong></td>
+<td style="text-align:center">❌❌ <strong>-187.1亿（反转）</strong></td>
+</tr>
+<tr>
+<td><strong>存储芯片</strong></td>
+<td style="text-align:center">+76.20亿</td>
+<td style="text-align:center"><strong>-73.71亿</strong></td>
+<td style="text-align:center">❌ <strong>-149.9亿（反转）</strong></td>
+</tr>
+<tr>
+<td><strong>融资融券</strong></td>
+<td style="text-align:center">-167.25亿</td>
+<td style="text-align:center"><strong>-250.56亿</strong></td>
+<td style="text-align:center">❌ -83.3亿（扩大）</td>
+</tr>
+<tr>
+<td><strong>深股通</strong></td>
+<td style="text-align:center">-118.65亿</td>
+<td style="text-align:center"><strong>-170.11亿</strong></td>
+<td style="text-align:center">❌ -51.5亿</td>
+</tr>
+<tr>
+<td><strong>CPO</strong></td>
+<td style="text-align:center">+33.71亿</td>
+<td style="text-align:center"><strong>-53.02亿</strong></td>
+<td style="text-align:center">❌ -86.7亿</td>
+</tr>
+<tr>
+<td><strong>先进封装</strong></td>
+<td style="text-align:center">+37.80亿</td>
+<td style="text-align:center"><strong>-45.64亿</strong></td>
+<td style="text-align:center">❌ -83.4亿</td>
+</tr>
+<tr>
+<td><strong>第三代半导体</strong></td>
+<td style="text-align:center">+14.71亿</td>
+<td style="text-align:center"><strong>-50.54亿</strong></td>
+<td style="text-align:center">❌ -65.2亿</td>
+</tr>
+<tr>
+<td><strong>中特估100</strong></td>
+<td style="text-align:center">—</td>
+<td style="text-align:center"><strong>+82.29亿</strong></td>
+<td style="text-align:center">✅✅ <strong>流入第一</strong></td>
+</tr>
+<tr>
+<td><strong>高股息精选</strong></td>
+<td style="text-align:center">—</td>
+<td style="text-align:center"><strong>+79.23亿</strong></td>
+<td style="text-align:center">✅✅ 大幅流入</td>
+</tr>
+<tr>
+<td><strong>漂亮100</strong></td>
+<td style="text-align:center">—</td>
+<td style="text-align:center"><strong>+78.09亿</strong></td>
+<td style="text-align:center">✅✅</td>
+</tr>
+<tr>
+<td><strong>证金持股</strong></td>
+<td style="text-align:center">—</td>
+<td style="text-align:center"><strong>+55.70亿</strong></td>
+<td style="text-align:center">✅✅</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-20">5.2 流入/流出 TOP</h3>
+<p><strong>概念净流入</strong>：<strong>中特估 +82.29</strong>、<strong>高股息 +79.23</strong>、<strong>漂亮100 +78.09</strong>、<strong>证金 +55.70</strong>、跨境支付 +31.59</p>
+<p><strong>概念净流出</strong>：<strong>融资融券 -250.56</strong>、<strong>深股通 -170.11</strong>、<strong>芯片 -156.83</strong>、机器人 -127.21、华为 -121.90</p>
+<p><strong>行业净流入</strong>：<strong>银行 +43.12（+0.21%）</strong>、<strong>保险 +12.52（+0.39%）</strong>、元件 +10.34、证券 +9.84、电力 +6.90</p>
+<p><strong>行业净流出</strong>：<strong>半导体 -80.15（-6.85%）</strong>、汽车零部件 -18.71、IT服务 -18.44、军工 -15.29</p>
+<blockquote>
+<p><strong>⭐⭐ 一句话概括</strong>：
+<strong>昨天（11/19）科技资金&quot;首次全面转正&quot;（芯片 +30 亿、存储 +76 亿），今天全部反转（芯片 -157 亿、存储 -74 亿）。</strong>
+<strong>这是&quot;一日游&quot;的极致 —— 说明 11/19 的&quot;转正&quot;是&quot;抄底盘试探&quot;，不是&quot;机构建仓&quot;。</strong>
+<strong>而资金唯一稳定流入的方向是&quot;中特估 +82 / 高股息 +79 / 证金 +56 / 银行 +43&quot; —— 防御四件套，合计 +260 亿。</strong>
+<strong>“防御流入 260 亿 vs 科技流出 157+74+53+46+51=381 亿” —— 这就是今天的资金地图。</strong></p>
+</blockquote>
+<hr>
+<h2 id="sec-21">六、维度二：企稳信号量化判定</h2>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">今日</th>
+<th style="text-align:center"><strong>RSI5</strong></th>
+<th style="text-align:center"><strong>MACD柱</strong></th>
+<th style="text-align:center">变化</th>
+<th style="text-align:center">MA5</th>
+<th style="text-align:center">MA20</th>
+<th style="text-align:center">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>北方华创</strong></td>
+<td style="text-align:center">-2.20%</td>
+<td style="text-align:center"><strong>63.1</strong></td>
+<td style="text-align:center"><strong>+20.092</strong></td>
+<td style="text-align:center">从 +21.259 <strong>略降</strong></td>
+<td style="text-align:center"><strong>+1.22%（仍站上）</strong></td>
+<td style="text-align:center"><strong>+7.78%</strong></td>
+<td style="text-align:center">✅ <strong>结构最强（唯一站上双线）</strong></td>
+</tr>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td style="text-align:center">-3.72%</td>
+<td style="text-align:center">29.4</td>
+<td style="text-align:center"><strong>-0.886</strong></td>
+<td style="text-align:center"><strong>从 -2.011 继续收窄</strong></td>
+<td style="text-align:center">-1.69%</td>
+<td style="text-align:center">-20.47%</td>
+<td style="text-align:center">⚠️ <strong>MACD 持续改善（第2日）</strong></td>
+</tr>
+<tr>
+<td><strong>东方财富</strong></td>
+<td style="text-align:center"><strong>+0.22%</strong></td>
+<td style="text-align:center"><strong>48.1</strong></td>
+<td style="text-align:center"><strong>-0.044</strong></td>
+<td style="text-align:center">从 -0.049 略收窄</td>
+<td style="text-align:center">+0.21%</td>
+<td style="text-align:center">-0.29%</td>
+<td style="text-align:center">⚠️ 逆势红但动能弱</td>
+</tr>
+<tr>
+<td><strong>宁德时代</strong></td>
+<td style="text-align:center">-2.90%</td>
+<td style="text-align:center"><strong>22.4</strong></td>
+<td style="text-align:center">+2.406</td>
+<td style="text-align:center">从 +3.808 <strong>减弱</strong></td>
+<td style="text-align:center">-3.68%</td>
+<td style="text-align:center">-5.64%</td>
+<td style="text-align:center">❌ <strong>跌破双线、RSI 极端</strong></td>
+</tr>
+<tr>
+<td><strong>长鑫科技</strong></td>
+<td style="text-align:center"><strong>-6.24%</strong></td>
+<td style="text-align:center"><strong>24.8</strong></td>
+<td style="text-align:center"><strong>-0.315</strong></td>
+<td style="text-align:center">从 -0.103 <strong>大幅扩大</strong></td>
+<td style="text-align:center">-4.51%</td>
+<td style="text-align:center">-13.16%</td>
+<td style="text-align:center">❌❌ <strong>收在最低点、RR=None</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐⭐ 三个关键信号</strong>：
+<strong>1）长鑫科技收在最低点（35.16 = 当日最低），RR = None</strong> —— <strong>模型找不到支撑，说明&quot;抛压尚未释放完&quot;</strong>，这是比&quot;高 RR 失真&quot;更强的警报（上次出现是 10/22 的北方华创/中际旭创）。
+<strong>2）中际旭创 MACD 从 -2.011 继续收窄到 -0.886（连续第 2 日改善）</strong> —— 虽然今天 -3.72%，但<strong>动能指标在改善</strong>，这是&quot;跌势末端&quot;的形态。
+<strong>3）北方华创是唯一&quot;站上 MA5+MA20&quot;的（+1.22%/+7.78%）</strong> —— 但 MACD 首次走弱（+21.259 → +20.092），<strong>&quot;独抗&quot;可能见顶。</strong></p>
+</blockquote>
+<hr>
+<h2 id="sec-22">七、维度三：相对抗跌性与独立反弹概率</h2>
+<h3 id="sec-23">7.1 两日累计（11/19-11/20）</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">11/19</th>
+<th style="text-align:center">11/20</th>
+<th style="text-align:center"><strong>两日累计</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>东方财富</strong></td>
+<td style="text-align:center">-0.05%</td>
+<td style="text-align:center"><strong>+0.22%</strong></td>
+<td style="text-align:center"><strong>+0.17%（最强）</strong></td>
+</tr>
+<tr>
+<td><strong>北方华创</strong></td>
+<td style="text-align:center">+3.13%</td>
+<td style="text-align:center">-2.20%</td>
+<td style="text-align:center"><strong>+0.86%</strong></td>
+</tr>
+<tr>
+<td>上证指数</td>
+<td style="text-align:center">-0.28%</td>
+<td style="text-align:center">-1.23%</td>
+<td style="text-align:center"><strong>-1.51%</strong></td>
+</tr>
+<tr>
+<td>中际旭创</td>
+<td style="text-align:center">+3.05%</td>
+<td style="text-align:center">-3.72%</td>
+<td style="text-align:center"><strong>-0.78%</strong></td>
+</tr>
+<tr>
+<td>宁德时代</td>
+<td style="text-align:center">-2.67%</td>
+<td style="text-align:center">-2.90%</td>
+<td style="text-align:center"><strong>-5.49%</strong></td>
+</tr>
+<tr>
+<td><strong>长鑫科技</strong></td>
+<td style="text-align:center">+1.60%</td>
+<td style="text-align:center"><strong>-6.24%</strong></td>
+<td style="text-align:center"><strong>-4.75%</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-24">7.2 独立反弹概率（11/23 下周一视角）</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th>支持</th>
+<th>抑制</th>
+<th style="text-align:center"><strong>概率</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>东方财富</strong></td>
+<td>连续 2 日逆势红、银行/非银资金回流</td>
+<td>MACD 连续 7 日负</td>
+<td style="text-align:center"><strong>45-50%</strong></td>
+</tr>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td>MACD 连续 2 日收窄、377.96 双重支撑</td>
+<td>今天 -3.72%、5日 -15.66%、20日 -39%</td>
+<td style="text-align:center"><strong>40-45%</strong></td>
+</tr>
+<tr>
+<td><strong>北方华创</strong></td>
+<td>唯一站上双线、MACD 仍 +20</td>
+<td><strong>MACD 首次走弱、RSI 63、RR 0.65</strong></td>
+<td style="text-align:center"><strong>40-45%</strong></td>
+</tr>
+<tr>
+<td><strong>宁德时代</strong></td>
+<td>RSI5 22.4（超卖）</td>
+<td>跌破双线、MACD 减弱、5日 -4.17%</td>
+<td style="text-align:center"><strong>30-35%</strong></td>
+</tr>
+<tr>
+<td><strong>长鑫科技</strong></td>
+<td>RSI5 24.8（超卖）</td>
+<td><strong>收最低点、RR=None、5日 -12.06%</strong></td>
+<td style="text-align:center"><strong>25-30%</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="sec-25">八、五只标的全栈量化</h2>
+<h3 id="sec-26">8.1 技术指标总表</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">收盘</th>
+<th style="text-align:center">今日</th>
+<th style="text-align:center"><strong>最低</strong></th>
+<th style="text-align:center"><strong>RSI5</strong></th>
+<th style="text-align:center">MA5</th>
+<th style="text-align:center">MA20</th>
+<th style="text-align:center">MA60</th>
+<th style="text-align:center"><strong>MACD柱</strong></th>
+<th style="text-align:center">支撑</th>
+<th style="text-align:center">压力</th>
+<th style="text-align:center"><strong>RR</strong></th>
+<th style="text-align:center">距高</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>长鑫科技</strong></td>
+<td style="text-align:center">35.16</td>
+<td style="text-align:center"><strong>-6.24%</strong></td>
+<td style="text-align:center"><strong>35.16（收最低）</strong></td>
+<td style="text-align:center"><strong>24.8</strong></td>
+<td style="text-align:center">36.82<br>(-4.51%)</td>
+<td style="text-align:center">40.49<br>(-13.16%)</td>
+<td style="text-align:center">48.75<br>(-27.9%)</td>
+<td style="text-align:center"><strong>-0.315</strong></td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">44.95</td>
+<td style="text-align:center"><strong>None</strong>⚠️⚠️</td>
+<td style="text-align:center">-43.1%</td>
+</tr>
+<tr>
+<td><strong>北方华创</strong></td>
+<td style="text-align:center">579.00</td>
+<td style="text-align:center">-2.20%</td>
+<td style="text-align:center">560.89</td>
+<td style="text-align:center"><strong>63.1</strong></td>
+<td style="text-align:center">572.04<br><strong>(+1.22%)</strong></td>
+<td style="text-align:center">537.20<br><strong>(+7.78%)</strong></td>
+<td style="text-align:center">605.19<br>(-4.3%)</td>
+<td style="text-align:center"><strong>+20.092</strong></td>
+<td style="text-align:center">537.20</td>
+<td style="text-align:center">606.00</td>
+<td style="text-align:center"><strong>0.65</strong></td>
+<td style="text-align:center">-40.1%</td>
+</tr>
+<tr>
+<td><strong>东方财富</strong></td>
+<td style="text-align:center">18.41</td>
+<td style="text-align:center"><strong>+0.22%</strong></td>
+<td style="text-align:center">17.91</td>
+<td style="text-align:center">48.1</td>
+<td style="text-align:center">18.37<br>(+0.21%)</td>
+<td style="text-align:center">18.46<br>(-0.29%)</td>
+<td style="text-align:center">18.49<br>(-0.4%)</td>
+<td style="text-align:center"><strong>-0.044</strong></td>
+<td style="text-align:center">17.30</td>
+<td style="text-align:center">19.50</td>
+<td style="text-align:center"><strong>0.98</strong></td>
+<td style="text-align:center">-37.1%</td>
+</tr>
+<tr>
+<td><strong>宁德时代</strong></td>
+<td style="text-align:center">227.78</td>
+<td style="text-align:center">-2.90%</td>
+<td style="text-align:center">225.19</td>
+<td style="text-align:center"><strong>22.4</strong></td>
+<td style="text-align:center">236.47<br>(-3.68%)</td>
+<td style="text-align:center">241.41<br>(-5.64%)</td>
+<td style="text-align:center">290.25<br>(-21.5%)</td>
+<td style="text-align:center"><strong>+2.406</strong></td>
+<td style="text-align:center"><strong>225.19</strong></td>
+<td style="text-align:center">272.19</td>
+<td style="text-align:center"><strong>17.15</strong>⚠️</td>
+<td style="text-align:center"><strong>-51.3%</strong></td>
+</tr>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td style="text-align:center">393.20</td>
+<td style="text-align:center">-3.72%</td>
+<td style="text-align:center">385.13</td>
+<td style="text-align:center">29.4</td>
+<td style="text-align:center">399.97<br>(-1.69%)</td>
+<td style="text-align:center">494.39<br>(-20.47%)</td>
+<td style="text-align:center">709.32<br>(-44.6%)</td>
+<td style="text-align:center"><strong>-0.886</strong></td>
+<td style="text-align:center"><strong>377.96</strong></td>
+<td style="text-align:center">636.68</td>
+<td style="text-align:center"><strong>15.98</strong>⚠️</td>
+<td style="text-align:center"><strong>-72.2%</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-27">8.2 风险回报率细算</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">现价</th>
+<th style="text-align:center">支撑</th>
+<th style="text-align:center">下跌空间</th>
+<th style="text-align:center">压力</th>
+<th style="text-align:center">上涨空间</th>
+<th style="text-align:center"><strong>RR</strong></th>
+<th>评价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>长鑫科技</strong></td>
+<td style="text-align:center">35.16</td>
+<td style="text-align:center"><strong>无</strong>（收在最低）</td>
+<td style="text-align:center"><strong>未知</strong></td>
+<td style="text-align:center">44.95</td>
+<td style="text-align:center">+27.8%</td>
+<td style="text-align:center"><strong>None</strong></td>
+<td>❌❌ <strong>无险可守</strong></td>
+</tr>
+<tr>
+<td><strong>宁德时代</strong></td>
+<td style="text-align:center">227.78</td>
+<td style="text-align:center">225.19（今日低）</td>
+<td style="text-align:center"><strong>-1.1%</strong></td>
+<td style="text-align:center">272.19</td>
+<td style="text-align:center">+19.5%</td>
+<td style="text-align:center"><strong>17.15</strong></td>
+<td>⚠️ 支撑贴边，失真</td>
+</tr>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td style="text-align:center">393.20</td>
+<td style="text-align:center">377.96（双重验证）</td>
+<td style="text-align:center">-3.9%</td>
+<td style="text-align:center">636.68</td>
+<td style="text-align:center">+61.9%</td>
+<td style="text-align:center"><strong>15.98</strong></td>
+<td>⚠️ <strong>失真；按 MA5 399.97 算真实 RR = 1.7/3.9 = 0.44（差）</strong></td>
+</tr>
+<tr>
+<td><strong>东方财富</strong></td>
+<td style="text-align:center">18.41</td>
+<td style="text-align:center">17.30</td>
+<td style="text-align:center">-6.0%</td>
+<td style="text-align:center">19.50</td>
+<td style="text-align:center">+5.9%</td>
+<td style="text-align:center"><strong>0.98</strong></td>
+<td>⚠️ 1:1</td>
+</tr>
+<tr>
+<td><strong>北方华创</strong></td>
+<td style="text-align:center">579.00</td>
+<td style="text-align:center">537.20</td>
+<td style="text-align:center">-7.2%</td>
+<td style="text-align:center">606.00</td>
+<td style="text-align:center">+4.7%</td>
+<td style="text-align:center"><strong>0.65</strong></td>
+<td>⚠️ 赔率不利</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐⭐ 今天的 RR 有三个警示</strong>：
+<strong>① 长鑫 RR=None</strong> —— “收在当日最低点&quot;意味着&quot;支撑未形成”，<strong>明天任何反弹都要先看&quot;能否不再创新低&quot;</strong>。
+<strong>② 宁德 17.15 失真</strong> —— 支撑 225.19 距现价 1.1%，破了就无支撑（下一档 216.51 只有 -5%）。
+<strong>③ 中际旭创真实 RR 0.44</strong> —— 它已贴近 MA5（-1.69%），&quot;反弹到 MA5&quot;空间走完，向上需要突破 MA5 才有第二段。</p>
+</blockquote>
+<hr>
+<h2 id="sec-28">九、综合研判与操作建议</h2>
+<h3 id="sec-29">9.1 市场定性</h3>
+<blockquote>
+<p><strong>11/20 是&quot;指数伪装下的个股血洗日&quot;：</strong>
+<strong>①指数：上证 -1.23%（盘中最低 3,500.83）、创业板 -3.54%、科创综指 -5.23% vs 上证50 +0.45%；</strong>
+<strong>②广度：涨 313 / 跌 5,236（红盘率 5.6%）、跌超 5% 达 2,863 家、跌超 9% 303 家、跌停 68；</strong>
+<strong>③伪装：上证 -1.23% vs 全A 中位 -5.08%（缺口 3.85pct）、年内 -12.17% vs -24.22%（缺口 12.05pct）；</strong>
+<strong>④资金：中特估 +82 / 高股息 +79 / 证金 +56 / 银行 +43（防御四件套 +260 亿）vs 芯片 -157 / 存储 -74 / CPO -53（科技 -381 亿）；</strong>
+<strong>⑤托底：上证50ETF 单日 240 亿创历史纪录、四大行创历史新高；</strong>
+<strong>⑥外部：美联储 50bp 加息预期 + 标普六连跌 + 韩股 -5.21% + 黄金创 14 个月新低。</strong></p>
+</blockquote>
+<h3 id="sec-30">9.2 分标的操作建议</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">强弱</th>
+<th><strong>操作建议</strong></th>
+<th>关键位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>长鑫科技</strong></td>
+<td style="text-align:center">🔴🔴 <strong>最弱（RR=None）</strong></td>
+<td><strong>无条件减仓 1/3</strong> —— 收在最低点、5日 -12.06%、MACD -0.315 扩大；<strong>明日不能收复 36.82（MA5）则减半</strong></td>
+<td><strong>35.16</strong></td>
+</tr>
+<tr>
+<td><strong>北方华创</strong></td>
+<td style="text-align:center">🟢 <strong>结构最强（唯一双线之上）</strong></td>
+<td><strong>持有，MACD 首次走弱要警惕</strong> —— 到 <strong>606 减 1/3</strong>、跌破 537.20 减 1/3</td>
+<td>537.20 / 606</td>
+</tr>
+<tr>
+<td><strong>中际旭创</strong></td>
+<td style="text-align:center">🟡 <strong>动能改善但价格仍弱</strong></td>
+<td><strong>继续&quot;换仓&quot;（暂缓，等反弹）</strong> —— 今日已跌破 393→385，<strong>若反弹到 400-415（MA5 区）执行换仓 50%</strong>；跌破 <strong>377.96</strong> 则清仓式换仓</td>
+<td><strong>377.96 / 399.97</strong></td>
+</tr>
+<tr>
+<td><strong>宁德时代</strong></td>
+<td style="text-align:center">🟡 <strong>超卖（RSI 22.4）</strong></td>
+<td><strong>持有剩余仓，不在极值割</strong> —— 但 <strong>跌破 225.19 必须减</strong></td>
+<td>225.19 / 216.51</td>
+</tr>
+<tr>
+<td><strong>东方财富</strong></td>
+<td style="text-align:center">🟡 <strong>唯一逆势红</strong></td>
+<td><strong>持有</strong>（连续2日红、防御资金回流），但 MACD 连续 7 日负</td>
+<td>18.46 / 17.30</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-31">9.3 仓位与观察</h3>
+<p><strong>仓位：1-2 成</strong>（从 2 成下调）。</p>
+<p><strong>四条加仓禁令</strong>：①跌超5% 2,863 家（无差别抛售中）②长鑫 RR=None（抛压未释放完）③芯片资金单日反转 -187 亿 ④美联储 50bp 加息未落地</p>
+<p><strong>四条保留理由</strong>：①上证50ETF 240 亿创纪录托底（政策底明确）②四大行新高（防御有效）③华泰证券：&quot;估值/结构指标接近历次底部阈值&quot;④A股较日韩抗跌（-1.23% vs -5.2%/-5.1%）</p>
+<p><strong>下周一（11/23）五个观察</strong>：</p>
+<ol>
+<li><strong>长鑫科技 35.16</strong> —— 能否止跌（RR=None 的修复）</li>
+<li><strong>上证 3,500.83</strong> —— 今日最低，也是政策底关键位</li>
+<li><strong>中际旭创 377.96</strong> —— 双重验证位，跌破则新一轮</li>
+<li><strong>芯片资金能否止住</strong>（今日 -157 亿）</li>
+<li><strong>红利能否连续第 3 日走强</strong>（今日 +79 亿高股息）</li>
+</ol>
+<h3 id="sec-32">9.4 关于&quot;定投美股&quot;的节奏建议</h3>
+<table>
+<thead>
+<tr>
+<th>建议</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ <strong>继续定投，但别&quot;加码&quot;</strong></td>
+<td>美联储 50bp 加息概率上升、&quot;标普六连跌&quot;未止，<strong>定投的核心是&quot;不断供&quot;，不是&quot;抄底&quot;</strong></td>
+</tr>
+<tr>
+<td>❌ <strong>不买溢价 &gt;5% 的场内 QDII</strong></td>
+<td>17%-40% 溢价会吃掉 79% 胜率的收益</td>
+</tr>
+<tr>
+<td>✅ <strong>场外联接 + 每周定额</strong></td>
+<td>0 溢价，限购反而强制分批</td>
+</tr>
+<tr>
+<td>⚠️ <strong>盯纳指年线</strong></td>
+<td>纳指年线（MA200）约 25,143，跌破意味着&quot;回撤&gt;10%“会变”&gt;20%&quot;</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="sec-33">十、附录：数据速查</h2>
+<h3 id="sec-34">10.1 核心数据（11/20）</h3>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证/深成/创业板/科创50/科创综指</td>
+<td>3,533.79(-1.23%) / 10,256.39(-3.09%) / 2,212.13(-3.54%) / 1,231.09(-3.12%) / <strong>-5.23%</strong></td>
+</tr>
+<tr>
+<td>上证50 / 国证2000</td>
+<td><strong>2,785.92(+0.45%)</strong> / 7,431.20(<strong>-5.15%</strong>)</td>
+</tr>
+<tr>
+<td>成交</td>
+<td><strong>1.42 万亿（放量 1,171 亿）</strong></td>
+</tr>
+<tr>
+<td>涨跌家数</td>
+<td><strong>313 / 5,236</strong>（红盘率 <strong>5.6%</strong>）</td>
+</tr>
+<tr>
+<td>全A 平均 / 中位</td>
+<td><strong>-4.76% / -5.08%</strong></td>
+</tr>
+<tr>
+<td>跌超5% / 跌超9%</td>
+<td><strong>2,863 家 / 303 家</strong></td>
+</tr>
+<tr>
+<td>涨停 / 跌停</td>
+<td>30 / 68</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-35">10.2 多资产年内（2026）</h3>
+<table>
+<thead>
+<tr>
+<th>资产</th>
+<th style="text-align:center">年内</th>
+<th style="text-align:center">距年内高</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>红利ETF</strong></td>
+<td style="text-align:center"><strong>+12.94%</strong></td>
+<td style="text-align:center">-2.0%</td>
+</tr>
+<tr>
+<td><strong>国债ETF(10年)</strong></td>
+<td style="text-align:center"><strong>+2.50%</strong></td>
+<td style="text-align:center">-0.0%</td>
+</tr>
+<tr>
+<td>上证</td>
+<td style="text-align:center">-12.17%</td>
+<td style="text-align:center">-16.7%</td>
+</tr>
+<tr>
+<td>科创50</td>
+<td style="text-align:center">-12.28%</td>
+<td style="text-align:center">-44.2%</td>
+</tr>
+<tr>
+<td>恒生</td>
+<td style="text-align:center">-14.91%</td>
+<td style="text-align:center">-19.9%</td>
+</tr>
+<tr>
+<td>可转债ETF</td>
+<td style="text-align:center">-16.42%</td>
+<td style="text-align:center">-22.0%</td>
+</tr>
+<tr>
+<td>黄金ETF</td>
+<td style="text-align:center">-23.33%</td>
+<td style="text-align:center">-38.8%</td>
+</tr>
+<tr>
+<td>创业板</td>
+<td style="text-align:center">-32.85%</td>
+<td style="text-align:center">-49.4%</td>
+</tr>
+<tr>
+<td>中概互联ETF</td>
+<td style="text-align:center">-43.85%</td>
+<td style="text-align:center">-51.1%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-36">10.3 五标的速查</h3>
+<table>
+<thead>
+<tr>
+<th>标的</th>
+<th style="text-align:center">收盘</th>
+<th style="text-align:center">今日</th>
+<th style="text-align:center">两日</th>
+<th style="text-align:center">RSI5</th>
+<th style="text-align:center">MACD柱</th>
+<th style="text-align:center">MA20</th>
+<th style="text-align:center">RR</th>
+<th style="text-align:center">操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>长鑫科技</td>
+<td style="text-align:center">35.16</td>
+<td style="text-align:center"><strong>-6.24%</strong></td>
+<td style="text-align:center">-4.75%</td>
+<td style="text-align:center">24.8</td>
+<td style="text-align:center"><strong>-0.315</strong></td>
+<td style="text-align:center">-13.16%</td>
+<td style="text-align:center"><strong>None</strong></td>
+<td style="text-align:center"><strong>减1/3</strong></td>
+</tr>
+<tr>
+<td>北方华创</td>
+<td style="text-align:center">579.00</td>
+<td style="text-align:center">-2.20%</td>
+<td style="text-align:center">+0.86%</td>
+<td style="text-align:center">63.1</td>
+<td style="text-align:center">+20.092</td>
+<td style="text-align:center"><strong>+7.78%</strong></td>
+<td style="text-align:center">0.65</td>
+<td style="text-align:center">持有（606减）</td>
+</tr>
+<tr>
+<td>东方财富</td>
+<td style="text-align:center">18.41</td>
+<td style="text-align:center"><strong>+0.22%</strong></td>
+<td style="text-align:center"><strong>+0.17%</strong></td>
+<td style="text-align:center">48.1</td>
+<td style="text-align:center">-0.044</td>
+<td style="text-align:center">-0.29%</td>
+<td style="text-align:center">0.98</td>
+<td style="text-align:center">持有</td>
+</tr>
+<tr>
+<td>宁德时代</td>
+<td style="text-align:center">227.78</td>
+<td style="text-align:center">-2.90%</td>
+<td style="text-align:center">-5.49%</td>
+<td style="text-align:center"><strong>22.4</strong></td>
+<td style="text-align:center">+2.406</td>
+<td style="text-align:center">-5.64%</td>
+<td style="text-align:center">17.15⚠️</td>
+<td style="text-align:center">持有（破225减）</td>
+</tr>
+<tr>
+<td>中际旭创</td>
+<td style="text-align:center">393.20</td>
+<td style="text-align:center">-3.72%</td>
+<td style="text-align:center">-0.78%</td>
+<td style="text-align:center">29.4</td>
+<td style="text-align:center"><strong>-0.886（收窄）</strong></td>
+<td style="text-align:center">-20.47%</td>
+<td style="text-align:center">15.98⚠️</td>
+<td style="text-align:center">反弹换仓</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-37">10.4 尾盘 ETF 天量</h3>
+<table>
+<thead>
+<tr>
+<th>ETF</th>
+<th style="text-align:center">成交额</th>
+<th style="text-align:center">纪录</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上证50ETF 华夏</td>
+<td style="text-align:center"><strong>&gt;240 亿</strong></td>
+<td style="text-align:center"><strong>历史最高，较昨日放量近10倍</strong></td>
+</tr>
+<tr>
+<td>沪深300ETF 嘉实</td>
+<td style="text-align:center">&gt;234 亿</td>
+<td style="text-align:center">历史最高，放量超2.4倍</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><em>报告生成时间：2026-11-20 收盘后</em></p>
+
+  <div class="footer">来源：任务库持仓复盘 · A股深度复盘_20261120.md | 由 markdown-it 转换 | 仅供参考，不构成投资建议</div>
+</div>
+</body>
+</html>
